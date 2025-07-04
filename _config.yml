@@ -19,14 +19,19 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Mognet
-description: >- # this means to ignore newlines until "baseurl:"
-  Mognet is a cross-world community and Free Company network across the Dynamis Data Center in Final Fantasy XIV
+description: >-
+  Mognet is a cross-world community and Free Company network on Dynamis Data Center in Final Fantasy XIV
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+collections_dir: _collections
+collections:
+  quests:
+    output: false
+
 # Build settings
-theme: minima
-plugins:
+#theme: minima
+#plugins:
 #  - jekyll-feed
 
 # Exclude from processing.

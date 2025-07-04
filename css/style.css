@@ -1,0 +1,37 @@
+
+span.icon i.quest-msq {
+    background:url('/icons/071001.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.dungeon {
+    background:url('/icons/061801.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.solo-duty {
+    background:url('/icons/071006.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.quest-novice {
+    background:url('/icons/071121.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+
+.unlocks {
+    padding-left: 1rem;
+}
