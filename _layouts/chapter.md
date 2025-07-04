@@ -12,7 +12,7 @@ layout: default
                     <div class="quest msq">
                         <span class="icon-text">
                             <span class="icon"><i class="quest-{{quest.type}}"></i></span>
-                            <span>{{quest.name}}</span> <span class="level">Lv. {{quest.level}}</span>
+                            <span>{{quest.partQuestNo}}. {{quest.name}}</span> <span class="level">Lv. {{quest.level}}</span>
                         </span>
                         <ul class="unlocks">
                             {% if quest.hasSoloDuty %}
