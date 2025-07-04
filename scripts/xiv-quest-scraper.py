@@ -8,11 +8,13 @@ import requests
 import time
 import sys
 import json
+import yaml
 
 import pprint
 import pdb
 
 from xivscraper.sheet import CsvSheet, extract_array2d
+from xivscraper.yaml_helpers import dump_indented_yaml
 
 
 class XivQuestScraper:
@@ -96,10 +98,41 @@ class XivQuestScraper:
             os.path.join(self.args.cache_dir, self.args.datamining_commit, sheet))
 
 
+    def cmd_questList(self):
+        self.argparser.add_argument("--count", type=int, default=10)
+        self.argparser.add_argument("lastRowId")
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.args = self.argparser.parse_args()
+        pprint.pprint(vars(self.args))
+
+        quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
+
+        output = []
+        count = self.args.count
+        rowId = self.args.lastRowId
+        while count > 0:
+            row = quest_sheet.byId(rowId)
+            output.append({
+                'name': row['Name'],
+                'level': int(row['ClassJobLevel[0]']),
+                'rowId': row['#'],
+                'questId': row['Id']
+            })
+            rowId = row['PreviousQuest[0]']
+            count -= 1
+
+        ordered = list(reversed(output))
+
+        if self.args.yaml:
+            print(dump_indented_yaml({"quests": ordered}))
+        else:
+            pprint.pprint(ordered)
+
+
     def cmd_findQuest(self):
         self.argparser.add_argument("questId", nargs="*")
-        self.argparser.add_argument("--json", action="store_true", default=True)
         self.argparser.add_argument("--name", default=None)
+        self.argparser.add_argument("--json", action="store_true", default=True)
         self.args = self.argparser.parse_args()
 
         # pprint.pprint(vars(self.args))
