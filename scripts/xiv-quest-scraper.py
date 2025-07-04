@@ -13,8 +13,10 @@ import yaml
 import pprint
 import pdb
 
+
 from xivscraper.sheet import CsvSheet, extract_array2d
 from xivscraper.yaml_helpers import dump_indented_yaml
+from xivscraper.coord_helpers import readable_coords
 
 
 class XivQuestScraper:
@@ -78,13 +80,14 @@ class XivQuestScraper:
 
         default_sheets = [
             'ENpcResident',
-            'EventIconType',
+            # 'EventIconType',
             'Level',
-            'Map',
+            # 'Map',
             'PlaceName',
             'Quest',
-            'QuestChapter',
-            'Town',
+            'TerritoryType'
+            # 'QuestChapter',
+            # 'Town',
         ]
         pprint.pprint(vars(self.args))
 
@@ -178,12 +181,52 @@ class XivQuestScraper:
         else:
             pprint.pprint(output)
 
+    def cmd_dumpQuest(self):
+        self.argparser.add_argument("questId")
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.args = self.argparser.parse_args()
+
+        level_sheet = CsvSheet(self._path_for_sheet("Level"))
+        npc_sheet = CsvSheet(self._path_for_sheet("ENpcResident"))
+        quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
+        territorytype_sheet = CsvSheet(self._path_for_sheet("TerritoryType"))
+        placename_sheet = CsvSheet(self._path_for_sheet("PlaceName"))
+        map_sheet = CsvSheet(self._path_for_sheet("Map"))
+
+        quest = quest_sheet.byId(self.args.questId)
+        issuer = npc_sheet.byId(quest["Issuer{Start}"])
+        issuer_level = level_sheet.byId(quest["Issuer{Location}"])
+        issuer_territory = territorytype_sheet.byId(issuer_level["Territory"])
+        issuer_placename = placename_sheet.byId(issuer_territory["PlaceName"])
+        issuer_map = map_sheet.byId(issuer_level["Map"])
+
+        front_matter = {
+            'output': False,
+            "layout": "quest",
+            "type": "msq",
+
+            "rowId": int(quest["#"]),
+            "questId": quest["Id"],
+            "name": quest["Name"],
+            "level": int(quest["ClassJobLevel[0]"]),
+
+            "issuer": issuer["Singular"],
+            "location": issuer_placename["Name"],
+            # "coords": readable_coords(issuer_level),
+            # "raw": {
+            #     "issuer_level": issuer_level,
+            #     "issuer_map": issuer_map
+            # }
+        }
+
+        if self.args.yaml:
+            print("---\n{}\n---".format(dump_indented_yaml(front_matter)))
+        else:
+            pprint.pprint(ordered)
 
 
-def main():
+if __name__ == "__main__":
     app = XivQuestScraper()
     app.main()
 
 
-if __name__ == "__main__":
-    main()
