@@ -102,8 +102,9 @@ class XivQuestScraper:
         self.argparser.add_argument("--count", type=int, default=10)
         self.argparser.add_argument("lastRowId")
         self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--partQuestNo", type=int, default=1)
         self.args = self.argparser.parse_args()
-        pprint.pprint(vars(self.args))
+        # pprint.pprint(vars(self.args))
 
         quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
 
@@ -112,19 +113,28 @@ class XivQuestScraper:
         rowId = self.args.lastRowId
         while count > 0:
             row = quest_sheet.byId(rowId)
-            output.append({
+            out_row = {
                 'name': row['Name'],
                 'level': int(row['ClassJobLevel[0]']),
-                'rowId': row['#'],
-                'questId': row['Id']
-            })
+                'rowId': int(row['#']),
+                'questId': row['Id'],
+                'type': "msq",
+            }
+            output.append(out_row)
             rowId = row['PreviousQuest[0]']
             count -= 1
 
         ordered = list(reversed(output))
+        numbered = []
+        for i in range(0,len(ordered)):
+            row = ordered[i]
+            row.update({
+                'partQuestNo': i+self.args.partQuestNo,
+            })
+            numbered.append(row)
 
         if self.args.yaml:
-            print(dump_indented_yaml({"quests": ordered}))
+            print(dump_indented_yaml({"quests": list(numbered)}))
         else:
             pprint.pprint(ordered)
 
