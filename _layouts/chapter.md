@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <container>
     <h2 class="title is-2">{{page.expansion}}</h2>
     <h3 class="subtitle is-3">Part {{page.partNo}}</h3>
@@ -42,10 +41,13 @@ layout: default
                 {% for q in page.quests %}
                     {% if q.rowId %}
                         {% assign quest = site.quests | where:"rowId", q.rowId | first %}
-                        {{quest.content | markdownify}}
+                        {{quest | markdownify}}
                     {% endif %}
                 {% endfor %}
             </section>
         </div>
     </div>
+    {{ content}}
 </container>
+
+
