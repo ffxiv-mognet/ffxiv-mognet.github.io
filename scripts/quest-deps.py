@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import csv
 import pprint
 
 
-QUESTS_CSV_PATH = "./xivapi/Quest.csv"
+QUESTS_CSV_PATH = ".xiv-cache/master/Quest.csv"
 
 
 
@@ -49,7 +49,8 @@ def main():
     # parents = quests.findParents("70415", howMany=10)
     # pprint.pprint(list(reversed(parents)))
     q = quests.find("65781")
-    pprint.pprint(q)
+    import json
+    print(json.dumps(q))
 
 if __name__ == "__main__":
     main()

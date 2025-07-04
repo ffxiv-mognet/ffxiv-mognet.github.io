@@ -6,30 +6,31 @@ import os
 import os.path
 import requests
 import time
+import sys
+import json
 
 import pprint
 import pdb
 
+from xivscraper.sheet import CsvSheet, extract_array2d
+
 
 class XivQuestScraper:
     def __init__(self):
-        self.argparser = argparse.ArgumentParser(
-            description="scrape ffxiv datamined quest info")
-        self.argparser.add_argument("command", nargs="?", default="fetch")
-        self.argparser.add_argument("sheets", nargs="*")
-        self.argparser.add_argument("--datamining-commit", nargs="?", default="master")
-        self.argparser.add_argument("--datamining-repo", nargs="?", default="xivapi/ffxiv-datamining")
-        self.argparser.add_argument("--datamining-delay", nargs="?", type=float, default=1.0)
+        self.argparser = argparse.ArgumentParser(description="scrape ffxiv datamined quest info")
+        self.argparser.add_argument("command", nargs=1)
         self.argparser.add_argument("--cache-dir", nargs="?", default="./.xiv-cache")
+        self.argparser.add_argument("--datamining-commit", nargs="?", default="master")
         self.argparser.add_argument("-v", "--verbose", action="store_true")
+        pass
  
     def main(self):
-        self.args = self.argparser.parse_args()
-        meth = getattr(self, "cmd_{}".format(self.args.command), None)
+        (args, unknown) = self.argparser.parse_known_args()
+        meth = getattr(self, "cmd_{}".format(args.command[0]), None)
         if meth is not None:
             meth()
         else:
-            print("Unknown command '{}'\n".format(self.args.command))
+            print("Unknown command '{}'\n".format(args.command))
             self.argparser.print_help()
             self.argparser.exit()
 
@@ -51,8 +52,7 @@ class XivQuestScraper:
             commit=self.args.datamining_commit,
             sheet=sheet)
 
-        path = "{}.csv".format(
-            os.path.join(self.args.cache_dir, self.args.datamining_commit, sheet))
+        path = self._path_for_sheet(sheet)
 
         if not os.path.exists(path):
             parent_path = os.path.dirname(path)
@@ -69,6 +69,11 @@ class XivQuestScraper:
                 print("Skipping {}".format(path))
 
     def cmd_fetch(self):
+        self.argparser.add_argument("sheets", nargs="*")
+        self.argparser.add_argument("--datamining-repo", nargs="?", default="xivapi/ffxiv-datamining")
+        self.argparser.add_argument("--datamining-delay", nargs="?", type=float, default=1.0)
+        self.args = self.argparser.parse_args()
+
         default_sheets = [
             'ENpcResident',
             'EventIconType',
@@ -86,6 +91,49 @@ class XivQuestScraper:
         for sheet in sheet_names:
             self.fetch_sheet(sheet)
 
+    def _path_for_sheet(self, sheet):
+        return "{}.csv".format(
+            os.path.join(self.args.cache_dir, self.args.datamining_commit, sheet))
+
+
+    def cmd_findQuest(self):
+        self.argparser.add_argument("questId", nargs="*")
+        self.argparser.add_argument("--json", action="store_true", default=True)
+        self.argparser.add_argument("--name", default=None)
+        self.args = self.argparser.parse_args()
+
+        # pprint.pprint(vars(self.args))
+        #print("Okay looking for {}".format(self.args.questId))
+        if self.args.name is None and len(self.args.questId) < 1:
+            print("Must specify questId or --name", file=sys.stderr)
+            return
+
+        quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
+        output = []
+        if self.args.name is not None:
+            match = self.args.name.lower()
+            for row in quest_sheet.rows.values():
+                if match in row['Name'].lower():
+                    output.append(row)
+        else:
+            for questId in self.args.questId:
+                row = quest_sheet.byId(questId)
+                output.append(row)
+
+        # d = {
+        #     'ToDoCompleteSeq': extract_array2d(row, "ToDoCompleteSeq"),
+        #     'ToDoQty': extract_array2d(row, "ToDoQty")
+        # }
+        # for i in range(0,23):
+        #     k = "ToDoLocation[{}]".format(i)
+        #     d[k] = extract_array2d(row, k)
+
+        # pprint.pprint(d)
+
+        if self.args.json: 
+            print(json.dumps(output))
+        else:
+            pprint.pprint(output)
 
 
 
