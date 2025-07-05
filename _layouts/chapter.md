@@ -12,14 +12,14 @@ layout: default
                     <div class="quest msq">
                         <span class="icon-text">
                             <span class="icon"><i class="quest-{{quest.type}}"></i></span>
-                            <span>{{quest.partQuestNo}}. {{quest.name}}</span> <span class="level">Lv. {{quest.level}}</span>
+                            <span>{{quest.partQuestNo}}. {{quest.name}}</span> <span class="level">Lv.{{quest.level}}</span>
                         </span>
                         <ul class="unlocks">
                             {% if quest.soloDuty %}
                             <li>
                                 <span class="icon-text">
                                     <span class="icon"><i class="solo-duty"></i></span>
-                                    <span>Solo Duty</span>
+                                    <span>Solo Duty Lv.{{quest.level}}-{{ quest.soloDuty.levelSync }}</span>
                                 </span>
                             </li>
                             {% endif %}
@@ -27,7 +27,7 @@ layout: default
                             <li>
                                 <span class="icon-text">
                                     <span class="icon"><i class="{{unlock.type}}"></i></span>
-                                    <span>{{unlock.name}}</span>
+                                    <span>{{unlock.name}} Lv.{{unlock.levelRequired}}-{{unlock.levelSync}}</span>
                                 </span>
                             </li>
                             {% endfor %}
