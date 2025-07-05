@@ -105,10 +105,11 @@ class XivQuestScraper:
     def format_battle(self, battle_id):
         battle_sheet = CsvSheet(self._path_for_sheet("QuestBattle"))
         battle = battle_sheet.byId(battle_id)
-        return {
-            'levelSync': int(battle['LevelSync']),
-            'timeLimit': int(battle['TimeLimit'])
-        }
+        if battle is not None:
+            return {
+                'levelSync': int(battle['LevelSync']),
+                'timeLimit': int(battle['TimeLimit'])
+            }
 
     def parse_unlocks(self, script):
         cfc_sheet = CsvSheet(self._path_for_sheet("ContentFinderCondition"))
