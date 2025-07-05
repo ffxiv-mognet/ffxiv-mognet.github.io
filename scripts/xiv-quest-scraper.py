@@ -208,7 +208,8 @@ class XivQuestScraper:
             return {
                 'location': placename['Name'],
                 'coords': "({x}, {y})".format(**coords),
-                'type': int(level['Type']),
+                'levelType': int(level['Type']),
+                'territoryIntendedUse': int(territory['TerritoryIntendedUse'])
             }
 
         issuer = location_coords_from_level(quest["Issuer{Location}"])
@@ -257,40 +258,18 @@ class XivQuestScraper:
                 'timeLimit': int(battle['TimeLimit'])
             }
 
-        # # unlocks content?
-        # ic_id = script.get('INSTANCEDUNGEON0', None)
-        # if ic_id is not None:
-        #     ic = ic_sheet.byId(ic_id)
-        #     front_matter['instance_content'] = ic
-
         # unlocks content?
-        unlock_id = script.get('UNLOCK_ADD_NEW_CONTENT_TO_CF', None)
-        if unlock_id is not None:
-            ic_id = script.get('INSTANCEDUNGEON0', None)
-            if ic_id is not None:
-                ic = ic_sheet.byId(ic_id)
-
-                relevant_step = next(filter(lambda it: it['type'] == 51, steps))
-
-                if ic['InstanceContentType'] == '4': 
-                    front_matter['trial'] = {
-                      'name': relevant_step['location'],
-                    }
-                elif ic['InstanceContentType'] == '2':
-                    front_matter['dungeon'] = {
-                      'name': relevant_step['location'],
-                    }
-
-                front_matter['unlocks'] = [
-                    {
-                        #'UNLOCK_ADD_NEW_CONTENT_TO_CF': unlock_id,
-                        #'instanceContentId': ic_id,
-                        'type': ic['InstanceContentType'],
-                        'name': relevant_step['location'],
-                        #'steps': list(filter(lambda it: it['type'] == 51, steps)),
-                        #'raw': ic
-                    }
-                ]
+        unlocks = []
+        content_idx = 0
+        while 'INSTANCEDUNGEON{}'.format(content_idx) in script:
+            icId = script.get('INSTANCEDUNGEON{}'.format(content_idx), None)
+            if icId is None: 
+                break
+            ic = ic_sheet.byId(icId) 
+            unlocks.append(ic)
+            content_idx += 1
+        # if len(unlocks) > 0:
+            # front_matter['unlocks'] = unlocks
 
         if self.args.yaml:
             print("---\n{}\n---".format(dump_indented_yaml(front_matter)))
