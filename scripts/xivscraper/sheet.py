@@ -18,6 +18,11 @@ class CsvSheet:
     def byId(self, rowId, default=None):
         return self.rows.get(rowId, default)
 
+    def findBy(self, field_name, value, default=None):
+        for row in self.rows.values():
+            if row[field_name] == value:
+                return row
+
 
 class LanguageSheet:
     def __init__(self, csv_path):

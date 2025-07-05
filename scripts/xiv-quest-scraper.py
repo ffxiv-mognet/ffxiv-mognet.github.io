@@ -85,7 +85,8 @@ class XivQuestScraper:
             # 'Map',
             'PlaceName',
             'Quest',
-            'TerritoryType'
+            'QuestBattle',
+            'TerritoryType',
             # 'QuestChapter',
             # 'Town',
         ]
@@ -110,6 +111,7 @@ class XivQuestScraper:
         # pprint.pprint(vars(self.args))
 
         quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
+        battle_sheet = CsvSheet(self._path_for_sheet("QuestBattle"))
 
         output = []
         count = self.args.count
@@ -123,6 +125,12 @@ class XivQuestScraper:
                 'questId': row['Id'],
                 'type': "msq",
             }
+            battle = battle_sheet.findBy("Quest", row['#'])
+            if battle is not None:
+                out_row['questBattle'] = {
+                    'levelSync': int(battle['LevelSync']),
+                    'timeLimit': int(battle['TimeLimit'])
+                }
             output.append(out_row)
             rowId = row['PreviousQuest[0]']
             count -= 1
@@ -180,6 +188,7 @@ class XivQuestScraper:
         level_sheet = CsvSheet(self._path_for_sheet("Level"))
         npc_sheet = CsvSheet(self._path_for_sheet("ENpcResident"))
         quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
+        battle_sheet = CsvSheet(self._path_for_sheet("QuestBattle"))
         territorytype_sheet = CsvSheet(self._path_for_sheet("TerritoryType"))
         placename_sheet = CsvSheet(self._path_for_sheet("PlaceName"))
         map_sheet = CsvSheet(self._path_for_sheet("Map"))
@@ -188,6 +197,8 @@ class XivQuestScraper:
 
         def location_coords_from_level(levelId):
             level = level_sheet.byId(levelId)
+            if level is None:
+                return {}
             map_row = map_sheet.byId(level['Map'])
             territory = territorytype_sheet.byId(level["Territory"])
             placename = placename_sheet.byId(territory["PlaceName"])
@@ -229,7 +240,16 @@ class XivQuestScraper:
             "name": quest["Name"],
             "level": int(quest["ClassJobLevel[0]"]),
             "issuer": issuer,
+            "battle": {
+
+            }
         }
+        battle = battle_sheet.findBy("Quest", quest['#'])
+        if battle is not None:
+            front_matter['questBattle'] = {
+                'levelSync': int(battle['LevelSync']),
+                'timeLimit': int(battle['TimeLimit'])
+            }
 
         if self.args.yaml:
             print("---\n{}\n---".format(dump_indented_yaml(front_matter)))
