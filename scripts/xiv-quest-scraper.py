@@ -188,11 +188,13 @@ class XivQuestScraper:
 
         def location_coords_from_level(levelId):
             level = level_sheet.byId(levelId)
+            map_row = map_sheet.byId(level['Map'])
             territory = territorytype_sheet.byId(level["Territory"])
             placename = placename_sheet.byId(territory["PlaceName"])
+            coords = readable_coords(level, map_row)
             return {
                 'location': placename['Name'],
-                'coords': "({}, {})".format(level['X'], level['Y'])
+                'coords': "({x}, {y})".format(**coords)
             }
 
         issuer = location_coords_from_level(quest["Issuer{Location}"])
