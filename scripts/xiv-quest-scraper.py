@@ -16,7 +16,8 @@ import pdb
 
 from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array2d, extract_script
 from xivscraper.yaml_helpers import dump_indented_yaml
-from xivscraper.coord_helpers import readable_coords
+from xivscraper.coord_helpers import readable_coords, readable_contenttype
+
 
 
 class XivQuestScraper:
@@ -122,7 +123,7 @@ class XivQuestScraper:
             cfc = cfc_sheet.find(lambda it: it["Content"] == icId and it["ContentLinkType"] == '1')
             unlocks.append({
                 'name': cfc['Name'],
-                'type': int(cfc['ContentType']),
+                'type': readable_contenttype(cfc['ContentType']),
                 'levelRequired': int(cfc['ClassJobLevel{Required}']),
                 'levelSync': int(cfc['ClassJobLevel{Sync}']),
                 # 'raw': cfc

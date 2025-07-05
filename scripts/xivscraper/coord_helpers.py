@@ -22,3 +22,11 @@ def readable_coords(level, map):
         "y": trunc_1(floor(((41.0 / c) * ((+y1 + 1024.0) / 2048.0) + 1.0) * 100.0) / 100.0),
         "z": trunc_1(floor(z) / 100.0)
     }
+
+def readable_contenttype(contenttype):
+    c = int(contenttype)
+    if c == 4:
+        return "trial"
+    if c == 2:
+        return "dungeon"
+    return contenttype
