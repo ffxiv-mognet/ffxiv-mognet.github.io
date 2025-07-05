@@ -12,6 +12,7 @@ quests:
     questId: ManSea203_00245
     rowId: 65781
     type: msq
+    dungeon: Sastasha
   - level: 15
     name: Call of the Forest
     partQuestNo: 3
@@ -36,6 +37,8 @@ quests:
     questId: ManFst205_00660
     rowId: 66196
     type: msq
+    dungeon: Copperbell Mines
+    hasSoloDuty: true
   - level: 17
     name: The Scions of the Seventh Dawn
     partQuestNo: 7

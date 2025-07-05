@@ -19,6 +19,27 @@ class CsvSheet:
         return self.rows.get(rowId, default)
 
 
+class LanguageSheet:
+    def __init__(self, csv_path):
+        self.csv_path = csv_path
+        self.rows = {}
+        self.buildIndex()
+
+    def buildIndex(self):
+        self.rows = {}
+        with open(self.csv_path, 'r') as csvfh:
+            for i in range(0,3): 
+                csvfh.readline()  # skip first 3 lines
+            reader = csv.reader(csvfh)
+            for row in reader:
+                stringId = row[1]
+                stringValue = row[2]
+                self.rows[stringId] = stringValue
+
+    def byId(self, stringId, default=None):
+        return self.rows.get(stringId, default)
+
+
 
 def extract_array2d(row, field_name):
     output = {} 

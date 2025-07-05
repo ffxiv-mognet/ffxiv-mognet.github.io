@@ -14,7 +14,7 @@ import pprint
 import pdb
 
 
-from xivscraper.sheet import CsvSheet, extract_array2d
+from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array2d
 from xivscraper.yaml_helpers import dump_indented_yaml
 from xivscraper.coord_helpers import readable_coords
 
@@ -24,6 +24,8 @@ class XivQuestScraper:
         self.argparser = argparse.ArgumentParser(description="scrape ffxiv datamined quest info")
         self.argparser.add_argument("command", nargs=1)
         self.argparser.add_argument("--cache-dir", nargs="?", default="./.xiv-cache")
+        self.argparser.add_argument("--datamining-repo", nargs="?", default="xivapi/ffxiv-datamining")
+        self.argparser.add_argument("--datamining-delay", nargs="?", type=float, default=1.0)
         self.argparser.add_argument("--datamining-commit", nargs="?", default="master")
         self.argparser.add_argument("-v", "--verbose", action="store_true")
         pass
@@ -74,8 +76,6 @@ class XivQuestScraper:
 
     def cmd_fetch(self):
         self.argparser.add_argument("sheets", nargs="*")
-        self.argparser.add_argument("--datamining-repo", nargs="?", default="xivapi/ffxiv-datamining")
-        self.argparser.add_argument("--datamining-delay", nargs="?", type=float, default=1.0)
         self.args = self.argparser.parse_args()
 
         default_sheets = [
@@ -166,20 +166,11 @@ class XivQuestScraper:
                 row = quest_sheet.byId(questId)
                 output.append(row)
 
-        # d = {
-        #     'ToDoCompleteSeq': extract_array2d(row, "ToDoCompleteSeq"),
-        #     'ToDoQty': extract_array2d(row, "ToDoQty")
-        # }
-        # for i in range(0,23):
-        #     k = "ToDoLocation[{}]".format(i)
-        #     d[k] = extract_array2d(row, k)
-
-        # pprint.pprint(d)
-
         if self.args.json: 
             print(json.dumps(output))
         else:
             pprint.pprint(output)
+
 
     def cmd_dumpQuest(self):
         self.argparser.add_argument("questId")
@@ -194,29 +185,48 @@ class XivQuestScraper:
         map_sheet = CsvSheet(self._path_for_sheet("Map"))
 
         quest = quest_sheet.byId(self.args.questId)
-        issuer = npc_sheet.byId(quest["Issuer{Start}"])
-        issuer_level = level_sheet.byId(quest["Issuer{Location}"])
-        issuer_territory = territorytype_sheet.byId(issuer_level["Territory"])
-        issuer_placename = placename_sheet.byId(issuer_territory["PlaceName"])
-        issuer_map = map_sheet.byId(issuer_level["Map"])
+
+        def location_coords_from_level(levelId):
+            level = level_sheet.byId(levelId)
+            territory = territorytype_sheet.byId(level["Territory"])
+            placename = placename_sheet.byId(territory["PlaceName"])
+            return {
+                'location': placename['Name'],
+                'coords': "({}, {})".format(level['X'], level['Y'])
+            }
+
+        issuer = location_coords_from_level(quest["Issuer{Location}"])
+        issuer_npc = npc_sheet.byId(quest["Issuer{Start}"])
+        issuer['name'] = issuer_npc['Singular']
+
+        lang_sheet_name = "quest/{section}/{questId}".format(
+            section=quest["Id"].split("_", 1)[1][:3], 
+            questId=quest["Id"])
+        self.fetch_sheet(lang_sheet_name)
+        lang_sheet = LanguageSheet(self._path_for_sheet(lang_sheet_name))
+        steps = []
+        todo_idx = 0
+        todo_seq = extract_array2d(quest, "ToDoCompleteSeq")
+        while todo_idx != 255:
+            locationId = quest["ToDoLocation[{}][0]".format(todo_idx)]
+            step = location_coords_from_level(locationId)
+
+            todoId = "TEXT_{}_TODO_{:02d}".format(quest["Id"].upper(), todo_idx)
+            step["name"] = lang_sheet.byId(todoId)
+
+            steps.append(step)
+            todo_idx = int(todo_seq.pop(0))
 
         front_matter = {
             'output': False,
             "layout": "quest",
             "type": "msq",
-
+            "steps": steps,
             "rowId": int(quest["#"]),
             "questId": quest["Id"],
             "name": quest["Name"],
             "level": int(quest["ClassJobLevel[0]"]),
-
-            "issuer": issuer["Singular"],
-            "location": issuer_placename["Name"],
-            # "coords": readable_coords(issuer_level),
-            # "raw": {
-            #     "issuer_level": issuer_level,
-            #     "issuer_map": issuer_map
-            # }
+            "issuer": issuer,
         }
 
         if self.args.yaml:
