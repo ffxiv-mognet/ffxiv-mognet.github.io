@@ -60,3 +60,16 @@ def extract_array2d(row, field_name):
     for i in output.keys():
         f[i] = output[i]
     return f
+
+
+def extract_script(quest):
+    total = 50
+    output = {}
+    for i in range(0, 50):
+        inst_key = "Script{{Instruction}}[{}]".format(i)
+        arg_key = "Script{{Arg}}[{}]".format(i)
+        inst = quest[inst_key]
+        arg = quest[arg_key]
+        if inst:
+            output[inst] = arg
+    return output

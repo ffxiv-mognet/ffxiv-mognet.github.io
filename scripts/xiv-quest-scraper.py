@@ -14,7 +14,7 @@ import pprint
 import pdb
 
 
-from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array2d
+from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array2d, extract_script
 from xivscraper.yaml_helpers import dump_indented_yaml
 from xivscraper.coord_helpers import readable_coords
 
@@ -193,6 +193,8 @@ class XivQuestScraper:
         placename_sheet = CsvSheet(self._path_for_sheet("PlaceName"))
         map_sheet = CsvSheet(self._path_for_sheet("Map"))
 
+        ic_sheet = CsvSheet(self._path_for_sheet("InstanceContent"))
+
         quest = quest_sheet.byId(self.args.questId)
 
         def location_coords_from_level(levelId):
@@ -205,7 +207,8 @@ class XivQuestScraper:
             coords = readable_coords(level, map_row)
             return {
                 'location': placename['Name'],
-                'coords': "({x}, {y})".format(**coords)
+                'coords': "({x}, {y})".format(**coords),
+                'type': int(level['Type']),
             }
 
         issuer = location_coords_from_level(quest["Issuer{Location}"])
@@ -230,6 +233,8 @@ class XivQuestScraper:
             steps.append(step)
             todo_idx = int(todo_seq.pop(0))
 
+        script = extract_script(quest)
+
         front_matter = {
             'output': False,
             "layout": "quest",
@@ -240,16 +245,52 @@ class XivQuestScraper:
             "name": quest["Name"],
             "level": int(quest["ClassJobLevel[0]"]),
             "issuer": issuer,
-            "battle": {
-
-            }
+            #'script': script
         }
-        battle = battle_sheet.findBy("Quest", quest['#'])
-        if battle is not None:
+
+        # has solo duty?        
+        battle_id = script.get('QUESTBATTLE0', None)
+        if battle_id is not None:
+            battle = battle_sheet.byId(battle_id)
             front_matter['questBattle'] = {
                 'levelSync': int(battle['LevelSync']),
                 'timeLimit': int(battle['TimeLimit'])
             }
+
+        # # unlocks content?
+        # ic_id = script.get('INSTANCEDUNGEON0', None)
+        # if ic_id is not None:
+        #     ic = ic_sheet.byId(ic_id)
+        #     front_matter['instance_content'] = ic
+
+        # unlocks content?
+        unlock_id = script.get('UNLOCK_ADD_NEW_CONTENT_TO_CF', None)
+        if unlock_id is not None:
+            ic_id = script.get('INSTANCEDUNGEON0', None)
+            if ic_id is not None:
+                ic = ic_sheet.byId(ic_id)
+
+                relevant_step = next(filter(lambda it: it['type'] == 51, steps))
+
+                if ic['InstanceContentType'] == '4': 
+                    front_matter['trial'] = {
+                      'name': relevant_step['location'],
+                    }
+                elif ic['InstanceContentType'] == '2':
+                    front_matter['dungeon'] = {
+                      'name': relevant_step['location'],
+                    }
+
+                front_matter['unlocks'] = [
+                    {
+                        #'UNLOCK_ADD_NEW_CONTENT_TO_CF': unlock_id,
+                        #'instanceContentId': ic_id,
+                        'type': ic['InstanceContentType'],
+                        'name': relevant_step['location'],
+                        #'steps': list(filter(lambda it: it['type'] == 51, steps)),
+                        #'raw': ic
+                    }
+                ]
 
         if self.args.yaml:
             print("---\n{}\n---".format(dump_indented_yaml(front_matter)))
