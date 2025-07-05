@@ -23,6 +23,11 @@ class CsvSheet:
             if row[field_name] == value:
                 return row
 
+    def find(self, cb, default=None):
+        for row in self.rows.values():
+            if cb(row):
+                return row
+
 
 class LanguageSheet:
     def __init__(self, csv_path):

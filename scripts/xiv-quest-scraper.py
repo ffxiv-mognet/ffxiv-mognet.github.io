@@ -101,6 +101,26 @@ class XivQuestScraper:
         return "{}.csv".format(
             os.path.join(self.args.cache_dir, self.args.datamining_commit, sheet))
 
+    def parse_unlocks(self, script):
+        cfc_sheet = CsvSheet(self._path_for_sheet("ContentFinderCondition"))
+
+        unlocks = []
+        content_idx = 0
+        while 'INSTANCEDUNGEON{}'.format(content_idx) in script:
+            icId = script.get('INSTANCEDUNGEON{}'.format(content_idx), None)
+            if icId is None: 
+                break
+
+            cfc = cfc_sheet.find(lambda it: it["Content"] == icId and it["ContentLinkType"] == '1')
+            unlocks.append({
+                'name': cfc['Name'],
+                'type': int(cfc['ContentType']),
+                'levelRequired': int(cfc['ClassJobLevel{Required}']),
+                'levelSync': int(cfc['ClassJobLevel{Sync}']),
+                # 'raw': cfc
+            })
+            content_idx += 1
+        return unlocks
 
     def cmd_questList(self):
         self.argparser.add_argument("--count", type=int, default=10)
@@ -131,6 +151,12 @@ class XivQuestScraper:
                     'levelSync': int(battle['LevelSync']),
                     'timeLimit': int(battle['TimeLimit'])
                 }
+
+            script = extract_script(row)
+            unlocks = self.parse_unlocks(script)
+            if len(unlocks):
+                out_row['unlocks'] = unlocks
+
             output.append(out_row)
             rowId = row['PreviousQuest[0]']
             count -= 1
@@ -193,8 +219,6 @@ class XivQuestScraper:
         placename_sheet = CsvSheet(self._path_for_sheet("PlaceName"))
         map_sheet = CsvSheet(self._path_for_sheet("Map"))
 
-        ic_sheet = CsvSheet(self._path_for_sheet("InstanceContent"))
-
         quest = quest_sheet.byId(self.args.questId)
 
         def location_coords_from_level(levelId):
@@ -246,7 +270,7 @@ class XivQuestScraper:
             "name": quest["Name"],
             "level": int(quest["ClassJobLevel[0]"]),
             "issuer": issuer,
-            #'script': script
+            'script': script
         }
 
         # has solo duty?        
@@ -258,18 +282,9 @@ class XivQuestScraper:
                 'timeLimit': int(battle['TimeLimit'])
             }
 
-        # unlocks content?
-        unlocks = []
-        content_idx = 0
-        while 'INSTANCEDUNGEON{}'.format(content_idx) in script:
-            icId = script.get('INSTANCEDUNGEON{}'.format(content_idx), None)
-            if icId is None: 
-                break
-            ic = ic_sheet.byId(icId) 
-            unlocks.append(ic)
-            content_idx += 1
-        # if len(unlocks) > 0:
-            # front_matter['unlocks'] = unlocks
+        unlocks = self.parse_unlocks(script)
+        if len(unlocks) > 0:
+            front_matter['unlocks'] = unlocks
 
         if self.args.yaml:
             print("---\n{}\n---".format(dump_indented_yaml(front_matter)))
