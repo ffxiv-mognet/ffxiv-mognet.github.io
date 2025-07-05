@@ -101,6 +101,14 @@ class XivQuestScraper:
         return "{}.csv".format(
             os.path.join(self.args.cache_dir, self.args.datamining_commit, sheet))
 
+    def format_battle(self, battle_id):
+        battle_sheet = CsvSheet(self._path_for_sheet("QuestBattle"))
+        battle = battle_sheet.byId(battle_id)
+        return {
+            'levelSync': int(battle['LevelSync']),
+            'timeLimit': int(battle['TimeLimit'])
+        }
+
     def parse_unlocks(self, script):
         cfc_sheet = CsvSheet(self._path_for_sheet("ContentFinderCondition"))
 
@@ -138,6 +146,8 @@ class XivQuestScraper:
         rowId = self.args.lastRowId
         while count > 0:
             row = quest_sheet.byId(rowId)
+            script = extract_script(row)
+
             out_row = {
                 'name': row['Name'],
                 'level': int(row['ClassJobLevel[0]']),
@@ -145,14 +155,13 @@ class XivQuestScraper:
                 'questId': row['Id'],
                 'type': "msq",
             }
-            battle = battle_sheet.findBy("Quest", row['#'])
-            if battle is not None:
-                out_row['questBattle'] = {
-                    'levelSync': int(battle['LevelSync']),
-                    'timeLimit': int(battle['TimeLimit'])
-                }
 
-            script = extract_script(row)
+            # has solo duty?        
+            battle_id = script.get('QUESTBATTLE0', None)
+            if battle_id is not None:
+                out_row['soloDuty'] = self.format_battle(battle_id)
+
+            # unlocks?
             unlocks = self.parse_unlocks(script)
             if len(unlocks):
                 out_row['unlocks'] = unlocks
@@ -270,17 +279,13 @@ class XivQuestScraper:
             "name": quest["Name"],
             "level": int(quest["ClassJobLevel[0]"]),
             "issuer": issuer,
-            'script': script
+            # 'script': script
         }
 
         # has solo duty?        
         battle_id = script.get('QUESTBATTLE0', None)
         if battle_id is not None:
-            battle = battle_sheet.byId(battle_id)
-            front_matter['questBattle'] = {
-                'levelSync': int(battle['LevelSync']),
-                'timeLimit': int(battle['TimeLimit'])
-            }
+            front_matter['soloDuty'] = self.format_battle(battle_id)
 
         unlocks = self.parse_unlocks(script)
         if len(unlocks) > 0:
