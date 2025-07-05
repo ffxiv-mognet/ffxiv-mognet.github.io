@@ -13,11 +13,11 @@
             </span>
             </h6>
             <div class="info-row">
-                <span class="field">Giver:</span>
+                <span class="field">Issuer:</span>
                 <span class="value">
                     <div class="npc">
-                        <span class="name">{{ page.giver }}</span>
-                        <span class="location">{{ page.location}} {{ page.coords }}</span>
+                        <span class="name">{{ page.issuer.name }}</span>
+                        <span class="location">{{ page.issuer.location}} {{ page.issuer.coords }}</span>
                     </div>
                 </span>
             </div>
@@ -28,8 +28,10 @@
                         {% for step in page.steps %}
                         <li>
                             <div class="npc">
-                                <span class="name">{{ step.text }}</span>
+                                <span class="name">{{ step.name }}</span>
+                                {% if step.location %}
                                 <span class="location">{{ step.location}} {{ step.coords }}</span>
+                                {% endif %}
                             </div>
                         </li>
                         {% endfor %}
