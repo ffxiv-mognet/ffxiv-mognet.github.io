@@ -15,7 +15,7 @@ layout: default
                             <span>{{quest.partQuestNo}}. {{quest.name}}</span> <span class="level">Lv. {{quest.level}}</span>
                         </span>
                         <ul class="unlocks">
-                            {% if quest.hasSoloDuty %}
+                            {% if quest.soloDuty %}
                             <li>
                                 <span class="icon-text">
                                     <span class="icon"><i class="solo-duty"></i></span>
@@ -23,14 +23,14 @@ layout: default
                                 </span>
                             </li>
                             {% endif %}
-                            {% if quest.dungeon %}
+                            {% for unlock in quest.unlocks %}
                             <li>
                                 <span class="icon-text">
-                                    <span class="icon"><i class="dungeon"></i></span>
-                                    <span>{{quest.dungeon}}</span>
+                                    <span class="icon"><i class="{{unlock.type}}"></i></span>
+                                    <span>{{unlock.name}}</span>
                                 </span>
                             </li>
-                            {% endif %}
+                            {% endfor %}
                         </ul>
                     </div>
                     {% endfor %}
