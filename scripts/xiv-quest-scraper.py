@@ -149,10 +149,23 @@ class XivQuestScraper:
         key = 'QST_CHECK_{:02d}'.format(i)
         requirements = []
         while key in script:
-            requirements.append(int(script[key]))
+            requirements.append(script[key])
             i += 1
             key = 'QST_CHECK_{:02d}'.format(i)
         return requirements
+
+    def generate_questListItem(self, rowId):
+        quest = self.sheets['Quest'].byId(rowId)
+        genre = self.sheets['JournalGenre'].byId(quest['JournalGenre'])
+        icon_type = self.sheets['EventIconType'].byId(quest['EventIconType'])
+        return {
+            'name': quest['Name'],
+            'level': int(quest['ClassJobLevel[0]']),
+            'rowId': int(quest['#']),
+            'questId': quest['Id'],
+            'genre': genre['Name'],
+            'icon': icon_type['MapIcon{Available}'],
+        }
 
 
     def cmd_questList(self):
@@ -319,7 +332,7 @@ class XivQuestScraper:
 
         requires = self.parse_requirements(script)
         if len(requires) > 0:
-            front_matter['requires'] = requires
+            front_matter['requires'] = list(map(lambda it: self.generate_questListItem(it), requires))
 
         if self.args.yaml:
             print("---\n{}\n---".format(dump_indented_yaml(front_matter)))
