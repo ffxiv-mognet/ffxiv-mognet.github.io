@@ -132,6 +132,17 @@ class XivQuestScraper:
             content_idx += 1
         return unlocks
 
+    def parse_requirements(self, script):
+        i = 1
+        key = 'QST_CHECK_{:02d}'.format(i)
+        requirements = []
+        while key in script:
+            requirements.append(int(script[key]))
+            i += 1
+            key = 'QST_CHECK_{:02d}'.format(i)
+        return requirements
+
+
     def cmd_questList(self):
         self.argparser.add_argument("--count", type=int, default=10)
         self.argparser.add_argument("lastRowId")
@@ -142,6 +153,8 @@ class XivQuestScraper:
 
         quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
         battle_sheet = CsvSheet(self._path_for_sheet("QuestBattle"))
+        genre_sheet = CsvSheet(self._path_for_sheet("JournalGenre"))
+        eit_sheet = CsvSheet(self._path_for_sheet("EventIconType"))
 
         output = []
         count = self.args.count
@@ -149,13 +162,16 @@ class XivQuestScraper:
         while count > 0:
             row = quest_sheet.byId(rowId)
             script = extract_script(row)
+            genre = genre_sheet.byId(row['JournalGenre'])
+            icon_type = eit_sheet.byId(row['EventIconType'])
 
             out_row = {
                 'name': row['Name'],
                 'level': int(row['ClassJobLevel[0]']),
                 'rowId': int(row['#']),
                 'questId': row['Id'],
-                'type': "msq",
+                'genre': genre['Name'],
+                'icon': icon_type['MapIcon{Available}'],
             }
 
             # has solo duty?        
@@ -229,6 +245,8 @@ class XivQuestScraper:
         territorytype_sheet = CsvSheet(self._path_for_sheet("TerritoryType"))
         placename_sheet = CsvSheet(self._path_for_sheet("PlaceName"))
         map_sheet = CsvSheet(self._path_for_sheet("Map"))
+        genre_sheet = CsvSheet(self._path_for_sheet("JournalGenre"))
+        eit_sheet = CsvSheet(self._path_for_sheet("EventIconType"))
 
         quest = quest_sheet.byId(self.args.questId)
 
@@ -244,7 +262,10 @@ class XivQuestScraper:
                 'location': placename['Name'],
                 'coords': "({x}, {y})".format(**coords),
                 'levelType': int(level['Type']),
-                'territoryIntendedUse': int(territory['TerritoryIntendedUse'])
+                'territoryIntendedUse': int(territory['TerritoryIntendedUse']),
+                # 'raw': {
+                #     'territory': territory
+                # }
             }
 
         issuer = location_coords_from_level(quest["Issuer{Location}"])
@@ -270,18 +291,23 @@ class XivQuestScraper:
             todo_idx = int(todo_seq.pop(0))
 
         script = extract_script(quest)
+        genre = genre_sheet.byId(quest['JournalGenre'])
+        icon_type = eit_sheet.byId(quest['EventIconType'])
 
         front_matter = {
             'output': False,
             "layout": "quest",
-            "type": "msq",
             "steps": steps,
             "rowId": int(quest["#"]),
             "questId": quest["Id"],
             "name": quest["Name"],
             "level": int(quest["ClassJobLevel[0]"]),
             "issuer": issuer,
-            # 'script': script
+            'genre': genre['Name'],
+            'icon': icon_type['MapIcon{Available}'],
+            'raw': {
+                'script': script,
+            }
         }
 
         # has solo duty?        
@@ -292,6 +318,10 @@ class XivQuestScraper:
         unlocks = self.parse_unlocks(script)
         if len(unlocks) > 0:
             front_matter['unlocks'] = unlocks
+
+        requires = self.parse_requirements(script)
+        if len(requires) > 0:
+            front_matter['requires'] = requires
 
         if self.args.yaml:
             print("---\n{}\n---".format(dump_indented_yaml(front_matter)))

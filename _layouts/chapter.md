@@ -9,9 +9,9 @@ layout: default
                 <section class="section quests">
                     <h4 class="title is-4">Chapter {{page.partChapterNo}}</h4>
                     {% for quest in page.quests %}
-                    <div class="quest msq">
+                    <div class="quest">
                         <span class="icon-text">
-                            <span class="icon"><i class="quest-{{quest.type}}"></i></span>
+                            <span class="icon"><i class="quest-{{quest.icon}}"></i></span>
                             <span>{{quest.partQuestNo}}. {{quest.name}}</span> <span class="level">Lv.{{quest.level}}</span>
                         </span>
                         <ul class="unlocks">
