@@ -7,6 +7,14 @@ span.icon i.quest-71000 {
     width: 1.5rem;
     display: block;
 }
+span.icon i.quest-71140 {
+    background:url('/icons/071141.png');
+    content: '';
+    background-size: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: block;
+}
 span.icon i.dungeon {
     background:url('/icons/061801.png');
     content: '';
@@ -17,6 +25,14 @@ span.icon i.dungeon {
 }
 span.icon i.trial {
     background:url('/icons/061804.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.raid {
+    background:url('/icons/061802.png');
     content: '';
     background-size: 1rem;
     height: 1rem;

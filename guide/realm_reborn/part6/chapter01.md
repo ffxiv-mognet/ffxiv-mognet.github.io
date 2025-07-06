@@ -275,6 +275,84 @@ quests:
     partQuestNo: 35
     questId: GaiUse609_00421
     rowId: 65957
+
+
+  - genre: Crystal Tower Quests
+    icon: '71140'
+    level: 50
+    name: Legacy of Allag
+    partQuestNo: 1
+    questId: GaiUsx201_01709
+    rowId: 67245
+    
+  - genre: Crystal Tower Quests
+    icon: '71140'
+    level: 50
+    name: Sanding It Down
+    partQuestNo: 2
+    questId: GaiUsd202_01200
+    rowId: 66736
+  - genre: Crystal Tower Quests
+    icon: '71140'
+    level: 50
+    name: A Performance for the Ages
+    partQuestNo: 3
+    questId: GaiUsd203_01201
+    rowId: 66737
+  - genre: Crystal Tower Quests
+    icon: '71140'
+    level: 50
+    name: Labyrinth of the Ancients
+    partQuestNo: 4
+    questId: GaiUsd204_01202
+    rowId: 66738
+    unlocks:
+      - levelRequired: 50
+        levelSync: 50
+        name: the Labyrinth of the Ancients
+        type: raid
+  - genre: Crystal Tower Quests
+    icon: '71140'
+    level: 50
+    name: For Prosperity
+    partQuestNo: 5
+    questId: GaiUsd205_01203
+    rowId: 66739
+  - genre: Crystal Tower Quests
+    icon: '71140'
+    level: 50
+    name: Syrcus Tower
+    partQuestNo: 6
+    questId: GaiUsd401_01474
+    rowId: 67010
+    unlocks:
+      - levelRequired: 50
+        levelSync: 50
+        name: Syrcus Tower
+        type: raid
+  - genre: Crystal Tower Quests
+    icon: '71140'
+    level: 50
+    name: The World of Darkness
+    partQuestNo: 7
+    questId: GaiUsd601_00494
+    rowId: 66030
+    unlocks:
+      - levelRequired: 50
+        levelSync: 50
+        name: the World of Darkness
+        type: raid
+  - genre: Crystal Tower Quests
+    icon: '71140'
+    level: 50
+    name: The Light of Hope
+    partQuestNo: 8
+    questId: GaiUsd602_00495
+    rowId: 66031
+
+
+
+
   - genre: Seventh Astral Era
     icon: '71000'
     level: 50

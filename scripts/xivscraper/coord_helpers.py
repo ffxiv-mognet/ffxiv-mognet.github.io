@@ -25,6 +25,8 @@ def readable_coords(level, map):
 
 def readable_contenttype(contenttype):
     c = int(contenttype)
+    if c == 5:
+        return "raid"
     if c == 4:
         return "trial"
     if c == 2:
