@@ -236,6 +236,7 @@ class XivQuestScraper:
             print("Must specify questId or --name", file=sys.stderr)
             return
 
+        self.sheets['Quest'].buildIndex()
         output = []
         if self.args.name is not None:
             match = self.args.name.lower()

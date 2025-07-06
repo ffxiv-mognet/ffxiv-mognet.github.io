@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Walkthrough Overview
 permalink: /guide/overview
 ---
@@ -7,49 +7,84 @@ permalink: /guide/overview
 
 ## A Realm Reborn [2.x]
 
+### Realm Reborn Part 1 [lvl 4-15]
+From "To the Bannock"[] to "Call of the Sea"[]  (24 quests)
 
-### Part 1 [lvl 4-15]
-From "To the Bannock", to "Call of the Sea" [gridania] (24 quests)
- - do starting city questline
- - do job quests up to at least level 20
- - hall of novice to get Brand New Ring
+### Realm Reborn Part 2 [lvl 15-24] 
+from "It's Probably Pirates"[65781] to "Back from the Wood"[66282]  (38 quests)
 
-
-### Part 2 [lvl 15-24] 
-from "It's Probably Pirates" to "Back from the Wood"  (38 quests)
- - dungeons: satasha, tam-tara deepcroft, copperbell mines, maws of toto, halatali
- - trial: bowl of embers
- - join GC
- - solo duties: into a copper hell, lord of the inferno, the company you keep, brotherly love, nouveau riche
- - optional unlocks: palace of the dead, 
-
-### Part 3 [lvl 24-34]
+### Realm Reborn Part 3 [lvl 24-34]
 from "Shadow of Darkness" to "Lord of Crags" (42 quests)
- - get chocobo
- - level 30 job
- - dungeons: brayflox longstop, haukke manor, 
- - trials: the navel
- - solo duties: big trouble in little ala mihgo, the lominsan way
 
-### Part 4 [lvl 34-50]
+### Realm Reborn Part 4 [lvl 34-50]
 from "All Good Things"[66053] to "The Ultimate Weapon"[70058] (54 quests)
- - dungeons: sunken temple of qarn, cutters cry, stone vigil, dzemael darkhold, aurum vale
- - trial: howling eye, castrum meridanum, praetorium, porta decuma
- - unlock: treasure hunts, arr societies, the hunt,
- - novice tactial training for Neophyte's Ring
 
-### Part 5 [lvl 50]
+### Realm Reborn Part 5 [lvl 50]
 from "The Price of Principles"[66711] to "Brave New Companions"[66996] (38 quests)
- - dungeons: amdaport keep, wanderers palace, pharos sirius, copperbell mines (hard), haukke manor (hard),
- - trials: Thronmarch (hard), Whorleater (hard), striking tree (hard)
- - optional: hildibrand
- - do primal quests
 
-### Part 6 [lvl 50]
+### Realm Reborn Part 6 [lvl 50]
 from "Traitor in the Midst"[65588] to "Before the Dawn"[65964] (40 quests)
- - do crystal tower alliance raids
- - dungeons: snowcloak, keeper of the lake
- - trials: akh afah ampitheater (hard), the chrysalis
 
 
+## Heavensward [3.x]
+### Heavensward Part 1 [Lv.50-54]
+from "Coming to Ishgard"[67116] to "Heart of Ice"[67163]
 
+### Heavensward Part 2 [Lv.54-60]
+from "The Wyrm's Lair"[67164] to "Heavensward"[67205]
+
+### Heavensward Part 3 [Lv.60]
+from "An Uncertain Future"[67692] to "Litany of Peace"[67783]
+
+### Heavensward Part 4 [Lv.60]
+from "Promises Kept"[67877] to "The Far Edge of Fate"[67895]
+
+
+## Stormblood [4.x]
+### Stormblood Part 1 [Lv.60-64]
+from "Beyond the Great Wall"[67982] to "All the Little Angels"[68035]
+
+### Stormblood Part 2 [Lv.65-70]
+from "Here There Be Xaela"[68166] to "Stormblood"[68089]
+
+### Stormblood Part 3 [Lv.70]
+from "Arenvald's Adventure"[68498] to "Emissary of the Dawn"[68612]
+
+### Stormblood Part 4 [Lv.70]
+from "Sisterly Act"[68679] to "A Requiem for Heroes"[68721]
+
+
+## Shadowbringers [5.x]
+### Shadowbringers Part 1 [Lv.70-76]
+from "The Syrcus Trench"[68815] to "Out of the Wood"[68878]
+
+### Shadowbringers Part 2 [Lv.76-80]
+from "When It Rains"[69142] to "Shadowbringers"[69190]
+
+### Shadowbringers Part 3 [Lv.80]
+from "Shaken Resolve"[69209] to "Reflections in Crystal"[69318]
+
+### Shadowbringers Part 4 [Lv.80]
+from "Alisaie's Quest"[69543] to "Death Unto Dawn"[69602]
+
+
+## Endwalker [6.x]
+### Endwalker Part 1 [Lv.80-84]
+from "The Next Ship to Sail"[69893] to "Returning Home"[69944]
+
+### Endwalker Part 2 [Lv.85-90]
+from "Skies Aflame"[69945] to "Endwalker"[70000]
+
+### Endwalker Part 3 [Lv.90]
+from "Newfound Adventure"[70062] to "Gods revel, Lands Tremble"[70214]
+
+### Endwalker Part 4 [Lv.90]
+from "Currying Flavor"[70271] to "The Coming Dawn"[70289]
+
+
+## Dawntrail [7.x]
+### Dawntrail Part 1 [Lv.90-95] 
+from "A New World to Explore"[70396] to "Ever Greater, Ever Brighter"[70447]
+
+### Dawntrail Part 2 [Lv.95-100] 
+from "The Long Road To Xak Tural"[70448] to "Dawntrail"[70495]
