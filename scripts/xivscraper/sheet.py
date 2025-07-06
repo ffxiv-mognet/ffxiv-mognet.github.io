@@ -1,10 +1,12 @@
 import csv
 
 class CsvSheet:
-    def __init__(self, csv_path):
+    def __init__(self, csv_path, lazy=True):
         self.csv_path = csv_path
         self.rows = {}
-        self.buildIndex()
+        self.indexed = False
+        if not lazy:
+            self.buildIndex()
 
     def buildIndex(self):
         self.rows = {}
@@ -14,16 +16,23 @@ class CsvSheet:
             for row in reader:
                 rowId = row["#"]
                 self.rows[rowId] = row
+        self.indexed = True
 
     def byId(self, rowId, default=None):
+        if not self.indexed:
+            self.buildIndex()
         return self.rows.get(rowId, default)
 
     def findBy(self, field_name, value, default=None):
+        if not self.indexed:
+            self.buildIndex()
         for row in self.rows.values():
             if row[field_name] == value:
                 return row
 
     def find(self, cb, default=None):
+        if not self.indexed:
+            self.buildIndex()
         for row in self.rows.values():
             if cb(row):
                 return row

@@ -29,7 +29,6 @@ class XivQuestScraper:
         self.argparser.add_argument("--datamining-delay", nargs="?", type=float, default=1.0)
         self.argparser.add_argument("--datamining-commit", nargs="?", default="master")
         self.argparser.add_argument("-v", "--verbose", action="store_true")
-        pass
  
     def main(self):
         (args, unknown) = self.argparser.parse_known_args()
@@ -40,6 +39,20 @@ class XivQuestScraper:
             print("Unknown command '{}'\n".format(args.command))
             self.argparser.print_help()
             self.argparser.exit()
+
+    def init_sheets(self):
+        self.sheets = {
+            'QuestBattle': CsvSheet(self._path_for_sheet("QuestBattle")),
+            'ContentFinderCondition': CsvSheet(self._path_for_sheet("ContentFinderCondition")),
+            'EventIconType': CsvSheet(self._path_for_sheet("EventIconType")),
+            'JournalGenre': CsvSheet(self._path_for_sheet("JournalGenre")),
+            'Level': CsvSheet(self._path_for_sheet("Level")),
+            'Map': CsvSheet(self._path_for_sheet("Map")),
+            'ENpcResident': CsvSheet(self._path_for_sheet("ENpcResident")),
+            'PlaceName': CsvSheet(self._path_for_sheet("PlaceName")),
+            'Quest': CsvSheet(self._path_for_sheet("Quest")),
+            'TerritoryType': CsvSheet(self._path_for_sheet("TerritoryType")),
+        }
 
 
     def download_file(self, url, path, chunk_size=8192):
@@ -78,6 +91,7 @@ class XivQuestScraper:
     def cmd_fetch(self):
         self.argparser.add_argument("sheets", nargs="*")
         self.args = self.argparser.parse_args()
+        self.init_sheets()
 
         default_sheets = [
             'ENpcResident',
@@ -103,8 +117,7 @@ class XivQuestScraper:
             os.path.join(self.args.cache_dir, self.args.datamining_commit, sheet))
 
     def format_battle(self, battle_id):
-        battle_sheet = CsvSheet(self._path_for_sheet("QuestBattle"))
-        battle = battle_sheet.byId(battle_id)
+        battle = self.sheets['QuestBattle'].byId(battle_id)
         if battle is not None:
             return {
                 'levelSync': int(battle['LevelSync']),
@@ -112,7 +125,6 @@ class XivQuestScraper:
             }
 
     def parse_unlocks(self, script):
-        cfc_sheet = CsvSheet(self._path_for_sheet("ContentFinderCondition"))
 
         unlocks = []
         content_idx = 0
@@ -121,7 +133,7 @@ class XivQuestScraper:
             if icId is None: 
                 break
 
-            cfc = cfc_sheet.find(lambda it: it["Content"] == icId and it["ContentLinkType"] == '1')
+            cfc = self.sheets['ContentFinderCondition'].find(lambda it: it["Content"] == icId and it["ContentLinkType"] == '1')
             unlocks.append({
                 'name': cfc['Name'],
                 'type': readable_contenttype(cfc['ContentType']),
@@ -151,19 +163,14 @@ class XivQuestScraper:
         self.args = self.argparser.parse_args()
         # pprint.pprint(vars(self.args))
 
-        quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
-        battle_sheet = CsvSheet(self._path_for_sheet("QuestBattle"))
-        genre_sheet = CsvSheet(self._path_for_sheet("JournalGenre"))
-        eit_sheet = CsvSheet(self._path_for_sheet("EventIconType"))
-
         output = []
         count = self.args.count
         rowId = self.args.lastRowId
         while count > 0:
-            row = quest_sheet.byId(rowId)
+            row = self.sheets['Quest'].byId(rowId)
             script = extract_script(row)
-            genre = genre_sheet.byId(row['JournalGenre'])
-            icon_type = eit_sheet.byId(row['EventIconType'])
+            genre = self.sheets['JournalGenre'].byId(row['JournalGenre'])
+            icon_type = self.sheets['EventIconType'].byId(row['EventIconType'])
 
             out_row = {
                 'name': row['Name'],
@@ -208,6 +215,7 @@ class XivQuestScraper:
         self.argparser.add_argument("--name", default=None)
         self.argparser.add_argument("--json", action="store_true", default=True)
         self.args = self.argparser.parse_args()
+        self.init_sheets()
 
         # pprint.pprint(vars(self.args))
         #print("Okay looking for {}".format(self.args.questId))
@@ -215,16 +223,15 @@ class XivQuestScraper:
             print("Must specify questId or --name", file=sys.stderr)
             return
 
-        quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
         output = []
         if self.args.name is not None:
             match = self.args.name.lower()
-            for row in quest_sheet.rows.values():
+            for row in self.sheets['Quest'].rows.values():
                 if match in row['Name'].lower():
                     output.append(row)
         else:
             for questId in self.args.questId:
-                row = quest_sheet.byId(questId)
+                row = self.sheets['Quest'].byId(questId)
                 output.append(row)
 
         if self.args.json: 
@@ -237,26 +244,17 @@ class XivQuestScraper:
         self.argparser.add_argument("questId")
         self.argparser.add_argument("--yaml", action="store_true", default=True)
         self.args = self.argparser.parse_args()
+        self.init_sheets()
 
-        level_sheet = CsvSheet(self._path_for_sheet("Level"))
-        npc_sheet = CsvSheet(self._path_for_sheet("ENpcResident"))
-        quest_sheet = CsvSheet(self._path_for_sheet("Quest"))
-        battle_sheet = CsvSheet(self._path_for_sheet("QuestBattle"))
-        territorytype_sheet = CsvSheet(self._path_for_sheet("TerritoryType"))
-        placename_sheet = CsvSheet(self._path_for_sheet("PlaceName"))
-        map_sheet = CsvSheet(self._path_for_sheet("Map"))
-        genre_sheet = CsvSheet(self._path_for_sheet("JournalGenre"))
-        eit_sheet = CsvSheet(self._path_for_sheet("EventIconType"))
-
-        quest = quest_sheet.byId(self.args.questId)
+        quest = self.sheets['Quest'].byId(self.args.questId)
 
         def location_coords_from_level(levelId):
-            level = level_sheet.byId(levelId)
+            level = self.sheets['Level'].byId(levelId)
             if level is None:
                 return {}
-            map_row = map_sheet.byId(level['Map'])
-            territory = territorytype_sheet.byId(level["Territory"])
-            placename = placename_sheet.byId(territory["PlaceName"])
+            map_row = self.sheets['Map'].byId(level['Map'])
+            territory = self.sheets['TerritoryType'].byId(level["Territory"])
+            placename = self.sheets['PlaceName'].byId(territory["PlaceName"])
             coords = readable_coords(level, map_row)
             return {
                 'location': placename['Name'],
@@ -269,7 +267,7 @@ class XivQuestScraper:
             }
 
         issuer = location_coords_from_level(quest["Issuer{Location}"])
-        issuer_npc = npc_sheet.byId(quest["Issuer{Start}"])
+        issuer_npc = self.sheets['ENpcResident'].byId(quest["Issuer{Start}"])
         issuer['name'] = issuer_npc['Singular']
 
         lang_sheet_name = "quest/{section}/{questId}".format(
@@ -291,8 +289,8 @@ class XivQuestScraper:
             todo_idx = int(todo_seq.pop(0))
 
         script = extract_script(quest)
-        genre = genre_sheet.byId(quest['JournalGenre'])
-        icon_type = eit_sheet.byId(quest['EventIconType'])
+        genre = self.sheets['JournalGenre'].byId(quest['JournalGenre'])
+        icon_type = self.sheets['EventIconType'].byId(quest['EventIconType'])
 
         front_matter = {
             'output': False,
