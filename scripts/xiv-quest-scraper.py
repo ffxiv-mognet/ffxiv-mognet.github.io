@@ -174,6 +174,7 @@ class XivQuestScraper:
         self.argparser.add_argument("--yaml", action="store_true", default=True)
         self.argparser.add_argument("--partQuestNo", type=int, default=1)
         self.args = self.argparser.parse_args()
+        self.init_sheets()
         # pprint.pprint(vars(self.args))
 
         output = []
