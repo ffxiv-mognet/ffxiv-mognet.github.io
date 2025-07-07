@@ -39,6 +39,10 @@ layout: default
         <div class="column">
             <section class="section details">
                 {% for q in page.quests %}
+                    {% if q.localRowId %}
+                        {% assign quest = site.localQuests | where:"localRowId", q.localRowId | first %}
+                        {{quest | markdownify}}
+                    {% endif %}
                     {% if q.rowId %}
                         {% assign quest = site.quests | where:"rowId", q.rowId | first %}
                         {{quest | markdownify}}

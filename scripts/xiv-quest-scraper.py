@@ -173,6 +173,7 @@ class XivQuestScraper:
         self.argparser.add_argument("lastRowId")
         self.argparser.add_argument("--yaml", action="store_true", default=True)
         self.argparser.add_argument("--partQuestNo", type=int, default=1)
+        self.argparser.add_argument("--firstRowId", nargs="?")
         self.args = self.argparser.parse_args()
         self.init_sheets()
         # pprint.pprint(vars(self.args))
@@ -206,6 +207,9 @@ class XivQuestScraper:
                 out_row['unlocks'] = unlocks
 
             output.append(out_row)
+
+            if self.args.firstRowId and rowId == self.args.firstRowId:
+                break
             rowId = row['PreviousQuest[0]']
             count -= 1
 
@@ -318,9 +322,9 @@ class XivQuestScraper:
             "issuer": issuer,
             'genre': genre['Name'],
             'icon': icon_type['MapIcon{Available}'],
-            'raw': {
-                'script': script,
-            }
+            # 'raw': {
+            #     'script': script,
+            # }
         }
 
         # has solo duty?        

@@ -15,6 +15,14 @@ span.icon i.quest-71140 {
     width: 1.5rem;
     display: block;
 }
+span.icon i.quest-71120 {
+    background:url('/icons/071121.png');
+    content: '';
+    background-size: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: block;
+}
 span.icon i.dungeon {
     background:url('/icons/061801.png');
     content: '';

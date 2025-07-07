@@ -28,6 +28,8 @@ collections_dir: _collections
 collections:
   quests:
     output: false
+  localQuests:
+    output: false
 
 # Build settings
 #theme: minima

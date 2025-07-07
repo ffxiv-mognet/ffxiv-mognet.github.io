@@ -21,9 +21,19 @@ e.g.:
 
 ```
 
+#### generate questList from start to end Id
+```
+/scripts/xiv-quest-scraper.py questList --count 99 --firstRowId 67116 67163
+```
+
 #### initialize a quest file
 ```
 % ./scripts/xiv-quest-scraper.py dumpQuest 65958 > _collections/_quests/65958.md 
+```
+```
+function dumpq {
+  ./scripts/xiv-quest-scraper.py dumpQuest $1 > _collections/_quests/$1.md 
+}
 ```
 
 #### copy output to X11 clipboard
@@ -48,3 +58,4 @@ for rowId in `grep -r rowId guide | cut -d':' -f3 | sort | uniq`; do
   fi
 done
 ```
+
