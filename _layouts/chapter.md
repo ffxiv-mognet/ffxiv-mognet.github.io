@@ -5,7 +5,7 @@ layout: default
     <h2 class="title is-2">{{page.expansion}}</h2>
     <h3 class="subtitle is-3">Part {{page.partNo}}</h3>
     <div class="columns is-mobile">
-        <div class="column is-two-fifths">
+        <div class="column is-one-quarter">
                 <section class="section quests">
                     <h4 class="title is-4">Chapter {{page.partChapterNo}}</h4>
                     {% for quest in page.quests %}

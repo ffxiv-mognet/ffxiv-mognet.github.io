@@ -26,33 +26,27 @@
             </div>
             {% endif %}
             <div class="info-row">
-                <span class="field">Issuer:</span>
-                <span class="value">
-                    <div class="npc">
-                        <span class="name">{{ page.issuer.name }}</span>
-                        <span class="location">{{ page.issuer.location}} {{ page.issuer.coords }}</span>
-                    </div>
+                <span class="field">Starts at:</span>
+                <span class="npc">{{ page.issuer.name }}</span>
+                <span class="tag is-light">
+                    {{ page.issuer.location}} {{ page.issuer.coords }}
                 </span>
             </div>
             <div class="info-row">
-                <span class="field">Steps</span>
-                <span class="value">
                     <ul>
                         {% for step in page.steps %}
                         <li>
                             <div class="npc">
                                 <span class="name">{{ step.name }}</span>
-                                {% if step.location %}
-                                <span class="location">{{ step.location}} {{ step.coords }}</span>
-                                {% endif %}
+                                <span class="tag is-light">
+                                    {{ step.location}} {{ step.coords }}
+                                </span>
                             </div>
                         </li>
                         {% endfor %}
                     </ul>
-                </span>
             </div>
         </div>
     </div>
 </div>
-
 {{content}}
