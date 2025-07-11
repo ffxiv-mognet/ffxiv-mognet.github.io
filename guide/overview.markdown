@@ -14,7 +14,7 @@ From "To the Bannock"[] to "Call of the Sea"[]  (24 quests)
 from "It's Probably Pirates"[65781] to "Back from the Wood"[66282]  (38 quests)
 
 ### Realm Reborn Part 3 [lvl 24-34]
-from "Shadow of Darkness" to "Lord of Crags" (42 quests)
+from "Shadow of Darkness"[66283] to "Lord of Crags"[66393] (42 quests)
 
 ### Realm Reborn Part 4 [lvl 34-50]
 from "All Good Things"[66053] to "The Ultimate Weapon"[70058] (54 quests)
