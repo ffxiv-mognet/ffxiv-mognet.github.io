@@ -258,6 +258,27 @@ class XivQuestScraper:
         else:
             pprint.pprint(output)
 
+    def cmd_sheet(self):
+        self.argparser.add_argument("sheetName")
+        self.argparser.add_argument("rowIds", nargs='*')
+        self.argparser.add_argument("--json", action="store_true", default=True)
+        self.args = self.argparser.parse_args()
+        sheet_name = self.args.sheetName
+
+        self.init_sheets()
+        self.sheets[sheet_name] = CsvSheet(self._path_for_sheet(sheet_name))
+        self.sheets[sheet_name].buildIndex()
+
+        output = []
+        keys = self.args.rowIds if len(self.args.rowIds) > 0 else self.sheets[sheet_name].rows.keys()
+        #import pdb; pdb.set_trace()
+        for rowId in keys:
+            output.append(self.sheets[sheet_name].byId(rowId))
+
+        if self.args.json: 
+            print(json.dumps(output))
+        else:
+            pprint.pprint(output)
 
     def cmd_dumpQuest(self):
         self.argparser.add_argument("questId")

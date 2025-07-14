@@ -3,6 +3,14 @@
 ## NOTES
 
 
+#### dump a row from a sheet in json
+```
+function dumprow {
+  ./scripts/xiv-quest-scraper.py sheet $@
+}
+```
+
+
 #### searching for a quest's rowId by name
 ```
 function findq { 
