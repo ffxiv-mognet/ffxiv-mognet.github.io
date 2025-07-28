@@ -3,8 +3,26 @@ layout: default
 permalink: /sslog
 ---
 <style>
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#modal.is-active {
+    display: block;
+}
 .sslog-row .name {
     font-weight: bold;
+}
+
+.sslog-row.is-finished {
+    display:none;
+}
+.is-finished {
+    text-decoration: line-through;
 }
 </style>
 
@@ -20,13 +38,14 @@ permalink: /sslog
                 <th style="width: 9em">Next</th>
                 <th style="width: 8em">Conditions</th>
                 <th>Emote</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             {% for entry in site.data.sslog.entries %}
             <tr class="sslog-row" data-index="{{entry.index}}">
                 <td>
-                    <input type="checkbox"/>
+                    <input type="checkbox" class="checkbox"/>
                     <span>#{{entry.index}}</span>
                 </td>
                 <td>
@@ -59,10 +78,22 @@ permalink: /sslog
                     </div>
                 </td>
                 <td>{{entry.emote}}</td>
+                <td>
+                    <button onclick="showModal({{entry.index}})">
+                       <span class="icon">
+                          <i class="fas fa-image"></i>
+                       </span> 
+                    </button>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+</div>
+
+<div id="modal" class="container" onclick="closeModal()">
+    <div id="modal-image">
+    </div>
 </div>
 
 
@@ -103,8 +134,14 @@ permalink: /sslog
         for (const row of rows) {
             const timeCell = row.getElementsByClassName("nexttime")[0]
             const eorzeaTimeCell = row.getElementsByClassName("times")[0]
+            const checkbox = row.getElementsByClassName("checkbox")[0]
             const item = itemForIndex(row.dataset.index)
             const isActive = isLogActive(item, now)
+            const isFinished = getFinished(row.dataset.index)
+            if (isFinished) {
+                row.classList.add("is-finished")
+                checkbox.checked = true
+            }
 
             eorzeaTimeCell.innerHTML = formatTimeSpan(item.time)
 
@@ -154,5 +191,24 @@ permalink: /sslog
                 else if (bActive) return 1
             })
             .forEach(it => tbody.appendChild(it))
+    }
+
+    function showModal(index) {
+        const item = itemForIndex(index)
+
+        const modal = document.getElementById("modal");
+        console.log("show", item, modal)
+        modal.classList.add("is-active")
+
+        const img = document.createElement("img")
+        img.setAttribute("src", item.image)
+
+        const wrapper = document.getElementById("modal-image")
+        wrapper.innerHTML = ''
+        wrapper.appendChild(img)
+    }
+    function closeModal() {
+        const modal = document.getElementById("modal");
+        modal.classList.remove("is-active")
     }
 </script>

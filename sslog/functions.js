@@ -133,3 +133,18 @@ function humanizeDuration(duration) {
   }
   return "a really long time";
 }
+
+function setFinished(index, finished) {
+  var storage = localStorage["sightseeing_finished"] || "";
+  if(storage.length < index) {
+    storage += new Array(index - storage.length).join("0");
+  }
+  storage = storage.slice(0, index - 1)  + (finished ? "1" : "0") + storage.slice(index);
+  localStorage["sightseeing_finished"] = storage;
+}
+
+function getFinished(index) {
+  if(localStorage["sightseeing_finished"] == undefined || localStorage["sightseeing_finished"].length < index)
+    return false;
+  return localStorage["sightseeing_finished"][index - 1] == "1";
+}
