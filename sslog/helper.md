@@ -18,24 +18,44 @@ permalink: /sslog
     font-weight: bold;
 }
 
-.sslog-row.is-finished {
-    display:none;
-}
 .is-finished {
     text-decoration: line-through;
+}
+.is-hidden {
+    display: none;
 }
 </style>
 
 <div class="container">
-    <h1 class="title is-3 has-text-centered">Sightseeing Log Helper</h1>
+    <nav class="level">
+        <div class="level-left">
+            <p class="level-item">
+                <h1 class="title is-3 has-text-centered">Sightseeing Log Helper</h1>
+            </p>
+        </div>
+        <div class="level-right">
+            <p class="level-item">
+                <div class="checkboxes">
+                    <label class="checkbox">
+                        <input type="checkbox" id="check-showAll" checked/> 
+                        Show #21..#80 
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="check-showFinished"/> 
+                        Show Finished
+                    </label>
+                </div>
+            </p>
+        </div>
+    </nav>
     <h2 class="subtitle is-2 has-text-centered" id="current-time">X:XX</h2>
     <table class="table">
         <thead>
             <tr>
-                <th style="width: 4em">No.</th>
-                <th>Location</th>
-                <th>Region</th>
-                <th style="width: 9em">Next</th>
+                <th style="width: 5em">No.</th>
+                <th>Log Entry</th>
+                <th style="width: 20em">Location</th>
+                <th style="width: 9em">Active</th>
                 <th style="width: 8em">Conditions</th>
                 <th>Emote</th>
                 <th></th>
@@ -60,9 +80,11 @@ permalink: /sslog
                     <div class="region">
                       {{entry.region}} ({{entry.position.x}}, {{entry.position.y}})
                     </div>
+                    <!--
                     <div class="location">
                         {{entry.location}} 
                     </div>
+                    -->
                 </td>
                 <td class="nexttime"></td>
                 <td>
@@ -100,6 +122,9 @@ permalink: /sslog
 <script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", async () => {
+        window.sslog_show_finished = false;
+        window.sslog_show_all = true;
+
         setCurrentTime();
 
         window.sslog = undefined;
@@ -108,7 +133,42 @@ permalink: /sslog
             handleTick();
             startTicker();
         })
+
+
+        setShowFinished(window.sslog_finished_style)
+        //setShowAll(window.sslog_show_all)
+
+        var checkShowFinished = document.getElementById("check-showFinished");
+        checkShowFinished.onchange = handleShowFinishedChanged
+
+        var checkShowAll = document.getElementById("check-showAll");
+        checkShowAll.onchange = handleShowAllChanged
     })
+
+    function handleShowFinishedChanged(evt) {
+        setShowFinished(evt.target.checked)
+    }
+    function handleShowAllChanged(evt) {
+        setShowAll(evt.target.checked)
+    }
+
+    function setShowFinished(value) {
+        window.sslog_show_finished = value
+
+        if (sslog_show_finished) {
+            document.head.removeChild(window.sslog_finished_style)
+            window.sslog_finished_style = undefined
+        } else {
+            window.sslog_finished_style = document.createElement("style")
+            window.sslog_finished_style.innerHTML = ".sslog-row.is-finished {display:none;}"
+            document.head.appendChild(window.sslog_finished_style)
+        }
+    }
+
+    function setShowAll(value) {
+        window.sslog_show_all = value
+        updateNextTimes();
+    }
 
     function startTicker() {
         window.TICK_TIMER = setInterval(handleTick, 3000)
@@ -131,6 +191,7 @@ permalink: /sslog
         const now = new Date()
         const rows = document.getElementsByClassName("sslog-row");
         const tbody = rows[0].parentNode
+        console.log("huh updating", window.sslog_show_all)
         for (const row of rows) {
             const timeCell = row.getElementsByClassName("nexttime")[0]
             const eorzeaTimeCell = row.getElementsByClassName("times")[0]
@@ -141,6 +202,12 @@ permalink: /sslog
             if (isFinished) {
                 row.classList.add("is-finished")
                 checkbox.checked = true
+            }
+
+            if (window.sslog_show_all === false && item.index > 20) {
+                row.classList.add("is-hidden")
+            } else {
+                row.classList.remove("is-hidden")
             }
 
             eorzeaTimeCell.innerHTML = formatTimeSpan(item.time)
@@ -211,4 +278,7 @@ permalink: /sslog
         const modal = document.getElementById("modal");
         modal.classList.remove("is-active")
     }
+
+
+
 </script>
