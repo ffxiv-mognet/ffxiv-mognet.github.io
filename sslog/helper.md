@@ -65,7 +65,7 @@ permalink: /sslog
             {% for entry in site.data.sslog.entries %}
             <tr class="sslog-row" data-index="{{entry.index}}">
                 <td>
-                    <input type="checkbox" class="checkbox"/>
+                    <input type="checkbox" class="checkbox" id="completed-{{entry.index}}" onchange="handleRowFinished({{entry.index}})"/>
                     <span>#{{entry.index}}</span>
                 </td>
                 <td>
@@ -170,6 +170,13 @@ permalink: /sslog
         updateNextTimes();
     }
 
+    function handleRowFinished(index) {
+        const checkbox = document.getElementById(`completed-${index}`)
+        setFinished(index, checkbox.checked)
+        updateNextTimes();
+    }
+
+
     function startTicker() {
         window.TICK_TIMER = setInterval(handleTick, 3000)
     }
@@ -191,7 +198,6 @@ permalink: /sslog
         const now = new Date()
         const rows = document.getElementsByClassName("sslog-row");
         const tbody = rows[0].parentNode
-        console.log("huh updating", window.sslog_show_all)
         for (const row of rows) {
             const timeCell = row.getElementsByClassName("nexttime")[0]
             const eorzeaTimeCell = row.getElementsByClassName("times")[0]
@@ -202,6 +208,9 @@ permalink: /sslog
             if (isFinished) {
                 row.classList.add("is-finished")
                 checkbox.checked = true
+            } else {
+                row.classList.remove("is-finished")
+                checkbox.checked = false
             }
 
             if (window.sslog_show_all === false && item.index > 20) {
