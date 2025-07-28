@@ -2,6 +2,11 @@
 layout: default
 permalink: /sslog
 ---
+<style>
+.sslog-row .name {
+    font-weight: bold;
+}
+</style>
 
 <div class="container">
     <h1 class="title is-3 has-text-centered">Sightseeing Log Helper</h1>
@@ -9,11 +14,11 @@ permalink: /sslog
     <table class="table">
         <thead>
             <tr>
-                <th>No.</th>
+                <th style="width: 4em">No.</th>
                 <th>Location</th>
                 <th>Region</th>
-                <th>Next</th>
-                <th>Conditions</th>
+                <th style="width: 9em">Next</th>
+                <th style="width: 8em">Conditions</th>
                 <th>Emote</th>
             </tr>
         </thead>
@@ -97,8 +102,11 @@ permalink: /sslog
         const tbody = rows[0].parentNode
         for (const row of rows) {
             const timeCell = row.getElementsByClassName("nexttime")[0]
+            const eorzeaTimeCell = row.getElementsByClassName("times")[0]
             const item = itemForIndex(row.dataset.index)
             const isActive = isLogActive(item, now)
+
+            eorzeaTimeCell.innerHTML = formatTimeSpan(item.time)
 
             if (isActive) {
                 row.classList.add("is-selected")
@@ -112,8 +120,18 @@ permalink: /sslog
                 timeCell.innerHTML = 'in ' + humanizeDuration(pop);
             }
         }
+        sortRows(tbody);
+    }
 
-        [...tbody.children]
+    function itemForIndex(index) {
+        for (const it of window.sslog.entries) {
+            if (it.index == index) return it
+        }
+    }
+
+    function sortRows(tbody) {
+        const now = new Date()
+        Array.from(tbody.children)
             .sort((rowA, rowB) => { 
                 const a = itemForIndex(rowA.dataset.index)
                 const b = itemForIndex(rowB.dataset.index)
@@ -136,11 +154,5 @@ permalink: /sslog
                 else if (bActive) return 1
             })
             .forEach(it => tbody.appendChild(it))
-    }
-
-    function itemForIndex(index) {
-        for (const it of window.sslog.entries) {
-            if (it.index == index) return it
-        }
     }
 </script>
