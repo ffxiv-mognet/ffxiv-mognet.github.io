@@ -12,6 +12,7 @@ permalink: /sslog
                 <th>No.</th>
                 <th>Location</th>
                 <th>Region</th>
+                <th>Next</th>
                 <th>Conditions</th>
                 <th>Emote</th>
             </tr>
@@ -39,6 +40,7 @@ permalink: /sslog
                         {{entry.location}} 
                     </div>
                 </td>
+                <td class="nexttime"></td>
                 <td>
                     <div class="times">{{entry.time[0]}} to {{entry.time[1]}}</div>
                     <div class="weather">
@@ -62,21 +64,14 @@ permalink: /sslog
 <script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", async () => {
-        console.log("loaded")
         setCurrentTime();
 
         window.sslog = undefined;
         fetch("sslog.json").then(async response => {
             window.sslog = await response.json()
-            console.log("we have sslog", sslog.entries)
-
             handleTick();
             startTicker();
         })
-
-
-        const rows = document.getElementsByClassName("sslog-row");
-        console.log("rows", rows)
     })
 
     function startTicker() {
@@ -89,10 +84,38 @@ permalink: /sslog
 
     function handleTick() {
         setCurrentTime();
+        updateNextTimes();
     }
     function setCurrentTime() {
         const timestr = formatTime(getEorzeaTime(new Date()))
         const el = document.getElementById("current-time")
         el.innerHTML = timestr
+    }
+    function updateNextTimes() {
+        const now = new Date()
+        const rows = document.getElementsByClassName("sslog-row");
+        for (const row of rows) {
+            const timeCell = row.getElementsByClassName("nexttime")[0]
+            const item = itemForIndex(row.dataset.index)
+            const isActive = isLogActive(item, now)
+
+            if (isActive) {
+                row.classList.add("is-selected")
+                const goal = getNextActiveEnd(item);
+                const pop = Math.ceil((goal.getTime() - Date.now()) / 1000);
+                timeCell.innerHTML = humanizeDuration(pop) + ' left';
+            } else {
+                row.classList.remove("is-selected")
+                const goal = getNextActive(item)
+                const pop = Math.ceil((goal.getTime() - Date.now()) / 1000);
+                timeCell.innerHTML = 'in ' + humanizeDuration(pop);
+            }
+        }
+    }
+
+    function itemForIndex(index) {
+        for (const it of window.sslog.entries) {
+            if (it.index == index) return it
+        }
     }
 </script>

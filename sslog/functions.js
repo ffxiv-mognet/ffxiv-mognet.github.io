@@ -107,3 +107,29 @@ function formatTime(dt) {
   var hours = ((hours24 + 11) % 12) + 1;
   return hours + ":" + addZero(dt.getUTCMinutes()) + " " + (hours24 > 11 ? "p.m." : "a.m.");            
 }
+
+
+function formatTimeSpan(time) {
+  return (((time[0] + 11) % 12) + 1) + (time[0] > 11 ? "pm" : "am") + " to " + (((time[1] + 11) % 12) + 1) + (time[1] > 11 ? "pm" : "am");     
+}
+
+function humanizeDuration(duration) {
+  var quantifiers = [
+    [60, 1, "less than a minute"],
+    [120, 1, "a minute"],
+    [3600, 60, "%d minutes"],
+    [7200, 1, "an hour"],
+    [86400, 3600, "%d hours"],
+    [172800, 1, "a day"],
+    [604800, 86400, "%d days"],
+    [1209600, 1, "a week"],
+    [Infinity, 604800, "%d weeks"]
+  ];
+
+  for(var i = 0; i < quantifiers.length; i++) {
+    if(duration < quantifiers[i][0]) {
+      return quantifiers[i][2].replace(/%d/g, Math.floor(duration / quantifiers[i][1]));
+    }
+  }
+  return "a really long time";
+}
