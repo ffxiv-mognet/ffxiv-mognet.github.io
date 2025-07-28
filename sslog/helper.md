@@ -94,6 +94,7 @@ permalink: /sslog
     function updateNextTimes() {
         const now = new Date()
         const rows = document.getElementsByClassName("sslog-row");
+        const tbody = rows[0].parentNode
         for (const row of rows) {
             const timeCell = row.getElementsByClassName("nexttime")[0]
             const item = itemForIndex(row.dataset.index)
@@ -111,6 +112,30 @@ permalink: /sslog
                 timeCell.innerHTML = 'in ' + humanizeDuration(pop);
             }
         }
+
+        [...tbody.children]
+            .sort((rowA, rowB) => { 
+                const a = itemForIndex(rowA.dataset.index)
+                const b = itemForIndex(rowB.dataset.index)
+                const aActive = isLogActive(a, now)
+                const bActive = isLogActive(b, now)
+                if (aActive && bActive) {
+                    const aEnd = getNextActiveEnd(a)
+                    const bEnd = getNextActiveEnd(b)
+                    if (aEnd == bEnd) {
+                        return rowB.dataset.index - rowA.dataset.index
+                    }
+                    return aEnd - bEnd
+                }
+                else if (!aActive && !bActive) {
+                    const aNext = getNextActive(a)
+                    const bNext = getNextActive(b)
+                    return aNext - bNext
+                }
+                else if (aActive) return -1
+                else if (bActive) return 1
+            })
+            .forEach(it => tbody.appendChild(it))
     }
 
     function itemForIndex(index) {
