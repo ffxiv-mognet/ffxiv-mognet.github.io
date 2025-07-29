@@ -93,7 +93,7 @@ permalink: /sslog
                     {% for weather in entry.weather %}
                         <img 
                             class="weather-icon" 
-                            src="weather-icons/{{weather}}.png" 
+                            src="/sslog/weather-icons/{{weather}}.png" 
                             title="{{site.data.sslog.weatherNames[weather]}}"
                             />
                     {% endfor %}
