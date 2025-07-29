@@ -222,12 +222,12 @@ permalink: /sslog
             eorzeaTimeCell.innerHTML = formatTimeSpan(item.time)
 
             if (isActive) {
-                row.classList.add("is-selected")
+                row.classList.add("is-info")
                 const goal = getNextActiveEnd(item);
                 const pop = Math.ceil((goal.getTime() - Date.now()) / 1000);
                 timeCell.innerHTML = humanizeDuration(pop) + ' left';
             } else {
-                row.classList.remove("is-selected")
+                row.classList.remove("is-info")
                 const goal = getNextActive(item)
                 const pop = Math.ceil((goal.getTime() - Date.now()) / 1000);
                 timeCell.innerHTML = 'in ' + humanizeDuration(pop);
