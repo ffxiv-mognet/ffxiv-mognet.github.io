@@ -119,7 +119,7 @@ permalink: /sslog
 </div>
 
 
-<script type="text/javascript" src="./functions.js"></script>
+<script type="text/javascript" src="/sslog/functions.js"></script>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", async () => {
         window.sslog_show_finished = false;
@@ -128,7 +128,7 @@ permalink: /sslog
         setCurrentTime();
 
         window.sslog = undefined;
-        fetch("sslog.json").then(async response => {
+        fetch("/sslog/sslog.json").then(async response => {
             window.sslog = await response.json()
             handleTick();
             startTicker();
