@@ -119,7 +119,7 @@ permalink: /sslog
 </div>
 
 
-<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript" src="./functions.js"></script>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", async () => {
         window.sslog_show_finished = false;
