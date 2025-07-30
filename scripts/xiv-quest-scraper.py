@@ -255,6 +255,11 @@ class XivQuestScraper:
             if len(unlocks):
                 out_row['unlocks'] = unlocks
 
+            # requires?
+            requires = self.parse_requirements(script)
+            if len(requires) > 0:
+                out_row['requires'] = list(map(lambda it: self.generate_questListItem(it), requires))
+
             output.append(out_row)
 
             if self.args.firstRowId and rowId == self.args.firstRowId:
