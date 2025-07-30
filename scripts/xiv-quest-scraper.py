@@ -188,7 +188,8 @@ class XivQuestScraper:
         steps = []
         todo_idx = 0
         todo_seq = extract_array2d(quest, "ToDoCompleteSeq")
-        while todo_idx != 255:
+        has_todos = True
+        while has_todos:
             locationId = quest["ToDoLocation[{}][0]".format(todo_idx)]
             step = self.location_coords_from_level(locationId)
 
@@ -196,7 +197,12 @@ class XivQuestScraper:
             step["name"] = lang_sheet.byId(todoId)
 
             steps.append(step)
-            todo_idx = int(todo_seq.pop(0))
+            seq = int(todo_seq.pop(0))
+            if seq == 255:
+                has_todos = False
+                break
+            todo_idx += 1
+
         return steps
 
     def generate_questListItem(self, rowId):
