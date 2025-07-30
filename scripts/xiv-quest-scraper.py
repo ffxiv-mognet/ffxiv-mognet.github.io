@@ -52,6 +52,7 @@ class XivQuestScraper:
             'PlaceName': CsvSheet(self._path_for_sheet("PlaceName")),
             'Quest': CsvSheet(self._path_for_sheet("Quest")),
             'TerritoryType': CsvSheet(self._path_for_sheet("TerritoryType")),
+            'Action': CsvSheet(self._path_for_sheet("Action")),
         }
 
 
@@ -124,8 +125,7 @@ class XivQuestScraper:
                 'timeLimit': int(battle['TimeLimit'])
             }
 
-    def parse_unlocks(self, script):
-
+    def parse_unlocks(self, quest, script):
         unlocks = []
         content_idx = 0
         while 'INSTANCEDUNGEON{}'.format(content_idx) in script:
@@ -142,6 +142,18 @@ class XivQuestScraper:
                 # 'raw': cfc
             })
             content_idx += 1
+
+
+        # action reward
+        actionId = quest['Action{Reward}']
+        if actionId != "0":
+            action = self.sheets['Action'].byId(actionId)
+            unlocks.append({
+                'name': action['Name'],
+                'icon': action['Icon'],
+                'type': "action"
+            })
+
         return unlocks
 
     def parse_requirements(self, script):
@@ -257,7 +269,7 @@ class XivQuestScraper:
                 out_row['soloDuty'] = self.format_battle(battle_id)
 
             # unlocks?
-            unlocks = self.parse_unlocks(script)
+            unlocks = self.parse_unlocks(row, script)
             if len(unlocks):
                 out_row['unlocks'] = unlocks
 
@@ -343,6 +355,7 @@ class XivQuestScraper:
     def cmd_dumpQuest(self):
         self.argparser.add_argument("questId")
         self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--raw", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         self.init_sheets()
 
@@ -367,17 +380,19 @@ class XivQuestScraper:
             "issuer": issuer,
             'genre': genre['Name'],
             'icon': icon_type['MapIcon{Available}'],
-            # 'raw': {
-            #     'script': script,
-            # }
+            'action': quest["Action{Reward}"],
         }
+        if self.args.raw:
+            front_matter['raw'] = {
+                'script': script,
+            }
 
         # has solo duty?        
         battle_id = script.get('QUESTBATTLE0', None)
         if battle_id is not None:
             front_matter['soloDuty'] = self.format_battle(battle_id)
 
-        unlocks = self.parse_unlocks(script)
+        unlocks = self.parse_unlocks(quest, script)
         if len(unlocks) > 0:
             front_matter['unlocks'] = unlocks
 

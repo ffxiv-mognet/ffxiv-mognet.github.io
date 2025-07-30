@@ -7,7 +7,7 @@ layout: default
   <nav class="level">
       <div class="level-left">
           <p class="level-item">
-              <h1 class="title is-3 has-text-centered">Quests</h1>
+              <h1 class="title is-3 has-text-centered"><a href="/quests/">Quests</a></h1>
           </p>
       </div>
       <div class="level-right">
@@ -24,7 +24,7 @@ layout: default
   <table class="table is-fullwidth">
       <thead>
           <tr>
-              <th style="width: 5em">No.</th>
+              <th></th>
               <th>Quest</th>
               <th></th>
               <th>Location</th>
@@ -37,7 +37,6 @@ layout: default
         <tr class="quest-row" data-rowId="{{quest.rowId}}">
           <td>
             <input type="checkbox" class="checkbox" id="completed-{{entry.index}}"/>
-            <span>#{{quest.partQuestNo}}</span>
           </td>
           <!-- quest -->
           <td onclick="toggleDetail({{quest.rowId}})">

@@ -229,6 +229,10 @@ quests:
     soloDuty:
       levelSync: 34
       timeLimit: 30
+    unlocks:
+      - name: Cure II
+        icon: '406'
+        type: action
     partQuestNo: 7
 
 
