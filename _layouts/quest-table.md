@@ -28,7 +28,7 @@ layout: default
               <th>Quest</th>
               <th></th>
               <th>Location</th>
-              <th>Duty</th>
+              <th>Unlocks</th>
               <th>Requires</th>
           </tr>
       </thead>

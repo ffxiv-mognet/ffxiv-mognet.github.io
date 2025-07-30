@@ -398,32 +398,32 @@ quests:
         coords: (11.1, 11.6)
         name: Attend the remembrance service at the Royal Promenade in Ul'dah.
     partQuestNo: 16
-  - name: The Company You Keep (Twin Adder)
+  - name: The Company You Keep (Twin Adder / Maelstrom / Immortal Flames)
     level: 20
     rowId: 66216
-    questId: ManFst302_00680
     genre: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: The Waking Sands
       coords: (6.9, 6.1)
-      name: serpent officer
-    steps:
-      - location: New Gridania
-        coords: (9.8, 11.0)
-        name: Speak with the personnel officer at the Adders' Nest.
-      - location: East Shroud
-        coords: (22.1, 31.0)
-        name: Head southeast of Nine Ivies and determine the fate of the airship and
-          its crew.
-      - location: New Gridania
-        coords: (9.8, 11.0)
-        name: Speak with the personnel officer at the Adders' Nest.
+    # steps:
+    #   - location: New Gridania
+    #     coords: (9.8, 11.0)
+    #     name: Speak with the personnel officer at the Adders' Nest.
+    #   - location: east shroud
+    #     coords: (22.1, 31.0)
+    #     name: head southeast of nine ivies and determine the fate of the airship and
+    #       its crew.
+    #   - location: New Gridania
+    #     coords: (9.8, 11.0)
+    #     name: Speak with the personnel officer at the Adders' Nest.
+    description:
+      Complete a small solo duty based on which Grand Company you decided to join.
     soloDuty:
       levelSync: 24
       timeLimit: 30
     partQuestNo: 17
-  - name: Wood's Will Be Done
+  - name: Wood's Will Be Done / Till Sea Swallows All / For Coin and Country
     level: 20
     rowId: 66219
     questId: ManFst303_00683
@@ -438,6 +438,16 @@ quests:
         coords: (6.5, 6.0)
         name: Speak with the Scion of the Seventh Dawn at the Waking Sands.
     partQuestNo: 18
+    unlocks:
+      - name: My Little Chocobo
+        level: 20
+        rowId: 66236
+        questId: SubFst120_00700
+        genre: Gridanian Sidequests
+        icon: '71140'
+        type: 'quest-71140'
+
+
   - name: Sylph-management
     level: 20
     rowId: 66049
