@@ -1286,7 +1286,15 @@ quests:
         type: trial
         levelRequired: 50
         levelSync: 50
-    partQuestNo: 54
+      - name: Legacy of Allag
+        level: 50
+        rowId: 67245
+        questId: GaiUsx201_01709
+        genre: Crystal Tower Quests
+        icon: '71140'
+        partQuestNo: 54
+        type: 'quest-71140'
+        link: /quests/alliance/crystal-tower
 
 
 

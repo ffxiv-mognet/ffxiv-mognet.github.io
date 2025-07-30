@@ -233,6 +233,15 @@ quests:
       - name: Cure II
         icon: '406'
         type: action
+      - name: Seer Folly
+        level: 30
+        rowId: 66615
+        questId: JobWhm300_01079
+        genre: White Mage Quests
+        icon: '71140'
+        type: 'quest-71140'
+        link: /quests/jobs/white-mage
+
     partQuestNo: 7
 
 

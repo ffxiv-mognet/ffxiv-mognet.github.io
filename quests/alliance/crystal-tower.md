@@ -44,6 +44,15 @@ quests:
         coords: (30.4, 12.1)
         name: Deliver the flawless crystals to Rammbroes at Saint Coinach's Find.
     partQuestNo: 1
+    requires:
+      - name: The Ultimate Weapon
+        level: 50
+        rowId: 70058
+        questId: XxcFst503_04522
+        genre: Seventh Umbral Era
+        icon: '71000'
+        link: /quests/msq/realm-reborn/part4
+
   - name: Sanding It Down
     level: 50
     rowId: 66736

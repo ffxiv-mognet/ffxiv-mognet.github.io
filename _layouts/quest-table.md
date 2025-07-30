@@ -85,22 +85,26 @@ layout: default
               </div>
               {% endif %}
               {% for unlock in quest.unlocks %}
-              <div>
-                  <span class="icon-text">
-                      <span class="icon"><i class="{{unlock.type}}"></i></span>
-                      <span>{{unlock.name}}</span>
-                  </span>
-              </div>
+                {% if unlock.link %}<a href="{{unlock.link}}">{% endif %}
+                <div>
+                    <span class="icon-text">
+                        <span class="icon"><i class="{{unlock.type}}"></i></span>
+                        <span>{{unlock.name}}</span>
+                    </span>
+                </div>
+                {% if unlock.link %}</a>{% endif %}
               {% endfor %}
           </td>
           <td><!-- requires -->
               {% for required in quest.requires %}
+                  {% if required.link %}<a href="{{required.link}}">{% endif %}
                   <div class="quest">
                       <span class="icon-text">
                           <span class="icon"><i class="quest-{{required.icon}}"></i></span>
-                          <span>{{required.name}}</span> 
+                          <span>{{required.name}}</span>
                       </span>
                   </div>
+                  {% if required.link %}</a>{% endif %}
               {% endfor %}
           </td>
         </tr>

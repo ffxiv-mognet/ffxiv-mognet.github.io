@@ -29,6 +29,15 @@ quests:
         icon: '2626'
         type: action
     partQuestNo: 1
+    requires:
+      - name: In Nature's Embrace
+        level: 30
+        rowId: 65977
+        questId: ClsCnj006_00441
+        genre: Conjurer Quests
+        icon: '71140'
+        link: /quests/jobs/conjurer
+
   - name: Only You Can Prevent Forest Ire
     level: 35
     rowId: 66616
