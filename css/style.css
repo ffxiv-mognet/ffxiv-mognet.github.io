@@ -67,3 +67,12 @@ span.icon i.quest-novice {
 .unlocks {
     padding-left: 1rem;
 }
+
+
+
+.quest-name {
+    font-weight: 550;
+}
+.quest-steps {
+    padding-left: 2em;
+}

@@ -21,14 +21,14 @@ layout: default
           </p>
       </div>
   </nav>
-  <table class="table">
+  <table class="table is-fullwidth">
       <thead>
           <tr>
               <th style="width: 5em">No.</th>
               <th>Quest</th>
               <th></th>
               <th>Location</th>
-              <th>Unlocks</th>
+              <th>Duty</th>
               <th>Requires</th>
           </tr>
       </thead>
@@ -39,31 +39,85 @@ layout: default
             <input type="checkbox" class="checkbox" id="completed-{{entry.index}}"/>
             <span>#{{quest.partQuestNo}}</span>
           </td>
-          <td>
-            <div class="quest-name">
+          <!-- quest -->
+          <td onclick="toggleDetail({{quest.rowId}})">
+            <span class="icon-text">
               <span class="icon"><i class="quest-{{quest.icon}}"></i></span>
-              <span class="quest">{{quest.name}}</span>
+              <span class="quest-name">{{quest.name}}</span>
+            </span>
+            <div id="quest-detail-{{quest.rowId}}" class="quest-detail is-hidden">
+              {% for step in quest.steps %}
+                <ul class="quest-steps">
+                    <li>
+                        <input type="checkbox" class="checkbox" id="completed-step-{{quest.rowId}}-{{forloop.index}}"/>
+                        <span class="name">{{ step.name }}</span>
+                        <span class="tag is-light">
+                            {{ step.location}} {{ step.coords }}
+                        </span>
+                    </li>
+                </ul>
+              {% endfor %}
+              {% if quest.description %}
+              <blockquote>
+                {{quest.description}}
+              </blockquote>
+              {% endif %}
             </div>
-            {% if quest.description %}
-            <blockquote>
-              {{quest.description}}
-            </blockquote>
-            {% endif %}
           </td>
-          <td>
+          <!-- level -->
+          <td onclick="toggleDetail({{quest.rowId}})">
               Lv.{{quest.level}}
           </td>
-          <td>
-            issuer...
+          <!-- issuer -->
+          <td onclick="toggleDetail({{quest.rowId}})">
+            <div class="npc">{{ quest.issuer.name }}
+              <span class="tag is-light">
+                  {{ quest.issuer.location}} {{ quest.issuer.coords }}
+              </span>
+            </div>
           </td>
-          <td>
-            unlocks...
+          <td><!-- unlocks -->
+              {% if quest.soloDuty %}
+              <div>
+                  <span class="icon-text">
+                      <span class="icon"><i class="solo-duty"></i></span>
+                      <span>Solo Duty Lv.{{ quest.soloDuty.levelSync }}</span>
+                  </span>
+              </div>
+              {% endif %}
+              {% for unlock in quest.unlocks %}
+              <div>
+                  <span class="icon-text">
+                      <span class="icon"><i class="{{unlock.type}}"></i></span>
+                      <span>{{unlock.name}} Lv.{{ unlock.levelSync }}</span>
+                  </span>
+              </div>
+              {% endfor %}
           </td>
-          <td>
-            requires...
+          <td><!-- requires -->
+              {% for required in quest.requires %}
+                  <div class="quest">
+                      <span class="icon-text">
+                          <span class="icon"><i class="quest-{{required.icon}}"></i></span>
+                          <span>{{required.name}}</span> 
+                      </span>
+                  </div>
+              {% endfor %}
           </td>
         </tr>
         {% endfor %}
       </tbody>
   </table>
 </div>
+
+<script>
+function toggleDetail(rowId) {
+  const details = document.getElementsByClassName('quest-detail')
+  for (const detail of details) {
+    detail.classList.add("is-hidden")
+  }
+
+  const detail = document.getElementById(`quest-detail-${rowId}`)
+  detail.classList.remove("is-hidden")
+}
+</script>
