@@ -89,7 +89,7 @@ layout: default
               <div>
                   <span class="icon-text">
                       <span class="icon"><i class="{{unlock.type}}"></i></span>
-                      <span>{{unlock.name}} Lv.{{ unlock.levelSync }}</span>
+                      <span>{{unlock.name}}</span>
                   </span>
               </div>
               {% endfor %}

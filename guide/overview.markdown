@@ -88,3 +88,7 @@ from "A New World to Explore"[70396] to "Ever Greater, Ever Brighter"[70447]
 
 ### Dawntrail Part 2 [Lv.95-100] 
 from "The Long Road To Xak Tural"[70448] to "Dawntrail"[70495]
+
+
+## Crystal Tower
+from "Legacy of Allag"[67245] to "The Light of Hope"[66031]
