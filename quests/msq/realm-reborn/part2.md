@@ -391,39 +391,39 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (11.1, 11.6)
         name: Attend the remembrance service at the Royal Promenade in Ul'dah.
-      - location: Ul'dah - Steps of Thal
-        coords: (11.1, 11.6)
-        name: Attend the remembrance service at the Royal Promenade in Ul'dah.
-      - location: Ul'dah - Steps of Thal
-        coords: (11.1, 11.6)
-        name: Attend the remembrance service at the Royal Promenade in Ul'dah.
+      - location: Limsa Lominsa Lower Decks
+        coords: (11.4, 10.9)
+        name: Attend the remembrance service at the Stateroom in Limsa Lominsa.
+      - location: The Waking Sands
+        coords: (6.9, 6.1)
+        name: Report to Minfilia at the Waking Sands.
     partQuestNo: 16
-  - name: The Company You Keep (Twin Adder / Maelstrom / Immortal Flames)
+  - name: The Company You Keep (Twin Adder)
     level: 20
     rowId: 66216
+    questId: ManFst302_00680
     genre: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: The Waking Sands
       coords: (6.9, 6.1)
-    # steps:
-    #   - location: New Gridania
-    #     coords: (9.8, 11.0)
-    #     name: Speak with the personnel officer at the Adders' Nest.
-    #   - location: east shroud
-    #     coords: (22.1, 31.0)
-    #     name: head southeast of nine ivies and determine the fate of the airship and
-    #       its crew.
-    #   - location: New Gridania
-    #     coords: (9.8, 11.0)
-    #     name: Speak with the personnel officer at the Adders' Nest.
-    description:
-      Complete a small solo duty based on which Grand Company you decided to join.
+      name: serpent officer
+    steps:
+      - location: New Gridania
+        coords: (9.8, 11.0)
+        name: Speak with the personnel officer at the Adders' Nest.
+      - location: East Shroud
+        coords: (22.1, 31.0)
+        name: Head southeast of Nine Ivies and determine the fate of the airship and
+          its crew.
+      - location: New Gridania
+        coords: (9.8, 11.0)
+        name: Speak with the personnel officer at the Adders' Nest.
     soloDuty:
       levelSync: 24
       timeLimit: 30
     partQuestNo: 17
-  - name: Wood's Will Be Done / Till Sea Swallows All / For Coin and Country
+  - name: Wood's Will Be Done
     level: 20
     rowId: 66219
     questId: ManFst303_00683
@@ -438,16 +438,6 @@ quests:
         coords: (6.5, 6.0)
         name: Speak with the Scion of the Seventh Dawn at the Waking Sands.
     partQuestNo: 18
-    unlocks:
-      - name: My Little Chocobo
-        level: 20
-        rowId: 66236
-        questId: SubFst120_00700
-        genre: Gridanian Sidequests
-        icon: '71140'
-        type: 'quest-71140'
-
-
   - name: Sylph-management
     level: 20
     rowId: 66049
@@ -499,11 +489,11 @@ quests:
         coords: (17.3, 27.5)
         name: Speak with Blaisette.
       - location: East Shroud
-        coords: (17.3, 27.5)
-        name: Speak with Blaisette.
+        coords: (17.7, 27.3)
+        name: Speak with Monne.
       - location: East Shroud
-        coords: (17.3, 27.5)
-        name: Speak with Blaisette.
+        coords: (16.7, 27.1)
+        name: Report to Rolfe Hawthorne.
     partQuestNo: 21
   - name: First Impressions
     level: 20
@@ -589,11 +579,11 @@ quests:
         coords: (22.2, 30.5)
         name: Slay a gall gnat.
       - location: East Shroud
-        coords: (22.2, 30.5)
-        name: Slay a gall gnat.
+        coords: (21.7, 28.6)
+        name: Obtain brownie brushes.
       - location: East Shroud
-        coords: (22.2, 30.5)
-        name: Slay a gall gnat.
+        coords: (22.0, 25.7)
+        name: Report to Komuxio at Little Solace.
     partQuestNo: 25
   - name: Presence of the Enemy
     level: 21
@@ -876,6 +866,7 @@ quests:
         coords: (6.9, 6.1)
         name: Speak with Minfilia.
     partQuestNo: 38
+
 
 
 ---

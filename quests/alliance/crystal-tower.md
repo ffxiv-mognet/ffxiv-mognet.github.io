@@ -29,10 +29,6 @@ quests:
         coords: (11.7, 14.1)
         name: Survey the designated location in the Sapsa Spawning Grounds and slay
           the Sahagin sentry to obtain a flawless water crystal.
-      - location: Western La Noscea
-        coords: (11.7, 14.1)
-        name: Survey the designated location in the Sapsa Spawning Grounds and slay
-          the Sahagin sentry to obtain a flawless water crystal.
       - location: Mor Dhona
         coords: (30.4, 12.1)
         name: Deliver the flawless crystals to Rammbroes at Saint Coinach's Find.
@@ -40,10 +36,13 @@ quests:
         coords: (26.2, 21.3)
         name: Survey the designated location in Zahar'ak and slay the Amalj'aa sentry
           to obtain a flawless fire crystal.
-      - location: Southern Thanalan
-        coords: (26.2, 21.3)
-        name: Survey the designated location in Zahar'ak and slay the Amalj'aa sentry
-          to obtain a flawless fire crystal.
+      - location: Coerthas Central Highlands
+        coords: (33.5, 19.1)
+        name: Survey the designated location in Natalan and slay the Ixali sentry
+          to obtain a flawless wind crystal.
+      - location: Mor Dhona
+        coords: (30.4, 12.1)
+        name: Deliver the flawless crystals to Rammbroes at Saint Coinach's Find.
     partQuestNo: 1
   - name: Sanding It Down
     level: 50
@@ -236,6 +235,4 @@ quests:
         coords: (30.4, 12.1)
         name: Report to Rammbroes.
     partQuestNo: 8
-
-
 ---

@@ -252,11 +252,11 @@ quests:
         coords: (25.3, 22.6)
         name: Speak with Cravellin.
       - location: Coerthas Central Highlands
-        coords: (25.3, 22.6)
-        name: Speak with Cravellin.
+        coords: (25.5, 29.9)
+        name: Speak with Forlemort.
       - location: Coerthas Central Highlands
-        coords: (25.3, 22.6)
-        name: Speak with Cravellin.
+        coords: (26.7, 17.4)
+        name: Report to Haurchefant.
     partQuestNo: 12
   - name: Road to Redemption
     level: 38

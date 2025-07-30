@@ -24,17 +24,17 @@ quests:
         coords: (6.1, 5.1)
         name: Speak with Thancred.
       - location: The Waking Sands
-        coords: (6.1, 5.1)
-        name: Speak with Thancred.
+        coords: (6.1, 5.0)
+        name: Speak with Papalymo.
       - location: The Waking Sands
-        coords: (6.1, 5.1)
-        name: Speak with Thancred.
+        coords: (6.1, 5.0)
+        name: Speak with Yda.
       - location: The Waking Sands
-        coords: (6.1, 5.1)
-        name: Speak with Thancred.
+        coords: (6.0, 4.9)
+        name: Speak with Urianger.
       - location: The Waking Sands
-        coords: (6.1, 5.1)
-        name: Speak with Thancred.
+        coords: (6.1, 6.2)
+        name: Speak with Alphinaud.
     partQuestNo: 1
   - name: Moving On
     level: 50
@@ -337,15 +337,15 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (13.9, 9.8)
         name: Deliver Momodi's letter to Katherine at the Sapphire Avenue Exchange.
-      - location: Ul'dah - Steps of Thal
-        coords: (13.9, 9.8)
-        name: Deliver Momodi's letter to Katherine at the Sapphire Avenue Exchange.
       - location: Ul'dah - Steps of Nald
         coords: (11.6, 9.6)
         name: Speak with Momodi.
       - location: Ul'dah - Steps of Nald
         coords: (11.9, 9.3)
         name: Speak with Yugiri.
+      - location: Ul'dah - Steps of Thal
+        coords: (10.8, 12.4)
+        name: Speak with Raubahn on the Royal Promenade.
     partQuestNo: 13
   - name: Promises to Keep
     level: 50
