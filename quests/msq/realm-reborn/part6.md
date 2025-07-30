@@ -725,13 +725,13 @@ quests:
       - location: Intercessory
         coords: (6.0, 6.1)
         name: Speak with Alphinaud.
-    requires:
-      - name: Eye of the Dragon
-        level: 30
-        rowId: 66603
-        questId: JobDrg300_01067
-        genre: Dragoon Quests
-        icon: '71140'
+    # requires:
+    #   - name: Eye of the Dragon
+    #     level: 30
+    #     rowId: 66603
+    #     questId: JobDrg300_01067
+    #     genre: Dragoon Quests
+    #     icon: '71140'
     partQuestNo: 29
   - name: Committed to the Cause
     level: 50
@@ -914,25 +914,76 @@ quests:
         questId: GaiUsd602_00495
         genre: Crystal Tower Quests
         icon: '71140'
-      - name: The Least among Us
-        level: 50
-        rowId: 65960
-        questId: GaiUse612_00424
-        genre: Seventh Astral Era
-        icon: '71000'
-      - name: Legacy of Allag
-        level: 50
-        rowId: 66735
-        questId: GaiUsd201_01199
-        genre: ''
-        icon: '71140'
-      - name: Legacy of Allag
-        level: 50
-        rowId: 67245
-        questId: GaiUsx201_01709
-        genre: Crystal Tower Quests
-        icon: '71140'
     partQuestNo: 36
+  - name: Where We Are Needed
+    level: 50
+    rowId: 65959
+    questId: GaiUse611_00423
+    genre: Seventh Astral Era
+    icon: '71000'
+    issuer:
+      location: The Rising Stones
+      coords: (6.1, 5.2)
+      name: Minfilia
+    steps:
+      - location: The Rising Stones
+        coords: (6.0, 6.0)
+        name: Speak with Hoary Boulder.
+      - location: South Shroud
+        coords: (17.3, 28.7)
+        name: Rendezvous with the unsettled scholar at Camp Tranquil.
+      - location: South Shroud
+        coords: (17.0, 22.4)
+        name: "Follow the unsettled scholar to Issom\u2013Har."
+      - location: South Shroud
+        coords: (16.9, 22.6)
+        name: Stand guard as the scholar takes measurements.
+      - location: South Shroud
+        coords: (17.0, 22.4)
+        name: Speak with the unsettled scholar.
+      - location: South Shroud
+        coords: (23.9, 24.8)
+        name: Follow the unsettled scholar to Snakemolt.
+      - location: South Shroud
+        coords: (23.6, 24.9)
+        name: Stand guard as the scholar takes measurements.
+      - location: South Shroud
+        coords: (23.9, 24.8)
+        name: Speak with the unsettled scholar.
+      - location: South Shroud
+        coords: (14.3, 30.6)
+        name: Follow the unsettled scholar to Rootslake.
+      - location: South Shroud
+        coords: (14.7, 30.5)
+        name: Stand guard as the scholar takes measurements.
+      - location: South Shroud
+        coords: (14.3, 30.6)
+        name: Speak with the unsettled scholar.
+      - location: South Shroud
+        coords: (17.3, 28.7)
+        name: Speak with the unsettled scholar at Camp Tranquil.
+    partQuestNo: 37
+  - name: The Least among Us
+    level: 50
+    rowId: 65960
+    questId: GaiUse612_00424
+    genre: Seventh Astral Era
+    icon: '71000'
+    issuer:
+      location: South Shroud
+      coords: (17.3, 28.7)
+      name: unsettled scholar
+    steps:
+      - location: South Shroud
+        coords: (33.8, 23.6)
+        name: Speak with the unsettled scholar at Urth's Fount.
+      - location: South Shroud
+        coords: (33.6, 23.6)
+        name: Stand guard as the scholar takes measurements.
+      - location: The Rising Stones
+        coords: (6.1, 5.2)
+        name: Speak with Minfilia at the Rising Stones.
+    partQuestNo: 38
   - name: A Time to Every Purpose
     level: 50
     rowId: 65961
@@ -947,26 +998,7 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (11.1, 11.6)
         name: Speak with Minfilia on the Royal Promenade.
-    requires:
-      - name: The Light of Hope
-        level: 50
-        rowId: 66031
-        questId: GaiUsd602_00495
-        genre: Crystal Tower Quests
-        icon: '71140'
-      - name: Legacy of Allag
-        level: 50
-        rowId: 66735
-        questId: GaiUsd201_01199
-        genre: ''
-        icon: '71140'
-      - name: Legacy of Allag
-        level: 50
-        rowId: 67245
-        questId: GaiUsx201_01709
-        genre: Crystal Tower Quests
-        icon: '71140'
-    partQuestNo: 37
+    partQuestNo: 39
   - name: Come, but Not Gone
     level: 50
     rowId: 65962
@@ -993,7 +1025,7 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (11.6, 9.6)
         name: Show the clouded vial to Momodi.
-    partQuestNo: 38
+    partQuestNo: 40
   - name: The Parting Glass
     level: 50
     rowId: 65963
@@ -1014,7 +1046,7 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.7, 17.4)
         name: Speak with Haurchefant at Camp Dragonhead.
-    partQuestNo: 39
+    partQuestNo: 41
   - name: Before the Dawn
     level: 50
     rowId: 65964
@@ -1029,7 +1061,7 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.8, 17.0)
         name: Speak with the House Fortemps guard.
-    partQuestNo: 40
+    partQuestNo: 42
 
 
 ---
