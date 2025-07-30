@@ -154,6 +154,51 @@ class XivQuestScraper:
             key = 'QST_CHECK_{:02d}'.format(i)
         return requirements
 
+
+    def location_coords_from_level(self, levelId):
+        level = self.sheets['Level'].byId(levelId)
+        if level is None:
+            return {}
+        map_row = self.sheets['Map'].byId(level['Map'])
+        territory = self.sheets['TerritoryType'].byId(level["Territory"])
+        placename = self.sheets['PlaceName'].byId(territory["PlaceName"])
+        coords = readable_coords(level, map_row)
+        return {
+            'location': placename['Name'],
+            'coords': "({x}, {y})".format(**coords),
+            #'levelType': int(level['Type']),
+            #'territoryIntendedUse': int(territory['TerritoryIntendedUse']),
+            # 'raw': {
+            #     'territory': territory
+            # }
+        }
+
+    def parse_issuer(self, quest):
+        issuer = self.location_coords_from_level(quest["Issuer{Location}"])
+        issuer_npc = self.sheets['ENpcResident'].byId(quest["Issuer{Start}"])
+        issuer['name'] = issuer_npc['Singular']
+        return issuer
+
+    def parse_steps(self, quest):
+        lang_sheet_name = "quest/{section}/{questId}".format(
+            section=quest["Id"].split("_", 1)[1][:3], 
+            questId=quest["Id"])
+        self.fetch_sheet(lang_sheet_name)
+        lang_sheet = LanguageSheet(self._path_for_sheet(lang_sheet_name))
+        steps = []
+        todo_idx = 0
+        todo_seq = extract_array2d(quest, "ToDoCompleteSeq")
+        while todo_idx != 255:
+            locationId = quest["ToDoLocation[{}][0]".format(todo_idx)]
+            step = self.location_coords_from_level(locationId)
+
+            todoId = "TEXT_{}_TODO_{:02d}".format(quest["Id"].upper(), todo_idx)
+            step["name"] = lang_sheet.byId(todoId)
+
+            steps.append(step)
+            todo_idx = int(todo_seq.pop(0))
+        return steps
+
     def generate_questListItem(self, rowId):
         quest = self.sheets['Quest'].byId(rowId)
         genre = self.sheets['JournalGenre'].byId(quest['JournalGenre'])
@@ -166,7 +211,6 @@ class XivQuestScraper:
             'genre': genre['Name'],
             'icon': icon_type['MapIcon{Available}'],
         }
-
 
     def cmd_questList(self):
         self.argparser.add_argument("--count", type=int, default=10)
@@ -187,6 +231,9 @@ class XivQuestScraper:
             genre = self.sheets['JournalGenre'].byId(row['JournalGenre'])
             icon_type = self.sheets['EventIconType'].byId(row['EventIconType'])
 
+            issuer = self.parse_issuer(row)
+            steps = self.parse_steps(row)
+
             out_row = {
                 'name': row['Name'],
                 'level': int(row['ClassJobLevel[0]']),
@@ -194,6 +241,8 @@ class XivQuestScraper:
                 'questId': row['Id'],
                 'genre': genre['Name'],
                 'icon': icon_type['MapIcon{Available}'],
+                'issuer': issuer,
+                'steps': steps,
             }
 
             # has solo duty?        
@@ -288,45 +337,9 @@ class XivQuestScraper:
 
         quest = self.sheets['Quest'].byId(self.args.questId)
 
-        def location_coords_from_level(levelId):
-            level = self.sheets['Level'].byId(levelId)
-            if level is None:
-                return {}
-            map_row = self.sheets['Map'].byId(level['Map'])
-            territory = self.sheets['TerritoryType'].byId(level["Territory"])
-            placename = self.sheets['PlaceName'].byId(territory["PlaceName"])
-            coords = readable_coords(level, map_row)
-            return {
-                'location': placename['Name'],
-                'coords': "({x}, {y})".format(**coords),
-                'levelType': int(level['Type']),
-                'territoryIntendedUse': int(territory['TerritoryIntendedUse']),
-                # 'raw': {
-                #     'territory': territory
-                # }
-            }
 
-        issuer = location_coords_from_level(quest["Issuer{Location}"])
-        issuer_npc = self.sheets['ENpcResident'].byId(quest["Issuer{Start}"])
-        issuer['name'] = issuer_npc['Singular']
-
-        lang_sheet_name = "quest/{section}/{questId}".format(
-            section=quest["Id"].split("_", 1)[1][:3], 
-            questId=quest["Id"])
-        self.fetch_sheet(lang_sheet_name)
-        lang_sheet = LanguageSheet(self._path_for_sheet(lang_sheet_name))
-        steps = []
-        todo_idx = 0
-        todo_seq = extract_array2d(quest, "ToDoCompleteSeq")
-        while todo_idx != 255:
-            locationId = quest["ToDoLocation[{}][0]".format(todo_idx)]
-            step = location_coords_from_level(locationId)
-
-            todoId = "TEXT_{}_TODO_{:02d}".format(quest["Id"].upper(), todo_idx)
-            step["name"] = lang_sheet.byId(todoId)
-
-            steps.append(step)
-            todo_idx = int(todo_seq.pop(0))
+        issuer = self.parse_issuer(quest)
+        steps = self.parse_steps(quest)
 
         script = extract_script(quest)
         genre = self.sheets['JournalGenre'].byId(quest['JournalGenre'])

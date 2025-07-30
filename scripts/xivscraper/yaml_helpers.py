@@ -6,4 +6,4 @@ class IndentedDumper(yaml.Dumper):
         return super(IndentedDumper, self).increase_indent(flow, False)
 
 def dump_indented_yaml(data, indent=2):
-   return yaml.dump(data, Dumper=IndentedDumper, default_flow_style=False, indent=indent)
+   return yaml.dump(data, Dumper=IndentedDumper, default_flow_style=False, indent=indent, sort_keys=False)
