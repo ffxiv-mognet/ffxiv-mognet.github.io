@@ -109,7 +109,35 @@ storylines:
             link: /quests/trial/four-lords
           - name: The Sorrow of Werlyt
             link: /quests/trial/sorrow-werlyt
-      - name: Variant Dungeon
+      - name: Extremes
+        parts:
+          - name: A Realm Reborn
+            link: /quests/extreme/realm-reborn
+          - name: Heavensward
+            link: /quests/extreme/heavensward
+          - name: Stormblood
+            link: /quests/extreme/stormblood
+          - name: Shadowbringers
+            link: /quests/extreme/shadowbringers
+          - name: Endwalker
+            link: /quests/extreme/endwalker
+          - name: Dawntrail
+            link: /quests/extreme/dawntrail
+      - name: Dungeons
+        parts:
+          - name: A Realm Reborn
+            link: /quests/dungeons/realm-reborn
+          - name: Heavensward
+            link: /quests/dungeons/heavensward
+          - name: Stormblood
+            link: /quests/dungeons/stormblood
+          - name: Shadowbringers
+            link: /quests/dungeons/shadowbringers
+          - name: Endwalker
+            link: /quests/dungeons/endwalker
+          - name: Dawntrail
+            link: /quests/dungeons/dawntrail
+      - name: Variant Dungeons
         parts:
           - name: The Sil'dihn Subterrane
             link: /quests/variant/sildihn-subterrane
@@ -127,7 +155,7 @@ storylines:
             link: /quests/fieldops/occult-crescent
       - name: Deep Dungeons
         parts:
-           - name: Palace of the dead 
+           - name: Palace of the Dead 
              link: /quests/deep-dungeon/palace-dead
            - name: Heaven on High
              link: /quests/deep-dungeon/heaven-on-high
@@ -145,7 +173,7 @@ storylines:
             link: /quests/sidestory/somehow-further-hildibrand-adventures
           - name: Inconceivably Further ...
             link: /quests/sidestory/inconceivably-further-hildibrand-adventures
-      - name: Side Story
+      - name: Side Stories
         parts:
           - name: Delivery Moogle 
             link: /quests/sidestory/delivery-moogle
@@ -182,10 +210,7 @@ storylines:
           link: /quests/jobs/gunbreaker
     - name: Healer
       parts: 
-        - name: Conjurer
-          link: /quests/jobs/conjurer
-        - separator:
-        - name: White Mage
+        - name: Conjurer / White Mage
           link: /quests/jobs/white-mage
         - name: Scholar
           link: /quests/jobs/scholar
