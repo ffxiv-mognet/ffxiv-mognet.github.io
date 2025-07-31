@@ -60,11 +60,22 @@ layout: default
             <span>#{{quest.partQuestNo}}</span>
           </td>
           <!-- quest -->
-          <td onclick="toggleDetail({{quest.rowId}})">
-            <span class="icon-text">
-              <span class="icon"><i class="quest-{{quest.icon}}"></i></span>
-              <span class="quest-name">{{quest.name}}</span>
-            </span>
+          <td class="quest-col">
+            <div class="level clickable" onclick="toggleDetail({{quest.rowId}})">
+              <div class="level-left">
+                <p class="level-item">
+                  <span class="icon-text">
+                    <span class="icon"><i class="quest-{{quest.icon}}"></i></span>
+                    <span class="quest-name">{{quest.name}}</span>
+                  </span>
+                </p>
+              </div>
+              <div class="level-right">
+                <p class="level-item">
+                  <span class="icon"><i id="row-chevron-{{quest.rowId}}" class="row-chevron fas fa-chevron-down"></i></span>
+                </p>
+              </div>
+            </div>
             <div id="quest-detail-{{quest.rowId}}" class="quest-detail is-hidden">
               {% for step in quest.steps %}
                 <ul class="quest-steps">
@@ -85,11 +96,11 @@ layout: default
             </div>
           </td>
           <!-- level -->
-          <td onclick="toggleDetail({{quest.rowId}})">
+          <td class="clickable" onclick="toggleDetail({{quest.rowId}})">
               Lv.{{quest.level}}
           </td>
           <!-- issuer -->
-          <td onclick="toggleDetail({{quest.rowId}})">
+          <td class="clickable" onclick="toggleDetail({{quest.rowId}})">
             <div class="npc">
               {{ quest.issuer.name }}
               <span class="tag is-light">
@@ -193,13 +204,26 @@ function updateRows() {
 }
 
 function toggleDetail(rowId) {
+  const chevron = document.getElementById(`row-chevron-${rowId}`)
+  const detail = document.getElementById(`quest-detail-${rowId}`)
+  const currentIsOpen = chevron.classList.contains("fa-chevron-up")
+
+  // collapse all others
   const details = document.getElementsByClassName('quest-detail')
-  for (const detail of details) {
-    detail.classList.add("is-hidden")
+  for (const it of details) {
+    it.classList.add("is-hidden")
+  }
+  const chevrons = document.getElementsByClassName('row-chevron')
+  for (const it of chevrons) {
+    it.classList.remove("fa-chevron-up")
+    it.classList.add("fa-chevron-down")
   }
 
-  const detail = document.getElementById(`quest-detail-${rowId}`)
-  detail.classList.remove("is-hidden")
+  // expand this one
+  if (!currentIsOpen) {
+    detail.classList.remove("is-hidden")
+    chevron.classList.add("fa-chevron-up")
+  }
 }
 
 function getAllNextSiblings(node) {

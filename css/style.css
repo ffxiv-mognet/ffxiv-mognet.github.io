@@ -89,3 +89,8 @@ span.icon i.quest-novice {
 .npc {
     font-size: 0.8em;
 }
+
+
+.clickable {
+    cursor: pointer;
+}
