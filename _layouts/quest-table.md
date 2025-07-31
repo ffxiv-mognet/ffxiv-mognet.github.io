@@ -34,9 +34,14 @@ layout: default
       </thead>
       <tbody>
         {% for quest in page.quests %}
-        <tr class="quest-row" data-rowId="{{quest.rowId}}">
+        <tr class="quest-row" data-rowid="{{quest.rowId}}" >
           <td>
-            <input type="checkbox" class="checkbox" id="completed-{{entry.index}}"/>
+            <input 
+              type="checkbox" 
+              class="checkbox" 
+              id="completed-{{quest.rowId}}"
+              onchange="handleQuestFinished({{quest.rowId}})"        
+              />
           </td>
           <!-- quest -->
           <td onclick="toggleDetail({{quest.rowId}})">
@@ -113,7 +118,30 @@ layout: default
   </table>
 </div>
 
+<script type="text/javascript" src="/js/storage.js"></script>
 <script>
+document.addEventListener("DOMContentLoaded", async () => {
+  updateRows();
+})
+
+function updateRows() {
+  const rows = document.getElementsByClassName("quest-row");
+  const tbody = rows[0].parentNode
+  for (const row of rows) {
+    const checkbox = row.getElementsByClassName("checkbox")[0]
+    const isFinished = isQuestFinished(row.dataset.rowid)
+    if (isFinished) {
+        row.classList.add("is-finished")
+        checkbox.checked = true
+    } else {
+        row.classList.remove("is-finished")
+        checkbox.checked = false
+    }
+
+
+  }
+}
+
 function toggleDetail(rowId) {
   const details = document.getElementsByClassName('quest-detail')
   for (const detail of details) {
@@ -122,5 +150,38 @@ function toggleDetail(rowId) {
 
   const detail = document.getElementById(`quest-detail-${rowId}`)
   detail.classList.remove("is-hidden")
+}
+
+function getAllNextSiblings(node) {
+  return getAllSiblings(node, 'nextSibling')
+}
+function getAllPreviousSiblings(node) {
+  return getAllSiblings(node, 'previousSibling')
+}
+function getAllSiblings(node, propertyName) {
+  propertyName = propertyName || 'previousSibling'
+  const siblings = []
+  while (node[propertyName]) {
+    if (node[propertyName].nodeType != Node.TEXT_NODE) {
+      siblings.push(node[propertyName])
+    }
+    node = node[propertyName]
+  }
+  return siblings
+}
+
+function handleQuestFinished(rowId) {
+  const row = document.querySelector(`[data-rowid="${rowId}"]`)
+  const checkbox = document.getElementById(`completed-${rowId}`)
+
+  const nodes = checkbox.checked 
+    ? getAllPreviousSiblings(row) 
+    : getAllNextSiblings(row)
+  nodes.push(row)
+  for (var node of nodes) {
+    setQuestFinished(node.dataset.rowid, checkbox.checked)
+  }
+
+  updateRows();
 }
 </script>

@@ -195,14 +195,9 @@ storylines:
     stories:
     - name: Tank
       parts:
-        - name: Gladiator
-          link: /quests/jobs/gladiator
-        - name: Marauder
-          link: /quests/jobs/marauder
-        - separator:
-        - name: Paladin
+        - name: Gladiator/Paladin
           link: /quests/jobs/paladin
-        - name: Warrior
+        - name: Marauder/Warrior
           link: /quests/jobs/warrior
         - name: Dark Knight
           link: /quests/jobs/dark-knight
@@ -210,7 +205,7 @@ storylines:
           link: /quests/jobs/gunbreaker
     - name: Healer
       parts: 
-        - name: Conjurer / White Mage
+        - name: Conjurer/White Mage
           link: /quests/jobs/white-mage
         - name: Scholar
           link: /quests/jobs/scholar
@@ -220,18 +215,11 @@ storylines:
           link: /quests/jobs/sage
     - name: Melee DPS
       parts:
-        - name: Pugilist
-          link: /quests/jobs/pugilist
-        - name: Lancer
-          link: /quests/jobs/lancer
-        - name: Rogue
-          link: /quests/jobs/rogue
-        - separator:
-        - name: Monk
+        - name: Pugilist/Monk
           link: /quests/jobs/monk
-        - name: Dragoon
+        - name: Lancer/Dragoon
           link: /quests/jobs/dragoon
-        - name: Ninja
+        - name: Rogue/Ninja
           link: /quests/jobs/ninja
         - name: Samurai
           link: /quests/jobs/samurai
@@ -241,10 +229,7 @@ storylines:
           link: /quests/jobs/viper
     - name: Ranged DPS 
       parts:
-        - name: Archer
-          link: /quests/job/archer
-        - separator:
-        - name: Bard
+        - name: Archer/Bard
           link: /quests/job/bard
         - name: Machinist
           link: /quests/job/machinist
@@ -252,14 +237,9 @@ storylines:
           link: /quests/job/dancer
     - name: Caster
       parts:
-        - name: Thaumaturge
-          link: /quests/job/thaumaturge
-        - name: Arcanist
-          link: /quests/job/arcanist
-        - separator:
-        - name: Black Mage
+        - name: Thaumaturge/Black Mage
           link: /quests/job/black-mage
-        - name: Summoner
+        - name: Arcanist/Summoner
           link: /quests/job/summoner
         - name: Red Mage
           link: /quests/job/red-mage

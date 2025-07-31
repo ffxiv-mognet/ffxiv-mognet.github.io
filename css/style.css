@@ -76,3 +76,11 @@ span.icon i.quest-novice {
 .quest-steps {
     padding-left: 2em;
 }
+
+
+.is-finished {
+    text-decoration: line-through;
+}
+.quest-row.is-finished span {
+    text-decoration: line-through !important;
+}
