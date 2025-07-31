@@ -5,6 +5,9 @@ partNo: 6
 partChapterNo: 1
 title: A Realm Reborn - Part 6
 permalink: /quests/msq/realm-reborn/part6
+links:
+  previous: /quests/msq/realm-reborn/part5
+  next: /quests/msq/heavensward/part1
 quests:
   - name: Traitor in the Midst
     level: 50

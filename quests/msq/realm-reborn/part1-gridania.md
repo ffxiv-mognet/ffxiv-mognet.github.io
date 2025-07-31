@@ -5,6 +5,8 @@ partNo: 1
 partChapterNo: 1
 title: A Realm Reborn - Part 1 - Gridania
 permalink: /quests/msq/realm-reborn/part1/gridania
+links:
+  next: /quests/msq/realm-reborn/part2
 quests:
   - name: Close to Home
     level: 1

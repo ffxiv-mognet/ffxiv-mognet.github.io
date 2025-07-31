@@ -5,6 +5,8 @@ partNo: 1
 partChapterNo: 1
 title: A Realm Reborn - Part 1 - Ul Dah 
 permalink: /quests/msq/realm-reborn/part1/ul-dah
+links:
+  next: /quests/msq/realm-reborn/part2
 quests:
   - name: Close to Home
     level: 1

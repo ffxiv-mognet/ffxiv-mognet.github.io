@@ -7,10 +7,24 @@ layout: default
   <nav class="level">
       <div class="level-left">
           <p class="level-item">
-              <h1 class="title is-3 has-text-centered"><a href="/quests/">Quests</a></h1>
+              <h1 style="margin-bottom: 0" class="title is-3 has-text-centered"><a href="/quests/">Quests</a></h1>
           </p>
           <p class="level-item">
-              <h4 class="subtitle is-4">{{page.title}}</h4>
+              {% if page.links.previous %}
+              <a href="{{ page.links.previous }}">
+                <span class="icon">
+                  <i class="fas fa-chevron-circle-left"></i>
+                </span>
+              </a>
+              {% endif %}
+              <h4 style="margin-bottom: 0" class="subtitle is-4">{{page.title}}</h4>
+              {% if page.links.next %}
+              <a href="{{ page.links.next }}">
+                <span class="icon">
+                  <i class="fas fa-chevron-circle-right"></i>
+                </span>
+              </a>
+              {% endif %}
           </p>
       </div>
       <div class="level-right">

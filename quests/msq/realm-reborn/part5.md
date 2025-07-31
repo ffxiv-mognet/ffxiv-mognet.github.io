@@ -5,6 +5,9 @@ partNo: 5
 partChapterNo: 1
 title: A Realm Reborn - Part 5
 permalink: /quests/msq/realm-reborn/part5
+links:
+  previous: /quests/msq/realm-reborn/part4
+  next: /quests/msq/realm-reborn/part6
 quests:
   - name: The Price of Principles
     level: 50

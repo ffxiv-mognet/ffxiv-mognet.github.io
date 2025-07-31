@@ -5,6 +5,9 @@ partNo: 2
 partChapterNo: 1
 title: A Realm Reborn - Part 2
 permalink: /quests/msq/realm-reborn/part2
+links:
+  previous: /quests
+  next: /quests/msq/realm-reborn/part3
 quests:
   - name: It's Probably Pirates
     level: 15

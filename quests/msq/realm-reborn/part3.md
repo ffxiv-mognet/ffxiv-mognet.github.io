@@ -5,6 +5,9 @@ partNo: 3
 partChapterNo: 1
 title: A Realm Reborn - Part 3
 permalink: /quests/msq/realm-reborn/part3
+links:
+  previous: /quests/msq/realm-reborn/part2
+  next: /quests/msq/realm-reborn/part4
 quests:
   - name: Shadow of Darkness
     level: 24

@@ -5,6 +5,9 @@ partNo: 4
 partChapterNo: 1
 title: A Realm Reborn - Part 4
 permalink: /quests/msq/realm-reborn/part4
+links:
+  previous: /quests/msq/realm-reborn/part3
+  next: /quests/msq/realm-reborn/part5
 quests:
   - name: All Good Things
     level: 34
