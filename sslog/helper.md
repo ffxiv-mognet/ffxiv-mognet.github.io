@@ -226,11 +226,13 @@ permalink: /sslog
                 const goal = getNextActiveEnd(item);
                 const pop = Math.ceil((goal.getTime() - Date.now()) / 1000);
                 timeCell.innerHTML = humanizeDuration(pop) + ' left';
+                timeCell.setAttribute("title", goal)
             } else {
                 row.classList.remove("is-info")
                 const goal = getNextActive(item)
                 const pop = Math.ceil((goal.getTime() - Date.now()) / 1000);
                 timeCell.innerHTML = 'in ' + humanizeDuration(pop);
+                timeCell.setAttribute("title", goal)
             }
         }
         sortRows(tbody);
