@@ -1,11 +1,22 @@
 
 
+function writeConfigToStorage(keyName, feature, value) {
+    const config = deserializeFromStorage(keyName)
+    config[feature] = value
+    serializeToStorage(keyName, config)
+}
+function getConfigFromStorage(keyName, feature) {
+    const config = deserializeFromStorage(keyName)
+    return config[feature]
+}
 
-function readFinishedFromStorage(keyName) {
+
+
+function deserializeFromStorage(keyName) {
     const deserialized = localStorage.getItem(keyName)
     return deserialized ? JSON.parse(deserialized) : {}
 }
-function writeFinishedToStorage(keyName, finished) {
+function serializeToStorage(keyName, finished) {
     const serialized = JSON.stringify(finished || {})
     return localStorage.setItem(keyName, serialized)
 }
@@ -14,14 +25,14 @@ function writeFinishedToStorage(keyName, finished) {
 
 const QUEST_FINISHED_KEY = 'quests_finished'
 function setQuestFinished(rowId, isFinished) {
-    const finished = readFinishedFromStorage(QUEST_FINISHED_KEY)
+    const finished = deserializeFromStorage(QUEST_FINISHED_KEY)
     if (isFinished) {
         finished[rowId] = 1
     } else {
         delete finished[rowId]
     }
-    writeFinishedToStorage(QUEST_FINISHED_KEY, finished)
+    serializeToStorage(QUEST_FINISHED_KEY, finished)
 }
 function isQuestFinished(rowId) {
-    return !!readFinishedFromStorage(QUEST_FINISHED_KEY)[rowId]
+    return !!deserializeFromStorage(QUEST_FINISHED_KEY)[rowId]
 }

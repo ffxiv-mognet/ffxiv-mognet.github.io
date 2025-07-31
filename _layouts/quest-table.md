@@ -40,7 +40,7 @@ layout: default
               type="checkbox" 
               class="checkbox" 
               id="completed-{{quest.rowId}}"
-              onchange="handleQuestFinished({{quest.rowId}})"        
+              onchange="handleQuestChecked({{quest.rowId}})"
               />
           </td>
           <!-- quest -->
@@ -119,10 +119,32 @@ layout: default
 </div>
 
 <script type="text/javascript" src="/js/storage.js"></script>
+<script type="text/javascript" src="/js/finished.js"></script>
+
 <script>
+
+window.QUEST_CONFIG_KEY = "quests:config"
+
 document.addEventListener("DOMContentLoaded", async () => {
+  var checkShowFinished = document.getElementById("check-showFinished");
+  const showFinished = getConfigFromStorage(QUEST_CONFIG_KEY, "showFinished")
+  setShowFinished(showFinished)
+  checkShowFinished.checked = showFinished
+  checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
+
   updateRows();
 })
+
+function setShowFinished(value) {
+  window.questsShowFinished = value
+  writeConfigToStorage(QUEST_CONFIG_KEY, "showFinished", value)
+
+  if (window.questsShowFinished) {
+    removeHiddenFinishedStyle('quest-row')
+  } else {
+    appendHiddenFinishedStyle('quest-row')
+  }
+}
 
 function updateRows() {
   const rows = document.getElementsByClassName("quest-row");
@@ -130,6 +152,7 @@ function updateRows() {
   for (const row of rows) {
     const checkbox = row.getElementsByClassName("checkbox")[0]
     const isFinished = isQuestFinished(row.dataset.rowid)
+
     if (isFinished) {
         row.classList.add("is-finished")
         checkbox.checked = true
@@ -137,8 +160,6 @@ function updateRows() {
         row.classList.remove("is-finished")
         checkbox.checked = false
     }
-
-
   }
 }
 
@@ -170,7 +191,7 @@ function getAllSiblings(node, propertyName) {
   return siblings
 }
 
-function handleQuestFinished(rowId) {
+function handleQuestChecked(rowId) {
   const row = document.querySelector(`[data-rowid="${rowId}"]`)
   const checkbox = document.getElementById(`completed-${rowId}`)
 
