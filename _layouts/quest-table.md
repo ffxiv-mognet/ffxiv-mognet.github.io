@@ -9,6 +9,9 @@ layout: default
           <p class="level-item">
               <h1 class="title is-3 has-text-centered"><a href="/quests/">Quests</a></h1>
           </p>
+          <p class="level-item">
+              <h4 class="subtitle is-4">{{page.title}}</h4>
+          </p>
       </div>
       <div class="level-right">
           <p class="level-item">
@@ -21,13 +24,25 @@ layout: default
           </p>
       </div>
   </nav>
+
+  <div class="level">
+    <div class="level-left">
+      <p class="level-item"></p>
+    </div>
+    <div class="level-right">
+      <p class="level-item">
+        <span id="quest-count-remain"></span> / <span id="quest-count-total">{{ page.quests|size}}</span>
+      </p>
+    </div>
+  </div>
+
   <table class="table is-fullwidth">
       <thead>
           <tr>
-              <th></th>
+              <th style="width: 5em">No.</th>
               <th>Quest</th>
               <th></th>
-              <th>Location</th>
+              <th style="width: 20em">Location</th>
               <th>Unlocks</th>
               <th>Requires</th>
           </tr>
@@ -38,10 +53,11 @@ layout: default
           <td>
             <input 
               type="checkbox" 
-              class="checkbox" 
+              class="checkbox questCheckbox" 
               id="completed-{{quest.rowId}}"
               onchange="handleQuestChecked({{quest.rowId}})"
               />
+            <span>#{{quest.partQuestNo}}</span>
           </td>
           <!-- quest -->
           <td onclick="toggleDetail({{quest.rowId}})">
@@ -74,7 +90,8 @@ layout: default
           </td>
           <!-- issuer -->
           <td onclick="toggleDetail({{quest.rowId}})">
-            <div class="npc">{{ quest.issuer.name }}
+            <div class="npc">
+              {{ quest.issuer.name }}
               <span class="tag is-light">
                   {{ quest.issuer.location}} {{ quest.issuer.coords }}
               </span>
@@ -135,6 +152,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   updateRows();
 })
 
+function updateRemainCount() {
+  var questCountRemain = document.getElementById("quest-count-remain")
+
+  var checks = document.getElementsByClassName("questCheckbox")
+  var finishedCount = 0;
+  for (const it of checks) {
+    if (it.checked) finishedCount += 1
+  }
+  questCountRemain.innerHTML = checks.length - finishedCount
+}
+
 function setShowFinished(value) {
   window.questsShowFinished = value
   writeConfigToStorage(QUEST_CONFIG_KEY, "showFinished", value)
@@ -161,6 +189,7 @@ function updateRows() {
         checkbox.checked = false
     }
   }
+  updateRemainCount();
 }
 
 function toggleDetail(rowId) {

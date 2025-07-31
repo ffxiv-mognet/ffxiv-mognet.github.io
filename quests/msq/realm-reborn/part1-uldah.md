@@ -475,7 +475,7 @@ quests:
       - location: Limsa Lominsa Upper Decks
         coords: (11.6, 11.1)
         name: Speak with Baderon at the Drowning Wench in Limsa Lominsa.
-    partQuestNo: 23
+    partQuestNo: 24
 
 
 

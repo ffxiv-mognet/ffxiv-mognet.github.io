@@ -1,7 +1,7 @@
 ---
 layout: quest-table
 expansion: Job Quests
-title: White Mage
+title: Conjurer / White Mage
 permalink: /quests/jobs/white-mage
 quests:
   - name: Way of the Conjurer

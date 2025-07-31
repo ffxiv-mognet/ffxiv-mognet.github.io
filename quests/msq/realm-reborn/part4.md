@@ -1295,6 +1295,7 @@ quests:
         partQuestNo: 54
         type: 'quest-71140'
         link: /quests/alliance/crystal-tower
+    partQuestNo: 54
 
 
 

@@ -84,3 +84,8 @@ span.icon i.quest-novice {
 .quest-row.is-finished span {
     text-decoration: line-through !important;
 }
+
+
+.npc {
+    font-size: 0.8em;
+}
