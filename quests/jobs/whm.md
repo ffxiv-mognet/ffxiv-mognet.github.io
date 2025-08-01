@@ -233,7 +233,11 @@ quests:
       - name: Cure II
         icon: '406'
         type: action
+      - id: 315
+        name: Tales of Magic
+        type: achievement
     partQuestNo: 7
+
 
 
 
@@ -271,7 +275,31 @@ quests:
         icon: '71000'
         link: /quests/msq/realm-reborn/part2
 
-
+  - name: Seer Folly
+    level: 30
+    rowId: 66615
+    questId: JobWhm300_01079
+    genre: White Mage Quests
+    icon: '71140'
+    issuer:
+      location: Old Gridania
+      coords: (6.0, 10.7)
+      name: E-Sumi-Yan
+    steps:
+      - location: Central Shroud
+        coords: (16.0, 23.4)
+        name: Seek out Raya-O-Senna in Everschade.
+      - location: South Shroud
+        coords: (18.7, 27.1)
+        name: Speak with Raya-O-Senna at Camp Tranquil.
+    soloDuty:
+      levelSync: 34
+      timeLimit: 30
+    unlocks:
+      - name: Presence of Mind
+        icon: '2626'
+        type: action
+    partQuestNo: 8
   - name: Only You Can Prevent Forest Ire
     level: 35
     rowId: 66616
@@ -293,7 +321,7 @@ quests:
       - name: Regen
         icon: '2628'
         type: action
-    partQuestNo: 2
+    partQuestNo: 9
   - name: O Brother, Where Art Thou
     level: 40
     rowId: 66617
@@ -318,7 +346,7 @@ quests:
       - name: Cure III
         icon: '407'
         type: action
-    partQuestNo: 3
+    partQuestNo: 10
   - name: Following in His Footsteps
     level: 45
     rowId: 66618
@@ -354,7 +382,7 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Report to Raya\u2013O\u2013Senna at Camp Tranquil."
-    partQuestNo: 4
+    partQuestNo: 11
   - name: Yearn for the Urn
     level: 45
     rowId: 66619
@@ -382,7 +410,7 @@ quests:
       - name: Holy
         icon: '2629'
         type: action
-    partQuestNo: 5
+    partQuestNo: 12
   - name: Heart of the Forest
     level: 50
     rowId: 66620
@@ -407,7 +435,10 @@ quests:
       - name: Benediction
         icon: '2627'
         type: action
-    partQuestNo: 6
+      - id: 412
+        name: Seeing White I
+        type: achievement
+    partQuestNo: 13
   - name: Taint Misbehaving
     level: 50
     rowId: 67255
@@ -440,7 +471,7 @@ quests:
       - location: North Shroud
         coords: (20.6, 25.2)
         name: Speak with Eschiva at Fallgourd Float.
-    partQuestNo: 7
+    partQuestNo: 14
   - name: A Journey of Purification
     level: 52
     rowId: 67256
@@ -471,7 +502,7 @@ quests:
       - name: Asylum
         icon: '2632'
         type: action
-    partQuestNo: 8
+    partQuestNo: 15
   - name: The Girl with the Dragon Tissue
     level: 54
     rowId: 67257
@@ -508,7 +539,7 @@ quests:
       - name: Stone III
         icon: '2631'
         type: action
-    partQuestNo: 9
+    partQuestNo: 16
   - name: The Dark Blight Writhes
     level: 56
     rowId: 67258
@@ -536,7 +567,7 @@ quests:
       - name: Assize
         icon: '2634'
         type: action
-    partQuestNo: 10
+    partQuestNo: 17
   - name: In the Wake of Death
     level: 58
     rowId: 67259
@@ -567,7 +598,7 @@ quests:
       - name: Thin Air
         icon: '2636'
         type: action
-    partQuestNo: 11
+    partQuestNo: 18
   - name: Trials of the Padjals
     level: 58
     rowId: 67260
@@ -582,7 +613,7 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Deliver the tainted flesh to Raya\u2013O\u2013Senna at Camp Tranquil."
-    partQuestNo: 12
+    partQuestNo: 19
   - name: Hands of Healing
     level: 60
     rowId: 67261
@@ -622,7 +653,10 @@ quests:
       - name: Tetragrammaton
         icon: '2633'
         type: action
-    partQuestNo: 13
+      - id: 1146
+        name: Seeing White II
+        type: achievement
+    partQuestNo: 20
   - name: Unease in East End
     level: 60
     rowId: 67950
@@ -649,7 +683,7 @@ quests:
       - location: The Fringes
         coords: (9.0, 12.0)
         name: Speak with E-Sumi-Yan at Castrum Oriens.
-    partQuestNo: 14
+    partQuestNo: 21
   - name: An Aura for Trouble
     level: 63
     rowId: 67951
@@ -673,7 +707,7 @@ quests:
       - location: The Fringes
         coords: (9.0, 11.9)
         name: Speak with Sylphie.
-    partQuestNo: 15
+    partQuestNo: 22
   - name: A Beacon for Bad Things
     level: 65
     rowId: 67952
@@ -706,7 +740,7 @@ quests:
     soloDuty:
       levelSync: 67
       timeLimit: 30
-    partQuestNo: 16
+    partQuestNo: 23
   - name: The Problem with Padjals
     level: 68
     rowId: 67953
@@ -730,7 +764,7 @@ quests:
       - location: The Fringes
         coords: (8.3, 29.0)
         name: Speak with Sylphie.
-    partQuestNo: 17
+    partQuestNo: 24
   - name: What She Always Wanted
     level: 70
     rowId: 67954
@@ -767,7 +801,10 @@ quests:
       - name: Plenary Indulgence
         icon: '2639'
         type: action
-    partQuestNo: 18
+      - id: 1802
+        name: Seeing White III
+        type: achievement
+    partQuestNo: 25
   - name: Whence the Healing Springs
     level: 80
     rowId: 68751
@@ -794,7 +831,11 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Report to Raya\u2013O\u2013Senna at Camp Tranquil."
-    partQuestNo: 19
+    unlocks:
+      - id: 2311
+        name: Seeing White IV
+        type: achievement
+    partQuestNo: 26
 
 
 ---
