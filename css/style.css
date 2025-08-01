@@ -63,6 +63,30 @@ span.icon i.quest-novice {
     width: 1rem;
     display: block;
 }
+span.icon i.action {
+    background:url('/icons/000004.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.map {
+    background:url('/icons/000023.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.aetheryte {
+    background:url('/icons/aetheryte.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
 
 .unlocks {
     padding-left: 1rem;

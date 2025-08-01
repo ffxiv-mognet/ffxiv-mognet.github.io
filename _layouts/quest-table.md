@@ -145,6 +145,14 @@ layout: default
                 </div>
                 {% if unlock.link %}</a>{% endif %}
               {% endfor %}
+              {% for unlock in site.data.questunlocks.unlocks[quest.rowId] %}
+                <div>
+                    <span class="icon-text">
+                        <span class="icon"><i class="{{unlock.type}}"></i></span>
+                        <span>{{unlock.name}}</span>
+                    </span>
+                </div>
+              {% endfor %}
           </td>
           <td><!-- requires -->
               {% for required in quest.requires %}

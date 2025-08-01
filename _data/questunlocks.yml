@@ -1,0 +1,13 @@
+unlocks:
+  67116:
+    - {name: Ishgard, type: map}
+    - {name: Foundation, type: aetheryte}
+  67119:
+    - {name: Coerthas Western Highlands, type: map}
+    - {name: Falcon's Nest, type: aetheryte}
+    - {name: The Dravanian Forelands, type: map}
+    - {name: Tailfeather, type: aetheryte}
+    - {name: Anyx Trine, type: aetheryte}
+  67126:
+    - {name: Sea of Clouds (south), type: map}
+    - {name: Camp Cloudtop, type: aetheryte}
