@@ -11,3 +11,5 @@ unlocks:
   67126:
     - {name: Sea of Clouds (south), type: map}
     - {name: Camp Cloudtop, type: aetheryte}
+  67153:
+    - {name: The Churning Mists, type: map}
