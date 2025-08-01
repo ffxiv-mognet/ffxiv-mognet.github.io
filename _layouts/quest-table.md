@@ -165,11 +165,11 @@ layout: default
 
 <script>
 
-window.QUEST_CONFIG_KEY = "quests:config"
+window.QUEST_CONFIG_SHOW_FINISHED = "quest:config:showFinished"
 
 document.addEventListener("DOMContentLoaded", async () => {
   var checkShowFinished = document.getElementById("check-showFinished");
-  const showFinished = getConfigFromStorage(QUEST_CONFIG_KEY, "showFinished")
+  const showFinished = getLocalFlag("", QUEST_CONFIG_SHOW_FINISHED)
   setShowFinished(showFinished)
   checkShowFinished.checked = showFinished
   checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
@@ -190,7 +190,7 @@ function updateRemainCount() {
 
 function setShowFinished(value) {
   window.questsShowFinished = value
-  writeConfigToStorage(QUEST_CONFIG_KEY, "showFinished", value)
+  setLocalFlag("", QUEST_CONFIG_SHOW_FINISHED, value)
 
   if (window.questsShowFinished) {
     removeHiddenFinishedStyle('quest-row')

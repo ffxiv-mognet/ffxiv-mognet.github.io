@@ -1,38 +1,42 @@
 
 
-function writeConfigToStorage(keyName, feature, value) {
-    const config = deserializeFromStorage(keyName)
-    config[feature] = value
-    serializeToStorage(keyName, config)
+function keyForLocalStorage(namespace, key) {
+    return `${namespace}:${key}`
 }
-function getConfigFromStorage(keyName, feature) {
-    const config = deserializeFromStorage(keyName)
-    return config[feature]
+function setLocalStorage(namespace, key, value) {
+    return localStorage.setItem(keyForLocalStorage(namespace, key), value)
 }
-
-
-
-function deserializeFromStorage(keyName) {
-    const deserialized = localStorage.getItem(keyName)
-    return deserialized ? JSON.parse(deserialized) : {}
+function getLocalStorage(namespace, key) {
+    return localStorage.getItem(keyForLocalStorage(namespace, key))
 }
-function serializeToStorage(keyName, finished) {
-    const serialized = JSON.stringify(finished || {})
-    return localStorage.setItem(keyName, serialized)
+function removeLocalStorage(namespace, key) {
+    return localStorage.removeItem(keyForLocalStorage(namespace, key))
 }
-
-
-
-const QUEST_FINISHED_KEY = 'quests_finished'
-function setQuestFinished(rowId, isFinished) {
-    const finished = deserializeFromStorage(QUEST_FINISHED_KEY)
-    if (isFinished) {
-        finished[rowId] = 1
+function deserializeFromStorage(namespace, key) {
+    return JSON.parse(getLocalStorage(namespace, key))
+}
+function serializeToStorage(namespace, key, value) {
+    setLocalStorage(namespace, key, JSON.stringify(value))
+}
+function setLocalFlag(namespace, key, value = true) {
+    if (!!value) {
+        setLocalStorage(namespace, key, "1")
     } else {
-        delete finished[rowId]
+        removeLocalStorage(namespace, key)
     }
-    serializeToStorage(QUEST_FINISHED_KEY, finished)
+}
+function getLocalFlag(namespace, key) {
+    return localStorage.hasOwnProperty(keyForLocalStorage(namespace, key))
+}
+
+
+function setQuestFinished(rowId, isFinished) {
+    const namespace = "" // TODO: eventually this becomes active character name
+    const key = `quest:finished:${rowId}`
+    setLocalFlag(namespace, key, isFinished)
 }
 function isQuestFinished(rowId) {
-    return !!deserializeFromStorage(QUEST_FINISHED_KEY)[rowId]
+    const namespace = "" 
+    const key = `quest:finished:${rowId}`
+    return getLocalFlag(namespace, key)
 }
