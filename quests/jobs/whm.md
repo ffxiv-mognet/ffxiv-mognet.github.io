@@ -238,9 +238,6 @@ quests:
         type: achievement
     partQuestNo: 7
 
-
-
-
   - name: Seer Folly
     level: 30
     rowId: 66615
@@ -265,7 +262,6 @@ quests:
       - name: Presence of Mind
         icon: '2626'
         type: action
-    partQuestNo: 1
     requires:
       - name: Sylph-management
         level: 20
@@ -274,31 +270,6 @@ quests:
         genre: Seventh Umbral Era
         icon: '71000'
         link: /quests/msq/realm-reborn/part2
-
-  - name: Seer Folly
-    level: 30
-    rowId: 66615
-    questId: JobWhm300_01079
-    genre: White Mage Quests
-    icon: '71140'
-    issuer:
-      location: Old Gridania
-      coords: (6.0, 10.7)
-      name: E-Sumi-Yan
-    steps:
-      - location: Central Shroud
-        coords: (16.0, 23.4)
-        name: Seek out Raya-O-Senna in Everschade.
-      - location: South Shroud
-        coords: (18.7, 27.1)
-        name: Speak with Raya-O-Senna at Camp Tranquil.
-    soloDuty:
-      levelSync: 34
-      timeLimit: 30
-    unlocks:
-      - name: Presence of Mind
-        icon: '2626'
-        type: action
     partQuestNo: 8
   - name: Only You Can Prevent Forest Ire
     level: 35
