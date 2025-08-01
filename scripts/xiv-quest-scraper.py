@@ -53,6 +53,8 @@ class XivQuestScraper:
             'Quest': CsvSheet(self._path_for_sheet("Quest")),
             'TerritoryType': CsvSheet(self._path_for_sheet("TerritoryType")),
             'Action': CsvSheet(self._path_for_sheet("Action")),
+            'AetherCurrent': CsvSheet(self._path_for_sheet("AetherCurrent")),
+            'MountSpeed': CsvSheet(self._path_for_sheet("MountSpeed")),
         }
 
 
@@ -152,6 +154,24 @@ class XivQuestScraper:
                 'name': action['Name'],
                 'icon': action['Icon'],
                 'type': "action"
+            })
+
+        # mount speed increase
+        mountspeeds = self.sheets['MountSpeed'].findAll('Quest', quest['#'])
+        for it in mountspeeds:
+            tt = self.sheets['TerritoryType'].findBy('MountSpeed', it['#'])
+            pn = self.sheets['PlaceName'].byId(tt['PlaceName'])
+            unlocks.append({
+                'name': pn['Name'],
+                'type': 'mountspeed',
+            })
+
+        # aethercurrents
+        current = self.sheets['AetherCurrent'].findBy('Quest', quest['#'])
+        if current:
+            unlocks.append({
+                'name': 'Aether Current',
+                'type': "aethercurrent"
             })
 
         return unlocks

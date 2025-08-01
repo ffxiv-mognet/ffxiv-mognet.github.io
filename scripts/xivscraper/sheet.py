@@ -19,7 +19,7 @@ class CsvSheet:
             columns = next(reader)
             types = next(reader)
             for i in range(0,len(columns)):
-                col_name = columns[i] if columns[i] else "col{}".format(i)
+                col_name = columns[i] if columns[i] else "col{}".format(i-1)
                 self.headers.append((col_name, types[i]))
 
             # hydrate each row as a dict
@@ -43,6 +43,13 @@ class CsvSheet:
         for row in self.rows.values():
             if row[field_name] == value:
                 return row
+
+    def findAll(self, field_name, value, default=None):
+        if not self.indexed:
+            self.buildIndex()
+        for row in self.rows.values():
+            if row[field_name] == value:
+                yield row
 
     def find(self, cb, default=None):
         if not self.indexed:
