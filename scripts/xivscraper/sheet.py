@@ -37,19 +37,28 @@ class CsvSheet:
             self.buildIndex()
         return self.rows.get(rowId, default)
 
-    def findBy(self, field_name, value, default=None):
+    def findBy(self, field_name, value):
         if not self.indexed:
             self.buildIndex()
         for row in self.rows.values():
             if row[field_name] == value:
                 return row
 
-    def findAll(self, field_name, value, default=None):
+    def findAll(self, field_name, value):
         if not self.indexed:
             self.buildIndex()
         for row in self.rows.values():
             if row[field_name] == value:
                 yield row
+
+    def findMatches(self, field_name, callback):
+        if not self.indexed:
+            self.buildIndex()
+        for row in self.rows.values():
+            if callback(row):
+                yield row
+
+
 
     def find(self, cb, default=None):
         if not self.indexed:

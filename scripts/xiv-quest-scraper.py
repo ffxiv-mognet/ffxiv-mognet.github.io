@@ -55,6 +55,8 @@ class XivQuestScraper:
             'Action': CsvSheet(self._path_for_sheet("Action")),
             'AetherCurrent': CsvSheet(self._path_for_sheet("AetherCurrent")),
             'MountSpeed': CsvSheet(self._path_for_sheet("MountSpeed")),
+            'Achievement': CsvSheet(self._path_for_sheet("Achievement")),
+            'Emote': CsvSheet(self._path_for_sheet("Emote")),
         }
 
 
@@ -172,6 +174,28 @@ class XivQuestScraper:
             unlocks.append({
                 'name': 'Aether Current',
                 'type': "aethercurrent"
+            })
+
+        # emote
+        if quest['Emote{Reward}'] != "0":
+            emote = self.sheets['Emote'].byId(quest['Emote{Reward}'])
+            unlocks.append({
+                'name': emote['Name'],
+                'type': 'emote',
+            })
+
+        # achievements
+        def do_match(it):
+            # return it['Key'] == quest['#']
+            # print("huh", it['Type'], it['Key'])
+            return it['Type'] == "6" and it['Key'] == quest['#']
+        achievements = self.sheets['Achievement'].findMatches('Quest', do_match)
+            #lambda it: it['Type'] == 6 and it['Key'] == quest['#'])
+        for it in achievements:
+            unlocks.append({
+                'id': int(it['#']),
+                'name': it['Name'],
+                'type': 'achievement'
             })
 
         return unlocks
