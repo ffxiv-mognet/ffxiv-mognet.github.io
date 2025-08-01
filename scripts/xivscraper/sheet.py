@@ -9,13 +9,27 @@ class CsvSheet:
             self.buildIndex()
 
     def buildIndex(self):
+        self.headers = []
         self.rows = {}
         with open(self.csv_path, 'r') as csvfh:
-            csvfh.readline()  # skip first line
-            reader = csv.DictReader(csvfh)
+            reader = csv.reader(csvfh)
+            next(reader)  # skip first line
+
+            # parse header names and types
+            columns = next(reader)
+            types = next(reader)
+            for i in range(0,len(columns)):
+                col_name = columns[i] if columns[i] else "col{}".format(i)
+                self.headers.append((col_name, types[i]))
+
+            # hydrate each row as a dict
             for row in reader:
-                rowId = row["#"]
-                self.rows[rowId] = row
+                rowId = row[0]
+                obj = {}
+                for i in range(0, len(row)):
+                    col_name = self.headers[i][0]
+                    obj[col_name] = row[i]
+                self.rows[rowId] = obj
         self.indexed = True
 
     def byId(self, rowId, default=None):
