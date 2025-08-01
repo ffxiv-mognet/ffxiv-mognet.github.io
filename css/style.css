@@ -81,7 +81,7 @@ span.icon i.quest-novice {
 .is-finished {
     text-decoration: line-through;
 }
-.quest-row.is-finished span {
+.quest-row.is-finished label {
     text-decoration: line-through !important;
 }
 

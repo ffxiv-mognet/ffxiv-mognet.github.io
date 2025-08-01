@@ -65,13 +65,15 @@ layout: default
         {% for quest in page.quests %}
         <tr class="quest-row" data-rowid="{{quest.rowId}}" >
           <td>
-            <input 
-              type="checkbox" 
-              class="checkbox questCheckbox" 
-              id="completed-{{quest.rowId}}"
-              onchange="handleQuestChecked({{quest.rowId}})"
-              />
-            <span>#{{quest.partQuestNo}}</span>
+            <label class="checkbox">
+              <input 
+                type="checkbox" 
+                class="checkbox questCheckbox" 
+                id="completed-{{quest.rowId}}"
+                onchange="handleQuestChecked({{quest.rowId}})"
+                />
+              #{{quest.partQuestNo}}
+            </label>
           </td>
           <!-- quest -->
           <td class="quest-col">
@@ -94,11 +96,13 @@ layout: default
               {% for step in quest.steps %}
                 <ul class="quest-steps">
                     <li>
-                        <input type="checkbox" class="checkbox" id="completed-step-{{quest.rowId}}-{{forloop.index}}"/>
-                        <span class="name">{{ step.name }}</span>
-                        <span class="tag is-light">
-                            {{ step.location}} {{ step.coords }}
-                        </span>
+                        <label class="checkbox">
+                          <input type="checkbox" class="checkbox" id="completed-step-{{quest.rowId}}-{{forloop.index}}"/>
+                          <span class="name">{{ step.name }}</span>
+                          <span class="tag is-light">
+                              {{ step.location}} {{ step.coords }}
+                          </span>
+                        </label>
                     </li>
                 </ul>
               {% endfor %}
@@ -203,7 +207,7 @@ function updateRows() {
   const rows = document.getElementsByClassName("quest-row");
   const tbody = rows[0].parentNode
   for (const row of rows) {
-    const checkbox = row.getElementsByClassName("checkbox")[0]
+    const checkbox = document.getElementById(`completed-${row.dataset.rowid}`)
     const isFinished = isQuestFinished(row.dataset.rowid)
 
     if (isFinished) {
