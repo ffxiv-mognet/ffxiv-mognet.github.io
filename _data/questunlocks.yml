@@ -13,3 +13,15 @@ unlocks:
     - {name: Camp Cloudtop, type: aetheryte}
   67153:
     - {name: The Churning Mists, type: map}
+  67179:    
+    - {name: Sea of Clouds (north), type: map}
+    - {name: Ok' Zundu, type: aetheryte}
+  67191:
+    - {name: The Dravanian Hinterlands, type: map}
+    - {name: Idyllshire, type: map}
+    - {name: Idyllshire, type: aetheryte}
+  67195:
+    - {name: Matoya's Cave, type: map}
+  67199:    
+    - {name: Azys Lla, type: map}
+    - {name: Helix, type: aetheryte}

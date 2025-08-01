@@ -233,6 +233,9 @@ quests:
         coords: (6.1, 5.9)
         name: Speak with Artoirel at Fortemps Manor.
     partQuestNo: 10
+
+
+
   - name: Onwards and Upwards
     level: 50
     rowId: 67126
@@ -395,6 +398,8 @@ quests:
         coords: (5.9, 6.1)
         name: Speak with Emmanellain in Fortemps Manor.
     partQuestNo: 17
+
+
   - name: Divine Intervention
     level: 50
     rowId: 67133
@@ -442,6 +447,10 @@ quests:
       - location: Fortemps Manor
         coords: (6.1, 6.2)
         name: Speak with Alphinaud at Fortemps Manor.
+    unlocks:
+      - id: 1133
+        name: Lucky Number 7
+        type: achievement
     partQuestNo: 19
   - name: Flame General Affairs
     level: 51
@@ -511,6 +520,10 @@ quests:
     soloDuty:
       levelSync: 53
       timeLimit: 30
+    unlocks:
+      - id: 1134
+        name: Gaol Break
+        type: achievement
     partQuestNo: 22
   - name: To Siege or Not to Siege
     level: 51
@@ -626,6 +639,9 @@ quests:
     soloDuty:
       levelSync: 53
       timeLimit: 30
+    unlocks:
+      - name: Coerthas Western Highlands
+        type: mountspeed
     partQuestNo: 27
   - name: Camp of the Convictors
     level: 51
@@ -859,6 +875,8 @@ quests:
         type: trial
         levelRequired: 53
         levelSync: 54
+      - name: The Dravanian Forelands
+        type: mountspeed
     partQuestNo: 37
   - name: Mourn in Passing
     level: 53
@@ -1058,6 +1076,9 @@ quests:
       - location: The Churning Mists
         coords: (17.3, 33.7)
         name: Speak with Estinien.
+    unlocks:
+      - name: The Churning Mists
+        type: mountspeed
     partQuestNo: 45
   - name: Heart of Ice
     level: 54

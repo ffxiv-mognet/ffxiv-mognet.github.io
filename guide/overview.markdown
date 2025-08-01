@@ -8,7 +8,9 @@ permalink: /guide/overview
 ## A Realm Reborn [2.x]
 
 ### Realm Reborn Part 1 [lvl 4-15]
-From "To the Bannock"[] to "Call of the Sea"[]  (24 quests)
+Gridania: "Close to Home"[65621] to "The Gridanian Envoy"[66043]..."Call of the Sea"[66209]
+Lominsa: "Close to Home"[65644] to [66082] "Call of the Sea"[66209]
+Uldah: "Close to Home"[66104] to [66064] "Call of the Sea"[66210]
 
 ### Realm Reborn Part 2 [lvl 15-24] 
 from "It's Probably Pirates"[65781] to "Back from the Wood"[66282]  (38 quests)
@@ -28,7 +30,9 @@ from "Traitor in the Midst"[65588] to "Before the Dawn"[65964] (40 quests)
 
 ## Heavensward [3.x]
 ### Heavensward Part 1 [Lv.50-54]
-from "Coming to Ishgard"[67116] to "Heart of Ice"[67163]
+from "Coming to Ishgard"[67116] to "Knights Be Not Proud"[67125]
+ plus "onwards and upwards"[67126] to "a reward long in coming"[67132]
+ from "divine intervention"[67133] to "Heart of Ice"[67163]
 
 ### Heavensward Part 2 [Lv.54-60]
 from "The Wyrm's Lair"[67164] to "Heavensward"[67205]
