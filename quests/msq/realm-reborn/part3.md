@@ -218,6 +218,9 @@ quests:
       - location: Southern Thanalan
         coords: (16.9, 14.4)
         name: Show Meffrid's recommendation to Gundobald at Little Ala Mhigo.
+    unlocks:
+      - name: South Shroud
+        type: mountspeed
     partQuestNo: 11
   - name: The Bear and the Young'uns' Cares
     level: 27
@@ -374,6 +377,9 @@ quests:
       - location: North Shroud
         coords: (19.7, 25.4)
         name: Present the ravaged corpse to Aethelmaer.
+    unlocks:
+      - name: North Shroud
+        type: mountspeed
     partQuestNo: 19
   - name: Secret of the White Lily
     level: 28
@@ -430,6 +436,9 @@ quests:
         type: dungeon
         levelRequired: 28
         levelSync: 31
+      - id: 784
+        name: Skeletons
+        type: achievement
     partQuestNo: 21
   - name: Wrath of the Titan
     level: 30
@@ -610,6 +619,9 @@ quests:
       - location: Southern Thanalan
         coords: (14.3, 29.9)
         name: Present your prize to U'odh Nunh.
+    unlocks:
+      - name: Southern Thanalan
+        type: mountspeed
     partQuestNo: 30
   - name: There and Back Again
     level: 31
@@ -810,6 +822,9 @@ quests:
       - location: Eastern La Noscea
         coords: (32.6, 30.5)
         name: Speak with Y'shtola.
+    unlocks:
+      - name: Eastern La Noscea
+        type: mountspeed
     partQuestNo: 40
   - name: As You Wish
     level: 33
@@ -854,8 +869,11 @@ quests:
         type: trial
         levelRequired: 34
         levelSync: 36
+      - name: Upper La Noscea
+        type: mountspeed
+      - name: Outer La Noscea
+        type: mountspeed
     partQuestNo: 42
 
-
+  
 ---
-

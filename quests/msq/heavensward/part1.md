@@ -233,6 +233,168 @@ quests:
         coords: (6.1, 5.9)
         name: Speak with Artoirel at Fortemps Manor.
     partQuestNo: 10
+  - name: Onwards and Upwards
+    level: 50
+    rowId: 67126
+    questId: HeaVna111_01590
+    genre: Heavensward
+    icon: '71000'
+    issuer:
+      location: Fortemps Manor
+      coords: (5.9, 6.1)
+      name: Emmanellain
+    steps:
+      - location: The Pillars
+        coords: (14.3, 11.0)
+        name: Speak with the airship ticketer and travel to the Sea of Clouds.
+      - location: The Pillars
+        coords: (14.3, 11.0)
+        name: Speak with the airship ticketer and travel to the Sea of Clouds.
+      - location: The Sea of Clouds
+        coords: (7.9, 31.9)
+        name: Speak with Emmanellain.
+      - location: The Sea of Clouds
+        coords: (17.0, 37.4)
+        name: Speak with Laniaitte.
+    partQuestNo: 11
+  - name: An Indispensable Ally
+    level: 50
+    rowId: 67127
+    questId: HeaVna112_01591
+    genre: Heavensward
+    icon: '71000'
+    issuer:
+      location: The Sea of Clouds
+      coords: (17.0, 37.4)
+      name: Laniaitte
+    steps:
+      - location: The Sea of Clouds
+        coords: (16.8, 37.2)
+        name: Speak with Emmanellain.
+      - location: The Sea of Clouds
+        coords: (16.8, 37.3)
+        name: Speak with Honoroit.
+      - location: The Sea of Clouds
+        coords: (17.0, 37.4)
+        name: Speak with Laniaitte.
+    partQuestNo: 12
+  - name: Meeting the Neighbors
+    level: 50
+    rowId: 67128
+    questId: HeaVna113_01592
+    genre: Heavensward
+    icon: '71000'
+    issuer:
+      location: The Sea of Clouds
+      coords: (17.0, 37.4)
+      name: Laniaitte
+    steps:
+      - location: The Sea of Clouds
+        coords: (15.3, 37.8)
+        name: Speak with Marielle.
+      - location: The Sea of Clouds
+        coords: (17.4, 35.8)
+        name: Keep watch for Vanu.
+      - location: The Sea of Clouds
+        coords: (15.3, 37.8)
+        name: Report to Marielle.
+    partQuestNo: 13
+  - name: Sense of Urgency
+    level: 50
+    rowId: 67129
+    questId: HeaVna114_01593
+    genre: Heavensward
+    icon: '71000'
+    issuer:
+      location: The Sea of Clouds
+      coords: (15.3, 37.8)
+      name: Marielle
+    steps:
+      - location: The Sea of Clouds
+        coords: (16.7, 38.8)
+        name: Find sentries and /psych them up.
+      - location: The Sea of Clouds
+        coords: (15.3, 37.8)
+        name: Report to Marielle.
+    partQuestNo: 14
+  - name: Hope Springs Eternal
+    level: 50
+    rowId: 67130
+    questId: HeaVna115_01594
+    genre: Heavensward
+    icon: '71000'
+    issuer:
+      location: The Sea of Clouds
+      coords: (15.3, 37.8)
+      name: Marielle
+    steps:
+      - location: The Sea of Clouds
+        coords: (17.0, 37.4)
+        name: Speak with Laniaitte.
+      - location: The Sea of Clouds
+        coords: (16.8, 37.2)
+        name: Speak with Emmanellain.
+      - location: The Sea of Clouds
+        coords: (23.8, 33.1)
+        name: Speak with Emmanellain near Voor Sian Siran.
+      - location: The Sea of Clouds
+        coords: (29.1, 35.4)
+        name: Search for a spring crystal in Voor Sian Siran.
+      - location: The Sea of Clouds
+        coords: (23.8, 33.1)
+        name: Deliver the spring crystal to Honoroit.
+    partQuestNo: 15
+  - name: A Series of Unfortunate Events
+    level: 50
+    rowId: 67131
+    questId: HeaVna116_01595
+    genre: Heavensward
+    icon: '71000'
+    issuer:
+      location: The Sea of Clouds
+      coords: (23.8, 33.1)
+      name: Honoroit
+    steps:
+      - location: The Sea of Clouds
+        coords: (30.7, 35.2)
+        name: Search for Emmanellain in Voor Sian Siran.
+      - location: The Sea of Clouds
+        coords: (28.6, 31.2)
+        name: Rendezvous with Honoroit.
+      - location: The Sea of Clouds
+        coords: (33.2, 29.5)
+        name: Speak with Honoroit.
+      - location: The Sea of Clouds
+        coords: (33.2, 29.5)
+        name: Speak with Honoroit.
+      - location: The Sea of Clouds
+        coords: (9.0, 32.2)
+        name: Speak with Cid.
+    soloDuty:
+      levelSync: 52
+      timeLimit: 30
+    partQuestNo: 16
+  - name: A Reward Long in Coming
+    level: 50
+    rowId: 67132
+    questId: HeaVna117_01596
+    genre: Heavensward
+    icon: '71000'
+    issuer:
+      location: The Sea of Clouds
+      coords: (9.0, 32.3)
+      name: Emmanellain
+    steps:
+      - location: The Sea of Clouds
+        coords: (17.0, 37.4)
+        name: Speak with Laniaitte.
+      - location: The Pillars
+        coords: (14.5, 10.7)
+        name: Speak with Haurchefant in Ishgard.
+      - location: Fortemps Manor
+        coords: (5.9, 6.1)
+        name: Speak with Emmanellain in Fortemps Manor.
+    partQuestNo: 17
   - name: Divine Intervention
     level: 50
     rowId: 67133
@@ -259,7 +421,7 @@ quests:
     soloDuty:
       levelSync: 52
       timeLimit: 30
-    partQuestNo: 11
+    partQuestNo: 18
   - name: Disclosure
     level: 50
     rowId: 67134
@@ -280,7 +442,7 @@ quests:
       - location: Fortemps Manor
         coords: (6.1, 6.2)
         name: Speak with Alphinaud at Fortemps Manor.
-    partQuestNo: 12
+    partQuestNo: 19
   - name: Flame General Affairs
     level: 51
     rowId: 67135
@@ -298,7 +460,7 @@ quests:
       - location: Mor Dhona
         coords: (22.1, 5.0)
         name: Speak with the Doman contact at Revenant's Toll.
-    partQuestNo: 13
+    partQuestNo: 20
   - name: In Search of Raubahn
     level: 51
     rowId: 67136
@@ -316,7 +478,7 @@ quests:
       - location: Eastern Thanalan
         coords: (13.8, 29.2)
         name: Speak with Hozan.
-    partQuestNo: 14
+    partQuestNo: 21
   - name: Keeping the Flame Alive
     level: 51
     rowId: 67137
@@ -349,7 +511,7 @@ quests:
     soloDuty:
       levelSync: 53
       timeLimit: 30
-    partQuestNo: 15
+    partQuestNo: 22
   - name: To Siege or Not to Siege
     level: 51
     rowId: 67138
@@ -370,7 +532,7 @@ quests:
       - location: Fortemps Manor
         coords: (6.1, 6.0)
         name: Speak with Alphinaud.
-    partQuestNo: 16
+    partQuestNo: 23
   - name: Alphinaud's Way
     level: 51
     rowId: 67139
@@ -392,7 +554,7 @@ quests:
       - location: Foundation
         coords: (13.4, 11.1)
         name: Speak with Alphinaud.
-    partQuestNo: 17
+    partQuestNo: 24
   - name: In Search of Iceheart
     level: 51
     rowId: 67140
@@ -422,7 +584,7 @@ quests:
       - location: Coerthas Western Highlands
         coords: (31.7, 12.0)
         name: Speak with the expedition leader.
-    partQuestNo: 18
+    partQuestNo: 25
   - name: From One Heretic to Another
     level: 51
     rowId: 67141
@@ -440,7 +602,7 @@ quests:
       - location: Coerthas Western Highlands
         coords: (31.6, 11.7)
         name: Hand the heretic epistles to the expedition leader.
-    partQuestNo: 19
+    partQuestNo: 26
   - name: Sounding Out the Amphitheatre
     level: 51
     rowId: 67142
@@ -464,7 +626,7 @@ quests:
     soloDuty:
       levelSync: 53
       timeLimit: 30
-    partQuestNo: 20
+    partQuestNo: 27
   - name: Camp of the Convictors
     level: 51
     rowId: 67143
@@ -482,7 +644,7 @@ quests:
       - location: Coerthas Western Highlands
         coords: (16.3, 22.4)
         name: Speak with Pierriquet.
-    partQuestNo: 21
+    partQuestNo: 28
   - name: Purple Flame, Purple Flame
     level: 51
     rowId: 67144
@@ -500,7 +662,10 @@ quests:
       - location: Coerthas Western Highlands
         coords: (9.9, 16.1)
         name: Deliver the yak hides to Estinien.
-    partQuestNo: 22
+    unlocks:
+      - name: Aether Current
+        type: aethercurrent
+    partQuestNo: 29
   - name: Where the Chocobos Roam
     level: 52
     rowId: 67145
@@ -521,7 +686,7 @@ quests:
       - location: The Dravanian Forelands
         coords: (31.9, 22.9)
         name: Speak with Marcechamp.
-    partQuestNo: 23
+    partQuestNo: 30
   - name: Worse than Dragons
     level: 52
     rowId: 67146
@@ -545,7 +710,7 @@ quests:
       - location: The Dravanian Forelands
         coords: (25.7, 22.5)
         name: Press on to the Stained One.
-    partQuestNo: 24
+    partQuestNo: 31
   - name: The Trine Towers
     level: 52
     rowId: 67147
@@ -569,7 +734,7 @@ quests:
       - location: The Dravanian Forelands
         coords: (18.3, 26.2)
         name: Speak with Ysayle.
-    partQuestNo: 25
+    partQuestNo: 32
   - name: Gifts for the Outcasts
     level: 52
     rowId: 67148
@@ -590,7 +755,7 @@ quests:
       - location: The Dravanian Forelands
         coords: (26.5, 17.9)
         name: Deliver the hunks of nanka flesh to Alphinaud.
-    partQuestNo: 26
+    partQuestNo: 33
   - name: The Nonmind
     level: 52
     rowId: 67149
@@ -608,7 +773,7 @@ quests:
       - location: The Dravanian Forelands
         coords: (24.0, 19.7)
         name: Speak with the Vath storyteller.
-    partQuestNo: 27
+    partQuestNo: 34
   - name: A Gnathic Deity
     level: 53
     rowId: 67150
@@ -635,7 +800,7 @@ quests:
       - location: The Dravanian Forelands
         coords: (23.7, 19.9)
         name: Speak with Alphinaud.
-    partQuestNo: 28
+    partQuestNo: 35
   - name: Breaking into Hives
     level: 53
     rowId: 67151
@@ -659,7 +824,7 @@ quests:
       - location: The Dravanian Forelands
         coords: (30.4, 37.0)
         name: Wait for Ysayle deeper within the hive.
-    partQuestNo: 29
+    partQuestNo: 36
   - name: Lord of the Hive
     level: 53
     rowId: 67152
@@ -694,7 +859,7 @@ quests:
         type: trial
         levelRequired: 53
         levelSync: 54
-    partQuestNo: 30
+    partQuestNo: 37
   - name: Mourn in Passing
     level: 53
     rowId: 67153
@@ -726,7 +891,9 @@ quests:
         type: dungeon
         levelRequired: 53
         levelSync: 54
-    partQuestNo: 31
+      - name: Aether Current
+        type: aethercurrent
+    partQuestNo: 38
   - name: Beyond the Clouds
     level: 53
     rowId: 67154
@@ -747,7 +914,7 @@ quests:
       - location: The Churning Mists
         coords: (29.8, 35.6)
         name: Report to Alphinaud.
-    partQuestNo: 32
+    partQuestNo: 39
   - name: Mountaintop Diplomacy
     level: 54
     rowId: 67155
@@ -774,7 +941,7 @@ quests:
       - location: The Churning Mists
         coords: (30.2, 36.6)
         name: Speak with Moglin.
-    partQuestNo: 33
+    partQuestNo: 40
   - name: Moghan's Trial
     level: 54
     rowId: 67156
@@ -792,7 +959,7 @@ quests:
       - location: The Churning Mists
         coords: (30.0, 36.4)
         name: Deliver the sprigs of cloudsbreath to Moghan.
-    partQuestNo: 34
+    partQuestNo: 41
   - name: Moglin's Judgment
     level: 54
     rowId: 67159
@@ -825,7 +992,7 @@ quests:
       - location: The Churning Mists
         coords: (30.0, 36.4)
         name: Speak with Moghan.
-    partQuestNo: 35
+    partQuestNo: 42
   - name: Leaving Moghome
     level: 54
     rowId: 67160
@@ -846,7 +1013,7 @@ quests:
       - location: The Churning Mists
         coords: (27.4, 34.7)
         name: Speak with Moghan.
-    partQuestNo: 36
+    partQuestNo: 43
   - name: The Road to Zenith
     level: 54
     rowId: 67161
@@ -867,7 +1034,7 @@ quests:
       - location: The Churning Mists
         coords: (20.9, 26.7)
         name: Speak with Moghan.
-    partQuestNo: 37
+    partQuestNo: 44
   - name: Waiting for the Wind to Change
     level: 54
     rowId: 67162
@@ -891,7 +1058,7 @@ quests:
       - location: The Churning Mists
         coords: (17.3, 33.7)
         name: Speak with Estinien.
-    partQuestNo: 38
+    partQuestNo: 45
   - name: Heart of Ice
     level: 54
     rowId: 67163
@@ -909,7 +1076,7 @@ quests:
       - location: The Churning Mists
         coords: (7.3, 26.7)
         name: Speak with Alphinaud.
-    partQuestNo: 39
+    partQuestNo: 46
 
 
 ---

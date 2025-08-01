@@ -451,6 +451,10 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Report to Minfilia at the Rising Stones.
+    unlocks:
+      - id: 1029
+        name: Dreams of Ice
+        type: achievement
     partQuestNo: 18
   - name: Good Intentions
     level: 50
@@ -917,7 +921,9 @@ quests:
         questId: GaiUsd602_00495
         genre: Crystal Tower Quests
         icon: '71140'
+        link: /quests/alliance/crystal-tower
     partQuestNo: 36
+
   - name: Where We Are Needed
     level: 50
     rowId: 65959
@@ -1064,6 +1070,10 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.8, 17.0)
         name: Speak with the House Fortemps guard.
+    unlocks:
+      - id: 1129
+        name: My Left Arm
+        type: achievement
     partQuestNo: 42
 
 

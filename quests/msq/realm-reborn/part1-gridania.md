@@ -7,6 +7,7 @@ title: A Realm Reborn - Part 1 - Gridania
 permalink: /quests/msq/realm-reborn/part1/gridania
 links:
   next: /quests/msq/realm-reborn/part2
+
 quests:
   - name: Close to Home
     level: 1
@@ -26,11 +27,11 @@ quests:
         coords: (14.1, 5.8)
         name: Visit the Lancers' Guild.
       - location: Old Gridania
-        coords: (14.1, 5.8)
-        name: Visit the Lancers' Guild.
-      - location: Old Gridania
-        coords: (14.1, 5.8)
-        name: Visit the Lancers' Guild.
+        coords: (14.7, 9.4)
+        name: Listen to Parsemontret's explanation of the markets.
+      - location: New Gridania
+        coords: (11.7, 13.5)
+        name: Report to Miounne at the Carline Canopy.
     partQuestNo: 1
   - name: To the Bannock
     level: 4
@@ -124,10 +125,10 @@ quests:
         name: Recover the boxes of surveyor's instruments.
       - location: Central Shroud
         coords: (24.7, 24.0)
-        name: Recover the boxes of surveyor's instruments.
+        name: Recover the surveyor's rope.
       - location: Central Shroud
-        coords: (24.7, 24.0)
-        name: Recover the boxes of surveyor's instruments.
+        coords: (27.2, 20.8)
+        name: Return the surveying equipment to Pauline at Gabineaux's Bower.
     partQuestNo: 6
   - name: A Soldier's Breakfast
     level: 4
@@ -147,11 +148,11 @@ quests:
         coords: (31.1, 20.4)
         name: Slay three anoles.
       - location: Central Shroud
-        coords: (31.1, 20.4)
-        name: Slay three anoles.
-      - location: Central Shroud
         coords: (27.2, 20.8)
         name: Report to Pauline at Gabineaux's Bower.
+      - location: Central Shroud
+        coords: (23.6, 19.9)
+        name: Deliver the egg to Tsubh Khamazom at the Bannock.
     partQuestNo: 7
   - name: Spirithold Broken
     level: 9
@@ -487,6 +488,10 @@ quests:
         coords: (10.7, 12.9)
         name: "Present Kan\u2013E\u2013Senna's missive to Bartholomew on the Hustings\
           \ Strip."
+    unlocks:
+      - id: 311
+        name: Gone from Gridania
+        type: achievement
     partQuestNo: 22
   - name: Call of the Sea
     level: 14

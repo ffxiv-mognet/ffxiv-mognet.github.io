@@ -8,6 +8,7 @@ permalink: /quests/msq/realm-reborn/part4
 links:
   previous: /quests/msq/realm-reborn/part3
   next: /quests/msq/realm-reborn/part5
+
 quests:
   - name: All Good Things
     level: 34
@@ -32,6 +33,10 @@ quests:
       - location: Eastern Thanalan
         coords: (11.2, 21.3)
         name: Seek shelter at the Church of Saint Adama Landama.
+    unlocks:
+      - id: 785
+        name: Those Who Wait
+        type: achievement
     partQuestNo: 1
   - name: You Can't Take It with You
     level: 35
@@ -122,6 +127,9 @@ quests:
       - location: Eastern Thanalan
         coords: (11.2, 21.3)
         name: Show the sword to Father Iliud.
+    unlocks:
+      - name: Eastern Thanalan
+        type: mountspeed
     partQuestNo: 5
   - name: He Who Waited Behind
     level: 36
@@ -553,6 +561,11 @@ quests:
         type: dungeon
         levelRequired: 41
         levelSync: 43
+      - name: Coerthas Central Highlands
+        type: mountspeed
+      - id: 786
+        name: History Repeating
+        type: achievement
     partQuestNo: 24
   - name: Into the Eye of the Storm
     level: 41
@@ -736,6 +749,9 @@ quests:
     soloDuty:
       levelSync: 46
       timeLimit: 30
+    unlocks:
+      - name: Western La Noscea
+        type: mountspeed
     partQuestNo: 33
   - name: The Curious Case of Giggity
     level: 43
@@ -801,6 +817,9 @@ quests:
         type: trial
         levelRequired: 44
         levelSync: 46
+      - id: 787
+        name: Free Wing Night
+        type: achievement
     partQuestNo: 36
   - name: Reclamation
     level: 44
@@ -1059,6 +1078,9 @@ quests:
     soloDuty:
       levelSync: 50
       timeLimit: 30
+    unlocks:
+      - name: Mor Dhona
+        type: mountspeed
     partQuestNo: 47
   - name: Escape from Castrum Centri
     level: 46
@@ -1289,17 +1311,17 @@ quests:
         type: trial
         levelRequired: 50
         levelSync: 50
-      - name: Legacy of Allag
-        level: 50
-        rowId: 67245
-        questId: GaiUsx201_01709
-        genre: Crystal Tower Quests
-        icon: '71140'
-        partQuestNo: 54
-        type: 'quest-71140'
-        link: /quests/alliance/crystal-tower
+      - name: Northern Thanalan
+        type: mountspeed
+      - name: Mist
+        type: mountspeed
+      - name: The Lavender Beds
+        type: mountspeed
+      - name: The Goblet
+        type: mountspeed
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 54
-
 
 
 ---

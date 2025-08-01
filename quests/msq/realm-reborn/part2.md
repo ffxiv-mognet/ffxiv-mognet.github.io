@@ -638,6 +638,19 @@ quests:
     soloDuty:
       levelSync: 26
       timeLimit: 30
+    unlocks:
+      - name: Middle La Noscea
+        type: mountspeed
+      - name: Lower La Noscea
+        type: mountspeed
+      - name: Central Shroud
+        type: mountspeed
+      - name: East Shroud
+        type: mountspeed
+      - name: Western Thanalan
+        type: mountspeed
+      - name: Central Thanalan
+        type: mountspeed
     partQuestNo: 27
   - name: Spirited Away
     level: 22
@@ -868,8 +881,11 @@ quests:
       - location: The Waking Sands
         coords: (6.9, 6.1)
         name: Speak with Minfilia.
+    unlocks:
+      - id: 783
+        name: Back from the Wood
+        type: achievement
     partQuestNo: 38
-
 
 
 ---

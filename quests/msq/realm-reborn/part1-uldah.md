@@ -7,6 +7,7 @@ title: A Realm Reborn - Part 1 - Ul Dah
 permalink: /quests/msq/realm-reborn/part1/ul-dah
 links:
   next: /quests/msq/realm-reborn/part2
+
 quests:
   - name: Close to Home
     level: 1
@@ -26,11 +27,11 @@ quests:
         coords: (9.2, 11.7)
         name: Visit the Gladiators' Guild.
       - location: Ul'dah - Steps of Thal
-        coords: (9.2, 11.7)
-        name: Visit the Gladiators' Guild.
-      - location: Ul'dah - Steps of Thal
-        coords: (9.2, 11.7)
-        name: Visit the Gladiators' Guild.
+        coords: (14.0, 10.4)
+        name: Listen to Seseroga's explanation of the markets.
+      - location: Ul'dah - Steps of Nald
+        coords: (11.6, 9.6)
+        name: Report to Momodi at the Quicksand.
     partQuestNo: 1
   - name: We Must Rebuild
     level: 4
@@ -462,6 +463,10 @@ quests:
       - location: Old Gridania
         coords: (8.0, 11.1)
         name: Present Raubahn's missive to the silent conjurer at Nophica's Altar.
+    unlocks:
+      - id: 312
+        name: Out of Ul'dah
+        type: achievement
     partQuestNo: 23
   - name: Call of the Sea
     level: 14

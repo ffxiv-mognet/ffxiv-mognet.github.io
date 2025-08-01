@@ -288,6 +288,10 @@ quests:
       - location: The Rising Stones
         coords: (6.0, 5.9)
         name: Speak with Alphinaud.
+    unlocks:
+      - id: 1630
+        name: No Retreat, No Surrender
+        type: achievement
     partQuestNo: 10
   - name: Tidings from Gyr Abania
     level: 60
@@ -404,6 +408,10 @@ quests:
       - location: The Rising Stones
         coords: (6.0, 5.9)
         name: Speak with Alisaie at the Rising Stones.
+    unlocks:
+      - id: 1690
+        name: School's Out Forever
+        type: achievement
     partQuestNo: 15
   - name: The Obvious Solution
     level: 60
@@ -495,6 +503,12 @@ quests:
       - location: The Rising Stones
         coords: (6.0, 5.9)
         name: Speak with Alisaie at the Rising Stones.
+    unlocks:
+      - name: Empyreum
+        type: mountspeed
+      - id: 1691
+        name: Five Minutes of Fate
+        type: achievement
     partQuestNo: 19
 
 

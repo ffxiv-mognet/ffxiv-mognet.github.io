@@ -585,6 +585,10 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia at the Rising Stones.
+    unlocks:
+      - id: 899
+        name: Through the Maelstrom
+        type: achievement
     partQuestNo: 24
   - name: The Great Divide
     level: 50
@@ -932,8 +936,11 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia.
+    unlocks:
+      - id: 1001
+        name: Eorzea Defended
+        type: achievement
     partQuestNo: 38
-
 
 
 ---

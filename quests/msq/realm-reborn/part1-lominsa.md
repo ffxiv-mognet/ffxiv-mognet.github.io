@@ -25,12 +25,12 @@ quests:
       - location: Limsa Lominsa Lower Decks
         coords: (8.4, 11.5)
         name: Listen to Swozblaet's explanation of the markets.
-      - location: Limsa Lominsa Lower Decks
-        coords: (8.4, 11.5)
-        name: Listen to Swozblaet's explanation of the markets.
-      - location: Limsa Lominsa Lower Decks
-        coords: (8.4, 11.5)
-        name: Listen to Swozblaet's explanation of the markets.
+      - location: Limsa Lominsa Upper Decks
+        coords: (11.0, 6.3)
+        name: Visit the Marauders' Guild.
+      - location: Limsa Lominsa Upper Decks
+        coords: (11.6, 11.1)
+        name: Report to Baderon at the Drowning Wench.
     partQuestNo: 1
   - name: On to Summerford
     level: 4
@@ -326,14 +326,14 @@ quests:
         coords: (17.7, 35.4)
         name: Salvage the <Emphasis>Victory</Emphasis>'s rigging.
       - location: Lower La Noscea
-        coords: (17.7, 35.4)
-        name: Salvage the <Emphasis>Victory</Emphasis>'s rigging.
-      - location: Lower La Noscea
-        coords: (17.7, 35.4)
-        name: Salvage the <Emphasis>Victory</Emphasis>'s rigging.
-      - location: Lower La Noscea
         coords: (18.1, 34.6)
         name: Salvage the <Emphasis>Victory</Emphasis>'s sailcloth.
+      - location: Lower La Noscea
+        coords: (19.6, 36.2)
+        name: Take the three items to Fyrilsmyd.
+      - location: Lower La Noscea
+        coords: (26.4, 33.7)
+        name: Report to Ahtbyrm.
     partQuestNo: 15
   - name: Do Angry Pirates Dream
     level: 10
@@ -506,6 +506,10 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (10.7, 12.9)
         name: Present Merlwyb's missive to Bartholomew on the Hustings Strip.
+    unlocks:
+      - id: 310
+        name: Leaving Limsa Lominsa
+        type: achievement
     partQuestNo: 22
   - name: Call of the Sea
     level: 14

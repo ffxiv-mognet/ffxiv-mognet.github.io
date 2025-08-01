@@ -171,6 +171,8 @@ quests:
         type: dungeon
         levelRequired: 55
         levelSync: 56
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 7
   - name: The Song Begins
     level: 55
@@ -201,6 +203,10 @@ quests:
       - location: Foundation
         coords: (7.9, 8.9)
         name: Speak to Haurchefant.
+    unlocks:
+      - id: 1135
+        name: Orthodox Mayhem
+        type: achievement
     partQuestNo: 9
   - name: He Who Would Not Be Denied
     level: 56
@@ -398,6 +404,10 @@ quests:
       - location: Seat of the Lord Commander
         coords: (6.1, 5.9)
         name: Speak with Aymeric at the Congregation of Our Knights Most Heavenly.
+    unlocks:
+      - id: 1136
+        name: You Say You Want a Revolution
+        type: achievement
     partQuestNo: 18
   - name: In Search of the Soleil
     level: 57
@@ -538,6 +548,10 @@ quests:
         type: trial
         levelRequired: 57
         levelSync: 58
+      - name: The Sea of Clouds
+        type: mountspeed
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 24
   - name: A Difference of Opinion
     level: 57
@@ -571,6 +585,10 @@ quests:
       - location: The Pillars
         coords: (14.5, 11.9)
         name: Speak with Cid.
+    unlocks:
+      - id: 1137
+        name: The Faith That Drives Us
+        type: achievement
     partQuestNo: 26
   - name: An Engineering Enterprise
     level: 57
@@ -779,6 +797,9 @@ quests:
       - location: The Dravanian Hinterlands
         coords: (13.0, 36.6)
         name: Speak with Y'shtola.
+    unlocks:
+      - name: The Dravanian Hinterlands
+        type: mountspeed
     partQuestNo: 36
   - name: Forbidden Knowledge
     level: 59
@@ -814,6 +835,8 @@ quests:
         type: dungeon
         levelRequired: 59
         levelSync: 60
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 37
   - name: An Eye for Aether
     level: 59
@@ -865,6 +888,10 @@ quests:
       - location: The Pillars
         coords: (14.5, 12.2)
         name: Report to Alphinaud at the airship landing in Ishgard.
+    unlocks:
+      - id: 1138
+        name: Hope Enkindled
+        type: achievement
     partQuestNo: 39
   - name: The First Flight of the Excelsior
     level: 59
@@ -893,23 +920,9 @@ quests:
         coords: (9.5, 11.2)
         name: Speak with Cid.
     requires:
-      - name: My Little Chocobo (Twin Adder)
+      - name: My Little Chocobo
+        link: /quests/msq/realm-reborn/part2
         level: 20
-        rowId: 66236
-        questId: SubFst120_00700
-        genre: Gridanian Sidequests
-        icon: '71140'
-      - name: My Little Chocobo (Maelstrom)
-        level: 20
-        rowId: 66237
-        questId: SubSea910_00701
-        genre: La Noscean Sidequests
-        icon: '71140'
-      - name: My Little Chocobo (Immortal Flames)
-        level: 20
-        rowId: 66238
-        questId: SubWil160_00702
-        genre: Ul'dahn Sidequests
         icon: '71140'
     partQuestNo: 40
   - name: Systematic Exploration
@@ -935,6 +948,9 @@ quests:
       - location: Azys Lla
         coords: (9.7, 10.9)
         name: Speak with Cid.
+    unlocks:
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 41
   - name: In Node We Trust
     level: 59
@@ -959,6 +975,9 @@ quests:
       - location: Azys Lla
         coords: (27.3, 10.1)
         name: Speak with the guidance node at Matter Conduit III-II.
+    unlocks:
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 42
   - name: Chimerical Maintenance
     level: 59
@@ -983,6 +1002,9 @@ quests:
       - location: Azys Lla
         coords: (38.1, 12.8)
         name: Use the Allagan teleporter to travel to the Gamma Quadrant.
+    unlocks:
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 43
   - name: Close Encounters of the VIth Kind
     level: 59
@@ -1010,6 +1032,11 @@ quests:
     soloDuty:
       levelSync: 60
       timeLimit: 30
+    unlocks:
+      - name: Azys Lla
+        type: mountspeed
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 44
   - name: Fetters of Lament
     level: 59
@@ -1025,6 +1052,9 @@ quests:
       - location: Azys Lla
         coords: (8.6, 31.2)
         name: Seek out Midgardsormr's child.
+    unlocks:
+      - name: Aether Current
+        type: aethercurrent
     partQuestNo: 45
   - name: Heavensward
     level: 60
@@ -1067,7 +1097,11 @@ quests:
         type: trial
         levelRequired: 60
         levelSync: 60
+      - name: Idyllshire
+        type: mountspeed
+      - id: 1139
+        name: Looking Up
+        type: achievement
     partQuestNo: 46
-
 
 ---

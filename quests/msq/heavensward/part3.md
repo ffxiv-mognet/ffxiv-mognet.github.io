@@ -211,6 +211,10 @@ quests:
     soloDuty:
       levelSync: 60
       timeLimit: 30
+    unlocks:
+      - id: 1387
+        name: So It Goes
+        type: achievement
     partQuestNo: 8
   - name: As It Once Was
     level: 60
@@ -430,6 +434,9 @@ quests:
         coords: (18.7, 15.3)
         name: Speak with Thancred.
     soloDuty: null
+    unlocks:
+      - name: Victory
+        type: emote
     partQuestNo: 17
   - name: For Those We Can Yet Save
     level: 60
@@ -472,6 +479,12 @@ quests:
       - location: The Pillars
         coords: (11.5, 11.1)
         name: Speak with Alphinaud outside Fortemps Manor.
+    unlocks:
+      - name: Battle Stance
+        type: emote
+      - id: 1493
+        name: First Gear
+        type: achievement
     partQuestNo: 19
   - name: The Man Within
     level: 60
@@ -620,6 +633,10 @@ quests:
       - location: Fortemps Manor
         coords: (6.1, 6.2)
         name: Speak with Alphinaud at Fortemps Manor.
+    unlocks:
+      - id: 1594
+        name: Floor the Horde
+        type: achievement
     partQuestNo: 25
 
 
