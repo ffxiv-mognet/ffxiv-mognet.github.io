@@ -195,9 +195,9 @@ storylines:
     stories:
     - name: Tank
       parts:
-        - name: Gladiator/Paladin
+        - name: Paladin/Gladiator
           link: /quests/jobs/paladin
-        - name: Marauder/Warrior
+        - name: Warrior/Marauder
           link: /quests/jobs/warrior
         - name: Dark Knight
           link: /quests/jobs/dark-knight
@@ -205,7 +205,7 @@ storylines:
           link: /quests/jobs/gunbreaker
     - name: Healer
       parts: 
-        - name: Conjurer/White Mage
+        - name: White Mage/Conjurer
           link: /quests/jobs/white-mage
         - name: Scholar
           link: /quests/jobs/scholar
@@ -215,9 +215,9 @@ storylines:
           link: /quests/jobs/sage
     - name: Melee DPS
       parts:
-        - name: Pugilist/Monk
+        - name: Monk/Pugilist
           link: /quests/jobs/monk
-        - name: Lancer/Dragoon
+        - name: Dragoon/Lancer
           link: /quests/jobs/dragoon
         - name: Rogue/Ninja
           link: /quests/jobs/ninja
@@ -229,48 +229,48 @@ storylines:
           link: /quests/jobs/viper
     - name: Ranged DPS 
       parts:
-        - name: Archer/Bard
-          link: /quests/job/bard
+        - name: Bard/Archer
+          link: /quests/jobs/bard
         - name: Machinist
-          link: /quests/job/machinist
+          link: /quests/jobs/machinist
         - name: Dancer
-          link: /quests/job/dancer
+          link: /quests/jobs/dancer
     - name: Caster
       parts:
-        - name: Thaumaturge/Black Mage
-          link: /quests/job/black-mage
-        - name: Arcanist/Summoner
-          link: /quests/job/summoner
+        - name: Black Mage/Thaumaturge
+          link: /quests/jobs/black-mage
+        - name: Summoner/Arcanist
+          link: /quests/jobs/summoner
         - name: Red Mage
-          link: /quests/job/red-mage
+          link: /quests/jobs/red-mage
         - name: Pictomancer
-          link: /quests/job/pictomancer
+          link: /quests/jobs/pictomancer
     - name: Gatherer
       parts:
         - name: Miner
-          link: /quests/job/miner
+          link: /quests/jobs/miner
         - name: Botanist
-          link: /quests/job/botanist
+          link: /quests/jobs/botanist
         - name: Fisher
-          link: /quests/job/fisher
+          link: /quests/jobs/fisher
     - name: Crafter
       parts:
         - name: Carpenter
-          link: /quests/job/carpenter
+          link: /quests/jobs/carpenter
         - name: Blacksmith
-          link: /quests/job/blacksmith
+          link: /quests/jobs/blacksmith
         - name: Armorer
-          link: /quests/job/armorer
+          link: /quests/jobs/armorer
         - name: Goldsmith
-          link: /quests/job/goldsmith
+          link: /quests/jobs/goldsmith
         - name: Leatherworker
-          link: /quests/job/leatherworker
+          link: /quests/jobs/leatherworker
         - name: Weaver
-          link: /quests/job/weaver
+          link: /quests/jobs/weaver
         - name: Alchemist
-          link: /quests/job/alchemist
+          link: /quests/jobs/alchemist
         - name: Culinarian
-          link: /quests/job/culinarian
+          link: /quests/jobs/culinarian
     - name: Role Quests Shadowbringers
       parts:
         - name: Tank
@@ -314,7 +314,7 @@ storylines:
     - name: Special
       parts:
         - name: Blue Mage
-          link: /quests/job/blu
+          link: /quests/jobs/blu
 ---
 
 
