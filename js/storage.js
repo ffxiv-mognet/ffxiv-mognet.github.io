@@ -12,8 +12,9 @@ function getLocalStorage(namespace, key) {
 function removeLocalStorage(namespace, key) {
     return localStorage.removeItem(keyForLocalStorage(namespace, key))
 }
-function deserializeFromStorage(namespace, key) {
-    return JSON.parse(getLocalStorage(namespace, key))
+function deserializeFromStorage(namespace, key, defaultValue = undefined) {
+    const blob = getLocalStorage(namespace, key)
+    return blob ? JSON.parse(blob) : defaultValue
 }
 function serializeToStorage(namespace, key, value) {
     setLocalStorage(namespace, key, JSON.stringify(value))

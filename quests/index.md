@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: with-nav
 storylines:
   - name: Main Story Quests
     stories:
@@ -320,14 +320,6 @@ storylines:
 
 
 <div class="container">
-  <nav class="level">
-      <div class="level-left">
-          <p class="level-item">
-              <h1 class="title is-3 has-text-centered"><a href="/quests/">Quests</a></h1>
-          </p>
-      </div>
-  </nav>
-
 
   {% for storyline in page.storylines %} 
   <section class="section">
