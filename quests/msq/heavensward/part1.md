@@ -399,7 +399,6 @@ quests:
         name: Speak with Emmanellain in Fortemps Manor.
     partQuestNo: 17
 
-
   - name: Divine Intervention
     level: 50
     rowId: 67133
@@ -679,7 +678,8 @@ quests:
         coords: (9.9, 16.1)
         name: Deliver the yak hides to Estinien.
     unlocks:
-      - name: Aether Current
+      - id: '2818048'
+        name: Aether Current
         type: aethercurrent
     partQuestNo: 29
   - name: Where the Chocobos Roam
@@ -909,7 +909,8 @@ quests:
         type: dungeon
         levelRequired: 53
         levelSync: 54
-      - name: Aether Current
+      - id: '2818063'
+        name: Aether Current
         type: aethercurrent
     partQuestNo: 38
   - name: Beyond the Clouds
@@ -1098,6 +1099,5 @@ quests:
         coords: (7.3, 26.7)
         name: Speak with Alphinaud.
     partQuestNo: 46
-
 
 ---

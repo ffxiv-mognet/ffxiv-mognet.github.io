@@ -153,6 +153,7 @@ class XivQuestScraper:
         if actionId != "0":
             action = self.sheets['Action'].byId(actionId)
             unlocks.append({
+                'id': action['#'],
                 'name': action['Name'],
                 'icon': action['Icon'],
                 'type': "action"
@@ -172,6 +173,7 @@ class XivQuestScraper:
         current = self.sheets['AetherCurrent'].findBy('Quest', quest['#'])
         if current:
             unlocks.append({
+                'id': current['#'],
                 'name': 'Aether Current',
                 'type': "aethercurrent"
             })
@@ -180,17 +182,14 @@ class XivQuestScraper:
         if quest['Emote{Reward}'] != "0":
             emote = self.sheets['Emote'].byId(quest['Emote{Reward}'])
             unlocks.append({
+                'id': emote['#'],
                 'name': emote['Name'],
                 'type': 'emote',
             })
 
         # achievements
-        def do_match(it):
-            # return it['Key'] == quest['#']
-            # print("huh", it['Type'], it['Key'])
-            return it['Type'] == "6" and it['Key'] == quest['#']
-        achievements = self.sheets['Achievement'].findMatches('Quest', do_match)
-            #lambda it: it['Type'] == 6 and it['Key'] == quest['#'])
+        achievements = self.sheets['Achievement'].findMatches('Quest', 
+            lambda it: it['Type'] == "6" and it['Key'] == quest['#'])
         for it in achievements:
             unlocks.append({
                 'id': int(it['#']),

@@ -33,6 +33,12 @@ from "Traitor in the Midst"[65588] to "Before the Dawn"[65964] (40 quests)
 from "Coming to Ishgard"[67116] to "Knights Be Not Proud"[67125]
  plus "onwards and upwards"[67126] to "a reward long in coming"[67132]
  from "divine intervention"[67133] to "Heart of Ice"[67163]
+```
+./scripts/xiv-quest-scraper.py questList --count 99 --firstRowId 67116 67125 | xc
+./scripts/xiv-quest-scraper.py questList --count 99 --firstRowId 67126 67132 --partQuestNo 11 | tail -n +2 | xc
+./scripts/xiv-quest-scraper.py questList --count 99 --firstRowId 67133 67163 --partQuestNo 18 | tail -n +2 | xc
+```
+
 
 ### Heavensward Part 2 [Lv.54-60]
 from "The Wyrm's Lair"[67164] to "Heavensward"[67205]
