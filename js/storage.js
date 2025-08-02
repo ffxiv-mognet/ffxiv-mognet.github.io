@@ -30,14 +30,3 @@ function getLocalFlag(namespace, key) {
     return localStorage.hasOwnProperty(keyForLocalStorage(namespace, key))
 }
 
-
-function setQuestFinished(rowId, isFinished) {
-    const namespace = "" // TODO: eventually this becomes active character name
-    const key = `quest:finished:${rowId}`
-    setLocalFlag(namespace, key, isFinished)
-}
-function isQuestFinished(rowId) {
-    const namespace = "" 
-    const key = `quest:finished:${rowId}`
-    return getLocalFlag(namespace, key)
-}

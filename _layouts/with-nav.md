@@ -57,9 +57,6 @@ layout: default
 
 {{content}}
 
-<script type="text/javascript" src="/js/storage.js"></script>
-<script type="text/javascript" src="/js/profile.js"></script>
-
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
   updateProfiles()

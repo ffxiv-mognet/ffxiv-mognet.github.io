@@ -145,16 +145,12 @@ layout: with-nav
   </table>
 </div>
 
-<script type="text/javascript" src="/js/storage.js"></script>
-<script type="text/javascript" src="/js/finished.js"></script>
 
 <script>
 
-window.QUEST_CONFIG_SHOW_FINISHED = "quest:config:showFinished"
-
 document.addEventListener("DOMContentLoaded", async () => {
   var checkShowFinished = document.getElementById("check-showFinished");
-  const showFinished = getLocalFlag("", QUEST_CONFIG_SHOW_FINISHED)
+  const showFinished = getLocalFlag("quest:config", "showFinished")
   setShowFinished(showFinished)
   checkShowFinished.checked = showFinished
   checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
@@ -175,7 +171,7 @@ function updateRemainCount() {
 
 function setShowFinished(value) {
   window.questsShowFinished = value
-  setLocalFlag("", QUEST_CONFIG_SHOW_FINISHED, value)
+  setLocalFlag("quest:config", "showFinished", value)
 
   if (window.questsShowFinished) {
     removeHiddenFinishedStyle('quest-row')

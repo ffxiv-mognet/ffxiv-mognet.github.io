@@ -14,3 +14,14 @@ function removeHiddenFinishedStyle(className) {
     delete window.HIDDEN_FINISHED_STYLES[className]
   }
 }
+
+function setQuestFinished(rowId, isFinished) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `quest:finished:${rowId}`
+    setLocalFlag(namespace, key, isFinished)
+}
+function isQuestFinished(rowId) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `quest:finished:${rowId}`
+    return getLocalFlag(namespace, key)
+}
