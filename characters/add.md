@@ -21,7 +21,7 @@ layout: with-nav
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link is-light">Cancel</button>
+    <button type="button" class="button is-link is-light" onclick="window.history.back()">Cancel</button>
   </div>
   <div class="control">
     <button type="submit" class="button is-link" id="save-character" disabled>Save Character</button>
@@ -44,11 +44,16 @@ function validate() {
 
 function submit() {
     const nameInput = document.getElementById("characterName")
-    console.log("submit")
-    const profile = saveNewProfile({characterName: nameInput.value})
-    setActiveProfile(profile.id)
+    if (!nameInput.value) {
+        return
+    }
 
+    const profile = saveNewProfile({characterName: nameInput.value})
+    if (profile) {
+        setActiveProfile(profile.id)
+    }
     window.history.back()
+    
     return false;
 }
 

@@ -85,7 +85,7 @@ function updateProfiles() {
     const el = document.createElement('a')
     el.classList.add("dropdown-item")
     el.innerHTML = it.characterName
-    if (it.id === activeProfile.id) {
+    if (activeProfile && it.id === activeProfile.id) {
       el.classList.add("is-active")
     }
     el.onclick = () => { 

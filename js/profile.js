@@ -11,8 +11,8 @@ function setActiveProfile(profileId) {
 }
 
 function getAllProfiles() {
-    const profileIds = deserializeFromStorage(NS_PROFILE, "all", [])
-    return profileIds.map(loadProfile)
+    const profileIds = deserializeFromStorage(NS_PROFILE, "all", []).filter(it => it)
+    return profileIds.map(loadProfile).filter(it => it)
 }
 
 function loadProfile(profileId) {
