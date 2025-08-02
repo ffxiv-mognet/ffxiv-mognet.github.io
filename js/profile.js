@@ -35,6 +35,24 @@ function saveNewProfile({characterName}) {
     serializeToStorage(NS_PROFILE, "all", profileList)
     return profile
 }
+function updateProfile(profileId, {characterName}) {
+    const profile = {
+        id: profileId,
+        characterName,
+    }
+    // save profile
+    serializeToStorage(NS_PROFILE, `profile:${profileId}`, profile)
+    return profile
+}
+
+function removeProfile(profileId) {
+    localStorage.removeItem(keyForLocalStorage(NS_PROFILE, `profile:${profileId}`))
+    const activeId = getLocalStorage(NS_PROFILE, 'active')
+    if (activeId == profileId) {
+        localStorage.removeItem(NS_PROFILE, 'active')
+    }
+}
+
 
 function idFromName(name) {
     return name.replace(/[\W]+/g,'',).toLowerCase()

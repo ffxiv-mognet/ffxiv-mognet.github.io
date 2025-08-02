@@ -45,7 +45,7 @@ layout: default
                   <a href="#" class="dropdown-item is-active">Character Name</a>
                 </div>
                 <hr class="dropdown-divider" />
-                <a href="/characters/settings" class="dropdown-item is-hidden">Settings</a>
+                <a href="/characters/settings" class="dropdown-item is-hidden" id="profile-settings">Settings</a>
                 <a href="/characters/add" class="dropdown-item">Add Character</a>
               </div>
             </div>
@@ -67,17 +67,23 @@ function updateProfiles() {
   const allProfiles = getAllProfiles()
 
   const profileDropdown = document.getElementById("profile-dropdown")
+  const settingsButton = document.getElementById("profile-settings")
+  const activeLabel = document.getElementById("profile-active")
+
   profileDropdown.onclick = () => {
     profileDropdown.classList.toggle("is-active")
   }
 
   if (activeProfile) {
-    const activeLabel = document.getElementById("profile-active")
     activeLabel.innerHTML = activeProfile.characterName
+    settingsButton.classList.remove("is-hidden")
+  } else {
+    activeLabel.innerHTML = 'Select Character'
+    settingsButton.classList.add("is-hidden")
   }
 
-  const activeLabel = document.getElementById("profile-list")
-  activeLabel.innerHTML = '';
+  const profileList = document.getElementById("profile-list")
+  profileList.innerHTML = '';
   for (const it of allProfiles) {
     const el = document.createElement('a')
     el.classList.add("dropdown-item")
@@ -89,7 +95,7 @@ function updateProfiles() {
       setActiveProfile(it.id) 
       window.location.reload()
     }
-    activeLabel.appendChild(el)
+    profileList.appendChild(el)
   }
 
 }
