@@ -16,7 +16,7 @@ import pdb
 
 from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array2d, extract_script
 from xivscraper.yaml_helpers import dump_indented_yaml
-from xivscraper.coord_helpers import readable_coords, readable_contenttype
+from xivscraper.coord_helpers import readable_coords, readable_contenttype, pixel_coords
 
 
 
@@ -212,7 +212,7 @@ class XivQuestScraper:
         return requirements
 
 
-    def location_coords_from_level(self, levelId):
+    def location_coords_from_level(self, levelId, detailed = False):
         level = self.sheets['Level'].byId(levelId)
         if level is None:
             return {}
@@ -220,15 +220,25 @@ class XivQuestScraper:
         territory = self.sheets['TerritoryType'].byId(level["Territory"])
         placename = self.sheets['PlaceName'].byId(territory["PlaceName"])
         coords = readable_coords(level, map_row)
-        return {
+        out = {
             'location': placename['Name'],
             'coords': "({x}, {y})".format(**coords),
             #'levelType': int(level['Type']),
             #'territoryIntendedUse': int(territory['TerritoryIntendedUse']),
             # 'raw': {
-            #     'territory': territory
+            #     'territory': territory,
+            #     'level': level,
+            #     'map': map_row
             # }
         }
+        if detailed:
+            out.update({
+                'coords': "({x}, {y}) z:{z}".format(**coords),
+                'map': map_row['Id'],
+                'pixel': pixel_coords(level, map_row),
+                'exversion': territory['ExVersion']
+            })
+        return out
 
     def parse_issuer(self, quest):
         issuer = self.location_coords_from_level(quest["Issuer{Location}"])
@@ -398,27 +408,41 @@ class XivQuestScraper:
             pprint.pprint(output)
 
     def cmd_aethercurrents(self):
-        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--yaml", action="store_true", default=False)
+        self.argparser.add_argument("--json", action="store_true", default=True)
         self.args = self.argparser.parse_args()
         self.init_sheets()
 
-        output = []
+        currents = []
         enames = self.sheets['EObjName'].findAll('Singular', "aether current")
         for ename in enames:
             eobj = self.sheets['EObj'].byId(ename['#'])
             level = self.sheets['Level'].findBy('Object', ename['#'])
             if level is not None:
-                pos = self.location_coords_from_level(level['#'])
+                pos = self.location_coords_from_level(level['#'], detailed=True)
                 pos.update({
                     'id': eobj['Data'],
                     'name': ename['Singular'],
                 })
-                output.append(pos)
+                currents.append(pos)
+
+        map_names = {}
+        for c in currents:
+            map_names[c['map']] = {
+                'name': c['location'],
+                'exversion': c['exversion'],
+                'map': c['map'],
+            }
+            
+        output = {
+            'aethercurrents': currents,
+            'maps': map_names,
+        }
 
         if self.args.yaml:
-            print(dump_indented_yaml({"aethercurrents": list(output)}))
+            print(dump_indented_yaml(output))
         else:
-            pprint.pprint(ordered)
+            print(json.dumps(output))
 
     def cmd_dumpQuest(self):
         self.argparser.add_argument("questId")

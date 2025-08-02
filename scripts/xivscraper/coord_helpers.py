@@ -23,6 +23,20 @@ def readable_coords(level, map):
         "z": trunc_1(floor(z) / 100.0)
     }
 
+def pixel_coords(level, map):
+    # adapted from https://github.com/xivapi/ffxiv-datamining/blob/master/docs/MapCoordinates.md
+    c = int(map['SizeFactor']) / 100.0
+    offset_x = int(map['Offset{X}'])
+    offset_y = int(map['Offset{Y}'])
+    x = ((+float(level['X'])) + offset_x) * c;
+    y = ((+float(level['Z'])) + offset_y) * c;
+
+    return {
+        "x": int(round(x + 1024.0)),
+        "y": int(round(y + 1024.0)),
+    }
+
+
 def readable_contenttype(contenttype):
     c = int(contenttype)
     if c == 5:

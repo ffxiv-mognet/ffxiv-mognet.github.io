@@ -1,25 +1,8 @@
 ---
-layout: quest-table
+layout: aethercurrent-page
 expansion: heavensward
-title: Aether Currents > Heavensward
+title: Coerthas Western Highlands | Heavensward Aether Currents 
 permalink: /quests/aethercurrents/heavensward
-aethercurrents:
-  - location: Coerthas Western Highlands
-    coords: (30.6, 33.8)
-    id: '2818053'
-    name: aether current
-  - location: Coerthas Western Highlands
-    coords: (31.0, 11.8)
-    id: '2818055'
-    name: aether current
-  - location: Coerthas Western Highlands
-    coords: (15.9, 21.9)
-    id: '2818057'
-    name: aether current
-  - location: Coerthas Western Highlands
-    coords: (9.3, 15.0)
-    id: '2818058'
-    name: aether current
 quests:
   - name: Bridge over Frozen Water
     level: 50

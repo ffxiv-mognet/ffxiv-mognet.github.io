@@ -39,6 +39,10 @@ layout: default
       </div>
   </nav>
 
+
+{{content}}
+
+
   <div class="level">
     <div class="level-left">
       <p class="level-item"></p>
