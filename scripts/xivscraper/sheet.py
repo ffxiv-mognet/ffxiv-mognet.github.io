@@ -51,7 +51,7 @@ class CsvSheet:
             if row[field_name] == value:
                 yield row
 
-    def findMatches(self, field_name, callback):
+    def findMatches(self, callback):
         if not self.indexed:
             self.buildIndex()
         for row in self.rows.values():

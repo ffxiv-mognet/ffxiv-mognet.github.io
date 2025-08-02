@@ -57,6 +57,8 @@ class XivQuestScraper:
             'MountSpeed': CsvSheet(self._path_for_sheet("MountSpeed")),
             'Achievement': CsvSheet(self._path_for_sheet("Achievement")),
             'Emote': CsvSheet(self._path_for_sheet("Emote")),
+            'EObjName': CsvSheet(self._path_for_sheet("EObjName")),
+            'EObj': CsvSheet(self._path_for_sheet("EObj")),
         }
 
 
@@ -188,7 +190,7 @@ class XivQuestScraper:
             })
 
         # achievements
-        achievements = self.sheets['Achievement'].findMatches('Quest', 
+        achievements = self.sheets['Achievement'].findMatches(
             lambda it: it['Type'] == "6" and it['Key'] == quest['#'])
         for it in achievements:
             unlocks.append({
@@ -394,6 +396,29 @@ class XivQuestScraper:
             print(json.dumps(output))
         else:
             pprint.pprint(output)
+
+    def cmd_aethercurrents(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        output = []
+        enames = self.sheets['EObjName'].findAll('Singular', "aether current")
+        for ename in enames:
+            eobj = self.sheets['EObj'].byId(ename['#'])
+            level = self.sheets['Level'].findBy('Object', ename['#'])
+            if level is not None:
+                pos = self.location_coords_from_level(level['#'])
+                pos.update({
+                    'id': eobj['Data'],
+                    'name': ename['Singular'],
+                })
+                output.append(pos)
+
+        if self.args.yaml:
+            print(dump_indented_yaml({"aethercurrents": list(output)}))
+        else:
+            pprint.pprint(ordered)
 
     def cmd_dumpQuest(self):
         self.argparser.add_argument("questId")
