@@ -431,9 +431,9 @@ class XivQuestScraper:
             map_names[c['map']] = {
                 'name': c['location'],
                 'exversion': c['exversion'],
-                'map': c['map'],
+                'map': c['map']
             }
-            
+
         output = {
             'aethercurrents': currents,
             'maps': map_names,

@@ -25,15 +25,17 @@ def readable_coords(level, map):
 
 def pixel_coords(level, map):
     # adapted from https://github.com/xivapi/ffxiv-datamining/blob/master/docs/MapCoordinates.md
-    c = int(map['SizeFactor']) / 100.0
     offset_x = int(map['Offset{X}'])
     offset_y = int(map['Offset{Y}'])
-    x = ((+float(level['X'])) + offset_x) * c;
-    y = ((+float(level['Z'])) + offset_y) * c;
+    map_size = int(map['SizeFactor'])
+    world_x = float(level['X'])
+    world_z = float(level['Z'])
+    x = (world_x + offset_x) / 100.0 * map_size + 1024.0
+    y = (world_z + offset_y) / 100.0 * map_size + 1024.0
 
     return {
-        "x": int(round(x + 1024.0)),
-        "y": int(round(y + 1024.0)),
+        "x": int(round(x)),
+        "y": int(round(y)),
     }
 
 
