@@ -811,6 +811,33 @@ quests:
         name: Soul Summoner III
         type: achievement
     partQuestNo: 26
+  - name: To Be Second Best
+    level: 80
+    rowId: 69569
+    questId: XxbKbc008_04033
+    genre: Summoner Quests
+    icon: '71020'
+    issuer:
+      location: Old Gridania
+      coords: (10.9, 6.3)
+      name: Y'mhitra
+    steps:
+      - location: New Gridania
+        coords: (12.1, 13.4)
+        name: Speak with Jajasamu at the Carline Canopy.
+      - location: Rhalgr's Reach
+        coords: (12.4, 12.9)
+        name: Wait at the designated location in Rhalgr's Reach.
+      - location: The Lochs
+        coords: (37.4, 34.2)
+        name: Speak with the prison guard.
+      - location: New Gridania
+        coords: (12.1, 13.4)
+        name: Speak with Jajasamu at the Carline Canopy.
+      - location: Old Gridania
+        coords: (10.9, 6.3)
+        name: Speak with Y'mhitra at Apkallu Falls.
+    partQuestNo: 27
 
 
 ---
