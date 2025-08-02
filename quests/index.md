@@ -207,7 +207,7 @@ storylines:
       parts: 
         - name: White Mage/Conjurer
           link: /quests/jobs/white-mage
-        - name: Scholar
+        - name: Scholar/Arcanist
           link: /quests/jobs/scholar
         - name: Astrologian
           link: /quests/jobs/astrologian
