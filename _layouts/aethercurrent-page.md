@@ -2,7 +2,23 @@
 layout: quest-table
 ---
 {% assign currents = site.data.aethercurrents.aethercurrents[page.map] %}
+{% assign compflgset = site.data.aethercurrents.compflgset[page.map] %}
 
+
+<table class="table is-fullwidth">
+    <thead>
+        <tr>
+            {% for i in (0..14) %}
+            <th>{{i}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+            {% for i in (0..14) %}
+            <td>{% if compflgset[i] != "0" %}{{ compflgset[i] }}{% endif %}</td>
+            {% endfor %}
+    </tbody>
+</table>
 
 
 

@@ -237,6 +237,7 @@ class XivQuestScraper:
                 'coords': "({x}, {y}) z:{z}".format(**coords),
                 'map': map_row['Id'],
                 'pixel': pixel_coords(level, map_row),
+                'territory': level["Territory"],
                 'exversion': territory['ExVersion']
             })
         return out
@@ -430,6 +431,7 @@ class XivQuestScraper:
                 currents[pos['map']] = row
 
         map_names = {}
+        compflgset = {}
         for row in currents.values():
             for c in row:
                 map_names[c['map']] = {
@@ -438,9 +440,17 @@ class XivQuestScraper:
                     'map': c['map']
                 }
 
+
+                flgset = self.sheets['AetherCurrentCompFlgSet'].findBy('Territory', c['territory'])
+
+                current_seq = extract_array2d(flgset, "AetherCurrent")
+                compflgset[c['map']] = current_seq
+
+
         output = {
             'aethercurrents': currents,
             'maps': map_names,
+            'compflgset': compflgset
         }
 
         if self.args.yaml:
