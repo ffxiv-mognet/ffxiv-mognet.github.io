@@ -29,6 +29,14 @@ layout: default
       </div>
       <div class="level-right">
         <p class="level-item">
+          <div class="checkboxes">
+              <label class="checkbox">
+                  <input type="checkbox" id="check-showFinished"/> 
+                  Show Finished
+              </label>
+          </div>
+        </p>
+        <p class="level-item">
           <div class="dropdown" id="profile-dropdown">
             <div class="dropdown-trigger">
               <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">

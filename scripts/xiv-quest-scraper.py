@@ -54,6 +54,7 @@ class XivQuestScraper:
             'TerritoryType': CsvSheet(self._path_for_sheet("TerritoryType")),
             'Action': CsvSheet(self._path_for_sheet("Action")),
             'AetherCurrent': CsvSheet(self._path_for_sheet("AetherCurrent")),
+            'AetherCurrentCompFlgSet': CsvSheet(self._path_for_sheet("AetherCurrentCompFlgSet")),
             'MountSpeed': CsvSheet(self._path_for_sheet("MountSpeed")),
             'Achievement': CsvSheet(self._path_for_sheet("Achievement")),
             'Emote': CsvSheet(self._path_for_sheet("Emote")),
@@ -413,7 +414,7 @@ class XivQuestScraper:
         self.args = self.argparser.parse_args()
         self.init_sheets()
 
-        currents = []
+        currents = {}
         enames = self.sheets['EObjName'].findAll('Singular', "aether current")
         for ename in enames:
             eobj = self.sheets['EObj'].byId(ename['#'])
@@ -424,15 +425,18 @@ class XivQuestScraper:
                     'id': eobj['Data'],
                     'name': ename['Singular'],
                 })
-                currents.append(pos)
+                row = currents.get(pos['map'], [])
+                row.append(pos)
+                currents[pos['map']] = row
 
         map_names = {}
-        for c in currents:
-            map_names[c['map']] = {
-                'name': c['location'],
-                'exversion': c['exversion'],
-                'map': c['map']
-            }
+        for row in currents.values():
+            for c in row:
+                map_names[c['map']] = {
+                    'name': c['location'],
+                    'exversion': c['exversion'],
+                    'map': c['map']
+                }
 
         output = {
             'aethercurrents': currents,

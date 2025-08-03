@@ -3,7 +3,7 @@ layout: aethercurrent-page
 expansion: heavensward
 title: Coerthas Western Highlands | Heavensward Aether Currents 
 permalink: /quests/aethercurrents/heavensward
-map: /maps/r2f1.00.jpg
+map: r2f1/00
 quests:
   - name: Bridge over Frozen Water
     level: 50
@@ -166,10 +166,4 @@ quests:
         genre: Heavensward
         icon: '71000'
         link: /quests/msq/heavensward/part1
-
-
-
-
-
-
 ---
