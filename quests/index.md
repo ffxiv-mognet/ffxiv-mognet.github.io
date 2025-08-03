@@ -115,12 +115,14 @@ storylines:
             link: /quests/alliance/echoes-vanadiel
       - name: Trials
         parts:
+          - name: Primals
+            link: /quests/trials/primals
           - name: The Warring Triad
-            link: /quests/trial/warring-triad
+            link: /quests/trials/warring-triad
           - name: The Four Lords
-            link: /quests/trial/four-lords
+            link: /quests/trials/four-lords
           - name: The Sorrow of Werlyt
-            link: /quests/trial/sorrow-werlyt
+            link: /quests/trials/sorrow-werlyt
       - name: Extremes
         parts:
           - name: A Realm Reborn

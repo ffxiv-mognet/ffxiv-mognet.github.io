@@ -474,6 +474,34 @@ quests:
         coords: (21.1, 21.1)
         name: Speak with Ilberd at Highbridge.
     partQuestNo: 19
+    requires:
+      - name: Ifrit Bleeds, We Can Kill It
+        level: 50
+        rowId: 66584
+        questId: GaiUsd002_01048
+        genre: Primal Quests
+        icon: '71140'
+        link: /quests/trials/primals
+      - name: In for Garuda Awakening
+        level: 50
+        rowId: 66693
+        questId: GaiUsd003_01157
+        genre: Primal Quests
+        icon: '71140'
+        link: /quests/trials/primals
+      - name: In a Titan Spot
+        level: 50
+        rowId: 66694
+        questId: GaiUsd004_01158
+        genre: Primal Quests
+        icon: '71140'
+        link: /quests/trials/primals
+      - name: The Navel (Hard)
+        type: trial
+        levelRequired: 50
+        levelSync: 50
+        icon: trial
+        link: /quests/trials/primals
   - name: Bait and Switch
     level: 50
     rowId: 65900

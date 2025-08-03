@@ -31,7 +31,7 @@ span.icon i.dungeon {
     width: 1rem;
     display: block;
 }
-span.icon i.trial {
+span.icon i.trial, span.icon i.quest-trial {
     background:url('/icons/061804.png');
     content: '';
     background-size: 1rem;
