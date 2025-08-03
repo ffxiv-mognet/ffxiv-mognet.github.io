@@ -71,6 +71,18 @@ storylines:
           link: /quests/msq/dawntrail/part3
         - name: Part 4
           link: /quests/msq/dawntrail/part4
+    - name: Aether Currents
+      parts:
+        - name: Heavensward
+          link: /quests/aethercurrents/heavensward
+        - name: Stormblood
+          link: /quests/aethercurrents/stormblood
+        - name: Shadowbringers
+          link: /quests/aethercurrents/shadowbringers
+        - name: Endwalker
+          link: /quests/aethercurrents/endwalker
+        - name: Dawntrail
+          link: /quests/aethercurrents/dawntrail
   - name: Optional
     stories:
       - name: Normal Raids
