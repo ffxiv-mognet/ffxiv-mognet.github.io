@@ -88,17 +88,17 @@ storylines:
       - name: Normal Raids
         parts:
           - name: The Binding Coil of Bahamut
-            link: /quests/raid/bahamut
+            link: /quests/raids/bahamut
           - name: Alexander
-            link: /quests/raid/alexander
+            link: /quests/raids/alexander
           - name: Omega
-            link: /quests/raid/omega
+            link: /quests/raids/omega
           - name: Eden
-            link: /quests/raid/eden
+            link: /quests/raids/eden
           - name: Pandæmonium
-            link: /quests/raid/pandaemonium
+            link: /quests/raids/pandaemonium
           - name: Arcadion
-            link: /quests/raid/arcadion
+            link: /quests/raids/arcadion
       - name: Alliance Raids
         parts:
           - name: Crystal Tower

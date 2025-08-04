@@ -24,6 +24,13 @@ function listq {
 }
 ```
 
+#### dump raw quest
+```
+function dumpq {
+  ./scripts/xiv-quest-scraper.py dumpQuest --raw $@ 
+}
+```
+
 
 #### searching for a quest's rowId by name
 ```

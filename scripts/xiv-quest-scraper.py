@@ -132,6 +132,17 @@ class XivQuestScraper:
                 'timeLimit': int(battle['TimeLimit'])
             }
 
+    def format_contentfindercondition(self, cfc):
+        return {
+            'name': cfc['Name'],
+            'type': readable_contenttype(cfc['ContentType']),
+            'levelRequired': int(cfc['ClassJobLevel{Required}']),
+            'levelSync': int(cfc['ClassJobLevel{Sync}']),
+            'ilevelRequired': int(cfc['ItemLevel{Required}']),
+            'ilevelSync': int(cfc['ItemLevel{Sync}']),
+            # 'raw': cfc
+        }
+
     def parse_unlocks(self, quest, script):
         unlocks = []
         content_idx = 0
@@ -141,13 +152,7 @@ class XivQuestScraper:
                 break
 
             cfc = self.sheets['ContentFinderCondition'].find(lambda it: it["Content"] == icId and it["ContentLinkType"] == '1')
-            unlocks.append({
-                'name': cfc['Name'],
-                'type': readable_contenttype(cfc['ContentType']),
-                'levelRequired': int(cfc['ClassJobLevel{Required}']),
-                'levelSync': int(cfc['ClassJobLevel{Sync}']),
-                # 'raw': cfc
-            })
+            unlocks.append(self.format_contentfindercondition(cfc))
             content_idx += 1
 
 
@@ -192,7 +197,7 @@ class XivQuestScraper:
 
         # achievements
         achievements = self.sheets['Achievement'].findMatches(
-            lambda it: it['Type'] == "6" and it['Key'] == quest['#'])
+            lambda it: it['Key'] == quest['#'])
         for it in achievements:
             unlocks.append({
                 'id': int(it['#']),
@@ -456,6 +461,42 @@ class XivQuestScraper:
             'maps': map_names,
             'compflgset': compflgset
         }
+
+        if self.args.yaml:
+            print(dump_indented_yaml(output))
+        else:
+            print(json.dumps(output))
+
+    def cmd_listContent(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.argparser.add_argument("contentFinderConditionIds", nargs="+")
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        output = []
+        for id in self.args.contentFinderConditionIds:
+            cfc = self.sheets['ContentFinderCondition'].byId(id)
+            output.append(self.format_contentfindercondition(cfc))
+
+        if self.args.yaml:
+            print(dump_indented_yaml(output))
+        else:
+            print(json.dumps(output))
+
+    def cmd_findContent(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.argparser.add_argument("query")
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        q = self.args.query.lower()
+
+        rows = self.sheets['ContentFinderCondition'].findMatches(lambda it: q in it['Name'].lower())
+        output = []
+        for cfc in rows:
+            output.append(self.format_contentfindercondition(cfc))
 
         if self.args.yaml:
             print(dump_indented_yaml(output))
