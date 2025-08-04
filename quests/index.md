@@ -126,17 +126,17 @@ storylines:
       - name: Extremes
         parts:
           - name: A Realm Reborn
-            link: /quests/extreme/realm-reborn
+            link: /quests/extremes/realm-reborn
           - name: Heavensward
-            link: /quests/extreme/heavensward
+            link: /quests/extremes/heavensward
           - name: Stormblood
-            link: /quests/extreme/stormblood
+            link: /quests/extremes/stormblood
           - name: Shadowbringers
-            link: /quests/extreme/shadowbringers
+            link: /quests/extremes/shadowbringers
           - name: Endwalker
-            link: /quests/extreme/endwalker
+            link: /quests/extremes/endwalker
           - name: Dawntrail
-            link: /quests/extreme/dawntrail
+            link: /quests/extremes/dawntrail
       - name: Dungeons
         parts:
           - name: A Realm Reborn
@@ -178,33 +178,33 @@ storylines:
       - name: Hildibrand
         parts:
           - name: Hildibrand Adventures
-            link: /quests/sidestory/hildibrand-adventures
+            link: /quests/sidestories/hildibrand-adventures
           - name: Further ...
-            link: /quests/sidestory/further-hildibrand-adventures
+            link: /quests/sidestories/further-hildibrand-adventures
           - name: Even Further ...
-            link: /quests/sidestory/even-further-hildibrand-adventures
+            link: /quests/sidestories/even-further-hildibrand-adventures
           - name: Somehow Further ...
-            link: /quests/sidestory/somehow-further-hildibrand-adventures
+            link: /quests/sidestories/somehow-further-hildibrand-adventures
           - name: Inconceivably Further ...
-            link: /quests/sidestory/inconceivably-further-hildibrand-adventures
+            link: /quests/sidestories/inconceivably-further-hildibrand-adventures
       - name: Side Stories
         parts:
           - name: Delivery Moogle 
-            link: /quests/sidestory/delivery-moogle
+            link: /quests/sidestories/delivery-moogle
           - name: Tales of the Dragonsong War
-            link: /quests/sidestory/dragonsong-war
+            link: /quests/sidestories/dragonsong-war
           - name: Tales from the Shadows
-            link: /quests/sidestory/tales-shadows
+            link: /quests/sidestories/tales-shadows
           - name: Tales of Newfound Adventure
-            link: /quests/sidestory/tales-newfound-adventure
+            link: /quests/sidestories/tales-newfound-adventure
           - name: Saint Endlaim's Scholasticate
-            link: /quests/sidestory/saint-endlaims-scholasticate
+            link: /quests/sidestories/saint-endlaims-scholasticate
           - name: The Void Calls
-            link: /quests/sidestory/void-calls
+            link: /quests/sidestories/void-calls
           - name: The Legacy of Louisoix Leveilleur
-            link: /quests/sidestory/legacy-louisoix-leveilleur
+            link: /quests/sidestories/legacy-louisoix-leveilleur
           - name: Tataru's Grand Endeavor
-            link: /quests/sidestory/tataru-grand-endeavor
+            link: /quests/sidestories/tataru-grand-endeavor
   - name: Jobs
     stories:
     - name: Tank

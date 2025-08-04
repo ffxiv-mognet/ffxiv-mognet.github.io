@@ -5,8 +5,22 @@
 
 #### dump a row from a sheet in json
 ```
-function dumprow {
-  ./scripts/xiv-quest-scraper.py sheet $@
+function sheet {
+  ./scripts/xiv-quest-scraper.py sheet $@ | jq . | less
+}
+```
+
+#### review full data of a quest
+```
+function showq {
+  ./scripts/xiv-quest-scraper.py findQuest $@ | jq . | less
+}
+```
+
+### list single quest
+```
+function listq {
+  ./scripts/xiv-quest-scraper.py questList --count 1 $@ | tail -n +2
 }
 ```
 

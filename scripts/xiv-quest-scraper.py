@@ -203,13 +203,17 @@ class XivQuestScraper:
         return unlocks
 
     def parse_requirements(self, script):
+        prefixes = ['QST_CHECK_{:02d}', 'QST_COMP_CHK{:01d}']
         i = 1
-        key = 'QST_CHECK_{:02d}'.format(i)
+        running = True
         requirements = []
-        while key in script:
-            requirements.append(script[key])
+        while i < 9: # TODO: better determine when to finish?
+            for prefix in prefixes:
+                key = prefix.format(i)
+                value = script.get(key, None)
+                if value is not None:
+                    requirements.append(script[key])
             i += 1
-            key = 'QST_CHECK_{:02d}'.format(i)
         return requirements
 
 

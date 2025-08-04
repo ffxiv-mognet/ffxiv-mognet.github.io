@@ -3,7 +3,7 @@ layout: quest-table
 title: Primals
 permalink: /quests/trials/primals
 links:
-  next: /quests/msq/realm-reborn/part6
+  next: /quests/extremes/realm-reborn
 quests:
   - name: A Recurring Problem
     level: 50
@@ -19,6 +19,14 @@ quests:
       - location: The Waking Sands
         coords: (6.0, 4.9)
         name: Speak with Urianger.
+    requires:
+      - name: The Ultimate Weapon
+        level: 50
+        rowId: 70058
+        questId: XxcFst503_04522
+        genre: Seventh Umbral Era
+        icon: '71000'
+        link: /quests/msq/realm-reborn/part4
     partQuestNo: 1
   - name: Ifrit Bleeds, We Can Kill It
     level: 50
@@ -66,12 +74,6 @@ quests:
         type: trial
         levelRequired: 50
         levelSync: 50
-    requires:
-      - name: The Bowl of Embers (Hard)
-        type: trial
-        levelRequired: 50
-        levelSync: 50
-        icon: trial
   - name: In a Titan Spot
     level: 50
     rowId: 66694
@@ -95,12 +97,7 @@ quests:
         type: trial
         levelRequired: 50
         levelSync: 50
-    requires:
-      - name: The Howling Eye (Hard)
-        type: trial
-        levelRequired: 50
-        levelSync: 50
-        icon: trial
+
 
 
 ---
