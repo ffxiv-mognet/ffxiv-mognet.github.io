@@ -124,13 +124,18 @@ class XivQuestScraper:
         return "{}.csv".format(
             os.path.join(self.args.cache_dir, self.args.datamining_commit, sheet))
 
-    def format_battle(self, battle_id):
+    def format_battle(self, quest, battle_id):
         battle = self.sheets['QuestBattle'].byId(battle_id)
         if battle is not None:
             return {
                 'levelSync': int(battle['LevelSync']),
-                'timeLimit': int(battle['TimeLimit'])
+                'timeLimit': int(battle['TimeLimit']),
+                'id': battle_id
             }
+        return {
+            'levelSync': int(quest['ClassJobLevel[0]']),
+            'id': battle_id,
+        }
 
     def format_contentfindercondition(self, cfc):
         return {
@@ -318,7 +323,7 @@ class XivQuestScraper:
         # has solo duty?        
         battle_id = script.get('QUESTBATTLE0', None)
         if battle_id is not None:
-            out_row['soloDuty'] = self.format_battle(battle_id)
+            out_row['soloDuty'] = self.format_battle(row, battle_id)
 
         # unlocks?
         unlocks = self.parse_unlocks(row, script)
@@ -571,7 +576,7 @@ class XivQuestScraper:
         # has solo duty?        
         battle_id = script.get('QUESTBATTLE0', None)
         if battle_id is not None:
-            front_matter['soloDuty'] = self.format_battle(battle_id)
+            front_matter['soloDuty'] = self.format_battle(quest, battle_id)
 
         unlocks = self.parse_unlocks(quest, script)
         if len(unlocks) > 0:

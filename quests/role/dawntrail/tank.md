@@ -196,7 +196,8 @@ quests:
       - location: Tuliyollal
         coords: (12.9, 15.0)
         name: Speak with Loazenikwe in Tuliyollal.
-    soloDuty: null
+    soloDuty: 
+      levelSync: 100
     unlocks:
       - id: 3499
         name: No Sleep Till Tuliyollal

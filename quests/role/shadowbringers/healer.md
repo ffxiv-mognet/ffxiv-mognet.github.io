@@ -120,7 +120,8 @@ quests:
       - location: The Crystarium
         coords: (10.7, 15.4)
         name: Speak with Giott at the Wandering Stairs.
-    soloDuty: null
+    soloDuty:
+      levelSync: 76
     partQuestNo: 4
   - name: Never to Return
     level: 78

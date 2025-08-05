@@ -186,7 +186,8 @@ quests:
       - location: Radz-at-Han
         coords: (7.6, 9.6)
         name: Speak with the Ala Mhigan ambassador in Sundrop.
-    soloDuty: null
+    soloDuty:
+      levelSync: 90
     unlocks:
       - id: 2962
         name: More than Guilt
@@ -194,5 +195,5 @@ quests:
     partQuestNo: 6
 
 
-  
+
 ---

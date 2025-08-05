@@ -210,7 +210,8 @@ quests:
       - location: Tuliyollal
         coords: (12.0, 15.0)
         name: Speak with Nyipine in Tuliyollal.
-    soloDuty: null
+    soloDuty:
+      levelSync: 100
     unlocks:
       - id: 3500
         name: A Heartsting's a Heavy Burden

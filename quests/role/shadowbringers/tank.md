@@ -153,7 +153,8 @@ quests:
       - location: Il Mheg
         coords: (22.7, 4.0)
         name: Speak with Sul Oul at Pla Enni.
-    soloDuty: null
+    soloDuty:
+      levelSync: 78
     partQuestNo: 5
   - name: To Have Loved and Lost
     level: 80

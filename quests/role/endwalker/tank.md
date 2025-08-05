@@ -211,7 +211,8 @@ quests:
       - location: Radz-at-Han
         coords: (7.6, 9.7)
         name: "Report to the Gridanian delegate in Radz\u2013at\u2013Han."
-    soloDuty: null
+    soloDuty:
+      levelSync: 90
     unlocks:
       - id: 2961
         name: More than Death
