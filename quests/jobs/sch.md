@@ -4,8 +4,6 @@ expansion: Job Quests
 title: Scholar/Arcanist
 permalink: /quests/jobs/scholar
 quests:
-
-quests:
   - name: Way of the Arcanist
     level: 1
     rowId: 65988
