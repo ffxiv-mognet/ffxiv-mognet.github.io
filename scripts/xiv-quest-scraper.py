@@ -296,6 +296,65 @@ class XivQuestScraper:
             'icon': icon_type['MapIcon{Available}'],
         }
 
+    def quest_list_entry(self, row):
+        script = extract_script(row)
+        genre = self.sheets['JournalGenre'].byId(row['JournalGenre'])
+        icon_type = self.sheets['EventIconType'].byId(row['EventIconType'])
+
+        issuer = self.parse_issuer(row)
+        steps = self.parse_steps(row)
+
+        out_row = {
+            'name': row['Name'],
+            'level': int(row['ClassJobLevel[0]']),
+            'rowId': int(row['#']),
+            'questId': row['Id'],
+            'genre': genre['Name'],
+            'icon': icon_type['MapIcon{Available}'],
+            'issuer': issuer,
+            'steps': steps,
+        }
+
+        # has solo duty?        
+        battle_id = script.get('QUESTBATTLE0', None)
+        if battle_id is not None:
+            out_row['soloDuty'] = self.format_battle(battle_id)
+
+        # unlocks?
+        unlocks = self.parse_unlocks(row, script)
+        if len(unlocks):
+            out_row['unlocks'] = unlocks
+
+        # requires?
+        requires = self.parse_requirements(script)
+        if len(requires) > 0:
+            out_row['requires'] = list(map(lambda it: self.generate_questListItem(it), requires))
+
+        return out_row
+
+    def cmd_quests(self):
+        self.argparser.add_argument("rowIds", nargs="+")
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        output = []
+        partQuestNo = 1 
+        for rowId in self.args.rowIds:
+            row = self.sheets['Quest'].byId(rowId)
+            out_row = self.quest_list_entry(row)
+            out_row.update({
+                'partQuestNo': partQuestNo
+            })
+            partQuestNo += 1
+            output.append(out_row)
+
+        if self.args.yaml:
+            print(dump_indented_yaml({"quests": output}))
+        else:
+            print(json.dumps(output))
+
+
     def cmd_questList(self):
         self.argparser.add_argument("--count", type=int, default=10)
         self.argparser.add_argument("lastRowId")
@@ -311,39 +370,7 @@ class XivQuestScraper:
         rowId = self.args.lastRowId
         while count > 0:
             row = self.sheets['Quest'].byId(rowId)
-            script = extract_script(row)
-            genre = self.sheets['JournalGenre'].byId(row['JournalGenre'])
-            icon_type = self.sheets['EventIconType'].byId(row['EventIconType'])
-
-            issuer = self.parse_issuer(row)
-            steps = self.parse_steps(row)
-
-            out_row = {
-                'name': row['Name'],
-                'level': int(row['ClassJobLevel[0]']),
-                'rowId': int(row['#']),
-                'questId': row['Id'],
-                'genre': genre['Name'],
-                'icon': icon_type['MapIcon{Available}'],
-                'issuer': issuer,
-                'steps': steps,
-            }
-
-            # has solo duty?        
-            battle_id = script.get('QUESTBATTLE0', None)
-            if battle_id is not None:
-                out_row['soloDuty'] = self.format_battle(battle_id)
-
-            # unlocks?
-            unlocks = self.parse_unlocks(row, script)
-            if len(unlocks):
-                out_row['unlocks'] = unlocks
-
-            # requires?
-            requires = self.parse_requirements(script)
-            if len(requires) > 0:
-                out_row['requires'] = list(map(lambda it: self.generate_questListItem(it), requires))
-
+            out_row = self.quest_list_entry(row)
             output.append(out_row)
 
             if self.args.firstRowId and rowId == self.args.firstRowId:
@@ -364,7 +391,6 @@ class XivQuestScraper:
             print(dump_indented_yaml({"quests": list(numbered)}))
         else:
             pprint.pprint(ordered)
-
 
     def cmd_findQuest(self):
         self.argparser.add_argument("questId", nargs="*")
