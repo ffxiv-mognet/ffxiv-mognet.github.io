@@ -170,11 +170,11 @@ storylines:
       - name: Deep Dungeons
         parts:
            - name: Palace of the Dead 
-             link: /quests/deep-dungeon/palace-dead
+             link: /quests/deep-dungeons/palace-dead
            - name: Heaven on High
-             link: /quests/deep-dungeon/heaven-on-high
+             link: /quests/deep-dungeons/heaven-on-high
            - name: Eureka Orthos
-             link: /quests/deep-dungeon/eureka-orthos
+             link: /quests/deep-dungeons/eureka-orthos
       - name: Hildibrand
         parts:
           - name: Hildibrand Adventures

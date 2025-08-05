@@ -267,7 +267,7 @@ class XivQuestScraper:
         todo_idx = 0
         todo_seq = extract_array2d(quest, "ToDoCompleteSeq")
         has_todos = True
-        while has_todos:
+        while has_todos and todo_idx < 24:
             locationId = quest["ToDoLocation[{}][0]".format(todo_idx)]
             step = self.location_coords_from_level(locationId)
 
@@ -536,6 +536,10 @@ class XivQuestScraper:
         if self.args.raw:
             front_matter['raw'] = {
                 'script': script,
+                'PreviousQuest': extract_array2d(quest, "PreviousQuest"),
+                'PreviousQuestJoin': quest['PreviousQuestJoin'],
+                'QuestLock': extract_array2d(quest, "QuestLock"),
+                'QuestLockJoin': quest['QuestLockJoin'],
             }
 
         # has solo duty?        
