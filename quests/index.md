@@ -285,33 +285,7 @@ storylines:
           link: /quests/jobs/alchemist
         - name: Culinarian
           link: /quests/jobs/culinarian
-    - name: Role Quests Shadowbringers
-      parts:
-        - name: Tank
-          link: /quests/role/shadowbringers/tank
-        - name: Healer
-          link: /quests/role/shadowbringers/healer
-        - name: Melee/Ranged DPS
-          link: /quests/role/shadowbringers/physical-dps
-        - name: Caster
-          link: /quests/role/shadowbringers/caster
-        - name: Master
-          link: /quests/role/shadowbringers/master
-    - name: Role Quests Endwalker
-      parts:
-        - name: Tank
-          link: /quests/role/endwalker/tank
-        - name: Healer
-          link: /quests/role/endwalker/healer
-        - name: Melee DPS
-          link: /quests/role/endwalker/melee-dps
-        - name: Ranged DPS
-          link: /quests/role/endwalker/ranged-dps
-        - name: Caster
-          link: /quests/role/endwalker/caster
-        - name: Master
-          link: /quests/role/endwalker/master
-    - name: Role Quests Dawntrail
+    - name: Role Quests
       parts:
         - name: Tank
           link: /quests/role/dawntrail/tank

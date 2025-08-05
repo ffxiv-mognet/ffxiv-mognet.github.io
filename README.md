@@ -88,3 +88,7 @@ for rowId in `grep -r rowId guide | cut -d':' -f3 | sort | uniq`; do
 done
 ```
 
+#### list Post Moogle delivery quests
+```
+./scripts/xiv-quest-scraper.py sheet DeliveryQuest | jq -r .[].Quest | xargs ./scripts/xiv-quest-scraper.py quests
+```
