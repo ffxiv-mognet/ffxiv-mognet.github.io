@@ -33,6 +33,13 @@ quests:
       - location: The Lochs
         coords: (36.2, 31.7)
         name: Speak with Raubahn in the Ala Mhigan Quarter.
+    requires:
+      - name: At World's End
+        level: 85
+        rowId: 69954
+        questId: AktKmd110_04418
+        genre: Endwalker
+        icon: '71000'
     partQuestNo: 1
   - name: The Butcher's Blade
     level: 86

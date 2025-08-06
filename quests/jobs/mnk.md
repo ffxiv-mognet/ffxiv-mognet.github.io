@@ -3,6 +3,8 @@ layout: quest-table
 expansion: Job Quests
 title: Monk / Pugilist
 permalink: /quests/jobs/monk
+links:
+    next: /quests/role/shadowbringers/physical-dps
 quests:
   - name: Way of the Pugilist
     level: 1
