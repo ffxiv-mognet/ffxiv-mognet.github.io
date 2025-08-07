@@ -62,6 +62,10 @@ class XivQuestScraper:
             'Emote': CsvSheet(self._path_for_sheet("Emote")),
             'EObjName': CsvSheet(self._path_for_sheet("EObjName")),
             'EObj': CsvSheet(self._path_for_sheet("EObj")),
+            'QuestRedo': CsvSheet(self._path_for_sheet("QuestRedo")),
+            'QuestRedoChapterUI': CsvSheet(self._path_for_sheet("QuestRedoChapterUI")),
+            'QuestRedoChapterUITab': CsvSheet(self._path_for_sheet("QuestRedoChapterUITab")),
+            'QuestRedoChapterUICategory': CsvSheet(self._path_for_sheet("QuestRedoChapterUICategory")),
         }
 
 
@@ -159,7 +163,8 @@ class XivQuestScraper:
                 break
 
             cfc = self.sheets['ContentFinderCondition'].find(lambda it: it["Content"] == icId and it["ContentLinkType"] == '1')
-            unlocks.append(self.format_contentfindercondition(cfc))
+            if cfc:
+                unlocks.append(self.format_contentfindercondition(cfc))
             content_idx += 1
 
 
@@ -316,7 +321,10 @@ class XivQuestScraper:
             'level': int(row['ClassJobLevel[0]']),
             'rowId': int(row['#']),
             'questId': row['Id'],
-            'genre': genre['Name'],
+            'genre': {
+                'id': genre['#'],
+                'name': genre['Name'],
+            },
             'icon': icon_type['MapIcon{Available}'],
             'issuer': issuer,
             'steps': steps,
@@ -433,6 +441,7 @@ class XivQuestScraper:
         self.argparser.add_argument("sheetName")
         self.argparser.add_argument("rowIds", nargs='*')
         self.argparser.add_argument("--json", action="store_true", default=True)
+        self.argparser.add_argument("--types", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         sheet_name = self.args.sheetName
 
@@ -441,8 +450,9 @@ class XivQuestScraper:
         self.sheets[sheet_name].buildIndex()
 
         output = []
+        if self.args.types:
+            output.append(self.sheets[sheet_name].types)
         keys = self.args.rowIds if len(self.args.rowIds) > 0 else self.sheets[sheet_name].rows.keys()
-        #import pdb; pdb.set_trace()
         for rowId in keys:
             output.append(self.sheets[sheet_name].byId(rowId))
 
@@ -536,6 +546,66 @@ class XivQuestScraper:
         else:
             print(json.dumps(output))
 
+    def cmd_newgame(self):
+        # QuestRedoChapterUITab > QuestRedoChapterUICategory > QuestRedoChapterUI
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        tabs = {}
+        for chapter_row in self.sheets['QuestRedoChapterUI'].all():
+            tab_row = self.sheets['QuestRedoChapterUITab'].byId(chapter_row['UITab'])
+            category_row = self.sheets['QuestRedoChapterUICategory'].byId(chapter_row['Category'])
+            t = tabs.get(tab_row['#'], {})
+            c = t.get(category_row['#'], [])
+            c.append(chapter_row)
+            t[category_row['#']] = c
+            tabs[tab_row['#']] = t
+
+        output = {
+            'tabs': list(tabs.values())
+        }
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
+
+    def cmd_newgameQuests(self):
+        self.argparser.add_argument("chapterName")
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        query = self.args.chapterName.lower()
+        chapter = self.sheets['QuestRedoChapterUI'].find(lambda it: query in it['ChapterName'].lower())
+        redos = self.sheets['QuestRedo'].findAll('Chapter', chapter['#'])
+        quests = []
+
+        partQuestNo = 1
+        for redo in redos:
+            questIds = extract_array2d(redo, "Quest")
+            for questId in questIds:
+                if questId == "0":
+                    continue
+                quest = self.sheets['Quest'].byId(questId)
+                row = self.quest_list_entry(quest)
+                row.update({
+                    'partQuestNo': partQuestNo
+                })
+                partQuestNo += 1
+                quests.append(row)
+
+        output = {
+            'quests': quests
+        }
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
+
+
     def cmd_journal(self):
         # JournalSection [tabs] > JournalCategory [dropdown] > JournalGenre [section]
         # e.g.:  Sidequest > Chronicles of Light > Tales of the Dragonsong War
@@ -589,24 +659,27 @@ class XivQuestScraper:
         quests = self.sheets['Quest'].findAll('JournalGenre', genre['#'])
         sortedQuests = sorted(quests, key=lambda it: int(it['SortKey']))
 
-        output = []
+        out_rows = []
+        partQuestNo = 1
         for quest in sortedQuests:
             row = self.quest_list_entry(quest)
             row.update({
-                'partQuestNo': int(quest['SortKey'])
+                'partQuestNo': partQuestNo
             })
-            output.append(row)
+            partQuestNo += 1
+            out_rows.append(row)
 
-        if self.args.yaml:
-            print(dump_indented_yaml({
-                "quests": output,
-                "genre": {
-                    'genreId': genre['#'],
-                    'name': genre['Name']
-                }
-            }))
-        else:
+        output = {
+            "quests": out_rows,
+            "genre": {
+                'genreId': genre['#'],
+                'name': genre['Name']
+            }
+        }
+        if self.args.json:
             print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
 
 
     def cmd_dumpQuest(self):

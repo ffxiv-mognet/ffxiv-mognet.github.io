@@ -10,6 +10,7 @@ class CsvSheet:
 
     def buildIndex(self):
         self.headers = []
+        self.types = {}
         self.rows = {}
         with open(self.csv_path, 'r') as csvfh:
             reader = csv.reader(csvfh)
@@ -21,6 +22,7 @@ class CsvSheet:
             for i in range(0,len(columns)):
                 col_name = columns[i] if columns[i] else "col{}".format(i-1)
                 self.headers.append((col_name, types[i]))
+                self.types[col_name] = types[i]
 
             # hydrate each row as a dict
             for row in reader:
