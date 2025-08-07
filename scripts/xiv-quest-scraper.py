@@ -46,6 +46,8 @@ class XivQuestScraper:
             'ContentFinderCondition': CsvSheet(self._path_for_sheet("ContentFinderCondition")),
             'EventIconType': CsvSheet(self._path_for_sheet("EventIconType")),
             'JournalGenre': CsvSheet(self._path_for_sheet("JournalGenre")),
+            'JournalSection': CsvSheet(self._path_for_sheet("JournalSection")),
+            'JournalCategory': CsvSheet(self._path_for_sheet("JournalCategory")),
             'Level': CsvSheet(self._path_for_sheet("Level")),
             'Map': CsvSheet(self._path_for_sheet("Map")),
             'ENpcResident': CsvSheet(self._path_for_sheet("ENpcResident")),
@@ -533,6 +535,79 @@ class XivQuestScraper:
             print(dump_indented_yaml(output))
         else:
             print(json.dumps(output))
+
+    def cmd_journal(self):
+        # JournalSection [tabs] > JournalCategory [dropdown] > JournalGenre [section]
+        # e.g.:  Sidequest > Chronicles of Light > Tales of the Dragonsong War
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        sections = []
+        for section_row in self.sheets['JournalSection'].all():
+            category_rows = self.sheets['JournalCategory'].findAll('JournalSection', section_row['#'])
+
+            categories = []
+            for category_row in category_rows:
+                genre_rows = self.sheets['JournalGenre'].findAll('JournalCategory', category_row['#'])
+                categories.append({
+                    'id': category_row['#'],
+                    'name': category_row['Name'],
+                    'genres': list(map(lambda it: {
+                        'id': it['#'],
+                        'name': it['Name'],
+                        'icon': it['Icon']
+                    }, genre_rows))
+                })
+
+            sections.append({
+                'id': section_row['#'],
+                'name': section_row['Name'],
+                'categories': categories,
+            })
+
+        output = {
+            'sections': sections
+        }
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
+
+    def cmd_genreQuests(self):
+        self.argparser.add_argument("genreName")
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.argparser.add_argument("--brief", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        match = self.args.genreName.lower()
+        genre = next(self.sheets['JournalGenre'].findMatches(lambda it: match in it['Name'].lower()))
+
+        quests = self.sheets['Quest'].findAll('JournalGenre', genre['#'])
+        sortedQuests = sorted(quests, key=lambda it: int(it['SortKey']))
+
+        output = []
+        for quest in sortedQuests:
+            row = self.quest_list_entry(quest)
+            row.update({
+                'partQuestNo': int(quest['SortKey'])
+            })
+            output.append(row)
+
+        if self.args.yaml:
+            print(dump_indented_yaml({
+                "quests": output,
+                "genre": {
+                    'genreId': genre['#'],
+                    'name': genre['Name']
+                }
+            }))
+        else:
+            print(json.dumps(output))
+
 
     def cmd_dumpQuest(self):
         self.argparser.add_argument("questId")

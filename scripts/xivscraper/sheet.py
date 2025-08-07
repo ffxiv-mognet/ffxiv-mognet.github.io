@@ -67,6 +67,12 @@ class CsvSheet:
             if cb(row):
                 return row
 
+    def all(self):
+        if not self.indexed:
+            self.buildIndex()
+        return self.rows.values()
+
+
 
 class LanguageSheet:
     def __init__(self, csv_path):
