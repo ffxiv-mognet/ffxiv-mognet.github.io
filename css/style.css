@@ -142,3 +142,7 @@ span.icon i.achievement {
 .clickable {
     cursor: pointer;
 }
+
+.quest-col .level:not(:last-child) {
+    margin-bottom: 0;
+}

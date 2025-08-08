@@ -20,7 +20,11 @@ layout: with-nav
   <table class="table is-fullwidth">
       <thead>
           <tr>
-              <th style="width: 5em">No.</th>
+              {% if page.nonsequential %}
+                <th></th>
+              {% else %}
+                <th style="width: 5em">No.</th>
+              {% endif %}
               <th>Quest</th>
               <th></th>
               <th style="width: 20em">Location</th>
@@ -39,7 +43,9 @@ layout: with-nav
                 id="completed-{{quest.rowId}}"
                 onchange="handleQuestChecked({{quest.rowId}})"
                 />
+              {% unless page.nonsequential %}
               #{{quest.partQuestNo}}
+              {% endunless %}
             </label>
           </td>
           <!-- quest -->
@@ -237,11 +243,17 @@ function handleQuestChecked(rowId) {
   const row = document.querySelector(`[data-rowid="${rowId}"]`)
   const checkbox = document.getElementById(`completed-${rowId}`)
 
-  const nodes = checkbox.checked 
+  const nodes = [row]
+
+  {% if page.nonsequential %}
+  const extra = []
+  {% else %}
+  const extra = checkbox.checked 
     ? getAllPreviousSiblings(row) 
     : getAllNextSiblings(row)
-  nodes.push(row)
-  for (var node of nodes) {
+  {% endif %}
+  
+  for (var node of nodes.concat(extra)) {
     setQuestFinished(node.dataset.rowid, checkbox.checked)
   }
 

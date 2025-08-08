@@ -20,6 +20,15 @@ from xivscraper.coord_helpers import readable_coords, readable_contenttype, pixe
 
 
 
+def scrub_boolstr(s):
+    s = s.lower()
+    if s in [True,1,'1','true']:
+        return True
+    if s in [False,0,'0','false']:
+        return False
+    return s
+
+
 class XivQuestScraper:
     def __init__(self):
         self.argparser = argparse.ArgumentParser(description="scrape ffxiv datamined quest info")
@@ -606,6 +615,7 @@ class XivQuestScraper:
             print(dump_indented_yaml(output))
 
 
+
     def cmd_journal(self):
         # JournalSection [tabs] > JournalCategory [dropdown] > JournalGenre [section]
         # e.g.:  Sidequest > Chronicles of Light > Tales of the Dragonsong War
@@ -627,7 +637,8 @@ class XivQuestScraper:
                     'genres': list(map(lambda it: {
                         'id': it['#'],
                         'name': it['Name'],
-                        'icon': it['Icon']
+                        'icon': it['Icon'],
+                        'visible': scrub_boolstr(it['col2']),
                     }, genre_rows))
                 })
 
@@ -635,6 +646,8 @@ class XivQuestScraper:
                 'id': section_row['#'],
                 'name': section_row['Name'],
                 'categories': categories,
+                'visible': scrub_boolstr(section_row['col1']),
+                'col2': scrub_boolstr(section_row['col2']),
             })
 
         output = {
@@ -654,7 +667,12 @@ class XivQuestScraper:
         self.init_sheets()
 
         match = self.args.genreName.lower()
-        genre = next(self.sheets['JournalGenre'].findMatches(lambda it: match in it['Name'].lower()))
+        genre = None
+        try:
+            genre_id = int(match)
+            genre = self.sheets['JournalGenre'].byId(match)
+        except ValueError:
+            genre = next(self.sheets['JournalGenre'].findMatches(lambda it: match in it['Name'].lower()))
 
         quests = self.sheets['Quest'].findAll('JournalGenre', genre['#'])
         sortedQuests = sorted(quests, key=lambda it: int(it['SortKey']))
@@ -668,6 +686,13 @@ class XivQuestScraper:
             })
             partQuestNo += 1
             out_rows.append(row)
+
+        # import pdb; pdb.set_trace()
+        # first = sortedQuests[0]
+        # prereqId = first.get('PreviousQuest[0]', None)
+        # if prereqId and prereqId != "0":
+        #     req = self.sheets['Quest'].byId(prereqId)
+        #     first['requires'] = self.generate_questListItem(req)
 
         output = {
             "quests": out_rows,
