@@ -877,6 +877,25 @@ class XivQuestScraper:
             output.append(row)
         return output
 
+    def cmd_uiItemCategories(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+        output = {}
+
+        for cat in self.sheets['ItemUICategory'].all():
+            if not cat['Name']:
+                continue
+            output[cat['#']] = {
+                'name': cat['Name'],
+                'icon': cat['Icon']
+            }
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
 
     def cmd_gemstoneShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
