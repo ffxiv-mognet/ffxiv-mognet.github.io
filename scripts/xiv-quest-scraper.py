@@ -762,9 +762,7 @@ class XivQuestScraper:
                 return 3
             if qr == info['rank2']:
                 return 2
-            if qr == "0":
-                return 1
-            return None
+            return 1
 
         def _item_category(id):
             category = self.sheets['ItemUICategory'].byId(id)
@@ -798,10 +796,9 @@ class XivQuestScraper:
                         'ItemUiCategoryId': reward_item['ItemUICategory']
                     },
                     'cost': int(costs[i]),
+                    'rank': rank,
                 }
-                if rank is not None:
-                    row['sharedFateRank'] = rank
-                else:
+                if not questReqs[i] in ['0', shopInfo['rank2'], shopInfo['rank3']]:
                     row['quest'] = questReqs[i]
                 inventory.append(row)
             row = {
@@ -840,20 +837,23 @@ class XivQuestScraper:
             specialShop = self.sheets['SpecialShop'].byId(rank3ShopId)
 
             items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
-            counts = extract_array1d(specialShop, 'Count{Receive}', suffix='[0]')
             costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
+            questReqs = extract_array1d(specialShop, 'Quest{Item}')
             achievements = extract_array1d(specialShop, 'AchievementUnlock')
-            def rank_for_itemid(itemid):
+            def rank_for_itemid(itemid, achievementid):
                 if itemid in rank1_itemids:
                     return 1
                 if itemid in rank2_itemids:
+                    if rank2ShopId == rank3ShopId:  # Endwalker
+                        return 3 if achievementid != '0' else 2
                     return 2
+                return 4 if achievementid != '0' else 3
 
             count = len(list(filter(lambda it: it != "0", items)))
             inventory = []
             for i in range(0,count):
                 reward_item = self.sheets['Item'].byId(items[i]) 
-                rank = rank_for_itemid(reward_item['#'])
+                rank = rank_for_itemid(reward_item['#'], achievements[i])
                 row = {
                     'item': {
                         'name': reward_item['Name'],
@@ -861,13 +861,10 @@ class XivQuestScraper:
                         'ItemUiCategoryId': reward_item['ItemUICategory']
                     },
                     'cost': int(costs[i]),
+                    'rank': rank
                 }
-                if rank is not None:
-                    row['sharedFateRank'] = rank
-                elif achievements[i] != '0':
-                    row['sharedFateRank'] = 4
-                else:
-                    row['sharedFateRank'] = 3
+                if questReqs[i] != '0':
+                    row['quest'] = questReqs[i]
                 inventory.append(row)
 
             row = {
