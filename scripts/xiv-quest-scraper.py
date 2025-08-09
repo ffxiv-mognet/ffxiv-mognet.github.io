@@ -79,6 +79,7 @@ class XivQuestScraper:
             'Item': CsvSheet(self._path_for_sheet("Item")),
             'SpecialShop': CsvSheet(self._path_for_sheet("SpecialShop")),
             'ItemUICategory': CsvSheet(self._path_for_sheet("ItemUICategory")),
+            'FateShop': CsvSheet(self._path_for_sheet("FateShop")),
         }
 
 
@@ -782,8 +783,6 @@ class XivQuestScraper:
             specialShop = self.sheets['SpecialShop'].byId(shopInfo['specialShopId'])
 
             items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
-            counts = extract_array1d(specialShop, 'Count{Receive}', suffix='[0]')
-            currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[0]')
             costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
             questReqs = extract_array1d(specialShop, 'Quest{Item}')
 
@@ -791,18 +790,14 @@ class XivQuestScraper:
             inventory = []
             for i in range(0,count):
                 reward_item = self.sheets['Item'].byId(items[i]) 
-                currency_item = self.sheets['Item'].byId(currencys[i])
                 rank = rank_from_questreq(questReqs[i], shopInfo)
                 row = {
                     'item': {
                         'name': reward_item['Name'],
                         'id': reward_item['#'],
                         'ItemUiCategoryId': reward_item['ItemUICategory']
-                        # 'category': _item_category(reward_item['ItemUICategory'])
                     },
                     'cost': int(costs[i]),
-                    # 'qty': int(counts[i]),
-                    # 'currency': currency_item['Name'],
                 }
                 if rank is not None:
                     row['sharedFateRank'] = rank
@@ -817,7 +812,70 @@ class XivQuestScraper:
         return output
 
 
+    def other_gemstoneShops(self):
 
+        def _extract_itemids(specialShopId):
+            shop = self.sheets['SpecialShop'].byId(specialShopId)
+            return list(filter(lambda it: it != '0', extract_array1d(shop, 'Item{Receive}', suffix='[0]')))
+
+        output = []
+
+        for fateshop in self.sheets['FateShop'].all():
+            npc = self.sheets['ENpcResident'].byId(fateshop['#'])
+            if not npc:
+                continue
+            loc = self.sheets['Level'].findBy('Object', npc['#'])
+            coords = self.location_coords_from_level(loc['#'])
+            coords.update({'name': npc['Singular']})
+
+            rank1ShopId = fateshop['SpecialShop[0]']
+            rank2ShopId = fateshop['SpecialShop[1]']
+            rank3ShopId = fateshop['SpecialShop[2]']
+            if rank2ShopId == "0":
+                continue
+
+            rank1_itemids = set(_extract_itemids(rank1ShopId))
+            rank2_itemids = set(_extract_itemids(rank2ShopId)) - rank1_itemids
+
+            specialShop = self.sheets['SpecialShop'].byId(rank3ShopId)
+
+            items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
+            counts = extract_array1d(specialShop, 'Count{Receive}', suffix='[0]')
+            costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
+            achievements = extract_array1d(specialShop, 'AchievementUnlock')
+            def rank_for_itemid(itemid):
+                if itemid in rank1_itemids:
+                    return 1
+                if itemid in rank2_itemids:
+                    return 2
+
+            count = len(list(filter(lambda it: it != "0", items)))
+            inventory = []
+            for i in range(0,count):
+                reward_item = self.sheets['Item'].byId(items[i]) 
+                rank = rank_for_itemid(reward_item['#'])
+                row = {
+                    'item': {
+                        'name': reward_item['Name'],
+                        'id': reward_item['#'],
+                        'ItemUiCategoryId': reward_item['ItemUICategory']
+                    },
+                    'cost': int(costs[i]),
+                }
+                if rank is not None:
+                    row['sharedFateRank'] = rank
+                elif achievements[i] != '0':
+                    row['sharedFateRank'] = 4
+                else:
+                    row['sharedFateRank'] = 3
+                inventory.append(row)
+
+            row = {
+                'inventory': inventory,
+                'npc': coords,
+            }
+            output.append(row)
+        return output
 
 
     def cmd_gemstoneShops(self):
@@ -832,6 +890,7 @@ class XivQuestScraper:
         # output = script
 
         output = self.shadowbringer_gemstoneShops()
+        output.extend(self.other_gemstoneShops())
 
         if self.args.json:
             print(json.dumps(output))
