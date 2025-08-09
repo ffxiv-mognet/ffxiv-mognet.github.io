@@ -80,6 +80,7 @@ class XivQuestScraper:
             'SpecialShop': CsvSheet(self._path_for_sheet("SpecialShop")),
             'ItemUICategory': CsvSheet(self._path_for_sheet("ItemUICategory")),
             'FateShop': CsvSheet(self._path_for_sheet("FateShop")),
+            'ExVersion': CsvSheet(self._path_for_sheet("ExVersion")),
         }
 
 
@@ -793,7 +794,7 @@ class XivQuestScraper:
                     'item': {
                         'name': reward_item['Name'],
                         'id': reward_item['#'],
-                        'ItemUiCategoryId': reward_item['ItemUICategory']
+                        'uiCategoryId': reward_item['ItemUICategory']
                     },
                     'cost': int(costs[i]),
                     'rank': rank,
@@ -804,6 +805,14 @@ class XivQuestScraper:
             row = {
                 'inventory': inventory,
                 'npc': coords,
+                'map': {
+                  'id': loc['Map'],
+                  'name': coords['location'],
+                },
+                'version': {
+                    'id': 3,
+                    'name': 'Shadowbringers'
+                },
             }
             output.append(row)
         return output
@@ -822,6 +831,10 @@ class XivQuestScraper:
             if not npc:
                 continue
             loc = self.sheets['Level'].findBy('Object', npc['#'])
+
+            tt = self.sheets['TerritoryType'].byId(loc['Territory'])
+            version = self.sheets['ExVersion'].byId(tt['ExVersion'])
+
             coords = self.location_coords_from_level(loc['#'])
             coords.update({'name': npc['Singular']})
 
@@ -858,7 +871,7 @@ class XivQuestScraper:
                     'item': {
                         'name': reward_item['Name'],
                         'id': reward_item['#'],
-                        'ItemUiCategoryId': reward_item['ItemUICategory']
+                        'uiCategoryId': reward_item['ItemUICategory']
                     },
                     'cost': int(costs[i]),
                     'rank': rank
@@ -870,6 +883,15 @@ class XivQuestScraper:
             row = {
                 'inventory': inventory,
                 'npc': coords,
+                'map': {
+                    'id': loc['Map'],
+                    'name': coords['location'],
+                },
+                'version': {
+                    'id': version['#'],
+                    'name': version['Name']
+                },
+                'fateShopId': fateshop['#']
             }
             output.append(row)
         return output
