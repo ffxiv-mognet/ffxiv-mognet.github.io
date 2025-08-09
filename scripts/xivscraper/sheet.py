@@ -98,13 +98,13 @@ class LanguageSheet:
 
 
 
-def extract_array2d(row, field_name):
+def extract_array1d(row, field_name, suffix=''):
     output = {} 
     prefix = "{}[".format(field_name)
     for key in row.keys():
-        if not key.startswith(prefix):
+        if not (key.startswith(prefix) and key.endswith(suffix)):
             continue
-        idx = int(key[len(prefix):-1])
+        idx = int(key[len(prefix):(len(suffix)+1)*-1])
         output[idx] = row[key]
     highest = max(output.keys())
 
@@ -113,15 +113,14 @@ def extract_array2d(row, field_name):
         f[i] = output[i]
     return f
 
-
-def extract_script(quest):
-    total = 50
+def extract_script(quest, total=50):
     output = {}
-    for i in range(0, 50):
+    for i in range(0, total):
         inst_key = "Script{{Instruction}}[{}]".format(i)
         arg_key = "Script{{Arg}}[{}]".format(i)
-        inst = quest[inst_key]
-        arg = quest[arg_key]
-        if inst:
-            output[inst] = arg
+        inst = quest.get(inst_key, None)
+        arg = quest.get(arg_key, None)
+        if inst is None:
+            break
+        output[inst] = arg
     return output

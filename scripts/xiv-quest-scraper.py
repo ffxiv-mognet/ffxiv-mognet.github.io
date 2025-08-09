@@ -14,7 +14,7 @@ import pprint
 import pdb
 
 
-from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array2d, extract_script
+from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array1d, extract_script
 from xivscraper.yaml_helpers import dump_indented_yaml
 from xivscraper.coord_helpers import readable_coords, readable_contenttype, pixel_coords
 
@@ -75,6 +75,10 @@ class XivQuestScraper:
             'QuestRedoChapterUI': CsvSheet(self._path_for_sheet("QuestRedoChapterUI")),
             'QuestRedoChapterUITab': CsvSheet(self._path_for_sheet("QuestRedoChapterUITab")),
             'QuestRedoChapterUICategory': CsvSheet(self._path_for_sheet("QuestRedoChapterUICategory")),
+            'CustomTalk': CsvSheet(self._path_for_sheet("CustomTalk")),
+            'Item': CsvSheet(self._path_for_sheet("Item")),
+            'SpecialShop': CsvSheet(self._path_for_sheet("SpecialShop")),
+            'ItemUICategory': CsvSheet(self._path_for_sheet("ItemUICategory")),
         }
 
 
@@ -286,7 +290,7 @@ class XivQuestScraper:
         lang_sheet = LanguageSheet(self._path_for_sheet(lang_sheet_name))
         steps = []
         todo_idx = 0
-        todo_seq = extract_array2d(quest, "ToDoCompleteSeq")
+        todo_seq = extract_array1d(quest, "ToDoCompleteSeq")
         has_todos = True
         while has_todos and todo_idx < 24:
             locationId = quest["ToDoLocation[{}][0]".format(todo_idx)]
@@ -504,7 +508,7 @@ class XivQuestScraper:
 
                 flgset = self.sheets['AetherCurrentCompFlgSet'].findBy('Territory', c['territory'])
 
-                current_seq = extract_array2d(flgset, "AetherCurrent")
+                current_seq = extract_array1d(flgset, "AetherCurrent")
                 compflgset[c['map']] = current_seq
 
 
@@ -594,7 +598,7 @@ class XivQuestScraper:
 
         partQuestNo = 1
         for redo in redos:
-            questIds = extract_array2d(redo, "Quest")
+            questIds = extract_array1d(redo, "Quest")
             for questId in questIds:
                 if questId == "0":
                     continue
@@ -707,6 +711,134 @@ class XivQuestScraper:
             print(dump_indented_yaml(output))
 
 
+    def shadowbringer_gemstoneShops(self):
+        # shadowbringers gemstone shops differ from endwalker and dawntrail 
+        # afaict the references are housed on a specific CustomTalk record, id=721479
+        # have not found how they are tied to a SpecialShop, but they can be inferred
+        shbCustomTalkId = '721479'
+        ct = self.sheets['CustomTalk'].byId(shbCustomTalkId)
+        script = extract_script(ct)
+        shbShopInfos = [
+            {
+                'eNpcResidentId': script['FATESHOP_ENPCID_LAKERAND'],
+                'rank2': script['FATESHOP_REWARD_LAKELAND1'],
+                'rank3': script['FATESHOP_REWARD_LAKELAND2'],
+                'specialShopId': '1769959'
+            },
+            {
+                'eNpcResidentId': script['FATESHOP_ENPCID_KHOLUSIA'],
+                'rank2': script['FATESHOP_REWARD_KHOLUSIA1'],
+                'rank3': script['FATESHOP_REWARD_KHOLUSIA2'],
+                'specialShopId': '1769960'
+            },
+            {
+                'eNpcResidentId': script['FATESHOP_ENPCID_AMHARAENG'],
+                'rank2': script['FATESHOP_REWARD_AMHARAENG1'],
+                'rank3': script['FATESHOP_REWARD_AMHARAENG2'],
+                'specialShopId': '1769961'
+            },
+            {
+                'eNpcResidentId': script['FATESHOP_ENPCID_ILMHEG'],
+                'rank2': script['FATESHOP_REWARD_ILMHEG1'],
+                'rank3': script['FATESHOP_REWARD_ILMHEG2'],
+                'specialShopId': '1769962'
+            },
+            {
+                'eNpcResidentId': script['FATESHOP_ENPCID_RAKTIKA'],
+                'rank2': script['FATESHOP_REWARD_RAKTIKA1'],
+                'rank3': script['FATESHOP_REWARD_RAKTIKA2'],
+                'specialShopId': '1769963'
+            },
+            {
+                'eNpcResidentId': script['FATESHOP_ENPCID_THETEMPEST'],
+                'rank2': script['FATESHOP_REWARD_THETEMPEST1'],
+                'rank3': script['FATESHOP_REWARD_THETEMPEST2'],
+                'specialShopId': '1769964'
+            },
+        ]
+        def rank_from_questreq(qr, info):
+            if qr == info['rank3']:
+                return 3
+            if qr == info['rank2']:
+                return 2
+            if qr == "0":
+                return 1
+            return None
+
+        def _item_category(id):
+            category = self.sheets['ItemUICategory'].byId(id)
+            return {
+                'id': category['#'],
+                'name': category['Name'],
+                'icon': category['Icon']
+            }
+
+        output = []
+        for shopInfo in shbShopInfos:
+            npc = self.sheets['ENpcResident'].byId(shopInfo['eNpcResidentId'])
+            loc = self.sheets['Level'].findBy('Object', npc['#'])
+            coords = self.location_coords_from_level(loc['#'])
+            coords.update({'name': npc['Singular']})
+            specialShop = self.sheets['SpecialShop'].byId(shopInfo['specialShopId'])
+
+            items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
+            counts = extract_array1d(specialShop, 'Count{Receive}', suffix='[0]')
+            currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[0]')
+            costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
+            questReqs = extract_array1d(specialShop, 'Quest{Item}')
+
+            count = len(list(filter(lambda it: it != "0", items)))
+            inventory = []
+            for i in range(0,count):
+                reward_item = self.sheets['Item'].byId(items[i]) 
+                currency_item = self.sheets['Item'].byId(currencys[i])
+                rank = rank_from_questreq(questReqs[i], shopInfo)
+                row = {
+                    'item': {
+                        'name': reward_item['Name'],
+                        'id': reward_item['#'],
+                        'ItemUiCategoryId': reward_item['ItemUICategory']
+                        # 'category': _item_category(reward_item['ItemUICategory'])
+                    },
+                    'cost': int(costs[i]),
+                    # 'qty': int(counts[i]),
+                    # 'currency': currency_item['Name'],
+                }
+                if rank is not None:
+                    row['sharedFateRank'] = rank
+                else:
+                    row['quest'] = questReqs[i]
+                inventory.append(row)
+            row = {
+                'inventory': inventory,
+                'npc': coords,
+            }
+            output.append(row)
+        return output
+
+
+
+
+
+    def cmd_gemstoneShops(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        # shbCustomTalkId = '721479'
+        # ct = self.sheets['CustomTalk'].byId(shbCustomTalkId)
+        # script = extract_script(ct)
+        # output = script
+
+        output = self.shadowbringer_gemstoneShops()
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
+
+
     def cmd_dumpQuest(self):
         self.argparser.add_argument("questId")
         self.argparser.add_argument("--yaml", action="store_true", default=True)
@@ -740,9 +872,9 @@ class XivQuestScraper:
         if self.args.raw:
             front_matter['raw'] = {
                 'script': script,
-                'PreviousQuest': extract_array2d(quest, "PreviousQuest"),
+                'PreviousQuest': extract_array1d(quest, "PreviousQuest"),
                 'PreviousQuestJoin': quest['PreviousQuestJoin'],
-                'QuestLock': extract_array2d(quest, "QuestLock"),
+                'QuestLock': extract_array1d(quest, "QuestLock"),
                 'QuestLockJoin': quest['QuestLockJoin'],
             }
 
