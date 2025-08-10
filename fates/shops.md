@@ -64,11 +64,18 @@ areaRanks:
     <div class="level-left">
         <p class="level-item">
             {{ area.name }}
-            <select class="select" id="rank-select-{{area.key}}">
-                {% for i in (1..expac.maxRank) %}
-                <option value={{i}}>{{i}}</option>
-                {% endfor %}
-            </select>
+            <div class="select is-small">
+                <select 
+                    class="select fate-rank-select" 
+                    data-version="{{ expac.versionId }}"
+                    data-map="{{ area.mapId }}"
+                    onchange="updateGemstoneShopRows()"
+                    >
+                    {% for i in (1..expac.maxRank) %}
+                    <option value={{i}}>{{i}}</option>
+                    {% endfor %}
+                </select>
+            </div>
         </p>
     </div>
     {% endfor %}
@@ -78,22 +85,59 @@ areaRanks:
 <table class="table is-fullwidth">
   <thead>
     <tr>
+        <th></th>
         <th>Item</th>
-        <th>Type</th>
+        <th>
+            Type
+            <div class="dropdown" id="type-filter">
+                <div class="dropdown-trigger" id="type-filter-trigger">
+                  <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                        {% for cat in site.data.gemstoneShops.categories %}
+                        <div class="dropdown-item">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox" data-categoryId="{{cat[0]}}" checked/>
+                                {{cat[1].name}}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </th>
         <th>Cost</th>
         <th>Expansion</th>
-        <th style="width: 20em">Location</th>
+        <th style="width: 20em">Gemstone Trader</th>
         <th>FATE Rank</th>
         <th>Quest</th>
     </tr>
   </thead>
   <tbody>
-    {% for shop in site.data.gemstoneShops %}
+    {% for shop in site.data.gemstoneShops.shops %}
         {% for item in shop.inventory %}
-        <tr>
+        {% if item.item.name %}
+        <tr class="gemstone-shop-row" 
+            data-version="{{ shop.version.id }}" 
+            data-map="{{ shop.map.id }}"
+            data-rank="{{ item.rank }}"
+            >
+            <td>
+              <label class="checkbox">
+                  <input 
+                    type="checkbox" 
+                    class="checkbox questCheckbox" 
+                    id="item-completed-{{item.item.id}}"
+                    onchange="handleShopItemChecked({{item.item.id}})"
+                    />
+                </label>
+            </td>
             <td>{{ item.item.name }}</td>
-            <td>{{ site.data.UiItemCategory[item.item.uiCategoryId].name }}</td>
-            <td>{{ item.cost }}</td>
+            <td>{{ site.data.gemstoneShops.categories[item.item.categoryId].name }}</td>
+            <td style="text-align: right">{{ item.cost }}</td>
             <td>{{ shop.version.name }}</td>
             <td>
                 <div class="npc">
@@ -108,7 +152,41 @@ areaRanks:
                 {{item.quest}}
             </td>
         </tr>
+        {% endif %}
         {% endfor %}
     {% endfor %}
   </tbody>
 </table>
+
+
+<script>
+function getAreaRanks() {
+    var ret = {}
+    for (var el of document.getElementsByClassName('fate-rank-select')) {
+        ret[el.dataset.map] = Number(el.value)
+    }
+    return ret
+}
+
+function updateGemstoneShopRows() {
+    const ranks = getAreaRanks()
+    for (var row of document.getElementsByClassName('gemstone-shop-row')) {
+        const max_rank = ranks[row.dataset.map]
+        const row_rank = Number(row.dataset.rank)
+        if (row_rank > max_rank) {
+            row.classList.add('is-hidden')
+        } else {
+            row.classList.remove('is-hidden')
+        }
+    }
+}
+document.addEventListener("DOMContentLoaded", async () => {
+    updateGemstoneShopRows()
+
+    const typeFilter = document.getElementById('type-filter')
+    const typeFilterTrigger = document.getElementById('type-filter-trigger')
+    typeFilterTrigger.onclick = () => {
+        typeFilter.classList.toggle('is-active')
+    }
+})
+</script>

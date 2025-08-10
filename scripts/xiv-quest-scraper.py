@@ -794,7 +794,7 @@ class XivQuestScraper:
                     'item': {
                         'name': reward_item['Name'],
                         'id': reward_item['#'],
-                        'uiCategoryId': reward_item['ItemUICategory']
+                        'categoryId': reward_item['ItemUICategory']
                     },
                     'cost': int(costs[i]),
                     'rank': rank,
@@ -871,7 +871,7 @@ class XivQuestScraper:
                     'item': {
                         'name': reward_item['Name'],
                         'id': reward_item['#'],
-                        'uiCategoryId': reward_item['ItemUICategory']
+                        'categoryId': reward_item['ItemUICategory']
                     },
                     'cost': int(costs[i]),
                     'rank': rank
@@ -927,8 +927,27 @@ class XivQuestScraper:
         # script = extract_script(ct)
         # output = script
 
-        output = self.shadowbringer_gemstoneShops()
-        output.extend(self.other_gemstoneShops())
+        shops = self.shadowbringer_gemstoneShops()
+        shops.extend(self.other_gemstoneShops())
+
+        categoryIds = set()
+        for shop in shops:
+            for inv in shop['inventory']:
+                if inv['item']['categoryId'] != '0':
+                    categoryIds.add(inv['item']['categoryId'])
+
+        def _fetch_category(it):
+            cat = self.sheets['ItemUICategory'].byId(it)
+            return (it, {
+                'name': cat['Name'],
+                'icon': cat['Icon'],
+            })
+        categories = dict(map(_fetch_category, categoryIds))
+
+        output = {
+            'shops': shops,
+            'categories': categories
+        }
 
         if self.args.json:
             print(json.dumps(output))
