@@ -790,11 +790,17 @@ class XivQuestScraper:
             for i in range(0,count):
                 reward_item = self.sheets['Item'].byId(items[i]) 
                 rank = rank_from_questreq(questReqs[i], shopInfo)
+
+                category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
                 row = {
                     'item': {
                         'name': reward_item['Name'],
                         'id': reward_item['#'],
-                        'categoryId': reward_item['ItemUICategory']
+                        'category': {
+                            'id': category['#'],
+                            'name': category['Name'],
+                            'icon': category['Icon']
+                        }
                     },
                     'cost': int(costs[i]),
                     'rank': rank,
@@ -867,11 +873,16 @@ class XivQuestScraper:
             for i in range(0,count):
                 reward_item = self.sheets['Item'].byId(items[i]) 
                 rank = rank_for_itemid(reward_item['#'], achievements[i])
+                category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
                 row = {
                     'item': {
                         'name': reward_item['Name'],
                         'id': reward_item['#'],
-                        'categoryId': reward_item['ItemUICategory']
+                        'category': {
+                            'id': category['#'],
+                            'name': category['Name'],
+                            'icon': category['Icon']
+                        }
                     },
                     'cost': int(costs[i]),
                     'rank': rank
@@ -930,23 +941,16 @@ class XivQuestScraper:
         shops = self.shadowbringer_gemstoneShops()
         shops.extend(self.other_gemstoneShops())
 
-        categoryIds = set()
+        categories = {}
         for shop in shops:
             for inv in shop['inventory']:
-                if inv['item']['categoryId'] != '0':
-                    categoryIds.add(inv['item']['categoryId'])
-
-        def _fetch_category(it):
-            cat = self.sheets['ItemUICategory'].byId(it)
-            return (it, {
-                'name': cat['Name'],
-                'icon': cat['Icon'],
-            })
-        categories = dict(map(_fetch_category, categoryIds))
+                cat = inv['item']['category']
+                if cat['id'] != '0':
+                    categories[cat['id']] = cat
 
         output = {
             'shops': shops,
-            'categories': categories
+            'categories': sorted(categories.values(), key=lambda it: it['name']),
         }
 
         if self.args.json:

@@ -100,8 +100,8 @@ areaRanks:
                         {% for cat in site.data.gemstoneShops.categories %}
                         <div class="dropdown-item">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox" data-categoryId="{{cat[0]}}" checked/>
-                                {{cat[1].name}}
+                                <input type="checkbox" class="checkbox" data-categoryId="{{cat.id}}" checked/>
+                                {{cat.name}}
                             </label>
                         </div>
                         {% endfor %}
@@ -124,6 +124,7 @@ areaRanks:
             data-version="{{ shop.version.id }}" 
             data-map="{{ shop.map.id }}"
             data-rank="{{ item.rank }}"
+            data-item="{{ item.item.id }}"
             >
             <td>
               <label class="checkbox">
@@ -136,7 +137,7 @@ areaRanks:
                 </label>
             </td>
             <td>{{ item.item.name }}</td>
-            <td>{{ site.data.gemstoneShops.categories[item.item.categoryId].name }}</td>
+            <td>{{ item.item.category.name }}</td>
             <td style="text-align: right">{{ item.cost }}</td>
             <td>{{ shop.version.name }}</td>
             <td>
