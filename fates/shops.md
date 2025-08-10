@@ -55,6 +55,14 @@ areaRanks:
 ---
 
 
+<div class="loading-wrapper has-text-centered" id="page-content">
+    <div class="loading-icon">
+        <span class="icon loading-spin">
+            <i class="fas fa-spinner"></i>
+        </span>
+    </div>
+    <div class="loading-content">
+
 {% for expac in page.areaRanks %}
 <nav class="level">
     <div class="level-left">
@@ -166,6 +174,8 @@ areaRanks:
   </tbody>
 </table>
 
+</div>
+</div>
 
 <script>
 function getAreaRanks() {
@@ -252,5 +262,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     typeFilterTrigger.onclick = () => {
         typeFilter.classList.toggle('is-active')
     }
+
+    document.getElementById('page-content').classList.add('is-loaded')
 })
 </script>

@@ -146,3 +146,24 @@ span.icon i.achievement {
 .quest-col .level:not(:last-child) {
     margin-bottom: 0;
 }
+
+
+
+
+.loading-spin {
+    animation: spinAround .72s infinite linear;
+}
+
+
+.loading-wrapper > .loading-content {
+    display: none;
+}
+.loading-wrapper > .loading-icon {
+    display: initial;
+}
+.loading-wrapper.is-loaded > .loading-content {
+    display: initial;
+}
+.loading-wrapper.is-loaded > .loading-icon {
+    display: none;
+}
