@@ -69,7 +69,9 @@ areaRanks:
                     class="select fate-rank-select" 
                     data-version="{{ expac.versionId }}"
                     data-map="{{ area.mapId }}"
-                    onchange="updateGemstoneShopRows()"
+                    data-maxrank="{{ expac.maxRank }}"
+                    onchange="handleChangeAreaRank(event)"
+                    id="select-rank-area-{{area.mapId}}"
                     >
                     {% for i in (1..expac.maxRank) %}
                     <option value={{i}}>{{i}}</option>
@@ -100,7 +102,11 @@ areaRanks:
                         {% for cat in site.data.gemstoneShops.categories %}
                         <div class="dropdown-item">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox" data-categoryId="{{cat.id}}" checked/>
+                                <input type="checkbox" class="checkbox" 
+                                    data-categoryId="{{cat.id}}" 
+                                    id="cat-type-check-{{cat.id}}"
+                                    checked
+                                    />
                                 {{cat.name}}
                             </label>
                         </div>
@@ -169,6 +175,14 @@ function getAreaRanks() {
     return ret
 }
 
+function setAreaRanks() {
+    for (var el of document.getElementsByClassName('fate-rank-select')) {
+        const rank = loadAreaRank(el.dataset.map)
+        el.value = rank || el.dataset.maxrank
+    }
+
+}
+
 function updateGemstoneShopRows() {
     const ranks = getAreaRanks()
     for (var row of document.getElementsByClassName('gemstone-shop-row')) {
@@ -181,7 +195,28 @@ function updateGemstoneShopRows() {
         }
     }
 }
+
+function handleChangeAreaRank(evt) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const mapId = evt.target.dataset.map
+    const key = `fateshop:rank:${mapId}`
+    const rank = Number(evt.target.value)
+    setLocalStorage(namespace, key, rank)
+    updateGemstoneShopRows()
+}
+function loadAreaRank(mapId) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:rank:${mapId}`
+    return getLocalStorage(namespace, key)
+}
+
+function handleShopItemChecked() {
+
+}
+
+
 document.addEventListener("DOMContentLoaded", async () => {
+    setAreaRanks()
     updateGemstoneShopRows()
 
     const typeFilter = document.getElementById('type-filter')
