@@ -137,8 +137,9 @@ areaRanks:
                   <input 
                     type="checkbox" 
                     class="checkbox questCheckbox" 
+                    data-item="{{item.item.id}}"
                     id="item-completed-{{item.item.id}}"
-                    onchange="handleShopItemChecked({{item.item.id}})"
+                    onchange="handleShopItemChecked(event)"
                     />
                 </label>
             </td>
@@ -180,7 +181,17 @@ function setAreaRanks() {
         const rank = loadAreaRank(el.dataset.map)
         el.value = rank || el.dataset.maxrank
     }
+}
 
+function getItemFinished(itemId) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:item:finished:${itemId}`
+    return getLocalFlag(namespace, key)
+}
+function setItemFinished(itemId, isFinished) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:item:finished:${itemId}`
+    return setLocalFlag(namespace, key, isFinished)
 }
 
 function updateGemstoneShopRows() {
@@ -193,7 +204,27 @@ function updateGemstoneShopRows() {
         } else {
             row.classList.remove('is-hidden')
         }
+
+        if (getItemFinished(row.dataset.item)) {
+            row.classList.add('is-finished')
+        } else {
+            row.classList.remove('is-finished')
+        }
     }
+
+
+    for (var checkbox of document.getElementsByClassName('questCheckbox')) {
+        const itemId = checkbox.dataset.item
+        checkbox.checked = getItemFinished(itemId)
+    }
+}
+
+function handleShopItemChecked(event) {
+    const checkbox = event.target
+    const itemId = checkbox.dataset.item
+    setItemFinished(itemId, checkbox.checked)
+
+    updateGemstoneShopRows()
 }
 
 function handleChangeAreaRank(evt) {
@@ -210,9 +241,6 @@ function loadAreaRank(mapId) {
     return getLocalStorage(namespace, key)
 }
 
-function handleShopItemChecked() {
-
-}
 
 
 document.addEventListener("DOMContentLoaded", async () => {
