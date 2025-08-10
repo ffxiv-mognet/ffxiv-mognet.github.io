@@ -159,7 +159,7 @@ span.icon i.achievement {
     display: none;
 }
 .loading-wrapper > .loading-icon {
-    display: initial;
+    display: block;
 }
 .loading-wrapper.is-loaded > .loading-content {
     display: initial;

@@ -55,8 +55,8 @@ areaRanks:
 ---
 
 
-<div class="loading-wrapper has-text-centered" id="page-content">
-    <div class="loading-icon">
+<div class="loading-wrapper" id="page-content">
+    <div class="loading-icon has-text-centered">
         <span class="icon loading-spin">
             <i class="fas fa-spinner"></i>
         </span>
