@@ -63,6 +63,21 @@ areaRanks:
     </div>
     <div class="loading-content">
 
+
+<div class="level">
+    <div class="level-left">
+        <p class="level-item">
+            <label class="checkbox">
+                <input type="checkbox" class="checkbox"
+                    id="filter-by-rank-check"
+                    onchange="handleFilterByRankChecked(event)"
+                    />
+                Filter by FATE Rank
+            </label>
+        </p>
+    </div>
+</div>
+<section id="rank-filter-container">
 {% for expac in page.areaRanks %}
 <nav class="level">
     <div class="level-left">
@@ -91,6 +106,7 @@ areaRanks:
     {% endfor %}
 </nav>
 {% endfor %}
+</section>
 
 <table class="table is-fullwidth">
   <thead>
@@ -191,6 +207,16 @@ function getAreaRanks() {
 }
 
 function setAreaRanks() {
+    const filterByRank = getFilterByRank()
+
+    const container = document.getElementById('rank-filter-container')
+    if (filterByRank) {
+        container.classList.remove('is-hidden')
+    } else {
+        container.classList.add('is-hidden')
+    }
+    document.getElementById('filter-by-rank-check').checked = filterByRank
+
     for (var el of document.getElementsByClassName('fate-rank-select')) {
         const rank = loadAreaRank(el.dataset.map)
         el.value = rank || el.dataset.maxrank
@@ -226,13 +252,25 @@ function setCategoryVisible(categoryId, isVisible) {
     return setLocalFlag(namespace, key, !isVisible)
 }
 
+
+function getFilterByRank() {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    key = `fateshop:filter:byrank`
+    return getLocalFlag(namespace, key)
+}
+function setFilterByRank(isEnabled) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    key = `fateshop:filter:byrank`
+    setLocalFlag(namespace, key, isEnabled)
+}
+
 function updateGemstoneShopRows() {
     const ranks = getAreaRanks()
     for (var row of document.getElementsByClassName('gemstone-shop-row')) {
         const max_rank = ranks[row.dataset.map]
         const row_rank = Number(row.dataset.rank)
 
-        if ((row_rank > max_rank) ||
+        if ((getFilterByRank() && row_rank > max_rank) ||
             !getCategoryVisible(row.dataset.category)
         ) {
             row.classList.add('is-hidden')
@@ -285,12 +323,21 @@ function loadAreaRank(mapId) {
 }
 
 
+function handleFilterByRankChecked(event) {
+    const checkbox = event.target
+    setFilterByRank(checkbox.checked)
+    update()
+}
 
-document.addEventListener("DOMContentLoaded", async () => {
+function update() {
     setAreaRanks()
     setTypeFilters()
     updateGemstoneShopRows()
+}
 
+
+document.addEventListener("DOMContentLoaded", async () => {
+    update()
 
     const typeFilter = document.getElementById('type-filter')
     const typeFilterTrigger = document.getElementById('type-filter-trigger')
