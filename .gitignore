@@ -7,3 +7,4 @@ Gemfile.lock
 .xiv-cache/
 __pycache__
 *.pyc
+env-*/

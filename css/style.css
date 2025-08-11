@@ -31,7 +31,7 @@ span.icon i.dungeon {
     width: 1rem;
     display: block;
 }
-span.icon i.trial {
+span.icon i.trial, span.icon i.quest-trial {
     background:url('/icons/061804.png');
     content: '';
     background-size: 1rem;
@@ -63,7 +63,115 @@ span.icon i.quest-novice {
     width: 1rem;
     display: block;
 }
+span.icon i.action {
+    background:url('/icons/000004.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.map {
+    background:url('/icons/000007.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.aetheryte {
+    background:url('/icons/aetheryte.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.bicolor-gemstone {
+    background:url('/icons/bicolor-gemstone.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.aethercurrent {
+    background:url('/icons/000064.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.mountspeed {
+    background:url('/icons/000072.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.achievement {
+    background:url('/icons/000006.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
 
 .unlocks {
     padding-left: 1rem;
+}
+
+
+
+.quest-name {
+    font-weight: 550;
+}
+.quest-steps {
+    padding-left: 2em;
+}
+
+
+.is-finished {
+    text-decoration: line-through;
+}
+.quest-row.is-finished label {
+    text-decoration: line-through !important;
+}
+
+
+.npc {
+    font-size: 0.8em;
+}
+
+
+.clickable {
+    cursor: pointer;
+}
+
+.quest-col .level:not(:last-child) {
+    margin-bottom: 0;
+}
+
+
+
+
+.loading-spin {
+    animation: spinAround .72s infinite linear;
+}
+
+
+.loading-wrapper > .loading-content {
+    display: none;
+}
+.loading-wrapper > .loading-icon {
+    display: block;
+}
+.loading-wrapper.is-loaded > .loading-content {
+    display: initial;
+}
+.loading-wrapper.is-loaded > .loading-icon {
+    display: none;
 }

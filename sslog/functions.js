@@ -54,8 +54,9 @@ function isLogActive(item, now) {
     return isLogTimeActive(item, now) && isLogWeatherActive(item, now);
 }
 
-function getNextActive(item) {
-    var enow = getEorzeaTime(new Date());
+function getNextActive(item, from = undefined) {
+    from = from || new Date()
+    var enow = getEorzeaTime(from);
     enow.setUTCMinutes(0);
     enow.setUTCSeconds(0);
 

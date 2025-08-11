@@ -9,13 +9,29 @@ class CsvSheet:
             self.buildIndex()
 
     def buildIndex(self):
+        self.headers = []
+        self.types = {}
         self.rows = {}
         with open(self.csv_path, 'r') as csvfh:
-            csvfh.readline()  # skip first line
-            reader = csv.DictReader(csvfh)
+            reader = csv.reader(csvfh)
+            next(reader)  # skip first line
+
+            # parse header names and types
+            columns = next(reader)
+            types = next(reader)
+            for i in range(0,len(columns)):
+                col_name = columns[i] if columns[i] else "col{}".format(i-1)
+                self.headers.append((col_name, types[i]))
+                self.types[col_name] = types[i]
+
+            # hydrate each row as a dict
             for row in reader:
-                rowId = row["#"]
-                self.rows[rowId] = row
+                rowId = row[0]
+                obj = {}
+                for i in range(0, len(row)):
+                    col_name = self.headers[i][0]
+                    obj[col_name] = row[i]
+                self.rows[rowId] = obj
         self.indexed = True
 
     def byId(self, rowId, default=None):
@@ -23,12 +39,28 @@ class CsvSheet:
             self.buildIndex()
         return self.rows.get(rowId, default)
 
-    def findBy(self, field_name, value, default=None):
+    def findBy(self, field_name, value):
         if not self.indexed:
             self.buildIndex()
         for row in self.rows.values():
             if row[field_name] == value:
                 return row
+
+    def findAll(self, field_name, value):
+        if not self.indexed:
+            self.buildIndex()
+        for row in self.rows.values():
+            if row[field_name] == value:
+                yield row
+
+    def findMatches(self, callback):
+        if not self.indexed:
+            self.buildIndex()
+        for row in self.rows.values():
+            if callback(row):
+                yield row
+
+
 
     def find(self, cb, default=None):
         if not self.indexed:
@@ -36,6 +68,12 @@ class CsvSheet:
         for row in self.rows.values():
             if cb(row):
                 return row
+
+    def all(self):
+        if not self.indexed:
+            self.buildIndex()
+        return self.rows.values()
+
 
 
 class LanguageSheet:
@@ -60,13 +98,13 @@ class LanguageSheet:
 
 
 
-def extract_array2d(row, field_name):
+def extract_array1d(row, field_name, suffix=''):
     output = {} 
     prefix = "{}[".format(field_name)
     for key in row.keys():
-        if not key.startswith(prefix):
+        if not (key.startswith(prefix) and key.endswith(suffix)):
             continue
-        idx = int(key[len(prefix):-1])
+        idx = int(key[len(prefix):(len(suffix)+1)*-1])
         output[idx] = row[key]
     highest = max(output.keys())
 
@@ -75,15 +113,14 @@ def extract_array2d(row, field_name):
         f[i] = output[i]
     return f
 
-
-def extract_script(quest):
-    total = 50
+def extract_script(quest, total=50):
     output = {}
-    for i in range(0, 50):
+    for i in range(0, total):
         inst_key = "Script{{Instruction}}[{}]".format(i)
         arg_key = "Script{{Arg}}[{}]".format(i)
-        inst = quest[inst_key]
-        arg = quest[arg_key]
-        if inst:
-            output[inst] = arg
+        inst = quest.get(inst_key, None)
+        arg = quest.get(arg_key, None)
+        if inst is None:
+            break
+        output[inst] = arg
     return output

@@ -1,0 +1,27 @@
+unlocks:
+  67116:
+    - {name: Ishgard, type: map}
+    - {name: Foundation, type: aetheryte}
+  67119:
+    - {name: Coerthas Western Highlands, type: map}
+    - {name: Falcon's Nest, type: aetheryte}
+    - {name: The Dravanian Forelands, type: map}
+    - {name: Tailfeather, type: aetheryte}
+    - {name: Anyx Trine, type: aetheryte}
+  67126:
+    - {name: Sea of Clouds (south), type: map}
+    - {name: Camp Cloudtop, type: aetheryte}
+  67153:
+    - {name: The Churning Mists, type: map}
+  67179:    
+    - {name: Sea of Clouds (north), type: map}
+    - {name: Ok' Zundu, type: aetheryte}
+  67191:
+    - {name: The Dravanian Hinterlands, type: map}
+    - {name: Idyllshire, type: map}
+    - {name: Idyllshire, type: aetheryte}
+  67195:
+    - {name: Matoya's Cave, type: map}
+  67199:    
+    - {name: Azys Lla, type: map}
+    - {name: Helix, type: aetheryte}
