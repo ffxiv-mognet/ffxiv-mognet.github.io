@@ -144,10 +144,10 @@ areaRanks:
     <tr>
         <th></th>
         <th>Item</th>
-        <th>
+        <th id="type-filter-trigger" style="cursor: pointer">
             Type
             <div class="dropdown" id="type-filter">
-                <div class="dropdown-trigger" id="type-filter-trigger">
+                <div class="dropdown-trigger">
                   <span class="icon is-small">
                       <i class="fas fa-angle-down" aria-hidden="true"></i>
                     </span>
@@ -174,7 +174,35 @@ areaRanks:
             </div>
         </th>
         <th>Cost</th>
-        <th>Expansion</th>
+        <th id="version-filter-trigger" style="cursor: pointer">
+            Expansion
+            <div class="dropdown" id="version-filter">
+                <div class="dropdown-trigger">
+                  <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                        {% for expac in page.areaRanks %}
+                        <div class="dropdown-item">
+                            <label class="checkbox">
+                                <input 
+                                    type="checkbox" 
+                                    class="checkbox version-filter-check" 
+                                    data-version="{{expac.versionId}}" 
+                                    id="version-type-check-{{expac.versionId}}"
+                                    onchange="handleVersionFilterChecked(event)"
+                                    checked
+                                    />
+                                {{expac.name}}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </th>
         <th style="width: 20em">Gemstone Trader</th>
         <th>FATE Rank</th>
         <th>Quest</th>
@@ -288,6 +316,17 @@ function setCategoryVisible(categoryId, isVisible) {
     return setLocalFlag(namespace, key, !isVisible)
 }
 
+function getVersionVisible(versionId) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:filter:version:${versionId}`
+    return !getLocalFlag(namespace, key)
+}
+function setVersionVisible(versionId, isVisible) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:filter:version:${versionId}`
+    return setLocalFlag(namespace, key, !isVisible)
+}
+
 
 function getFilterByRank() {
     const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
@@ -306,7 +345,8 @@ function updateGemstoneShopRows() {
         const cur_rank = ranks[row.dataset.map]
         const row_rank = Number(row.dataset.rank)
 
-        let visible = getCategoryVisible(row.dataset.category)
+        let visible = getCategoryVisible(row.dataset.category) 
+                        && getVersionVisible(row.dataset.version);
 
         if (getFilterByRank()) {
             if (row_rank == -1) {
@@ -354,11 +394,17 @@ function sortRows() {
 
 }
 
+function handleVersionFilterChecked(event) {
+    const checkbox = event.target
+    const versionId = checkbox.dataset.version
+    setVersionVisible(versionId, checkbox.checked)
+    updateGemstoneShopRows()
+}
+
 function handleTypeFilterChecked(event) {
     const checkbox = event.target
     const categoryId = checkbox.dataset.category
     setCategoryVisible(categoryId, checkbox.checked)
-
     updateGemstoneShopRows()
 }
 
@@ -411,6 +457,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const typeFilterTrigger = document.getElementById('type-filter-trigger')
     typeFilterTrigger.onclick = () => {
         typeFilter.classList.toggle('is-active')
+    }
+
+    const versionFilter = document.getElementById('version-filter')
+    const versionFilterTrigger = document.getElementById('version-filter-trigger')
+    versionFilterTrigger.onclick = () => {
+        versionFilter.classList.toggle('is-active')
     }
 
     document.getElementById('page-content').classList.add('is-loaded')
