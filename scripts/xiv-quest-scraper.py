@@ -898,6 +898,8 @@ class XivQuestScraper:
                 reward_item = self.sheets['Item'].byId(items[i]) 
                 rank = rank_for_itemid(reward_item['#'], achievements[i])
                 category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
+                if reward_item['Name'] == '':
+                    continue
                 row = {
                     'item': {
                         'name': reward_item['Name'],
