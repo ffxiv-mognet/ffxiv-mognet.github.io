@@ -3,6 +3,11 @@ layout: with-nav
 title: Bicolor Gemstone Shops
 permalink: /fates/shops
 
+maxRanks:
+  "3": "Rank 3 in all"
+  "4": "Rank 3 in all"
+  "5": "Rank 4 in all"
+
 areaRanks:
   - name: Shadowbringers
     versionId: 3
@@ -183,7 +188,11 @@ areaRanks:
                 </div>
             </td>
             <td>
-                {{item.rank}}
+                {% if item.rank != -1 %}
+                    {{item.rank}}
+                {% else %}
+                    {{ page.maxRanks[shop.version.id] }}
+                {% endif %}
             </td>
             <td>
                 {{item.quest}}

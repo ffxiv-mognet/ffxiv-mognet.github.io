@@ -720,6 +720,9 @@ class XivQuestScraper:
         shbCustomTalkId = '721479'
         ct = self.sheets['CustomTalk'].byId(shbCustomTalkId)
         script = extract_script(ct)
+
+        city_script = extract_script(self.sheets['CustomTalk'].byId('721480'))
+
         shbShopInfos = [
             {
                 'eNpcResidentId': script['FATESHOP_ENPCID_LAKERAND'],
@@ -757,8 +760,23 @@ class XivQuestScraper:
                 'rank3': script['FATESHOP_REWARD_THETEMPEST2'],
                 'specialShopId': '1769964'
             },
+
+            {
+                'eNpcResidentId': city_script['FATESHOP_ENPCID_THECRYSTARIUM'],
+                'rank2': "0",
+                'rank3': "0",
+                'specialShopId': '1769957'
+            },
+            {
+                'eNpcResidentId': city_script['FATESHOP_ENPCID_EULMORE'],
+                'rank2': "0",
+                'rank3': "0",
+                'specialShopId': '1769958'
+            },
         ]
         def rank_from_questreq(qr, info):
+            if info['rank2'] == '0':
+                return -1
             if qr == info['rank3']:
                 return 3
             if qr == info['rank2']:
@@ -847,19 +865,25 @@ class XivQuestScraper:
             rank1ShopId = fateshop['SpecialShop[0]']
             rank2ShopId = fateshop['SpecialShop[1]']
             rank3ShopId = fateshop['SpecialShop[2]']
-            if rank2ShopId == "0":
-                continue
 
             rank1_itemids = set(_extract_itemids(rank1ShopId))
-            rank2_itemids = set(_extract_itemids(rank2ShopId)) - rank1_itemids
 
-            specialShop = self.sheets['SpecialShop'].byId(rank3ShopId)
+            if rank2ShopId != "0":
+                rank2_itemids = set(_extract_itemids(rank2ShopId)) - rank1_itemids
+                specialShop = self.sheets['SpecialShop'].byId(rank3ShopId)
+            else:
+                # max rank FATE shop in city
+                specialShop = self.sheets['SpecialShop'].byId(rank1ShopId)
 
             items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
             costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
             questReqs = extract_array1d(specialShop, 'Quest{Item}')
             achievements = extract_array1d(specialShop, 'AchievementUnlock')
             def rank_for_itemid(itemid, achievementid):
+                if rank2ShopId == "0":
+                    # mak rank FATE shop
+                    return -1
+
                 if itemid in rank1_itemids:
                     return 1
                 if itemid in rank2_itemids:
