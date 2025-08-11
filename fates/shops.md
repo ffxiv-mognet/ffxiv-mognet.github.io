@@ -47,7 +47,7 @@ areaRanks:
         mapId: 493
       - name: Il Mheg
         mapId: 494
-      - name: The Rak'Tika Greatwood
+      - name: The Rak&rsquo;Tika Greatwood
         mapId: 495
       - name: The Tempest
         mapId: 496
@@ -73,9 +73,9 @@ areaRanks:
     areas:
       - name: Urqopacha
         mapId: 857
-      - name: Kozama'uka
+      - name: Kozama&rsquo;uka
         mapId: 858
-      - name: Yak T'el
+      - name: Yak T&rsquo;el
         mapId: 859
       - name: Shaaloani
         mapId: 860
@@ -255,7 +255,7 @@ function setAreaRanks() {
 
     for (var el of document.getElementsByClassName('fate-rank-select')) {
         const rank = loadAreaRank(el.dataset.map)
-        el.value = rank || el.dataset.maxrank
+        el.value = rank || 1
     }
 }
 function setTypeFilters() {
@@ -303,15 +303,23 @@ function setFilterByRank(isEnabled) {
 function updateGemstoneShopRows() {
     const ranks = getAreaRanks()
     for (var row of document.getElementsByClassName('gemstone-shop-row')) {
-        const max_rank = ranks[row.dataset.map]
+        const cur_rank = ranks[row.dataset.map]
         const row_rank = Number(row.dataset.rank)
 
-        if ((getFilterByRank() && row_rank > max_rank) ||
-            !getCategoryVisible(row.dataset.category)
-        ) {
-            row.classList.add('is-hidden')
-        } else {
+        let visible = getCategoryVisible(row.dataset.category)
+
+        if (getFilterByRank()) {
+            if (row_rank == -1) {
+                visible = visible && areAreasMaxRank(row.dataset.version)
+            } else {
+                visible = visible && (row_rank <= cur_rank)
+            }
+        } 
+
+        if (visible) {
             row.classList.remove('is-hidden')
+        } else {
+            row.classList.add('is-hidden')
         }
 
         if (getItemFinished(row.dataset.item)) {
@@ -381,6 +389,12 @@ function handleFilterByRankChecked(event) {
     const checkbox = event.target
     setFilterByRank(checkbox.checked)
     update()
+}
+
+const _arearanks = JSON.parse('{{page.areaRanks|jsonify}}');
+function areAreasMaxRank(versionId) {
+    const ex = _arearanks.find(it => it.versionId == Number(versionId))
+    return ex.areas.map(it => loadAreaRank(it.mapId) == ex.maxRank).every(it => it)
 }
 
 function update() {
