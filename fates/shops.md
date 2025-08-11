@@ -457,8 +457,27 @@ function update() {
     updateGemstoneShopRows()
 }
 
+function setShowFinished(value) {
+  window.questsShowFinished = value
+  setLocalFlag("fateshop:config", "showFinished", value)
+
+  if (window.questsShowFinished) {
+    removeHiddenFinishedStyle('gemstone-shop-row')
+  } else {
+    appendHiddenFinishedStyle('gemstone-shop-row')
+  }
+}
+
 
 document.addEventListener("DOMContentLoaded", async () => {
+
+    var checkShowFinished = document.getElementById("check-showFinished");
+    const showFinished = getLocalFlag("fateshop:config", "showFinished")
+    setShowFinished(showFinished)
+    checkShowFinished.checked = showFinished
+    checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
+
+
     update()
 
     const typeFilter = document.getElementById('type-filter')
