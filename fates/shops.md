@@ -159,6 +159,7 @@ areaRanks:
             data-rank="{{ item.rank }}"
             data-item="{{ item.item.id }}"
             data-category="{{ item.item.category.id }}"
+            data-categoryName="{{ item.item.category.name }}"
             >
             <td>
               <label class="checkbox">
@@ -285,11 +286,27 @@ function updateGemstoneShopRows() {
         }
     }
 
-
     for (var checkbox of document.getElementsByClassName('questCheckbox')) {
         const itemId = checkbox.dataset.item
         checkbox.checked = getItemFinished(itemId)
     }
+
+    sortRows()
+}
+function sortRows() {
+    const rows = document.getElementsByClassName('gemstone-shop-row')
+    const tbody = rows[0].parentNode
+    Array.from(tbody.children).sort((rowA, rowB) => {
+
+        return (
+            (rowA.dataset.version - rowB.dataset.version) ||
+            (rowA.dataset.map - rowB.dataset.map) ||
+            (rowA.dataset.rank - rowB.dataset.rank) ||
+            rowA.dataset.categoryname.localeCompare(rowB.dataset.categoryname)
+        )
+
+    }).forEach(it => tbody.appendChild(it))
+
 }
 
 function handleTypeFilterChecked(event) {
