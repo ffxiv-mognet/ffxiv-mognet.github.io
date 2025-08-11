@@ -143,7 +143,6 @@ areaRanks:
   <thead>
     <tr>
         <th></th>
-        <th>Rank</th>
         <th>Item</th>
         <th id="type-filter-trigger" style="cursor: pointer; width: 11em;">
             Type
@@ -211,6 +210,7 @@ areaRanks:
                 </div>
             </div>
         </th>
+        <th>Rank</th>
         <th>Quest</th>
     </tr>
   </thead>
@@ -237,13 +237,6 @@ areaRanks:
                     />
                 </label>
             </td>
-            <td>
-                {% if item.rank != -1 %}
-                    {{item.rank}}
-                {% else %}
-                    {{ page.maxRanks[shop.version.id] }}
-                {% endif %}
-            </td>
             <td>{{ item.item.name }}</td>
             <td>{{ item.item.category.name }}</td>
             <td style="text-align: right">
@@ -259,6 +252,13 @@ areaRanks:
                 </div>
             </td>
             <td>{{ shop.version.name }}</td>
+            <td>
+                {% if item.rank != -1 %}
+                    {{item.rank}}
+                {% else %}
+                    {{ page.maxRanks[shop.version.id] }}
+                {% endif %}
+            </td>
             <td>
               <span class="icon-text" style="white-space: nowrap">
                 <span class="icon"><i class="quest-{{item.quest.icon}}"></i></span>
