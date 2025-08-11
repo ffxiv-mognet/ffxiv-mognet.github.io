@@ -155,6 +155,12 @@ areaRanks:
                 </div>
                 <div class="dropdown-menu">
                     <div class="dropdown-content">
+                        <div class="dropdown-item">
+                            <div class="level">
+                                <div class="level-left"><p class="level-item" onclick="setAllTypeFilters(true)">All</p></div>
+                                <div class="level-right"><p class="level-item" onclick="setAllTypeFilters(false)">None</p></div>
+                            </div>
+                        </div>
                         {% for cat in site.data.gemstoneShops.categories %}
                         <div class="dropdown-item">
                             <label class="checkbox">
@@ -406,22 +412,28 @@ function handleVersionFilterChecked(event) {
     const checkbox = event.target
     const versionId = checkbox.dataset.version
     setVersionVisible(versionId, checkbox.checked)
-    updateGemstoneShopRows()
+    update()
 }
 
 function handleTypeFilterChecked(event) {
     const checkbox = event.target
     const categoryId = checkbox.dataset.category
     setCategoryVisible(categoryId, checkbox.checked)
-    updateGemstoneShopRows()
+    update()
+}
+function setAllTypeFilters(isChecked) {
+    for (const el of document.getElementsByClassName('type-filter-check')) {
+        el.checked = isChecked
+        setCategoryVisible(el.dataset.category, isChecked)
+    }
+    update()
 }
 
 function handleShopItemChecked(event) {
     const checkbox = event.target
     const itemId = checkbox.dataset.item
     setItemFinished(itemId, checkbox.checked)
-
-    updateGemstoneShopRows()
+    update()
 }
 
 function handleChangeAreaRank(evt) {
@@ -430,7 +442,7 @@ function handleChangeAreaRank(evt) {
     const key = `fateshop:rank:${mapId}`
     const rank = Number(evt.target.value)
     setLocalStorage(namespace, key, rank)
-    updateGemstoneShopRows()
+    update()
 }
 function loadAreaRank(mapId) {
     const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
