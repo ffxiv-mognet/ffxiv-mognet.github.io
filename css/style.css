@@ -87,6 +87,14 @@ span.icon i.aetheryte {
     width: 1rem;
     display: block;
 }
+span.icon i.bicolor-gemstone {
+    background:url('/icons/bicolor-gemstone.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
 span.icon i.aethercurrent {
     background:url('/icons/000064.png');
     content: '';

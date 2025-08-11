@@ -4,9 +4,9 @@ title: Bicolor Gemstone Shops
 permalink: /fates/shops
 
 maxRanks:
-  "3": "Rank 3 in all"
-  "4": "Rank 3 in all"
-  "5": "Rank 4 in all"
+  "3": "Max"
+  "4": "Max"
+  "5": "Max"
 
 mapOrdering:
   "491": 31
@@ -143,8 +143,9 @@ areaRanks:
   <thead>
     <tr>
         <th></th>
+        <th>Rank</th>
         <th>Item</th>
-        <th id="type-filter-trigger" style="cursor: pointer">
+        <th id="type-filter-trigger" style="cursor: pointer; width: 11em;">
             Type
             <div class="dropdown" id="type-filter">
                 <div class="dropdown-trigger">
@@ -173,7 +174,8 @@ areaRanks:
                 </div>
             </div>
         </th>
-        <th>Cost</th>
+        <th style="width: 5em">Cost</th>
+        <th style="width: 18em">Gemstone Trader</th>
         <th id="version-filter-trigger" style="cursor: pointer">
             Expansion
             <div class="dropdown" id="version-filter">
@@ -203,8 +205,6 @@ areaRanks:
                 </div>
             </div>
         </th>
-        <th style="width: 20em">Gemstone Trader</th>
-        <th>FATE Rank</th>
         <th>Quest</th>
     </tr>
   </thead>
@@ -231,16 +231,6 @@ areaRanks:
                     />
                 </label>
             </td>
-            <td>{{ item.item.name }}</td>
-            <td>{{ item.item.category.name }}</td>
-            <td style="text-align: right">{{ item.cost }}</td>
-            <td>{{ shop.version.name }}</td>
-            <td>
-                <div class="npc">
-                    {{shop.npc.name}}
-                    <span class="tag is-light">{{shop.npc.location}} {{shop.npc.coords}}</span>
-                </div>
-            </td>
             <td>
                 {% if item.rank != -1 %}
                     {{item.rank}}
@@ -248,8 +238,26 @@ areaRanks:
                     {{ page.maxRanks[shop.version.id] }}
                 {% endif %}
             </td>
+            <td>{{ item.item.name }}</td>
+            <td>{{ item.item.category.name }}</td>
+            <td style="text-align: right">
+              <span class="icon-text">
+                {{item.cost}}
+                <span class="icon"><i class="bicolor-gemstone"></i></span>
+              </span>
+            </td>
             <td>
-                {{item.quest}}
+                <div class="npc">
+                    {{shop.npc.name}}
+                    <span class="tag is-light">{{shop.npc.location}} {{shop.npc.coords}}</span>
+                </div>
+            </td>
+            <td>{{ shop.version.name }}</td>
+            <td>
+              <span class="icon-text" style="white-space: nowrap">
+                <span class="icon"><i class="quest-{{item.quest.icon}}"></i></span>
+                <span style="font-size: 0.8em">{{item.quest.name}}</span>
+              </span>
             </td>
         </tr>
         {% endif %}

@@ -824,7 +824,7 @@ class XivQuestScraper:
                     'rank': rank,
                 }
                 if not questReqs[i] in ['0', shopInfo['rank2'], shopInfo['rank3']]:
-                    row['quest'] = questReqs[i]
+                    row['quest'] = self.generate_questListItem(questReqs[i])
                 inventory.append(row)
             row = {
                 'inventory': inventory,
@@ -914,7 +914,7 @@ class XivQuestScraper:
                     'rank': rank
                 }
                 if questReqs[i] != '0':
-                    row['quest'] = questReqs[i]
+                    row['quest'] = self.generate_questListItem(questReqs[i])
                 inventory.append(row)
 
             row = {
