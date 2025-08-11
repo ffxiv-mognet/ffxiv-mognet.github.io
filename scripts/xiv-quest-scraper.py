@@ -834,7 +834,7 @@ class XivQuestScraper:
                   'name': coords['location'],
                 },
                 'version': {
-                    'id': 3,
+                    'id': "3",
                     'name': 'Shadowbringers'
                 },
             }

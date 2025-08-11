@@ -8,6 +8,32 @@ maxRanks:
   "4": "Rank 3 in all"
   "5": "Rank 4 in all"
 
+mapOrdering:
+  "491": 31
+  "492": 32
+  "493": 33
+  "494": 34
+  "495": 35
+  "496": 36
+  "497": 37
+  "555": 38
+  "695": 41
+  "696": 42
+  "697": 43
+  "698": 44
+  "699": 45
+  "700": 46
+  "693": 47
+  "694": 48
+  "857": 51
+  "858": 52
+  "859": 53
+  "860": 54
+  "861": 55
+  "862": 56
+  "855": 57
+  "856": 58
+
 areaRanks:
   - name: Shadowbringers
     versionId: 3
@@ -302,6 +328,8 @@ function updateGemstoneShopRows() {
 
     sortRows()
 }
+
+const _maporder = JSON.parse('{{page.mapOrdering|jsonify}}');
 function sortRows() {
     const rows = document.getElementsByClassName('gemstone-shop-row')
     const tbody = rows[0].parentNode
@@ -309,7 +337,7 @@ function sortRows() {
 
         return (
             (rowA.dataset.version - rowB.dataset.version) ||
-            (rowA.dataset.map - rowB.dataset.map) ||
+            (_maporder[rowA.dataset.map] - _maporder[rowB.dataset.map]) ||
             (rowA.dataset.rank - rowB.dataset.rank) ||
             rowA.dataset.categoryname.localeCompare(rowB.dataset.categoryname)
         )
