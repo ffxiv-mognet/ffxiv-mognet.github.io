@@ -110,9 +110,12 @@ areaRanks:
                         {% for cat in site.data.gemstoneShops.categories %}
                         <div class="dropdown-item">
                             <label class="checkbox">
-                                <input type="checkbox" class="checkbox" 
-                                    data-categoryId="{{cat.id}}" 
+                                <input 
+                                    type="checkbox" 
+                                    class="checkbox type-filter-check" 
+                                    data-category="{{cat.id}}" 
                                     id="cat-type-check-{{cat.id}}"
+                                    onchange="handleTypeFilterChecked(event)"
                                     checked
                                     />
                                 {{cat.name}}
@@ -139,6 +142,7 @@ areaRanks:
             data-map="{{ shop.map.id }}"
             data-rank="{{ item.rank }}"
             data-item="{{ item.item.id }}"
+            data-category="{{ item.item.category.id }}"
             >
             <td>
               <label class="checkbox">
@@ -192,6 +196,13 @@ function setAreaRanks() {
         el.value = rank || el.dataset.maxrank
     }
 }
+function setTypeFilters() {
+    for (var el of document.getElementsByClassName('type-filter-check')) {
+        const isVisible = getCategoryVisible(el.dataset.category)
+        el.checked = isVisible
+    }
+
+}
 
 function getItemFinished(itemId) {
     const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
@@ -204,12 +215,26 @@ function setItemFinished(itemId, isFinished) {
     return setLocalFlag(namespace, key, isFinished)
 }
 
+function getCategoryVisible(categoryId, isVisible) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:filter:category:${categoryId}`
+    return !getLocalFlag(namespace, key)
+}
+function setCategoryVisible(categoryId, isVisible) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:filter:category:${categoryId}`
+    return setLocalFlag(namespace, key, !isVisible)
+}
+
 function updateGemstoneShopRows() {
     const ranks = getAreaRanks()
     for (var row of document.getElementsByClassName('gemstone-shop-row')) {
         const max_rank = ranks[row.dataset.map]
         const row_rank = Number(row.dataset.rank)
-        if (row_rank > max_rank) {
+
+        if ((row_rank > max_rank) ||
+            !getCategoryVisible(row.dataset.category)
+        ) {
             row.classList.add('is-hidden')
         } else {
             row.classList.remove('is-hidden')
@@ -227,6 +252,14 @@ function updateGemstoneShopRows() {
         const itemId = checkbox.dataset.item
         checkbox.checked = getItemFinished(itemId)
     }
+}
+
+function handleTypeFilterChecked(event) {
+    const checkbox = event.target
+    const categoryId = checkbox.dataset.category
+    setCategoryVisible(categoryId, checkbox.checked)
+
+    updateGemstoneShopRows()
 }
 
 function handleShopItemChecked(event) {
@@ -255,7 +288,9 @@ function loadAreaRank(mapId) {
 
 document.addEventListener("DOMContentLoaded", async () => {
     setAreaRanks()
+    setTypeFilters()
     updateGemstoneShopRows()
+
 
     const typeFilter = document.getElementById('type-filter')
     const typeFilterTrigger = document.getElementById('type-filter-trigger')
