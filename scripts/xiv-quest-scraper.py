@@ -986,6 +986,15 @@ class XivQuestScraper:
                     categories[cat['id']] = cat
         return sorted(categories.values(), key=lambda it: it['name'])
 
+    def build_shop_index(self, shops, key_fun):
+        out = {}
+        for shop in shops:
+            for inv in shop['inventory']:
+                obj = key_fun(inv)
+                if obj['id'] != '0':
+                    out[obj['id']] = obj
+        return sorted(out.values(), key=lambda it: it['name'])
+
     def npc_for_resident(self, npcId):
         resident = self.sheets['ENpcResident'].byId(npcId)
         loc = self.sheets['Level'].findBy('Object', npcId)
@@ -1034,11 +1043,14 @@ class XivQuestScraper:
                 inv['quest'] = self.generate_questListItem(questReqs[i])
             inventory.append(inv)
 
-        return {
+        shop = {
             'id': specialShop['#'],
-            'inventory': inventory,
             'name': specialShop['Name'],
+            'inventory': inventory,
         }
+        if specialShop['Quest{Unlock}'] != '0':
+            shop['requires'] = self.generate_questListItem(specialShop['Quest{Unlock}'])
+        return shop
 
     def cmd_huntShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
@@ -1080,7 +1092,8 @@ class XivQuestScraper:
         flattened = list(shops.values())
         output = {
             'shops': flattened,
-            'categories': self.build_shop_category_index(flattened)
+            'categories': self.build_shop_index(flattened, lambda it: it['item']['category']),
+            'currencies': self.build_shop_index(flattened, lambda it: it['currency'])
         }
         if self.args.json:
             print(json.dumps(output))
