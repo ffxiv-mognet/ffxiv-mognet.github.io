@@ -60,6 +60,7 @@ class XivQuestScraper:
             'Level': CsvSheet(self._path_for_sheet("Level")),
             'Map': CsvSheet(self._path_for_sheet("Map")),
             'ENpcResident': CsvSheet(self._path_for_sheet("ENpcResident")),
+            'ENpcBase': CsvSheet(self._path_for_sheet("ENpcBase")),
             'PlaceName': CsvSheet(self._path_for_sheet("PlaceName")),
             'Quest': CsvSheet(self._path_for_sheet("Quest")),
             'TerritoryType': CsvSheet(self._path_for_sheet("TerritoryType")),
@@ -247,7 +248,6 @@ class XivQuestScraper:
                     requirements.append(script[key])
             i += 1
         return requirements
-
 
     def location_coords_from_level(self, levelId, detailed = False):
         level = self.sheets['Level'].byId(levelId)
@@ -967,18 +967,121 @@ class XivQuestScraper:
         shops = self.shadowbringer_gemstoneShops()
         shops.extend(self.other_gemstoneShops())
 
+        output = {
+            'shops': shops,
+            'categories': self.build_shop_category_index(shops)
+        }
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
+
+    def build_shop_category_index(self, shops):
         categories = {}
         for shop in shops:
             for inv in shop['inventory']:
                 cat = inv['item']['category']
                 if cat['id'] != '0':
                     categories[cat['id']] = cat
+        return sorted(categories.values(), key=lambda it: it['name'])
 
-        output = {
-            'shops': shops,
-            'categories': sorted(categories.values(), key=lambda it: it['name']),
+    def npc_for_resident(self, npcId):
+        resident = self.sheets['ENpcResident'].byId(npcId)
+        loc = self.sheets['Level'].findBy('Object', npcId)
+        npc = {
+            'name': resident['Singular']
+        }
+        if loc:
+            npc.update(self.location_coords_from_level(loc['#']))
+        return npc
+
+    def parse_specialshop(self, specialShop):
+        items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
+        counts = extract_array1d(specialShop, 'Count{Receive}', suffix='[0]')
+        currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[0]')
+        costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
+        questReqs = extract_array1d(specialShop, 'Quest{Item}')
+        achievements = extract_array1d(specialShop, 'AchievementUnlock')
+
+        count = len(list(filter(lambda it: it != "0", items)))
+        inventory = []
+        for i in range(0,count):
+            reward_item = self.sheets['Item'].byId(items[i]) 
+            if reward_item['Name'] == '':
+                continue
+            currency_item = self.sheets['Item'].byId(currencys[i])
+            category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
+            inv = {
+                'item': {
+                    'name': reward_item['Name'],
+                    'id': reward_item['#'],
+                    'category': {
+                        'id': category['#'],
+                        'name': category['Name'],
+                        'icon': category['Icon']
+                    }
+                },
+                'quantity': int(counts[i]),
+                'cost': int(costs[i]),
+                'currency': {
+                    'id': currency_item['#'],
+                    'name': currency_item['Name'],
+                    'icon': currency_item['Icon'],
+                }
+            }
+            if questReqs[i] != '0':
+                inv['quest'] = self.generate_questListItem(questReqs[i])
+            inventory.append(inv)
+
+        return {
+            'id': specialShop['#'],
+            'inventory': inventory,
+            'name': specialShop['Name'],
         }
 
+    def cmd_huntShops(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        specialShopRefs = [
+            # allied seals
+            {"#": "1769811", "Name": "Allied Seals (Other)"},  # Hunt billmaster (realm reborn)
+            {"#": "1770032", "Name": "Exchange Allied Seals"},  # maudlin latool ja (blue mage)
+
+            # centurio seals
+            {"#": "1769577", "Name": "", "npcIds": ["1012225"]},   # ardolain (heavensward)
+            {"#": "1769578", "Name": "", "npcIds": ["1012225"]},   # clan mark logs
+            {"#": "1769782", "Name": "Centurio Seal Exchange I"},  # leuekin/estrild (stormblood)
+
+            # sack of nuts
+            {"#": "1769987", "Name": "Sacks of Nuts Exchange"},  # xylle/ilfroy (shadowbringers)
+            {"#": "1770476", "Name": "Sacks of Nuts Exchange"},  # j'lakshai/wilmetta (endwalker)
+            {"#": "1770761", "Name": "Sacks of Nuts Exchange"},  # rubool ja (dawntrail)
+        ] 
+
+        shops = {}
+        for ref in specialShopRefs:
+            shop = self.sheets['SpecialShop'].byId(ref['#'])
+            parsed = self.parse_specialshop(shop)
+            parsed['npcs'] = list(self.npc_for_resident(it) for it in ref.get('npcIds',[]))
+            shops[shop['#']] = parsed
+
+        # find all npcs with shops 
+        shopIds = list(map(lambda it: it['id'], shops.values()))
+        for base in self.sheets['ENpcBase'].all():
+            data = extract_array1d(base, 'ENpcData')
+            for shopId in data:
+                if shopId in shopIds:
+                    shops[shopId]['npcs'].append(self.npc_for_resident(base['#']))
+
+        flattened = list(shops.values())
+        output = {
+            'shops': flattened,
+            'categories': self.build_shop_category_index(flattened)
+        }
         if self.args.json:
             print(json.dumps(output))
         else:
