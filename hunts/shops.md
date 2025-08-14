@@ -2,6 +2,8 @@
 layout: with-nav
 title: The Hunt Shops
 permalink: /hunts/shops
+brandLabel: Mognet
+brandUrl: /
 
 npcLocations:
   Wilmetta:

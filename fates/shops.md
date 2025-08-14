@@ -2,6 +2,8 @@
 layout: with-nav
 title: Bicolor Gemstone Shops
 permalink: /fates/shops
+brandLabel: Mognet
+brandUrl: /
 
 maxRanks:
   "3": "Max"

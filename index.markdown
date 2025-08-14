@@ -14,4 +14,7 @@ layout: default
     <p>
         <a href="/fates/shops">Bicolored Gemstone Fate Shops</a>
     </p>
+    <p>
+        <a href="/hunts/shops">Hunt Currency Shops</a>
+    </p>
 </div>

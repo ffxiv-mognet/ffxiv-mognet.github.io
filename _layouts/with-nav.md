@@ -7,7 +7,9 @@ layout: default
   <nav class="level">
       <div class="level-left">
           <p class="level-item">
-              <h1 style="margin-bottom: 0" class="title is-3 has-text-centered"><a href="/quests/">Quests</a></h1>
+              <h1 style="margin-bottom: 0" class="title is-3 has-text-centered">
+                <a href="{{page.brandUrl}}">{{page.brandLabel}}</a>
+              </h1>
           </p>
           <p class="level-item">
               {% if page.links.previous %}
