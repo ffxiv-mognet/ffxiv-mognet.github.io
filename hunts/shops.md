@@ -10,6 +10,16 @@ npcLocations:
   Ilfroy:
     coords: (11.0, 10.8)
     location: Eulmore
+
+shopOrdering:
+  "1769811": 1
+  "1770032": 2
+  "1769577": 3
+  "1769578": 4
+  "1769782": 5
+  "1769987": 6
+  "1770476": 7
+  "1770761": 8
 ---
 
 <table class="table is-fullwidth">
@@ -88,10 +98,11 @@ npcLocations:
         {% for item in shop.inventory %}
         {% if item.item.name %}
         <tr class="hunt-shop-row" 
+            data-shop="{{ shop.id }}"
             data-item="{{ item.item.id }}"
             data-currency="{{ item.currency.id }}"
             data-category="{{ item.item.category.id }}"
-            data-categoryName="{{ item.item.category.name }}"
+            data-categoryname="{{ item.item.category.name }}"
             >
             <td>
               <label class="checkbox">
@@ -210,6 +221,17 @@ function updateHuntShopRows() {
 
 }
 
+const _shopordering = JSON.parse('{{page.shopOrdering|jsonify}}')
+function sortRows() {
+    const tbody = document.querySelector('tr.hunt-shop-row').parentNode
+    Array.from(tbody.children).sort((a, b) => {
+        return (
+            _shopordering[a.dataset.shop] - _shopordering[b.dataset.shop] ||
+            a.dataset.categoryname.localeCompare(b.dataset.categoryname)
+        )
+    }).forEach(it => tbody.appendChild(it))
+}
+
 function handleTypeFilterChecked(event) {
     const checkbox = event.target
     const categoryId = checkbox.dataset.category
@@ -283,8 +305,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         currencyFilter.classList.toggle('is-active')
     }
 
-
     updateHuntShopRows()
+    sortRows()
 })
 
 </script>
