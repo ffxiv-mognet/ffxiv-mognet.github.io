@@ -40,7 +40,6 @@ npcLocations:
                                     type="checkbox" 
                                     class="checkbox type-filter-check" 
                                     data-category="{{cat.id}}" 
-                                    id="cat-type-check-{{cat.id}}"
                                     onchange="handleTypeFilterChecked(event)"
                                     checked
                                     />
@@ -52,7 +51,34 @@ npcLocations:
                 </div>
             </div>
         </th>
-        <th style="width: 10em">Cost</th>
+        <th id="currency-filter-trigger" style="cursor: pointer; width: 10em;">
+            Cost
+            <div class="dropdown" id="currency-filter">
+                <div class="dropdown-trigger">
+                  <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                        {% for currency in site.data.huntShops.currencies %}
+                        <div class="dropdown-item">
+                            <label class="checkbox">
+                                <input 
+                                    type="checkbox" 
+                                    class="checkbox currency-filter-check" 
+                                    data-currency="{{currency.id}}" 
+                                    onchange="handleCurrencyFilterChecked(event)"
+                                    checked
+                                    />
+                                {{currency.plural}}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </th>
         <th style="width: 22em">NPC</th>
         <th>Quest</th>
     </tr>
@@ -63,7 +89,7 @@ npcLocations:
         {% if item.item.name %}
         <tr class="hunt-shop-row" 
             data-item="{{ item.item.id }}"
-            data-currency="{{ item.item.currency.id }}"
+            data-currency="{{ item.currency.id }}"
             data-category="{{ item.item.category.id }}"
             data-categoryName="{{ item.item.category.name }}"
             >
@@ -83,7 +109,11 @@ npcLocations:
             <td>
               <span class="icon-text">
                 {{item.cost}}
-                {{item.currency.name}}
+                {% if item.cost == 1%}
+                    {{ item.currency.name }}
+                {% else %}
+                    {{ item.currency.plural }}
+                {% endif %}
               </span>
             </td>
             <td>
@@ -145,10 +175,21 @@ function setHuntItemCategoryVisible(categoryId, isVisible) {
     const key = `huntshop:filter:category:${categoryId}`
     return setLocalFlag(namespace, key, !isVisible)
 }
+function getHuntItemCurrencyVisible(currencyId) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `huntshop:filter:currency:${currencyId}`
+    return !getLocalFlag(namespace, key)
+}
+function setHuntItemCurrencyVisible(currencyId, isVisible) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `huntshop:filter:currency:${currencyId}`
+    return setLocalFlag(namespace, key, !isVisible)
+}
 
 function updateHuntShopRows() {
     for (var row of document.getElementsByClassName('hunt-shop-row')) {
         let visible = getHuntItemCategoryVisible(row.dataset.category)
+                        && getHuntItemCurrencyVisible(row.dataset.currency)
         let checkbox = row.querySelector('input[type=checkbox]')
 
         if (visible) {
@@ -180,6 +221,12 @@ function setAllTypeFilters(isChecked) {
         el.checked = isChecked
         setHuntItemCategoryVisible(el.dataset.category, isChecked)
     }
+    updateHuntShopRows()
+}
+function handleCurrencyFilterChecked(event) {
+    const checkbox = event.target
+    const currencyId = checkbox.dataset.currency
+    setHuntItemCurrencyVisible(currencyId, checkbox.checked)
     updateHuntShopRows()
 }
 
@@ -221,11 +268,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     checkShowFinished.checked = showFinished
     checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
 
+
     // initialize category filter dropdown
     const typeFilter = document.getElementById('type-filter')
     const typeFilterTrigger = document.getElementById('type-filter-trigger')
     typeFilterTrigger.onclick = () => {
         typeFilter.classList.toggle('is-active')
+    }
+
+    // initialize currency filter dropdown
+    const currencyFilter = document.getElementById('currency-filter')
+    const currencyFilterTrigger = document.getElementById('currency-filter-trigger')
+    currencyFilterTrigger.onclick = () => {
+        currencyFilter.classList.toggle('is-active')
     }
 
 

@@ -1036,6 +1036,7 @@ class XivQuestScraper:
                 'currency': {
                     'id': currency_item['#'],
                     'name': currency_item['Name'],
+                    'plural': currency_item['Plural'],
                     'icon': currency_item['Icon'],
                 }
             }
