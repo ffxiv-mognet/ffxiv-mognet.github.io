@@ -88,14 +88,6 @@ areaRanks:
 ---
 
 
-<div class="loading-wrapper" id="page-content">
-    <div class="loading-icon has-text-centered">
-        <span class="icon loading-spin">
-            <i class="fas fa-spinner"></i>
-        </span>
-    </div>
-    <div class="loading-content">
-
 
 <div class="level">
     <div class="level-left">
@@ -110,7 +102,7 @@ areaRanks:
         </p>
     </div>
 </div>
-<section id="rank-filter-container">
+<section id="rank-filter-container" class="is-hidden">
 {% for expac in page.areaRanks %}
 <nav class="level">
     <div class="level-left">
@@ -127,7 +119,6 @@ areaRanks:
                     data-map="{{ area.mapId }}"
                     data-maxrank="{{ expac.maxRank }}"
                     onchange="handleChangeAreaRank(event)"
-                    id="select-rank-area-{{area.mapId}}"
                     >
                     {% for i in (1..expac.maxRank) %}
                     <option value={{i}}>{{i}}</option>
@@ -169,7 +160,6 @@ areaRanks:
                                     type="checkbox" 
                                     class="checkbox type-filter-check" 
                                     data-category="{{cat.id}}" 
-                                    id="cat-type-check-{{cat.id}}"
                                     onchange="handleTypeFilterChecked(event)"
                                     checked
                                     />
@@ -200,7 +190,6 @@ areaRanks:
                                     type="checkbox" 
                                     class="checkbox version-filter-check" 
                                     data-version="{{expac.versionId}}" 
-                                    id="version-type-check-{{expac.versionId}}"
                                     onchange="handleVersionFilterChecked(event)"
                                     checked
                                     />
@@ -226,7 +215,7 @@ areaRanks:
             data-rank="{{ item.rank }}"
             data-item="{{ item.item.id }}"
             data-category="{{ item.item.category.id }}"
-            data-categoryName="{{ item.item.category.name }}"
+            data-categoryname="{{ item.item.category.name }}"
             >
             <td>
               <label class="checkbox">
@@ -234,7 +223,6 @@ areaRanks:
                     type="checkbox" 
                     class="checkbox questCheckbox" 
                     data-item="{{item.item.id}}"
-                    id="item-completed-{{item.item.id}}"
                     onchange="handleShopItemChecked(event)"
                     />
                 </label>
@@ -274,41 +262,9 @@ areaRanks:
   </tbody>
 </table>
 
-</div>
-</div>
 
 <script>
-function getAreaRanks() {
-    var ret = {}
-    for (var el of document.getElementsByClassName('fate-rank-select')) {
-        ret[el.dataset.map] = Number(el.value)
-    }
-    return ret
-}
 
-function setAreaRanks() {
-    const filterByRank = getFilterByRank()
-
-    const container = document.getElementById('rank-filter-container')
-    if (filterByRank) {
-        container.classList.remove('is-hidden')
-    } else {
-        container.classList.add('is-hidden')
-    }
-    document.getElementById('filter-by-rank-check').checked = filterByRank
-
-    for (var el of document.getElementsByClassName('fate-rank-select')) {
-        const rank = loadAreaRank(el.dataset.map)
-        el.value = rank || 1
-    }
-}
-function setTypeFilters() {
-    for (var el of document.getElementsByClassName('type-filter-check')) {
-        const isVisible = getCategoryVisible(el.dataset.category)
-        el.checked = isVisible
-    }
-
-}
 
 function getItemFinished(itemId) {
     const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
@@ -343,7 +299,6 @@ function setVersionVisible(versionId, isVisible) {
     return setLocalFlag(namespace, key, !isVisible)
 }
 
-
 function getFilterByRank() {
     const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
     key = `fateshop:filter:byrank`
@@ -355,14 +310,25 @@ function setFilterByRank(isEnabled) {
     setLocalFlag(namespace, key, isEnabled)
 }
 
-function updateGemstoneShopRows() {
-    const ranks = getAreaRanks()
-    for (var row of document.getElementsByClassName('gemstone-shop-row')) {
-        const cur_rank = ranks[row.dataset.map]
-        const row_rank = Number(row.dataset.rank)
+function getMapRank(mapId, defaultValue = 1) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:rank:${mapId}`
+    return getLocalStorage(namespace, key) || defaultValue
+}
+function setMapRank(mapId, rank) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `fateshop:rank:${mapId}`
+    return setLocalStorage(namespace, key, rank)
+}
 
+
+function updateGemstoneShopRows() {
+    for (var row of document.getElementsByClassName('gemstone-shop-row')) {
+        const cur_rank = getMapRank(row.dataset.map)
+        const row_rank = Number(row.dataset.rank)
         let visible = getCategoryVisible(row.dataset.category) 
                         && getVersionVisible(row.dataset.version);
+        const finished = getItemFinished(row.dataset.item)
 
         if (getFilterByRank()) {
             if (row_rank == -1) {
@@ -378,25 +344,19 @@ function updateGemstoneShopRows() {
             row.classList.add('is-hidden')
         }
 
-        if (getItemFinished(row.dataset.item)) {
+        let checkbox = row.querySelector('input[type=checkbox]')
+        checkbox.checked = finished
+        if (finished) {
             row.classList.add('is-finished')
         } else {
             row.classList.remove('is-finished')
         }
     }
-
-    for (var checkbox of document.getElementsByClassName('questCheckbox')) {
-        const itemId = checkbox.dataset.item
-        checkbox.checked = getItemFinished(itemId)
-    }
-
-    sortRows()
 }
 
 const _maporder = JSON.parse('{{page.mapOrdering|jsonify}}');
 function sortRows() {
-    const rows = document.getElementsByClassName('gemstone-shop-row')
-    const tbody = rows[0].parentNode
+    const tbody = document.querySelector('tr.gemstone-shop-row').parentNode
     Array.from(tbody.children).sort((rowA, rowB) => {
 
         return (
@@ -414,61 +374,64 @@ function handleVersionFilterChecked(event) {
     const checkbox = event.target
     const versionId = checkbox.dataset.version
     setVersionVisible(versionId, checkbox.checked)
-    update()
+    updateGemstoneShopRows()
 }
 
 function handleTypeFilterChecked(event) {
     const checkbox = event.target
     const categoryId = checkbox.dataset.category
     setCategoryVisible(categoryId, checkbox.checked)
-    update()
+    updateGemstoneShopRows()
 }
+
 function setAllTypeFilters(isChecked) {
     for (const el of document.getElementsByClassName('type-filter-check')) {
         el.checked = isChecked
         setCategoryVisible(el.dataset.category, isChecked)
     }
-    update()
+    updateGemstoneShopRows()
 }
 
 function handleShopItemChecked(event) {
     const checkbox = event.target
     const itemId = checkbox.dataset.item
-    setItemFinished(itemId, checkbox.checked)
-    update()
+    const finished = checkbox.checked
+    setItemFinished(itemId, finished)
+
+    const row = document.querySelector(`tr.gemstone-shop-row[data-item="${itemId}"]`)
+    if (finished) {
+        row.classList.add('is-finished')
+    } else {
+        row.classList.remove('is-finished')
+    }
 }
 
 function handleChangeAreaRank(evt) {
-    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
     const mapId = evt.target.dataset.map
-    const key = `fateshop:rank:${mapId}`
     const rank = Number(evt.target.value)
-    setLocalStorage(namespace, key, rank)
-    update()
-}
-function loadAreaRank(mapId) {
-    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
-    const key = `fateshop:rank:${mapId}`
-    return getLocalStorage(namespace, key)
+    setMapRank(mapId, rank)
+    updateGemstoneShopRows()
 }
 
 
 function handleFilterByRankChecked(event) {
     const checkbox = event.target
     setFilterByRank(checkbox.checked)
-    update()
+
+    const container = document.getElementById('rank-filter-container')
+    if (checkbox.checked) {
+        container.classList.remove('is-hidden')
+    } else {
+        container.classList.add('is-hidden')
+    }
+
+    updateGemstoneShopRows()
 }
 
 const _arearanks = JSON.parse('{{page.areaRanks|jsonify}}');
 function areAreasMaxRank(versionId) {
     const ex = _arearanks.find(it => it.versionId == Number(versionId))
-    return ex.areas.map(it => loadAreaRank(it.mapId) == ex.maxRank).every(it => it)
-}
-
-function update() {
-    setAreaRanks()
-    setTypeFilters()
-    updateGemstoneShopRows()
+    return ex.areas.map(it => getMapRank(it.mapId) == ex.maxRank).every(it => it)
 }
 
 function setShowFinished(value) {
@@ -483,29 +446,62 @@ function setShowFinished(value) {
 }
 
 
-document.addEventListener("DOMContentLoaded", async () => {
+function initializeAreaRanks() {
+    const filterByRank = getFilterByRank()
 
+    const container = document.getElementById('rank-filter-container')
+    if (filterByRank) {
+        container.classList.remove('is-hidden')
+    } else {
+        container.classList.add('is-hidden')
+    }
+    document.getElementById('filter-by-rank-check').checked = filterByRank
+
+    for (var el of document.getElementsByClassName('fate-rank-select')) {
+        const rank = getMapRank(el.dataset.map)
+        el.value = rank || 1
+    }
+}
+
+function initializeShowFinished() {
     var checkShowFinished = document.getElementById("check-showFinished");
     const showFinished = getLocalFlag("fateshop:config", "showFinished")
     setShowFinished(showFinished)
     checkShowFinished.checked = showFinished
     checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
+}
 
-
-    update()
-
+function initializeTypeFilter() {
     const typeFilter = document.getElementById('type-filter')
     const typeFilterTrigger = document.getElementById('type-filter-trigger')
+    for (var el of document.getElementsByClassName('type-filter-check')) {
+        const isVisible = getCategoryVisible(el.dataset.category)
+        el.checked = isVisible
+    }
     typeFilterTrigger.onclick = () => {
         typeFilter.classList.toggle('is-active')
     }
+}
 
+function initializeVersionFilter() {
     const versionFilter = document.getElementById('version-filter')
     const versionFilterTrigger = document.getElementById('version-filter-trigger')
+    for (var el of document.getElementsByClassName('version-filter-check')) {
+        const isVisible = getVersionVisible(el.dataset.version)
+        el.checked = isVisible
+    }
     versionFilterTrigger.onclick = () => {
         versionFilter.classList.toggle('is-active')
     }
+}
 
-    document.getElementById('page-content').classList.add('is-loaded')
+document.addEventListener("DOMContentLoaded", async () => {
+    initializeShowFinished()
+    initializeAreaRanks()
+    initializeTypeFilter()
+    initializeVersionFilter()
+    sortRows()
+
+    updateGemstoneShopRows()
 })
 </script>
