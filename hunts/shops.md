@@ -120,3 +120,100 @@ npcLocations:
     {% endfor %}
   </tbody>
 </table>
+
+
+<script>
+
+
+function getHuntItemFinished(itemId) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `huntshop:item:finished:${itemId}`
+    return getLocalFlag(namespace, key)
+}
+function setHuntItemFinished(itemId, isFinished) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `huntshop:item:finished:${itemId}`
+    return setLocalFlag(namespace, key, isFinished)
+}
+function getHuntItemCategoryVisible(categoryId) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `huntshop:filter:category:${categoryId}`
+    return !getLocalFlag(namespace, key)
+}
+function setHuntItemCategoryVisible(categoryId, isVisible) {
+    const namespace = getLocalStorage(NS_PROFILE, 'active') || ""
+    const key = `huntshop:filter:category:${categoryId}`
+    return setLocalFlag(namespace, key, !isVisible)
+}
+
+function updateHuntShopRows() {
+    for (var row of document.getElementsByClassName('hunt-shop-row')) {
+        let visible = getHuntItemCategoryVisible(row.dataset.category)
+        let checkbox = row.querySelector('input[type=checkbox]')
+
+        if (visible) {
+            row.classList.remove('is-hidden')
+        } else {
+            row.classList.add('is-hidden')
+        }
+
+        const finished = getHuntItemFinished(row.dataset.item)
+        checkbox.checked = finished
+
+        if (finished) {
+            row.classList.add('is-finished')
+        } else {
+            row.classList.remove('is-finished')
+        }
+    }
+
+}
+
+function handleTypeFilterChecked(event) {
+    const checkbox = event.target
+    const categoryId = checkbox.dataset.category
+    setHuntItemCategoryVisible(categoryId, checkbox.checked)
+    updateHuntShopRows()
+}
+
+function handleShopItemChecked(event) {
+    const checkbox = event.target
+    const itemId = checkbox.dataset.item
+    const finished = checkbox.checked
+    setHuntItemFinished(itemId, finished)
+
+    const row = document.querySelector(`tr.hunt-shop-row[data-item="${itemId}"]`)
+    if (finished) {
+        row.classList.add('is-finished')
+    } else {
+        row.classList.remove('is-finished')
+    }
+}
+
+
+function setShowFinished(value) {
+  window.huntsShowFinished = value
+  setLocalFlag("huntshop:config", "showFinished", value)
+
+  if (window.huntsShowFinished) {
+    removeHiddenFinishedStyle('hunt-shop-row')
+  } else {
+    appendHiddenFinishedStyle('hunt-shop-row')
+  }
+  updateHuntShopRows()
+}
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+
+    var checkShowFinished = document.getElementById("check-showFinished");
+    const showFinished = getLocalFlag("huntshop:config", "showFinished")
+    setShowFinished(showFinished)
+    checkShowFinished.checked = showFinished
+    checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
+
+    updateHuntShopRows()
+
+})
+
+</script>
