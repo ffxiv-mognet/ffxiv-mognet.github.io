@@ -175,6 +175,14 @@ function handleTypeFilterChecked(event) {
     setHuntItemCategoryVisible(categoryId, checkbox.checked)
     updateHuntShopRows()
 }
+function setAllTypeFilters(isChecked) {
+    for (const el of document.getElementsByClassName('type-filter-check')) {
+        el.checked = isChecked
+        setHuntItemCategoryVisible(el.dataset.category, isChecked)
+    }
+    updateHuntShopRows()
+}
+
 
 function handleShopItemChecked(event) {
     const checkbox = event.target
@@ -206,14 +214,22 @@ function setShowFinished(value) {
 
 document.addEventListener('DOMContentLoaded', async () => {
 
+    // initialize showFinished check
     var checkShowFinished = document.getElementById("check-showFinished");
     const showFinished = getLocalFlag("huntshop:config", "showFinished")
     setShowFinished(showFinished)
     checkShowFinished.checked = showFinished
     checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
 
-    updateHuntShopRows()
+    // initialize category filter dropdown
+    const typeFilter = document.getElementById('type-filter')
+    const typeFilterTrigger = document.getElementById('type-filter-trigger')
+    typeFilterTrigger.onclick = () => {
+        typeFilter.classList.toggle('is-active')
+    }
 
+
+    updateHuntShopRows()
 })
 
 </script>
