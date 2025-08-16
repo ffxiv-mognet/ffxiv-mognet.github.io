@@ -5,11 +5,11 @@ title: Eorzea Hunt Clock
 
 <style>
 .huntTime {
+    color: rgb(255, 255, 255);
     background-color: rgb(232, 91, 88);
     font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 700;
     padding: 6px 4px 4px 6px;
-    color: rgb(255, 255, 255);
     text-shadow: rgba(0, 0, 0, 0.85) 1px 1px 1px 1px;
     border-radius: 800px 0 0 800px;
 }
@@ -28,7 +28,9 @@ table.huntClock {
 
 .clockFace {
     font-size: 24px;
-    border: 1px solid black;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
     border-radius: 4px;
     padding: 4px;
 }
@@ -37,11 +39,20 @@ table.huntClock {
     text-align: center;
     position: relative;
     top: -10px;
-    background: white;
+    background-color: white;
 }
 .clockFace .clock {
     position: relative;
     top: -5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .clockFace {
+    border-color: white;
+  }
+  .clockFace .clockLabel {
+    background-color: black;
+  }
 }
 </style>
 
