@@ -17,4 +17,7 @@ layout: default
     <p>
         <a href="/hunts/shops">Hunt Currency Shops</a>
     </p>
+    <p>
+        <a href="/clock">Hunt Pull Timer Clock</a>
+    </p>
 </div>
