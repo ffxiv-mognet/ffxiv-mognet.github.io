@@ -1068,11 +1068,20 @@ class XivQuestScraper:
             {"#": "1769577", "Name": "", "npcIds": ["1012225"]},   # ardolain (heavensward)
             {"#": "1769578", "Name": "", "npcIds": ["1012225"]},   # clan mark logs
             {"#": "1769782", "Name": "Centurio Seal Exchange I"},  # leuekin/estrild (stormblood)
+            {"#": "1769783", "Name": "Centurio Seal Exchange II"}, # billebaut/satsuya (shadowbringers)
 
             # sack of nuts
             {"#": "1769987", "Name": "Sacks of Nuts Exchange"},  # xylle/ilfroy (shadowbringers)
             {"#": "1770476", "Name": "Sacks of Nuts Exchange"},  # j'lakshai/wilmetta (endwalker)
             {"#": "1770761", "Name": "Sacks of Nuts Exchange"},  # rubool ja (dawntrail)
+
+            # clan mark logs and fate tokens
+            {"#": "1769511", "Name": "Uncanny Knickknacks"}, # bertana (heavensward)
+            {"#": "1769728", "Name": ""},
+            {"#": "1769807", "Name": "Wondrous Sundries"},  # eschina (stormblood)
+            {"#": "1770015", "Name": "Glorious Gewgaws"}, # fathard (shadowbringers)
+            {"#": "1770456", "Name": "Out-of-this-world Oddities"}, # nesvaaz (endwalker)
+            {"#": "1770885", "Name": "Sublime Curiosities"}, # (dawntrail)
         ] 
 
         shops = {}
