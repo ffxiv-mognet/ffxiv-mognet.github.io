@@ -1053,6 +1053,69 @@ class XivQuestScraper:
             shop['requires'] = self.generate_questListItem(specialShop['Quest{Unlock}'])
         return shop
 
+    def cmd_alliedShops(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        specialShopRefs = [
+            # realm reborn
+            {"#": "1769627", "Name": "Steel Amalj'ok Exchange"}, # amalj'aa
+            {"#": "1769628", "Name": "Sylphic Goldleaf Exchange"}, # sylph
+            {"#": "1769629", "Name": "Titan Cobaltpiece Exchange"}, # kobold
+            {"#": "1769630", "Name": "Rainbowtide Psashp Exchange"}, # sahagin
+            {"#": "1769525", "Name": "Ixali Oaknot Exchange"}, # ixali
+
+            # heavensward
+            {"#": "1769631", "Name": "Vanu Whitebone Exchange"},    # vanu vanu
+            {"#": "1769665", "Name": "Black Copper Gil Exchange"},  # vath
+            {"#": "1769685", "Name": "Carved Kupo Nut Exchange"},   # moogle society
+
+            # stormblood
+            {"#": "1769818", "Name": "Kojin Sango Exchange"},        # kojin
+            {"#": "1769847", "Name": "Ananta Dreamstaff Exchange"},  # ananta
+            {"#": "1769868", "Name": "Namazu Koban Exchange"},       # namazu
+
+            # shadowbringers
+            {"#": "1770040", "Name": "Fae Fancies"},                  # pixie
+            {"#": "1770046", "Name": "Qitari Compliment Exchange"},   # qitari
+            {"#": "1770285", "Name": "Hammered Frogments Exchange"},  # dwarf
+
+            # endwalker
+            {"#": "1770550", "Name": "Arkasodara Pana Exchange"},    # arkasodara
+            {"#": "1770605", "Name": "Omicron Omnitoken Exchange"},  # omicron
+            {"#": "1770647", "Name": "Loporrit Carat Exchange"},     # loporrit
+
+            # dawntrail
+            {"#": "1770890", "Name": "Pelu Pelplume Exchange"},     # pelupelu
+            {"#": "1770924", "Name": "Mamool Ja Nanook Exchange"},  # mamool ja
+        ]
+
+        gilShopRefs = [
+            # realm reborn
+            {"#": "262692"},  # amalj'aa
+            {"#": "262693"},  # sylph
+            {"#": "262694"},  # kobold
+            {"#": "262695"},  # sahagin
+            {"#": "262696"},  # ixali
+
+            # heavensward
+            {"#": "262697"},  # vanu vanu
+            {"#": "262698"},  # vath
+            {"#": "262699"},  # moogle society
+
+            # stormblood
+            {"#": "262917"}, # namazu
+        ]
+ 
+        output = self.scrape_specialShops(specialShopRefs)
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
+
     def cmd_huntShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
         self.argparser.add_argument("--json", action="store_true", default=False)
@@ -1075,15 +1138,22 @@ class XivQuestScraper:
             {"#": "1770476", "Name": "Sacks of Nuts Exchange"},  # j'lakshai/wilmetta (endwalker)
             {"#": "1770761", "Name": "Sacks of Nuts Exchange"},  # rubool ja (dawntrail)
 
-            # clan mark logs and fate tokens
+            # clan mark logs, fate tokens, mount tokens
+            {"#": "1769728", "Name": "Uncanny Knickknacks"}, # aelina (realm reborn)
             {"#": "1769511", "Name": "Uncanny Knickknacks"}, # bertana (heavensward)
-            {"#": "1769728", "Name": ""},
             {"#": "1769807", "Name": "Wondrous Sundries"},  # eschina (stormblood)
             {"#": "1770015", "Name": "Glorious Gewgaws"}, # fathard (shadowbringers)
             {"#": "1770456", "Name": "Out-of-this-world Oddities"}, # nesvaaz (endwalker)
-            {"#": "1770885", "Name": "Sublime Curiosities"}, # (dawntrail)
-        ] 
+            {"#": "1770885", "Name": "Sublime Curiosities"}, # uah'shepya (dawntrail)
+        ]
+        output = self.scrape_specialShops(specialShopRefs)
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
 
+
+    def scrape_specialShops(self, specialShopRefs):
         shops = {}
         for ref in specialShopRefs:
             shop = self.sheets['SpecialShop'].byId(ref['#'])
@@ -1105,10 +1175,7 @@ class XivQuestScraper:
             'categories': self.build_shop_index(flattened, lambda it: it['item']['category']),
             'currencies': self.build_shop_index(flattened, lambda it: it['currency'])
         }
-        if self.args.json:
-            print(json.dumps(output))
-        else:
-            print(dump_indented_yaml(output))
+        return output
 
 
     def cmd_dumpQuest(self):

@@ -1,6 +1,6 @@
 ---
 layout: with-nav
-title: The Hunt Shops
+title: Hunt/FATE Shops
 permalink: /hunts/shops
 brandLabel: Mognet
 brandUrl: /
@@ -33,6 +33,44 @@ npcLocations:
   Billebaut:
     coords: (13.0, 11.7)
     location: Rhalgr's Reach
+
+excludeItems:
+  "Blissful Kamuy Fife": true
+  "Reveling Kamuy Fife": true
+  "Legendary Kamuy Fife": true
+  "Auspicious Kamuy Fife": true
+  "Lunar Kamuy Fife": true
+  "Euphonious Kamuy Fife": true
+  "Hallowed Kamuy Fife": true
+  "White Lanner Whistle": true
+  "Rose Lanner Whistle": true
+  "Round Lanner Whistle": true
+  "Warring Lanner Whistle": true
+  "Dark Lanner Whistle": true
+  "Sophic Lanner Whistle": true
+  "Demonic Lanner Whistle": true
+  "Lynx of Imperious Wind Flute": true
+  "Lynx of Righteous Fire Flute": true
+  "Lynx of Fallen Shadow Flute": true
+  "Lynx of Abyssal Grief Flute": true
+  "Lynx of Eternal Darkness Flute": true
+  "Lynx of Divine Light Flute": true
+  "Bluefeather Lynx Flute": true
+  "Fae Gwiber Trumpet": true
+  "Innocent Gwiber Trumpet": true
+  "Shadow Gwiber Trumpet": true
+  "Gwiber of Light Trumpet": true
+  "Shroud of Darkness": true
+  "Dais of Darkness": true
+  "Clouddark Demimateria II": true
+  "Modern Aesthetics - A Half Times Two": true
+  "Wings of Ruin": true
+  "Wings of Resolve": true
+  "Wings of Eternity": true
+  "Black Summer Top": true
+  "Black Summer Halter": true
+  "Black Summer Trunks": true
+  "Black Summer Tanga": true
 
 shopOrdering:
   "1769811": 1
@@ -128,7 +166,7 @@ shopOrdering:
   <tbody>
     {% for shop in site.data.huntShops.shops %}
         {% for item in shop.inventory %}
-        {% if item.item.name %}
+        {% unless page.excludeItems[item.item.name] %}
         <tr class="hunt-shop-row" 
             data-shop="{{ shop.id }}"
             data-item="{{ item.item.id }}"
@@ -188,7 +226,7 @@ shopOrdering:
               {% endif %}
             </td>
         </tr>
-        {% endif %}
+        {% endunless %}
         {% endfor %}
     {% endfor %}
   </tbody>
@@ -259,6 +297,7 @@ function sortRows() {
     Array.from(tbody.children).sort((a, b) => {
         return (
             _shopordering[a.dataset.shop] - _shopordering[b.dataset.shop] ||
+            a.dataset.currency - b.dataset.currency ||
             a.dataset.categoryname.localeCompare(b.dataset.categoryname)
         )
     }).forEach(it => tbody.appendChild(it))
