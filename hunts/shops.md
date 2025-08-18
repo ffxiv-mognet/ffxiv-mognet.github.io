@@ -196,6 +196,16 @@ shopOrdering:
                     {{ item.currency.plural }}
                 {% endif %}
               </span>
+              {% if item.extraCost %}
+              <span class="icon-text">
+                {{item.extraCost.cost}}
+                {% if item.extraCost.cost == 1%}
+                    {{ item.extraCost.currency.name }}
+                {% else %}
+                    {{ item.extraCost.currency.plural }}
+                {% endif %}
+              </span>
+              {% endif %}
             </td>
             <td>
               {% if shop.requires %}

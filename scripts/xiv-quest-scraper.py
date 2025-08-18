@@ -1013,6 +1013,9 @@ class XivQuestScraper:
         questReqs = extract_array1d(specialShop, 'Quest{Item}')
         achievements = extract_array1d(specialShop, 'AchievementUnlock')
 
+        extra_currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[1]')
+        extra_costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[1]')
+
         count = len(list(filter(lambda it: it != "0", items)))
         inventory = []
         for i in range(0,count):
@@ -1042,6 +1045,18 @@ class XivQuestScraper:
             }
             if questReqs[i] != '0':
                 inv['quest'] = self.generate_questListItem(questReqs[i])
+
+            if extra_currencys[i] != '0':
+                extra_currency_item = self.sheets['Item'].byId(extra_currencys[i])
+                inv['extraCost'] = {
+                    'cost': int(extra_costs[i]),
+                    'currency': {
+                        'id': extra_currency_item['#'],
+                        'name': extra_currency_item['Name'],
+                        'plural': extra_currency_item['Plural'],
+                        'icon': extra_currency_item['Icon'],
+                    }
+                }
             inventory.append(inv)
 
         shop = {
