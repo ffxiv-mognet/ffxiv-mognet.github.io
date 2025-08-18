@@ -12,16 +12,46 @@ npcLocations:
   Ilfroy:
     coords: (11.0, 10.8)
     location: Eulmore
+  Aelina:
+    coords: (22.7, 6.7)
+    location: Mor Dhona
+  Bertana:
+    coords: (5.9, 5.2)
+    location: Idyllshire
+  Fathard:
+    coords: (10.1, 11.7)
+    location: Eulmore
+  Nesvaaz:
+    coords: (10.6, 10.0)
+    location: Radz-at-Han
+  "Uah'shepya":
+    coords: (8.6, 13.5)
+    location: Solution Nine
+  Satsuya:
+    coords: (10.4, 10.2)
+    location: Kugane
+  Billebaut:
+    coords: (13.0, 11.7)
+    location: Rhalgr's Reach
 
 shopOrdering:
   "1769811": 1
   "1769577": 3
   "1769578": 4
   "1769782": 5
-  "1769987": 6
-  "1770476": 7
-  "1770761": 8
-  "1770032": 10
+  "1769783": 6
+  "1769987": 7
+  "1770476": 8
+  "1770761": 9
+
+  "1769511": 20
+  "1769728": 21
+  "1769807": 22
+  "1770015": 23
+  "1770456": 24
+  "1770885": 25
+
+  "1770032": 100
 ---
 
 <table class="table is-fullwidth">
