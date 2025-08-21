@@ -12,11 +12,14 @@ title: Eorzea Hunt Clock
     padding: 6px 4px 4px 6px;
     text-shadow: rgba(0, 0, 0, 0.85) 1px 1px 1px 1px;
     border-radius: 800px 0 0 800px;
+    position: relative;
+    top: -2px;
 }
 .offsetLabel {
     text-align: right !important;
     padding: 6px 0 0 0 !important;
     border: none !important;
+    vertical-align: middle !important;
 }
 
 table.huntClock {
@@ -54,8 +57,10 @@ table.huntClock {
     background-color: black;
   }
 }
-.settings {
-    margin: 8px;
+.level.settings {
+    position: absolute;
+    top: 4px;
+    right: 4px;
 }
 .text-setting input {
     width: 5em;
@@ -94,7 +99,7 @@ table.huntClock {
         <table class="table is-striped is-hoverable huntClock">
             <thead>
                 <tr>
-                    <td class="offsetLabel"></td>
+                    <td></td>
                     <td>
                         <div class="clockFace">
                             <div class="clockLabel">Eorzea</div>
