@@ -7,7 +7,7 @@ span.icon i.quest-71000 {
     width: 1.5rem;
     display: block;
 }
-span.icon i.quest-71140 {
+span.icon i.quest-71140, span.icon i.quest-71020 {
     background:url('/icons/071141.png');
     content: '';
     background-size: 1.5rem;

@@ -8,8 +8,8 @@ def readable_coords(level, map):
     y = floor(+float(level['Z']) * 100.0) / 100.0
     z = floor(+float(level['Y']) * 100.0) / 100.0
     c = int(map['SizeFactor']) / 100.0
-    offset_x = int(map['Offset{X}'])
-    offset_y = int(map['Offset{Y}'])
+    offset_x = int(map['OffsetX'])
+    offset_y = int(map['OffsetY'])
 
     x1 = (+x + offset_x) * c
     y1 = (+y + offset_y) * c
@@ -25,8 +25,8 @@ def readable_coords(level, map):
 
 def pixel_coords(level, map):
     # adapted from https://github.com/xivapi/ffxiv-datamining/blob/master/docs/MapCoordinates.md
-    offset_x = int(map['Offset{X}'])
-    offset_y = int(map['Offset{Y}'])
+    offset_x = int(map['OffsetX'])
+    offset_y = int(map['OffsetY'])
     map_size = int(map['SizeFactor'])
     world_x = float(level['X'])
     world_z = float(level['Z'])

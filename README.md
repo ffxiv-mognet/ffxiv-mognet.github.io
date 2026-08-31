@@ -92,3 +92,10 @@ done
 ```
 ./scripts/xiv-quest-scraper.py sheet DeliveryQuest | jq -r .[].Quest | xargs ./scripts/xiv-quest-scraper.py quests
 ```
+
+
+
+#### extract list of quests from aethercurrents.json
+```
+jq -r '.quests."d2f1/00"[].quest' < _data/aethercurrents.json | xargs ./scripts/xiv-quest-scraper.py quests
+```

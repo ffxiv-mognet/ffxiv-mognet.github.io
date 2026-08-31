@@ -185,7 +185,7 @@ class XivQuestScraper:
 
 
         # action reward
-        actionId = quest['Action{Reward}']
+        actionId = quest['ActionReward']
         if actionId != "0":
             action = self.sheets['Action'].byId(actionId)
             unlocks.append({
@@ -215,8 +215,8 @@ class XivQuestScraper:
             })
 
         # emote
-        if quest['Emote{Reward}'] != "0":
-            emote = self.sheets['Emote'].byId(quest['Emote{Reward}'])
+        if quest['EmoteReward'] != "0":
+            emote = self.sheets['Emote'].byId(quest['EmoteReward'])
             unlocks.append({
                 'id': emote['#'],
                 'name': emote['Name'],
@@ -279,8 +279,8 @@ class XivQuestScraper:
         return out
 
     def parse_issuer(self, quest):
-        issuer = self.location_coords_from_level(quest["Issuer{Location}"])
-        issuer_npc = self.sheets['ENpcResident'].byId(quest["Issuer{Start}"])
+        issuer = self.location_coords_from_level(quest["IssuerLocation"])
+        issuer_npc = self.sheets['ENpcResident'].byId(quest["IssuerStart"])
         issuer['name'] = issuer_npc['Singular']
         return issuer
 
@@ -291,23 +291,20 @@ class XivQuestScraper:
         self.fetch_sheet(lang_sheet_name)
         lang_sheet = LanguageSheet(self._path_for_sheet(lang_sheet_name))
         steps = []
-        todo_idx = 0
-        todo_seq = extract_array1d(quest, "ToDoCompleteSeq")
-        has_todos = True
-        while has_todos and todo_idx < 24:
-            locationId = quest["ToDoLocation[{}][0]".format(todo_idx)]
-            step = self.location_coords_from_level(locationId)
 
+        for todo_idx in range(0, 24):
+            todo_qty = int(quest["TodoParams[{}].ToDoQty".format(todo_idx)])
+            if todo_qty == 255 or todo_qty == 0: 
+                continue
+
+            locationId = quest["TodoParams[{}].ToDoLocation[0]".format(todo_idx)]
+            step = self.location_coords_from_level(locationId)
             todoId = "TEXT_{}_TODO_{:02d}".format(quest["Id"].upper(), todo_idx)
             step["name"] = lang_sheet.byId(todoId)
+            if not step["name"]:
+                break
 
             steps.append(step)
-            seq = int(todo_seq.pop(0))
-            if seq == 255:
-                has_todos = False
-                break
-            todo_idx += 1
-
         return steps
 
     def generate_questListItem(self, rowId):
@@ -320,10 +317,10 @@ class XivQuestScraper:
             'rowId': int(quest['#']),
             'questId': quest['Id'],
             'genre': genre['Name'],
-            'icon': icon_type['MapIcon{Available}'],
+            'icon': icon_type['MapIconAvailable'],
         }
 
-    def quest_list_entry(self, row):
+    def quest_list_entry(self, row, requires_previous=False):
         script = extract_script(row)
         genre = self.sheets['JournalGenre'].byId(row['JournalGenre'])
         icon_type = self.sheets['EventIconType'].byId(row['EventIconType'])
@@ -340,7 +337,7 @@ class XivQuestScraper:
                 'id': genre['#'],
                 'name': genre['Name'],
             },
-            'icon': icon_type['MapIcon{Available}'],
+            'icon': icon_type['MapIconAvailable'],
             'issuer': issuer,
             'steps': steps,
         }
@@ -356,15 +353,22 @@ class XivQuestScraper:
             out_row['unlocks'] = unlocks
 
         # requires?
+
         requires = self.parse_requirements(script)
+        if requires_previous:
+            requires.append(row['PreviousQuest[0]'])
+
         if len(requires) > 0:
             out_row['requires'] = list(map(lambda it: self.generate_questListItem(it), requires))
+
 
         return out_row
 
     def cmd_quests(self):
         self.argparser.add_argument("rowIds", nargs="+")
         self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--icon", type=str, default="0")
+        self.argparser.add_argument("--require-previous", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         self.init_sheets()
 
@@ -372,10 +376,12 @@ class XivQuestScraper:
         partQuestNo = 1 
         for rowId in self.args.rowIds:
             row = self.sheets['Quest'].byId(rowId)
-            out_row = self.quest_list_entry(row)
+            out_row = self.quest_list_entry(row, requires_previous=True)
             out_row.update({
                 'partQuestNo': partQuestNo
             })
+            if out_row['icon'] == "0":
+                out_row['icon'] = self.args.icon
             partQuestNo += 1
             output.append(out_row)
 
@@ -499,6 +505,7 @@ class XivQuestScraper:
 
         map_names = {}
         compflgset = {}
+        quests = {}
         for row in currents.values():
             for c in row:
                 map_names[c['map']] = {
@@ -506,18 +513,27 @@ class XivQuestScraper:
                     'exversion': c['exversion'],
                     'map': c['map']
                 }
-
-
                 flgset = self.sheets['AetherCurrentCompFlgSet'].findBy('Territory', c['territory'])
 
-                current_seq = extract_array1d(flgset, "AetherCurrent")
+                current_seq = extract_array1d(flgset, "AetherCurrents")
                 compflgset[c['map']] = current_seq
+
+                for current_id in current_seq:
+                    current = self.sheets['AetherCurrent'].byId(current_id)
+                    if current and current['Quest'] != "0":
+                        if c['map'] not in quests:
+                            quests[c['map']] = {}
+                        quests[c['map']][current_id] = {
+                            'quest': current['Quest'],
+                            'aethercurrent': current_id,
+                        }
 
 
         output = {
             'aethercurrents': currents,
             'maps': map_names,
-            'compflgset': compflgset
+            'compflgset': compflgset,
+            'quests': quests,
         }
 
         if self.args.yaml:
@@ -1221,7 +1237,7 @@ class XivQuestScraper:
             "issuer": issuer,
             'genre': genre['Name'],
             'icon': icon_type['MapIcon{Available}'],
-            'action': quest["Action{Reward}"],
+            'action': quest["ActionReward"],
         }
         if self.args.raw:
             front_matter['raw'] = {
