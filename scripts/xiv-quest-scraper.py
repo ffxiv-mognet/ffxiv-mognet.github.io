@@ -289,7 +289,9 @@ class XivQuestScraper:
             section=quest["Id"].split("_", 1)[1][:3], 
             questId=quest["Id"])
         self.fetch_sheet(lang_sheet_name)
-        lang_sheet = LanguageSheet(self._path_for_sheet(lang_sheet_name))
+
+        lang_sheet_path = self._path_for_sheet(lang_sheet_name)
+        lang_sheet = LanguageSheet(lang_sheet_path)
         steps = []
 
         for todo_idx in range(0, 24):

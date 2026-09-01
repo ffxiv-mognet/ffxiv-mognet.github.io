@@ -5,6 +5,9 @@ title: The Dravanian Forelands | Heavensward Aether Currents
 permalink: /quests/aethercurrents/heavensward/dravanian-forelands
 map: d2f1/00
 nonsequential: true
+links:
+  previous: /quests/aethercurrents/heavensward/coerthas-western-highlands
+  next: /quests/aethercurrents/heavensward/dravanian-hinterlands
 quests:
   - name: Mourn in Passing
     level: 53

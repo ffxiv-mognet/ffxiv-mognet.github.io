@@ -85,8 +85,6 @@ class LanguageSheet:
     def buildIndex(self):
         self.rows = {}
         with open(self.csv_path, 'r') as csvfh:
-            for i in range(0,3): 
-                csvfh.readline()  # skip first 3 lines
             reader = csv.reader(csvfh)
             for row in reader:
                 stringId = row[1]

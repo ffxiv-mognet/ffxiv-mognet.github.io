@@ -23,7 +23,7 @@ layout: quest-table
 -->
 
 
-
+{% if currents %}
 <table class="table">
     <thead>
         <tr>
@@ -57,3 +57,4 @@ layout: quest-table
         {% endfor %}
     </tbody>
 </table>
+{% endif %}

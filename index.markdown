@@ -20,4 +20,7 @@ layout: default
     <p>
         <a href="/clock">Hunt Pull Timer Clock</a>
     </p>
+    <p>
+        <a href="/quests">Quests</a>
+    </p>
 </div>

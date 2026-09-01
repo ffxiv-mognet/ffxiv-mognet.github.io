@@ -5,6 +5,9 @@ title: Sea of Clouds| Heavensward Aether Currents
 permalink: /quests/aethercurrents/heavensward/sea-of-clouds
 map: a2f1/00
 nonsequential: true
+links:
+  previous: /quests/aethercurrents/heavensward/churning-mists
+  next: /quests/aethercurrents/heavensward/azys-lla
 quests:
   - name: Bolt, Chain, and Island
     level: 57
