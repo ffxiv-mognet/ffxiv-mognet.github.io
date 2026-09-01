@@ -8,6 +8,7 @@ nonsequential: true
 links:
   previous: /quests/aethercurrents/heavensward/coerthas-western-highlands
   next: /quests/aethercurrents/heavensward/dravanian-hinterlands
+
 quests:
   - name: Mourn in Passing
     level: 53
@@ -38,6 +39,12 @@ quests:
         coords: (27.3, 34.8)
         name: Speak with Alphinaud.
     unlocks:
+      - name: Sohm Al
+        type: dungeon
+        levelRequired: 53
+        levelSync: 54
+        ilevelRequired: 105
+        ilevelSync: 0
       - id: '2818063'
         name: Aether Current
         type: aethercurrent
@@ -80,25 +87,26 @@ quests:
         genre: Heavensward
         icon: '71000'
     partQuestNo: 2
-  - name: Natural Repellent
+
+  - name: Stolen Munitions
     level: 52
-    rowId: 67328
-    questId: HeaVnz223_01792
+    rowId: 67326
+    questId: HeaVnz221_01790
     genre:
       id: '119'
       name: Dravanian Forelands Sidequests
-    icon: '71020'
+    icon: '71140'
     issuer:
       location: The Dravanian Forelands
-      coords: (24.0, 19.7)
-      name: Vath storyteller
+      coords: (23.9, 19.7)
+      name: Vath fleetfoot
     steps:
       - location: The Dravanian Forelands
-        coords: (30.4, 24.0)
-        name: Gather three bunches of silver dew.
+        coords: (26.2, 35.0)
+        name: Slay Gnath firedrones and obtain Gnathic flintlocks.
       - location: The Dravanian Forelands
-        coords: (24.0, 19.7)
-        name: Deliver the silver dew to the Vath storyteller.
+        coords: (23.9, 19.7)
+        name: Deliver the flintlocks to the Vath fleetfoot.
     unlocks:
       - id: '2818065'
         name: Aether Current
@@ -111,28 +119,23 @@ quests:
         genre: Heavensward
         icon: '71000'
     partQuestNo: 3
-  - name: Chocobo's Last Stand
+
+  - name: The Hunter Becomes the Kweh
     level: 53
-    rowId: 67334
-    questId: HeaVnz306_01798
+    rowId: 67333
+    questId: HeaVnz305_01797
     genre:
       id: '119'
       name: Dravanian Forelands Sidequests
-    icon: '71020'
+    icon: '71140'
     issuer:
       location: The Dravanian Forelands
       coords: (31.9, 22.9)
       name: Marcechamp
     steps:
       - location: The Dravanian Forelands
-        coords: (31.7, 19.0)
-        name: Speak with the seasoned tracker.
-      - location: The Dravanian Forelands
-        coords: (36.8, 9.7)
-        name: Pursue the wild draught chocobo and slay it if it attacks.
-      - location: The Dravanian Forelands
-        coords: (36.9, 9.8)
-        name: Speak with the seasoned tracker.
+        coords: (36.8, 26.5)
+        name: Speak with Marcechamp's hunters.
       - location: The Dravanian Forelands
         coords: (31.9, 22.9)
         name: Report to Marcechamp.
@@ -148,6 +151,8 @@ quests:
         genre: Heavensward
         icon: '71000'
     partQuestNo: 4
+
+
   - name: A Lesson in Humility
     level: 53
     rowId: 67338
