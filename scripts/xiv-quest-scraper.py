@@ -163,10 +163,10 @@ class XivQuestScraper:
         return {
             'name': cfc['Name'],
             'type': readable_contenttype(cfc['ContentType']),
-            'levelRequired': int(cfc['ClassJobLevel{Required}']),
-            'levelSync': int(cfc['ClassJobLevel{Sync}']),
-            'ilevelRequired': int(cfc['ItemLevel{Required}']),
-            'ilevelSync': int(cfc['ItemLevel{Sync}']),
+            'levelRequired': int(cfc['ClassJobLevelRequired']),
+            'levelSync': int(cfc['ClassJobLevelSync']),
+            'ilevelRequired': int(cfc['ItemLevelRequired']),
+            'ilevelSync': int(cfc['ItemLevelSync']),
             # 'raw': cfc
         }
 
@@ -392,6 +392,47 @@ class XivQuestScraper:
         else:
             print(json.dumps(output))
 
+    def cmd_questChain(self):
+        self.argparser.add_argument("--count", type=int, default=99)
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--partQuestNo", type=int, default=1)
+        self.argparser.add_argument("--previousId", nargs="?")
+        self.argparser.add_argument("--startingId", nargs="?")
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+        # pprint.pprint(vars(self.args))
+
+        if self.args.startingId:
+            cur_quest = self.sheets['Quest'].byId(self.args.startingId)
+        elif self.args.previousId:
+            cur_quest = self.sheets['Quest'].findBy('PreviousQuest[0]', self.args.previousId)
+
+        genre = cur_quest['JournalGenre']
+
+        count = 1
+        output = []
+        while cur_quest and count < self.args.count:
+            out_row = self.quest_list_entry(cur_quest)
+            output.append(out_row)
+
+            count += 1
+            next_matches = list(self.sheets['Quest'].findAll('PreviousQuest[0]', cur_quest['#']))
+            cur_quest = None
+            for m in next_matches:
+                if m['JournalGenre'] == genre:
+                    cur_quest = m
+                    break
+
+        ordered = list(output)
+        numbered = []
+        for i in range(0,len(ordered)):
+            row = ordered[i]
+            row.update({
+                'partQuestNo': i+self.args.partQuestNo,
+            })
+            numbered.append(row)
+        print(dump_indented_yaml({"quests": list(numbered)}))
+
 
     def cmd_questList(self):
         self.argparser.add_argument("--count", type=int, default=10)
@@ -401,7 +442,6 @@ class XivQuestScraper:
         self.argparser.add_argument("--firstRowId", nargs="?")
         self.args = self.argparser.parse_args()
         self.init_sheets()
-        # pprint.pprint(vars(self.args))
 
         output = []
         count = self.args.count

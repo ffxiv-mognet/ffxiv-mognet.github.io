@@ -114,8 +114,8 @@ def extract_array1d(row, field_name, suffix=''):
 def extract_script(quest, total=50):
     output = {}
     for i in range(0, total):
-        inst_key = "Script{{Instruction}}[{}]".format(i)
-        arg_key = "Script{{Arg}}[{}]".format(i)
+        inst_key = "QuestParams[{}].ScriptInstruction".format(i)
+        arg_key = "QuestParams[{}].ScriptArg".format(i)
         inst = quest.get(inst_key, None)
         arg = quest.get(arg_key, None)
         if inst is None:
