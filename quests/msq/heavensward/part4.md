@@ -12,7 +12,9 @@ quests:
     level: 60
     rowId: 67877
     questId: HeaVne101_02341
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: The Pillars
@@ -33,7 +35,9 @@ quests:
     level: 60
     rowId: 67878
     questId: HeaVne102_02342
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Fortemps Manor
@@ -60,12 +64,16 @@ quests:
         type: dungeon
         levelRequired: 60
         levelSync: 60
+        ilevelRequired: 210
+        ilevelSync: 0
     partQuestNo: 2
   - name: Two Sides of a Coin
     level: 60
     rowId: 67879
     questId: HeaVne103_02343
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -89,7 +97,9 @@ quests:
     level: 60
     rowId: 67880
     questId: HeaVne104_02344
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Outer La Noscea
@@ -119,7 +129,9 @@ quests:
     level: 60
     rowId: 67881
     questId: HeaVne105_02345
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Outer La Noscea
@@ -158,12 +170,16 @@ quests:
         type: trial
         levelRequired: 50
         levelSync: 50
+        ilevelRequired: 57
+        ilevelSync: 0
     partQuestNo: 5
   - name: Beneath a Star-filled Sky
     level: 60
     rowId: 67882
     questId: HeaVne106_02346
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Outer La Noscea
@@ -193,7 +209,9 @@ quests:
     level: 60
     rowId: 67883
     questId: HeaVne107_02347
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Southern Thanalan
@@ -220,7 +238,9 @@ quests:
     level: 60
     rowId: 67884
     questId: HeaVne108_02348
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Southern Thanalan
@@ -244,7 +264,9 @@ quests:
     level: 60
     rowId: 67885
     questId: HeaVne109_02349
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Southern Thanalan
@@ -263,13 +285,17 @@ quests:
       - location: Southern Thanalan
         coords: (21.5, 21.4)
         name: Speak with Alphinaud.
-    soloDuty: null
+    soloDuty:
+      levelSync: 60
+      id: '5003'
     partQuestNo: 9
   - name: An Ending to Mark a New Beginning
     level: 60
     rowId: 67886
     questId: HeaVne110_02350
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Southern Thanalan
@@ -297,7 +323,9 @@ quests:
     level: 60
     rowId: 67887
     questId: HeaVnf101_02351
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -315,7 +343,9 @@ quests:
     level: 60
     rowId: 67888
     questId: HeaVnf102_02352
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Foundation
@@ -336,7 +366,9 @@ quests:
     level: 60
     rowId: 67889
     questId: HeaVnf103_02353
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: New Gridania
@@ -357,7 +389,9 @@ quests:
     level: 60
     rowId: 67890
     questId: HeaVnf104_02354
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Mor Dhona
@@ -393,12 +427,16 @@ quests:
         type: dungeon
         levelRequired: 60
         levelSync: 60
+        ilevelRequired: 230
+        ilevelSync: 0
     partQuestNo: 14
   - name: Louisoix's Finest Student
     level: 60
     rowId: 67891
     questId: HeaVnf105_02355
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: East Shroud
@@ -417,7 +455,9 @@ quests:
     level: 60
     rowId: 67892
     questId: HeaVng101_02356
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -435,7 +475,9 @@ quests:
     level: 60
     rowId: 67893
     questId: HeaVng102_02357
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: Old Gridania
@@ -459,7 +501,9 @@ quests:
     level: 60
     rowId: 67894
     questId: HeaVng103_02358
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -478,13 +522,17 @@ quests:
       - location: New Gridania
         coords: (12.0, 13.0)
         name: Speak with Cid at the airship landing in Gridania.
-    soloDuty: null
+    soloDuty:
+      levelSync: 60
+      id: '5004'
     partQuestNo: 18
   - name: The Far Edge of Fate
     level: 60
     rowId: 67895
     questId: HeaVng104_02359
-    genre: Post-Dragonsong War
+    genre:
+      id: '5'
+      name: Post-Dragonsong War
     icon: '71000'
     issuer:
       location: New Gridania

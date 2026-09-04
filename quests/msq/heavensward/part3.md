@@ -7,12 +7,15 @@ permalink: /quests/msq/heavensward/part3
 links:
   previous: /quests/msq/heavensward/part2
   next: /quests/msq/heavensward/part4
+
 quests:
   - name: An Uncertain Future
     level: 60
     rowId: 67692
     questId: HeaVnb101_02156
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Fortemps Manor
@@ -36,7 +39,9 @@ quests:
     level: 60
     rowId: 67693
     questId: HeaVnb102_02157
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Foundation
@@ -57,7 +62,9 @@ quests:
     level: 60
     rowId: 67694
     questId: HeaVnb103_02158
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Dravanian Forelands
@@ -78,7 +85,9 @@ quests:
     level: 60
     rowId: 67695
     questId: HeaVnb104_02159
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Dravanian Hinterlands
@@ -111,7 +120,9 @@ quests:
     level: 60
     rowId: 67696
     questId: HeaVnb105_02160
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Dravanian Forelands
@@ -135,7 +146,9 @@ quests:
     level: 60
     rowId: 67697
     questId: HeaVnb106_02161
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Dravanian Forelands
@@ -156,7 +169,9 @@ quests:
     level: 60
     rowId: 67698
     questId: HeaVnb107_02162
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Foundation
@@ -189,7 +204,9 @@ quests:
     level: 60
     rowId: 67699
     questId: HeaVnb108_02163
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Foundation
@@ -211,6 +228,7 @@ quests:
     soloDuty:
       levelSync: 60
       timeLimit: 30
+      id: '150'
     unlocks:
       - id: 1387
         name: So It Goes
@@ -220,7 +238,9 @@ quests:
     level: 60
     rowId: 67767
     questId: HeaVnc101_02231
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Pillars
@@ -244,7 +264,9 @@ quests:
     level: 60
     rowId: 67768
     questId: HeaVnc102_02232
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -271,12 +293,16 @@ quests:
         type: dungeon
         levelRequired: 60
         levelSync: 60
+        ilevelRequired: 180
+        ilevelSync: 0
     partQuestNo: 10
   - name: This War of Ours
     level: 60
     rowId: 67769
     questId: HeaVnc103_02233
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Matoya's Cave
@@ -294,7 +320,9 @@ quests:
     level: 60
     rowId: 67770
     questId: HeaVnc104_02234
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Coerthas Western Highlands
@@ -312,7 +340,9 @@ quests:
     level: 60
     rowId: 67771
     questId: HeaVnc105_02235
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Coerthas Western Highlands
@@ -336,7 +366,9 @@ quests:
     level: 60
     rowId: 67772
     questId: HeaVnc106_02236
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Coerthas Western Highlands
@@ -357,7 +389,9 @@ quests:
     level: 60
     rowId: 67773
     questId: HeaVnc107_02237
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Coerthas Western Highlands
@@ -378,7 +412,9 @@ quests:
     level: 60
     rowId: 67774
     questId: HeaVnc108_02238
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Coerthas Western Highlands
@@ -411,7 +447,9 @@ quests:
     level: 60
     rowId: 67775
     questId: HeaVnc109_02239
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Foundation
@@ -433,16 +471,21 @@ quests:
       - location: Coerthas Central Highlands
         coords: (18.7, 15.3)
         name: Speak with Thancred.
-    soloDuty: null
+    soloDuty:
+      levelSync: 60
+      id: '5001'
     unlocks:
-      - name: Victory
+      - id: '122'
+        name: Victory
         type: emote
     partQuestNo: 17
   - name: For Those We Can Yet Save
     level: 60
     rowId: 67776
     questId: HeaVnc110_02240
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -463,7 +506,9 @@ quests:
     level: 60
     rowId: 67777
     questId: HeaVnc111_02241
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Coerthas Western Highlands
@@ -480,7 +525,8 @@ quests:
         coords: (11.5, 11.1)
         name: Speak with Alphinaud outside Fortemps Manor.
     unlocks:
-      - name: Battle Stance
+      - id: '121'
+        name: Battle Stance
         type: emote
       - id: 1493
         name: First Gear
@@ -490,7 +536,9 @@ quests:
     level: 60
     rowId: 67778
     questId: HeaVnd101_02242
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Pillars
@@ -511,7 +559,9 @@ quests:
     level: 60
     rowId: 67779
     questId: HeaVnd102_02243
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Foundation
@@ -529,7 +579,9 @@ quests:
     level: 60
     rowId: 67780
     questId: HeaVnd103_02244
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Dravanian Forelands
@@ -562,12 +614,16 @@ quests:
         type: dungeon
         levelRequired: 60
         levelSync: 60
+        ilevelRequired: 200
+        ilevelSync: 0
     partQuestNo: 22
   - name: An End to the Song
     level: 60
     rowId: 67781
     questId: HeaVnd104_02245
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: The Churning Mists
@@ -591,12 +647,16 @@ quests:
         type: trial
         levelRequired: 60
         levelSync: 60
+        ilevelRequired: 205
+        ilevelSync: 0
     partQuestNo: 23
   - name: Heroes of the Hour
     level: 60
     rowId: 67782
     questId: HeaVnd105_02246
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Foundation
@@ -617,7 +677,9 @@ quests:
     level: 60
     rowId: 67783
     questId: HeaVnd106_02247
-    genre: Dragonsong War
+    genre:
+      id: '4'
+      name: Dragonsong War
     icon: '71000'
     issuer:
       location: Foundation
@@ -638,6 +700,4 @@ quests:
         name: Floor the Horde
         type: achievement
     partQuestNo: 25
-
-
 ---
