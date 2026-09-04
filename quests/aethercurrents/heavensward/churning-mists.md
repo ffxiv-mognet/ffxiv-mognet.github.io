@@ -108,29 +108,25 @@ quests:
         genre: Heavensward
         icon: '71000'
     partQuestNo: 3
-  - name: The Unceasing Gardener
+  - name: Hide Your Moogles
     level: 54
-    rowId: 67365
-    questId: HeaVnz411_01829
+    rowId: 67364
+    questId: HeaVnz410_01828
     genre:
       id: '121'
       name: Churning Mists Sidequests
-    icon: '71020'
+    icon: '71140'
     issuer:
       location: The Churning Mists
-      coords: (12.2, 32.3)
-      name: manic moogle
+      coords: (12.3, 29.5)
+      name: maundering moogle
     steps:
       - location: The Churning Mists
-        coords: (12.2, 32.3)
-        name: Get the high-quality blackloam from the clay pot.
+        coords: (13.0, 30.7)
+        name: Find the hiding moogles.
       - location: The Churning Mists
-        coords: (29.8, 36.1)
-        name: Deliver the blackloam to Mogomo.
-    unlocks:
-      - id: '2818096'
-        name: Aether Current
-        type: aethercurrent
+        coords: (12.3, 29.5)
+        name: Report to the maundering moogle at Zenith.
     requires:
       - name: The Wyrm's Lair
         level: 54
@@ -138,6 +134,10 @@ quests:
         questId: HeaVna327_01628
         genre: Heavensward
         icon: '71000'
+    unlocks:
+      - id: '2818096'
+        name: Aether Current
+        type: aethercurrent
     partQuestNo: 4
   - name: Waiting to Inhale
     level: 54

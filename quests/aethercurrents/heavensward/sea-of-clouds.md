@@ -88,32 +88,26 @@ quests:
         genre: Heavensward
         icon: '71000'
     partQuestNo: 2
-  - name: Search and Rescue
+
+  - name: Honoring the Past
     level: 56
-    rowId: 67437
-    questId: HeaVnz633_01901
+    rowId: 67410
+    questId: HeaVnz606_01874
     genre:
-      id: '118'
-      name: Abalathian Sidequests
-    icon: '71020'
+      id: '117'
+      name: Ishgardian Sidequests
+    icon: '71140'
     issuer:
-      location: The Sea of Clouds
-      coords: (17.0, 37.4)
-      name: Laniaitte
+      location: The Pillars
+      coords: (11.5, 10.9)
+      name: House Haillenarte knight
     steps:
       - location: The Sea of Clouds
-        coords: (24.8, 31.3)
-        name: Search for the missing knights.
-      - location: The Sea of Clouds
-        coords: (25.0, 31.1)
-        name: Speak with the knights.
+        coords: (9.4, 32.4)
+        name: Deliver the battle standard to Rontremont.
       - location: The Sea of Clouds
         coords: (17.0, 37.4)
-        name: Report to Laniaitte.
-    unlocks:
-      - id: '2818110'
-        name: Aether Current
-        type: aethercurrent
+        name: Deliver the battle standard to Laniaitte.
     requires:
       - name: He Who Would Not Be Denied
         level: 56
@@ -121,6 +115,10 @@ quests:
         questId: HeaVna401_01637
         genre: Heavensward
         icon: '71000'
+    unlocks:
+      - id: '2818110'
+        name: Aether Current
+        type: aethercurrent
     partQuestNo: 3
   - name: Sleepless in Ok' Zundu
     level: 57

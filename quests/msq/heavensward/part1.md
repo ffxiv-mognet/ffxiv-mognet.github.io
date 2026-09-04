@@ -979,6 +979,54 @@ quests:
         coords: (30.0, 36.4)
         name: Deliver the sprigs of cloudsbreath to Moghan.
     partQuestNo: 41
+
+  - name: Mogmug's Trial
+    level: 54
+    rowId: 67157
+    questId: HeaVna320_01621
+    genre:
+      id: '3'
+      name: Heavensward
+    icon: '71000'
+    issuer:
+      location: The Churning Mists
+      coords: (30.4, 35.5)
+      name: Mogmug
+    steps:
+      - location: The Churning Mists
+        coords: (27.4, 31.4)
+        name: Defeat archaeosaurs.
+      - location: The Churning Mists
+        coords: (30.4, 35.5)
+        name: Report to Mogmug.
+    partQuestNo: 42
+  - name: Mogwin's Trial
+    level: 54
+    rowId: 67158
+    questId: HeaVna321_01622
+    genre:
+      id: '3'
+      name: Heavensward
+    icon: '71000'
+    issuer:
+      location: The Churning Mists
+      coords: (29.7, 35.3)
+      name: Mogwin
+    steps:
+      - location: The Churning Mists
+        coords: (29.7, 36.7)
+        name: Question Moghome inhabitants.
+      - location: The Churning Mists
+        coords: (29.7, 35.3)
+        name: Speak with Mogwin.
+      - location: The Churning Mists
+        coords: (28.1, 35.2)
+        name: Obtain the moogle masterpiece.
+      - location: The Churning Mists
+        coords: (29.7, 35.3)
+        name: Deliver the moogle masterpiece to Mogwin.
+    partQuestNo: 43
+
   - name: Moglin's Judgment
     level: 54
     rowId: 67159
@@ -1011,7 +1059,26 @@ quests:
       - location: The Churning Mists
         coords: (30.0, 36.4)
         name: Speak with Moghan.
-    partQuestNo: 42
+    requires:
+      - name: Moghan's Trial
+        level: 54
+        rowId: 67156
+        questId: HeaVna320_01620
+        genre: Heavensward
+        icon: '71000'
+      - name: Mogmug's Trial
+        level: 54
+        rowId: 67157
+        questId: HeaVna320_01621
+        genre: Heavensward
+        icon: '71000'
+      - name: Mogwin's Trial
+        level: 54
+        rowId: 67158
+        questId: HeaVna321_01622
+        genre: Heavensward
+        icon: '71000'
+    partQuestNo: 44
   - name: Leaving Moghome
     level: 54
     rowId: 67160
@@ -1032,7 +1099,7 @@ quests:
       - location: The Churning Mists
         coords: (27.4, 34.7)
         name: Speak with Moghan.
-    partQuestNo: 43
+    partQuestNo: 45
   - name: The Road to Zenith
     level: 54
     rowId: 67161
@@ -1053,7 +1120,7 @@ quests:
       - location: The Churning Mists
         coords: (20.9, 26.7)
         name: Speak with Moghan.
-    partQuestNo: 44
+    partQuestNo: 46
   - name: Waiting for the Wind to Change
     level: 54
     rowId: 67162
@@ -1080,7 +1147,7 @@ quests:
     unlocks:
       - name: The Churning Mists
         type: mountspeed
-    partQuestNo: 45
+    partQuestNo: 47
   - name: Heart of Ice
     level: 54
     rowId: 67163
@@ -1098,6 +1165,6 @@ quests:
       - location: The Churning Mists
         coords: (7.3, 26.7)
         name: Speak with Alphinaud.
-    partQuestNo: 46
+    partQuestNo: 48
 
 ---
