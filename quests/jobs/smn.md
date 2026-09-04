@@ -328,6 +328,13 @@ quests:
         name: Summon Ifrit
         icon: '2680'
         type: action
+    requires:
+      - name: Sylph-management
+        level: 20
+        rowId: 66049
+        questId: ManFst304_00513
+        genre: Seventh Umbral Era
+        icon: '71000'
     partQuestNo: 10
   - name: Austerities of Earth
     level: 35
@@ -503,6 +510,13 @@ quests:
       - location: Old Gridania
         coords: (10.9, 6.3)
         name: Speak with Y'mhitra at Apkallu Falls.
+    requires:
+      - name: Before the Dawn
+        level: 50
+        rowId: 65964
+        questId: GaiUse616_00428
+        genre: Seventh Astral Era
+        icon: '71000'
     partQuestNo: 16
   - name: A Matter of Fact
     level: 52
@@ -682,6 +696,13 @@ quests:
       - location: Old Gridania
         coords: (10.9, 6.3)
         name: Speak with Y'mhitra in Gridania.
+    requires:
+      - name: The Far Edge of Fate
+        level: 60
+        rowId: 67895
+        questId: HeaVng104_02359
+        genre: Post-Dragonsong War
+        icon: '71000'
     partQuestNo: 22
   - name: Performing for Prin
     level: 63
@@ -837,7 +858,18 @@ quests:
       - location: Old Gridania
         coords: (10.9, 6.3)
         name: Speak with Y'mhitra at Apkallu Falls.
+    requires:
+      - name: A Tearful Reunion
+        level: 80
+        rowId: 69164
+        questId: LucKba451_03628
+        genre: Magical Ranged DPS Role Quests (Shadowbringers)
+        icon: '71140'
+      - name: Shadowbringers
+        level: 80
+        rowId: 69190
+        questId: LucKmf111_03654
+        genre: Shadowbringers
+        icon: '71000'
     partQuestNo: 27
-
-
 ---
