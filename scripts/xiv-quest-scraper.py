@@ -295,11 +295,13 @@ class XivQuestScraper:
         steps = []
 
         for todo_idx in range(0, 24):
-            todo_qty = int(quest["TodoParams[{}].ToDoQty".format(todo_idx)])
-            if todo_qty == 255 or todo_qty == 0: 
-                continue
+            # todo_qty = int(quest["TodoParams[{}].ToDoQty".format(todo_idx)])
+            # if todo_qty == 255 or todo_qty == 0: 
+            #     continue
 
             locationId = quest["TodoParams[{}].ToDoLocation[0]".format(todo_idx)]
+            if locationId == "0":
+                break
             step = self.location_coords_from_level(locationId)
             todoId = "TEXT_{}_TODO_{:02d}".format(quest["Id"].upper(), todo_idx)
             step["name"] = lang_sheet.byId(todoId)
@@ -355,10 +357,14 @@ class XivQuestScraper:
             out_row['unlocks'] = unlocks
 
         # requires?
-
         requires = self.parse_requirements(script)
         if requires_previous:
             requires.append(row['PreviousQuest[0]'])
+            
+        if row['PreviousQuest[1]'] != "0":
+            requires.append(row['PreviousQuest[1]'])
+        if row['PreviousQuest[2]'] != "0":
+            requires.append(row['PreviousQuest[2]'])
 
         if len(requires) > 0:
             out_row['requires'] = list(map(lambda it: self.generate_questListItem(it), requires))

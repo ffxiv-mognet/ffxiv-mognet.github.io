@@ -3,6 +3,9 @@ layout: quest-table
 expansion: Job Quests
 title: Conjurer / White Mage
 permalink: /quests/jobs/white-mage
+links:
+  previous: /quests
+  next: /quests/role/shadowbringers/healer
 quests:
   - name: Way of the Conjurer
     level: 1
@@ -414,7 +417,9 @@ quests:
     level: 50
     rowId: 67255
     questId: JobWhm501_01719
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -442,12 +447,21 @@ quests:
       - location: North Shroud
         coords: (20.6, 25.2)
         name: Speak with Eschiva at Fallgourd Float.
+    requires:
+      - name: Before the Dawn
+        level: 50
+        rowId: 65964
+        questId: GaiUse616_00428
+        genre: Seventh Astral Era
+        icon: '71000'
     partQuestNo: 14
   - name: A Journey of Purification
     level: 52
     rowId: 67256
     questId: JobWhm520_01720
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: North Shroud
@@ -469,8 +483,10 @@ quests:
     soloDuty:
       levelSync: 54
       timeLimit: 30
+      id: '115'
     unlocks:
-      - name: Asylum
+      - id: '3569'
+        name: Asylum
         icon: '2632'
         type: action
     partQuestNo: 15
@@ -478,7 +494,9 @@ quests:
     level: 54
     rowId: 67257
     questId: JobWhm540_01721
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: Coerthas Central Highlands
@@ -507,7 +525,8 @@ quests:
         coords: (31.8, 35.6)
         name: Speak with Eschiva.
     unlocks:
-      - name: Stone III
+      - id: '3568'
+        name: Stone III
         icon: '2631'
         type: action
     partQuestNo: 16
@@ -515,7 +534,9 @@ quests:
     level: 56
     rowId: 67258
     questId: JobWhm560_01722
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: Coerthas Western Highlands
@@ -535,7 +556,8 @@ quests:
         coords: (32.3, 23.0)
         name: Speak with Eschiva at Tailfeather.
     unlocks:
-      - name: Assize
+      - id: '3571'
+        name: Assize
         icon: '2634'
         type: action
     partQuestNo: 17
@@ -543,7 +565,9 @@ quests:
     level: 58
     rowId: 67259
     questId: JobWhm580_01723
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: The Dravanian Forelands
@@ -566,7 +590,8 @@ quests:
         coords: (8.9, 38.0)
         name: Assist Eschiva.
     unlocks:
-      - name: Thin Air
+      - id: '7430'
+        name: Thin Air
         icon: '2636'
         type: action
     partQuestNo: 18
@@ -574,7 +599,9 @@ quests:
     level: 58
     rowId: 67260
     questId: JobWhm581_01724
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: The Dravanian Forelands
@@ -589,7 +616,9 @@ quests:
     level: 60
     rowId: 67261
     questId: JobWhm600_01725
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -620,8 +649,10 @@ quests:
     soloDuty:
       levelSync: 60
       timeLimit: 30
+      id: '134'
     unlocks:
-      - name: Tetragrammaton
+      - id: '3570'
+        name: Tetragrammaton
         icon: '2633'
         type: action
       - id: 1146
@@ -632,7 +663,9 @@ quests:
     level: 60
     rowId: 67950
     questId: JobWhm601_02414
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -654,12 +687,21 @@ quests:
       - location: The Fringes
         coords: (9.0, 12.0)
         name: Speak with E-Sumi-Yan at Castrum Oriens.
+    requires:
+      - name: The Far Edge of Fate
+        level: 60
+        rowId: 67895
+        questId: HeaVng104_02359
+        genre: Post-Dragonsong War
+        icon: '71000'
     partQuestNo: 21
   - name: An Aura for Trouble
     level: 63
     rowId: 67951
     questId: JobWhm630_02415
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: The Fringes
@@ -683,7 +725,9 @@ quests:
     level: 65
     rowId: 67952
     questId: JobWhm650_02416
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: The Fringes
@@ -711,12 +755,15 @@ quests:
     soloDuty:
       levelSync: 67
       timeLimit: 30
+      id: '151'
     partQuestNo: 23
   - name: The Problem with Padjals
     level: 68
     rowId: 67953
     questId: JobWhm680_02417
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: The Fringes
@@ -740,7 +787,9 @@ quests:
     level: 70
     rowId: 67954
     questId: JobWhm700_02418
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: The Fringes
@@ -768,8 +817,10 @@ quests:
     soloDuty:
       levelSync: 70
       timeLimit: 30
+      id: '169'
     unlocks:
-      - name: Plenary Indulgence
+      - id: '7433'
+        name: Plenary Indulgence
         icon: '2639'
         type: action
       - id: 1802
@@ -780,7 +831,9 @@ quests:
     level: 80
     rowId: 68751
     questId: LucKbc006_03215
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71020'
     issuer:
       location: South Shroud
@@ -806,6 +859,19 @@ quests:
       - id: 2311
         name: Seeing White IV
         type: achievement
+    requires:
+      - name: The Soul of Temperance
+        level: 80
+        rowId: 68808
+        questId: LucKba251_03272
+        genre: Healer Role Quests (Shadowbringers)
+        icon: '71140'
+      - name: Shadowbringers
+        level: 80
+        rowId: 69190
+        questId: LucKmf111_03654
+        genre: Shadowbringers
+        icon: '71000'
     partQuestNo: 26
 
 

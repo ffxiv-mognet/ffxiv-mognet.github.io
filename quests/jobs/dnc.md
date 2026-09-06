@@ -4,13 +4,16 @@ expansion: Job Quests
 title: Dancer
 permalink: /quests/jobs/dancer
 links:
-    next: /quests/role/shadowbringers/physical-dps
+  previous: /quests
+  next: /quests/role/shadowbringers/physical-dps
 quests:
   - name: Shall We Dance
     level: 60
     rowId: 68785
     questId: LucKbb201_03249
-    genre: Dancer Quests
+    genre:
+      id: '192'
+      name: Dancer Quests
     icon: '71140'
     issuer:
       location: Limsa Lominsa Lower Decks
@@ -31,7 +34,9 @@ quests:
     level: 60
     rowId: 68786
     questId: LucKbb202_03250
-    genre: Dancer Quests
+    genre:
+      id: '192'
+      name: Dancer Quests
     icon: '71140'
     issuer:
       location: Limsa Lominsa Lower Decks
@@ -59,7 +64,9 @@ quests:
     level: 63
     rowId: 68787
     questId: LucKbb211_03251
-    genre: Dancer Quests
+    genre:
+      id: '192'
+      name: Dancer Quests
     icon: '71140'
     issuer:
       location: Eastern La Noscea
@@ -95,7 +102,9 @@ quests:
     level: 65
     rowId: 68788
     questId: LucKbb221_03252
-    genre: Dancer Quests
+    genre:
+      id: '192'
+      name: Dancer Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -125,7 +134,9 @@ quests:
     level: 68
     rowId: 68789
     questId: LucKbb231_03253
-    genre: Dancer Quests
+    genre:
+      id: '192'
+      name: Dancer Quests
     icon: '71140'
     issuer:
       location: New Gridania
@@ -155,7 +166,9 @@ quests:
     level: 70
     rowId: 68790
     questId: LucKbb241_03254
-    genre: Dancer Quests
+    genre:
+      id: '192'
+      name: Dancer Quests
     icon: '71140'
     issuer:
       location: New Gridania
@@ -194,7 +207,9 @@ quests:
     level: 80
     rowId: 68762
     questId: LucKbc017_03226
-    genre: Dancer Quests
+    genre:
+      id: '192'
+      name: Dancer Quests
     icon: '71020'
     issuer:
       location: Limsa Lominsa Lower Decks
@@ -220,7 +235,21 @@ quests:
       - id: 2322
         name: No Friends of Mine II
         type: achievement
+    requires:
+      - name: Courage Born of Fear
+        level: 80
+        rowId: 68814
+        questId: LucKba351_03278
+        genre: Physical DPS Role Quests (Shadowbringers)
+        icon: '71140'
+      - name: Shadowbringers
+        level: 80
+        rowId: 69190
+        questId: LucKmf111_03654
+        genre: Shadowbringers
+        icon: '71000'
     partQuestNo: 7
+
 
 
 ---

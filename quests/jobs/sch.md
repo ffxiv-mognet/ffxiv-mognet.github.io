@@ -326,6 +326,13 @@ quests:
         name: Adloquium
         icon: '2801'
         type: action
+    requires:
+      - name: Sylph-management
+        level: 20
+        rowId: 66049
+        questId: ManFst304_00513
+        genre: Seventh Umbral Era
+        icon: '71000'
     partQuestNo: 10
   - name: The Last Remnants
     level: 35
@@ -500,6 +507,13 @@ quests:
       - location: Upper La Noscea
         coords: (25.6, 22.3)
         name: Deliver the outer keystone to Surito Carito.
+    requires:
+      - name: Before the Dawn
+        level: 50
+        rowId: 65964
+        questId: GaiUse616_00428
+        genre: Seventh Astral Era
+        icon: '71000'
     partQuestNo: 16
   - name: Quarantine
     level: 52
@@ -693,6 +707,13 @@ quests:
       - location: Upper La Noscea
         coords: (25.6, 22.3)
         name: Report to Surito Carito near the Wanderer's Palace.
+    requires:
+      - name: The Far Edge of Fate
+        level: 60
+        rowId: 67895
+        questId: HeaVng104_02359
+        genre: Post-Dragonsong War
+        icon: '71000'
     partQuestNo: 22
   - name: A Safe Place to Hide
     level: 63
@@ -816,7 +837,9 @@ quests:
       - location: Upper La Noscea
         coords: (25.6, 22.3)
         name: Speak with Alka Zolka.
-    soloDuty: null
+    soloDuty:
+      levelSync: 70
+      id: '5014'
     unlocks:
       - id: '7437'
         name: Aetherpact
@@ -868,6 +891,19 @@ quests:
       - id: 2314
         name: Flying Colors IV
         type: achievement
+    requires:
+      - name: The Soul of Temperance
+        level: 80
+        rowId: 68808
+        questId: LucKba251_03272
+        genre: Healer Role Quests (Shadowbringers)
+        icon: '71140'
+      - name: Shadowbringers
+        level: 80
+        rowId: 69190
+        questId: LucKmf111_03654
+        genre: Shadowbringers
+        icon: '71000'
     partQuestNo: 27
 
 
