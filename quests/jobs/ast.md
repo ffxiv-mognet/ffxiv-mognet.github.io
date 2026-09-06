@@ -3,6 +3,9 @@ layout: quest-table
 expansion: Job Quests
 title: Astrologian
 permalink: /quests/jobs/astrologian
+links:
+  previous: /quests
+  next: /quests/role/shadowbringers/healer
 quests:
   - name: What's Your Sign
     level: 50
@@ -14,37 +17,14 @@ quests:
       location: The Pillars
       coords: (15.3, 10.0)
       name: Jannequinard
-    steps:
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
     partQuestNo: 1
   - name: Stairway to the Heavens
     level: 50
     rowId: 67548
     questId: JobAst300_02012
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -74,7 +54,9 @@ quests:
     level: 30
     rowId: 67549
     questId: JobAst301_02013
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -90,12 +72,15 @@ quests:
     soloDuty:
       levelSync: 34
       timeLimit: 30
+      id: '143'
     partQuestNo: 3
   - name: Hanging in the Balance
     level: 35
     rowId: 67550
     questId: JobAst350_02014
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -125,7 +110,9 @@ quests:
     level: 40
     rowId: 67551
     questId: JobAst400_02015
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -145,7 +132,9 @@ quests:
     level: 40
     rowId: 67552
     questId: JobAst401_02016
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -176,12 +165,15 @@ quests:
     soloDuty:
       levelSync: 44
       timeLimit: 30
+      id: '144'
     partQuestNo: 6
   - name: Ewer Right
     level: 45
     rowId: 67553
     questId: JobAst450_02017
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -206,6 +198,7 @@ quests:
     soloDuty:
       levelSync: 49
       timeLimit: 30
+      id: '120'
     unlocks:
       - id: '3615'
         name: Gravity
@@ -216,7 +209,9 @@ quests:
     level: 50
     rowId: 67554
     questId: JobAst500_02018
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -236,7 +231,9 @@ quests:
     level: 50
     rowId: 67555
     questId: JobAst501_02019
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -261,6 +258,7 @@ quests:
     soloDuty:
       levelSync: 52
       timeLimit: 30
+      id: '119'
     unlocks:
       - id: 1153
         name: The Stars in Our Faults I
@@ -270,7 +268,9 @@ quests:
     level: 50
     rowId: 67556
     questId: JobAst502_02020
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: Coerthas Central Highlands
@@ -300,7 +300,9 @@ quests:
     level: 52
     rowId: 67557
     questId: JobAst520_02021
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -339,7 +341,9 @@ quests:
     level: 54
     rowId: 67558
     questId: JobAst540_02022
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -371,7 +375,9 @@ quests:
     level: 56
     rowId: 67559
     questId: JobAst560_02023
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -396,12 +402,15 @@ quests:
     soloDuty:
       levelSync: 58
       timeLimit: 30
+      id: '121'
     partQuestNo: 13
   - name: Trumped
     level: 58
     rowId: 67560
     questId: JobAst580_02024
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -442,7 +451,9 @@ quests:
     level: 60
     rowId: 67561
     questId: JobAst600_02025
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -467,6 +478,7 @@ quests:
     soloDuty:
       levelSync: 60
       timeLimit: 30
+      id: '141'
     unlocks:
       - id: '16553'
         name: Celestial Opposition
@@ -480,7 +492,9 @@ quests:
     level: 60
     rowId: 67945
     questId: JobAst601_02409
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -496,12 +510,21 @@ quests:
       - location: The Pillars
         coords: (15.1, 9.9)
         name: Return to the Athenaeum Astrologicum in Ishgard and speak with Leveva.
+    requires:
+      - name: The Far Edge of Fate
+        level: 60
+        rowId: 67895
+        questId: HeaVng104_02359
+        genre: Post-Dragonsong War
+        icon: '71000'
     partQuestNo: 16
   - name: Ride Like the Wind
     level: 63
     rowId: 67946
     questId: JobAst630_02410
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -525,7 +548,9 @@ quests:
     level: 65
     rowId: 67947
     questId: JobAst650_02411
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: The Pillars
@@ -553,12 +578,15 @@ quests:
     soloDuty:
       levelSync: 67
       timeLimit: 30
+      id: '154'
     partQuestNo: 18
   - name: Behind Door Number Two
     level: 68
     rowId: 67948
     questId: JobAst680_02412
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: Kugane
@@ -585,7 +613,9 @@ quests:
     level: 70
     rowId: 67949
     questId: JobAst700_02413
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71140'
     issuer:
       location: Kugane
@@ -610,6 +640,7 @@ quests:
     soloDuty:
       levelSync: 70
       timeLimit: 30
+      id: '156'
     unlocks:
       - id: 1809
         name: The Stars in Our Faults III
@@ -619,7 +650,9 @@ quests:
     level: 80
     rowId: 68758
     questId: LucKbc013_03222
-    genre: Astrologian Quests
+    genre:
+      id: '188'
+      name: Astrologian Quests
     icon: '71020'
     issuer:
       location: The Pillars
@@ -651,6 +684,19 @@ quests:
       - id: 2318
         name: The Stars in Our Faults IV
         type: achievement
+    requires:
+      - name: The Soul of Temperance
+        level: 80
+        rowId: 68808
+        questId: LucKba251_03272
+        genre: Healer Role Quests (Shadowbringers)
+        icon: '71140'
+      - name: Shadowbringers
+        level: 80
+        rowId: 69190
+        questId: LucKmf111_03654
+        genre: Shadowbringers
+        icon: '71000'
     partQuestNo: 21
 
 

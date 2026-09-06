@@ -3,12 +3,17 @@ layout: quest-table
 expansion: Job Quests
 title: Sage
 permalink: /quests/jobs/sage
+links:
+  previous: /quests
+  next: /quests/role/shadowbringers/healer
 quests:
   - name: Sage's Path
     level: 70
     rowId: 69603
     questId: AktKbb101_04067
-    genre: Sage Quests
+    genre:
+      id: '193'
+      name: Sage Quests
     icon: '71140'
     issuer:
       location: Limsa Lominsa Lower Decks
@@ -26,7 +31,9 @@ quests:
     level: 70
     rowId: 69604
     questId: AktKbb102_04068
-    genre: Sage Quests
+    genre:
+      id: '193'
+      name: Sage Quests
     icon: '71140'
     issuer:
       location: Middle La Noscea
@@ -60,13 +67,17 @@ quests:
       - location: Idyllshire
         coords: (6.1, 5.7)
         name: Speak with Lalah Jinjahl in Idyllshire.
-    soloDuty: null
+    soloDuty:
+      levelSync: 70
+      id: '5052'
     partQuestNo: 2
   - name: Sands of Despair
     level: 73
     rowId: 69605
     questId: AktKbb111_04069
-    genre: Sage Quests
+    genre:
+      id: '193'
+      name: Sage Quests
     icon: '71140'
     issuer:
       location: Idyllshire
@@ -102,7 +113,9 @@ quests:
     level: 75
     rowId: 69606
     questId: AktKbb121_04070
-    genre: Sage Quests
+    genre:
+      id: '193'
+      name: Sage Quests
     icon: '71140'
     issuer:
       location: Idyllshire
@@ -129,7 +142,9 @@ quests:
     level: 78
     rowId: 69607
     questId: AktKbb131_04071
-    genre: Sage Quests
+    genre:
+      id: '193'
+      name: Sage Quests
     icon: '71140'
     issuer:
       location: Idyllshire
@@ -159,7 +174,9 @@ quests:
     level: 80
     rowId: 69608
     questId: AktKbb141_04072
-    genre: Sage Quests
+    genre:
+      id: '193'
+      name: Sage Quests
     icon: '71140'
     issuer:
       location: Idyllshire
@@ -178,7 +195,9 @@ quests:
       - location: Idyllshire
         coords: (6.1, 5.7)
         name: Speak with Loifa in Idyllshire.
-    soloDuty: null
+    soloDuty:
+      levelSync: 80
+      id: '5056'
     unlocks:
       - id: '24311'
         name: Panhaima
@@ -188,6 +207,4 @@ quests:
         name: Sage, Heal Thyself
         type: achievement
     partQuestNo: 6
-
-
 ---
