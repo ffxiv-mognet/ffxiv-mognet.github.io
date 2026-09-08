@@ -455,6 +455,111 @@ quests:
         name: Trail to the Heavens
         type: achievement
     partQuestNo: 14
+  - name: A Winter's Dream
+    level: 100
+    rowId: 71011
+    questId: KinGml101_05475
+    genre:
+      id: '15'
+      name: Winter's Prelude
+    icon: '71000'
+    issuer:
+      location: The Rising Stones
+      coords: (6.1, 5.9)
+      name: Tataru
+    steps:
+      - location: Foundation
+        coords: (10.8, 12.2)
+        name: Search for Estinien at the designated location in Ishgard.
+      - location: The Rising Stones
+        coords: (6.1, 5.9)
+        name: Speak with Tataru in the Rising Stones.
+      - location: Unmoored Isle
+        coords: (6.2, 6.6)
+        name: Speak with Tataru.
+      - location: Unmoored Isle
+        coords: (6.3, 6.7)
+        name: Speak with Alphinaud.
+    partQuestNo: 15
+  - name: A Rush of Cold Wind
+    level: 100
+    rowId: 71012
+    questId: KinGml102_05476
+    genre:
+      id: '15'
+      name: Winter's Prelude
+    icon: '71000'
+    issuer:
+      location: Unmoored Isle
+      coords: (6.2, 6.7)
+      name: Estinien
+    steps:
+      - location: Unmoored Isle
+        coords: (6.5, 6.5)
+        name: Investigate the surroundings.
+      - location: Unmoored Isle
+        coords: (6.1, 5.4)
+        name: Speak with Estinien.
+      - location: Unmoored Isle
+        coords: (6.1, 5.4)
+        name: Speak with Estinien again.
+      - location: Unmoored Isle
+        coords: (6.1, 5.8)
+        name: Speak with Estinien again.
+      - location: Unmoored Isle
+        coords: (6.1, 5.8)
+        name: Speak with Alphinaud.
+    soloDuty:
+      levelSync: 100
+      id: '5085'
+    partQuestNo: 16
+  - name: The World Locked in Ice
+    level: 100
+    rowId: 71013
+    questId: KinGml103_05477
+    genre:
+      id: '15'
+      name: Winter's Prelude
+    icon: '71000'
+    issuer:
+      location: Unmoored Isle
+      coords: (6.1, 5.7)
+      name: Visna
+    steps:
+      - location: Unmoored Isle
+        coords: (6.1, 5.7)
+        name: Speak with Visna.
+      - location: Unmoored Isle
+        coords: (6.6, 5.7)
+        name: Place low-quality fire crystals at the designated locations.
+      - location: Unmoored Isle
+        coords: (6.1, 5.7)
+        name: Speak with Visna.
+    partQuestNo: 17
+  - name: Windborne
+    level: 100
+    rowId: 71014
+    questId: KinGml104_05478
+    genre:
+      id: '15'
+      name: Winter's Prelude
+    icon: '71000'
+    issuer:
+      location: Unmoored Isle
+      coords: (6.1, 5.7)
+      name: Alphinaud
+    steps:
+      - location: The Rising Stones
+        coords: (6.2, 5.9)
+        name: Speak with Tataru in Dawn's Respite.
+      - location: The Rising Stones
+        coords: (6.1, 5.9)
+        name: Speak with Tataru again.
+    unlocks:
+      - id: 3943
+        name: Onward and Upward
+        type: achievement
+    partQuestNo: 18
 
 
 ---
