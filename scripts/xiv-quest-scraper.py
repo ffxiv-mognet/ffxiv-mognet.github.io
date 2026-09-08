@@ -235,7 +235,7 @@ class XivQuestScraper:
 
         return unlocks
 
-    def parse_requirements(self, row, script, requires_previous=False):
+    def parse_requirements(self, row, script, previousId=None):
         requirements = []
 
         i = 1
@@ -248,12 +248,13 @@ class XivQuestScraper:
                 if value is not None:
                     quest_ids.append(script[key])
             i += 1
-        if requires_previous:
-            quest_ids.append(row['PreviousQuest[0]'])
-        if row['PreviousQuest[1]'] != "0":
-            quest_ids.append(row['PreviousQuest[1]'])
-        if row['PreviousQuest[2]'] != "0":
-            quest_ids.append(row['PreviousQuest[2]'])
+
+        for j in range(0,3):
+            pid = row['PreviousQuest[{}]'.format(j)]
+            if pid == "0": 
+                continue
+            if previousId is None or pid != previousId:
+                quest_ids.append(pid)
 
         if len(quest_ids) > 0:
             requirements = list(map(lambda it: self.generate_questListItem(it), quest_ids))
@@ -349,7 +350,7 @@ class XivQuestScraper:
             'icon': icon_type['MapIconAvailable'],
         }
 
-    def quest_list_entry(self, row, requires_previous=False):
+    def quest_list_entry(self, row, previousId=None):
         script = extract_script(row)
         genre = self.sheets['JournalGenre'].byId(row['JournalGenre'])
         icon_type = self.sheets['EventIconType'].byId(row['EventIconType'])
@@ -382,7 +383,7 @@ class XivQuestScraper:
             out_row['unlocks'] = unlocks
 
         # requires?
-        requires = self.parse_requirements(row, script, requires_previous=requires_previous)
+        requires = self.parse_requirements(row, script, previousId=previousId)
         if len(requires) > 0:
             out_row['requires'] = requires
 
@@ -399,15 +400,18 @@ class XivQuestScraper:
 
         output = []
         partQuestNo = 1 
+        previousId = None
         for rowId in self.args.rowIds:
             row = self.sheets['Quest'].byId(rowId)
-            out_row = self.quest_list_entry(row, requires_previous=True)
+            out_row = self.quest_list_entry(row, previousId=previousId)
             out_row.update({
                 'partQuestNo': partQuestNo
             })
             if out_row['icon'] == "0":
                 out_row['icon'] = self.args.icon
             partQuestNo += 1
+            if not self.args.require_previous:
+                previousId = rowId
             output.append(out_row)
 
         if self.args.yaml:
@@ -434,12 +438,14 @@ class XivQuestScraper:
 
         count = 1
         output = []
+        previousId = None
         while cur_quest and count < self.args.count:
-            out_row = self.quest_list_entry(cur_quest)
+            out_row = self.quest_list_entry(cur_quest, previousId=previousId)
             output.append(out_row)
 
             count += 1
             next_matches = list(self.sheets['Quest'].findAll('PreviousQuest[0]', cur_quest['#']))
+            previousId = cur_quest['#']
             cur_quest = None
             for m in next_matches:
                 if m['JournalGenre'] == genre:
@@ -766,20 +772,15 @@ class XivQuestScraper:
 
         out_rows = []
         partQuestNo = 1
+        previousId = None
         for quest in sortedQuests:
-            row = self.quest_list_entry(quest)
+            row = self.quest_list_entry(quest, previousId=previousId)
             row.update({
                 'partQuestNo': partQuestNo
             })
             partQuestNo += 1
+            previousId = quest['#']
             out_rows.append(row)
-
-        # import pdb; pdb.set_trace()
-        # first = sortedQuests[0]
-        # prereqId = first.get('PreviousQuest[0]', None)
-        # if prereqId and prereqId != "0":
-        #     req = self.sheets['Quest'].byId(prereqId)
-        #     first['requires'] = self.generate_questListItem(req)
 
         output = {
             "quests": out_rows,
