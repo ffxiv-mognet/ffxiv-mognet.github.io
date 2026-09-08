@@ -31,6 +31,8 @@ storylines:
           link: /quests/msq/heavensward/part3
         - name: Part 4
           link: /quests/msq/heavensward/part4
+        - name: Aethercurrents
+          link: /quests/aethercurrents/heavensward
     - name: Stormblood
       parts:
         - name: Part 1
@@ -41,6 +43,8 @@ storylines:
           link: /quests/msq/stormblood/part3
         - name: Part 4
           link: /quests/msq/stormblood/part4
+        - name: Aethercurrents
+          link: /quests/aethercurrents/stormblood
     - name: Shadowbringers
       parts:
         - name: Part 1

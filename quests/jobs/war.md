@@ -409,7 +409,9 @@ quests:
     level: 50
     rowId: 66121
     questId: JobWar501_00585
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Eastern La Noscea
@@ -428,12 +430,22 @@ quests:
       - location: Upper La Noscea
         coords: (30.3, 21.8)
         name: Present the axe to Broken Mountain.
+    requires:
+      - name: Before the Dawn
+        level: 50
+        rowId: 65964
+        questId: GaiUse616_00428
+        genre: Seventh Astral Era
+        icon: '71000'
+        link: /quests/msq/realm-reborn/part6
     partQuestNo: 14
   - name: Duty and the Beast
     level: 52
     rowId: 66122
     questId: JobWar520_00586
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Upper La Noscea
@@ -449,12 +461,15 @@ quests:
     soloDuty:
       levelSync: 54
       timeLimit: 30
+      id: '102'
     partQuestNo: 15
   - name: The Bear Necessity
     level: 54
     rowId: 66124
     questId: JobWar540_00588
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Upper La Noscea
@@ -483,7 +498,9 @@ quests:
     level: 56
     rowId: 66132
     questId: JobWar560_00596
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Upper La Noscea
@@ -527,7 +544,9 @@ quests:
     level: 56
     rowId: 67213
     questId: JobWar561_01677
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Western La Noscea
@@ -548,7 +567,9 @@ quests:
     level: 58
     rowId: 66134
     questId: JobWar580_00598
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Upper La Noscea
@@ -589,7 +610,9 @@ quests:
     level: 60
     rowId: 66137
     questId: JobWar600_00601
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Upper La Noscea
@@ -614,6 +637,7 @@ quests:
     soloDuty:
       levelSync: 60
       timeLimit: 30
+      id: '103'
     unlocks:
       - id: '3550'
         name: Decimate
@@ -627,7 +651,9 @@ quests:
     level: 60
     rowId: 68436
     questId: JobWar601_02900
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Eastern La Noscea
@@ -643,13 +669,25 @@ quests:
       - location: Lower La Noscea
         coords: (25.8, 35.2)
         name: Speak with Broken Mountain.
-    soloDuty: null
+    soloDuty:
+      levelSync: 60
+      id: '5013'
+    requires:
+      - name: The Far Edge of Fate
+        level: 60
+        rowId: 67895
+        questId: HeaVng104_02359
+        genre: Post-Dragonsong War
+        icon: '71000'
+        link: /quests/msq/heavensward/part4 
     partQuestNo: 21
   - name: Field Training
     level: 63
     rowId: 68437
     questId: JobWar630_02901
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Lower La Noscea
@@ -676,7 +714,9 @@ quests:
     level: 65
     rowId: 68438
     questId: JobWar650_02902
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Lower La Noscea
@@ -709,7 +749,9 @@ quests:
     level: 68
     rowId: 68439
     questId: JobWar680_02903
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: Lower La Noscea
@@ -736,7 +778,9 @@ quests:
     level: 70
     rowId: 68440
     questId: JobWar700_02904
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71140'
     issuer:
       location: The Azim Steppe
@@ -770,7 +814,9 @@ quests:
       - location: Lower La Noscea
         coords: (25.8, 35.2)
         name: Speak with Broken Mountain at the Moraby Drydocks.
-    soloDuty: null
+    soloDuty:
+      levelSync: 70
+      id: '5015'
     unlocks:
       - id: '7389'
         name: Inner Release
@@ -784,7 +830,9 @@ quests:
     level: 80
     rowId: 68748
     questId: LucKbc003_03212
-    genre: Warrior Quests
+    genre:
+      id: '178'
+      name: Warrior Quests
     icon: '71020'
     issuer:
       location: Eastern La Noscea
@@ -816,6 +864,21 @@ quests:
       - id: 2308
         name: I Am the Warrior IV
         type: achievement
+    requires:
+      - name: To Have Loved and Lost
+        level: 80
+        rowId: 68784
+        questId: LucKba151_03248
+        genre: Tank Role Quests (Shadowbringers)
+        icon: '71140'
+        link: /quests/role/shadowbringers/tank
+      - name: Shadowbringers
+        level: 80
+        rowId: 69190
+        questId: LucKmf111_03654
+        genre: Shadowbringers
+        icon: '71000'
+        link: /quests/msq/shadowbringers/part4 
     partQuestNo: 26
 
 

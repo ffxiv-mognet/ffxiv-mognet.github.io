@@ -919,11 +919,6 @@ quests:
       - location: Azys Lla
         coords: (9.5, 11.2)
         name: Speak with Cid.
-    requires:
-      - name: My Little Chocobo
-        link: /quests/msq/realm-reborn/part2
-        level: 20
-        icon: '71140'
     partQuestNo: 40
   - name: Systematic Exploration
     level: 59

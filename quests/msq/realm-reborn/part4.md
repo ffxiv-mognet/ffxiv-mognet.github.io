@@ -1007,6 +1007,64 @@ quests:
         coords: (22.0, 7.7)
         name: Report to Cid.
     partQuestNo: 45
+
+  - name: Acting the Part
+    level: 45
+    rowId: 66538
+    questId: GaiUsc602_01002
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
+    icon: '71000'
+    issuer:
+      location: Mor Dhona
+      coords: (22.5, 7.5)
+      name: Glaumunt
+    steps:
+      - location: Mor Dhona
+        coords: (11.3, 12.1)
+        name: Lie in wait at the specified location.
+      - location: Mor Dhona
+        coords: (22.5, 7.5)
+        name: Report to Glaumunt.
+    unlocks:
+      - id: '59'
+        name: Imperial Salute
+        type: emote
+    partQuestNo: 46
+  - name: Dressed for Conquest
+    level: 45
+    rowId: 69407
+    questId: XxaUsc603_03871
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
+    icon: '71000'
+    issuer:
+      location: Mor Dhona
+      coords: (22.5, 7.5)
+      name: Sark Malark
+    steps:
+      - location: Mor Dhona
+        coords: (12.1, 12.4)
+        name: Obtain uniforms from imperial soldiers.
+      - location: Mor Dhona
+        coords: (12.1, 12.4)
+        name: Obtain helms from imperial soldiers.
+      - location: Mor Dhona
+        coords: (22.5, 7.5)
+        name: Present the imperial equipment to Sark Malark.
+      - location: Mor Dhona
+        coords: (22.3, 5.5)
+        name: Deliver the imperial equipment to Eginolf for repair.
+      - location: Mor Dhona
+        coords: (22.5, 7.5)
+        name: Present the repaired equipment to Sark Malark.
+    partQuestNo: 47
+
+
+
+
   - name: Fool Me Twice
     level: 46
     rowId: 66540
@@ -1030,7 +1088,7 @@ quests:
     soloDuty:
       levelSync: 50
       timeLimit: 30
-    partQuestNo: 46
+    partQuestNo: 48
   - name: Every Little Thing She Does Is Magitek
     level: 46
     rowId: 66541
@@ -1081,7 +1139,7 @@ quests:
     unlocks:
       - name: Mor Dhona
         type: mountspeed
-    partQuestNo: 47
+    partQuestNo: 49
   - name: Escape from Castrum Centri
     level: 46
     rowId: 66057
@@ -1117,7 +1175,7 @@ quests:
     soloDuty:
       levelSync: 50
       timeLimit: 30
-    partQuestNo: 48
+    partQuestNo: 50
   - name: The Black Wolf's Ultimatum
     level: 46
     rowId: 66058
@@ -1136,25 +1194,13 @@ quests:
         coords: (6.9, 6.1)
         name: Speak with Minfilia at the Waking Sands.
     requires:
-      - name: My Little Chocobo (Twin Adder)
+      - name: My Little Chocobo
         level: 20
         rowId: 66236
         questId: SubFst120_00700
         genre: Gridanian Sidequests
         icon: '71140'
-      - name: My Little Chocobo (Maelstrom)
-        level: 20
-        rowId: 66237
-        questId: SubSea910_00701
-        genre: La Noscean Sidequests
-        icon: '71140'
-      - name: My Little Chocobo (Immortal Flames)
-        level: 20
-        rowId: 66238
-        questId: SubWil160_00702
-        genre: Ul'dahn Sidequests
-        icon: '71140'
-    partQuestNo: 49
+    partQuestNo: 51
   - name: Operation Archon
     level: 49
     rowId: 70057
@@ -1184,26 +1230,7 @@ quests:
         coords: (12.1, 11.9)
         name: Report to the Allied communications officer.
     soloDuty: null
-    requires:
-      - name: My Little Chocobo (Twin Adder)
-        level: 20
-        rowId: 66236
-        questId: SubFst120_00700
-        genre: Gridanian Sidequests
-        icon: '71140'
-      - name: My Little Chocobo (Maelstrom)
-        level: 20
-        rowId: 66237
-        questId: SubSea910_00701
-        genre: La Noscean Sidequests
-        icon: '71140'
-      - name: My Little Chocobo (Immortal Flames)
-        level: 20
-        rowId: 66238
-        questId: SubWil160_00702
-        genre: Ul'dahn Sidequests
-        icon: '71140'
-    partQuestNo: 50
+    partQuestNo: 52
   - name: A Hero in Need
     level: 49
     rowId: 66573
@@ -1218,7 +1245,7 @@ quests:
       - location: Northern Thanalan
         coords: (22.2, 29.9)
         name: Report to Cracked Fist at Camp Bluefog.
-    partQuestNo: 51
+    partQuestNo: 53
   - name: Hearts on Fire
     level: 49
     rowId: 69408
@@ -1239,7 +1266,7 @@ quests:
       - location: Northern Thanalan
         coords: (20.9, 22.1)
         name: Go to Edelstein and /psych him up.
-    partQuestNo: 52
+    partQuestNo: 54
   - name: Rock the Castrum
     level: 50
     rowId: 69409
@@ -1265,7 +1292,7 @@ quests:
         type: dungeon
         levelRequired: 50
         levelSync: 50
-    partQuestNo: 53
+    partQuestNo: 55
   - name: The Ultimate Weapon
     level: 50
     rowId: 70058
@@ -1321,7 +1348,7 @@ quests:
         type: mountspeed
       - name: Aether Current
         type: aethercurrent
-    partQuestNo: 54
+    partQuestNo: 56
 
 
 ---
