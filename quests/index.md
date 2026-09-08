@@ -334,6 +334,8 @@ storylines:
       parts:
         - name: Blue Mage
           link: /quests/jobs/blu
+        - name: Beastmaster
+          link: /quests/jobs/beastmaster
 ---
 
 

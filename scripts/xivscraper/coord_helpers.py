@@ -47,4 +47,6 @@ def readable_contenttype(contenttype):
         return "trial"
     if c == 2:
         return "dungeon"
+    if c == 40:
+        return "crucible-unbroken"
     return contenttype

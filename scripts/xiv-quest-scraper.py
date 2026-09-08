@@ -235,18 +235,43 @@ class XivQuestScraper:
 
         return unlocks
 
-    def parse_requirements(self, script):
-        prefixes = ['QST_CHECK_{:02d}', 'QST_COMP_CHK{:01d}']
-        i = 1
-        running = True
+    def parse_requirements(self, row, script, requires_previous=False):
         requirements = []
+
+        i = 1
+        prefixes = ['QST_CHECK_{:02d}', 'QST_COMP_CHK{:01d}']
+        quest_ids = []
         while i < 9: # TODO: better determine when to finish?
             for prefix in prefixes:
                 key = prefix.format(i)
                 value = script.get(key, None)
                 if value is not None:
-                    requirements.append(script[key])
+                    quest_ids.append(script[key])
             i += 1
+        if requires_previous:
+            quest_ids.append(row['PreviousQuest[0]'])
+        if row['PreviousQuest[1]'] != "0":
+            quest_ids.append(row['PreviousQuest[1]'])
+        if row['PreviousQuest[2]'] != "0":
+            quest_ids.append(row['PreviousQuest[2]'])
+
+        if len(quest_ids) > 0:
+            requirements = list(map(lambda it: self.generate_questListItem(it), quest_ids))
+
+        # import pdb; pdb.set_trace()
+        content_idx = 0
+        while 'CHECK_CONTENT{}'.format(content_idx) in script:
+            icId = script.get('CHECK_CONTENT{}'.format(content_idx), None)
+            if icId is None: 
+                break
+
+            cfc = self.sheets['ContentFinderCondition'].find(
+                lambda it: it["Content"] == icId and it["ContentLinkType"] == '1')
+            # ic = self.sheets['InstanceContent'].byId(icId)
+            # cfc = self.sheets['ContentFinderCondition'].byId(ic['ContentFinderCondition'])
+            if cfc:
+                requirements.append(self.format_contentfindercondition(cfc))
+            content_idx += 1
         return requirements
 
     def location_coords_from_level(self, levelId, detailed = False):
@@ -357,17 +382,9 @@ class XivQuestScraper:
             out_row['unlocks'] = unlocks
 
         # requires?
-        requires = self.parse_requirements(script)
-        if requires_previous:
-            requires.append(row['PreviousQuest[0]'])
-            
-        if row['PreviousQuest[1]'] != "0":
-            requires.append(row['PreviousQuest[1]'])
-        if row['PreviousQuest[2]'] != "0":
-            requires.append(row['PreviousQuest[2]'])
-
+        requires = self.parse_requirements(row, script, requires_previous=requires_previous)
         if len(requires) > 0:
-            out_row['requires'] = list(map(lambda it: self.generate_questListItem(it), requires))
+            out_row['requires'] = requires
 
 
         return out_row
@@ -1255,64 +1272,6 @@ class XivQuestScraper:
             'currencies': self.build_shop_index(flattened, lambda it: it['currency'])
         }
         return output
-
-
-    def cmd_dumpQuest(self):
-        self.argparser.add_argument("questId")
-        self.argparser.add_argument("--yaml", action="store_true", default=True)
-        self.argparser.add_argument("--raw", action="store_true", default=False)
-        self.args = self.argparser.parse_args()
-        self.init_sheets()
-
-        quest = self.sheets['Quest'].byId(self.args.questId)
-
-
-        issuer = self.parse_issuer(quest)
-        steps = self.parse_steps(quest)
-
-        script = extract_script(quest)
-        genre = self.sheets['JournalGenre'].byId(quest['JournalGenre'])
-        icon_type = self.sheets['EventIconType'].byId(quest['EventIconType'])
-
-        front_matter = {
-            'output': False,
-            "layout": "quest",
-            "steps": steps,
-            "rowId": int(quest["#"]),
-            "questId": quest["Id"],
-            "name": quest["Name"],
-            "level": int(quest["ClassJobLevel[0]"]),
-            "issuer": issuer,
-            'genre': genre['Name'],
-            'icon': icon_type['MapIcon{Available}'],
-            'action': quest["ActionReward"],
-        }
-        if self.args.raw:
-            front_matter['raw'] = {
-                'script': script,
-                'PreviousQuest': extract_array1d(quest, "PreviousQuest"),
-                'PreviousQuestJoin': quest['PreviousQuestJoin'],
-                'QuestLock': extract_array1d(quest, "QuestLock"),
-                'QuestLockJoin': quest['QuestLockJoin'],
-            }
-
-        # has solo duty?        
-        battle_id = script.get('QUESTBATTLE0', None)
-        if battle_id is not None:
-            front_matter['soloDuty'] = self.format_battle(quest, battle_id)
-
-        unlocks = self.parse_unlocks(quest, script)
-        if len(unlocks) > 0:
-            front_matter['unlocks'] = unlocks
-
-        requires = self.parse_requirements(script)
-        if len(requires) > 0:
-            front_matter['requires'] = list(map(lambda it: self.generate_questListItem(it), requires))
-
-        if self.args.yaml:
-            print("---\n{}\n---".format(dump_indented_yaml(front_matter)))
-        else:
-            pprint.pprint(ordered)
 
 
 if __name__ == "__main__":
