@@ -1154,6 +1154,55 @@ quests:
         coords: (23.6, 9.9)
         name: Speak with Aranami.
     partQuestNo: 42
+  - name: The Solace of the Sea
+    level: 62
+    rowId: 68217
+    questId: StmBdz209_02681
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Ruby Sea
+      coords: (23.2, 7.1)
+      name: Afumi
+    steps:
+      - location: The Ruby Sea
+        coords: (22.3, 8.8)
+        name: Speak with Aokumo.
+      - location: The Ruby Sea
+        coords: (23.2, 4.2)
+        name: Give the medicine to the seasick Doman recruit.
+      - location: The Ruby Sea
+        coords: (23.2, 7.1)
+        name: Speak with Afumi.
+    partQuestNo: 43
+  - name: The Arrows of Misfortune
+    level: 62
+    rowId: 68489
+    questId: StmBda327_02953
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Ruby Sea
+      coords: (22.6, 9.9)
+      name: Kajika
+    steps:
+      - location: The Ruby Sea
+        coords: (13.6, 10.6)
+        name: Search for the gyuki carcass.
+      - location: The Ruby Sea
+        coords: (14.1, 10.8)
+        name: Recover the usable arrows.
+      - location: The Ruby Sea
+        coords: (14.1, 10.8)
+        name: Butcher the gyuki's tail for meat.
+      - location: The Ruby Sea
+        coords: (22.6, 9.9)
+        name: Deliver the arrows and meat to Kajika.
+    partQuestNo: 44
   - name: Alisaie's Stones
     level: 62
     rowId: 68017
@@ -1206,7 +1255,7 @@ quests:
         questId: StmBda327_02953
         genre: Stormblood
         icon: '71000'
-    partQuestNo: 43
+    partQuestNo: 45
   - name: Under the Sea
     level: 62
     rowId: 68018
@@ -1232,7 +1281,7 @@ quests:
       - location: The Ruby Sea
         coords: (29.9, 17.0)
         name: Speak with Alisaie.
-    partQuestNo: 44
+    partQuestNo: 46
   - name: Of Kojin and Kami
     level: 62
     rowId: 68019
@@ -1258,7 +1307,7 @@ quests:
       - location: The Ruby Sea
         coords: (29.9, 17.0)
         name: Deliver the unkiu carapace to Soroban.
-    partQuestNo: 45
+    partQuestNo: 47
   - name: In Soroban We Trust
     level: 63
     rowId: 68020
@@ -1278,7 +1327,7 @@ quests:
       - location: The Ruby Sea
         coords: (21.8, 18.6)
         name: Speak with Lyse.
-    partQuestNo: 46
+    partQuestNo: 48
   - name: Forever and Ever Apart
     level: 63
     rowId: 68021
@@ -1298,7 +1347,7 @@ quests:
       - location: The Ruby Sea
         coords: (21.9, 18.5)
         name: Speak with Alisaie.
-    partQuestNo: 47
+    partQuestNo: 49
   - name: In Darkness the Magatama Dreams
     level: 63
     rowId: 68022
@@ -1324,7 +1373,7 @@ quests:
       - location: The Ruby Sea
         coords: (16.9, 25.2)
         name: "Show the Yasakani\u2013no\u2013Magatama to Alisaie."
-    partQuestNo: 48
+    partQuestNo: 50
   - name: The Whims of the Divine
     level: 63
     rowId: 68023
@@ -1344,7 +1393,7 @@ quests:
       - location: The Ruby Sea
         coords: (27.9, 16.5)
         name: Speak with Alisaie.
-    partQuestNo: 49
+    partQuestNo: 51
   - name: Breaking and Delivering
     level: 63
     rowId: 68024
@@ -1376,7 +1425,7 @@ quests:
       - location: The Ruby Sea
         coords: (5.5, 24.4)
         name: Speak with Alisaie.
-    partQuestNo: 50
+    partQuestNo: 52
   - name: The Lord of the Revel
     level: 63
     rowId: 68025
@@ -1420,7 +1469,7 @@ quests:
         ilevelSync: 0
       - name: The Ruby Sea
         type: mountspeed
-    partQuestNo: 51
+    partQuestNo: 53
   - name: Tide Goes in, Imperials Go Out
     level: 63
     rowId: 68026
@@ -1450,7 +1499,7 @@ quests:
       - id: 1789
         name: Unexplained
         type: achievement
-    partQuestNo: 52
+    partQuestNo: 54
   - name: A Silence in Three Parts
     level: 63
     rowId: 68027
@@ -1473,7 +1522,7 @@ quests:
       - location: Yanxia
         coords: (32.0, 18.3)
         name: Follow Gosetsu.
-    partQuestNo: 53
+    partQuestNo: 55
   - name: Life after Doma
     level: 64
     rowId: 68028
@@ -1499,7 +1548,7 @@ quests:
       - location: Yanxia
         coords: (27.0, 13.9)
         name: Follow Gosetsu.
-    partQuestNo: 54
+    partQuestNo: 56
   - name: A Glimpse of Madness
     level: 64
     rowId: 68470
@@ -1522,7 +1571,7 @@ quests:
       - location: The House of the Fierce
         coords: (5.1, 5.8)
         name: Speak with Yugiri.
-    partQuestNo: 55
+    partQuestNo: 57
   - name: The Stubborn Remainder
     level: 64
     rowId: 68029
@@ -1545,7 +1594,7 @@ quests:
       - location: Yanxia
         coords: (31.2, 19.1)
         name: Speak with Yugiri.
-    partQuestNo: 56
+    partQuestNo: 58
   - name: The Ones We Leave Behind
     level: 64
     rowId: 68030
@@ -1577,7 +1626,7 @@ quests:
       - location: Yanxia
         coords: (29.4, 19.5)
         name: Speak with Yugiri.
-    partQuestNo: 57
+    partQuestNo: 59
   - name: A New Ruby Tithe
     level: 64
     rowId: 68031
@@ -1619,7 +1668,7 @@ quests:
       - location: Yanxia
         coords: (29.6, 34.0)
         name: Follow Yugiri.
-    partQuestNo: 58
+    partQuestNo: 60
   - name: The Will to Live
     level: 64
     rowId: 68032
@@ -1657,7 +1706,7 @@ quests:
     unlocks:
       - name: Yanxia
         type: mountspeed
-    partQuestNo: 59
+    partQuestNo: 61
   - name: Daughter of the Deep
     level: 64
     rowId: 68033
@@ -1695,7 +1744,7 @@ quests:
       - location: Yanxia
         coords: (27.0, 13.9)
         name: Return with Yugiri to the House of the Fierce.
-    partQuestNo: 60
+    partQuestNo: 62
   - name: Path of No Return
     level: 64
     rowId: 68471
@@ -1715,7 +1764,7 @@ quests:
       - location: Yanxia
         coords: (12.2, 32.2)
         name: Rendezvous with Yugiri at Yuzuka Manor.
-    partQuestNo: 61
+    partQuestNo: 63
   - name: The Time between the Seconds
     level: 64
     rowId: 68034
@@ -1745,7 +1794,7 @@ quests:
       levelSync: 66
       timeLimit: 30
       id: '163'
-    partQuestNo: 62
+    partQuestNo: 64
   - name: All the Little Angels
     level: 64
     rowId: 68035
@@ -1775,7 +1824,7 @@ quests:
       - id: 1790
         name: Put Your Wings Up
         type: achievement
-    partQuestNo: 63
+    partQuestNo: 65
 
 
 
