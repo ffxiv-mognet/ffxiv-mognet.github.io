@@ -120,10 +120,12 @@ layout: with-nav
               {% endfor %}
               {% for unlock in site.data.questunlocks.unlocks[quest.rowId] %}
                 <div>
+                  {% if unlock.link %}<a href="{{unlock.link}}">{% endif %}
                     <span class="icon-text">
                         <span class="icon"><i class="{{unlock.type}}"></i></span>
                         <span>{{unlock.name}}</span>
                     </span>
+                  {% if unlock.link %}</a>{% endif %}
                 </div>
               {% endfor %}
           </td>

@@ -44,6 +44,7 @@ quests:
         questId: StmBda606_02532
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part2
     partQuestNo: 1
   - name: Magiteknical Failure
     level: 60
@@ -81,6 +82,7 @@ quests:
         questId: StmBda112_02452
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 2
   - name: The Hidden Truth
     level: 61
@@ -121,6 +123,7 @@ quests:
         questId: StmBda136_02466
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 3
   - name: Unexpected Guests
     level: 67
@@ -158,6 +161,7 @@ quests:
         questId: StmBda605_02531
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part2
     partQuestNo: 4
   - name: Eyes Bigger than Her Stomach
     level: 67
@@ -189,6 +193,7 @@ quests:
         questId: StmBda604_02530
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part2
     partQuestNo: 5
 
 

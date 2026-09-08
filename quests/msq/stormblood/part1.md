@@ -177,6 +177,17 @@ quests:
       - location: The Fringes
         coords: (9.3, 11.3)
         name: Speak with Raubahn.
+    unlocks:
+      - name: Magiteknical Failure
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-fringes
+        level: 60
+        rowId: 68175
+        questId: StmBdz005_02639
+        genre:
+          id: '125'
+          name: Fringes Sidequests
+        icon: '71140'
     partQuestNo: 7
   - name: Best Served with Cold Steel
     level: 60
@@ -225,6 +236,224 @@ quests:
         coords: (14.6, 9.4)
         name: Speak with M'naago at Rhalgr's Reach.
     partQuestNo: 9
+
+  - name: A Familiar Face Forgotten
+    level: 60
+    rowId: 67991
+    questId: StmBda121_02455
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: Rhalgr's Reach
+      coords: (14.6, 9.3)
+      name: Meffrid
+    steps:
+      - location: Rhalgr's Reach
+        coords: (13.5, 11.0)
+        name: Speak with Meffrid.
+      - location: The Peaks
+        coords: (8.6, 5.7)
+        name: Journey to the Peaks.
+      - location: The Peaks
+        coords: (8.6, 5.8)
+        name: Speak with Meffrid.
+      - location: The Peaks
+        coords: (13.7, 8.7)
+        name: Follow Meffrid.
+      - location: The Peaks
+        coords: (22.2, 6.6)
+        name: Speak with Meffrid.
+    requires:
+      - name: A Bargain Struck
+        level: 60
+        rowId: 67986
+        questId: StmBda105_02450
+        genre: Stormblood
+        icon: '71000'
+    partQuestNo: 10
+  - name: The Prodigal Daughter
+    level: 60
+    rowId: 67992
+    questId: StmBda122_02456
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Peaks
+      coords: (22.2, 6.6)
+      name: Meffrid
+    steps:
+      - location: The Peaks
+        coords: (24.4, 6.8)
+        name: Speak with Raganfrid.
+      - location: The Peaks
+        coords: (23.2, 7.7)
+        name: Speak with Meffrid.
+    partQuestNo: 11
+  - name: Hard Country
+    level: 60
+    rowId: 68490
+    questId: StmBda127_02954
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Peaks
+      coords: (23.1, 7.1)
+      name: Griseldis
+    steps:
+      - location: The Peaks
+        coords: (18.8, 7.3)
+        name: Slay a chapuli for its horn.
+      - location: The Peaks
+        coords: (11.1, 7.8)
+        name: Slay a Gyr Abanian hornbill for one of its talons.
+      - location: The Peaks
+        coords: (23.1, 7.1)
+        name: Deliver the horn and talon to Griseldis.
+    partQuestNo: 12
+
+  - name: Death by a Thousand Rocks
+    level: 60
+    rowId: 68491
+    questId: StmBda128_02955
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Peaks
+      coords: (23.7, 7.1)
+      name: Angry Coeurl
+    steps:
+      - location: The Peaks
+        coords: (6.1, 15.4)
+        name: Speak with Frightened Coeurl in Grymm & Enid.
+      - location: The Peaks
+        coords: (6.2, 15.5)
+        name: Pick up the unconscionably heavy sacks.
+      - location: The Peaks
+        coords: (23.7, 7.1)
+        name: Deliver the unconscionably heavy sacks to Angry Coeurl.
+    partQuestNo: 13
+  - name: A Life More Ordinary
+    level: 60
+    rowId: 67993
+    questId: StmBda123_02457
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Peaks
+      coords: (23.4, 6.3)
+      name: Meffrid
+    steps:
+      - location: The Peaks
+        coords: (23.0, 5.8)
+        name: Speak with Lyse.
+      - location: The Peaks
+        coords: (23.2, 7.7)
+        name: Speak with Meffrid.
+      - location: The Peaks
+        coords: (23.2, 7.0)
+        name: Speak with Meffrid.
+    requires:
+      - name: Hard Country
+        level: 60
+        rowId: 68490
+        questId: StmBda127_02954
+        genre: Stormblood
+        icon: '71000'
+      - name: Death by a Thousand Rocks
+        level: 60
+        rowId: 68491
+        questId: StmBda128_02955
+        genre: Stormblood
+        icon: '71000'
+    partQuestNo: 14
+  - name: The Color of Angry Qiqirn
+    level: 60
+    rowId: 67994
+    questId: StmBda124_02458
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Peaks
+      coords: (23.2, 7.0)
+      name: Meffrid
+    steps:
+      - location: The Peaks
+        coords: (16.3, 13.8)
+        name: Search for Wercrata near the Ziggurat.
+      - location: The Peaks
+        coords: (15.8, 14.3)
+        name: Search the Ziggurat for Wercrata.
+      - location: The Peaks
+        coords: (15.8, 15.9)
+        name: Search the Ziggurat for Wercrata.
+      - location: The Peaks
+        coords: (15.8, 15.6)
+        name: Aid Wercrata.
+      - location: The Peaks
+        coords: (15.8, 15.7)
+        name: Speak with Lyse.
+    partQuestNo: 15
+  - name: The Black Wolf's Pups
+    level: 60
+    rowId: 67995
+    questId: StmBda125_02459
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Peaks
+      coords: (15.8, 15.7)
+      name: Lyse
+    steps:
+      - location: The Peaks
+        coords: (16.9, 13.7)
+        name: Search for Wercrata's trail near the Ziggurat.
+      - location: The Peaks
+        coords: (19.2, 14.2)
+        name: Follow Meffrid.
+      - location: The Peaks
+        coords: (18.6, 13.4)
+        name: Speak with Meffrid.
+    partQuestNo: 16
+  - name: Homeward Bound
+    level: 60
+    rowId: 67996
+    questId: StmBda126_02460
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: The Peaks
+      coords: (18.6, 13.4)
+      name: Meffrid
+    steps:
+      - location: The Peaks
+        coords: (24.4, 6.8)
+        name: Speak with Raganfrid.
+      - location: The Peaks
+        coords: (24.3, 6.8)
+        name: Speak with Meffrid.
+      - location: The Peaks
+        coords: (22.6, 6.8)
+        name: Search for Lyse.
+      - location: Rhalgr's Reach
+        coords: (14.6, 9.3)
+        name: Speak with Meffrid at Rhalgr's Reach.
+    partQuestNo: 17
   - name: Where Men Go as One
     level: 60
     rowId: 67997
@@ -242,13 +471,19 @@ quests:
         coords: (14.5, 9.4)
         name: Speak with M'naago.
     requires:
+      - name: Let Fill Your Hearts with Pride
+        level: 60
+        rowId: 67990
+        questId: StmBda114_02454
+        genre: Stormblood
+        icon: '71000'
       - name: Homeward Bound
         level: 60
         rowId: 67996
         questId: StmBda126_02460
         genre: Stormblood
         icon: '71000'
-    partQuestNo: 10
+    partQuestNo: 18
   - name: Future Rust, Future Dust
     level: 60
     rowId: 68171
@@ -268,7 +503,52 @@ quests:
       - location: Rhalgr's Reach
         coords: (14.2, 8.8)
         name: Return the well-worn log to Beves.
-    partQuestNo: 11
+    partQuestNo: 19
+
+
+  - name: A Dash of Green
+    level: 60
+    rowId: 68172
+    questId: StmBdz002_02636
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: Rhalgr's Reach
+      coords: (12.7, 10.9)
+      name: Ahelissa
+    steps:
+      - location: Rhalgr's Reach
+        coords: (14.2, 8.5)
+        name: Speak with Tebbe.
+      - location: Rhalgr's Reach
+        coords: (11.0, 8.9)
+        name: Search Rhalgr's Reach for herbs.
+      - location: Rhalgr's Reach
+        coords: (12.7, 10.9)
+        name: Deliver the Reach greens to Ahelissa.
+    partQuestNo: 20
+  - name: Ye Wayward Brothers
+    level: 60
+    rowId: 68173
+    questId: StmBdz003_02637
+    genre:
+      id: '6'
+      name: Stormblood
+    icon: '71000'
+    issuer:
+      location: Rhalgr's Reach
+      coords: (10.3, 10.9)
+      name: Ananta battlemaid
+    steps:
+      - location: Rhalgr's Reach
+        coords: (8.5, 8.3)
+        name: Search for the missing recruits.
+      - location: Rhalgr's Reach
+        coords: (10.3, 10.9)
+        name: Speak with the Ananta battlemaid.
+    partQuestNo: 21
   - name: Token of Faith
     level: 60
     rowId: 68174
@@ -289,6 +569,14 @@ quests:
         coords: (14.3, 9.3)
         name: Deliver the ward to the swarthy Resistance fighter.
     requires:
+      - name: Future Rust, Future Dust
+        level: 60
+        rowId: 68171
+        questId: StmBdz001_02635
+        genre:
+          id: '6'
+          name: Stormblood
+        icon: '71000'
       - name: A Dash of Green
         level: 60
         rowId: 68172
@@ -301,7 +589,8 @@ quests:
         questId: StmBdz003_02637
         genre: Stormblood
         icon: '71000'
-    partQuestNo: 12
+    partQuestNo: 22
+
   - name: Crossing the Velodyna
     level: 61
     rowId: 67998
@@ -327,7 +616,7 @@ quests:
       - location: The Fringes
         coords: (9.2, 11.4)
         name: Speak with Alisaie.
-    partQuestNo: 13
+    partQuestNo: 23
   - name: In Crimson It Began
     level: 61
     rowId: 67999
@@ -354,7 +643,7 @@ quests:
       levelSync: 63
       timeLimit: 30
       id: '155'
-    partQuestNo: 14
+    partQuestNo: 24
   - name: The Fires Fade
     level: 61
     rowId: 68000
@@ -374,7 +663,19 @@ quests:
       - location: Rhalgr's Reach
         coords: (8.5, 9.5)
         name: Bring Meffrid's charm to Conrad.
-    partQuestNo: 15
+    unlocks:
+      - name: Saint Sayer
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-peaks
+        level: 61
+        rowId: 68191
+        questId: StmBdz105_02655
+        genre:
+          id: '126'
+          name: Peaks Sidequests
+        icon: '71140'
+ 
+    partQuestNo: 25
   - name: Bereft of Hearth and Home
     level: 61
     rowId: 68001
@@ -397,7 +698,7 @@ quests:
       - location: Rhalgr's Reach
         coords: (9.5, 10.8)
         name: Give the medical supplies to the Flame courier.
-    partQuestNo: 16
+    partQuestNo: 26
   - name: Divide and Conquer
     level: 61
     rowId: 68002
@@ -420,7 +721,19 @@ quests:
       - location: The Fringes
         coords: (9.2, 11.4)
         name: Speak with Alphinaud.
-    partQuestNo: 17
+    unlocks:
+      - name: The Hidden Truth
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-fringes
+        level: 61
+        rowId: 68197
+        questId: StmBdz111_02661
+        genre:
+          id: '125'
+          name: Fringes Sidequests
+        icon: '71140'
+ 
+    partQuestNo: 27
   - name: Lies, Damn Lies, and Pirates
     level: 61
     rowId: 68003
@@ -440,7 +753,7 @@ quests:
       - location: Limsa Lominsa Upper Decks
         coords: (11.5, 10.5)
         name: Speak with Alphinaud.
-    partQuestNo: 18
+    partQuestNo: 28
   - name: Tales from the Far East
     level: 61
     rowId: 68004
@@ -463,7 +776,7 @@ quests:
       - location: Mor Dhona
         coords: (22.3, 8.5)
         name: Speak with Lyse in Revenant's Toll.
-    partQuestNo: 19
+    partQuestNo: 29
   - name: Not without Incident
     level: 61
     rowId: 68005
@@ -505,7 +818,7 @@ quests:
       - id: 1787
         name: Incidentally Speaking
         type: achievement
-    partQuestNo: 20
+    partQuestNo: 30
   - name: The Man from Ul'dah
     level: 61
     rowId: 68006
@@ -525,7 +838,7 @@ quests:
       - location: Kugane
         coords: (11.6, 10.4)
         name: Follow Hancock.
-    partQuestNo: 21
+    partQuestNo: 31
   - name: Where the Streets Are Paved with Koban
     level: 61
     rowId: 68007
@@ -548,7 +861,7 @@ quests:
       - location: Kugane
         coords: (13.1, 14.2)
         name: Follow Hancock.
-    partQuestNo: 22
+    partQuestNo: 32
   - name: By the Grace of Lord Lolorito
     level: 61
     rowId: 68008
@@ -571,7 +884,7 @@ quests:
       - location: Ruby Bazaar Offices
         coords: (6.1, 6.1)
         name: Speak with Alphinaud.
-    partQuestNo: 23
+    partQuestNo: 33
   - name: A Good Samurai Is Hard to Find
     level: 61
     rowId: 68009
@@ -603,7 +916,7 @@ quests:
       - location: Kugane
         coords: (10.6, 9.8)
         name: Speak with Lyse.
-    partQuestNo: 24
+    partQuestNo: 34
   - name: It's Probably a Trap
     level: 61
     rowId: 68010
@@ -638,7 +951,7 @@ quests:
     soloDuty:
       levelSync: 61
       id: '5005'
-    partQuestNo: 25
+    partQuestNo: 35
   - name: Making the Catfish Sing
     level: 61
     rowId: 68011
@@ -670,7 +983,7 @@ quests:
       - location: Kugane
         coords: (13.8, 9.2)
         name: Speak with Lyse.
-    partQuestNo: 26
+    partQuestNo: 36
   - name: Once More, to the Ruby Sea
     level: 62
     rowId: 68012
@@ -700,7 +1013,7 @@ quests:
       - id: 1788
         name: Destination Unknown
         type: achievement
-    partQuestNo: 27
+    partQuestNo: 37
   - name: Open Water
     level: 62
     rowId: 68013
@@ -723,7 +1036,7 @@ quests:
       - location: The Ruby Sea
         coords: (30.8, 37.3)
         name: Speak with Tansui.
-    partQuestNo: 28
+    partQuestNo: 38
   - name: Boys with Boats
     level: 62
     rowId: 68014
@@ -746,7 +1059,7 @@ quests:
       - location: The Ruby Sea
         coords: (30.0, 37.2)
         name: Search for Soroban.
-    partQuestNo: 29
+    partQuestNo: 39
   - name: To Bend with the Wind
     level: 62
     rowId: 68015
@@ -784,7 +1097,7 @@ quests:
       - location: The Ruby Sea
         coords: (20.3, 9.5)
         name: Follow Lyse.
-    partQuestNo: 30
+    partQuestNo: 40
   - name: Confederate Consternation
     level: 62
     rowId: 68016
@@ -817,7 +1130,7 @@ quests:
       - id: '154'
         name: Eastern Bow
         type: emote
-    partQuestNo: 31
+    partQuestNo: 41
   - name: The Last Voyage
     level: 62
     rowId: 68215
@@ -840,7 +1153,7 @@ quests:
       - location: The Ruby Sea
         coords: (23.6, 9.9)
         name: Speak with Aranami.
-    partQuestNo: 32
+    partQuestNo: 42
   - name: Alisaie's Stones
     level: 62
     rowId: 68017
@@ -873,6 +1186,14 @@ quests:
         coords: (23.0, 8.0)
         name: Speak with Rasho.
     requires:
+      - name: The Last Voyage
+        level: 62
+        rowId: 68215
+        questId: StmBdz207_02679
+        genre:
+          id: '6'
+          name: Stormblood
+        icon: '71000'
       - name: The Solace of the Sea
         level: 62
         rowId: 68217
@@ -885,7 +1206,7 @@ quests:
         questId: StmBda327_02953
         genre: Stormblood
         icon: '71000'
-    partQuestNo: 33
+    partQuestNo: 43
   - name: Under the Sea
     level: 62
     rowId: 68018
@@ -911,7 +1232,7 @@ quests:
       - location: The Ruby Sea
         coords: (29.9, 17.0)
         name: Speak with Alisaie.
-    partQuestNo: 34
+    partQuestNo: 44
   - name: Of Kojin and Kami
     level: 62
     rowId: 68019
@@ -937,7 +1258,7 @@ quests:
       - location: The Ruby Sea
         coords: (29.9, 17.0)
         name: Deliver the unkiu carapace to Soroban.
-    partQuestNo: 35
+    partQuestNo: 45
   - name: In Soroban We Trust
     level: 63
     rowId: 68020
@@ -957,7 +1278,7 @@ quests:
       - location: The Ruby Sea
         coords: (21.8, 18.6)
         name: Speak with Lyse.
-    partQuestNo: 36
+    partQuestNo: 46
   - name: Forever and Ever Apart
     level: 63
     rowId: 68021
@@ -977,7 +1298,7 @@ quests:
       - location: The Ruby Sea
         coords: (21.9, 18.5)
         name: Speak with Alisaie.
-    partQuestNo: 37
+    partQuestNo: 47
   - name: In Darkness the Magatama Dreams
     level: 63
     rowId: 68022
@@ -1003,7 +1324,7 @@ quests:
       - location: The Ruby Sea
         coords: (16.9, 25.2)
         name: "Show the Yasakani\u2013no\u2013Magatama to Alisaie."
-    partQuestNo: 38
+    partQuestNo: 48
   - name: The Whims of the Divine
     level: 63
     rowId: 68023
@@ -1023,7 +1344,7 @@ quests:
       - location: The Ruby Sea
         coords: (27.9, 16.5)
         name: Speak with Alisaie.
-    partQuestNo: 39
+    partQuestNo: 49
   - name: Breaking and Delivering
     level: 63
     rowId: 68024
@@ -1055,7 +1376,7 @@ quests:
       - location: The Ruby Sea
         coords: (5.5, 24.4)
         name: Speak with Alisaie.
-    partQuestNo: 40
+    partQuestNo: 50
   - name: The Lord of the Revel
     level: 63
     rowId: 68025
@@ -1099,7 +1420,7 @@ quests:
         ilevelSync: 0
       - name: The Ruby Sea
         type: mountspeed
-    partQuestNo: 41
+    partQuestNo: 51
   - name: Tide Goes in, Imperials Go Out
     level: 63
     rowId: 68026
@@ -1129,7 +1450,7 @@ quests:
       - id: 1789
         name: Unexplained
         type: achievement
-    partQuestNo: 42
+    partQuestNo: 52
   - name: A Silence in Three Parts
     level: 63
     rowId: 68027
@@ -1152,7 +1473,7 @@ quests:
       - location: Yanxia
         coords: (32.0, 18.3)
         name: Follow Gosetsu.
-    partQuestNo: 43
+    partQuestNo: 53
   - name: Life after Doma
     level: 64
     rowId: 68028
@@ -1178,7 +1499,7 @@ quests:
       - location: Yanxia
         coords: (27.0, 13.9)
         name: Follow Gosetsu.
-    partQuestNo: 44
+    partQuestNo: 54
   - name: A Glimpse of Madness
     level: 64
     rowId: 68470
@@ -1201,7 +1522,7 @@ quests:
       - location: The House of the Fierce
         coords: (5.1, 5.8)
         name: Speak with Yugiri.
-    partQuestNo: 45
+    partQuestNo: 55
   - name: The Stubborn Remainder
     level: 64
     rowId: 68029
@@ -1224,7 +1545,7 @@ quests:
       - location: Yanxia
         coords: (31.2, 19.1)
         name: Speak with Yugiri.
-    partQuestNo: 46
+    partQuestNo: 56
   - name: The Ones We Leave Behind
     level: 64
     rowId: 68030
@@ -1256,7 +1577,7 @@ quests:
       - location: Yanxia
         coords: (29.4, 19.5)
         name: Speak with Yugiri.
-    partQuestNo: 47
+    partQuestNo: 57
   - name: A New Ruby Tithe
     level: 64
     rowId: 68031
@@ -1298,7 +1619,7 @@ quests:
       - location: Yanxia
         coords: (29.6, 34.0)
         name: Follow Yugiri.
-    partQuestNo: 48
+    partQuestNo: 58
   - name: The Will to Live
     level: 64
     rowId: 68032
@@ -1336,7 +1657,7 @@ quests:
     unlocks:
       - name: Yanxia
         type: mountspeed
-    partQuestNo: 49
+    partQuestNo: 59
   - name: Daughter of the Deep
     level: 64
     rowId: 68033
@@ -1374,7 +1695,7 @@ quests:
       - location: Yanxia
         coords: (27.0, 13.9)
         name: Return with Yugiri to the House of the Fierce.
-    partQuestNo: 50
+    partQuestNo: 60
   - name: Path of No Return
     level: 64
     rowId: 68471
@@ -1394,7 +1715,7 @@ quests:
       - location: Yanxia
         coords: (12.2, 32.2)
         name: Rendezvous with Yugiri at Yuzuka Manor.
-    partQuestNo: 51
+    partQuestNo: 61
   - name: The Time between the Seconds
     level: 64
     rowId: 68034
@@ -1424,7 +1745,7 @@ quests:
       levelSync: 66
       timeLimit: 30
       id: '163'
-    partQuestNo: 52
+    partQuestNo: 62
   - name: All the Little Angels
     level: 64
     rowId: 68035
@@ -1454,7 +1775,8 @@ quests:
       - id: 1790
         name: Put Your Wings Up
         type: achievement
-    partQuestNo: 53
+    partQuestNo: 63
+
 
 
 ---

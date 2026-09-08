@@ -51,6 +51,7 @@ quests:
         questId: StmBda619_02545
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part2
     partQuestNo: 1
   - name: Saint Sayer
     level: 61
@@ -88,6 +89,7 @@ quests:
         questId: StmBda134_02464
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 2
   - name: Out of Sight
     level: 68
@@ -122,6 +124,7 @@ quests:
         questId: StmBda615_02541
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part2
     partQuestNo: 3
   - name: A Hunger for Trade
     level: 68
@@ -159,6 +162,7 @@ quests:
         questId: StmBda617_02543
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part2
     partQuestNo: 4
   - name: Closing Up Shop
     level: 69
@@ -193,6 +197,7 @@ quests:
         questId: StmBda619_02545
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part2
     partQuestNo: 5
 
 

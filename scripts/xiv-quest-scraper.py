@@ -439,7 +439,7 @@ class XivQuestScraper:
         count = 1
         output = []
         previousId = None
-        while cur_quest and count < self.args.count:
+        while cur_quest and count <= self.args.count:
             out_row = self.quest_list_entry(cur_quest, previousId=previousId)
             output.append(out_row)
 
