@@ -34,6 +34,13 @@ quests:
       - location: Central Shroud
         coords: (15.4, 16.3)
         name: Speak with J'yhuh Tia.
+    requires:
+      - name: The Ultimate Weapon
+        level: 50
+        rowId: 70058
+        questId: XxcFst503_04522
+        genre: Seventh Umbral Era
+        icon: '71000'
     partQuestNo: 1
   - name: The Wilds Call
     level: 1
