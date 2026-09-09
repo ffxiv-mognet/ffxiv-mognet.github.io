@@ -140,6 +140,9 @@ span.icon i.achievement {
 .quest-row.is-finished label {
     text-decoration: line-through !important;
 }
+.quest-req.is-finished span.icon-text {
+    text-decoration: line-through !important;
+}
 
 
 .npc {

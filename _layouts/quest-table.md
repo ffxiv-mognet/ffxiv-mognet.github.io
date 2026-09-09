@@ -132,7 +132,7 @@ layout: with-nav
           <td><!-- requires -->
               {% for required in quest.requires %}
                   {% if required.link %}<a href="{{required.link}}">{% endif %}
-                  <div class="quest">
+                  <div class="quest-req" data-rowid="{{required.rowId}}">
                       <span class="icon-text">
                           <span class="icon"><i class="quest-{{required.icon}}"></i></span>
                           <span>{{required.name}}</span>
@@ -197,6 +197,18 @@ function updateRows() {
         checkbox.checked = false
     }
   }
+
+  const requireds = document.getElementsByClassName("quest-req");
+  for (const row of requireds) {
+    const isFinished = isQuestFinished(row.dataset.rowid)
+    if (isFinished) {
+        row.classList.add("is-finished")
+    } else {
+        row.classList.remove("is-finished")
+    }
+  }
+
+
   updateRemainCount();
 }
 
