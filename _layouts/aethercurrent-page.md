@@ -34,14 +34,14 @@ layout: quest-table
     </thead>
     <tbody>
         {% for current in currents %}
-        <tr class="aethercurrent-row" data-rowid="{{current.id}}">
+        <tr class="quest-row" data-rowid="aethercurrent-{{current.id}}">
             <td>
                 <label class="checkbox">
                   <input 
                     type="checkbox" 
                     class="checkbox questCheckbox" 
-                    id="aethercurrent-complete-{{current.id}}"
-                    onchange="handleAetherCurrentChecked({{current.id}})"
+                    id="completed-aethercurrent-{{current.id}}"
+                    onchange="handleQuestChecked('aethercurrent-{{current.id}}')"
                     />
                   #{{forloop.index}}
                 </label>
