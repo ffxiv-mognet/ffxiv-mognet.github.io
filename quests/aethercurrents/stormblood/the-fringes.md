@@ -6,7 +6,7 @@ permalink: /quests/aethercurrents/stormblood/the-fringes
 map: g3f1/00
 nonsequential: true
 links:
-  next: /quests/aethercurrents/heavensward/the-ruby-sea
+  next: /quests/aethercurrents/stormblood/the-ruby-sea
 quests:
   - name: The Silence of the Gods
     level: 67

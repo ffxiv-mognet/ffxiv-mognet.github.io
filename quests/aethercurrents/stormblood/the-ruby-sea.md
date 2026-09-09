@@ -45,6 +45,7 @@ quests:
         questId: StmBda313_02489
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 1
   - name: The Price of Betrayal
     level: 62
@@ -79,6 +80,7 @@ quests:
         questId: StmBda302_02478
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 2
   - name: Pulling Double Booty
     level: 62
@@ -117,6 +119,7 @@ quests:
         questId: StmBda305_02481
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 3
   - name: The Sword in the Stone
     level: 62
@@ -160,6 +163,7 @@ quests:
         questId: StmBda307_02483
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 4
   - name: The Palace of Lost Souls
     level: 63
@@ -206,6 +210,7 @@ quests:
         questId: StmBda309_02485
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 5
 
 

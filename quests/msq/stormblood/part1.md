@@ -1059,6 +1059,17 @@ quests:
       - location: The Ruby Sea
         coords: (30.0, 37.2)
         name: Search for Soroban.
+    unlocks:
+      - name: The Price of Betrayal
+        type: quest-71140
+        level: 62
+        rowId: 68209
+        questId: StmBdz201_02673
+        genre:
+          id: '129'
+          name: Ruby Sea Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/the-ruby-sea
     partQuestNo: 39
   - name: To Bend with the Wind
     level: 62
@@ -1255,6 +1266,17 @@ quests:
         questId: StmBda327_02953
         genre: Stormblood
         icon: '71000'
+    unlocks:
+      - name: Pulling Double Booty
+        type: quest-71140
+        level: 62
+        rowId: 68223
+        questId: StmBdz215_02687
+        genre:
+          id: '129'
+          name: Ruby Sea Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/the-ruby-sea
     partQuestNo: 45
   - name: Under the Sea
     level: 62
@@ -1307,6 +1329,17 @@ quests:
       - location: The Ruby Sea
         coords: (29.9, 17.0)
         name: Deliver the unkiu carapace to Soroban.
+    unlocks:
+      - name: The Sword in the Stone
+        type: quest-71140
+        level: 62
+        rowId: 68229
+        questId: StmBdz221_02693
+        genre:
+          id: '129'
+          name: Ruby Sea Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/the-ruby-sea
     partQuestNo: 47
   - name: In Soroban We Trust
     level: 63
@@ -1347,6 +1380,17 @@ quests:
       - location: The Ruby Sea
         coords: (21.9, 18.5)
         name: Speak with Alisaie.
+    unlocks:
+      - name: The Palace of Lost Souls
+        type: quest-71140
+        level: 63
+        rowId: 68168
+        questId: StmBdy001_02632
+        genre:
+          id: '129'
+          name: Ruby Sea Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/the-ruby-sea
     partQuestNo: 49
   - name: In Darkness the Magatama Dreams
     level: 63
