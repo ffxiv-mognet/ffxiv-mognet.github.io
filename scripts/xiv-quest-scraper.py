@@ -14,7 +14,7 @@ import pprint
 import pdb
 
 
-from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array1d, extract_script
+from xivscraper.sheet import LanguageSheet, CsvSheet, extract_array1d, extract_script, extract_dict
 from xivscraper.yaml_helpers import dump_indented_yaml
 from xivscraper.coord_helpers import readable_coords, readable_contenttype, pixel_coords
 
@@ -1068,14 +1068,14 @@ class XivQuestScraper:
                     categories[cat['id']] = cat
         return sorted(categories.values(), key=lambda it: it['name'])
 
-    def build_shop_index(self, shops, key_fun):
-        out = {}
-        for shop in shops:
-            for inv in shop['inventory']:
-                obj = key_fun(inv)
-                if obj['id'] != '0':
-                    out[obj['id']] = obj
-        return sorted(out.values(), key=lambda it: it['name'])
+    # def build_shop_index(self, shops, key_fun):
+    #     out = {}
+    #     for shop in shops:
+    #         for inv in shop['inventory']:
+    #             obj = key_fun(inv)
+    #             if obj['id'] != '0':
+    #                 out[obj['id']] = obj
+    #     return sorted(out.values(), key=lambda it: it['name'])
 
     def npc_for_resident(self, npcId):
         resident = self.sheets['ENpcResident'].byId(npcId)
@@ -1088,57 +1088,102 @@ class XivQuestScraper:
         return npc
 
     def parse_specialshop(self, specialShop):
-        items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
-        counts = extract_array1d(specialShop, 'Count{Receive}', suffix='[0]')
-        currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[0]')
-        costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
-        questReqs = extract_array1d(specialShop, 'Quest{Item}')
-        achievements = extract_array1d(specialShop, 'AchievementUnlock')
+        # items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
+        # counts = extract_array1d(specialShop, 'Count{Receive}', suffix='[0]')
+        # currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[0]')
+        # costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
+        # questReqs = extract_array1d(specialShop, 'Quest{Item}')
+        # achievements = extract_array1d(specialShop, 'AchievementUnlock')
 
-        extra_currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[1]')
-        extra_costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[1]')
+        # extra_currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[1]')
+        # extra_costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[1]')
 
-        count = len(list(filter(lambda it: it != "0", items)))
+        # count = len(list(filter(lambda it: it != "0", items)))
+
         inventory = []
-        for i in range(0,count):
-            reward_item = self.sheets['Item'].byId(items[i]) 
-            if reward_item['Name'] == '':
-                continue
-            currency_item = self.sheets['Item'].byId(currencys[i])
-            category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
-            inv = {
-                'item': {
-                    'name': reward_item['Name'],
-                    'id': reward_item['#'],
-                    'category': {
-                        'id': category['#'],
-                        'name': category['Name'],
-                        'icon': category['Icon']
-                    }
-                },
-                'quantity': int(counts[i]),
-                'cost': int(costs[i]),
-                'currency': {
-                    'id': currency_item['#'],
-                    'name': currency_item['Name'],
-                    'plural': currency_item['Plural'],
-                    'icon': currency_item['Icon'],
-                }
-            }
-            if questReqs[i] != '0':
-                inv['quest'] = self.generate_questListItem(questReqs[i])
+        for i in range(0, 60):
+            invrow = extract_dict(specialShop, 'Item[{}].'.format(i))
 
-            if extra_currencys[i] != '0':
-                extra_currency_item = self.sheets['Item'].byId(extra_currencys[i])
-                inv['extraCost'] = {
-                    'cost': int(extra_costs[i]),
-                    'currency': {
-                        'id': extra_currency_item['#'],
-                        'name': extra_currency_item['Name'],
-                        'plural': extra_currency_item['Plural'],
-                        'icon': extra_currency_item['Icon'],
+            inv = {
+                'items': [],
+                'costs': [],
+                'order': int(invrow['Order']),
+            }
+            for j in range(0,2):
+                reward_id = invrow['Item[{}]'.format(j)]
+                if reward_id == "0":
+                    continue
+                reward_item = self.sheets['Item'].byId(reward_id) 
+                category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
+                inv['items'].append({
+                    'quantity': invrow['ReceiveCount[{}]'.format(j)],
+                    'item': {
+                        'name': reward_item['Name'],
+                        'id': reward_item['#'],
+                        'category': {
+                            'id': category['#'],
+                            'name': category['Name'],
+                            'icon': category['Icon']
+                        }
                     }
-                }
+                })
+
+            for k in range(0,3):
+                currency_id = invrow['ItemCost[{}]'.format(k)]
+                if currency_id == "0":
+                    continue
+                currency_item = self.sheets['Item'].byId(currency_id)
+                inv['costs'].append({
+                    'quantity': invrow['CurrencyCost[{}]'.format(k)],
+                    'currency': {
+                        'id': currency_item['#'],
+                        'name': currency_item['Name'],
+                        'plural': currency_item['Plural'],
+                        'icon': currency_item['Icon'],
+                    },
+                })
+
+            if invrow['Quest'] != "0":
+                inv['quest'] = self.generate_questListItem(invrow['Quest'])
+
+            # reward_item = self.sheets['Item'].byId(invrow['Item[0]']) 
+            # if reward_item['Name'] == '':
+            #     continue
+            # currency_item = self.sheets['Item'].byId(invrow['ItemCost[0]'])
+            # category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
+            # inv = {
+            #     'item': {
+            #         'name': reward_item['Name'],
+            #         'id': reward_item['#'],
+            #         'category': {
+            #             'id': category['#'],
+            #             'name': category['Name'],
+            #             'icon': category['Icon']
+            #         }
+            #     },
+            #     'quantity': int(invrow['ReceiveCount[0]']),
+            #     'cost': int(invrow['CurrencyCost[0]']),
+            #     'currency': {
+            #         'id': currency_item['#'],
+            #         'name': currency_item['Name'],
+            #         'plural': currency_item['Plural'],
+            #         'icon': currency_item['Icon'],
+            #     }
+            # }
+            # if questReqs[i] != '0':
+            #     inv['quest'] = self.generate_questListItem(questReqs[i])
+
+            # if extra_currencys[i] != '0':
+            #     extra_currency_item = self.sheets['Item'].byId(extra_currencys[i])
+            #     inv['extraCost'] = {
+            #         'cost': int(extra_costs[i]),
+            #         'currency': {
+            #             'id': extra_currency_item['#'],
+            #             'name': extra_currency_item['Name'],
+            #             'plural': extra_currency_item['Plural'],
+            #             'icon': extra_currency_item['Icon'],
+            #         }
+            #     }
             inventory.append(inv)
 
         shop = {
@@ -1146,8 +1191,8 @@ class XivQuestScraper:
             'name': specialShop['Name'],
             'inventory': inventory,
         }
-        if specialShop['Quest{Unlock}'] != '0':
-            shop['requires'] = self.generate_questListItem(specialShop['Quest{Unlock}'])
+        if specialShop['Quest'] != '0':
+            shop['requires'] = self.generate_questListItem(specialShop['Quest'])
         return shop
 
     def cmd_alliedShops(self):
@@ -1267,10 +1312,28 @@ class XivQuestScraper:
                     shops[shopId]['npcs'].append(self.npc_for_resident(base['#']))
 
         flattened = list(shops.values())
+
+        categories = {}
+        currencies = {}
+        for shop in flattened: 
+            for inv in shop["inventory"]:
+                for item in inv['items']:
+                    cat = item['item']['category']
+                    categories[cat['id']] = cat
+                for cost in inv['costs']:
+                    currencies[cost['currency']['id']] = cost['currency']
+
+        # for shop in flattened: 
+        #     for inv in shop["inventory"]:
+        #         for cost in inv['costs']:
+        #             categories[cost['currency']['id']] = cost['currency']
+
         output = {
             'shops': flattened,
-            'categories': self.build_shop_index(flattened, lambda it: it['item']['category']),
-            'currencies': self.build_shop_index(flattened, lambda it: it['currency'])
+            'categories': list(categories.values()),
+            'currencies': list(currencies.values()),
+            # 'categories': self.build_shop_index(flattened, lambda it: it['item']['category']),
+            # 'currencies': self.build_shop_index(flattened, lambda it: it['currency'])
         }
         return output
 

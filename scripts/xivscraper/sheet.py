@@ -122,3 +122,13 @@ def extract_script(quest, total=50):
             break
         output[inst] = arg
     return output
+
+def extract_dict(row, prefix):
+    out = {}
+    prefixlen = len(prefix)
+    for key in row.keys():
+        if key.startswith(prefix):
+            out[key[prefixlen:]] = row[key]
+    if len(out.keys()) == 0:
+        return None
+    return out
