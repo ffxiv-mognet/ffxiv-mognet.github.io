@@ -1499,12 +1499,6 @@ quests:
         coords: (6.2, 12.3)
         name: Speak with Lyse.
     unlocks:
-      - name: the Bowl of Embers (Hard)
-        type: trial
-        levelRequired: 50
-        levelSync: 50
-        ilevelRequired: 49
-        ilevelSync: 0
       - name: the Pool of Tribute
         type: trial
         levelRequired: 63
@@ -1638,6 +1632,27 @@ quests:
       - location: Yanxia
         coords: (31.2, 19.1)
         name: Speak with Yugiri.
+    unlocks:
+      - name: Something Smells
+        type: quest-71140
+        level: 64
+        rowId: 68260
+        questId: StmBdz401_02724
+        genre:
+          id: '130'
+          name: Yanxia Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/yanxia
+      - name: Fly, My Pretties
+        type: quest-71140
+        level: 64
+        rowId: 68264
+        questId: StmBdz405_02728
+        genre:
+          id: '130'
+          name: Yanxia Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/yanxia
     partQuestNo: 58
   - name: The Ones We Leave Behind
     level: 64
@@ -1670,6 +1685,27 @@ quests:
       - location: Yanxia
         coords: (29.4, 19.5)
         name: Speak with Yugiri.
+    unlocks:
+      - name: Whacking Day
+        type: quest-71140
+        level: 64
+        rowId: 68266
+        questId: StmBdz407_02730
+        genre:
+          id: '130'
+          name: Yanxia Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/yanxia
+      - name: Wolves and Weeds
+        type: quest-71140
+        level: 64
+        rowId: 68269
+        questId: StmBdz410_02733
+        genre:
+          id: '130'
+          name: Yanxia Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/yanxia
     partQuestNo: 59
   - name: A New Ruby Tithe
     level: 64

@@ -6,8 +6,8 @@ permalink: /quests/aethercurrents/stormblood/the-ruby-sea
 map: e3f1/00
 nonsequential: true
 links:
-  previous: /quests/aethercurrents/stormblood/the-fringes
-  next: /quests/aethercurrents/stormblood/the-peaks
+  previous: /quests/aethercurrents/stormblood/the-peaks
+  next: /quests/aethercurrents/stormblood/yanxia
 quests:
   - name: Tide Goes in, Imperials Go Out
     level: 63

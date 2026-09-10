@@ -6,8 +6,7 @@ permalink: /quests/aethercurrents/stormblood/the-lochs
 map: g3f3/00
 nonsequential: true
 links:
-  previous: /quests/aethercurrents/stormblood/yanxia
-  next: /quests/aethercurrents/stormblood/the-azim-steppe
+  previous: /quests/aethercurrents/stormblood/the-azim-steppe
 quests:
   - name: Stormblood
     level: 70
@@ -86,6 +85,7 @@ quests:
         type: achievement
     requires:
       - name: The Measure of His Reach
+        link: /quests/msq/stormblood/part2
         level: 70
         rowId: 68088
         questId: StmBda705_02552
@@ -117,6 +117,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Upon the Great Loch's Shore
+        link: /quests/msq/stormblood/part2
         level: 69
         rowId: 68084
         questId: StmBda701_02548
@@ -148,6 +149,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Upon the Great Loch's Shore
+        link: /quests/msq/stormblood/part2
         level: 69
         rowId: 68084
         questId: StmBda701_02548
@@ -185,6 +187,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The Legacy of Our Fathers
+        link: /quests/msq/stormblood/part2
         level: 69
         rowId: 68087
         questId: StmBda704_02551
@@ -216,6 +219,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The Legacy of Our Fathers
+        link: /quests/msq/stormblood/part2
         level: 69
         rowId: 68087
         questId: StmBda704_02551

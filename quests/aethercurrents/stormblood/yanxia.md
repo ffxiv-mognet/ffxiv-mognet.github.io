@@ -7,7 +7,7 @@ map: e3f2/00
 nonsequential: true
 links:
   previous: /quests/aethercurrents/stormblood/the-peaks
-  next: /quests/aethercurrents/stormblood/the-lochs
+  next: /quests/aethercurrents/stormblood/the-azim-steppe
 quests:
   - name: All the Little Angels
     level: 64
@@ -45,6 +45,7 @@ quests:
         questId: StmBda322_02498
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 1
   - name: Something Smells
     level: 64
@@ -75,6 +76,7 @@ quests:
         rowId: 68029
         questId: StmBda317_02493
         genre: Stormblood
+        link: /quests/msq/stormblood/part1
         icon: '71000'
     partQuestNo: 2
   - name: Fly, My Pretties
@@ -121,6 +123,7 @@ quests:
         rowId: 68029
         questId: StmBda317_02493
         genre: Stormblood
+        link: /quests/msq/stormblood/part1
         icon: '71000'
     partQuestNo: 3
   - name: Whacking Day
@@ -152,6 +155,7 @@ quests:
         rowId: 68030
         questId: StmBda318_02494
         genre: Stormblood
+        link: /quests/msq/stormblood/part1
         icon: '71000'
     partQuestNo: 4
   - name: Wolves and Weeds
@@ -199,6 +203,7 @@ quests:
         questId: StmBda318_02494
         genre: Stormblood
         icon: '71000'
+        link: /quests/msq/stormblood/part1
     partQuestNo: 5
 
 

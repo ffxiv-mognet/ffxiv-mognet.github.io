@@ -80,6 +80,17 @@ quests:
       - location: The Azim Steppe
         coords: (32.9, 27.7)
         name: Deliver the whisperroot to Cirina.
+    unlocks:
+      - name: Words Are Very Unnecessary
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-azim-steppe
+        level: 65
+        rowId: 68296
+        questId: StmBdz509_02760
+        genre:
+          id: '131'
+          name: Azim Steppe Sidequests
+        icon: '71140'
     partQuestNo: 3
   - name: An Impossible Dream
     level: 65
@@ -181,6 +192,17 @@ quests:
       - location: The Azim Steppe
         coords: (31.2, 12.0)
         name: Speak with Hien.
+    unlocks:
+      - name: Sheep Snatcher
+        type: quest-71140
+        level: 65
+        rowId: 68307
+        questId: StmBdz520_02771
+        genre:
+          id: '131'
+          name: Azim Steppe Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/the-azim-steppe
     partQuestNo: 7
   - name: A Trial Before the Trial
     level: 65
@@ -318,6 +340,17 @@ quests:
       - location: The Azim Steppe
         coords: (20.7, 22.7)
         name: Speak with Magnai.
+    unlocks:
+      - name: Forty Years and Counting
+        link: /quests/aethercurrents/stormblood/the-azim-steppe
+        type: quest-71140
+        level: 66
+        rowId: 68318
+        questId: StmBdz604_02782
+        genre:
+          id: '131'
+          name: Azim Steppe Sidequests
+        icon: '71140'
     partQuestNo: 12
   - name: Sworn Enemies of the Sun
     level: 66
@@ -370,6 +403,17 @@ quests:
       - location: The Azim Steppe
         coords: (13.5, 33.4)
         name: Speak with Gosetsu.
+    unlocks:
+      - name: Mauci of the Seven Worries
+        type: quest-71140
+        level: 66
+        rowId: 68327
+        questId: StmBdz613_02791
+        genre:
+          id: '131'
+          name: Azim Steppe Sidequests
+        icon: '71140'
+        link: /quests/aethercurrents/stormblood/the-azim-steppe
     partQuestNo: 14
   - name: A Final Peace
     level: 66
@@ -928,6 +972,18 @@ quests:
       - location: The Fringes
         coords: (30.0, 25.9)
         name: Speak with M'naago.
+    unlocks:
+      - name: Eyes Bigger than Her Stomach
+        link: /quests/aethercurrents/stormblood/the-fringes
+        type: quest-71140
+        level: 67
+        rowId: 68357
+        questId: StmBdz718_02821
+        genre:
+          id: '125'
+          name: Fringes Sidequests
+        icon: '71140'
+
     partQuestNo: 34
   - name: The Lure of the Dream
     level: 67
@@ -948,6 +1004,18 @@ quests:
       - location: The Fringes
         coords: (28.1, 19.4)
         name: Speak with Vajra.
+    unlocks:
+      - name: Unexpected Guests
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-fringes
+        level: 67
+        rowId: 68352
+        questId: StmBdz713_02816
+        genre:
+          id: '125'
+          name: Fringes Sidequests
+        icon: '71140'
+ 
     partQuestNo: 35
   - name: The Lady of Bliss
     level: 67
@@ -1212,6 +1280,18 @@ quests:
       - location: The Peaks
         coords: (15.5, 36.8)
         name: Speak with Alphinaud.
+    unlocks:
+      - name: Out of Sight
+        link: /quests/aethercurrents/stormblood/the-peaks
+        type: quest-71140
+        level: 68
+        rowId: 68378
+        questId: StmBdz814_02842
+        genre:
+          id: '126'
+          name: Peaks Sidequests
+        icon: '71140'
+  
     partQuestNo: 45
   - name: With Tired Hands We Toil
     level: 68
@@ -1261,6 +1341,18 @@ quests:
       - location: The Peaks
         coords: (26.6, 29.8)
         name: Meet with the contact outside Radiata.
+    unlocks:
+      - name: A Hunger for Trade
+        link: /quests/aethercurrents/stormblood/the-peaks
+        type: quest-71140
+        level: 68
+        rowId: 68387
+        questId: StmBdz823_02851
+        genre:
+          id: '126'
+          name: Peaks Sidequests
+        icon: '71140'
+
     partQuestNo: 47
   - name: The Price of Freedom
     level: 69
@@ -1325,6 +1417,17 @@ quests:
       - location: The Peaks
         coords: (26.7, 36.3)
         name: Follow Raubahn to Coldhearth.
+    unlocks:
+      - name: Closing Up Shop
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-peaks
+        level: 69
+        rowId: 68396
+        questId: StmBdz904_02860
+        genre:
+          id: '126'
+          name: Peaks Sidequests
+        icon: '71140'
     partQuestNo: 49
   - name: Liberty or Death
     level: 69
@@ -1414,6 +1517,29 @@ quests:
       - location: The Lochs
         coords: (8.4, 21.4)
         name: Speak with Alphinaud.
+    unlocks:
+      - name: It's a Zu Out There
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-lochs
+        level: 69
+        rowId: 68413
+        questId: StmBdz921_02877
+        genre:
+          id: '127'
+          name: Lochs Sidequests
+        icon: '71140'
+      - name: A Rite to Rest
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-lochs
+        level: 69
+        rowId: 68416
+        questId: StmBdz924_02880
+        genre:
+          id: '127'
+          name: Lochs Sidequests
+        icon: '71140'
+
+
     partQuestNo: 52
   - name: The Key to Victory
     level: 69
@@ -1514,6 +1640,29 @@ quests:
       - location: The Lochs
         coords: (8.0, 21.8)
         name: Speak with Raubahn.
+    unlocks:
+      - name: If I Were a Fish
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-lochs
+        level: 69
+        rowId: 68417
+        questId: StmBdz925_02881
+        genre:
+          id: '127'
+          name: Lochs Sidequests
+        icon: '71140'
+      - name: Are They Ill-tempered
+        type: quest-71140
+        link: /quests/aethercurrents/stormblood/the-lochs
+        level: 69
+        rowId: 68419
+        questId: StmBdz927_02883
+        genre:
+          id: '127'
+          name: Lochs Sidequests
+        icon: '71140'
+
+ 
     partQuestNo: 55
   - name: The Measure of His Reach
     level: 70

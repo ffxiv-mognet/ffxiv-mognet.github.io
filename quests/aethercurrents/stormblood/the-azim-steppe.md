@@ -6,7 +6,8 @@ permalink: /quests/aethercurrents/stormblood/the-azim-steppe
 map: e3f3/00
 nonsequential: true
 links:
-  previous: /quests/aethercurrents/stormblood/the-lochs
+  next: /quests/aethercurrents/stormblood/the-lochs
+  previous: /quests/aethercurrents/stormblood/yanxia
 quests:
   - name: Glory to the Khagan
     level: 66
@@ -39,6 +40,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Naadam
+        link: /quests/msq/stormblood/part2
         level: 66
         rowId: 68051
         questId: StmBda416_02515
@@ -70,6 +72,7 @@ quests:
         type: aethercurrent
     requires:
       - name: A Season for War
+        link: /quests/msq/stormblood/part2
         level: 65
         rowId: 68037
         questId: StmBda402_02501
@@ -104,6 +107,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The Heart of Nations
+        link: /quests/msq/stormblood/part2
         level: 65
         rowId: 68041
         questId: StmBda406_02505
@@ -138,6 +142,7 @@ quests:
         type: aethercurrent
     requires:
       - name: For Love of the Moon
+        link: /quests/msq/stormblood/part2
         level: 66
         rowId: 68046
         questId: StmBda411_02510
@@ -169,6 +174,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The Undying Ones
+        link: /quests/msq/stormblood/part2
         level: 66
         rowId: 68048
         questId: StmBda413_02512

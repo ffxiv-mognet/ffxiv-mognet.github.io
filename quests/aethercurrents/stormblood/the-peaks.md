@@ -1,13 +1,13 @@
 ---
 layout: aethercurrent-page
 expansion: stormblood
-title: The Peaks| Stormblood Aether Currents 
+title: The Peaks | Stormblood Aether Currents 
 permalink: /quests/aethercurrents/stormblood/the-peaks
 map: g3f2/00
 nonsequential: true
 links:
-  previous: /quests/aethercurrents/stormblood/the-ruby-sea
-  next: /quests/aethercurrents/stormblood/yanxia
+  previous: /quests/aethercurrents/stormblood/the-fringes
+  next: /quests/aethercurrents/stormblood/the-ruby-sea
 quests:
   - name: Liberty or Death
     level: 69
