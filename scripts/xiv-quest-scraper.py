@@ -796,11 +796,31 @@ class XivQuestScraper:
         else:
             print(dump_indented_yaml(output))
 
+    def cmd_uiItemCategories(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+        output = {}
+
+        for cat in self.sheets['ItemUICategory'].all():
+            if not cat['Name']:
+                continue
+            output[cat['#']] = {
+                'name': cat['Name'],
+                'icon': cat['Icon']
+            }
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
 
     def shadowbringer_gemstoneShops(self):
         # shadowbringers gemstone shops differ from endwalker and dawntrail 
         # afaict the references are housed on a specific CustomTalk record, id=721479
         # have not found how they are tied to a SpecialShop, but they can be inferred
+        # from ENpcBase.ENpcData[1] for the FATESHOP_ENPCID_*
         shbCustomTalkId = '721479'
         ct = self.sheets['CustomTalk'].byId(shbCustomTalkId)
         script = extract_script(ct, prefix='Script')
@@ -809,9 +829,9 @@ class XivQuestScraper:
 
         shbShopInfos = [
             {
-                'eNpcResidentId': script['FATESHOP_ENPCID_LAKERAND'],
-                'rank2': script['FATESHOP_REWARD_LAKELAND1'],
-                'rank3': script['FATESHOP_REWARD_LAKELAND2'],
+                'eNpcResidentId': script['FATESHOP_ENPCID_LAKERAND'],  # 1769627
+                'rank2': script['FATESHOP_REWARD_LAKELAND1'],  # 80
+                'rank3': script['FATESHOP_REWARD_LAKELAND2'],  # 81
                 'specialShopId': '1769959'
             },
             {
@@ -858,22 +878,14 @@ class XivQuestScraper:
                 'specialShopId': '1769958'
             },
         ]
-        def rank_from_questreq(qr, info):
-            if info['rank2'] == '0':
+        def _rank_from_quest(qid, shbInfo):
+            if shbInfo['rank2'] == '0':
                 return -1
-            if qr == info['rank3']:
+            if qid == shbInfo['rank3']:
                 return 3
-            if qr == info['rank2']:
+            if qid == shbInfo['rank2']:
                 return 2
             return 1
-
-        # def _item_category(id):
-        #     category = self.sheets['ItemUICategory'].byId(id)
-        #     return {
-        #         'id': category['#'],
-        #         'name': category['Name'],
-        #         'icon': category['Icon']
-        #     }
 
         output = []
         for shopInfo in shbShopInfos:
@@ -883,48 +895,29 @@ class XivQuestScraper:
             coords.update({'name': npc['Singular']})
 
             specialShop = self.sheets['SpecialShop'].byId(shopInfo['specialShopId'])
-            row = self.parse_specialshop(specialShop)
+            shop = self.parse_specialshop(specialShop)
 
-            # items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
-            # costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
-            # questReqs = extract_array1d(specialShop, 'Quest{Item}')
+            # update inventory with ranks
+            for inv in shop['inventory']:
+                if 'questId' in inv:
+                    inv['rank'] = _rank_from_quest(inv['questId'], shopInfo)
+                else:
+                    inv['rank'] = 1
 
-            # count = len(list(filter(lambda it: it != "0", items)))
-            # inventory = []
-            # for i in range(0,count):
-            #     reward_item = self.sheets['Item'].byId(items[i]) 
-            #     rank = rank_from_questreq(questReqs[i], shopInfo)
+            shop.update({
+                'npcs': [coords],
+                'map': {
+                  'id': loc['Map'],
+                  'name': coords['location'],
+                },
+                'version': {
+                    'id': "3",
+                    'name': 'Shadowbringers'
+                },
+            })
 
-            #     category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
-            #     row = {
-            #         'item': {
-            #             'name': reward_item['Name'],
-            #             'id': reward_item['#'],
-            #             'category': {
-            #                 'id': category['#'],
-            #                 'name': category['Name'],
-            #                 'icon': category['Icon']
-            #             }
-            #         },
-            #         'cost': int(costs[i]),
-            #         'rank': rank,
-            #     }
-            #     if not questReqs[i] in ['0', shopInfo['rank2'], shopInfo['rank3']]:
-            #         row['quest'] = self.generate_questListItem(questReqs[i])
-            #     inventory.append(row)
-            # row = {
-            #     'inventory': inventory,
-            #     'npc': coords,
-            #     'map': {
-            #       'id': loc['Map'],
-            #       'name': coords['location'],
-            #     },
-            #     'version': {
-            #         'id': "3",
-            #         'name': 'Shadowbringers'
-            #     },
-            # }
-            output.append(row)
+            output.append(shop)
+
         return output
 
 
@@ -932,7 +925,11 @@ class XivQuestScraper:
 
         def _extract_itemids(specialShopId):
             shop = self.sheets['SpecialShop'].byId(specialShopId)
-            return list(filter(lambda it: it != '0', extract_array1d(shop, 'Item{Receive}', suffix='[0]')))
+            for i in range(0,60):
+                for j in range(0,2):
+                    k = 'Item[{}].Item[{}]'.format(i,j)
+                    if shop[k] != "0":
+                        yield shop[k]
 
         output = []
 
@@ -941,10 +938,8 @@ class XivQuestScraper:
             if not npc:
                 continue
             loc = self.sheets['Level'].findBy('Object', npc['#'])
-
             tt = self.sheets['TerritoryType'].byId(loc['Territory'])
             version = self.sheets['ExVersion'].byId(tt['ExVersion'])
-
             coords = self.location_coords_from_level(loc['#'])
             coords.update({'name': npc['Singular']})
 
@@ -953,19 +948,13 @@ class XivQuestScraper:
             rank3ShopId = fateshop['SpecialShop[2]']
 
             rank1_itemids = set(_extract_itemids(rank1ShopId))
-
             if rank2ShopId != "0":
                 rank2_itemids = set(_extract_itemids(rank2ShopId)) - rank1_itemids
                 specialShop = self.sheets['SpecialShop'].byId(rank3ShopId)
             else:
-                # max rank FATE shop in city
                 specialShop = self.sheets['SpecialShop'].byId(rank1ShopId)
 
-            items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
-            costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
-            questReqs = extract_array1d(specialShop, 'Quest{Item}')
-            achievements = extract_array1d(specialShop, 'AchievementUnlock')
-            def rank_for_itemid(itemid, achievementid):
+            def _rank_for_itemid(itemid, achievementid):
                 if rank2ShopId == "0":
                     # mak rank FATE shop
                     return -1
@@ -978,34 +967,16 @@ class XivQuestScraper:
                     return 2
                 return 4 if achievementid != '0' else 3
 
-            count = len(list(filter(lambda it: it != "0", items)))
-            inventory = []
-            for i in range(0,count):
-                reward_item = self.sheets['Item'].byId(items[i]) 
-                rank = rank_for_itemid(reward_item['#'], achievements[i])
-                category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
-                if reward_item['Name'] == '':
-                    continue
-                row = {
-                    'item': {
-                        'name': reward_item['Name'],
-                        'id': reward_item['#'],
-                        'category': {
-                            'id': category['#'],
-                            'name': category['Name'],
-                            'icon': category['Icon']
-                        }
-                    },
-                    'cost': int(costs[i]),
-                    'rank': rank
-                }
-                if questReqs[i] != '0':
-                    row['quest'] = self.generate_questListItem(questReqs[i])
-                inventory.append(row)
+            shop = self.parse_specialshop(specialShop)
 
-            row = {
-                'inventory': inventory,
-                'npc': coords,
+            # update inventory with ranks
+            for inv in shop['inventory']:
+                itemId = inv['items'][0]['item']['id']
+                achievementId = inv.get('achievementId', '0')
+                inv['rank'] = _rank_for_itemid(itemId, achievementId)
+
+            shop.update({
+                'npcs': [coords],
                 'map': {
                     'id': loc['Map'],
                     'name': coords['location'],
@@ -1015,29 +986,9 @@ class XivQuestScraper:
                     'name': version['Name']
                 },
                 'fateShopId': fateshop['#']
-            }
-            output.append(row)
+            })
+            output.append(shop)
         return output
-
-    def cmd_uiItemCategories(self):
-        self.argparser.add_argument("--yaml", action="store_true", default=True)
-        self.argparser.add_argument("--json", action="store_true", default=False)
-        self.args = self.argparser.parse_args()
-        self.init_sheets()
-        output = {}
-
-        for cat in self.sheets['ItemUICategory'].all():
-            if not cat['Name']:
-                continue
-            output[cat['#']] = {
-                'name': cat['Name'],
-                'icon': cat['Icon']
-            }
-
-        if self.args.json:
-            print(json.dumps(output))
-        else:
-            print(dump_indented_yaml(output))
 
     def cmd_gemstoneShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
@@ -1046,35 +997,14 @@ class XivQuestScraper:
         self.init_sheets()
 
         shops = self.shadowbringer_gemstoneShops()
-        # shops.extend(self.other_gemstoneShops())
+        shops.extend(self.other_gemstoneShops())
 
-        output = {
-            'shops': shops,
-            # 'categories': self.build_shop_category_index(shops)
-        }
+        output = self.indexed_shops(shops)
 
         if self.args.json:
             print(json.dumps(output))
         else:
             print(dump_indented_yaml(output))
-
-    # def build_shop_category_index(self, shops):
-    #     categories = {}
-    #     for shop in shops:
-    #         for inv in shop['inventory']:
-    #             cat = inv['item']['category']
-    #             if cat['id'] != '0':
-    #                 categories[cat['id']] = cat
-    #     return sorted(categories.values(), key=lambda it: it['name'])
-
-    # def build_shop_index(self, shops, key_fun):
-    #     out = {}
-    #     for shop in shops:
-    #         for inv in shop['inventory']:
-    #             obj = key_fun(inv)
-    #             if obj['id'] != '0':
-    #                 out[obj['id']] = obj
-    #     return sorted(out.values(), key=lambda it: it['name'])
 
     def npc_for_resident(self, npcId):
         resident = self.sheets['ENpcResident'].byId(npcId)
@@ -1087,27 +1017,20 @@ class XivQuestScraper:
         return npc
 
     def parse_specialshop(self, specialShop):
-        # items = extract_array1d(specialShop, 'Item{Receive}', suffix='[0]')
-        # counts = extract_array1d(specialShop, 'Count{Receive}', suffix='[0]')
-        # currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[0]')
-        # costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[0]')
-        # questReqs = extract_array1d(specialShop, 'Quest{Item}')
-        # achievements = extract_array1d(specialShop, 'AchievementUnlock')
-
-        # extra_currencys = extract_array1d(specialShop, 'Item{Cost}', suffix='[1]')
-        # extra_costs = extract_array1d(specialShop, 'Count{Cost}', suffix='[1]')
-
-        # count = len(list(filter(lambda it: it != "0", items)))
-
         inventory = []
         for i in range(0, 60):
             invrow = extract_dict(specialShop, 'Item[{}].'.format(i))
+
+            if invrow['Item[0]'] == "0":
+                continue
 
             inv = {
                 'items': [],
                 'costs': [],
                 'order': int(invrow['Order']),
             }
+
+            # up to two different items can be received
             for j in range(0,2):
                 reward_id = invrow['Item[{}]'.format(j)]
                 if reward_id == "0":
@@ -1127,6 +1050,7 @@ class XivQuestScraper:
                     }
                 })
 
+            # may require up to 3 different currency types to purchase
             for k in range(0,3):
                 currency_id = invrow['ItemCost[{}]'.format(k)]
                 if currency_id == "0":
@@ -1142,48 +1066,15 @@ class XivQuestScraper:
                     },
                 })
 
-            quest = self.generate_questListItem(invrow['Quest'])
-            if quest:
-                inv['quest'] = quest
+            if invrow['Quest'] != '0':
+                inv['questId'] = invrow['Quest']
+                quest = self.generate_questListItem(invrow['Quest'])
+                if quest:
+                    inv['quest'] = quest
 
-            # reward_item = self.sheets['Item'].byId(invrow['Item[0]']) 
-            # if reward_item['Name'] == '':
-            #     continue
-            # currency_item = self.sheets['Item'].byId(invrow['ItemCost[0]'])
-            # category = self.sheets['ItemUICategory'].byId(reward_item['ItemUICategory'])
-            # inv = {
-            #     'item': {
-            #         'name': reward_item['Name'],
-            #         'id': reward_item['#'],
-            #         'category': {
-            #             'id': category['#'],
-            #             'name': category['Name'],
-            #             'icon': category['Icon']
-            #         }
-            #     },
-            #     'quantity': int(invrow['ReceiveCount[0]']),
-            #     'cost': int(invrow['CurrencyCost[0]']),
-            #     'currency': {
-            #         'id': currency_item['#'],
-            #         'name': currency_item['Name'],
-            #         'plural': currency_item['Plural'],
-            #         'icon': currency_item['Icon'],
-            #     }
-            # }
-            # if questReqs[i] != '0':
-            #     inv['quest'] = self.generate_questListItem(questReqs[i])
+            if invrow['AchievementUnlock'] != '0':
+                inv['achievementId'] = invrow['AchievementUnlock']
 
-            # if extra_currencys[i] != '0':
-            #     extra_currency_item = self.sheets['Item'].byId(extra_currencys[i])
-            #     inv['extraCost'] = {
-            #         'cost': int(extra_costs[i]),
-            #         'currency': {
-            #             'id': extra_currency_item['#'],
-            #             'name': extra_currency_item['Name'],
-            #             'plural': extra_currency_item['Plural'],
-            #             'icon': extra_currency_item['Icon'],
-            #         }
-            #     }
             inventory.append(inv)
 
         shop = {
