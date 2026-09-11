@@ -39,6 +39,13 @@ class CsvSheet:
             self.buildIndex()
         return self.rows.get(rowId, default)
 
+    def byIdPrefix(self, rowIdPrefix):
+        if not self.indexed:
+            self.buildIndex()
+        for key in self.rows.keys():
+            if key.startswith(rowIdPrefix):
+                yield self.rows[key]
+
     def findBy(self, field_name, value):
         if not self.indexed:
             self.buildIndex()

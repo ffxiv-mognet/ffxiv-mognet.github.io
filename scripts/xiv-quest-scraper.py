@@ -79,6 +79,8 @@ class XivQuestScraper:
             'CustomTalk': CsvSheet(self._path_for_sheet("CustomTalk")),
             'Item': CsvSheet(self._path_for_sheet("Item")),
             'SpecialShop': CsvSheet(self._path_for_sheet("SpecialShop")),
+            'GilShop': CsvSheet(self._path_for_sheet("GilShop")),
+            'GilShopItem': CsvSheet(self._path_for_sheet("GilShopItem")),
             'ItemUICategory': CsvSheet(self._path_for_sheet("ItemUICategory")),
             'FateShop': CsvSheet(self._path_for_sheet("FateShop")),
             'ExVersion': CsvSheet(self._path_for_sheet("ExVersion")),
@@ -1086,6 +1088,52 @@ class XivQuestScraper:
             shop['requires'] = self.generate_questListItem(specialShop['Quest'])
         return shop
 
+    def parse_gilshop(self, gilShopId):
+        gilShop = self.sheets['GilShop'].byId(gilShopId)
+        shop_entries = self.sheets['GilShopItem'].byIdPrefix('{}.'.format(gilShopId))
+
+        inventory = []
+        for shop_entry in shop_entries:
+            item = self.sheets['Item'].byId(shop_entry['Item'])
+            category = self.sheets['ItemUICategory'].byId(item['ItemUICategory'])
+            inv = {
+                'items': [
+                    {
+                        'quantity': 1,
+                        'item': {
+                            'name': item['Name'],
+                            'id': item['#'],
+                            'category': {
+                                'id': category['#'],
+                                'name': category['Name'],
+                                'icon': category['Icon']
+                            }
+                        }
+                    }
+                ],
+                'costs': [
+                    {
+                        'quantity': item['PriceMid'],
+                        'currency': {
+                            'id': "1",
+                            'name': 'gil',
+                            'plural': 'gil',
+                            'icon': "65002"
+                        },
+                    }
+                ]
+            }
+            inventory.append(inv)
+
+        shop = {
+            'id': gilShopId,
+            'name': gilShop['Name'],
+            'inventory': inventory,
+        }
+        if gilShop['Quest'] != '0':
+            shop['requires'] = self.generate_questListItem(gilShop['Quest'])
+        return shop
+
     def cmd_alliedShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
         self.argparser.add_argument("--json", action="store_true", default=False)
@@ -1123,6 +1171,7 @@ class XivQuestScraper:
             # dawntrail
             {"#": "1770890", "Name": "Pelu Pelplume Exchange"},     # pelupelu
             {"#": "1770924", "Name": "Mamool Ja Nanook Exchange"},  # mamool ja
+            {"#": "1770952", "Name": "Yok Huy Ward Exchange"},      # yok huy
         ]
 
         gilShopRefs = [
@@ -1143,11 +1192,14 @@ class XivQuestScraper:
         ]
  
         output = self.scrape_specialShops(specialShopRefs)
+        output.extend( self.scrape_gilShops(gilShopRefs) )
+
+        indexed = self.indexed_shops(output)
 
         if self.args.json:
-            print(json.dumps(output))
+            print(json.dumps(indexed))
         else:
-            print(dump_indented_yaml(output))
+            print(dump_indented_yaml(indexed))
 
     def cmd_huntShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
@@ -1180,10 +1232,12 @@ class XivQuestScraper:
             {"#": "1770885", "Name": "Sublime Curiosities"}, # uah'shepya (dawntrail)
         ]
         output = self.scrape_specialShops(specialShopRefs)
+        indexed = self.indexed_shops(output)
+
         if self.args.json:
-            print(json.dumps(output))
+            print(json.dumps(indexed))
         else:
-            print(dump_indented_yaml(output))
+            print(dump_indented_yaml(indexed))
 
     def indexed_shops(self, shops):
         categories = {}
@@ -1218,7 +1272,26 @@ class XivQuestScraper:
                     shops[shopId]['npcs'].append(self.npc_for_resident(base['#']))
 
         flattened = list(shops.values())
-        return self.indexed_shops(flattened)
+        return flattened
+
+    def scrape_gilShops(self, gilShopRefs):
+        shops = {}
+        for ref in gilShopRefs:
+            shopId = ref['#']
+            parsed = self.parse_gilshop(shopId)
+            parsed['npcs'] = list(self.npc_for_resident(it) for it in ref.get('npcIds',[]))
+            shops[shopId] = parsed
+
+        # find all npcs with shops 
+        shopIds = list(shops.keys())
+        for base in self.sheets['ENpcBase'].all():
+            data = extract_array1d(base, 'ENpcData')
+            for shopId in data:
+                if shopId in shopIds:
+                    shops[shopId]['npcs'].append(self.npc_for_resident(base['#']))
+
+        flattened = list(shops.values())
+        return flattened
 
 
 if __name__ == "__main__":
