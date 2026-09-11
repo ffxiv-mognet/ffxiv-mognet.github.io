@@ -165,73 +165,71 @@ shopOrdering:
   </thead>
   <tbody>
     {% for shop in site.data.huntShops.shops %}
-        {% for item in shop.inventory %}
-        {% unless page.excludeItems[item.item.name] %}
+        {% for inv in shop.inventory %}
+        {% unless page.excludeItems[inv.items[0].item.name] %}
         <tr class="hunt-shop-row" 
             data-shop="{{ shop.id }}"
-            data-item="{{ item.item.id }}"
-            data-currency="{{ item.currency.id }}"
-            data-category="{{ item.item.category.id }}"
-            data-categoryname="{{ item.item.category.name }}"
+            data-item="{{ inv.items[0].item.id }}"
+            data-currency="{{ inv.costs[0].currency.id }}"
+            data-category="{{ inv.items[0].item.category.id }}"
+            data-categoryname="{{ inv.items[0].item.category.name }}"
             >
             <td>
               <label class="checkbox">
                   <input 
                     type="checkbox" 
                     class="checkbox questCheckbox" 
-                    data-item="{{item.item.id}}"
-                    id="item-completed-{{item.item.id}}"
+                    data-item="{{inv.items[0].item.id}}"
+                    id="item-completed-{{inv.items[0].item.id}}"
                     onchange="handleShopItemChecked(event)"
                     />
                 </label>
             </td>
-            <td>{{ item.item.name }}</td>
-            <td>{{ item.item.category.name }}</td>
             <td>
-              <span class="icon-text">
-                {{item.cost}}
-                {% if item.cost == 1%}
-                    {{ item.currency.name }}
-                {% else %}
-                    {{ item.currency.plural }}
-                {% endif %}
-              </span>
-              {% if item.extraCost %}
-              <span class="icon-text">
-                {{item.extraCost.cost}}
-                {% if item.extraCost.cost == 1%}
-                    {{ item.extraCost.currency.name }}
-                {% else %}
-                    {{ item.extraCost.currency.plural }}
-                {% endif %}
-              </span>
-              {% endif %}
+             {% for item in inv.items %}
+                 <div>{{ item.item.name }}</div>
+             {% endfor %} 
+            </td>
+            <td>{{ inv.items[0].item.category.name }}</td>
+            <td>
+              {% for cost in inv.costs %}
+              <div>
+                  <span class="icon-text">
+                    {{cost.quantity}}
+                    {% if cost.quantity == 1%}
+                        {{ cost.currency.name }}
+                    {% else %}
+                        {{ cost.currency.plural }}
+                    {% endif %}
+                  </span>
+              </div>
+              {% endfor %}
             </td>
             <td>
               {% if shop.requires %}
               <div>
-              <span class="icon-text" style="white-space: nowrap">
-                <span class="icon"><i class="quest-{{shop.requires.icon}}"></i></span>
-                <span style="font-size: 0.8em">{{shop.requires.name}}</span>
-              </span>
+                  <span class="icon-text" style="white-space: nowrap">
+                    <span class="icon"><i class="quest-{{shop.requires.icon}}"></i></span>
+                    <span style="font-size: 0.8em">{{shop.requires.name}}</span>
+                  </span>
               </div>
               {% endif   %}
-                {% for npc in shop.npcs %}
-                <div class="npc">
-                    {{npc.name}}
-                    {% if npc.location %}
-                        <span class="tag is-light">{{npc.location}} {{npc.coords}}</span>
-                    {% else %}
-                        <span class="tag is-light">{{page.npcLocations[npc.name].location}} {{page.npcLocations[npc.name].coords}}</span>
-                    {% endif %}
-                </div>
-                {% endfor %}
+              {% for npc in shop.npcs %}
+              <div class="npc">
+                  {{npc.name}}
+                  {% if npc.location %}
+                      <span class="tag is-light">{{npc.location}} {{npc.coords}}</span>
+                  {% else %}
+                      <span class="tag is-light">{{page.npcLocations[npc.name].location}} {{page.npcLocations[npc.name].coords}}</span>
+                  {% endif %}
+              </div>
+              {% endfor %}
             </td>
             <td>
-              {% if item.quest %}
+              {% if inv.quest %}
               <span class="icon-text" style="white-space: nowrap">
-                <span class="icon"><i class="quest-{{item.quest.icon}}"></i></span>
-                <span style="font-size: 0.8em">{{item.quest.name}}</span>
+                <span class="icon"><i class="quest-{{inv.quest.icon}}"></i></span>
+                <span style="font-size: 0.8em">{{inv.quest.name}}</span>
               </span>
               {% endif %}
             </td>
