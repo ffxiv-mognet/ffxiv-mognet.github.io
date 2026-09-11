@@ -207,56 +207,60 @@ areaRanks:
   </thead>
   <tbody>
     {% for shop in site.data.gemstoneShops.shops %}
-        {% for item in shop.inventory %}
-        {% if item.item.name %}
+        {% for inv in shop.inventory %}
         <tr class="gemstone-shop-row" 
             data-version="{{ shop.version.id }}" 
             data-map="{{ shop.map.id }}"
-            data-rank="{{ item.rank }}"
-            data-item="{{ item.item.id }}"
-            data-category="{{ item.item.category.id }}"
-            data-categoryname="{{ item.item.category.name }}"
+            data-rank="{{ inv.rank }}"
+            data-item="{{ inv.items[0].item.id }}"
+            data-category="{{ inv.items[0].item.category.id }}"
+            data-categoryname="{{ inv.items[0].item.category.name }}"
             >
             <td>
               <label class="checkbox">
                   <input 
                     type="checkbox" 
                     class="checkbox questCheckbox" 
-                    data-item="{{item.item.id}}"
+                    data-item="{{inv.items[0].item.id}}"
                     onchange="handleShopItemChecked(event)"
                     />
                 </label>
             </td>
-            <td>{{ item.item.name }}</td>
-            <td>{{ item.item.category.name }}</td>
+            <td>{{ inv.items[0].item.name }}</td>
+            <td>{{ inv.items[0].item.category.name }}</td>
             <td style="text-align: right">
               <span class="icon-text">
-                {{item.cost}}
+                {{ inv.costs[0].quantity}}
                 <span class="icon"><i class="bicolor-gemstone"></i></span>
               </span>
             </td>
             <td>
+                {% for npc in shop.npcs %}
                 <div class="npc">
-                    {{shop.npc.name}}
-                    <span class="tag is-light">{{shop.npc.location}} {{shop.npc.coords}}</span>
+                    {{npc.name}}
+                    {% if npc.location %}
+                        <span class="tag is-light">{{npc.location}} {{npc.coords}}</span>
+                    {% else %}
+                        <span class="tag is-light">{{page.npcLocations[npc.name].location}} {{page.npcLocations[npc.name].coords}}</span>
+                    {% endif %}
                 </div>
+                {% endfor %}
             </td>
             <td>{{ shop.version.name }}</td>
             <td>
-                {% if item.rank != -1 %}
-                    {{item.rank}}
+                {% if inv.rank != -1 %}
+                    {{ inv.rank }}
                 {% else %}
                     {{ page.maxRanks[shop.version.id] }}
                 {% endif %}
             </td>
             <td>
               <span class="icon-text" style="white-space: nowrap">
-                <span class="icon"><i class="quest-{{item.quest.icon}}"></i></span>
-                <span style="font-size: 0.8em">{{item.quest.name}}</span>
+                <span class="icon"><i class="quest-{{inv.quest.icon}}"></i></span>
+                <span style="font-size: 0.8em">{{inv.quest.name}}</span>
               </span>
             </td>
         </tr>
-        {% endif %}
         {% endfor %}
     {% endfor %}
   </tbody>
