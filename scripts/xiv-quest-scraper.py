@@ -309,7 +309,8 @@ class XivQuestScraper:
     def parse_issuer(self, quest):
         issuer = self.location_coords_from_level(quest["IssuerLocation"])
         issuer_npc = self.sheets['ENpcResident'].byId(quest["IssuerStart"])
-        issuer['name'] = issuer_npc['Singular']
+        if issuer_npc:
+            issuer['name'] = issuer_npc.get('Singular', "")
         return issuer
 
     def parse_steps(self, quest):
@@ -429,6 +430,7 @@ class XivQuestScraper:
         self.argparser.add_argument("--partQuestNo", type=int, default=1)
         self.argparser.add_argument("--previousId", nargs="?")
         self.argparser.add_argument("--startingId", nargs="?")
+        self.argparser.add_argument("--genreId", nargs="?")
         self.args = self.argparser.parse_args()
         self.init_sheets()
         # pprint.pprint(vars(self.args))
@@ -438,7 +440,10 @@ class XivQuestScraper:
         elif self.args.previousId:
             cur_quest = self.sheets['Quest'].findBy('PreviousQuest[0]', self.args.previousId)
 
-        genre = cur_quest['JournalGenre']
+        if self.args.genreId:
+            genre = self.args.genreId
+        else:
+            genre = cur_quest['JournalGenre']
 
         count = 1
         output = []
