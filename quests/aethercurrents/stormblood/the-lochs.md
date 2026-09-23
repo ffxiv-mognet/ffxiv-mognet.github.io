@@ -61,12 +61,6 @@ quests:
         levelSync: 70
         ilevelRequired: 280
         ilevelSync: 310
-      - name: Castrum Abania
-        type: dungeon
-        levelRequired: 69
-        levelSync: 70
-        ilevelRequired: 260
-        ilevelSync: 290
       - name: the Royal Menagerie
         type: trial
         levelRequired: 70

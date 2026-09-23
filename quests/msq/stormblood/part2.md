@@ -1058,12 +1058,6 @@ quests:
         levelSync: 68
         ilevelRequired: 0
         ilevelSync: 0
-      - name: the Pool of Tribute
-        type: trial
-        levelRequired: 63
-        levelSync: 64
-        ilevelRequired: 0
-        ilevelSync: 0
       - name: The Fringes
         type: mountspeed
     partQuestNo: 36
@@ -1747,12 +1741,6 @@ quests:
         levelSync: 70
         ilevelRequired: 280
         ilevelSync: 310
-      - name: Castrum Abania
-        type: dungeon
-        levelRequired: 69
-        levelSync: 70
-        ilevelRequired: 260
-        ilevelSync: 290
       - name: the Royal Menagerie
         type: trial
         levelRequired: 70
