@@ -39,13 +39,6 @@ quests:
       - location: The Crystarium
         coords: (7.7, 11.2)
         name: Speak with the Crystal Exarch.
-    requires:
-      - name: A Requiem for Heroes
-        level: 70
-        rowId: 68721
-        questId: StmBdg102_03185
-        genre: Post-Ala Mhigan Liberation
-        icon: '71000'
     partQuestNo: 1
   - name: City of the First
     level: 70
@@ -394,6 +387,279 @@ quests:
         coords: (6.0, 6.0)
         name: Speak with Alphinaud in the Ocular.
     partQuestNo: 12
+  - name: In Search of Alisaie
+    level: 70
+    rowId: 68827
+    questId: LucKma301_03291
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Ocular
+      coords: (6.1, 6.0)
+      name: Crystal Exarch
+    steps:
+      - location: The Crystarium
+        coords: (12.0, 8.0)
+        name: Deliver the sealed missive to Cassard at the Amaro Launch.
+      - location: The Crystarium
+        coords: (12.0, 8.0)
+        name: Speak with Cassard.
+      - location: The Crystarium
+        coords: (12.0, 8.0)
+        name: Speak with Cassard.
+      - location: Amh Araeng
+        coords: (34.7, 8.4)
+        name: Speak with Cassard.
+      - location: Amh Araeng
+        coords: (31.0, 11.2)
+        name: Speak with Cassard.
+      - location: Amh Araeng
+        coords: (31.1, 11.2)
+        name: Admire the view.
+      - location: Amh Araeng
+        coords: (28.0, 15.5)
+        name: Speak with Cassard.
+    requires:
+      - name: Travelers of Norvrandt
+        level: 70
+        rowId: 68817
+        questId: LucKma103_03281
+        genre: Shadowbringers
+        icon: '71000'
+    partQuestNo: 13
+  - name: City of the Mord
+    level: 70
+    rowId: 68828
+    questId: LucKma302_03292
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (28.0, 15.5)
+      name: Cassard
+    steps:
+      - location: Amh Araeng
+        coords: (26.8, 18.6)
+        name: Speak with Ghen Gen.
+      - location: Amh Araeng
+        coords: (27.7, 17.7)
+        name: Speak with Rhon Ron, and browse the available wares.
+      - location: Amh Araeng
+        coords: (26.8, 18.6)
+        name: Speak with Ghen Gen.
+    partQuestNo: 14
+  - name: Working Off the Meal
+    level: 70
+    rowId: 68829
+    questId: LucKma303_03293
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (26.8, 18.5)
+      name: Cassard
+    steps:
+      - location: Amh Araeng
+        coords: (26.6, 16.7)
+        name: Use the market receipt to collect Cassard's purchases.
+      - location: Amh Araeng
+        coords: (27.7, 18.4)
+        name: Deliver the Mord Souq merchandise to Cassard.
+    partQuestNo: 15
+  - name: A Desert Crossing
+    level: 70
+    rowId: 68830
+    questId: LucKma304_03294
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (27.7, 18.3)
+      name: Tesleen
+    steps:
+      - location: Amh Araeng
+        coords: (28.4, 19.1)
+        name: Talk with Tesleen.
+      - location: Amh Araeng
+        coords: (30.5, 20.7)
+        name: Defeat any coyotes that threaten Tesleen.
+      - location: Amh Araeng
+        coords: (30.3, 20.6)
+        name: Speak with Tesleen.
+      - location: Amh Araeng
+        coords: (31.6, 22.6)
+        name: Scout the area ahead and slay any other coyotes.
+      - location: Amh Araeng
+        coords: (30.3, 20.6)
+        name: Talk with Tesleen.
+      - location: Amh Araeng
+        coords: (29.2, 26.1)
+        name: Talk with Tesleen.
+    partQuestNo: 16
+  - name: Following in Her Footprints
+    level: 70
+    rowId: 68831
+    questId: LucKma305_03295
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (28.9, 27.3)
+      name: Tesleen
+    steps:
+      - location: Amh Araeng
+        coords: (28.7, 31.5)
+        name: Look for signs of Alisaie near the Derrick.
+      - location: Amh Araeng
+        coords: (28.6, 31.4)
+        name: Investigate the small footprints.
+      - location: Amh Araeng
+        coords: (28.1, 30.7)
+        name: Follow the small footprints.
+      - location: Amh Araeng
+        coords: (27.3, 29.6)
+        name: Follow the small footprints.
+      - location: Amh Araeng
+        coords: (25.7, 28.9)
+        name: Investigate the small footprints.
+      - location: Amh Araeng
+        coords: (26.9, 28.1)
+        name: Speak with Alisaie.
+    partQuestNo: 17
+  - name: Culling Their Ranks
+    level: 70
+    rowId: 68832
+    questId: LucKma306_03296
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (26.9, 28.1)
+      name: Alisaie
+    steps:
+      - location: Amh Araeng
+        coords: (25.8, 26.7)
+        name: Scout the designated locations, and defeat any sin eaters that you find.
+      - location: Amh Araeng
+        coords: (29.3, 26.0)
+        name: Speak with Alisaie.
+      - location: Amh Araeng
+        coords: (28.9, 27.3)
+        name: Speak with Tesleen.
+    partQuestNo: 18
+  - name: A Purchase of Fruit
+    level: 70
+    rowId: 68833
+    questId: LucKma307_03297
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (28.9, 27.3)
+      name: Tesleen
+    steps:
+      - location: Amh Araeng
+        coords: (28.6, 27.8)
+        name: Tend to Pawnil.
+      - location: Amh Araeng
+        coords: (28.6, 27.7)
+        name: Tend to Todden.
+      - location: Amh Araeng
+        coords: (28.7, 27.5)
+        name: Tend to Halric.
+      - location: Amh Araeng
+        coords: (28.9, 27.3)
+        name: Speak with Tesleen.
+      - location: Amh Araeng
+        coords: (27.7, 17.7)
+        name: Speak with Rhon Ron.
+      - location: Amh Araeng
+        coords: (25.8, 17.2)
+        name: Speak with Alisaie.
+      - location: Amh Araeng
+        coords: (25.8, 17.2)
+        name: Speak with Alisaie.
+      - location: Amh Araeng
+        coords: (28.9, 27.3)
+        name: Give the nectarine to Tesleen.
+    partQuestNo: 19
+  - name: The Time Left to Us
+    level: 70
+    rowId: 68834
+    questId: LucKma308_03298
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (28.9, 27.3)
+      name: Tesleen
+    steps:
+      - location: Amh Araeng
+        coords: (29.5, 28.5)
+        name: Speak with Tesleen.
+      - location: Amh Araeng
+        coords: (30.9, 31.2)
+        name: Search the area for Halric.
+      - location: Amh Araeng
+        coords: (27.8, 31.0)
+        name: Continue searching for Halric.
+      - location: Amh Araeng
+        coords: (27.1, 27.5)
+        name: Continue searching for Halric.
+      - location: Amh Araeng
+        coords: (29.5, 26.7)
+        name: Speak with Alisaie.
+      - location: Amh Araeng
+        coords: (29.9, 27.3)
+        name: Speak with the carers.
+      - location: Amh Araeng
+        coords: (29.5, 26.6)
+        name: Speak with Halric.
+    partQuestNo: 20
+  - name: Tears on the Sand
+    level: 70
+    rowId: 68835
+    questId: LucKma309_03299
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (29.5, 26.7)
+      name: Alisaie
+    steps:
+      - location: Amh Araeng
+        coords: (34.8, 8.4)
+        name: Speak with Alisaie at the Red Serai.
+      - location: The Crystarium
+        coords: (12.1, 7.8)
+        name: Speak with Alisaie.
+      - location: The Ocular
+        coords: (6.1, 6.0)
+        name: Speak with Alisaie in the Ocular.
+    partQuestNo: 21
+
+
+
+
+
   - name: The Lightwardens
     level: 71
     rowId: 68836
@@ -433,13 +699,21 @@ quests:
         ilevelRequired: 370
         ilevelSync: 0
     requires:
+      - name: Emergent Splendor
+        level: 70
+        rowId: 68826
+        questId: LucKma209_03290
+        genre:
+          id: '8'
+          name: Shadowbringers
+        icon: '71000'
       - name: Tears on the Sand
         level: 70
         rowId: 68835
         questId: LucKma309_03299
         genre: Shadowbringers
         icon: '71000'
-    partQuestNo: 13
+    partQuestNo: 22
   - name: Warrior of Darkness
     level: 71
     rowId: 68837
@@ -469,7 +743,14 @@ quests:
       - id: 2293
         name: Between Two Worlds
         type: achievement
-    partQuestNo: 14
+    requires:
+      - name: The Lightwardens
+        level: 71
+        rowId: 68836
+        questId: LucKma401_03300
+        genre: Shadowbringers
+        icon: '71000'
+    partQuestNo: 23
   - name: An Unwelcome Guest
     level: 72
     rowId: 68838
@@ -498,7 +779,7 @@ quests:
       - location: The Crystarium
         coords: (9.9, 7.0)
         name: Speak with Alphinaud.
-    partQuestNo: 15
+    partQuestNo: 24
   - name: The Crystarium's Resolve
     level: 72
     rowId: 68839
@@ -527,7 +808,7 @@ quests:
       - location: The Crystarium
         coords: (8.5, 9.7)
         name: Speak with Szem Djenmai.
-    partQuestNo: 16
+    partQuestNo: 25
   - name: Logistics of War
     level: 72
     rowId: 68840
@@ -560,7 +841,7 @@ quests:
       - id: '2818218'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 17
+    partQuestNo: 26
   - name: The Oracle of Light
     level: 72
     rowId: 68841
@@ -596,7 +877,7 @@ quests:
       levelSync: 72
       timeLimit: 30
       id: '185'
-    partQuestNo: 18
+    partQuestNo: 27
   - name: Il Mheg, the Faerie Kingdom
     level: 72
     rowId: 68842
@@ -619,7 +900,7 @@ quests:
       - location: Il Mheg
         coords: (14.0, 31.4)
         name: Deliver the looking grass to Thancred.
-    partQuestNo: 19
+    partQuestNo: 28
   - name: Sul Uin's Request
     level: 72
     rowId: 68843
@@ -639,7 +920,7 @@ quests:
       - location: Il Mheg
         coords: (14.3, 31.1)
         name: Speak with Sul Uin.
-    partQuestNo: 20
+    partQuestNo: 29
   - name: Unto the Truth
     level: 72
     rowId: 68846
@@ -684,7 +965,7 @@ quests:
         questId: LucKmb108_03309
         genre: Shadowbringers
         icon: '71000'
-    partQuestNo: 21
+    partQuestNo: 30
   - name: Courting Cooperation
     level: 72
     rowId: 68847
@@ -707,7 +988,7 @@ quests:
       - location: Il Mheg
         coords: (14.3, 31.1)
         name: Speak with Sul Uin.
-    partQuestNo: 22
+    partQuestNo: 31
   - name: The Key to the Castle
     level: 73
     rowId: 68848
@@ -740,7 +1021,7 @@ quests:
         levelSync: 74
         ilevelRequired: 375
         ilevelSync: 0
-    partQuestNo: 23
+    partQuestNo: 32
   - name: A Visit to the Nu Mou
     level: 73
     rowId: 68849
@@ -772,7 +1053,7 @@ quests:
       - location: Il Mheg
         coords: (18.8, 7.8)
         name: Speak with Thancred.
-    partQuestNo: 24
+    partQuestNo: 33
   - name: A Fitting Payment
     level: 73
     rowId: 68850
@@ -795,7 +1076,7 @@ quests:
       - location: Il Mheg
         coords: (20.6, 4.3)
         name: Deliver the moss fungus legs to Marn Ose.
-    partQuestNo: 25
+    partQuestNo: 34
   - name: Spore Sweeper
     level: 73
     rowId: 68851
@@ -824,7 +1105,7 @@ quests:
       - location: Il Mheg
         coords: (19.7, 4.1)
         name: Speak with Ys Gyuf.
-    partQuestNo: 26
+    partQuestNo: 35
   - name: The Lawless Ones
     level: 73
     rowId: 68852
@@ -850,7 +1131,7 @@ quests:
       - location: Il Mheg
         coords: (19.4, 4.7)
         name: Deliver the vials of invisible ink to Wyd Lad.
-    partQuestNo: 27
+    partQuestNo: 36
   - name: The Elder's Answer
     level: 73
     rowId: 68853
@@ -882,7 +1163,7 @@ quests:
       - location: Il Mheg
         coords: (30.6, 7.2)
         name: Speak with Urianger.
-    partQuestNo: 28
+    partQuestNo: 37
   - name: A Resounding Roar
     level: 73
     rowId: 68854
@@ -911,7 +1192,7 @@ quests:
       - location: Il Mheg
         coords: (30.5, 7.6)
         name: Speak with Seto.
-    partQuestNo: 29
+    partQuestNo: 38
   - name: Memento of a Friend
     level: 73
     rowId: 68855
@@ -931,7 +1212,7 @@ quests:
       - location: Il Mheg
         coords: (30.5, 7.6)
         name: Deliver the medallion to Seto.
-    partQuestNo: 30
+    partQuestNo: 39
   - name: Acht-la Ormh Inn
     level: 73
     rowId: 68856
@@ -967,7 +1248,7 @@ quests:
       - id: '2818263'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 31
+    partQuestNo: 40
   - name: The Wheel Turns
     level: 73
     rowId: 68857
@@ -994,7 +1275,7 @@ quests:
       - id: 2294
         name: Realpolitik
         type: achievement
-    partQuestNo: 32
+    partQuestNo: 41
   - name: A Party Soon Divided
     level: 74
     rowId: 68858
@@ -1017,7 +1298,7 @@ quests:
       - location: Lakeland
         coords: (36.5, 21.4)
         name: Speak with Urianger at Fort Jobb.
-    partQuestNo: 33
+    partQuestNo: 42
   - name: A Little Faith
     level: 74
     rowId: 68859
@@ -1040,7 +1321,7 @@ quests:
       - location: Lakeland
         coords: (35.5, 19.6)
         name: Speak with Urianger.
-    partQuestNo: 34
+    partQuestNo: 43
   - name: Into the Dark
     level: 74
     rowId: 68860
@@ -1075,7 +1356,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.0, 27.4)
         name: Speak with Y'shtola.
-    partQuestNo: 35
+    partQuestNo: 44
   - name: A Day in the Neighborhood
     level: 74
     rowId: 68861
@@ -1105,7 +1386,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.1, 29.2)
         name: Speak with Minfilia.
-    partQuestNo: 36
+    partQuestNo: 45
   - name: A Helping Hand
     level: 74
     rowId: 68862
@@ -1134,7 +1415,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.8, 27.5)
         name: Report to Ersabel.
-    partQuestNo: 37
+    partQuestNo: 46
   - name: Lost but Not Forgotten
     level: 74
     rowId: 68863
@@ -1166,7 +1447,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.7, 27.4)
         name: Deliver the jade heartstone to Runar.
-    partQuestNo: 38
+    partQuestNo: 47
   - name: Saying Good-bye
     level: 74
     rowId: 68864
@@ -1195,7 +1476,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (20.7, 28.2)
         name: Speak with Y'shtola.
-    partQuestNo: 39
+    partQuestNo: 48
   - name: Stirring Up Trouble
     level: 74
     rowId: 68865
@@ -1236,7 +1517,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (16.7, 20.0)
         name: Give the buzzing burlap sacks to Y'shtola.
-    partQuestNo: 40
+    partQuestNo: 49
   - name: A Beeautiful Plan
     level: 74
     rowId: 68866
@@ -1265,7 +1546,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (11.0, 20.7)
         name: Speak with Y'shtola.
-    partQuestNo: 41
+    partQuestNo: 50
   - name: An Unwanted Proposal
     level: 74
     rowId: 68867
@@ -1288,7 +1569,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (20.7, 28.2)
         name: Speak with Urianger.
-    partQuestNo: 42
+    partQuestNo: 51
   - name: Put to the Proof
     level: 74
     rowId: 68868
@@ -1320,7 +1601,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (12.0, 27.5)
         name: Deliver the seal to Y'shtola.
-    partQuestNo: 43
+    partQuestNo: 52
   - name: Into the Wood
     level: 75
     rowId: 68869
@@ -1343,7 +1624,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.6, 20.3)
         name: Speak with the bow-wielding sentinel.
-    partQuestNo: 44
+    partQuestNo: 53
   - name: Top of the Tree
     level: 75
     rowId: 68870
@@ -1366,7 +1647,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.5, 18.3)
         name: Speak with Almet.
-    partQuestNo: 45
+    partQuestNo: 54
   - name: Look to the Stars
     level: 75
     rowId: 68871
@@ -1398,7 +1679,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (24.9, 10.7)
         name: Speak with Almet.
-    partQuestNo: 46
+    partQuestNo: 55
   - name: Mi Casa, Toupasa
     level: 75
     rowId: 68872
@@ -1424,7 +1705,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (23.9, 3.6)
         name: Speak with Almet.
-    partQuestNo: 47
+    partQuestNo: 56
   - name: Legend of the Not-so-hidden Temple
     level: 75
     rowId: 68873
@@ -1450,7 +1731,7 @@ quests:
     soloDuty:
       levelSync: 75
       id: '5032'
-    partQuestNo: 48
+    partQuestNo: 57
   - name: The Aftermath
     level: 75
     rowId: 68874
@@ -1479,7 +1760,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.5, 17.3)
         name: Speak with Urianger.
-    partQuestNo: 49
+    partQuestNo: 58
   - name: In Good Faith
     level: 75
     rowId: 68875
@@ -1508,7 +1789,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.5, 17.4)
         name: Speak with Y'shtola.
-    partQuestNo: 50
+    partQuestNo: 59
   - name: The Burden of Knowledge
     level: 75
     rowId: 68876
@@ -1544,7 +1825,7 @@ quests:
       - id: '2818278'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 51
+    partQuestNo: 60
   - name: Bearing with It
     level: 75
     rowId: 68877
@@ -1564,7 +1845,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.7, 27.4)
         name: Speak with Runar.
-    partQuestNo: 52
+    partQuestNo: 61
   - name: Out of the Wood
     level: 76
     rowId: 68878
@@ -1594,7 +1875,7 @@ quests:
       - id: 2295
         name: Journey to the Past
         type: achievement
-    partQuestNo: 53
+    partQuestNo: 62
 
 
 ---

@@ -55,6 +55,8 @@ storylines:
           link: /quests/msq/shadowbringers/part3
         - name: Part 4
           link: /quests/msq/shadowbringers/part4
+        - name: Aethercurrents
+          link: /quests/aethercurrents/shadowbringers
     - name: Endwalker
       parts:
         - name: Part 1
