@@ -48,6 +48,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The End of a World
+        link: /quests/msq/shadowbringers/part1
         level: 80
         rowId: 69188
         questId: LucKmf109_03652
@@ -88,6 +89,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Waiting in the Depths
+        link: /quests/msq/shadowbringers/part1
         level: 79
         rowId: 69184
         questId: LucKmf105_03648
@@ -129,6 +131,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The End of a World
+        link: /quests/msq/shadowbringers/part1
         level: 80
         rowId: 69188
         questId: LucKmf109_03652
@@ -169,6 +172,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The End of a World
+        link: /quests/msq/shadowbringers/part1
         level: 80
         rowId: 69188
         questId: LucKmf109_03652
@@ -206,6 +210,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The End of a World
+        link: /quests/msq/shadowbringers/part1
         level: 80
         rowId: 69188
         questId: LucKmf109_03652

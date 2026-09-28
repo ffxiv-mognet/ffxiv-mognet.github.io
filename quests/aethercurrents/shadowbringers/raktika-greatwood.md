@@ -46,6 +46,7 @@ quests:
         type: aethercurrent
     requires:
       - name: In Good Faith
+        link: /quests/msq/shadowbringers/part1
         level: 75
         rowId: 68875
         questId: LucKmc118_03339
@@ -81,6 +82,7 @@ quests:
         type: aethercurrent
     requires:
       - name: A Day in the Neighborhood
+        link: /quests/msq/shadowbringers/part1
         level: 74
         rowId: 68861
         questId: LucKmc104_03325
@@ -115,6 +117,7 @@ quests:
         type: aethercurrent
     requires:
       - name: An Unwanted Proposal
+        link: /quests/msq/shadowbringers/part1
         level: 74
         rowId: 68867
         questId: LucKmc110_03331
@@ -146,6 +149,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Top of the Tree
+        link: /quests/msq/shadowbringers/part1
         level: 75
         rowId: 68870
         questId: LucKmc113_03334
@@ -183,6 +187,7 @@ quests:
         type: aethercurrent
     requires:
       - name: In Good Faith
+        link: /quests/msq/shadowbringers/part1
         level: 75
         rowId: 68875
         questId: LucKmc118_03339

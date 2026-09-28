@@ -1508,6 +1508,18 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.1, 29.2)
         name: Speak with Minfilia.
+    unlocks:
+      - name: "\uE0BE What We Do for Family"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/raktika-greatwood
+        level: 70
+        rowId: 68980
+        questId: LucKze010_03444
+        genre:
+          id: '138'
+          name: Rak'tika Sidequests
+        icon: '71140'
+
     partQuestNo: 47
   - name: A Helping Hand
     level: 74
@@ -1691,6 +1703,18 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (20.7, 28.2)
         name: Speak with Urianger.
+    unlocks:
+      - name: "\uE0BE The Great Deceiver"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/raktika-greatwood
+        level: 70
+        rowId: 69192
+        questId: LucKze201_03656
+        genre:
+          id: '138'
+          name: Rak'tika Sidequests
+        icon: '71140'
+
     partQuestNo: 53
   - name: Put to the Proof
     level: 74
@@ -1769,6 +1793,18 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.5, 18.3)
         name: Speak with Almet.
+    unlocks:
+      - name: "\uE0BE Suit Up"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/raktika-greatwood
+        level: 70
+        rowId: 69003
+        questId: LucKzf008_03467
+        genre:
+          id: '138'
+          name: Rak'tika Sidequests
+        icon: '71140'
+
     partQuestNo: 56
   - name: Look to the Stars
     level: 75
@@ -1911,6 +1947,18 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.5, 17.4)
         name: Speak with Y'shtola.
+    unlocks:
+      - name: "\uE0BE Stand on Ceremony"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/raktika-greatwood
+        level: 70
+        rowId: 69014
+        questId: LucKzf101_03478
+        genre:
+          id: '138'
+          name: Rak'tika Sidequests
+        icon: '71140'
+
     partQuestNo: 61
   - name: The Burden of Knowledge
     level: 75
@@ -1947,6 +1995,7 @@ quests:
       - id: '2818278'
         name: Aether Current
         type: aethercurrent
+        link: /quests/aethercurrents/shadowbringers/raktika-greatwood
     partQuestNo: 62
   - name: Bearing with It
     level: 75
@@ -3083,6 +3132,17 @@ quests:
       - location: The Tempest
         coords: (32.8, 16.8)
         name: Speak with Paushs Ooan.
+    unlocks:
+      - name: "\uE0BE Koal of the Cups"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/the-tempest
+        level: 70
+        rowId: 69124
+        questId: LucKzj101_03588
+        genre:
+          id: '139'
+          name: Tempest Sidequests
+        icon: '71140'
     partQuestNo: 100
   - name: City of the Ancients
     level: 79
@@ -3202,6 +3262,37 @@ quests:
       - location: The Tempest
         coords: (8.8, 26.5)
         name: Speak with Alphinaud.
+    unlocks:
+      - name: "\uE0BE Responsible Creation"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/the-tempest
+        level: 70
+        rowId: 69128
+        questId: LucKzk001_03592
+        genre:
+          id: '139'
+          name: Tempest Sidequests
+        icon: '71140'
+      - name: "\uE0BE Debate and Discourse"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/the-tempest
+        level: 70
+        rowId: 69129
+        questId: LucKzk002_03593
+        genre:
+          id: '139'
+          name: Tempest Sidequests
+        icon: '71140'
+      - name: "\uE0BE Community Cohesion"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/the-tempest
+        level: 70
+        rowId: 69130
+        questId: LucKzk003_03594
+        genre:
+          id: '139'
+          name: Tempest Sidequests
+        icon: '71140'
     partQuestNo: 104
   - name: A Greater Purpose
     level: 80
@@ -3241,6 +3332,7 @@ quests:
       - id: '2818293'
         name: Aether Current
         type: aethercurrent
+        link: /quests/aethercurrents/shadowbringers/the-tempest
     partQuestNo: 105
   - name: Shadowbringers
     level: 80
