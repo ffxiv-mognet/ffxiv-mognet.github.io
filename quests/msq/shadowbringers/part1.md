@@ -231,6 +231,27 @@ quests:
       - location: Kholusia
         coords: (14.8, 29.2)
         name: Speak with Tristol.
+    unlocks:
+      - name: "\uE0BE A Plankless Task"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/kholusia
+        level: 70
+        rowId: 68896
+        questId: LucKza018_03360
+        genre:
+          id: '135'
+          name: Kholusia Sidequests
+        icon: '71140'
+      - name: "\uE0BE Village of Woe"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/kholusia
+        level: 70
+        rowId: 68907
+        questId: LucKza101_03371
+        genre:
+          id: '135'
+          name: Kholusia Sidequests
+        icon: '71140'
     partQuestNo: 7
   - name: City of Final Pleasures
     level: 70
@@ -471,6 +492,17 @@ quests:
       - location: Amh Araeng
         coords: (27.7, 18.4)
         name: Deliver the Mord Souq merchandise to Cassard.
+    unlocks:
+      - name: "\uE0BE Work to Live or Live to Work"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/amh-araeng
+        level: 70
+        rowId: 68911
+        questId: LucKza201_03375
+        genre:
+          id: '136'
+          name: Amh Araeng Sidequests
+        icon: '71140'
     partQuestNo: 15
   - name: A Desert Crossing
     level: 70
@@ -743,13 +775,6 @@ quests:
       - id: 2293
         name: Between Two Worlds
         type: achievement
-    requires:
-      - name: The Lightwardens
-        level: 71
-        rowId: 68836
-        questId: LucKma401_03300
-        genre: Shadowbringers
-        icon: '71000'
     partQuestNo: 23
   - name: An Unwelcome Guest
     level: 72
@@ -900,6 +925,18 @@ quests:
       - location: Il Mheg
         coords: (14.0, 31.4)
         name: Deliver the looking grass to Thancred.
+    unlocks:
+      - name: "\uE0BE The Forbidden Lran"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/il-mheg
+        level: 70
+        rowId: 68931
+        questId: LucKzc012_03395
+        genre:
+          id: '137'
+          name: Il Mheg Sidequests
+        icon: '71140'
+
     partQuestNo: 28
   - name: Sul Uin's Request
     level: 72
@@ -921,6 +958,49 @@ quests:
         coords: (14.3, 31.1)
         name: Speak with Sul Uin.
     partQuestNo: 29
+  - name: Ys Iala's Errand
+    level: 72
+    rowId: 68844
+    questId: LucKmb107_03308
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Il Mheg
+      coords: (12.9, 31.3)
+      name: Ys Iala
+    steps:
+      - location: Il Mheg
+        coords: (17.2, 28.6)
+        name: Obtain fruit from belltrees.
+      - location: Il Mheg
+        coords: (12.9, 31.3)
+        name: Deliver the bellfruits to Ys Iala.
+    partQuestNo: 30
+  - name: Oul Sigun's Plea
+    level: 72
+    rowId: 68845
+    questId: LucKmb108_03309
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Il Mheg
+      coords: (15.6, 30.6)
+      name: Oul Sigun
+    steps:
+      - location: Il Mheg
+        coords: (20.3, 27.1)
+        name: Draw water from Longmirror Lake.
+      - location: Il Mheg
+        coords: (19.0, 29.7)
+        name: Give the water to the leafmen.
+      - location: Il Mheg
+        coords: (15.6, 30.6)
+        name: Speak with Oul Sigun.
+    partQuestNo: 31
   - name: Unto the Truth
     level: 72
     rowId: 68846
@@ -953,6 +1033,12 @@ quests:
         coords: (9.4, 16.8)
         name: Speak with Thancred.
     requires:
+      - name: Sul Uin's Request
+        level: 72
+        rowId: 68843
+        questId: LucKmb106_03307
+        genre: Shadowbringers
+        icon: '71000'
       - name: Ys Iala's Errand
         level: 72
         rowId: 68844
@@ -965,7 +1051,18 @@ quests:
         questId: LucKmb108_03309
         genre: Shadowbringers
         icon: '71000'
-    partQuestNo: 30
+    unlocks:
+      - name: "\uE0BE Delightful Decorations"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/il-mheg
+        level: 70
+        rowId: 68934
+        questId: LucKzc015_03398
+        genre:
+          id: '137'
+          name: Il Mheg Sidequests
+        icon: '71140'
+    partQuestNo: 32
   - name: Courting Cooperation
     level: 72
     rowId: 68847
@@ -988,7 +1085,19 @@ quests:
       - location: Il Mheg
         coords: (14.3, 31.1)
         name: Speak with Sul Uin.
-    partQuestNo: 31
+    unlocks:
+      - name: "\uE0BE The Path to Popularity"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/il-mheg
+        level: 70
+        rowId: 68940
+        questId: LucKzc101_03404
+        genre:
+          id: '137'
+          name: Il Mheg Sidequests
+        icon: '71140'
+
+    partQuestNo: 33
   - name: The Key to the Castle
     level: 73
     rowId: 68848
@@ -1021,7 +1130,7 @@ quests:
         levelSync: 74
         ilevelRequired: 375
         ilevelSync: 0
-    partQuestNo: 32
+    partQuestNo: 34
   - name: A Visit to the Nu Mou
     level: 73
     rowId: 68849
@@ -1053,7 +1162,7 @@ quests:
       - location: Il Mheg
         coords: (18.8, 7.8)
         name: Speak with Thancred.
-    partQuestNo: 33
+    partQuestNo: 35
   - name: A Fitting Payment
     level: 73
     rowId: 68850
@@ -1076,7 +1185,7 @@ quests:
       - location: Il Mheg
         coords: (20.6, 4.3)
         name: Deliver the moss fungus legs to Marn Ose.
-    partQuestNo: 34
+    partQuestNo: 36
   - name: Spore Sweeper
     level: 73
     rowId: 68851
@@ -1105,7 +1214,7 @@ quests:
       - location: Il Mheg
         coords: (19.7, 4.1)
         name: Speak with Ys Gyuf.
-    partQuestNo: 35
+    partQuestNo: 37
   - name: The Lawless Ones
     level: 73
     rowId: 68852
@@ -1131,7 +1240,7 @@ quests:
       - location: Il Mheg
         coords: (19.4, 4.7)
         name: Deliver the vials of invisible ink to Wyd Lad.
-    partQuestNo: 36
+    partQuestNo: 38
   - name: The Elder's Answer
     level: 73
     rowId: 68853
@@ -1163,7 +1272,7 @@ quests:
       - location: Il Mheg
         coords: (30.6, 7.2)
         name: Speak with Urianger.
-    partQuestNo: 37
+    partQuestNo: 39
   - name: A Resounding Roar
     level: 73
     rowId: 68854
@@ -1192,7 +1301,19 @@ quests:
       - location: Il Mheg
         coords: (30.5, 7.6)
         name: Speak with Seto.
-    partQuestNo: 38
+    unlocks:
+      - name: "\uE0BE A New Amaro"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/il-mheg
+        level: 70
+        rowId: 68963
+        questId: LucKzd101_03427
+        genre:
+          id: '137'
+          name: Il Mheg Sidequests
+        icon: '71140'
+
+    partQuestNo: 40
   - name: Memento of a Friend
     level: 73
     rowId: 68855
@@ -1212,7 +1333,7 @@ quests:
       - location: Il Mheg
         coords: (30.5, 7.6)
         name: Deliver the medallion to Seto.
-    partQuestNo: 39
+    partQuestNo: 41
   - name: Acht-la Ormh Inn
     level: 73
     rowId: 68856
@@ -1248,7 +1369,8 @@ quests:
       - id: '2818263'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 40
+        link: /quests/aethercurrents/shadowbringers/il-mheg
+    partQuestNo: 42
   - name: The Wheel Turns
     level: 73
     rowId: 68857
@@ -1275,7 +1397,7 @@ quests:
       - id: 2294
         name: Realpolitik
         type: achievement
-    partQuestNo: 41
+    partQuestNo: 43
   - name: A Party Soon Divided
     level: 74
     rowId: 68858
@@ -1298,7 +1420,7 @@ quests:
       - location: Lakeland
         coords: (36.5, 21.4)
         name: Speak with Urianger at Fort Jobb.
-    partQuestNo: 42
+    partQuestNo: 44
   - name: A Little Faith
     level: 74
     rowId: 68859
@@ -1321,7 +1443,7 @@ quests:
       - location: Lakeland
         coords: (35.5, 19.6)
         name: Speak with Urianger.
-    partQuestNo: 43
+    partQuestNo: 45
   - name: Into the Dark
     level: 74
     rowId: 68860
@@ -1356,7 +1478,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.0, 27.4)
         name: Speak with Y'shtola.
-    partQuestNo: 44
+    partQuestNo: 46
   - name: A Day in the Neighborhood
     level: 74
     rowId: 68861
@@ -1386,7 +1508,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.1, 29.2)
         name: Speak with Minfilia.
-    partQuestNo: 45
+    partQuestNo: 47
   - name: A Helping Hand
     level: 74
     rowId: 68862
@@ -1415,7 +1537,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.8, 27.5)
         name: Report to Ersabel.
-    partQuestNo: 46
+    partQuestNo: 48
   - name: Lost but Not Forgotten
     level: 74
     rowId: 68863
@@ -1447,7 +1569,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.7, 27.4)
         name: Deliver the jade heartstone to Runar.
-    partQuestNo: 47
+    partQuestNo: 49
   - name: Saying Good-bye
     level: 74
     rowId: 68864
@@ -1476,7 +1598,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (20.7, 28.2)
         name: Speak with Y'shtola.
-    partQuestNo: 48
+    partQuestNo: 50
   - name: Stirring Up Trouble
     level: 74
     rowId: 68865
@@ -1517,7 +1639,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (16.7, 20.0)
         name: Give the buzzing burlap sacks to Y'shtola.
-    partQuestNo: 49
+    partQuestNo: 51
   - name: A Beeautiful Plan
     level: 74
     rowId: 68866
@@ -1546,7 +1668,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (11.0, 20.7)
         name: Speak with Y'shtola.
-    partQuestNo: 50
+    partQuestNo: 52
   - name: An Unwanted Proposal
     level: 74
     rowId: 68867
@@ -1569,7 +1691,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (20.7, 28.2)
         name: Speak with Urianger.
-    partQuestNo: 51
+    partQuestNo: 53
   - name: Put to the Proof
     level: 74
     rowId: 68868
@@ -1601,7 +1723,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (12.0, 27.5)
         name: Deliver the seal to Y'shtola.
-    partQuestNo: 52
+    partQuestNo: 54
   - name: Into the Wood
     level: 75
     rowId: 68869
@@ -1624,7 +1746,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.6, 20.3)
         name: Speak with the bow-wielding sentinel.
-    partQuestNo: 53
+    partQuestNo: 55
   - name: Top of the Tree
     level: 75
     rowId: 68870
@@ -1647,7 +1769,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.5, 18.3)
         name: Speak with Almet.
-    partQuestNo: 54
+    partQuestNo: 56
   - name: Look to the Stars
     level: 75
     rowId: 68871
@@ -1679,7 +1801,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (24.9, 10.7)
         name: Speak with Almet.
-    partQuestNo: 55
+    partQuestNo: 57
   - name: Mi Casa, Toupasa
     level: 75
     rowId: 68872
@@ -1705,7 +1827,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (23.9, 3.6)
         name: Speak with Almet.
-    partQuestNo: 56
+    partQuestNo: 58
   - name: Legend of the Not-so-hidden Temple
     level: 75
     rowId: 68873
@@ -1731,7 +1853,7 @@ quests:
     soloDuty:
       levelSync: 75
       id: '5032'
-    partQuestNo: 57
+    partQuestNo: 59
   - name: The Aftermath
     level: 75
     rowId: 68874
@@ -1760,7 +1882,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.5, 17.3)
         name: Speak with Urianger.
-    partQuestNo: 58
+    partQuestNo: 60
   - name: In Good Faith
     level: 75
     rowId: 68875
@@ -1789,7 +1911,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (30.5, 17.4)
         name: Speak with Y'shtola.
-    partQuestNo: 59
+    partQuestNo: 61
   - name: The Burden of Knowledge
     level: 75
     rowId: 68876
@@ -1825,7 +1947,7 @@ quests:
       - id: '2818278'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 60
+    partQuestNo: 62
   - name: Bearing with It
     level: 75
     rowId: 68877
@@ -1845,7 +1967,7 @@ quests:
       - location: The Rak'tika Greatwood
         coords: (19.7, 27.4)
         name: Speak with Runar.
-    partQuestNo: 61
+    partQuestNo: 63
   - name: Out of the Wood
     level: 76
     rowId: 68878
@@ -1875,7 +1997,1317 @@ quests:
       - id: 2295
         name: Journey to the Past
         type: achievement
-    partQuestNo: 62
+    partQuestNo: 64
+  - name: When It Rains
+    level: 76
+    rowId: 69142
+    questId: LucKmd101_03606
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Crystarium
+      coords: (12.5, 16.2)
+      name: manager of suites
+    steps:
+      - location: The Crystarium
+        coords: (11.7, 12.7)
+        name: Survey the Exedra.
+      - location: The Crystarium
+        coords: (6.7, 10.0)
+        name: Activate the first anchor.
+      - location: The Crystarium
+        coords: (6.7, 12.4)
+        name: Activate the second anchor.
+      - location: The Crystarium
+        coords: (9.1, 11.5)
+        name: Speak with Alphinaud.
+      - location: Lakeland
+        coords: (7.3, 16.6)
+        name: Speak with Alphinaud.
+      - location: Lakeland
+        coords: (7.3, 16.6)
+        name: Speak with Alisaie.
+    soloDuty:
+      levelSync: 76
+      timeLimit: 30
+      id: '186'
+    partQuestNo: 65
+  - name: Word from On High
+    level: 76
+    rowId: 69143
+    questId: LucKmd102_03607
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Lakeland
+      coords: (7.3, 16.6)
+      name: Alisaie
+    steps:
+      - location: Lakeland
+        coords: (8.0, 18.4)
+        name: Aid the wounded.
+      - location: Lakeland
+        coords: (6.7, 18.3)
+        name: Speak with Lyna.
+    partQuestNo: 66
+  - name: Small Favors
+    level: 76
+    rowId: 69144
+    questId: LucKmd103_03608
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Lakeland
+      coords: (6.9, 18.5)
+      name: Lyna
+    steps:
+      - location: The Crystarium
+        coords: (10.5, 10.3)
+        name: Speak with Thancred.
+      - location: The Crystarium
+        coords: (8.6, 7.9)
+        name: Search for Minfilia.
+      - location: The Crystarium
+        coords: (8.8, 7.9)
+        name: Get Minfilia's attention with a /poke.
+      - location: The Crystarium
+        coords: (8.8, 7.8)
+        name: Obtain the medicinal herbs.
+      - location: The Crystarium
+        coords: (10.6, 10.2)
+        name: Deliver the herbs to Chessamile.
+    partQuestNo: 67
+  - name: The Best Way Out
+    level: 76
+    rowId: 69145
+    questId: LucKmd104_03609
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Crystarium
+      coords: (10.6, 10.2)
+      name: Thancred
+    steps:
+      - location: The Ocular
+        coords: (6.1, 6.0)
+        name: Speak with the Crystal Exarch in the Ocular.
+      - location: The Ocular
+        coords: (6.1, 6.1)
+        name: Speak with Minfilia.
+      - location: The Crystarium
+        coords: (7.6, 11.2)
+        name: Wait for Minfilia at Tessellation.
+      - location: Lakeland
+        coords: (33.0, 34.2)
+        name: Speak with Thancred.
+      - location: Lakeland
+        coords: (32.0, 38.6)
+        name: Speak with Hardyss.
+      - location: Amh Araeng
+        coords: (10.4, 8.0)
+        name: Speak with Hardyss.
+      - location: Amh Araeng
+        coords: (10.4, 8.0)
+        name: Speak with Minfilia.
+    partQuestNo: 68
+  - name: Free Trade
+    level: 76
+    rowId: 69146
+    questId: LucKmd105_03610
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (10.3, 8.0)
+      name: Thancred
+    steps:
+      - location: Amh Araeng
+        coords: (13.3, 9.7)
+        name: Seek out a talkative local.
+      - location: Amh Araeng
+        coords: (12.8, 10.0)
+        name: Question the Mord of Garik.
+      - location: Amh Araeng
+        coords: (13.1, 9.9)
+        name: Speak with Thancred.
+    partQuestNo: 69
+  - name: The Trolley Problem
+    level: 76
+    rowId: 69147
+    questId: LucKmd106_03611
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (13.4, 9.6)
+      name: Zhun Zun
+    steps:
+      - location: Amh Araeng
+        coords: (12.2, 14.0)
+        name: Speak with Thancred.
+      - location: Amh Araeng
+        coords: (21.4, 9.8)
+        name: Speak with Thancred again.
+      - location: Amh Araeng
+        coords: (21.7, 10.4)
+        name: Investigate the area.
+      - location: Amh Araeng
+        coords: (23.1, 8.6)
+        name: Speak with Urianger.
+      - location: Amh Araeng
+        coords: (20.3, 9.7)
+        name: Confront the suspicious man.
+      - location: Amh Araeng
+        coords: (23.3, 9.5)
+        name: Speak with Thancred.
+    partQuestNo: 70
+  - name: Rust and Ruin
+    level: 76
+    rowId: 69148
+    questId: LucKmd107_03612
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (23.2, 9.5)
+      name: Thaffe
+    steps:
+      - location: Amh Araeng
+        coords: (19.6, 10.7)
+        name: Speak with Thaffe.
+      - location: Amh Araeng
+        coords: (18.7, 13.9)
+        name: Speak with Thaffe again.
+      - location: Amh Araeng
+        coords: (16.2, 16.4)
+        name: Search for Thaffe.
+      - location: Amh Araeng
+        coords: (15.9, 16.5)
+        name: Speak with Thaffe.
+      - location: Amh Araeng
+        coords: (11.8, 17.2)
+        name: Speak with Thaffe again.
+      - location: Amh Araeng
+        coords: (11.9, 17.7)
+        name: Speak with Magnus.
+      - location: Amh Araeng
+        coords: (11.8, 17.2)
+        name: Speak with Minfilia.
+    partQuestNo: 71
+  - name: On Track
+    level: 76
+    rowId: 69149
+    questId: LucKmd108_03613
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (11.8, 17.2)
+      name: Minfilia
+    steps:
+      - location: Amh Araeng
+        coords: (10.8, 17.0)
+        name: Seek out a talkative resident of Twine.
+      - location: Amh Araeng
+        coords: (13.0, 16.5)
+        name: Open the toolbox next to Jeryk.
+      - location: Amh Araeng
+        coords: (16.7, 16.5)
+        name: Open the toolbox next to Jeryk.
+      - location: Amh Araeng
+        coords: (18.3, 15.0)
+        name: Remove nests and slay any desert vultures that appear.
+      - location: Amh Araeng
+        coords: (16.9, 16.5)
+        name: Speak with Jeryk.
+      - location: Amh Araeng
+        coords: (12.4, 16.7)
+        name: Speak with Jeryk again.
+    unlocks:
+      - name: "\uE0BE Scavengers Assemble"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/amh-araeng
+        level: 70
+        rowId: 69039
+        questId: LucKzg018_03503
+        genre:
+          id: '136'
+          name: Amh Araeng Sidequests
+        icon: '71140'
+    partQuestNo: 72
+  - name: Down for Maintenance
+    level: 76
+    rowId: 69150
+    questId: LucKmd109_03614
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (12.4, 16.7)
+      name: Jeryk
+    steps:
+      - location: Amh Araeng
+        coords: (11.4, 16.3)
+        name: Examine the defective Talos.
+      - location: Amh Araeng
+        coords: (13.2, 18.5)
+        name: Slay debitage for their fragments.
+      - location: Amh Araeng
+        coords: (11.4, 16.4)
+        name: Deliver the debitage fragments to Urianger.
+    partQuestNo: 73
+  - name: The Truth Hurts
+    level: 76
+    rowId: 69151
+    questId: LucKmd110_03615
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (11.4, 16.4)
+      name: Jeryk
+    steps:
+      - location: Amh Araeng
+        coords: (11.9, 17.6)
+        name: Speak with Thaffe.
+      - location: Amh Araeng
+        coords: (10.4, 17.7)
+        name: Speak with Urianger.
+      - location: Amh Araeng
+        coords: (11.9, 17.1)
+        name: Search for Thancred.
+    unlocks:
+      - name: "\uE0BE Charmless Man"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/amh-araeng
+        level: 70
+        rowId: 69047
+        questId: LucKzh001_03511
+        genre:
+          id: '136'
+          name: Amh Araeng Sidequests
+        icon: '71140'
+
+    partQuestNo: 74
+  - name: A Convenient Distraction
+    level: 77
+    rowId: 69152
+    questId: LucKmd111_03616
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (12.2, 17.3)
+      name: Thancred
+    steps:
+      - location: Amh Araeng
+        coords: (14.5, 22.3)
+        name: Speak with Thancred.
+      - location: Amh Araeng
+        coords: (9.8, 22.2)
+        name: Speak with Guthjon.
+      - location: Amh Araeng
+        coords: (9.5, 22.3)
+        name: Speak with Thancred.
+      - location: Amh Araeng
+        coords: (9.8, 24.6)
+        name: Search the shadows for a Voeburt gold piece.
+      - location: Amh Araeng
+        coords: (9.5, 22.3)
+        name: Present the Voeburt gold piece to Thancred.
+      - location: Amh Araeng
+        coords: (9.5, 22.2)
+        name: Deliver the Voeburt gold piece to Guthjon.
+    partQuestNo: 75
+  - name: A Dirty Job
+    level: 77
+    rowId: 69153
+    questId: LucKmd112_03617
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (9.5, 22.2)
+      name: Guthjon
+    steps:
+      - location: Amh Araeng
+        coords: (14.6, 23.0)
+        name: Speak with Guthjon.
+      - location: Amh Araeng
+        coords: (15.0, 23.4)
+        name: Obtain the smoke bombs from the nearby shack.
+      - location: Amh Araeng
+        coords: (9.2, 24.6)
+        name: Place the smoke bombs at the designated locations inside the mine.
+      - location: Amh Araeng
+        coords: (9.2, 24.6)
+        name: Inspect the rubble and slay any knockers that appear to acquire glittering
+          rocks.
+      - location: Amh Araeng
+        coords: (14.6, 23.0)
+        name: Deliver the glittering rocks to Guthjon.
+    unlocks:
+      - name: "\uE0BE A Vein Pursuit"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/amh-araeng
+        level: 70
+        rowId: 69061
+        questId: LucKzh101_03525
+        genre:
+          id: '136'
+          name: Amh Araeng Sidequests
+        icon: '71140'
+    partQuestNo: 76
+  - name: Have a Heart
+    level: 77
+    rowId: 69154
+    questId: LucKmd113_03618
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (14.6, 23.0)
+      name: Guthjon
+    steps:
+      - location: Amh Araeng
+        coords: (10.6, 18.0)
+        name: Speak with Magnus.
+      - location: Amh Araeng
+        coords: (11.4, 16.4)
+        name: Deliver the chunk of leonine to Urianger.
+      - location: Amh Araeng
+        coords: (11.8, 17.2)
+        name: Speak with Urianger.
+    partQuestNo: 77
+  - name: Full Steam Ahead
+    level: 77
+    rowId: 69155
+    questId: LucKmd114_03619
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (12.3, 16.6)
+      name: Magnus
+    steps:
+      - location: Amh Araeng
+        coords: (21.6, 9.8)
+        name: Speak with Minfilia.
+      - location: Amh Araeng
+        coords: (21.6, 9.6)
+        name: Speak with Magnus.
+      - location: Amh Araeng
+        coords: (21.9, 31.7)
+        name: Speak with Magnus.
+      - location: Amh Araeng
+        coords: (21.9, 31.7)
+        name: Speak with Minfilia.
+    soloDuty:
+      levelSync: 77
+      id: '5031'
+    partQuestNo: 78
+  - name: Crossing Paths
+    level: 77
+    rowId: 69156
+    questId: LucKmd115_03620
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (21.9, 31.7)
+      name: Minfilia
+    steps:
+      - location: Amh Araeng
+        coords: (24.2, 33.9)
+        name: Survey the designated location.
+      - location: Amh Araeng
+        coords: (24.3, 34.9)
+        name: Search for Minfilia.
+      - location: Amh Araeng
+        coords: (16.1, 29.0)
+        name: Search for Thancred.
+    partQuestNo: 79
+  - name: A Fresh Start
+    level: 77
+    rowId: 69157
+    questId: LucKmd116_03621
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (15.8, 29.1)
+      name: Ryne
+    steps:
+      - location: Amh Araeng
+        coords: (11.3, 31.3)
+        name: Survey the designated location.
+      - location: Malikah's Well
+        coords: (10.7, 5.1)
+        name: Enter Malikah's Well.
+      - location: Amh Araeng
+        coords: (13.0, 30.8)
+        name: Enter Malikah's Well.
+      - location: Amh Araeng
+        coords: (12.8, 30.8)
+        name: Speak with Alisaie.
+    unlocks:
+      - name: Malikah's Well
+        type: dungeon
+        levelRequired: 77
+        levelSync: 78
+        ilevelRequired: 385
+        ilevelSync: 0
+      - id: '2818248'
+        name: Aether Current
+        type: aethercurrent
+    partQuestNo: 80
+  - name: More than a Hunch
+    level: 77
+    rowId: 69158
+    questId: LucKmd117_03622
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Amh Araeng
+      coords: (12.8, 30.7)
+      name: Ryne
+    steps:
+      - location: The Crystarium
+        coords: (11.8, 11.2)
+        name: Speak with Y'shtola at the Crystarium.
+      - location: The Crystarium
+        coords: (12.5, 16.2)
+        name: Speak with the manager of suites in the Pendants.
+    unlocks:
+      - id: 2296
+        name: Shrouded in Darkness
+        type: achievement
+    partQuestNo: 81
+  - name: Return to Eulmore
+    level: 77
+    rowId: 69166
+    questId: LucKme101_03630
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Crystarium
+      coords: (12.5, 16.2)
+      name: manager of suites
+    steps:
+      - location: The Ocular
+        coords: (6.1, 6.1)
+        name: Head to the Ocular.
+      - location: Kholusia
+        coords: (16.5, 29.4)
+        name: Speak with Alphinaud in Wright.
+      - location: Kholusia
+        coords: (23.9, 28.7)
+        name: Speak with people en route to Gatetown.
+      - location: Kholusia
+        coords: (24.7, 32.8)
+        name: Speak with Thancred.
+    partQuestNo: 82
+  - name: A Feast of Lies
+    level: 77
+    rowId: 69167
+    questId: LucKme102_03631
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (24.8, 32.8)
+      name: Urianger
+    steps:
+      - location: Kholusia
+        coords: (24.8, 32.7)
+        name: Speak with Alphinaud.
+      - location: Eulmore
+        coords: (11.2, 12.2)
+        name: Speak with Alphinaud.
+      - location: Eulmore
+        coords: (11.3, 12.1)
+        name: Speak with Thancred.
+    soloDuty:
+      levelSync: 77
+      timeLimit: 30
+      id: '191'
+    partQuestNo: 83
+  - name: Paradise Fallen
+    level: 77
+    rowId: 69168
+    questId: LucKme103_03632
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Eulmore
+      coords: (11.3, 12.1)
+      name: Thancred
+    steps:
+      - location: Eulmore
+        coords: (10.2, 12.5)
+        name: Search for enthralled civilians in the Derelicts.
+      - location: Eulmore
+        coords: (9.8, 12.5)
+        name: Administer dream powder to Thoarich.
+      - location: Eulmore
+        coords: (11.0, 10.9)
+        name: Search for enthralled civilians in the Understory.
+      - location: Eulmore
+        coords: (11.1, 10.7)
+        name: Administer dream powder to the amiable maiden.
+      - location: Eulmore
+        coords: (11.5, 10.4)
+        name: Search for enthralled civilians in the Canopy.
+      - location: Eulmore
+        coords: (11.6, 10.2)
+        name: Administer dream powder to the free citizen.
+      - location: Eulmore
+        coords: (11.7, 11.6)
+        name: Speak with Ryne.
+    partQuestNo: 84
+  - name: The Ladder
+    level: 78
+    rowId: 69169
+    questId: LucKme104_03633
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Eulmore
+      coords: (11.6, 11.7)
+      name: Alphinaud
+    steps:
+      - location: Kholusia
+        coords: (12.3, 23.0)
+        name: Speak with Urianger in Bottom Rung.
+      - location: Kholusia
+        coords: (12.3, 32.2)
+        name: Speak with Irvithe.
+      - location: Kholusia
+        coords: (12.2, 31.9)
+        name: Take stock of lumber.
+      - location: Kholusia
+        coords: (12.3, 32.2)
+        name: Speak with Irvithe.
+      - location: Kholusia
+        coords: (12.3, 23.0)
+        name: Speak with Urianger.
+    partQuestNo: 85
+  - name: The View from Above
+    level: 78
+    rowId: 69170
+    questId: LucKme105_03634
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (12.3, 23.0)
+      name: Urianger
+    steps:
+      - location: Kholusia
+        coords: (11.8, 23.3)
+        name: Wait for the work to be completed.
+      - location: Kholusia
+        coords: (12.5, 20.7)
+        name: Speak with Alphinaud.
+      - location: Kholusia
+        coords: (13.1, 22.0)
+        name: Speak with Alisaie.
+      - location: Kholusia
+        coords: (13.1, 21.9)
+        name: Search the area for the mysterious person.
+      - location: Kholusia
+        coords: (18.8, 17.6)
+        name: Investigate the village.
+      - location: Kholusia
+        coords: (18.7, 17.7)
+        name: Speak with Alphinaud.
+    partQuestNo: 86
+  - name: In Mt. Gulg's Shadow
+    level: 78
+    rowId: 69171
+    questId: LucKme106_03635
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (19.0, 17.6)
+      name: Alisaie
+    steps:
+      - location: Kholusia
+        coords: (19.1, 14.5)
+        name: Speak with Alisaie.
+      - location: Kholusia
+        coords: (15.8, 13.2)
+        name: Survey the area.
+      - location: Kholusia
+        coords: (18.1, 11.7)
+        name: Survey the area.
+      - location: Kholusia
+        coords: (18.2, 6.6)
+        name: Speak with Alisaie.
+      - location: Kholusia
+        coords: (12.5, 20.3)
+        name: Speak with Alisaie.
+    partQuestNo: 87
+  - name: A Gigantic Undertaking
+    level: 78
+    rowId: 69172
+    questId: LucKme107_03636
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (12.5, 20.3)
+      name: Alisaie
+    steps:
+      - location: Kholusia
+        coords: (12.7, 20.5)
+        name: Speak with Chai-Nuzz.
+      - location: Kholusia
+        coords: (12.7, 20.5)
+        name: Speak with Dulia-Chai.
+      - location: Kholusia
+        coords: (19.0, 17.6)
+        name: Speak with Tristol.
+    partQuestNo: 88
+  - name: Meet the Tholls
+    level: 78
+    rowId: 69173
+    questId: LucKme108_03637
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (19.0, 17.6)
+      name: Tristol
+    steps:
+      - location: Kholusia
+        coords: (12.9, 9.7)
+        name: Speak with the Crystal Exarch.
+      - location: Kholusia
+        coords: (12.0, 8.5)
+        name: Speak with Xamott.
+      - location: Kholusia
+        coords: (12.6, 9.1)
+        name: Speak with the dwarf observer and undertake the trial.
+      - location: Kholusia
+        coords: (12.6, 9.1)
+        name: Speak with the dwarf observer again and undertake the true trial.
+      - location: Kholusia
+        coords: (12.0, 8.5)
+        name: Speak with Xamott.
+    unlocks:
+      - name: "\uE0BE A Disagreeable Dwarf"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/kholusia
+        level: 70
+        rowId: 69092
+        questId: LucKzi101_03556
+        genre:
+          id: '135'
+          name: Kholusia Sidequests
+        icon: '71140'
+    partQuestNo: 89
+  - name: A-Digging We Will Go
+    level: 78
+    rowId: 69174
+    questId: LucKme109_03638
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (12.0, 8.5)
+      name: Xamott
+    steps:
+      - location: Kholusia
+        coords: (12.1, 8.5)
+        name: Speak with Korutt.
+      - location: Kholusia
+        coords: (28.4, 14.0)
+        name: Speak with Korutt.
+    soloDuty:
+      levelSync: 78
+      timeLimit: 30
+      id: '192'
+    partQuestNo: 90
+  - name: The Duergar's Tewel
+    level: 78
+    rowId: 69175
+    questId: LucKme110_03639
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (28.4, 14.0)
+      name: Korutt
+    steps:
+      - location: Kholusia
+        coords: (33.7, 11.2)
+        name: Speak with the Crystal Exarch.
+      - location: Kholusia
+        coords: (33.7, 11.2)
+        name: Speak with the Crystal Exarch.
+      - location: Kholusia
+        coords: (36.0, 11.5)
+        name: While invisible, use dream powder on Gogg family dwarves.
+      - location: Kholusia
+        coords: (33.7, 11.2)
+        name: Speak with the Crystal Exarch.
+    partQuestNo: 91
+  - name: Rich Veins of Hope
+    level: 78
+    rowId: 69176
+    questId: LucKme111_03640
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (33.7, 11.2)
+      name: Crystal Exarch
+    steps:
+      - location: Kholusia
+        coords: (12.0, 8.5)
+        name: Speak with Xamott.
+      - location: Kholusia
+        coords: (12.2, 19.8)
+        name: Speak with Alisaie.
+      - location: Kholusia
+        coords: (12.1, 20.0)
+        name: Deliver pickaxes to Magnus.
+      - location: Kholusia
+        coords: (12.1, 20.0)
+        name: Deliver pickaxes to Rhon Ron.
+      - location: Kholusia
+        coords: (12.1, 20.0)
+        name: Deliver pickaxes to Kai-Shirr.
+      - location: Kholusia
+        coords: (12.2, 19.8)
+        name: Speak with Alisaie.
+    unlocks:
+      - name: "\uE0BE Fugitive of Fear"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/kholusia
+        level: 70
+        rowId: 69073
+        questId: LucKzi001_03537
+        genre:
+          id: '135'
+          name: Kholusia Sidequests
+        icon: '71140'
+    partQuestNo: 92
+  - name: That None Shall Ever Again
+    level: 78
+    rowId: 69177
+    questId: LucKme112_03641
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (12.1, 19.8)
+      name: Alphinaud
+    steps:
+      - location: Kholusia
+        coords: (18.7, 17.6)
+        name: Speak with Y'shtola.
+      - location: Kholusia
+        coords: (18.7, 17.6)
+        name: Speak with Y'shtola.
+      - location: Kholusia
+        coords: (18.7, 17.6)
+        name: Imbue the heartstone with magick.
+      - location: Kholusia
+        coords: (18.6, 17.7)
+        name: Speak with Chai-Nuzz.
+    partQuestNo: 93
+  - name: A Breath of Respite
+    level: 78
+    rowId: 69178
+    questId: LucKme113_03642
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (18.6, 17.7)
+      name: Chai-Nuzz
+    steps:
+      - location: Kholusia
+        coords: (18.8, 17.9)
+        name: Speak with Dulia-Chai.
+      - location: Kholusia
+        coords: (21.1, 23.0)
+        name: Search for the Crystal Exarch.
+      - location: Kholusia
+        coords: (18.6, 17.7)
+        name: Speak with the Crystal Exarch.
+    partQuestNo: 94
+  - name: Extinguishing the Last Light
+    level: 79
+    rowId: 69179
+    questId: LucKme114_03643
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Kholusia
+      coords: (18.6, 17.7)
+      name: Chai-Nuzz
+    steps:
+      - location: Kholusia
+        coords: (18.6, 17.7)
+        name: Speak with the Crystal Exarch.
+      - location: Kholusia
+        coords: (18.0, 5.5)
+        name: Speak with Y'shtola.
+      - location: Mt. Gulg
+        coords: (11.2, 13.9)
+        name: Enter Mt. Gulg.
+      - location: The Crown of the Immaculate
+        coords: (21.4, 21.4)
+        name: Enter Mt. Gulg.
+      - location: The Crown of the Immaculate
+        coords: (6.1, 6.1)
+        name: Confront Innocence in the Crown of the Immaculate.
+      - location: The Crown of the Immaculate
+        coords: (6.3, 6.2)
+        name: Speak with Ryne.
+    unlocks:
+      - name: Mt. Gulg
+        type: dungeon
+        levelRequired: 79
+        levelSync: 80
+        ilevelRequired: 390
+        ilevelSync: 420
+      - name: the Crown of the Immaculate
+        type: trial
+        levelRequired: 79
+        levelSync: 80
+        ilevelRequired: 0
+        ilevelSync: 420
+      - id: '2818233'
+        name: Aether Current
+        type: aethercurrent
+      - id: 2297
+        name: Warden of Light
+        type: achievement
+    partQuestNo: 95
+  - name: Reassuring the Masses
+    level: 79
+    rowId: 69180
+    questId: LucKmf101_03644
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Crystarium
+      coords: (12.5, 16.2)
+      name: manager of suites
+    steps:
+      - location: The Crystarium
+        coords: (10.1, 13.6)
+        name: Speak with Bragi.
+      - location: The Crystarium
+        coords: (10.6, 10.2)
+        name: Speak with Chessamile.
+      - location: The Crystarium
+        coords: (10.0, 5.9)
+        name: Speak with Moren.
+      - location: The Crystarium
+        coords: (11.0, 8.5)
+        name: Speak with Katliss.
+    partQuestNo: 96
+  - name: In His Garden
+    level: 79
+    rowId: 69181
+    questId: LucKmf102_03645
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Crystarium
+      coords: (11.0, 8.5)
+      name: Katliss
+    steps:
+      - location: The Crystarium
+        coords: (6.7, 9.5)
+        name: Take a moment to feel the wind upon your face.
+      - location: The Crystarium
+        coords: (8.2, 9.2)
+        name: Gather information on the Crystal Exarch.
+      - location: Lakeland
+        coords: (33.8, 27.6)
+        name: Speak with Lyna at the Accensor Gate.
+    partQuestNo: 97
+  - name: The Unbroken Thread
+    level: 79
+    rowId: 69182
+    questId: LucKmf103_03646
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: Lakeland
+      coords: (33.8, 27.6)
+      name: Lyna
+    steps:
+      - location: The Crystarium
+        coords: (13.6, 11.3)
+        name: Head to the Ocular.
+      - location: The Crystarium
+        coords: (12.5, 11.5)
+        name: Speak with Lyna.
+      - location: The Crystarium
+        coords: (12.4, 7.8)
+        name: Speak with the aspiring amaro tamer.
+      - location: The Crystarium
+        coords: (12.4, 7.9)
+        name: Speak with Urianger.
+    partQuestNo: 98
+  - name: To Storm-tossed Seas
+    level: 79
+    rowId: 69183
+    questId: LucKmf104_03647
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Crystarium
+      coords: (12.4, 7.9)
+      name: Urianger
+    steps:
+      - location: Lakeland
+        coords: (18.5, 35.6)
+        name: Speak with Urianger in Sullen.
+      - location: Lakeland
+        coords: (7.8, 36.1)
+        name: Investigate suspect rock formations beneath the water's surface.
+      - location: Lakeland
+        coords: (9.2, 37.8)
+        name: Speak with Urianger.
+      - location: The Tempest
+        coords: (27.0, 4.3)
+        name: Speak with Urianger.
+      - location: The Tempest
+        coords: (27.1, 4.3)
+        name: Speak with Urianger.
+    partQuestNo: 99
+  - name: Waiting in the Depths
+    level: 79
+    rowId: 69184
+    questId: LucKmf105_03648
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Tempest
+      coords: (27.0, 4.4)
+      name: Thancred
+    steps:
+      - location: The Tempest
+        coords: (30.8, 14.1)
+        name: Search for anything unusual on the Norvrandt Slope.
+      - location: The Tempest
+        coords: (33.6, 17.5)
+        name: Speak with the Ondo youth.
+      - location: The Tempest
+        coords: (32.8, 16.9)
+        name: Speak with Alphinaud.
+      - location: The Tempest
+        coords: (36.9, 6.6)
+        name: Defeat blue swimmers.
+      - location: The Tempest
+        coords: (32.8, 16.8)
+        name: Speak with Paushs Ooan.
+    partQuestNo: 100
+  - name: City of the Ancients
+    level: 79
+    rowId: 69185
+    questId: LucKmf106_03649
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Tempest
+      coords: (33.0, 16.8)
+      name: Y'shtola
+    steps:
+      - location: The Tempest
+        coords: (29.5, 12.6)
+        name: Speak with Y'shtola.
+      - location: The Tempest
+        coords: (29.6, 13.2)
+        name: Inspect the Ondo Cups from the survey point.
+      - location: The Tempest
+        coords: (28.0, 11.9)
+        name: Use the mythril knife to collect scrapings from the remnant wall.
+      - location: The Tempest
+        coords: (29.5, 12.6)
+        name: Speak with Y'shtola.
+    partQuestNo: 101
+  - name: The Light of Inspiration
+    level: 79
+    rowId: 69186
+    questId: LucKmf107_03650
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Tempest
+      coords: (22.0, 11.0)
+      name: Y'shtola
+    steps:
+      - location: The Tempest
+        coords: (32.8, 16.8)
+        name: Speak with Paushs Ooan.
+      - location: The Tempest
+        coords: (34.5, 25.4)
+        name: Search for Grenoldt.
+      - location: The Tempest
+        coords: (34.2, 25.7)
+        name: Approach Grenoldt and /psych him up.
+      - location: The Tempest
+        coords: (34.2, 25.7)
+        name: Present something inspiring to Grenoldt.
+    partQuestNo: 102
+  - name: The Illuminated Land
+    level: 80
+    rowId: 69187
+    questId: LucKmf108_03651
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Tempest
+      coords: (34.2, 25.7)
+      name: Grenoldt
+    steps:
+      - location: The Tempest
+        coords: (33.7, 17.5)
+        name: Deliver Grenoldt's lamp to Tolshs Aath.
+      - location: The Tempest
+        coords: (31.8, 16.1)
+        name: Speak with the Ondo guide.
+      - location: The Tempest
+        coords: (29.5, 16.5)
+        name: Speak with the Ondo guide.
+      - location: The Tempest
+        coords: (27.5, 14.5)
+        name: Speak with Urianger.
+      - location: The Tempest
+        coords: (23.2, 18.6)
+        name: Speak with Alphinaud.
+      - location: The Tempest
+        coords: (17.8, 17.0)
+        name: Speak with Alisaie.
+      - location: The Tempest
+        coords: (11.4, 16.3)
+        name: Speak with Alisaie.
+      - location: The Tempest
+        coords: (5.1, 15.7)
+        name: Proceed towards the end of the Caliban Gap.
+      - location: The Tempest
+        coords: (5.6, 17.2)
+        name: Speak with Y'shtola.
+    partQuestNo: 103
+  - name: The End of a World
+    level: 80
+    rowId: 69188
+    questId: LucKmf109_03652
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Tempest
+      coords: (5.5, 17.4)
+      name: Alisaie
+    steps:
+      - location: The Tempest
+        coords: (9.0, 22.6)
+        name: Investigate the imposing doors.
+      - location: The Tempest
+        coords: (9.6, 24.5)
+        name: Speak with Alisaie.
+      - location: The Tempest
+        coords: (7.8, 31.3)
+        name: Gather information in Amaurot.
+      - location: The Tempest
+        coords: (8.8, 26.5)
+        name: Speak with Alphinaud.
+    partQuestNo: 104
+  - name: A Greater Purpose
+    level: 80
+    rowId: 69189
+    questId: LucKmf110_03653
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Tempest
+      coords: (8.8, 26.5)
+      name: Alphinaud
+    steps:
+      - location: The Tempest
+        coords: (21.6, 26.9)
+        name: Speak with the administrative clerk.
+      - location: The Tempest
+        coords: (21.5, 26.7)
+        name: Wait at the designated location.
+      - location: The Tempest
+        coords: (21.6, 26.9)
+        name: Speak with the administrative clerk.
+      - location: The Tempest
+        coords: (27.8, 34.5)
+        name: Submit the visitor's writ application to the secretariat clerk.
+      - location: The Tempest
+        coords: (27.2, 34.9)
+        name: Find an empty seat.
+      - location: The Tempest
+        coords: (27.8, 34.5)
+        name: Speak with the secretariat clerk.
+      - location: The Tempest
+        coords: (16.6, 30.3)
+        name: Show the visitor's writ to Thancred.
+    unlocks:
+      - id: '2818293'
+        name: Aether Current
+        type: aethercurrent
+    partQuestNo: 105
+  - name: Shadowbringers
+    level: 80
+    rowId: 69190
+    questId: LucKmf111_03654
+    genre:
+      id: '8'
+      name: Shadowbringers
+    icon: '71000'
+    issuer:
+      location: The Tempest
+      coords: (16.6, 30.4)
+      name: Alisaie
+    steps:
+      - location: The Tempest
+        coords: (16.5, 30.4)
+        name: Speak with Alphinaud.
+      - location: The Tempest
+        coords: (16.6, 30.3)
+        name: Speak with Urianger.
+      - location: The Tempest
+        coords: (16.5, 30.3)
+        name: Speak with Y'shtola.
+      - location: The Tempest
+        coords: (16.6, 30.3)
+        name: Speak with Thancred.
+      - location: The Tempest
+        coords: (16.6, 30.4)
+        name: Speak with Ryne.
+      - location: The Tempest
+        coords: (14.5, 35.1)
+        name: Speak with the Capitol attendant.
+      - location: Amaurot
+        coords: (21.4, 20.2)
+        name: Enter Amaurot.
+      - location: The Dying Gasp
+        coords: (6.1, 6.1)
+        name: Enter Amaurot.
+      - location: The Dying Gasp
+        coords: (6.1, 6.1)
+        name: Confront Hades in the Dying Gasp.
+      - location: The Ocular
+        coords: (6.1, 6.1)
+        name: Confront Hades in the Dying Gasp.
+      - location: The Ocular
+        coords: (6.1, 6.0)
+        name: Speak with the Crystal Exarch.
+      - location: The Rising Stones
+        coords: (6.0, 5.9)
+        name: Speak with Tataru in the Rising Stones.
+    unlocks:
+      - name: Amaurot
+        type: dungeon
+        levelRequired: 80
+        levelSync: 80
+        ilevelRequired: 410
+        ilevelSync: 440
+      - name: the Dying Gasp
+        type: trial
+        levelRequired: 80
+        levelSync: 80
+        ilevelRequired: 410
+        ilevelSync: 0
+      - id: 2298
+        name: Shadowbringers
+        type: achievement
+    partQuestNo: 106
 
 
 ---

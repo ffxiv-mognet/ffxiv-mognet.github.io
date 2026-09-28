@@ -61,6 +61,7 @@ quests:
       type: achievement
   requires:
     - name: A Breath of Respite
+      link: /quests/msq/shadowbringers/part1
       level: 78
       rowId: 69178
       questId: LucKme113_03642
@@ -103,6 +104,7 @@ quests:
       questId: LucKma204_03285
       genre: Shadowbringers
       icon: '71000'
+      link: /quests/msq/shadowbringers/part1
   partQuestNo: 2
 - name: "\uE0BE Village of Woe"
   level: 70
@@ -143,6 +145,7 @@ quests:
       questId: LucKma204_03285
       genre: Shadowbringers
       icon: '71000'
+      link: /quests/msq/shadowbringers/part1
   partQuestNo: 3
 - name: "\uE0BE Fugitive of Fear"
   level: 70
@@ -175,6 +178,7 @@ quests:
       type: aethercurrent
   requires:
     - name: Rich Veins of Hope
+      link: /quests/msq/shadowbringers/part1
       level: 78
       rowId: 69176
       questId: LucKme111_03640
@@ -212,6 +216,7 @@ quests:
       type: aethercurrent
   requires:
     - name: Meet the Tholls
+      link: /quests/msq/shadowbringers/part1
       level: 78
       rowId: 69173
       questId: LucKme108_03637

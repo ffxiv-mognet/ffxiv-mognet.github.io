@@ -51,6 +51,7 @@ quests:
         questId: LucKmb118_03319
         genre: Shadowbringers
         icon: '71000'
+        link: /quests/msq/shadowbringers/part1
     partQuestNo: 1
   - name: "\uE0BE The Forbidden Lran"
     level: 70
@@ -81,6 +82,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Il Mheg, the Faerie Kingdom
+        link: /quests/msq/shadowbringers/part1
         level: 72
         rowId: 68842
         questId: LucKmb105_03306
@@ -118,6 +120,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Unto the Truth
+        link: /quests/msq/shadowbringers/part1
         level: 72
         rowId: 68846
         questId: LucKmb109_03310
@@ -160,6 +163,7 @@ quests:
         questId: LucKmb110_03311
         genre: Shadowbringers
         icon: '71000'
+        link: /quests/msq/shadowbringers/part1
     partQuestNo: 4
   - name: "\uE0BE A New Amaro"
     level: 70
@@ -197,6 +201,7 @@ quests:
         questId: LucKmb117_03318
         genre: Shadowbringers
         icon: '71000'
+        link: /quests/msq/shadowbringers/part1
     partQuestNo: 5
 
 

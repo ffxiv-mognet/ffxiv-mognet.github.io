@@ -46,6 +46,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Crossing Paths
+        link: /quests/msq/shadowbringers/part1
         level: 77
         rowId: 69156
         questId: LucKmd115_03620
@@ -80,6 +81,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Working Off the Meal
+        link: /quests/msq/shadowbringers/part1
         level: 70
         rowId: 68829
         questId: LucKma303_03293
@@ -120,6 +122,7 @@ quests:
         type: aethercurrent
     requires:
       - name: On Track
+        link: /quests/msq/shadowbringers/part1
         level: 76
         rowId: 69149
         questId: LucKmd108_03613
@@ -151,6 +154,7 @@ quests:
         type: aethercurrent
     requires:
       - name: The Truth Hurts
+        link: /quests/msq/shadowbringers/part1
         level: 76
         rowId: 69151
         questId: LucKmd110_03615
@@ -185,6 +189,7 @@ quests:
         type: aethercurrent
     requires:
       - name: A Dirty Job
+        link: /quests/msq/shadowbringers/part1
         level: 77
         rowId: 69153
         questId: LucKmd112_03617
