@@ -43,13 +43,6 @@ quests:
       levelSync: 76
       timeLimit: 30
       id: '186'
-    requires:
-      - name: Out of the Wood
-        level: 76
-        rowId: 68878
-        questId: LucKmc121_03342
-        genre: Shadowbringers
-        icon: '71000'
     partQuestNo: 1
   - name: Word from On High
     level: 76
@@ -256,6 +249,17 @@ quests:
       - location: Amh Araeng
         coords: (12.4, 16.7)
         name: Speak with Jeryk again.
+    unlocks:
+      - name: "\uE0BE Scavengers Assemble"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/amh-araeng
+        level: 70
+        rowId: 69039
+        questId: LucKzg018_03503
+        genre:
+          id: '136'
+          name: Amh Araeng Sidequests
+        icon: '71140'
     partQuestNo: 8
   - name: Down for Maintenance
     level: 76
@@ -303,6 +307,17 @@ quests:
         coords: (11.9, 17.1)
         name: Search for Thancred.
     partQuestNo: 10
+    unlocks:
+      - name: "\uE0BE Charmless Man"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/amh-araeng
+        level: 70
+        rowId: 69047
+        questId: LucKzh001_03511
+        genre:
+          id: '136'
+          name: Amh Araeng Sidequests
+        icon: '71140'
   - name: A Convenient Distraction
     level: 77
     rowId: 69152
@@ -365,6 +380,17 @@ quests:
         coords: (14.6, 23.0)
         name: Deliver the glittering rocks to Guthjon.
     partQuestNo: 12
+    unlocks:
+      - name: "\uE0BE A Vein Pursuit"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/amh-araeng
+        level: 70
+        rowId: 69061
+        questId: LucKzh101_03525
+        genre:
+          id: '136'
+          name: Amh Araeng Sidequests
+        icon: '71140'
   - name: Have a Heart
     level: 77
     rowId: 69154
@@ -730,6 +756,17 @@ quests:
         coords: (12.0, 8.5)
         name: Speak with Xamott.
     partQuestNo: 25
+    unlocks:
+      - name: "\uE0BE A Disagreeable Dwarf"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/kholusia
+        level: 70
+        rowId: 69092
+        questId: LucKzi101_03556
+        genre:
+          id: '135'
+          name: Kholusia Sidequests
+        icon: '71140'
   - name: A-Digging We Will Go
     level: 78
     rowId: 69174
@@ -812,6 +849,17 @@ quests:
         coords: (12.2, 19.8)
         name: Speak with Alisaie.
     partQuestNo: 28
+    unlocks:
+      - name: "\uE0BE Fugitive of Fear"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/kholusia
+        level: 70
+        rowId: 69073
+        questId: LucKzi001_03537
+        genre:
+          id: '135'
+          name: Kholusia Sidequests
+        icon: '71140'
   - name: That None Shall Ever Again
     level: 78
     rowId: 69177
@@ -1045,6 +1093,17 @@ quests:
         coords: (32.8, 16.8)
         name: Speak with Paushs Ooan.
     partQuestNo: 36
+    unlocks:
+      - name: "\uE0BE Koal of the Cups"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/the-tempest
+        level: 70
+        rowId: 69124
+        questId: LucKzj101_03588
+        genre:
+          id: '139'
+          name: Tempest Sidequests
+        icon: '71140'
   - name: City of the Ancients
     level: 79
     rowId: 69185
@@ -1164,6 +1223,37 @@ quests:
         coords: (8.8, 26.5)
         name: Speak with Alphinaud.
     partQuestNo: 40
+    unlocks:
+      - name: "\uE0BE Responsible Creation"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/the-tempest
+        level: 70
+        rowId: 69128
+        questId: LucKzk001_03592
+        genre:
+          id: '139'
+          name: Tempest Sidequests
+        icon: '71140'
+      - name: "\uE0BE Debate and Discourse"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/the-tempest
+        level: 70
+        rowId: 69129
+        questId: LucKzk002_03593
+        genre:
+          id: '139'
+          name: Tempest Sidequests
+        icon: '71140'
+      - name: "\uE0BE Community Cohesion"
+        type: quest-71140
+        link: /quests/aethercurrents/shadowbringers/the-tempest
+        level: 70
+        rowId: 69130
+        questId: LucKzk003_03594
+        genre:
+          id: '139'
+          name: Tempest Sidequests
+        icon: '71140'
   - name: A Greater Purpose
     level: 80
     rowId: 69189
@@ -1203,6 +1293,7 @@ quests:
         name: Aether Current
         type: aethercurrent
     partQuestNo: 41
+        link: /quests/aethercurrents/shadowbringers/the-tempest
   - name: Shadowbringers
     level: 80
     rowId: 69190
