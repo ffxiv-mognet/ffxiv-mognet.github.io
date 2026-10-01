@@ -61,7 +61,7 @@ quests:
       type: achievement
   requires:
     - name: A Breath of Respite
-      link: /quests/msq/shadowbringers/part1
+      link: /quests/msq/shadowbringers/part2
       level: 78
       rowId: 69178
       questId: LucKme113_03642
@@ -178,7 +178,7 @@ quests:
       type: aethercurrent
   requires:
     - name: Rich Veins of Hope
-      link: /quests/msq/shadowbringers/part1
+      link: /quests/msq/shadowbringers/part2
       level: 78
       rowId: 69176
       questId: LucKme111_03640
@@ -216,7 +216,7 @@ quests:
       type: aethercurrent
   requires:
     - name: Meet the Tholls
-      link: /quests/msq/shadowbringers/part1
+      link: /quests/msq/shadowbringers/part2
       level: 78
       rowId: 69173
       questId: LucKme108_03637
