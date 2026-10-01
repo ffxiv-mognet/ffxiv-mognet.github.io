@@ -1292,8 +1292,8 @@ quests:
       - id: '2818293'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 41
         link: /quests/aethercurrents/shadowbringers/the-tempest
+    partQuestNo: 41
   - name: Shadowbringers
     level: 80
     rowId: 69190
