@@ -775,6 +775,42 @@ quests:
       - id: 2293
         name: Between Two Worlds
         type: achievement
+      - name: The Man with Too Many Scars
+        level: 70
+        rowId: 68779
+        questId: LucKba101_03243
+        genre: Tank Role Quests (Shadowbringers)
+        icon: '71140'
+        type: quest-71140
+        link: /quests/role/shadowbringers/tank
+      - name: Traditions and Travails
+        type: quest-71140
+        link: /quests/role/shadowbringers/healer
+        level: 70
+        rowId: 68803
+        questId: LucKba201_03267
+        genre: Healer Role Quests (Shadowbringers)
+        icon: '71140'
+      - name: No Greater Sport
+        type: quest-71140
+        link: /quests/role/shadowbringers/physical-dps
+        level: 70
+        rowId: 68809
+        questId: LucKba301_03273
+        genre: Physical DPS Role Quests (Shadowbringers)
+        icon: '71140'
+      - name: Hollow Pursuits
+        type: quest-71140
+        link: /quests/role/shadowbringers/caster
+        level: 70
+        rowId: 69159
+        questId: LucKba401_03623
+        genre: Magical Ranged DPS Role Quests (Shadowbringers)
+        icon: '71140'
+
+
+
+
     partQuestNo: 23
   - name: An Unwelcome Guest
     level: 72

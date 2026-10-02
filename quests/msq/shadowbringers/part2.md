@@ -1155,6 +1155,43 @@ quests:
       - location: The Tempest
         coords: (34.2, 25.7)
         name: Present something inspiring to Grenoldt.
+    requires:
+      - name: To Have Loved and Lost
+        level: 80
+        rowId: 68784
+        questId: LucKba151_03248
+        genre:
+          id: '217'
+          name: Tank Role Quests (Shadowbringers)
+        icon: '71140'
+        link: /quests/role/shadowbringers/tank
+      - name: The Soul of Temperance
+        level: 80
+        rowId: 68808
+        questId: LucKba251_03272
+        genre:
+          id: '218'
+          name: Healer Role Quests (Shadowbringers)
+        icon: '71140'
+        link: /quests/role/shadowbringers/healer
+      - name: Courage Born of Fear
+        level: 80
+        rowId: 68814
+        questId: LucKba351_03278
+        genre:
+          id: '219'
+          name: Physical DPS Role Quests (Shadowbringers)
+        icon: '71140'
+        link: /quests/role/shadowbringers/physical-dps
+      - name: A Tearful Reunion
+        level: 80
+        rowId: 69164
+        questId: LucKba451_03628
+        genre:
+          id: '220'
+          name: Magical Ranged DPS Role Quests (Shadowbringers)
+        icon: '71140'
+        link: /quests/role/shadowbringers/caster
     partQuestNo: 38
   - name: The Illuminated Land
     level: 80
