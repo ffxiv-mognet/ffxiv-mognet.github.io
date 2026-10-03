@@ -112,7 +112,7 @@ storylines:
           - name: The Shadow of Mhach
             link: /quests/alliance/shadow-mhach
           - name: Return to Ivalice
-            link: /quests/alliance/return-ivalice
+            link: /quests/alliance/return-to-ivalice
           - name: "YoRHa: Dark Apocalypse"
             link: /quests/alliance/yorha
           - name: Myths of the Realm
