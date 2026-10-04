@@ -4,6 +4,7 @@ expansion: relic
 title: Resistance Weapons
 permalink: /quests/relics/resistance-weapons
 quests:
+
   - name: "\uE0BF Fire in the Forge"
     level: 80
     rowId: 69380
@@ -86,6 +87,23 @@ quests:
           name: Resistance Weapons
         icon: '71140'
     partQuestNo: 1
+  - name: "\uE0BF Resistance Is (Not) Futile"
+    level: 80
+    rowId: 69381
+    questId: LucKsa051_03845
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71022'
+    issuer:
+      location: Gangos
+      coords: (6.1, 4.9)
+      name: Zlatan
+    steps:
+      - location: Gangos
+        coords: (6.1, 4.9)
+        name: Obtain Thavnairian scalepowder.
+    partQuestNo: 2
   - name: A Sober Proposal
     level: 80
     rowId: 69505
@@ -110,7 +128,7 @@ quests:
         questId: LucKsa101_03941
         genre: Resistance Weapons
         icon: '71140'
-    partQuestNo: 2
+    partQuestNo: 3
   - name: "\uE0BF For Want of a Memory"
     level: 80
     rowId: 69506
@@ -118,7 +136,7 @@ quests:
     genre:
       id: '91'
       name: Resistance Weapons
-    icon: '71140'
+    icon: '71022'
     issuer:
       location: Gangos
       coords: (6.1, 4.9)
@@ -128,7 +146,7 @@ quests:
         coords: (6.1, 4.9)
         name: With  and  in your inventory or Armoury Chest, deliver the memories
           of the dying to Zlatan at Gangos.
-    partQuestNo: 3
+    partQuestNo: 4
   - name: "\uE0BF The Will to Resist"
     level: 80
     rowId: 69507
@@ -136,7 +154,7 @@ quests:
     genre:
       id: '91'
       name: Resistance Weapons
-    icon: '71140'
+    icon: '71022'
     issuer:
       location: Gangos
       coords: (6.1, 4.9)
@@ -197,7 +215,24 @@ quests:
       - id: 2710
         name: "Pi\xE8ce de R\xE9sistance: Solstice Recollection"
         type: achievement
-    partQuestNo: 4
+    partQuestNo: 5
+  - name: In the Queen's Image
+    level: 80
+    rowId: 69573
+    questId: LucKsa250_04037
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71140'
+    issuer:
+      location: Gangos
+      coords: (6.2, 5.0)
+      name: Gerolt
+    steps:
+      - location: Gangos
+        coords: (6.1, 4.9)
+        name: Speak with Zlatan.
+    partQuestNo: 6
   - name: "\uE0BF Change of Arms"
     level: 80
     rowId: 69574
@@ -205,7 +240,7 @@ quests:
     genre:
       id: '91'
       name: Resistance Weapons
-    icon: '71140'
+    icon: '71022'
     issuer:
       location: Gangos
       coords: (6.1, 4.9)
@@ -214,15 +249,7 @@ quests:
       - location: Gangos
         coords: (6.1, 4.9)
         name: Obtain loathsome memories of the dying.
-    requires:
-      - name: In the Queen's Image
-        link: /quests/fieldops/bozja
-        level: 80
-        rowId: 69573
-        questId: LucKsa250_04037
-        genre: Resistance Weapons
-        icon: '71140'
-    partQuestNo: 5
+    partQuestNo: 7
   - name: The Resistance Remembers
     level: 80
     rowId: 69575
@@ -239,7 +266,7 @@ quests:
       - location: Gangos
         coords: (5.9, 4.8)
         name: Deliver memories of the dying to the Allagan node in Gangos.
-    partQuestNo: 6
+    partQuestNo: 8
   - name: "\uE0BF A New Path of Resistance"
     level: 80
     rowId: 69576
@@ -247,7 +274,7 @@ quests:
     genre:
       id: '91'
       name: Resistance Weapons
-    icon: '71140'
+    icon: '71022'
     issuer:
       location: Gangos
       coords: (6.1, 4.9)
@@ -308,7 +335,7 @@ quests:
       - id: 2784
         name: 'Quick to Judge: Law''s Order Astrometer'
         type: achievement
-    partQuestNo: 7
+    partQuestNo: 9
   - name: A New Playing Field
     level: 71
     rowId: 69620
@@ -349,7 +376,7 @@ quests:
         questId: LucKmj110_04016
         genre: Dark Reprise
         icon: '71000'
-    partQuestNo: 8
+    partQuestNo: 10
   - name: What Dreams Are Made Of
     level: 80
     rowId: 69632
@@ -366,7 +393,7 @@ quests:
       - location: Gangos
         coords: (6.1, 4.9)
         name: Speak with Zlatan.
-    partQuestNo: 9
+    partQuestNo: 11
   - name: Spare Parts
     level: 80
     rowId: 69633
@@ -390,7 +417,7 @@ quests:
         questId: LucKsa350_04096
         genre: Resistance Weapons
         icon: '71140'
-    partQuestNo: 10
+    partQuestNo: 12
   - name: Tell Me a Story
     level: 80
     rowId: 69634
@@ -415,7 +442,7 @@ quests:
         questId: LucKsa350_04096
         genre: Resistance Weapons
         icon: '71140'
-    partQuestNo: 11
+    partQuestNo: 13
   - name: A Fond Memory
     level: 80
     rowId: 69635
@@ -440,7 +467,7 @@ quests:
         questId: LucKsa350_04096
         genre: Resistance Weapons
         icon: '71140'
-    partQuestNo: 12
+    partQuestNo: 14
   - name: A Done Deal
     level: 80
     rowId: 69636
@@ -476,7 +503,7 @@ quests:
         questId: LucKsa353_04099
         genre: Resistance Weapons
         icon: '71140'
-    partQuestNo: 13
+    partQuestNo: 15
   - name: "\uE0BF Irresistible"
     level: 80
     rowId: 69637
@@ -484,7 +511,7 @@ quests:
     genre:
       id: '91'
       name: Resistance Weapons
-    icon: '71140'
+    icon: '71022'
     issuer:
       location: Gangos
       coords: (6.1, 4.9)
@@ -545,5 +572,5 @@ quests:
       - id: 2873
         name: 'Fit for a Queen: Blade''s Providence'
         type: achievement
-    partQuestNo: 14
+    partQuestNo: 16
 ---

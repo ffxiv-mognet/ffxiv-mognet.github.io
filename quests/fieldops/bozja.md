@@ -138,6 +138,9 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.8, 29.3)
         name: Speak with Mikoto.
+    unlocks:
+      - name: Southern Entrenchment
+        type: map
     requires:
       - name: "\uE0BF Fire in the Forge"
         link: /quests/relics/resistance-weapons
@@ -226,6 +229,9 @@ quests:
       - location: Bozjan Southern Front
         coords: (28.8, 24.3)
         name: Speak with Dmitar.
+    unlocks:
+      - name: Old Bozja
+        type: map
     requires:
       - name: "Resistance Rank: 5"
     partQuestNo: 8
@@ -257,6 +263,8 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.8, 29.3)
         name: Speak with Mikoto.
+    requires:
+      - name: "Resistance Rank: 6"
     partQuestNo: 9
   - name: Third Time's the Charm
     level: 71
@@ -280,6 +288,8 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.8, 29.3)
         name: Speak with Mikoto.
+    requires:
+      - name: "Resistance Rank: 7"
     partQuestNo: 10
   - name: Pressing Forward
     level: 71
@@ -297,6 +307,11 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.3, 23.6)
         name: Speak with Dmitar.
+    unlocks:
+      - name: The Alermuc Climb
+        type: map
+    requires:
+      - name: "Resistance Rank: 8"
     partQuestNo: 11
   - name: Signature Acquired
     level: 71
@@ -323,6 +338,8 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.6, 29.6)
         name: Speak with Bajsaljen.
+    requires:
+      - name: "Resistance Rank: 9"
     partQuestNo: 12
   - name: Picking Up the Trail
     level: 71
@@ -377,6 +394,8 @@ quests:
       - id: 2670
         name: In the Trenches
         type: achievement
+    requires:
+      - name: "Resistance Rank: 10"
     partQuestNo: 14
   - name: A Sign of What's to Come
     level: 80
@@ -490,31 +509,6 @@ quests:
         coords: (6.1, 6.7)
         name: Obtain pieces of Garlean synthetic fabric.
     partQuestNo: 18
-  - name: In the Queen's Image
-    level: 80
-    rowId: 69573
-    questId: LucKsa250_04037
-    genre:
-      id: '91'
-      name: Resistance Weapons
-    icon: '71140'
-    issuer:
-      location: Gangos
-      coords: (6.2, 5.0)
-      name: Gerolt
-    steps:
-      - location: Gangos
-        coords: (6.1, 4.9)
-        name: Speak with Zlatan.
-    requires:
-      - name: "\uE0BF The Will to Resist"
-        link: /quests/relics/resistance-weapons
-        level: 80
-        rowId: 69507
-        questId: LucKsa152_03971
-        genre: Resistance Weapons
-        icon: '71140'
-    partQuestNo: 19
   - name: Resolve Unshaken
     level: 71
     rowId: 69621
