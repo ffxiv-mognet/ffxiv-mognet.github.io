@@ -140,7 +140,7 @@ quests:
         name: Speak with Mikoto.
     requires:
       - name: "\uE0BF Fire in the Forge"
-        link: /quests/relic/resistance-weapons
+        link: /quests/relics/resistance-weapons
         level: 80
         rowId: 69380
         questId: LucKsa050_03844
@@ -508,7 +508,7 @@ quests:
         name: Speak with Zlatan.
     requires:
       - name: "\uE0BF The Will to Resist"
-        link: /quests/relic/resistance-weapons
+        link: /quests/relics/resistance-weapons
         level: 80
         rowId: 69507
         questId: LucKsa152_03971

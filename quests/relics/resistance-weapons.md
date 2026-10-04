@@ -2,7 +2,7 @@
 layout: quest-table
 expansion: relic
 title: Resistance Weapons
-permalink: /quests/relic/resistance-weapons
+permalink: /quests/relics/resistance-weapons
 quests:
   - name: "\uE0BF Fire in the Forge"
     level: 80

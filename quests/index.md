@@ -1,7 +1,7 @@
 ---
 layout: with-nav
 storylines:
-  - name: Main Story Quests
+  - name: Expansions
     stories:
     - name: A Realm Reborn
       parts:
@@ -21,6 +21,14 @@ storylines:
           link: /quests/msq/realm-reborn/part5
         - name: Part 6
           link: /quests/msq/realm-reborn/part6
+        - name: Raid
+          link: /quests/raids/bahamut
+        - name: Alliance
+          link: /quests/alliance/crystal-tower
+        - name: Relic
+          link: /quests/relics/zodiac-weapons
+        - name: Deep
+          link: /quests/deep-dungeons/palace-dead
     - name: Heavensward
       parts:
         - name: Part 1
@@ -33,6 +41,12 @@ storylines:
           link: /quests/msq/heavensward/part4
         - name: Aethercurrents
           link: /quests/aethercurrents/heavensward
+        - name: Raid
+          link: /quests/raids/alexander
+        - name: Alliance
+          link: /quests/alliance/shadow-of-mhach
+        - name: Relic
+          link: /quests/relics/anima-weapons
     - name: Stormblood
       parts:
         - name: Part 1
@@ -45,6 +59,16 @@ storylines:
           link: /quests/msq/stormblood/part4
         - name: Aethercurrents
           link: /quests/aethercurrents/stormblood
+        - name: Raid
+          link: /quests/raids/omega
+        - name: Alliance
+          link: /quests/alliance/shadow-of-mhach
+        - name: Relic
+          link: /quests/relics/eurekan-weapons
+        - name: Fieldop
+          link: /quests/fieldops/eureka
+        - name: Deep
+          link: /quests/deep-dungeons/heaven-on-high
     - name: Shadowbringers
       parts:
         - name: Part 1
@@ -57,6 +81,16 @@ storylines:
           link: /quests/msq/shadowbringers/part4
         - name: Aethercurrents
           link: /quests/aethercurrents/shadowbringers
+        - name: Raid
+          link: /quests/raids/eden
+        - name: Alliance
+          link: /quests/alliance/yorha
+        - name: Relic
+          link: /quests/relics/resistance-weapons
+        - name: Fieldop
+          link: /quests/fieldops/bozja
+        - name: Lifestyle
+          link: /quests/lifestyle/ishgardian-restoration
     - name: Endwalker
       parts:
         - name: Part 1
@@ -67,6 +101,18 @@ storylines:
           link: /quests/msq/endwalker/part3
         - name: Part 4
           link: /quests/msq/endwalker/part4
+        - name: Aethercurrents
+          link: /quests/aethercurrents/endwalker
+        - name: Raid
+          link: /quests/raids/pandaemonium
+        - name: Alliance
+          link: /quests/alliance/myths-realm
+        - name: Relic
+          link: /quests/relics/manderville-weapons
+        - name: Variant
+          link: /quests/variant/sildihn-subterrane
+          link: /quests/variant/mount-rokkon
+          link: /quests/variant/aloalo-island
     - name: Dawntrail
       parts:
         - name: Part 1
@@ -77,19 +123,23 @@ storylines:
           link: /quests/msq/dawntrail/part3
         - name: Part 4
           link: /quests/msq/dawntrail/part4
-    - name: Aether Currents
-      parts:
-        - name: Heavensward
-          link: /quests/aethercurrents/heavensward
-        - name: Stormblood
-          link: /quests/aethercurrents/stormblood
-        - name: Shadowbringers
-          link: /quests/aethercurrents/shadowbringers
-        - name: Endwalker
-          link: /quests/aethercurrents/endwalker
-        - name: Dawntrail
+        - name: Aethercurrents
           link: /quests/aethercurrents/dawntrail
-  - name: Optional
+        - name: Raid
+          link: /quests/raids/arcadion
+        - name: Alliance
+          link: /quests/alliance/echoes-vanadiel
+        - name: Relic
+          link: /quests/relics/phantom-weapons
+        - name: Fieldop
+          link: /quests/fieldops/occult-crescent
+        - name: Lifestyle
+          link: /quests/lifestyle/cosmic-exploration
+        - name: Deep
+          link: /quests/deep-dungeons/pilgrims-traverse
+        - name: Variant
+          link: /quests/variant/merchants-tale
+  - name: Sidequests
     stories:
       - name: Normal Raids
         parts:
@@ -110,7 +160,7 @@ storylines:
           - name: Crystal Tower
             link: /quests/alliance/crystal-tower
           - name: The Shadow of Mhach
-            link: /quests/alliance/shadow-mhach
+            link: /quests/alliance/shadow-of-mhach
           - name: Return to Ivalice
             link: /quests/alliance/return-to-ivalice
           - name: "YoRHa: Dark Apocalypse"
@@ -165,10 +215,22 @@ storylines:
             link: /quests/variant/mount-rokkon
           - name: Aloalo Island
             link: /quests/variant/aloalo-island
+          - name: The Merchant's Tale 
+            link: /quests/variant/merchants-tale
       - name: Relic Weapons
         parts:
+          - name: Zodiac Weapons
+            link: /quests/relics/zodiac-weapons
+          - name: Anima Weapons
+            link: /quests/relics/anima-weapons
+          - name: Eurekan Weapons
+            link: /quests/relics/eurekan-weapons
           - name: Resistance Weapons
-            link: /quests/relic/resistance-weapons
+            link: /quests/relics/resistance-weapons
+          - name: Manderville Weapons
+            link: /quests/relics/manderville-weapons
+          - name: Phantom Weapons
+            link: /quests/relics/phantom-weapons
       - name: Field Operations
         parts:
           - name: The Forbidden Land, Eureka 
@@ -180,12 +242,13 @@ storylines:
       - name: Deep Dungeons
         parts:
            - name: Palace of the Dead 
-           n
              link: /quests/deep-dungeons/palace-dead
            - name: Heaven on High
              link: /quests/deep-dungeons/heaven-on-high
            - name: Eureka Orthos
              link: /quests/deep-dungeons/eureka-orthos
+           - name: Pilgrim's Traverse
+             link: /quests/deep-dungeons/pilgrims-traverse
       - name: Hildibrand
         parts:
           - name: Hildibrand Adventures
@@ -216,7 +279,13 @@ storylines:
             link: /quests/sidestories/legacy-louisoix-leveilleur
           - name: Tataru's Grand Endeavor
             link: /quests/sidestories/tataru-grand-endeavor
-  - name: Jobs
+      - name: Lifestyle
+        parts:
+          - name: Ishgardian Restoration
+            link: /quests/lifestyle/ishgardian-restoration
+          - name: Cosmic Exploration
+            link: /quests/lifestyle/cosmic
+  - name: Job Quests
     stories:
     - name: Tank
       parts:
