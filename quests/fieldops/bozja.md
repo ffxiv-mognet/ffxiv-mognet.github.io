@@ -149,6 +149,7 @@ quests:
           name: Resistance Weapons
         icon: '71140'
       - name: Vows of Virtue, Deeds of Cruelty
+        link: /quests/msq/shadowbringers/part3
         level: 80
         rowId: 69218
         questId: LucKmg110_03682
@@ -191,7 +192,7 @@ quests:
       - location: Bozjan Southern Front
         coords: (15.2, 29.2)
         name: Speak with Dmitar.
-    partQuestNo: 7
+    partQuestNo: 6
   - name: Lost No Longer
     level: 71
     rowId: 69480
@@ -208,7 +209,7 @@ quests:
       - location: Bozjan Southern Front
         coords: (15.2, 29.2)
         name: Obtain a forgotten fragment.
-    partQuestNo: 8
+    partQuestNo: 7
   - name: On the Offensive
     level: 71
     rowId: 69481
@@ -227,8 +228,7 @@ quests:
         name: Speak with Dmitar.
     requires:
       - name: "Resistance Rank: 5"
-
-    partQuestNo: 9
+    partQuestNo: 8
   - name: Time to Focus
     level: 71
     rowId: 69482
@@ -257,7 +257,7 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.8, 29.3)
         name: Speak with Mikoto.
-    partQuestNo: 10
+    partQuestNo: 9
   - name: Third Time's the Charm
     level: 71
     rowId: 69483
@@ -280,7 +280,7 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.8, 29.3)
         name: Speak with Mikoto.
-    partQuestNo: 11
+    partQuestNo: 10
   - name: Pressing Forward
     level: 71
     rowId: 69484
@@ -297,7 +297,7 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.3, 23.6)
         name: Speak with Dmitar.
-    partQuestNo: 12
+    partQuestNo: 11
   - name: Signature Acquired
     level: 71
     rowId: 69485
@@ -323,7 +323,7 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.6, 29.6)
         name: Speak with Bajsaljen.
-    partQuestNo: 13
+    partQuestNo: 12
   - name: Picking Up the Trail
     level: 71
     rowId: 69486
@@ -349,7 +349,7 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.6, 29.3)
         name: Speak with Lilja.
-    partQuestNo: 14
+    partQuestNo: 13
   - name: The Lady of Blades
     level: 71
     rowId: 69487
@@ -377,7 +377,7 @@ quests:
       - id: 2670
         name: In the Trenches
         type: achievement
-    partQuestNo: 15
+    partQuestNo: 14
   - name: A Sign of What's to Come
     level: 80
     rowId: 69561
@@ -403,7 +403,7 @@ quests:
       - location: Gangos
         coords: (6.5, 5.8)
         name: Speak with Bajsaljen at Gangos.
-    partQuestNo: 19
+    partQuestNo: 15
   - name: Fit for a Queen
     level: 80
     rowId: 69562
@@ -445,7 +445,7 @@ quests:
       - id: 2760
         name: She's a Killer Queen
         type: achievement
-    partQuestNo: 20
+    partQuestNo: 16
   - name: One Man's Relic
     level: 80
     rowId: 69564
@@ -472,7 +472,7 @@ quests:
         levelSync: 50
         ilevelRequired: 90
         ilevelSync: 0
-    partQuestNo: 21
+    partQuestNo: 17
   - name: Let Me Holster That for You
     level: 80
     rowId: 69565
@@ -489,7 +489,7 @@ quests:
       - location: Gangos
         coords: (6.1, 6.7)
         name: Obtain pieces of Garlean synthetic fabric.
-    partQuestNo: 22
+    partQuestNo: 18
   - name: In the Queen's Image
     level: 80
     rowId: 69573
@@ -514,7 +514,7 @@ quests:
         questId: LucKsa152_03971
         genre: Resistance Weapons
         icon: '71140'
-    partQuestNo: 23
+    partQuestNo: 19
   - name: Resolve Unshaken
     level: 71
     rowId: 69621
@@ -543,7 +543,7 @@ quests:
       - location: Zadnor
         coords: (35.4, 35.0)
         name: Speak with Lilja.
-    partQuestNo: 28
+    partQuestNo: 20
   - name: Where Eagles Roost
     level: 71
     rowId: 69628
@@ -560,7 +560,7 @@ quests:
       - location: Zadnor
         coords: (15.0, 36.9)
         name: Speak with Dmitar at the southern plateau.
-    partQuestNo: 29
+    partQuestNo: 21
   - name: Reaching Out
     level: 71
     rowId: 69622
@@ -586,7 +586,7 @@ quests:
       - location: Zadnor
         coords: (35.3, 35.0)
         name: Speak with Mikoto.
-    partQuestNo: 30
+    partQuestNo: 22
   - name: In Their Shadow
     level: 71
     rowId: 69629
@@ -603,7 +603,7 @@ quests:
       - location: Zadnor
         coords: (7.3, 16.4)
         name: Speak with Dmitar at the western plateau.
-    partQuestNo: 31
+    partQuestNo: 23
   - name: Renewed Focus
     level: 71
     rowId: 69623
@@ -632,7 +632,7 @@ quests:
       - location: Zadnor
         coords: (35.4, 35.0)
         name: Speak with Lilja.
-    partQuestNo: 32
+    partQuestNo: 24
   - name: March of the Bloody Queen
     level: 71
     rowId: 69624
@@ -674,7 +674,7 @@ quests:
       - id: 2884
         name: Carry On, Carry On
         type: achievement
-    partQuestNo: 33
+    partQuestNo: 25
   - name: A Ruined Opportunity
     level: 71
     rowId: 69631
@@ -698,5 +698,5 @@ quests:
       - location: Gangos
         coords: (6.8, 5.5)
         name: Deliver the ancient Bozjan raiments and ancient Bozjan armor to Merlzirn.
-    partQuestNo: 34
+    partQuestNo: 26
 ---
