@@ -8,7 +8,9 @@ quests:
     level: 80
     rowId: 69370
     questId: LucKsa001_03834
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Kugane
@@ -47,7 +49,9 @@ quests:
     level: 80
     rowId: 69371
     questId: LucKsa002_03835
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Yanxia
@@ -77,7 +81,9 @@ quests:
     level: 80
     rowId: 69372
     questId: LucKsa003_03836
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Rhalgr's Reach
@@ -108,7 +114,9 @@ quests:
     level: 71
     rowId: 69477
     questId: LucKsa101_03941
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Gangos
@@ -130,48 +138,44 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.8, 29.3)
         name: Speak with Mikoto.
+    requires:
+      - name: "\uE0BF Fire in the Forge"
+        link: /quests/relic/resistance-weapons
+        level: 80
+        rowId: 69380
+        questId: LucKsa050_03844
+        genre:
+          id: '91'
+          name: Resistance Weapons
+        icon: '71140'
+      - name: Vows of Virtue, Deeds of Cruelty
+        level: 80
+        rowId: 69218
+        questId: LucKmg110_03682
+        genre: The Voyage Home
+        icon: '71000'
     partQuestNo: 4
   - name: Memoirs from the Front
     level: 1
     rowId: 69478
     questId: LucKsa102_03942
-    genre: ''
-    icon: '71140'
+    genre:
+      id: '0'
+      name: ''
+    icon: '71020'
     issuer:
       location: Bozjan Southern Front
       coords: (15.0, 29.1)
       name: Resistance historian
-    steps:
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
-      - name: ''
+    steps: []
     partQuestNo: 5
   - name: An Expected Engagement
     level: 71
     rowId: 69479
     questId: LucKsa103_03943
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -187,12 +191,14 @@ quests:
       - location: Bozjan Southern Front
         coords: (15.2, 29.2)
         name: Speak with Dmitar.
-    partQuestNo: 6
+    partQuestNo: 7
   - name: Lost No Longer
     level: 71
     rowId: 69480
     questId: LucKsa104_03944
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -201,14 +207,15 @@ quests:
     steps:
       - location: Bozjan Southern Front
         coords: (15.2, 29.2)
-        name: <If(LessThan(IntegerParameter(1),IntegerParameter(2)))>Obtain a forgotten
-          fragment<Else/>Deliver the forgotten fragment to Dmitar</If>.
-    partQuestNo: 7
+        name: Obtain a forgotten fragment.
+    partQuestNo: 8
   - name: On the Offensive
     level: 71
     rowId: 69481
     questId: LucKsa105_03945
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -218,12 +225,17 @@ quests:
       - location: Bozjan Southern Front
         coords: (28.8, 24.3)
         name: Speak with Dmitar.
-    partQuestNo: 8
+    requires:
+      - name: "Resistance Rank: 5"
+
+    partQuestNo: 9
   - name: Time to Focus
     level: 71
     rowId: 69482
     questId: LucKsa106_03946
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -245,12 +257,14 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.8, 29.3)
         name: Speak with Mikoto.
-    partQuestNo: 9
+    partQuestNo: 10
   - name: Third Time's the Charm
     level: 71
     rowId: 69483
     questId: LucKsa107_03947
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -266,12 +280,14 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.8, 29.3)
         name: Speak with Mikoto.
-    partQuestNo: 10
+    partQuestNo: 11
   - name: Pressing Forward
     level: 71
     rowId: 69484
     questId: LucKsa108_03948
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -281,12 +297,14 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.3, 23.6)
         name: Speak with Dmitar.
-    partQuestNo: 11
+    partQuestNo: 12
   - name: Signature Acquired
     level: 71
     rowId: 69485
     questId: LucKsa109_03949
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -305,12 +323,14 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.6, 29.6)
         name: Speak with Bajsaljen.
-    partQuestNo: 12
+    partQuestNo: 13
   - name: Picking Up the Trail
     level: 71
     rowId: 69486
     questId: LucKsa110_03950
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -329,12 +349,14 @@ quests:
       - location: Bozjan Southern Front
         coords: (14.6, 29.3)
         name: Speak with Lilja.
-    partQuestNo: 13
+    partQuestNo: 14
   - name: The Lady of Blades
     level: 71
     rowId: 69487
     questId: LucKsa111_03951
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Bozjan Southern Front
@@ -355,12 +377,14 @@ quests:
       - id: 2670
         name: In the Trenches
         type: achievement
-    partQuestNo: 14
+    partQuestNo: 15
   - name: A Sign of What's to Come
     level: 80
     rowId: 69561
     questId: LucKsa201_04025
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Gangos
@@ -379,12 +403,14 @@ quests:
       - location: Gangos
         coords: (6.5, 5.8)
         name: Speak with Bajsaljen at Gangos.
-    partQuestNo: 15
+    partQuestNo: 19
   - name: Fit for a Queen
     level: 80
     rowId: 69562
     questId: LucKsa202_04026
-    genre: Resistance Weapons
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Gangos
@@ -410,8 +436,8 @@ quests:
       levelSync: 80
       id: '5043'
     unlocks:
-      - name: the Wanderer's Palace (Hard)
-        type: dungeon
+      - name: Delubrum Reginae
+        type: raid
         levelRequired: 50
         levelSync: 50
         ilevelRequired: 90
@@ -419,146 +445,258 @@ quests:
       - id: 2760
         name: She's a Killer Queen
         type: achievement
-    partQuestNo: 16
-  - name: A New Playing Field
-    level: 71
-    rowId: 69620
-    questId: LucKsa301_04084
-    genre: Resistance Weapons
+    partQuestNo: 20
+  - name: One Man's Relic
+    level: 80
+    rowId: 69564
+    questId: LucKsa212_04028
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
       location: Gangos
-      coords: (6.4, 5.7)
-      name: Marsak
+      coords: (6.2, 5.4)
+      name: Annes
+    steps:
+      - location: Delubrum Reginae
+        coords: (11.2, 7.9)
+        name: Enter Delubrum Reginae.
+      - location: Gangos
+        coords: (6.2, 5.4)
+        name: Deliver the enigmatic Bozjan relic to Annes.
+    unlocks:
+      - name: Delubrum Reginae (Savage)
+        type: raid
+        levelRequired: 50
+        levelSync: 50
+        ilevelRequired: 90
+        ilevelSync: 0
+    partQuestNo: 21
+  - name: Let Me Holster That for You
+    level: 80
+    rowId: 69565
+    questId: LucKsa213_04029
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71140'
+    issuer:
+      location: Gangos
+      coords: (6.1, 6.7)
+      name: Kriv
     steps:
       - location: Gangos
-        coords: (5.5, 5.4)
-        name: Speak with Sjeros.
+        coords: (6.1, 6.7)
+        name: Obtain pieces of Garlean synthetic fabric.
+    partQuestNo: 22
+  - name: In the Queen's Image
+    level: 80
+    rowId: 69573
+    questId: LucKsa250_04037
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71140'
+    issuer:
+      location: Gangos
+      coords: (6.2, 5.0)
+      name: Gerolt
+    steps:
+      - location: Gangos
+        coords: (6.1, 4.9)
+        name: Speak with Zlatan.
+    requires:
+      - name: "\uE0BF The Will to Resist"
+        link: /quests/relic/resistance-weapons
+        level: 80
+        rowId: 69507
+        questId: LucKsa152_03971
+        genre: Resistance Weapons
+        icon: '71140'
+    partQuestNo: 23
+  - name: Resolve Unshaken
+    level: 71
+    rowId: 69621
+    questId: LucKsa302_04085
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71140'
+    issuer:
+      location: Zadnor
+      coords: (35.4, 35.0)
+      name: Mikoto
+    steps:
       - location: Zadnor
-        coords: (35.4, 33.9)
-        name: Speak with Bajsaljen at Zadnor.
+        coords: (20.8, 31.5)
+        name: Investigate the designated location.
+      - location: Zadnor
+        coords: (35.3, 35.0)
+        name: Speak with Mikoto.
+      - location: Zadnor
+        coords: (35.4, 35.0)
+        name: Speak with Lilja.
+      - location: Zadnor
+        coords: (35.1, 34.2)
+        name: Speak with Bajsaljen.
+      - location: Zadnor
+        coords: (35.4, 35.0)
+        name: Speak with Lilja.
+    partQuestNo: 28
+  - name: Where Eagles Roost
+    level: 71
+    rowId: 69628
+    questId: LucKsa311_04092
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71140'
+    issuer:
+      location: Zadnor
+      coords: (35.1, 35.0)
+      name: Dmitar
+    steps:
+      - location: Zadnor
+        coords: (15.0, 36.9)
+        name: Speak with Dmitar at the southern plateau.
+    partQuestNo: 29
+  - name: Reaching Out
+    level: 71
+    rowId: 69622
+    questId: LucKsa303_04086
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71140'
+    issuer:
+      location: Zadnor
+      coords: (35.3, 35.0)
+      name: Mikoto
+    steps:
+      - location: Zadnor
+        coords: (12.4, 24.5)
+        name: Investigate the designated location.
+      - location: Zadnor
+        coords: (4.5, 23.3)
+        name: Investigate the designated location.
+      - location: Zadnor
+        coords: (35.4, 35.0)
+        name: Speak with Mikoto.
+      - location: Zadnor
+        coords: (35.3, 35.0)
+        name: Speak with Mikoto.
+    partQuestNo: 30
+  - name: In Their Shadow
+    level: 71
+    rowId: 69629
+    questId: LucKsa312_04093
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71140'
+    issuer:
+      location: Zadnor
+      coords: (35.1, 35.0)
+      name: Dmitar
+    steps:
+      - location: Zadnor
+        coords: (7.3, 16.4)
+        name: Speak with Dmitar at the western plateau.
+    partQuestNo: 31
+  - name: Renewed Focus
+    level: 71
+    rowId: 69623
+    questId: LucKsa304_04087
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71140'
+    issuer:
+      location: Zadnor
+      coords: (35.1, 34.2)
+      name: Bajsaljen
+    steps:
+      - location: Zadnor
+        coords: (35.4, 35.0)
+        name: Speak with Lilja.
+      - location: Zadnor
+        coords: (17.6, 7.9)
+        name: Investigate the designated location.
+      - location: Zadnor
+        coords: (17.9, 7.9)
+        name: Investigate the designated location.
       - location: Zadnor
         coords: (35.4, 35.0)
         name: Speak with Lilja.
       - location: Zadnor
         coords: (35.4, 35.0)
-        name: Speak with Mikoto.
-    partQuestNo: 17
-  - name: What Dreams Are Made Of
-    level: 80
-    rowId: 69632
-    questId: LucKsa350_04096
-    genre: Resistance Weapons
+        name: Speak with Lilja.
+    partQuestNo: 32
+  - name: March of the Bloody Queen
+    level: 71
+    rowId: 69624
+    questId: LucKsa305_04088
+    genre:
+      id: '91'
+      name: Resistance Weapons
     icon: '71140'
     issuer:
-      location: Gangos
-      coords: (6.2, 5.0)
-      name: Gerolt
+      location: Zadnor
+      coords: (35.1, 34.2)
+      name: Bajsaljen
     steps:
+      - location: Zadnor
+        coords: (35.4, 35.0)
+        name: Speak with Lilja.
+      - location: Zadnor
+        coords: (25.0, 16.8)
+        name: Investigate the designated location.
+      - location: Zadnor
+        coords: (25.0, 16.8)
+        name: Investigate the designated location.
+      - location: Zadnor
+        coords: (35.1, 34.2)
+        name: Speak with Bajsaljen.
+      - location: Zadnor
+        coords: (11.2, 10.0)
+        name: Enter the Dalriada.
+      - location: Zadnor
+        coords: (35.0, 34.2)
+        name: Speak with Marsak.
       - location: Gangos
-        coords: (6.1, 4.9)
-        name: Speak with Zlatan.
-    partQuestNo: 18
-  - name: Spare Parts
-    level: 80
-    rowId: 69633
-    questId: LucKsa351_04097
-    genre: Resistance Weapons
-    icon: '71140'
-    issuer:
-      location: Gangos
-      coords: (6.1, 4.9)
-      name: Zlatan
-    steps:
+        coords: (5.9, 5.7)
+        name: Return to Gangos.
       - location: Gangos
-        coords: (6.1, 4.9)
-        name: Deliver the compact axles and compact springs to Zlatan at Gangos.
-    partQuestNo: 19
-  - name: A Done Deal
-    level: 80
-    rowId: 69636
-    questId: LucKsa354_04100
-    genre: Resistance Weapons
-    icon: '71140'
-    issuer:
-      location: Gangos
-      coords: (6.2, 5.0)
-      name: Gerolt
-    steps:
-      - location: Gangos
-        coords: (6.1, 4.9)
-        name: Speak with Zlatan.
-    partQuestNo: 20
-  - name: "\uE0BF Irresistible"
-    level: 80
-    rowId: 69637
-    questId: LucKsa355_04101
-    genre: Resistance Weapons
-    icon: '71140'
-    issuer:
-      location: Gangos
-      coords: (6.1, 4.9)
-      name: Zlatan
-    steps:
-      - location: Gangos
-        coords: (6.1, 4.9)
-        name: <If(LessThan(IntegerParameter(1),IntegerParameter(2)))>Obtain raw emotions<Else/>With
-          <If(Equal(IntegerParameter(4),19))><SheetEn(Item,2,32669,1,1)/> and <SheetEn(Item,2,32686,1,1)/><Else/><If(Equal(IntegerParameter(4),20))><SheetEn(Item,2,32670,1,1)/><Else/><If(Equal(IntegerParameter(4),21))><SheetEn(Item,2,32671,1,1)/><Else/><If(Equal(IntegerParameter(4),22))><SheetEn(Item,2,32672,1,1)/><Else/><If(Equal(IntegerParameter(4),23))><SheetEn(Item,2,32673,1,1)/><Else/><If(Equal(IntegerParameter(4),24))><SheetEn(Item,2,32677,1,1)/><Else/><If(Equal(IntegerParameter(4),25))><SheetEn(Item,2,32678,1,1)/><Else/><If(Equal(IntegerParameter(4),27))><SheetEn(Item,2,32679,1,1)/><Else/><If(Equal(IntegerParameter(4),28))><SheetEn(Item,2,32680,1,1)/><Else/><If(Equal(IntegerParameter(4),30))><SheetEn(Item,2,32674,1,1)/><Else/><If(Equal(IntegerParameter(4),31))><SheetEn(Item,2,32676,1,1)/><Else/><If(Equal(IntegerParameter(4),32))><SheetEn(Item,2,32675,1,1)/><Else/><If(Equal(IntegerParameter(4),33))><SheetEn(Item,2,32681,1,1)/><Else/><If(Equal(IntegerParameter(4),34))><SheetEn(Item,2,32682,1,1)/><Else/><If(Equal(IntegerParameter(4),35))><SheetEn(Item,2,32683,1,1)/><Else/><If(Equal(IntegerParameter(4),37))><SheetEn(Item,2,32684,1,1)/><Else/><If(Equal(IntegerParameter(4),38))><SheetEn(Item,2,32685,1,1)/><Else/></If></If></If></If></If></If></If></If></If></If></If></If></If></If></If></If></If>
-          in your inventory or Armoury Chest, deliver the raw emotions to Zlatan at
-          Gangos</If>.
+        coords: (6.4, 5.7)
+        name: Speak with Marsak.
     unlocks:
-      - id: 2857
-        name: 'Fit for a Queen: Blade''s Honor & Blade''s Fortitude'
+      - id: 2884
+        name: Carry On, Carry On
         type: achievement
-      - id: 2858
-        name: 'Fit for a Queen: Blade''s Valor'
-        type: achievement
-      - id: 2859
-        name: 'Fit for a Queen: Blade''s Justice'
-        type: achievement
-      - id: 2860
-        name: 'Fit for a Queen: Blade''s Resolve'
-        type: achievement
-      - id: 2861
-        name: 'Fit for a Queen: Blade''s Glory'
-        type: achievement
-      - id: 2862
-        name: 'Fit for a Queen: Blade''s Serenity'
-        type: achievement
-      - id: 2863
-        name: 'Fit for a Queen: Blade''s Subtlety'
-        type: achievement
-      - id: 2864
-        name: 'Fit for a Queen: Blade''s Fealty'
-        type: achievement
-      - id: 2865
-        name: 'Fit for a Queen: Blade''s Muse'
-        type: achievement
-      - id: 2866
-        name: 'Fit for a Queen: Blade''s Ingenuity'
-        type: achievement
-      - id: 2867
-        name: 'Fit for a Queen: Blade''s Euphoria'
-        type: achievement
-      - id: 2868
-        name: 'Fit for a Queen: Blade''s Fury'
-        type: achievement
-      - id: 2869
-        name: 'Fit for a Queen: Blade''s Acumen'
-        type: achievement
-      - id: 2870
-        name: 'Fit for a Queen: Blade''s Temperance'
-        type: achievement
-      - id: 2871
-        name: 'Fit for a Queen: Blade''s Mercy'
-        type: achievement
-      - id: 2872
-        name: 'Fit for a Queen: Blade''s Wisdom'
-        type: achievement
-      - id: 2873
-        name: 'Fit for a Queen: Blade''s Providence'
-        type: achievement
-    partQuestNo: 21
-
-
+    partQuestNo: 33
+  - name: A Ruined Opportunity
+    level: 71
+    rowId: 69631
+    questId: LucKsa322_04095
+    genre:
+      id: '91'
+      name: Resistance Weapons
+    icon: '71022'
+    issuer:
+      location: Gangos
+      coords: (6.8, 5.5)
+      name: Merlzirn
+    steps:
+      - location: Bozjan Southern Front
+        coords: (11.2, 4.8)
+        name: "Clear the critical engagement \u201Cthe Battle of Castrum Lacus Litore.\u201D\
+          \ "
+      - location: Zadnor
+        coords: (11.2, 10.0)
+        name: "Clear the critical engagement \u201Cthe Dalriada.\u201D "
+      - location: Gangos
+        coords: (6.8, 5.5)
+        name: Deliver the ancient Bozjan raiments and ancient Bozjan armor to Merlzirn.
+    partQuestNo: 34
 ---

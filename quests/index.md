@@ -165,6 +165,10 @@ storylines:
             link: /quests/variant/mount-rokkon
           - name: Aloalo Island
             link: /quests/variant/aloalo-island
+      - name: Relic Weapons
+        parts:
+          - name: Resistance Weapons
+            link: /quests/relic/resistance-weapons
       - name: Field Operations
         parts:
           - name: The Forbidden Land, Eureka 
@@ -176,6 +180,7 @@ storylines:
       - name: Deep Dungeons
         parts:
            - name: Palace of the Dead 
+           n
              link: /quests/deep-dungeons/palace-dead
            - name: Heaven on High
              link: /quests/deep-dungeons/heaven-on-high
