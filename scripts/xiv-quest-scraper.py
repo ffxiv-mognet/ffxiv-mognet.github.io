@@ -83,6 +83,7 @@ class XivQuestScraper:
             'GilShopItem': CsvSheet(self._path_for_sheet("GilShopItem")),
             'ItemUICategory': CsvSheet(self._path_for_sheet("ItemUICategory")),
             'FateShop': CsvSheet(self._path_for_sheet("FateShop")),
+            'Stain': CsvSheet(self._path_for_sheet("Stain")),
             'ExVersion': CsvSheet(self._path_for_sheet("ExVersion")),
         }
 
@@ -171,6 +172,69 @@ class XivQuestScraper:
             'ilevelSync': int(cfc['ItemLevelSync']),
             # 'raw': cfc
         }
+
+    def item_summary(self, item_id):
+        item = self.sheets['Item'].byId(item_id)
+        if not item:
+            return None
+        category = self.sheets['ItemUICategory'].byId(item['ItemUICategory'])
+        return {
+            'name': item['Name'],
+            'id': item['#'],
+            'icon': item['Icon'],
+            'category': {
+                'id': category['#'],
+                'name': category['Name'],
+                'icon': category['Icon']
+            }
+        }
+
+    def parse_rewards(self, quest):
+        rewards = {}
+
+        gil = int(quest['GilReward'])
+        if gil > 0:
+            rewards['gil'] = gil
+
+        currency_qty = int(quest['CurrencyRewardCount'])
+        if currency_qty:
+            rewards['currency'] = {
+                'item': self.sheets['Item'].byId(quest['CurrencyReward']),
+                'count': currency_qty,
+            }
+
+        def _yank_items(quest, item_key='Reward', count_key='ItemCountReward', stain_key='RewardStain'):
+            items = []
+            item_ids = extract_array1d(quest, item_key)
+            item_counts = extract_array1d(quest, count_key)
+            item_stains = extract_array1d(quest, stain_key)
+            for (item_id, qty, stain_id) in zip(item_ids, item_counts, item_stains):
+                count = int(qty)
+                item = self.item_summary(item_id)
+                stain = self.sheets['Stain'].byId(stain_id)
+                if item and count:
+                    item = {
+                        'item': item,
+                        'count': count,
+                    }
+                    if stain_id != "0":
+                        item['stain'] = {
+                            'id': stain_id,
+                            'name': stain['Name'],
+                            'color': stain['Color'],
+                        }
+                    items.append(item)
+            return items
+
+        items = _yank_items(quest, 'Reward', count_key='ItemCountReward', stain_key='RewardStain')
+        if len(items) > 0:
+            rewards['items'] = items
+
+        optionals = _yank_items(quest, 'OptionalItemReward', count_key='OptionalItemCountReward', stain_key='OptionalItemStainReward')
+        if len(optionals) > 0:
+            rewards['optional'] = optionals
+
+        return rewards if len(rewards.keys()) > 0 else None
 
     def parse_unlocks(self, quest, script):
         unlocks = []
@@ -355,7 +419,7 @@ class XivQuestScraper:
             'icon': icon_type['MapIconAvailable'],
         }
 
-    def quest_list_entry(self, row, previousId=None):
+    def quest_list_entry(self, row, previousId=None, include_rewards=True):
         script = extract_script(row)
         genre = self.sheets['JournalGenre'].byId(row['JournalGenre'])
         icon_type = self.sheets['EventIconType'].byId(row['EventIconType'])
@@ -392,6 +456,12 @@ class XivQuestScraper:
         if len(requires) > 0:
             out_row['requires'] = requires
 
+        # rewards
+        if include_rewards:
+            rewards = self.parse_rewards(row)
+            if rewards is not None:
+                out_row['rewards'] = rewards
+
 
         return out_row
 
@@ -400,6 +470,7 @@ class XivQuestScraper:
         self.argparser.add_argument("--yaml", action="store_true", default=True)
         self.argparser.add_argument("--icon", type=str, default="0")
         self.argparser.add_argument("--require-previous", action="store_true", default=False)
+        self.argparser.add_argument("--rewards", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         self.init_sheets()
 
@@ -408,7 +479,7 @@ class XivQuestScraper:
         previousId = None
         for rowId in self.args.rowIds:
             row = self.sheets['Quest'].byId(rowId)
-            out_row = self.quest_list_entry(row, previousId=previousId)
+            out_row = self.quest_list_entry(row, previousId=previousId, include_rewards=self.args.rewards)
             out_row.update({
                 'partQuestNo': partQuestNo
             })
@@ -431,6 +502,7 @@ class XivQuestScraper:
         self.argparser.add_argument("--previousId", nargs="?")
         self.argparser.add_argument("--startingId", nargs="?")
         self.argparser.add_argument("--genreId", nargs="?")
+        self.argparser.add_argument("--rewards", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         self.init_sheets()
         # pprint.pprint(vars(self.args))
@@ -449,7 +521,7 @@ class XivQuestScraper:
         output = []
         previousId = None
         while cur_quest and count <= self.args.count:
-            out_row = self.quest_list_entry(cur_quest, previousId=previousId)
+            out_row = self.quest_list_entry(cur_quest, previousId=previousId, include_rewards=self.args.rewards)
             output.append(out_row)
 
             count += 1
@@ -765,6 +837,7 @@ class XivQuestScraper:
         self.argparser.add_argument("--yaml", action="store_true", default=True)
         self.argparser.add_argument("--json", action="store_true", default=False)
         self.argparser.add_argument("--brief", action="store_true", default=False)
+        self.argparser.add_argument("--rewards", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         self.init_sheets()
 
@@ -783,7 +856,7 @@ class XivQuestScraper:
         partQuestNo = 1
         previousId = None
         for quest in sortedQuests:
-            row = self.quest_list_entry(quest, previousId=previousId)
+            row = self.quest_list_entry(quest, previousId=previousId, include_rewards=self.args.rewards)
             row.update({
                 'partQuestNo': partQuestNo
             })
