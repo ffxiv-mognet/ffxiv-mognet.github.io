@@ -77,6 +77,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Shadowed Footsteps
+        link: /quests/msq/endwalker/part1
         level: 80
         rowId: 69909
         questId: AktKma117_04373
@@ -120,6 +121,7 @@ quests:
         type: aethercurrent
     requires:
       - name: A Fisherman's Friend
+        link: /quests/msq/endwalker/part1
         level: 80
         rowId: 69906
         questId: AktKma114_04370
@@ -163,6 +165,39 @@ quests:
         genre: Endwalker
         icon: '71000'
     partQuestNo: 4
+  - name: "\uE0BE What's in a Parent"
+    level: 80
+    rowId: 70029
+    questId: AktKzf101_04493
+    genre:
+      id: '143'
+      name: Thavnairian Sidequests
+    icon: '71140'
+    issuer:
+      location: Thavnair
+      coords: (29.2, 15.2)
+      name: Yezahn
+    steps:
+      - location: Thavnair
+        coords: (29.4, 16.2)
+        name: Speak with the residents.
+      - location: Thavnair
+        coords: (29.6, 17.4)
+        name: Report to Yezahn.
+      - location: Thavnair
+        coords: (29.7, 16.1)
+        name: Speak with Pasareen.
+      - location: Thavnair
+        coords: (29.5, 17.2)
+        name: Speak with Yezahn.
+    requires:
+      - name: Under His Wing
+        level: 85
+        rowId: 69953
+        questId: AktKmd109_04417
+        genre: Endwalker
+        icon: '71000'
+    partQuestNo: 1
   - name: "\uE0BE Curing What Ails"
     level: 80
     rowId: 70030

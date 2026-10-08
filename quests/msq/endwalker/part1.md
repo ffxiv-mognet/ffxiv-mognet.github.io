@@ -152,6 +152,13 @@ quests:
               name: Miscellany
               icon: '60153'
           count: 1
+    requires:
+      - name: Old Sharlayan, New to You
+        level: 80
+        rowId: 69894
+        questId: AktKma102_04358
+        genre: Endwalker
+        icon: '71000'
     partQuestNo: 3
   - name: A Seat at the Last Stand
     level: 80
@@ -445,6 +452,319 @@ quests:
     rewards:
       gil: 1175
     partQuestNo: 11
+
+
+  - name: For Thavnair Bound
+    level: 80
+    rowId: 69904
+    questId: AktKma112_04368
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Main Hall
+      coords: (6.2, 6.1)
+      name: Thancred
+    steps:
+      - location: Old Sharlayan
+        coords: (9.5, 10.4)
+        name: Speak with Kytte at the Confluence.
+      - location: Old Sharlayan
+        coords: (10.9, 11.0)
+        name: Wait at the aetheryte plaza in Old Sharlayan.
+      - location: Thavnair
+        coords: (25.2, 33.3)
+        name: Wait at the aetheryte plaza in Old Sharlayan.
+      - location: Thavnair
+        coords: (25.3, 33.8)
+        name: Search for Estinien.
+      - location: Thavnair
+        coords: (24.8, 34.1)
+        name: /deny to Estinien that the deal is fair.
+      - location: Thavnair
+        coords: (25.2, 33.3)
+        name: Deliver a bottle of special amra lassi to Urianger.
+      - location: Thavnair
+        coords: (25.2, 33.3)
+        name: Deliver a bottle of special amra lassi to Thancred.
+    requires:
+      - name: Old Sharlayan, New to You
+        level: 80
+        rowId: 69894
+        questId: AktKma102_04358
+        genre: Endwalker
+        icon: '71000'
+    partQuestNo: 12
+  - name: On Low Tide
+    level: 80
+    rowId: 69905
+    questId: AktKma113_04369
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Thavnair
+      coords: (25.3, 33.3)
+      name: Thancred
+    steps:
+      - location: Thavnair
+        coords: (25.5, 36.1)
+        name: Gather information in Yedlihmad.
+      - location: Thavnair
+        coords: (27.0, 35.5)
+        name: Speak with Khalzahl.
+      - location: Thavnair
+        coords: (25.4, 36.2)
+        name: Speak with Matsya.
+    partQuestNo: 13
+  - name: A Fisherman's Friend
+    level: 80
+    rowId: 69906
+    questId: AktKma114_04370
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Thavnair
+      coords: (25.4, 36.2)
+      name: Matsya
+    steps:
+      - location: Thavnair
+        coords: (25.4, 36.2)
+        name: Speak with Matsya and have him accompany you.
+      - location: Thavnair
+        coords: (25.0, 37.5)
+        name: Speak with Mehrunnah while accompanied by Matsya.
+      - location: Thavnair
+        coords: (24.8, 35.1)
+        name: Speak with Nashreen while accompanied by Matsya.
+      - location: Thavnair
+        coords: (25.7, 31.8)
+        name: Speak with Bhazahma while accompanied by Matsya.
+      - location: Thavnair
+        coords: (25.4, 36.2)
+        name: Accompany Matsya to the pier and then speak with him.
+      - location: Thavnair
+        coords: (25.4, 33.7)
+        name: Speak with Thancred.
+    unlocks:
+      - name: "\uE0BE Steppe Child"
+        link: /quests/aethercurrent/endwalker/thavnair
+        type: quest-71140
+        level: 80
+        rowId: 70025
+        questId: AktKza201_04489
+        genre:
+          id: '143'
+          name: Thavnairian Sidequests
+        icon: '71140'
+    partQuestNo: 14
+  - name: House of Divinities
+    level: 80
+    rowId: 69907
+    questId: AktKma115_04371
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Thavnair
+      coords: (25.5, 33.7)
+      name: Estinien
+    steps:
+      - location: Thavnair
+        coords: (23.6, 33.1)
+        name: Search the area for Matsya.
+      - location: Thavnair
+        coords: (21.2, 31.4)
+        name: Search the area for Matsya.
+      - location: Thavnair
+        coords: (22.1, 29.0)
+        name: Search for Matsya.
+      - location: Thavnair
+        coords: (22.1, 29.0)
+        name: Render aid to Matsya.
+      - location: Thavnair
+        coords: (15.9, 32.1)
+        name: Speak with Matsya.
+      - location: Thavnair
+        coords: (15.6, 32.5)
+        name: Gather information in Akyaali.
+      - location: Thavnair
+        coords: (15.9, 32.1)
+        name: Speak with Matsya.
+    partQuestNo: 15
+  - name: The Great Work
+    level: 80
+    rowId: 69908
+    questId: AktKma116_04372
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Thavnair
+      coords: (15.9, 32.1)
+      name: Matsya
+    steps:
+      - location: Thavnair
+        coords: (11.9, 21.9)
+        name: Search for Nidhana.
+      - location: Thavnair
+        coords: (11.2, 23.8)
+        name: Speak with Nidhana.
+      - location: Thavnair
+        coords: (11.7, 24.5)
+        name: Speak with Nidhana again.
+      - location: Thavnair
+        coords: (11.7, 24.5)
+        name: Speak with the drunken deepa and follow it.
+      - location: Thavnair
+        coords: (12.9, 24.7)
+        name: Speak with the drunken deepa again and follow it.
+      - location: Thavnair
+        coords: (13.0, 23.2)
+        name: Speak with the drunken deepa yet again and follow it.
+      - location: Thavnair
+        coords: (12.5, 23.4)
+        name: Speak with the drunken deepa one last time and follow it.
+      - location: Thavnair
+        coords: (11.7, 24.0)
+        name: Obtain the drunken deepa.
+      - location: Thavnair
+        coords: (11.7, 24.5)
+        name: Deliver the drunken deepa to Nidhana.
+    partQuestNo: 16
+  - name: Shadowed Footsteps
+    level: 80
+    rowId: 69909
+    questId: AktKma117_04373
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Thavnair
+      coords: (11.7, 24.5)
+      name: Nidhana
+    steps:
+      - location: Thavnair
+        coords: (16.8, 21.9)
+        name: Speak with Nidhana.
+      - location: Thavnair
+        coords: (16.8, 21.9)
+        name: Speak with Nidhana again.
+      - location: Thavnair
+        coords: (21.1, 20.0)
+        name: Speak with Nidhana yet again.
+      - location: Thavnair
+        coords: (22.1, 18.4)
+        name: Stand guard for Nidhana.
+      - location: Thavnair
+        coords: (22.1, 18.3)
+        name: Speak with Nidhana.
+      - location: Thavnair
+        coords: (11.2, 23.8)
+        name: Speak with Nidhana again.
+    unlocks:
+      - name: "\uE0BE Alchemist or Dancer"
+        type: quest-71140
+        link: /quests/aethercurrent/endwalker/thavnair
+        level: 80
+        rowId: 69739
+        questId: AktKza024_04203
+        genre:
+          id: '141'
+          name: Radz-at-Han Sidequests
+        icon: '71140'
+    partQuestNo: 17
+  - name: A Boy's Errand
+    level: 80
+    rowId: 69910
+    questId: AktKma118_04374
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Thavnair
+      coords: (11.2, 23.8)
+      name: Nidhana
+    steps:
+      - location: Thavnair
+        coords: (13.8, 22.0)
+        name: Speak with Varshahn.
+      - location: Thavnair
+        coords: (13.8, 22.0)
+        name: Speak with Varshahn again.
+      - location: Thavnair
+        coords: (10.1, 10.0)
+        name: Gather information at the tower outpost.
+      - location: Thavnair
+        coords: (10.5, 10.2)
+        name: Speak with Varshahn.
+      - location: Thavnair
+        coords: (10.3, 10.3)
+        name: Mount the hamsa.
+      - location: Thavnair
+        coords: (19.4, 9.3)
+        name: Ride the hamsa to the Giantsgall Grounds.
+      - location: Thavnair
+        coords: (19.6, 8.6)
+        name: Speak with Zeynuha.
+    partQuestNo: 18
+  - name: Tipping the Scale
+    level: 80
+    rowId: 69911
+    questId: AktKma119_04375
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Thavnair
+      coords: (19.6, 8.6)
+      name: Zeynuha
+    steps:
+      - location: Thavnair
+        coords: (11.2, 23.8)
+        name: Deliver the sack of giantsgall to Nidhana.
+      - location: Thavnair
+        coords: (7.4, 10.1)
+        name: Speak with Nidhana.
+      - location: Thavnair
+        coords: (7.4, 10.2)
+        name: Speak with the Radiant Host soldier.
+      - location: Thavnair
+        coords: (11.6, 21.8)
+        name: Speak with Thancred.
+    partQuestNo: 19
+  - name: The Satrap of Radz-at-Han
+    level: 80
+    rowId: 69912
+    questId: AktKma120_04376
+    genre:
+      id: '11'
+      name: Endwalker
+    icon: '71000'
+    issuer:
+      location: Thavnair
+      coords: (11.6, 21.8)
+      name: Thancred
+    steps:
+      - location: Thavnair
+        coords: (25.5, 9.5)
+        name: Speak with Varshahn.
+      - location: Thavnair
+        coords: (25.5, 9.6)
+        name: Speak with Thancred.
+      - location: Main Hall
+        coords: (6.2, 6.1)
+        name: Speak with Thancred in the main hall.
+    partQuestNo: 20
   - name: In the Dark of the Tower
     level: 81
     rowId: 69913
@@ -481,6 +801,14 @@ quests:
         ilevelRequired: 500
         ilevelSync: 0
     requires:
+      - name: Estate Visitor
+        level: 80
+        rowId: 69903
+        questId: AktKma111_04367
+        genre:
+          id: '11'
+          name: Endwalker
+        icon: '71000'
       - name: The Satrap of Radz-at-Han
         level: 80
         rowId: 69912
