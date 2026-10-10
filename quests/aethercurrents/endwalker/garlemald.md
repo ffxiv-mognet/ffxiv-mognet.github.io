@@ -124,12 +124,14 @@ quests:
         name: Aether Current
         type: aethercurrent
     requires:
-      - name: Strange Bedfellows
+      - name: Alea Iacta Est
         link: /quests/msq/endwalker/part1
         level: 83
-        rowId: 69929
-        questId: AktKmb114_04393
-        genre: Endwalker
+        rowId: 69928
+        questId: AktKmb113_04392
+        genre:
+          id: '11'
+          name: Endwalker
         icon: '71000'
     partQuestNo: 3
   - name: "\uE0BE Children Are Our Future"
@@ -165,12 +167,14 @@ quests:
         name: Aether Current
         type: aethercurrent
     requires:
-      - name: Strange Bedfellows
+      - name: Alea Iacta Est
         link: /quests/msq/endwalker/part1
         level: 83
-        rowId: 69929
-        questId: AktKmb114_04393
-        genre: Endwalker
+        rowId: 69928
+        questId: AktKmb113_04392
+        genre:
+          id: '11'
+          name: Endwalker
         icon: '71000'
     partQuestNo: 4
   - name: "\uE0BE Stranded at the Station"

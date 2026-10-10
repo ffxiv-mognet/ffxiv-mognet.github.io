@@ -40,6 +40,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Warm Hearts, Rekindled Hopes
+        link: /quests/msq/endwalker/part2
         level: 85
         rowId: 69951
         questId: AktKmd107_04415
@@ -159,6 +160,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Simple Pleasures
+        link: /quests/msq/endwalker/part2
         level: 85
         rowId: 69952
         questId: AktKmd108_04416
@@ -192,6 +194,7 @@ quests:
         name: Speak with Yezahn.
     requires:
       - name: Under His Wing
+        link: /quests/msq/endwalker/part2
         level: 85
         rowId: 69953
         questId: AktKmd109_04417

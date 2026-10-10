@@ -6,8 +6,8 @@ permalink: /quests/aethercurrents/endwalker/mare-lamentorum
 map: u5f1/00
 nonsequential: true
 links:
-  previous: /quests/aethercurrents/endwalker/
-  next: /quests/aethercurrents/endwalker/
+  previous: /quests/aethercurrents/endwalker/garlemald
+  next: /quests/aethercurrents/endwalker/elpis
 quests:
   - name: Heart of the Matter
     level: 84

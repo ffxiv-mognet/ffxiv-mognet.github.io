@@ -817,7 +817,7 @@ quests:
         icon: '71000'
     rewards:
       gil: 3000
-    partQuestNo: 12
+    partQuestNo: 21
   - name: The Jewel of Thavnair
     level: 81
     rowId: 69914
@@ -854,7 +854,7 @@ quests:
         name: Speak with Alisaie.
     rewards:
       gil: 1184
-    partQuestNo: 13
+    partQuestNo: 22
   - name: The Color of Joy
     level: 81
     rowId: 69915
@@ -1424,6 +1424,27 @@ quests:
       - location: Garlemald
         coords: (13.4, 29.9)
         name: Speak with Lucia.
+    unlocks:
+      - name: "\uE0BE In Pursuit of Power"
+        type: quest-71140
+        link: /quests/aethercurrent/endwalker/garlemald
+        level: 80
+        rowId: 70034
+        questId: AktKzc101_04498
+        genre:
+          id: '144'
+          name: Garlean Sidequests
+        icon: '71140'
+      - name: "\uE0BE Children Are Our Future"
+        type: quest-71140
+        link: /quests/aethercurrent/endwalker/garlemald
+        level: 80
+        rowId: 69768
+        questId: AktKzd008_04232
+        genre:
+          id: '144'
+          name: Garlean Sidequests
+        icon: '71140'
     rewards:
       gil: 956
     partQuestNo: 27
@@ -1471,26 +1492,6 @@ quests:
         level: 80
         rowId: 69752
         questId: AktKzc007_04216
-        genre:
-          id: '144'
-          name: Garlean Sidequests
-        icon: '71140'
-      - name: "\uE0BE In Pursuit of Power"
-        type: quest-71140
-        link: /quests/aethercurrent/endwalker/garlemald
-        level: 80
-        rowId: 70034
-        questId: AktKzc101_04498
-        genre:
-          id: '144'
-          name: Garlean Sidequests
-        icon: '71140'
-      - name: "\uE0BE Children Are Our Future"
-        type: quest-71140
-        link: /quests/aethercurrent/endwalker/garlemald
-        level: 80
-        rowId: 69768
-        questId: AktKzd008_04232
         genre:
           id: '144'
           name: Garlean Sidequests

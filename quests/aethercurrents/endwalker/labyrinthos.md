@@ -48,6 +48,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Once Forged
+        link: /quests/msq/endwalker/part2
         level: 88
         rowId: 69983
         questId: AktKmf109_04447
@@ -123,6 +124,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Hither and Yarns
+        link: /quests/msq/endwalker/part2
         level: 88
         rowId: 69982
         questId: AktKmf108_04446
@@ -157,6 +159,7 @@ quests:
         type: aethercurrent
     requires:
       - name: Hither and Yarns
+        link: /quests/msq/endwalker/part2
         level: 88
         rowId: 69982
         questId: AktKmf108_04446
@@ -191,6 +194,7 @@ quests:
         type: aethercurrent
     requires:
       - name: No Job Too Small
+        link: /quests/msq/endwalker/part2
         level: 88
         rowId: 69978
         questId: AktKmf104_04442
