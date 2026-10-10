@@ -21,7 +21,7 @@ quests:
         coords: (25.2, 20.7)
         name: Speak with the Wood Wailer expeditionary captain at Quarrymill.
     unlocks:
-      - name: Palace of the Dead
+      - name: Palace of the Dead Floors 1-50
         type: deep-dungeon
     requires:
       - name: Into a Copper Hell
@@ -70,8 +70,9 @@ quests:
         genre: Ul'dahn Sidequests
         icon: '71140'
         link: /quests/dungeons/realm-reborn
-      - name: Palace of the Dead Floor 50
-        type: deepdungeon
+      - name: Floor 50 - Palace of the Dead
+        type: deep-dungeon
+        icon: deep-dungeon
     partQuestNo: 2
   - name: What Lies Beneath
     level: 17
@@ -89,7 +90,7 @@ quests:
         coords: (25.2, 20.7)
     unlocks:
       - name: Palace of the Dead Floors 51-100
-        type: deepdungeon
+        type: deep-dungeon
     partQuestNo: 3
   - name: Dead but Not Gone
     level: 60
@@ -111,7 +112,7 @@ quests:
         type: achievement
     partQuestNo: 4
     requires:
-      - name: Palace of the Dead Floor 100
-        type: deepdungeon
+      - name: Floor 100 - Palace of the Dead
+        icon: deep-dungeon
 
 ---

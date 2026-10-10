@@ -27,8 +27,6 @@ storylines:
           link: /quests/alliance/crystal-tower
         - name: Relic
           link: /quests/relics/zodiac-weapons
-        - name: Deep
-          link: /quests/deep-dungeons/palace-dead
     - name: Heavensward
       parts:
         - name: Part 1
@@ -47,6 +45,8 @@ storylines:
           link: /quests/alliance/shadow-of-mhach
         - name: Relic
           link: /quests/relics/anima-weapons
+        - name: Deep
+          link: /quests/deep-dungeons/palace-dead
     - name: Stormblood
       parts:
         - name: Part 1
@@ -109,6 +109,8 @@ storylines:
           link: /quests/alliance/myths-realm
         - name: Relic
           link: /quests/relics/manderville-weapons
+        - name: Deep
+          link: /quests/deep-dungeons/eureka-orthos
         - name: Variant
           link: /quests/variant/sildihn-subterrane
           link: /quests/variant/mount-rokkon
@@ -133,12 +135,12 @@ storylines:
           link: /quests/relics/phantom-weapons
         - name: Fieldop
           link: /quests/fieldops/occult-crescent
-        - name: Lifestyle
-          link: /quests/lifestyle/cosmic-exploration
         - name: Deep
           link: /quests/deep-dungeons/pilgrims-traverse
         - name: Variant
           link: /quests/variant/merchants-tale
+        - name: Lifestyle
+          link: /quests/lifestyle/cosmic-exploration
   - name: Sidequests
     stories:
       - name: Normal Raids
