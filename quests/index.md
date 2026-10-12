@@ -62,9 +62,7 @@ storylines:
         - name: Raid
           link: /quests/raids/omega
         - name: Alliance
-          link: /quests/alliance/shadow-of-mhach
-        - name: Relic
-          link: /quests/relics/eurekan-weapons
+          link: /quests/alliance/return-to-ivalice
         - name: Fieldop
           link: /quests/fieldops/eureka
         - name: Deep
