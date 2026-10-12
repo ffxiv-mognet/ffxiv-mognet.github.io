@@ -812,7 +812,7 @@ class XivQuestScraper:
                         'id': it['#'],
                         'name': it['Name'],
                         'icon': it['Icon'],
-                        'visible': scrub_boolstr(it['col2']),
+                        # 'visible': scrub_boolstr(it['col2']),
                     }, genre_rows))
                 })
 
@@ -820,8 +820,8 @@ class XivQuestScraper:
                 'id': section_row['#'],
                 'name': section_row['Name'],
                 'categories': categories,
-                'visible': scrub_boolstr(section_row['col1']),
-                'col2': scrub_boolstr(section_row['col2']),
+                # 'visible': scrub_boolstr(section_row['col1']),
+                # 'col2': scrub_boolstr(section_row['col2']),
             })
 
         output = {
@@ -1211,6 +1211,29 @@ class XivQuestScraper:
         if gilShop['Quest'] != '0':
             shop['requires'] = self.generate_questListItem(gilShop['Quest'])
         return shop
+
+    def cmd_deepShops(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        specialShopRefs = [
+            {'#': "1769675", "npcId": "1017338"}, # palace of the dead
+            {'#': "1769871", "npcId": "1025848"}, # heaven on high
+            {'#': "1770634", "npcId": "1044503"}, # eureka orthos
+            {'#': "1770635", "npcId": "1044503"}, # eureka orthos
+            {'#': "1770968", "npcId": "1054944"}, # pilgrim's traverse
+            {'#': "1770969", "npcId": "1054944"}, # pilgrim's traverse
+        ]
+
+        shops = self.scrape_specialShops(specialShopRefs)
+        output = self.indexed_shops(shops)
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
 
     def cmd_alliedShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
