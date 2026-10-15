@@ -85,6 +85,7 @@ class XivQuestScraper:
             'FateShop': CsvSheet(self._path_for_sheet("FateShop")),
             'Stain': CsvSheet(self._path_for_sheet("Stain")),
             'ExVersion': CsvSheet(self._path_for_sheet("ExVersion")),
+            'ParamGrow': CsvSheet(self._path_for_sheet("ParamGrow")),
         }
 
 
@@ -191,6 +192,14 @@ class XivQuestScraper:
 
     def parse_rewards(self, quest):
         rewards = {}
+        xp_factor = int(quest['ExpFactor'])
+        param_grow = self.sheets['ParamGrow'].byId(quest['ClassJobLevel[0]'])
+        avg_xp = int((xp_factor * int(param_grow['ScaledQuestXP']) * int(param_grow['QuestExpModifier'])) / 100)
+        rewards['xp'] = {
+            'factor': xp_factor,
+            'paramGrowId': param_grow['#'],
+            'avg': avg_xp,
+        }
 
         gil = int(quest['GilReward'])
         if gil > 0:
