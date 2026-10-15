@@ -159,89 +159,53 @@ quests:
         name: Aether Current
         type: aethercurrent
     requires:
-      - name: Simple Pleasures
+      - name: Warm Hearts, Rekindled Hopes
         link: /quests/msq/endwalker/part2
         level: 85
-        rowId: 69952
-        questId: AktKmd108_04416
-        genre: Endwalker
+        rowId: 69951
+        questId: AktKmd107_04415
+        genre:
+          id: '11'
+          name: Endwalker
         icon: '71000'
     partQuestNo: 4
-  - name: "\uE0BE What's in a Parent"
+  - name: "\uE0BE In Agama's Footsteps"
     level: 80
-    rowId: 70029
-    questId: AktKzf101_04493
+    rowId: 69793
+    questId: AktKzf002_04257
     genre:
       id: '143'
       name: Thavnairian Sidequests
     icon: '71140'
     issuer:
       location: Thavnair
-      coords: (29.2, 15.2)
-      name: Yezahn
+      coords: (30.7, 17.0)
+      name: weary Radiant
     steps:
       - location: Thavnair
-        coords: (29.4, 16.2)
-        name: Speak with the residents.
+        coords: (21.1, 18.0)
+        name: Search for refugees near Agama Temple.
       - location: Thavnair
-        coords: (29.6, 17.4)
-        name: Report to Yezahn.
+        coords: (28.2, 16.6)
+        name: Protect the unfortunate straggler and guide him to the entrance of Palaka's
+          Stand.
       - location: Thavnair
-        coords: (29.7, 16.1)
-        name: Speak with Pasareen.
-      - location: Thavnair
-        coords: (29.5, 17.2)
-        name: Speak with Yezahn.
-    requires:
-      - name: Under His Wing
-        link: /quests/msq/endwalker/part2
-        level: 85
-        rowId: 69953
-        questId: AktKmd109_04417
-        genre: Endwalker
-        icon: '71000'
-    partQuestNo: 1
-  - name: "\uE0BE Curing What Ails"
-    level: 80
-    rowId: 70030
-    questId: AktKzf102_04494
-    genre:
-      id: '143'
-      name: Thavnairian Sidequests
-    icon: '71140'
-    issuer:
-      location: Thavnair
-      coords: (29.5, 17.2)
-      name: Yezahn
-    steps:
-      - location: Thavnair
-        coords: (31.8, 14.0)
-        name: Investigate the shrubbery to the northeast of Palaka's Stand and defeat
-          any enemies that appear.
-      - location: Thavnair
-        coords: (31.5, 14.1)
-        name: Speak with Yezahn.
-      - location: Thavnair
-        coords: (29.5, 17.2)
-        name: Speak with Yezahn at Palaka's Stand.
-      - location: Thavnair
-        coords: (29.0, 16.7)
-        name: Speak with Sula.
-      - location: Thavnair
-        coords: (29.5, 17.2)
-        name: Speak with Yezahn.
+        coords: (30.7, 17.0)
+        name: Speak with the weary Radiant.
     unlocks:
       - id: '2818328'
         name: Aether Current
         type: aethercurrent
     requires:
-      - name: "\uE0BE What's in a Parent"
-        level: 80
-        rowId: 70029
-        questId: AktKzf101_04493
-        genre: Thavnairian Sidequests
-        icon: '71140'
+      - name: Warm Hearts, Rekindled Hopes
+        link: /quests/msq/endwalker/part2
+        level: 85
+        rowId: 69951
+        questId: AktKmd107_04415
+        genre:
+          id: '11'
+          name: Endwalker
+        icon: '71000'
     partQuestNo: 5
-
 
 ---

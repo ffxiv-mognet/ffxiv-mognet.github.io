@@ -174,6 +174,9 @@ quests:
       - location: Thavnair
         coords: (30.1, 16.4)
         name: Speak with Alphinaud.
+    unlocks:
+      - name: Palaka's Stand
+        type: aetheryte
     partQuestNo: 4
   - name: That We Might Live
     level: 85
@@ -276,6 +279,27 @@ quests:
       - location: Thavnair
         coords: (20.7, 15.0)
         name: Speak with Alphinaud.
+    unlocks:
+      - name: "\uE0BE Radiant Patrol"
+        type: quest-71140
+        link: /quests/aethercurrent/endwalker/thavnair
+        level: 80
+        rowId: 69795
+        questId: AktKzf004_04259
+        genre:
+          id: '143'
+          name: Thavnairian Sidequests
+        icon: '71140'
+      - name: "\uE0BE In Agama's Footsteps"
+        type: quest-71140
+        link: /quests/aethercurrent/endwalker/thavnair
+        level: 80
+        rowId: 69793
+        questId: AktKzf002_04257
+        genre:
+          id: '143'
+          name: Thavnairian Sidequests
+        icon: '71140'
     partQuestNo: 7
   - name: Simple Pleasures
     level: 85
@@ -307,16 +331,6 @@ quests:
         name: Aether Current
         type: aethercurrent
         link: /quests/aethercurrent/endwalker/thavnair
-      - name: "\uE0BE Radiant Patrol"
-        type: quest-71140
-        link: /quests/aethercurrent/endwalker/thavnair
-        level: 80
-        rowId: 69795
-        questId: AktKzf004_04259
-        genre:
-          id: '143'
-          name: Thavnairian Sidequests
-        icon: '71140'
     partQuestNo: 8
   - name: Under His Wing
     level: 85
@@ -350,16 +364,8 @@ quests:
         coords: (7.1, 12.6)
         name: Speak with Alphinaud.
     unlocks:
-      - name: "\uE0BE What's in a Parent"
-        link: /quests/aethercurrent/endwalker/thavnair
-        type: quest-71140
-        level: 80
-        rowId: 70029
-        questId: AktKzf101_04493
-        genre:
-          id: '143'
-          name: Thavnairian Sidequests
-        icon: '71140'
+      - name: Radz-at-Han
+        type: aetheryte
     partQuestNo: 9
   - name: At World's End
     level: 85
@@ -399,6 +405,47 @@ quests:
       - id: 2955
         name: Oh, Higher
         type: achievement
+      - name: Seeds of Disquiet
+        type: quest-71140
+        link: /quests/role/endwalker/ranged-dps
+        level: 85
+        rowId: 69656
+        questId: AktKba401_04120
+        genre: Physical Ranged DPS Role Quests (Endwalker)
+        icon: '71140'
+      - name: Our Aching Souls
+        type: quest-71140
+        link: /quests/role/endwalker/caster
+        level: 85
+        rowId: 69662
+        questId: AktKba501_04126
+        genre: Magical Ranged DPS Role Quests (Endwalker)
+        icon: '71140'
+      - name: Far from Free
+        type: quest-71140
+        link: /quests/role/endwalker/healer
+        level: 85
+        rowId: 69644
+        questId: AktKba201_04108
+        genre: Healer Role Quests (Endwalker)
+        icon: '71140'
+      - name: Shrouded in Peril
+        type: quest-71140
+        link: /quests/role/endwalker/tank
+        level: 85
+        rowId: 69638
+        questId: AktKba101_04102
+        genre: Tank Role Quests (Endwalker)
+        icon: '71140'
+      - name: Storm Clouds Brewing
+        type: quest-71140
+        link: /quests/role/endwalker/melee-dps
+        level: 85
+        rowId: 69650
+        questId: AktKba301_04114
+        genre: Melee DPS Role Quests (Endwalker)
+        icon: '71140'
+
     partQuestNo: 10
   - name: Return to the Crystarium
     level: 86
