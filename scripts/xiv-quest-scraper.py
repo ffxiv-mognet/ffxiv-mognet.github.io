@@ -441,6 +441,13 @@ class XivQuestScraper:
             'steps': steps,
         }
 
+        version = self.sheets['ExVersion'].byId(row['Expansion'])
+        if version:
+            out_row['expansion'] = {
+                'id': version['#'],
+                'name': version['Name'],
+            }
+
         # has solo duty?        
         battle_id = script.get('QUESTBATTLE0', None)
         if battle_id is not None:
@@ -558,6 +565,8 @@ class XivQuestScraper:
         rowId = self.args.lastRowId
         while count > 0:
             row = self.sheets['Quest'].byId(rowId)
+            if not row:
+                break
             out_row = self.quest_list_entry(row)
             output.append(out_row)
 
