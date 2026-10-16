@@ -2,6 +2,9 @@ import yaml
 
 
 class IndentedDumper(yaml.Dumper):
+    def ignore_aliases(self, *args, **kwargs):
+        return True
+
     def increase_indent(self, flow=False, indentless=False):
         return super(IndentedDumper, self).increase_indent(flow, False)
 
