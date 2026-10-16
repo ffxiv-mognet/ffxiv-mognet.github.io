@@ -67,7 +67,7 @@ function dumpq {
 
 #### copy output to X11 clipboard
 ```
-echo hello world | xclip -selection clipboard
+alias xc='xclip -selection clipboard'
 ```
 
 

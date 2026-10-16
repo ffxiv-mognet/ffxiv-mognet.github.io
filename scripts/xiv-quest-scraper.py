@@ -1171,7 +1171,12 @@ class XivQuestScraper:
                     inv['quest'] = quest
 
             if invrow['AchievementUnlock'] != '0':
-                inv['achievementId'] = invrow['AchievementUnlock']
+                achievement = self.sheets['Achievement'].byId(invrow['AchievementUnlock'])
+                inv['achievement'] = {
+                    'id': achievement['#'],
+                    'name': achievement['Name'],
+                    'description': achievement['Description']
+                }
 
             inventory.append(inv)
 
@@ -1229,6 +1234,27 @@ class XivQuestScraper:
         if gilShop['Quest'] != '0':
             shop['requires'] = self.generate_questListItem(gilShop['Quest'])
         return shop
+
+    def cmd_specialShop(self):
+        self.argparser.add_argument("shopIds", nargs="+")
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        specialShopRefs = []
+        for shopId in self.args.shopIds:
+            specialShopRefs.append({'#': shopId})
+
+        shops = self.scrape_specialShops(specialShopRefs)
+        output = {
+            'shops': self.indexed_shops(shops),
+        }
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
 
     def cmd_deepShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
@@ -1386,9 +1412,16 @@ class XivQuestScraper:
         shopIds = list(map(lambda it: it['id'], shops.values()))
         for base in self.sheets['ENpcBase'].all():
             data = extract_array1d(base, 'ENpcData')
-            for shopId in data:
-                if shopId in shopIds:
-                    shops[shopId]['npcs'].append(self.npc_for_resident(base['#']))
+            for dataId in data:
+                if dataId in shopIds:
+                    shops[dataId]['npcs'].append(self.npc_for_resident(base['#']))
+                else:
+                    custom_talk = self.sheets['CustomTalk'].byId(dataId)
+                    if custom_talk:
+                        talk_script = extract_script(custom_talk, prefix='Script')
+                        for talk_id in talk_script.values():
+                            if talk_id in shopIds:
+                                shops[talk_id]['npcs'].append(self.npc_for_resident(base['#']))
 
         flattened = list(shops.values())
         return flattened

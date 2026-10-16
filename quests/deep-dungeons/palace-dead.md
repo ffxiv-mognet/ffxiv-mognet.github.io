@@ -1,5 +1,5 @@
 ---
-layout: quest-table
+layout: quests-with-shops
 title: Palace of the Dead Deep Dungeon
 permalink: /quests/deep-dungeons/palace-dead
 quests:
@@ -114,5 +114,607 @@ quests:
     requires:
       - name: Floor 100 - Palace of the Dead
         icon: deep-dungeon
+shops:
+  shops:
+    - id: '1769675'
+      name: Gelmorran Potsherd Exchange
+      inventory:
+        - items:
+            - quantity: '1'
+              item:
+                name: Wind-up Sasquatch
+                id: '15446'
+                category:
+                  id: '81'
+                  name: Minion
+                  icon: '60155'
+          costs:
+            - quantity: '3'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Hecteye
+                id: '15448'
+                category:
+                  id: '81'
+                  name: Minion
+                  icon: '60155'
+          costs:
+            - quantity: '3'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Disembodied Head Resonator
+                id: '15933'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '10'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Piety Materia V
+                id: '5633'
+                category:
+                  id: '58'
+                  name: Materia
+                  icon: '60150'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Heavens' Eye Materia V
+                id: '5668'
+                category:
+                  id: '58'
+                  name: Materia
+                  icon: '60150'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Savage Aim Materia V
+                id: '5673'
+                category:
+                  id: '58'
+                  name: Materia
+                  icon: '60150'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Savage Might Materia V
+                id: '5678'
+                category:
+                  id: '58'
+                  name: Materia
+                  icon: '60150'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Battledance Materia V
+                id: '5683'
+                category:
+                  id: '58'
+                  name: Materia
+                  icon: '60150'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Quickarm Materia V
+                id: '5718'
+                category:
+                  id: '58'
+                  name: Materia
+                  icon: '60150'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Quicktongue Materia V
+                id: '5723'
+                category:
+                  id: '58'
+                  name: Materia
+                  icon: '60150'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Firecrest Trophy
+                id: '15986'
+                category:
+                  id: '76'
+                  name: Outdoor Furnishing
+                  icon: '60168'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16168'
+                name: Firecrest
+                plural: firecrests
+                icon: '25988'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Glass Pumpkin Trophy
+                id: '15987'
+                category:
+                  id: '76'
+                  name: Outdoor Furnishing
+                  icon: '60168'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16169'
+                name: Glass Pumpkin
+                plural: glass pumpkins
+                icon: '25989'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Firecrest Earring
+                id: '16166'
+                category:
+                  id: '41'
+                  name: Earrings
+                  icon: '60133'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16168'
+                name: Firecrest
+                plural: firecrests
+                icon: '25988'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Glass Pumpkin Earring
+                id: '16167'
+                category:
+                  id: '41'
+                  name: Earrings
+                  icon: '60133'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16169'
+                name: Glass Pumpkin
+                plural: glass pumpkins
+                icon: '25989'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Fog of Phantom Orchestrion Roll
+                id: '16813'
+                category:
+                  id: '94'
+                  name: Orchestrion Roll
+                  icon: '60173'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 102
+          achievement:
+            id: '1656'
+            name: In Too Deep VII
+            description: Clear the 150th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Blasphemous Experiment Orchestrion Roll
+                id: '16814'
+                category:
+                  id: '94'
+                  name: Orchestrion Roll
+                  icon: '60173'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 102
+          achievement:
+            id: '1655'
+            name: In Too Deep VI
+            description: Clear the 100th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Notice of Death Orchestrion Roll
+                id: '16815'
+                category:
+                  id: '94'
+                  name: Orchestrion Roll
+                  icon: '60173'
+          costs:
+            - quantity: '10'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 102
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Firecrest Bracelet
+                id: '20515'
+                category:
+                  id: '42'
+                  name: Bracelets
+                  icon: '60134'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16168'
+                name: Firecrest
+                plural: firecrests
+                icon: '25988'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Firecrest Choker
+                id: '20516'
+                category:
+                  id: '40'
+                  name: Necklace
+                  icon: '60132'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16168'
+                name: Firecrest
+                plural: firecrests
+                icon: '25988'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Firecrest Ring
+                id: '20517'
+                category:
+                  id: '43'
+                  name: Ring
+                  icon: '60135'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16168'
+                name: Firecrest
+                plural: firecrests
+                icon: '25988'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Glass Pumpkin Bracelet
+                id: '20518'
+                category:
+                  id: '42'
+                  name: Bracelets
+                  icon: '60134'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16169'
+                name: Glass Pumpkin
+                plural: glass pumpkins
+                icon: '25989'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Glass Pumpkin Choker
+                id: '20519'
+                category:
+                  id: '40'
+                  name: Necklace
+                  icon: '60132'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16169'
+                name: Glass Pumpkin
+                plural: glass pumpkins
+                icon: '25989'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Glass Pumpkin Ring
+                id: '20520'
+                category:
+                  id: '43'
+                  name: Ring
+                  icon: '60135'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '16169'
+                name: Glass Pumpkin
+                plural: glass pumpkins
+                icon: '25989'
+          order: 110
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '20'
+              item:
+                name: Sustaining Potion
+                id: '20309'
+                category:
+                  id: '44'
+                  name: Medicine
+                  icon: '60136'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Firecrest
+                id: '16168'
+                category:
+                  id: '61'
+                  name: Miscellany
+                  icon: '60153'
+          costs:
+            - quantity: '2'
+              currency:
+                id: '16169'
+                name: Glass Pumpkin
+                plural: glass pumpkins
+                icon: '25989'
+          order: 120
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Glass Pumpkin
+                id: '16169'
+                category:
+                  id: '61'
+                  name: Miscellany
+                  icon: '60153'
+          costs:
+            - quantity: '2'
+              currency:
+                id: '16168'
+                name: Firecrest
+                plural: firecrests
+                icon: '25988'
+          order: 120
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Deadly Welcome Framer's Kit
+                id: '48086'
+                category:
+                  id: '61'
+                  name: Miscellany
+                  icon: '60153'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 105
+          achievement:
+            id: '1580'
+            name: In Too Deep V
+            description: Clear the 50th floor of the Palace of the Dead.
+        - items:
+            - quantity: '1'
+              item:
+                name: Deadly Descent Framer's Kit
+                id: '48087'
+                category:
+                  id: '61'
+                  name: Miscellany
+                  icon: '60153'
+          costs:
+            - quantity: '10'
+              currency:
+                id: '15422'
+                name: Gelmorran Potsherd
+                plural: Gelmorran potsherds
+                icon: '25975'
+          order: 105
+          achievement:
+            id: '1657'
+            name: In Too Deep VIII
+            description: Clear the 200th floor of the Palace of the Dead.
+      npcs:
+        - name: E-Una-Kotor
+          location: South Shroud
+          coords: (25.1, 20.6)
+  categories:
+    - id: '81'
+      name: Minion
+      icon: '60155'
+    - id: '63'
+      name: Other
+      icon: '60159'
+    - id: '58'
+      name: Materia
+      icon: '60150'
+    - id: '76'
+      name: Outdoor Furnishing
+      icon: '60168'
+    - id: '41'
+      name: Earrings
+      icon: '60133'
+    - id: '94'
+      name: Orchestrion Roll
+      icon: '60173'
+    - id: '42'
+      name: Bracelets
+      icon: '60134'
+    - id: '40'
+      name: Necklace
+      icon: '60132'
+    - id: '43'
+      name: Ring
+      icon: '60135'
+    - id: '44'
+      name: Medicine
+      icon: '60136'
+    - id: '61'
+      name: Miscellany
+      icon: '60153'
+  currencies:
+    - id: '15422'
+      name: Gelmorran Potsherd
+      plural: Gelmorran potsherds
+      icon: '25975'
+    - id: '16168'
+      name: Firecrest
+      plural: firecrests
+      icon: '25988'
+    - id: '16169'
+      name: Glass Pumpkin
+      plural: glass pumpkins
+      icon: '25989'
+
 
 ---
+

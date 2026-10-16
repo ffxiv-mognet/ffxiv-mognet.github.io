@@ -2,7 +2,6 @@
 layout: with-nav
 ---
 
-{{content}}
 
 
   <div class="level">
@@ -145,8 +144,8 @@ layout: with-nav
         {% endfor %}
       </tbody>
   </table>
-</div>
 
+{{content}}
 
 <script>
 
