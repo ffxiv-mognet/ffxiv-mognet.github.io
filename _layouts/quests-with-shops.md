@@ -117,14 +117,6 @@ layout: quest-table
               {% endfor %}
             </td>
             <td>
-              {% if shop.requires %}
-              <div>
-                  <span class="icon-text" style="white-space: nowrap">
-                    <span class="icon"><i class="quest-{{shop.requires.icon}}"></i></span>
-                    <span style="font-size: 0.8em">{{shop.requires.name}}</span>
-                  </span>
-              </div>
-              {% endif   %}
               {% for npc in shop.npcs %}
               <div class="npc">
                   {{npc.name}}
@@ -137,6 +129,14 @@ layout: quest-table
               {% endfor %}
             </td>
             <td>
+              {% if shop.requires %}
+              <div>
+                  <span class="icon-text" style="white-space: nowrap">
+                    <span class="icon"><i class="quest-{{shop.requires.icon}}"></i></span>
+                    <span style="font-size: 0.8em">{{shop.requires.name}}</span>
+                  </span>
+              </div>
+              {% endif   %}
               {% if inv.quest %}
               <span class="icon-text" style="white-space: nowrap">
                 <span class="icon"><i class="quest-{{inv.quest.icon}}"></i></span>

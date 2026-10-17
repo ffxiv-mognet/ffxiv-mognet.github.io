@@ -77,6 +77,7 @@ class XivQuestScraper:
             'QuestRedoChapterUITab': CsvSheet(self._path_for_sheet("QuestRedoChapterUITab")),
             'QuestRedoChapterUICategory': CsvSheet(self._path_for_sheet("QuestRedoChapterUICategory")),
             'CustomTalk': CsvSheet(self._path_for_sheet("CustomTalk")),
+            'TopicSelect': CsvSheet(self._path_for_sheet("TopicSelect")),
             'Item': CsvSheet(self._path_for_sheet("Item")),
             'SpecialShop': CsvSheet(self._path_for_sheet("SpecialShop")),
             'GilShop': CsvSheet(self._path_for_sheet("GilShop")),
@@ -1422,6 +1423,14 @@ class XivQuestScraper:
                         for talk_id in talk_script.values():
                             if talk_id in shopIds:
                                 shops[talk_id]['npcs'].append(self.npc_for_resident(base['#']))
+                    topic_select = self.sheets['TopicSelect'].byId(dataId)
+                    if topic_select:
+                        topic_shops = extract_array1d(topic_select, 'Shop')
+                        for topic_id in topic_shops:
+                            if topic_id in shopIds:
+                                shops[topic_id]['npcs'].append(self.npc_for_resident(base['#']))
+
+
 
         flattened = list(shops.values())
         return flattened
