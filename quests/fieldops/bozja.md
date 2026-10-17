@@ -1,5 +1,5 @@
 ---
-layout: quest-table
+layout: quests-with-shops
 expansion: Field Operations
 title: Save the Queen, Blades of Gunnhildr
 permalink: /quests/fieldops/bozja
@@ -693,4 +693,475 @@ quests:
         coords: (6.8, 5.5)
         name: Deliver the ancient Bozjan raiments and ancient Bozjan armor to Merlzirn.
     partQuestNo: 26
+shops:
+  shops:
+    - id: '1770087'
+      name: ''
+      inventory:
+        - items:
+            - quantity: '5'
+              item:
+                name: Forgotten Fragment of Caution
+                id: '30884'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '4'
+              item:
+                name: Forgotten Fragment of Ingenuity
+                id: '30887'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Modern Aesthetics - Wind Caller
+                id: '31407'
+                category:
+                  id: '61'
+                  name: Miscellany
+                  icon: '60153'
+          costs:
+            - quantity: '150'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Ballroom Etiquette - Pointed Misgivings
+                id: '31402'
+                category:
+                  id: '61'
+                  name: Miscellany
+                  icon: '60153'
+          costs:
+            - quantity: '50'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Construct 14 Identification Key
+                id: '30102'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '180'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Blood on the Wind Orchestrion Roll
+                id: '31665'
+                category:
+                  id: '94'
+                  name: Orchestrion Roll
+                  icon: '60173'
+          costs:
+            - quantity: '25'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: 'Discord: Imperial (Zodiac Age Version) Orchestrion Roll'
+                id: '31666'
+                category:
+                  id: '94'
+                  name: Orchestrion Roll
+                  icon: '60173'
+          costs:
+            - quantity: '25'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Forgotten Fragment of Observation
+                id: '32162'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Ballroom Etiquette - Dark Entreaty
+                id: '31403'
+                category:
+                  id: '61'
+                  name: Miscellany
+                  icon: '60153'
+          costs:
+            - quantity: '50'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Trinity Seeker Card
+                id: '33016'
+                category:
+                  id: '86'
+                  name: Triple Triad Card
+                  icon: '60156'
+          costs:
+            - quantity: '3'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+          questId: '69562'
+          quest:
+            name: Fit for a Queen
+            level: 80
+            rowId: 69562
+            questId: LucKsa202_04026
+            genre: Resistance Weapons
+            icon: '71140'
+        - items:
+            - quantity: '1'
+              item:
+                name: Trinity Avowed Card
+                id: '33017'
+                category:
+                  id: '86'
+                  name: Triple Triad Card
+                  icon: '60156'
+          costs:
+            - quantity: '3'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+          questId: '69562'
+          quest:
+            name: Fit for a Queen
+            level: 80
+            rowId: 69562
+            questId: LucKsa202_04026
+            genre: Resistance Weapons
+            icon: '71140'
+        - items:
+            - quantity: '1'
+              item:
+                name: Pleasant Dot Parasol
+                id: '33037'
+                category:
+                  id: '61'
+                  name: Miscellany
+                  icon: '60153'
+          costs:
+            - quantity: '25'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Forgotten Fragment of Clarity
+                id: '32165'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Forgotten Fragment of Contention
+                id: '32831'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Forgotten Fragment of Finesse
+                id: '32832'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Forgotten Fragment of Fortitude
+                id: '32833'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Forgotten Fragment of Divinity
+                id: '32834'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Wind-up Gunnhildr
+                id: '33700'
+                category:
+                  id: '81'
+                  name: Minion
+                  icon: '60155'
+          costs:
+            - quantity: '100'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+          questId: '69487'
+          quest:
+            name: The Lady of Blades
+            level: 71
+            rowId: 69487
+            questId: LucKsa111_03951
+            genre: Resistance Weapons
+            icon: '71140'
+        - items:
+            - quantity: '1'
+              item:
+                name: Forgotten Fragment of Hope
+                id: '33772'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Bozjan Southern Front Riding Map
+                id: '33883'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '25'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Queen's Rest
+                id: '33254'
+                category:
+                  id: '78'
+                  name: Tabletop
+                  icon: '60163'
+          costs:
+            - quantity: '10'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 111
+          questId: '69624'
+          quest:
+            name: March of the Bloody Queen
+            level: 71
+            rowId: 69624
+            questId: LucKsa305_04088
+            genre: Resistance Weapons
+            icon: '71140'
+        - items:
+            - quantity: '1'
+              item:
+                name: Zadnor Riding Map
+                id: '33884'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '25'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 120
+          questId: '69620'
+          quest:
+            name: A New Playing Field
+            level: 71
+            rowId: 69620
+            questId: LucKsa301_04084
+            genre: Resistance Weapons
+            icon: '71140'
+        - items:
+            - quantity: '1'
+              item:
+                name: Diablo Armament Card
+                id: '33340'
+                category:
+                  id: '86'
+                  name: Triple Triad Card
+                  icon: '60156'
+          costs:
+            - quantity: '7'
+              currency:
+                id: '31135'
+                name: Bozjan Cluster
+                plural: Bozjan clusters
+                icon: '65082'
+          order: 110
+          questId: '69624'
+          quest:
+            name: March of the Bloody Queen
+            level: 71
+            rowId: 69624
+            questId: LucKsa305_04088
+            genre: Resistance Weapons
+            icon: '71140'
+      npcs: []
+  categories:
+    - id: '63'
+      name: Other
+      icon: '60159'
+    - id: '61'
+      name: Miscellany
+      icon: '60153'
+    - id: '94'
+      name: Orchestrion Roll
+      icon: '60173'
+    - id: '86'
+      name: Triple Triad Card
+      icon: '60156'
+    - id: '81'
+      name: Minion
+      icon: '60155'
+    - id: '78'
+      name: Tabletop
+      icon: '60163'
+  currencies:
+    - id: '31135'
+      name: Bozjan Cluster
+      plural: Bozjan clusters
+      icon: '65082'
+
+
 ---
