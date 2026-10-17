@@ -232,6 +232,15 @@ quests:
       - location: Gangos
         coords: (6.1, 4.9)
         name: Speak with Zlatan.
+    requires:
+      - name: Fit for a Queen
+        link: /quests/fieldops/bozja
+        level: 80
+        rowId: 69562
+        questId: LucKsa202_04026
+        genre: Resistance Weapons
+        icon: '71140'
+
     partQuestNo: 6
   - name: "\uE0BF Change of Arms"
     level: 80
@@ -362,13 +371,6 @@ quests:
         coords: (35.4, 35.0)
         name: Speak with Mikoto.
     requires:
-      - name: Fit for a Queen
-        link: /quests/fieldops/bozja
-        level: 80
-        rowId: 69562
-        questId: LucKsa202_04026
-        genre: Resistance Weapons
-        icon: '71140'
       - name: Futures Rewritten
         link: /quests/msq/shadowbringers/part4
         level: 80
