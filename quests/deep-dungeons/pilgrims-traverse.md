@@ -793,8 +793,8 @@ shops:
     <div class="column is-one-third">
         <h2 class="subtitle is-5">Illumed Aetherpool Glass</h2>
         <ul>
-          <li>Random drop from Bronze Coffers in Pilgrims Traverse</li>
           <li>Guaranteed drop clearing Stone 30/50/70</li>
+          <li>Random drop from Bronze Coffers in Pilgrims Traverse</li>
        </ul>
     </div>
     <div class="column is-one-third">
@@ -806,8 +806,8 @@ shops:
     <div class="column is-one-third">
         <h2 class="subtitle is-5">First Light Relics</h2>
         <ul>
-          <li>Random drop (uncommon) from The Final Verse</li>
           <li>Guaranteed drop from The Final Verse (Quantum)</li>
+          <li>Random drop (uncommon) from The Final Verse</li>
        </ul>
     </div>
 </div>

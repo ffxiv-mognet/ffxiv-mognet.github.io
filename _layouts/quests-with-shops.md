@@ -216,8 +216,8 @@ function updateShopRows() {
 
 }
 
-const _shopordering = JSON.parse('{{page.shopOrdering|jsonify}}')
-function sortRows() {
+const _shopordering = JSON.parse('{{page.shopOrdering|jsonify}}') || {}
+function sortShopRows() {
     const tbody = document.querySelector('tr.shop-row').parentNode
     Array.from(tbody.children).sort((a, b) => {
         return (
@@ -264,9 +264,9 @@ function handleShopItemChecked(event) {
 }
 
 
-function setShowFinished(value) {
+function setShowShopFinished(value) {
   window.shopShowFinished = value
-  setLocalFlag("shop:config", "showFinished", value)
+  setLocalFlag("quest:config", "showFinished", value)
 
   if (window.shopShowFinished) {
     removeHiddenFinishedStyle('shop-row')
@@ -281,10 +281,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // initialize showFinished check
     var checkShowFinished = document.getElementById("check-showFinished");
-    const showFinished = getLocalFlag("shop:config", "showFinished")
-    setShowFinished(showFinished)
-    checkShowFinished.checked = showFinished
-    checkShowFinished.onchange = (evt) => { setShowFinished(evt.target.checked) }
+    const showShopFinished = getLocalFlag("quest:config", "showFinished")
+    setShowShopFinished(showShopFinished)
+    checkShowFinished.addEventListener('change', (evt) => {
+        setShowShopFinished(evt.target.checked)
+    })
 
 
     // initialize category filter dropdown
@@ -302,7 +303,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     updateShopRows()
-    sortRows()
+    sortShopRows()
 })
 
 </script>
