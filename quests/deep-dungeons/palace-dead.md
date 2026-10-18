@@ -715,6 +715,18 @@ shops:
       plural: glass pumpkins
       icon: '25989'
 
+currencies:
+  - name: Gelmorran potsherds
+    sources:
+      - "Guaranteed drop for clearing floor 50 / 100"
+      - "Random drop from Bronze Chests in Palace of the Dead"
+      - "Higher chance for Bronze Chest to contain potsherd on floor 101+"
+  - name: Glass Pumpkin
+    sources:
+      - "Guaranteed either a Firecrest or a Glass Pumpkin for clearing floor 200"
+  - name: Firecrest
+    sources:
+      - "Guaranteed either a Firecrest or a Glass Pumpkin for clearing floor 200"
 
 ---
 

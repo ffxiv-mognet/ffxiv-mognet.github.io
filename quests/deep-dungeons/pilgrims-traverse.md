@@ -786,30 +786,23 @@ shops:
       plural: copies of *Illumed Invocations*
       icon: '26448'
 
-
+currencies:
+  - name: Illumed Aetherpool Glass
+    sources:
+      - "Guaranteed drop from Stone 30/50/70"
+      - "Random drop from Bronze Coffers"
+  - name: Illumed Invocation
+    sources:
+      - "Guaranteed drop from Stone 100"
+  - name: First Light Relic
+    sources:
+      - "Guaranteed drop from The Final Verse (Quantum)"
+      - "Random drop from The Final Verse"
+  - name: Luminous Oil
+    sources:
+      - "Trade 1x Illumed Invocation"
+      - "Challenge Log: 7x for Clear Stone 20"
+      - "Challenge Log: 8x for Clear Stone 50"
+      - "Challenge Log: 10x for Clear Stone 100"
 ---
-
-<div class="columns">
-    <div class="column is-one-third">
-        <h2 class="subtitle is-5">Illumed Aetherpool Glass</h2>
-        <ul>
-          <li>Guaranteed drop clearing Stone 30/50/70</li>
-          <li>Random drop from Bronze Coffers in Pilgrims Traverse</li>
-       </ul>
-    </div>
-    <div class="column is-one-third">
-        <h2 class="subtitle is-5">Illumed Invocation</h2>
-        <ul>
-          <li>Guaranteed drop from Stone 100</li>
-       </ul>
-    </div>
-    <div class="column is-one-third">
-        <h2 class="subtitle is-5">First Light Relics</h2>
-        <ul>
-          <li>Guaranteed drop from The Final Verse (Quantum)</li>
-          <li>Random drop (uncommon) from The Final Verse</li>
-       </ul>
-    </div>
-</div>
-
 

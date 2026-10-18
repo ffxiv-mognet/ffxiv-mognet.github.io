@@ -3,6 +3,22 @@ layout: quest-table
 ---
 {{content}}
 
+{% if page.currencies %}
+<div class="columns">
+    {% for currency in page.currencies %}
+    <div class="column is-one-fourth">
+        <h2 class="subtitle is-5">{{ currency.name }}</h2>
+        <ul>
+          {% for source in currency.sources %}
+          <li>{{ source }}</li>
+          {% endfor %}
+       </ul>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
 <table class="table is-fullwidth">
   <thead>
     <tr>
