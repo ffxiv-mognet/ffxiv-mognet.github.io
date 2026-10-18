@@ -282,7 +282,7 @@ quests:
     unlocks:
       - name: "\uE0BE Radiant Patrol"
         type: quest-71140
-        link: /quests/aethercurrent/endwalker/thavnair
+        link: /quests/aethercurrents/endwalker/thavnair
         level: 80
         rowId: 69795
         questId: AktKzf004_04259
@@ -292,7 +292,7 @@ quests:
         icon: '71140'
       - name: "\uE0BE In Agama's Footsteps"
         type: quest-71140
-        link: /quests/aethercurrent/endwalker/thavnair
+        link: /quests/aethercurrents/endwalker/thavnair
         level: 80
         rowId: 69793
         questId: AktKzf002_04257
@@ -330,7 +330,7 @@ quests:
       - id: '2818324'
         name: Aether Current
         type: aethercurrent
-        link: /quests/aethercurrent/endwalker/thavnair
+        link: /quests/aethercurrents/endwalker/thavnair
     partQuestNo: 8
   - name: Under His Wing
     level: 85
@@ -654,7 +654,7 @@ quests:
     unlocks:
       - name: "\uE0BE Touring Anagnorisis, Part I"
         type: quest-71140
-        link: /quests/aethercurrent/endwalker/elpis
+        link: /quests/aethercurrents/endwalker/elpis
         level: 80
         rowId: 70043
         questId: AktKzg101_04507
@@ -731,7 +731,7 @@ quests:
         name: Speak with Meteion.
     unlocks:
       - name: "\uE0BE You and the Ailouros"
-        link: /quests/aethercurrent/endwalker/elpis
+        link: /quests/aethercurrents/endwalker/elpis
         type: quest-71140
         level: 80
         rowId: 69824
@@ -926,7 +926,7 @@ quests:
     unlocks:
       - name: "\uE0BE The Perks of Being a Lost Flower "
         type: quest-71140
-        link: /quests/aethercurrent/endwalker/elpis
+        link: /quests/aethercurrents/endwalker/elpis
         level: 80
         rowId: 69849
         questId: AktKzh018_04313
@@ -936,7 +936,7 @@ quests:
         icon: '71140'
       - name: "\uE0BE An Expected Guest"
         type: quest-71140
-        link: /quests/aethercurrent/endwalker/elpis
+        link: /quests/aethercurrents/endwalker/elpis
         level: 80
         rowId: 70047
         questId: AktKzh101_04511
@@ -1064,7 +1064,7 @@ quests:
         ilevelSync: 0
       - id: '2818369'
         name: Aether Current
-        link: /quests/aethercurrent/endwalker/elpis
+        link: /quests/aethercurrents/endwalker/elpis
         type: aethercurrent
     partQuestNo: 29
   - name: Thou Must Live, Die, and Know
@@ -1209,7 +1209,7 @@ quests:
     unlocks:
       - name: "\uE0BE Let the Good Times Troll"
         type: quest-71140
-        link: /quests/aethercurrent/endwalker/labyrinthos
+        link: /quests/aethercurrents/endwalker/labyrinthos
         level: 80
         rowId: 69865
         questId: AktKzi014_04329
@@ -1354,7 +1354,7 @@ quests:
     unlocks:
       - name: "\uE0BE The Lad in Labyrinthos"
         type: quest-71140
-        link: /quests/aethercurrent/endwalker/labyrinthos
+        link: /quests/aethercurrents/endwalker/labyrinthos
         level: 80
         rowId: 70020
         questId: AktKzi101_04484
@@ -1364,7 +1364,7 @@ quests:
         icon: '71140'
       - name: "\uE0BE Gleaner's Wish"
         type: quest-71140
-        link: /quests/aethercurrent/endwalker/labyrinthos
+        link: /quests/aethercurrents/endwalker/labyrinthos
         level: 80
         rowId: 69856
         questId: AktKzi005_04320
@@ -1438,7 +1438,7 @@ quests:
       - id: '2818309'
         name: Aether Current
         type: aethercurrent
-        link: /quests/aethercurrent/endwalker/labyrinthos
+        link: /quests/aethercurrents/endwalker/labyrinthos
     partQuestNo: 40
   - name: Her Children, One and All
     level: 89
@@ -1746,6 +1746,25 @@ quests:
       - location: Ultima Thule
         coords: (25.1, 8.7)
         name: Speak with Y'shtola.
+    unlocks:
+      - name: "\uE0BE Ending as One"
+        type: quest-71140
+        link: /quests/aethercurrents/endwalker/ultima-thule
+        level: 80
+        rowId: 69878
+        questId: AktKzj006_04342
+        genre:
+          id: '147'
+          name: Ultima Thule Sidequests
+      - name: "\uE0BE A Most Stimulating Discussion"
+        type: quest-71140
+        link: /quests/aethercurrents/endwalker/ultima-thule
+        level: 80
+        rowId: 69882
+        questId: AktKzj010_04346
+        genre:
+          id: '147'
+          name: Ultima Thule Sidequests
     partQuestNo: 50
   - name: "Vic\u2528\u03BFry  \u0308 \u0308 \u0308\u2573, \u2502\u0306\u2502\u2502\
       \u03B5 Lost"
@@ -1789,6 +1808,27 @@ quests:
       - location: Ultima Thule
         coords: (31.5, 27.6)
         name: Speak with G'raha Tia.
+    unlocks:
+      - name: "\uE0BE Learn to Love"
+        type: quest-71140
+        link: /quests/aethercurrents/endwalker/ultima-thule
+        level: 80
+        rowId: 69891
+        questId: AktKzk002_04355
+        genre:
+          id: '147'
+          name: Ultima Thule Sidequests
+        icon: '71140'
+      - name: "\uE0BE Combat Evolved"
+        type: quest-71140
+        link: /quests/aethercurrents/endwalker/ultima-thule
+        level: 80
+        rowId: 69890
+        questId: AktKzk001_04354
+        genre:
+          id: '147'
+          name: Ultima Thule Sidequests
+        icon: '71140'
     partQuestNo: 51
   - name: "\u2523\u2528\u0308//\u0308 No\u2528\u03A6oun\u0394\u2022\u2022\u2022"
     level: 90
@@ -1910,6 +1950,7 @@ quests:
     unlocks:
       - id: '2818384'
         name: Aether Current
+        link: /quests/aethercurrents/endwalker/ultima-thule
         type: aethercurrent
     partQuestNo: 55
   - name: Endwalker
