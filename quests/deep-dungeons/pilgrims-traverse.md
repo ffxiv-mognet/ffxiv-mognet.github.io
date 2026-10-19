@@ -722,6 +722,47 @@ shops:
         - name: Ose Wyd
           location: Il Mheg
           coords: (29.9, 5.9)
+    - id: "pilgrims-traverse-mount"
+      name: ''
+      inventory:
+        - items:
+            - quantity: 1
+              item: 
+                name: Chandeleir of First Light
+                id: '46832'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '1'
+              currency:
+                name: Bangles of the First Light
+                plural: Bangles of the First Light
+                id: '47299'
+                icon: '60134'
+            - quantity: '1'
+              currency:
+                name: Earrings of the First Light
+                plural: Earrings of the First Light
+                id: '47297'
+                icon: '60133'
+            - quantity: '1'
+              currency:
+                name: Necklace of the First Light
+                plural: Necklace of the First Light
+                id: '47298'
+                icon: '60132'
+            - quantity: '1'
+              currency:
+                name: Ring of the First Light
+                plural: Ring of the First Light
+                id: '47300'
+                icon: '60135'
+      npcs:
+        - name: Aenc Daen
+          location: Il Mheg
+          coords: (29.8, 5.9)
   categories:
     - id: '44'
       name: Medicine
