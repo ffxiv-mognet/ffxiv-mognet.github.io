@@ -184,6 +184,8 @@ class XivQuestScraper:
             'name': item['Name'],
             'id': item['#'],
             'icon': item['Icon'],
+            'ilvl': item['LevelItem'],
+            'level': item['LevelEquip'],
             'category': {
                 'id': category['#'],
                 'name': category['Name'],
@@ -1346,6 +1348,61 @@ class XivQuestScraper:
             print(json.dumps(indexed))
         else:
             print(dump_indented_yaml(indexed))
+
+    def cmd_findShops(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=False)
+        # self.argparser.add_argument("--json", action="store_true", default=False)
+        self.argparser.add_argument("--item", nargs="?")
+        self.argparser.add_argument("--currency", nargs="?")
+        self.argparser.add_argument("--itemId", nargs="?")
+        self.argparser.add_argument("--currencyId", nargs="?")
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        output = {}
+
+        item_id = self.args.itemId
+        if self.args.item:
+            item = self.sheets['Item'].find(lambda it: self.args.item.lower() == it['Name'].lower())
+            if item:
+                item_id = item['#']
+                print("Looking for item #={} '{}'".format(item_id, item['Name']))
+
+        currency_id = self.args.currencyId
+        if self.args.currency:
+            currency = self.sheets['Item'].find(lambda it: self.args.currency.lower() in it['Name'].lower())
+            if currency:
+                currency_id = currency['#']
+                print("Looking for currency #={} '{}'".format(currency_id, currency['Name']))
+
+        print()
+
+        if not (item_id or currency_id):
+            self.argparser.print_help()
+            self.argparser.exit()
+
+        def _match_shop(shop):
+            for i in range(0,60):
+                item_ids = [
+                    shop['Item[{}].Item[0]'.format(i)],
+                    shop['Item[{}].Item[1]'.format(i)],
+                ]
+                if item_id and item_id in item_ids:
+                    return True
+                currency_ids = [
+                    shop['Item[{}].ItemCost[0]'.format(i)],
+                    shop['Item[{}].ItemCost[1]'.format(i)],
+                    shop['Item[{}].ItemCost[2]'.format(i)],
+                ]
+                if currency_id and currency_id in currency_ids:
+                    return True
+            return False
+
+        shops = self.sheets['SpecialShop'].findMatches(_match_shop)
+
+        for shop in shops:
+            print('{}: {}'.format(shop['#'], shop['Name']))
+
 
     def cmd_huntShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)
