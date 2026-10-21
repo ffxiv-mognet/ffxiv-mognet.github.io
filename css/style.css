@@ -151,6 +151,14 @@ span.icon i.achievement {
     width: 1rem;
     display: block;
 }
+span.icon i.emote {
+    background:url('/icons/MainIcon9.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
 
 .unlocks {
     padding-left: 1rem;
