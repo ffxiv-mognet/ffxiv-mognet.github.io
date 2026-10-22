@@ -1,28 +1,45 @@
+
+## Features
+
+ * Show quest rewards
+ * consistent navigation/breadcrumbs
+ * show correct shop type/currency filter states on load
+
+### maybes features?
+ * better support for "nonequential" branching quest lines?
+ * parse existing yaml and add/cleanup data to existing modified quests
+
+## Quest Content
+
 Realm Reborn
+* Hunt quests/shop
 
 Heavensward
-* anima relic weapons
 * optional dungeons
+* allied societies
+* Hunt quests/shop
 
 Stormblood
 * eurekan relic weapons
-* eureka fieldop
-* heaven on high deep dungeon
+* eureka fieldop shops
 * optional dungeons
+* allied societies
+* Hunt quests/shop
 
 Shadowbringers
 * optional dungeons
 * yorha alliance raid
 * ishgardian restoration lifestyle
 * optional dungeons
+* allied societies
+* Hunt quests/shop
 
 Endwalker
-* msq part1-4
-* aethercurrents
 * myths realm alliance raid
 * manderville weapons
-* variant dungeons
 * optional dungeons
+* allied societies
+* Hunt quests/shop
 
 Dawntrail
 * msq part 3-4
@@ -31,6 +48,9 @@ Dawntrail
 * phantom relic weapons
 * occult crescent (confirm)
 * cosmic exploration lifestyle
-* pilgrism traverse deep dungeon
-* merchants tale variant dungeon
 * optional dungeons
+* allied societies
+* Hunt quests/shop
+
+Sidestories
+Hildibrand

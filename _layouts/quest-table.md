@@ -131,7 +131,7 @@ layout: with-nav
           <td><!-- requires -->
               {% for required in quest.requires %}
                   {% if required.link %}<a href="{{required.link}}">{% endif %}
-                  <div class="quest-req" data-rowid="{{required.rowId}}">
+                  <div class="quest-req" data-rowid="{{required.rowId}}" title="{{required.genre}}">
                       <span class="icon-text">
                           <span class="icon"><i class="quest-{{required.icon}}"></i></span>
                           <span>{{required.name}}</span>
