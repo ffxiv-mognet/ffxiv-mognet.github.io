@@ -1427,8 +1427,8 @@ class XivQuestScraper:
             {"#": "1770761", "Name": "Sacks of Nuts Exchange"},  # rubool ja (dawntrail)
 
             # clan mark logs, fate tokens, mount tokens
-            {"#": "1769728", "Name": "Uncanny Knickknacks"}, # aelina (realm reborn)
-            {"#": "1769511", "Name": "Uncanny Knickknacks"}, # bertana (heavensward)
+            {"#": "1769511", "Name": "Uncanny Knickknacks"}, # aelina (realm reborn)
+            {"#": "1769728", "Name": "Uncanny Knickknacks"}, # bertana (heavensward)
             {"#": "1769807", "Name": "Wondrous Sundries"},  # eschina (stormblood)
             {"#": "1770015", "Name": "Glorious Gewgaws"}, # fathard (shadowbringers)
             {"#": "1770456", "Name": "Out-of-this-world Oddities"}, # nesvaaz (endwalker)
