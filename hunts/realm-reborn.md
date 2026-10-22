@@ -972,6 +972,316 @@ shops:
         - name: Hunt billmaster
           location: Limsa Lominsa Upper Decks
           coords: (13.1, 12.4)
+
+
+    - id: '1769511'
+      name: Uncanny Knickknacks
+      inventory:
+        - items:
+            - quantity: '1'
+              item:
+                name: Black Summer Top
+                id: '6102'
+                category:
+                  id: '35'
+                  name: Body
+                  icon: '60126'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '5947'
+                name: Cascadier Uniform Voucher
+                plural: Cascadier uniform vouchers
+                icon: '25918'
+          order: 130
+        - items:
+            - quantity: '1'
+              item:
+                name: Black Summer Trunks
+                id: '6103'
+                category:
+                  id: '36'
+                  name: Legs
+                  icon: '60128'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '5947'
+                name: Cascadier Uniform Voucher
+                plural: Cascadier uniform vouchers
+                icon: '25918'
+          order: 130
+        - items:
+            - quantity: '1'
+              item:
+                name: Black Summer Halter
+                id: '6104'
+                category:
+                  id: '35'
+                  name: Body
+                  icon: '60126'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '5947'
+                name: Cascadier Uniform Voucher
+                plural: Cascadier uniform vouchers
+                icon: '25918'
+          order: 130
+        - items:
+            - quantity: '1'
+              item:
+                name: Black Summer Tanga
+                id: '6105'
+                category:
+                  id: '36'
+                  name: Legs
+                  icon: '60128'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '5947'
+                name: Cascadier Uniform Voucher
+                plural: Cascadier uniform vouchers
+                icon: '25918'
+          order: 130
+        - items:
+            - quantity: '1'
+              item:
+                name: Zantetsuken
+                id: '1677'
+                category:
+                  id: '2'
+                  name: Gladiator's Arm
+                  icon: '60102'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6164'
+                name: Odin's Mantle
+                plural: Odin's mantles
+                icon: '21002'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Hjalmr
+                id: '2951'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6164'
+                name: Odin's Mantle
+                plural: Odin's mantles
+                icon: '21002'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Herklaedi
+                id: '3262'
+                category:
+                  id: '35'
+                  name: Body
+                  icon: '60126'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6164'
+                name: Odin's Mantle
+                plural: Odin's mantles
+                icon: '21002'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Sleipnir Barding
+                id: '6030'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6164'
+                name: Odin's Mantle
+                plural: Odin's mantles
+                icon: '21002'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Heavy Behemoth Helm
+                id: '2943'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6155'
+                name: Behemoth Horn
+                plural: behemoth horns
+                icon: '22205'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Behemoth Helm
+                id: '2944'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6155'
+                name: Behemoth Horn
+                plural: behemoth horns
+                icon: '22205'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Behemoth Mask
+                id: '2945'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6155'
+                name: Behemoth Horn
+                plural: behemoth horns
+                icon: '22205'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Thundercloud
+                id: '1886'
+                category:
+                  id: '5'
+                  name: Lancer's Arm
+                  icon: '60104'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6155'
+                name: Behemoth Horn
+                plural: behemoth horns
+                icon: '22205'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Ring of Lasting Shelter
+                id: '4529'
+                category:
+                  id: '43'
+                  name: Ring
+                  icon: '60135'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6155'
+                name: Behemoth Horn
+                plural: behemoth horns
+                icon: '22205'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Pixie Earrings
+                id: '4288'
+                category:
+                  id: '41'
+                  name: Earrings
+                  icon: '60133'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6155'
+                name: Behemoth Horn
+                plural: behemoth horns
+                icon: '22205'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Behemoth Knives
+                id: '1676'
+                category:
+                  id: '84'
+                  name: Rogue's Arm
+                  icon: '60106'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '6155'
+                name: Behemoth Horn
+                plural: behemoth horns
+                icon: '22205'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Replica Behemoth Helm
+                id: '23343'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '2944'
+                name: Behemoth Helm
+                plural: behemoth helms
+                icon: '40120'
+            - quantity: '1'
+              currency:
+                id: '23342'
+                name: Behemoth Pelt
+                plural: behemoth pelts
+                icon: '21830'
+          order: 130
+        - items:
+            - quantity: '1'
+              item:
+                name: Replica Heavy Behemoth Helm
+                id: '23344'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '2943'
+                name: Heavy Behemoth Helm
+                plural: heavy behemoth helms
+                icon: '40121'
+            - quantity: '1'
+              currency:
+                id: '23342'
+                name: Behemoth Pelt
+                plural: behemoth pelts
+                icon: '21830'
+          order: 130
+      npcs:
+        - name: Aelina
+          location: Mor Dhona 
+          coords: (22.7, 6.7)
   categories:
     - id: '60'
       name: Catalyst
@@ -1009,11 +1319,59 @@ shops:
     - id: '50'
       name: Lumber
       icon: '60141'
+    - id: '35'
+      name: Body
+      icon: '60126'
+    - id: '36'
+      name: Legs
+      icon: '60128'
+    - id: '2'
+      name: Gladiator's Arm
+      icon: '60102'
+    - id: '34'
+      name: Head
+      icon: '60124'
+    - id: '5'
+      name: Lancer's Arm
+      icon: '60104'
+    - id: '43'
+      name: Ring
+      icon: '60135'
+    - id: '41'
+      name: Earrings
+      icon: '60133'
+    - id: '84'
+      name: Rogue's Arm
+      icon: '60106'
   currencies:
     - id: '27'
       name: Allied Seal
       plural: Allied Seals
       icon: '65024'
+    - id: '5947'
+      name: Cascadier Uniform Voucher
+      plural: Cascadier uniform vouchers
+      icon: '25918'
+    - id: '6164'
+      name: Odin's Mantle
+      plural: Odin's mantles
+      icon: '21002'
+    - id: '6155'
+      name: Behemoth Horn
+      plural: behemoth horns
+      icon: '22205'
+    - id: '2944'
+      name: Behemoth Helm
+      plural: behemoth helms
+      icon: '40120'
+    - id: '23342'
+      name: Behemoth Pelt
+      plural: behemoth pelts
+      icon: '21830'
+    - id: '2943'
+      name: Heavy Behemoth Helm
+      plural: heavy behemoth helms
+      icon: '40121'
 
 
 ---

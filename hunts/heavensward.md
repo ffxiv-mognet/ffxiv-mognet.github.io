@@ -581,6 +581,8 @@ shops:
           order: 200
       npcs:
         - name: Bertana
+          location: Idyllshire 
+          coords: (5.9,5.2)
   categories:
     - id: '63'
       name: Other
