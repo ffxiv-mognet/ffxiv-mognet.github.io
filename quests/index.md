@@ -207,6 +207,20 @@ storylines:
             link: /quests/dungeons/endwalker
           - name: Dawntrail
             link: /quests/dungeons/dawntrail
+      - name: The Hunt
+        parts:
+          - name: A Realm Reborn
+            link: /quests/the-hunt/realm-reborn
+          - name: Heavensward
+            link: /quests/the-hunt/heavensward
+          - name: Stormblood
+            link: /quests/the-hunt/stormblood
+          - name: Shadowbringers
+            link: /quests/the-hunt/shadowbringers
+          - name: Endwalker
+            link: /quests/the-hunt/endwalker
+          - name: Dawntrail
+            link: /quests/the-hunt/dawntrail
       - name: Variant Dungeons
         parts:
           - name: The Sil'dihn Subterrane

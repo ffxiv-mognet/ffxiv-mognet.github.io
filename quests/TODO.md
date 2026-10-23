@@ -7,24 +7,22 @@
 
 ### maybes features?
  * better support for "nonequential" branching quest lines?
- * parse existing yaml and add/cleanup data to existing modified quests
+ * parse yaml and add/cleanup data to existing .md files
 
 ## Quest Content
 
 Realm Reborn
-* Hunt quests/shop
+* allied societies
 
 Heavensward
 * optional dungeons
 * allied societies
-* Hunt quests/shop
 
 Stormblood
 * eurekan relic weapons
 * eureka fieldop shops
 * optional dungeons
 * allied societies
-* Hunt quests/shop
 
 Shadowbringers
 * optional dungeons
@@ -33,6 +31,7 @@ Shadowbringers
 * optional dungeons
 * allied societies
 * Hunt quests/shop
+* extreme mounts
 
 Endwalker
 * myths realm alliance raid
@@ -40,6 +39,7 @@ Endwalker
 * optional dungeons
 * allied societies
 * Hunt quests/shop
+* extreme mounts
 
 Dawntrail
 * msq part 3-4
@@ -51,6 +51,5 @@ Dawntrail
 * optional dungeons
 * allied societies
 * Hunt quests/shop
+* extreme mounts
 
-Sidestories
-Hildibrand
