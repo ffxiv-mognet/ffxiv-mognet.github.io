@@ -32,7 +32,7 @@ layout: quests-with-shops
       <td>
         <div>
             <span class="icon-text">
-                <span class="icon"><i class="{{totem.trial.type}}"></i></span>
+                <span class="icon"><i class="trial"></i></span>
                 <span>{{totem.trial.name}}</span>
             </span>
         </div>

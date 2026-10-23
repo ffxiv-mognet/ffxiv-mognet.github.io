@@ -154,10 +154,12 @@ layout: quest-table
               </div>
               {% endif   %}
               {% if inv.quest %}
-              <span class="icon-text" style="white-space: nowrap">
-                <span class="icon"><i class="quest-{{inv.quest.icon}}"></i></span>
-                <span style="font-size: 0.8em">{{inv.quest.name}}</span>
-              </span>
+                  {% if inv.quest.link %}<a href="{{inv.quest.link}}">{% endif %}
+                  <span class="icon-text" style="white-space: nowrap">
+                    <span class="icon"><i class="quest-{{inv.quest.icon}}"></i></span>
+                    <span style="font-size: 0.8em">{{inv.quest.name}}</span>
+                  </span>
+                  {% if inv.quest.link %}</a>{% endif %}
               {% endif %}
               {% if inv.achievement %}
               <span class="icon-text" style="white-space: nowrap">
