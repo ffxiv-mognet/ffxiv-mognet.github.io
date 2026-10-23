@@ -1,4 +1,3 @@
-
 span.icon i.quest-71000 {
     background:url('/icons/071001.png');
     content: '';
@@ -217,4 +216,8 @@ span.icon i.emote {
 }
 .loading-wrapper.is-loaded > .loading-icon {
     display: none;
+}
+
+input.totem-count {
+    width: 3em;
 }

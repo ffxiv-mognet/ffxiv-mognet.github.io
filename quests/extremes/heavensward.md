@@ -1,5 +1,5 @@
 ---
-layout: quests-with-shops
+layout: quests-with-shops-mounts
 title: Heavensward Extreme Trials
 permalink: /quests/extremes/heavensward
 links:
@@ -326,6 +326,19 @@ quests:
       - id: 1694
         name: Just Like Fire
         type: achievement
+    rewards:
+      items:
+        - item:
+            name: Firebird Whistle
+            id: '17008'
+            icon: '26039'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '63'
+              name: Other
+              icon: '60159'
+          count: 1
     requires:
       - name: Rose Lanner
         type: mount
@@ -402,6 +415,7 @@ shops:
           questId: '67205'
           quest:
             name: Heavensward
+            link: /quests/msq/heavensward/part2
             level: 60
             rowId: 67205
             questId: HeaVna707_01669
@@ -424,14 +438,6 @@ shops:
                 plural: Fiend totems
                 icon: '21002'
           order: 230
-          questId: '67766'
-          quest:
-            name: When the Bough Wakes
-            level: 60
-            rowId: 67766
-            questId: HeaVny211_02230
-            genre: Heavensward Primal Quests
-            icon: '71140'
         - items:
             - quantity: '1'
               item:
@@ -452,6 +458,7 @@ shops:
           questId: '67781'
           quest:
             name: An End to the Song
+            link: /quests/msq/heavensward/part3
             level: 60
             rowId: 67781
             questId: HeaVnd104_02245
@@ -474,14 +481,6 @@ shops:
                 plural: Goddess totems
                 icon: '21002'
           order: 230
-          questId: '67868'
-          quest:
-            name: Balance unto All
-            level: 60
-            rowId: 67868
-            questId: HeaVny231_02332
-            genre: Heavensward Primal Quests
-            icon: '71140'
         - items:
             - quantity: '1'
               item:
@@ -499,14 +498,6 @@ shops:
                 plural: Demon totems
                 icon: '21002'
           order: 230
-          questId: '67930'
-          quest:
-            name: The Last Pillar to Fall
-            level: 60
-            rowId: 67930
-            questId: HeaVny241_02394
-            genre: Heavensward Primal Quests
-            icon: '71140'
       npcs:
         - name: Bertana
           location: Idyllshire 
@@ -540,22 +531,6 @@ shops:
       name: Heavens' Ward Helm Fragment
       plural: Heavens' Ward helm fragments
       icon: '20956'
-    - id: '13625'
-      name: Clan Mark Log
-      plural: Clan mark logs
-      icon: '26169'
-    - id: '12252'
-      name: Coeurlregina Horn
-      plural: Coeurlregina horns
-      icon: '22214'
-    - id: '12253'
-      name: Proto Ultima Exoplating
-      plural: sheets of Proto Ultima exoplating
-      icon: '20959'
-    - id: '16545'
-      name: Alexandrian Gear
-      plural: Alexandrian gears
-      icon: '25995'
     - id: '14300'
       name: Fiend Totem
       plural: Fiend totems
@@ -572,16 +547,140 @@ shops:
       name: Demon Totem
       plural: Demon totems
       icon: '21002'
-    - id: '13584'
-      name: Unidentifiable Shell
-      plural: unidentifiable shells
-      icon: '22263'
-    - id: '13586'
-      name: Unidentifiable Ore
-      plural: chunks of unidentifiable ore
-      icon: '21478'
 
 
-
-
+totems:
+  - totem: 
+      id: '12672'
+      name: Expanse Totem
+      plural: Expanse totems
+      icon: '21002'
+    trial: 
+      name: the Limitless Blue (Extreme)
+      type: trial
+      levelRequired: 60
+      levelSync: 60
+      ilevelRequired: 165
+      ilevelSync: 0
+    item:
+      name: White Lanner Whistle
+      id: '14085'
+      category:
+        id: '63'
+        name: Other
+        icon: '60159'
+  - totem: 
+      id: '12673'
+      name: Hive Totem
+      plural: Hive totems
+      icon: '21002'
+    trial:
+      name: Thok ast Thok (Extreme)
+      type: trial
+      levelRequired: 60
+      levelSync: 60
+      ilevelRequired: 175
+      ilevelSync: 0
+    item:
+      name: Rose Lanner Whistle
+      id: '14086'
+      category:
+        id: '63'
+        name: Other
+        icon: '60159'
+  - totem:
+      id: '13627'
+      name: Heavens' Ward Helm Fragment
+      plural: Heavens' Ward helm fragments
+      icon: '20956'
+    trial:
+      name: 'the Minstrel''s Ballad: Thordan''s Reign'
+      type: trial
+      levelRequired: 60
+      levelSync: 60
+      ilevelRequired: 190
+      ilevelSync: 0
+    item:
+      name: Round Lanner Whistle
+      id: '14087'
+      category:
+        id: '63'
+        name: Other
+        icon: '60159'
+  - totem:
+      id: '14300'
+      name: Fiend Totem
+      plural: Fiend totems
+      icon: '21002'
+    trial:
+      name: Containment Bay S1T7 (Extreme)
+      type: trial
+      levelRequired: 60
+      levelSync: 60
+      ilevelRequired: 205
+      ilevelSync: 0
+    item:
+      name: Warring Lanner Whistle
+      id: '14088'
+      category:
+        id: '63'
+        name: Other
+        icon: '60159'
+  - totem:
+      id: '15421'
+      name: Horde Totem
+      plural: Horde totems
+      icon: '21002'
+    trial:
+      name: 'the Minstrel''s Ballad: Nidhogg''s Rage'
+      type: trial
+      levelRequired: 60
+      levelSync: 60
+      ilevelRequired: 220
+      ilevelSync: 0
+    item:
+      name: Dark Lanner Whistle
+      id: '15432'
+      category:
+        id: '63'
+        name: Other
+        icon: '60159'
+  - totem:
+      id: '16188'
+      name: Goddess Totem
+      plural: Goddess totems
+      icon: '21002'
+    trial:
+      name: Containment Bay P1T6 (Extreme)
+      type: trial
+      levelRequired: 60
+      levelSync: 60
+      ilevelRequired: 235
+      ilevelSync: 0
+    item:
+      name: Sophic Lanner Whistle
+      id: '16562'
+      category:
+        id: '63'
+        name: Other
+        icon: '60159'
+  - totem:
+      id: '17461'
+      name: Demon Totem
+      plural: Demon totems
+      icon: '21002'
+    trial:
+      name: Containment Bay Z1T9 (Extreme)
+      type: trial
+      levelRequired: 60
+      levelSync: 60
+      ilevelRequired: 250
+      ilevelSync: 0
+    item:
+      name: Demonic Lanner Whistle
+      id: '17007'
+      category:
+        id: '63'
+        name: Other
+        icon: '60159'
 ---

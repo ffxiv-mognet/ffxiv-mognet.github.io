@@ -1,7 +1,6 @@
 ---
 layout: quest-table
 ---
-{{content}}
 
 {% if page.currencies %}
 <div class="columns">
@@ -18,6 +17,7 @@ layout: quest-table
 </div>
 {% endif %}
 
+{{content}}
 
 <table class="table is-fullwidth">
   <thead>
