@@ -26,6 +26,7 @@ quests:
       name: Stormblood
     requires:
       - name: Elite and Dangerous
+        link: /quests/the-hunt/heavensward
         level: 60
         rowId: 67658
         questId: HeaVny813_02122
