@@ -115,6 +115,60 @@ quests:
       - name: The Cloud Deck (Extreme)
         type: trial
     partQuestNo: 3
+  - name: The Dragon Made
+    level: 1
+    rowId: 69593
+    questId: SubCts827_04057
+    genre:
+      id: '127'
+      name: Lochs Sidequests
+    icon: '71020'
+    issuer:
+      location: The Lochs
+      coords: (11.5, 22.5)
+      name: warmachina fanatic
+    steps:
+      - location: Azys Lla
+        coords: (9.6, 13.0)
+        name: "Search for the \u201Cwyrm-machina\u201D on Azys Lla."
+      - location: Azys Lla
+        coords: (15.2, 22.5)
+        name: Head to the Flagship and blow the Landerwaffe flute at the designated
+          location.
+    expansion:
+      id: '3'
+      name: Shadowbringers
+    unlocks:
+      - id: 2820
+        name: Fast and Flurry-ous
+        type: achievement
+    requires:
+      - name: Fae Gwiber
+      - name: Innocent Gwiber
+      - name: Shadow Gwiber
+      - name: Gwiber of Light
+      - name: Ruby Gwiber
+      - name: Emerald Gwiber
+      - name: Diamond Gwiber
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '1'
+        avg: 0
+      items:
+        - item:
+            name: Landerwaffe Flute
+            id: '33218'
+            icon: '26038'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '63'
+              name: Other
+              icon: '60159'
+          count: 1
+    partQuestNo: 1
+
 
 shops:
   shops:

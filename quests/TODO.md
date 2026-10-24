@@ -30,8 +30,6 @@ Shadowbringers
 * ishgardian restoration lifestyle
 * optional dungeons
 * allied societies
-* Hunt quests/shop
-* extreme mounts
 
 Endwalker
 * myths realm alliance raid

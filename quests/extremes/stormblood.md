@@ -43,9 +43,710 @@ quests:
       - name: The Wreath of Snakes (Extreme)
         type: trial
     partQuestNo: 1
+  - name: A Lone Wolf No More
+    level: 1
+    rowId: 68736
+    questId: SubCts825_03200
+    genre:
+      id: '128'
+      name: Kugane Sidequests
+    icon: '71020'
+    issuer:
+      location: Kugane
+      coords: (11.6, 9.9)
+      name: news hawker
+    steps:
+      - location: Yanxia
+        coords: (30.6, 20.2)
+        name: Speak with the mysterious client in Namai.
+      - location: Yanxia
+        coords: (25.1, 21.3)
+        name: Play the Fife of Nine Tails at the specified location.
+    expansion:
+      id: '2'
+      name: Stormblood
+    unlocks:
+      - id: 2161
+        name: Flute of the Plume
+        type: achievement
+    requires:
+      - name: Blissful Kamuy
+      - name: Reveling Kamuy
+      - name: Legendary Kamuy
+      - name: Auspicious Kamuy
+      - name: Lunar Kamuy
+      - name: Euphonious Kamuy
+      - name: Hallowed Kamuy
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '1'
+        avg: 0
+      gil: 552
+      items:
+        - item:
+            name: Fabled Kamuy Fife
+            id: '24625'
+            icon: '26039'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '63'
+              name: Other
+              icon: '60159'
+          count: 1
+    partQuestNo: 2
+
+  - name: The Newer King on the Block
+    level: 70
+    rowId: 67091
+    questId: StmBdy992_01555
+    genre:
+      id: '252'
+      name: Collaboration Quests
+    icon: '71140'
+    issuer:
+      location: Kugane
+      coords: (9.7, 8.9)
+      name: hearty hunter
+    steps:
+      - location: Kugane
+        coords: (9.7, 8.9)
+        name: Speak with the hearty hunter.
+    expansion:
+      id: '2'
+      name: Stormblood
+    unlocks:
+      - name: the Great Hunt (Extreme)
+        type: trial
+        levelRequired: 70
+        levelSync: 70
+        ilevelRequired: 350
+        ilevelSync: 0
+    requires:
+      - name: The New King on the Block
+        level: 70
+        rowId: 67090
+        questId: StmBdy991_01554
+        genre: Collaboration Quests
+        icon: '71140'
+    partQuestNo: 2
+
+
 
 shops:
   shops:
+    shops:
+  shops:
+    - id: '1769872'
+      name: ''
+      inventory:
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Helm [M]
+                id: '23384'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '4'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Mail [M]
+                id: '23385'
+                category:
+                  id: '35'
+                  name: Body
+                  icon: '60126'
+          costs:
+            - quantity: '8'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Vambraces [M]
+                id: '23386'
+                category:
+                  id: '37'
+                  name: Hands
+                  icon: '60129'
+          costs:
+            - quantity: '4'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Coil [M]
+                id: '23387'
+                category:
+                  id: '36'
+                  name: Legs
+                  icon: '60128'
+          costs:
+            - quantity: '8'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Greaves [M]
+                id: '23388'
+                category:
+                  id: '38'
+                  name: Feet
+                  icon: '60130'
+          costs:
+            - quantity: '4'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Helm [F]
+                id: '23389'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '4'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Mail [F]
+                id: '23390'
+                category:
+                  id: '35'
+                  name: Body
+                  icon: '60126'
+          costs:
+            - quantity: '8'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Vambraces [F]
+                id: '23391'
+                category:
+                  id: '37'
+                  name: Hands
+                  icon: '60129'
+          costs:
+            - quantity: '4'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Coil [F]
+                id: '23392'
+                category:
+                  id: '36'
+                  name: Legs
+                  icon: '60128'
+          costs:
+            - quantity: '8'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Greaves [F]
+                id: '23393'
+                category:
+                  id: '38'
+                  name: Feet
+                  icon: '60130'
+          costs:
+            - quantity: '4'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 100
+        - items:
+            - quantity: '1'
+              item:
+                name: Cornerstone of the New World - Astera Orchestrion Roll
+                id: '22603'
+                category:
+                  id: '94'
+                  name: Orchestrion Roll
+                  icon: '60173'
+          costs:
+            - quantity: '10'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Savage of the Ancient Forest Orchestrion Roll
+                id: '22604'
+                category:
+                  id: '94'
+                  name: Orchestrion Roll
+                  icon: '60173'
+          costs:
+            - quantity: '10'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Indoor BBQ Spit
+                id: '22571'
+                category:
+                  id: '78'
+                  name: Tabletop
+                  icon: '60163'
+          costs:
+            - quantity: '10'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: BBQ Spit
+                id: '22583'
+                category:
+                  id: '76'
+                  name: Outdoor Furnishing
+                  icon: '60168'
+          costs:
+            - quantity: '10'
+              currency:
+                id: '22599'
+                name: Rathalos Scale
+                plural: Rathalos scales
+                icon: '22217'
+          order: 110
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Helm [M]
+                id: '22606'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23384'
+                name: Rathalos Helm [M]
+                plural: Rathalos helms [M]
+                icon: '40804'
+            - quantity: '2'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Mail [M]
+                id: '22607'
+                category:
+                  id: '35'
+                  name: Body
+                  icon: '60126'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23385'
+                name: Rathalos Mail [M]
+                plural: suits of Rathalos mail [M]
+                icon: '43408'
+            - quantity: '4'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Vambraces [M]
+                id: '22608'
+                category:
+                  id: '37'
+                  name: Hands
+                  icon: '60129'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23386'
+                name: Rathalos Vambraces [M]
+                plural: pairs of Rathalos vambraces [M]
+                icon: '48715'
+            - quantity: '2'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Coil [M]
+                id: '22609'
+                category:
+                  id: '36'
+                  name: Legs
+                  icon: '60128'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23387'
+                name: Rathalos Coil [M]
+                plural: Rathalos coils [M]
+                icon: '47415'
+            - quantity: '4'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Greaves [M]
+                id: '22610'
+                category:
+                  id: '38'
+                  name: Feet
+                  icon: '60130'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23388'
+                name: Rathalos Greaves [M]
+                plural: pairs of Rathalos greaves [M]
+                icon: '47145'
+            - quantity: '2'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Helm [F]
+                id: '22611'
+                category:
+                  id: '34'
+                  name: Head
+                  icon: '60124'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23389'
+                name: Rathalos Helm [F]
+                plural: Rathalos helms [F]
+                icon: '40804'
+            - quantity: '2'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Mail [F]
+                id: '22612'
+                category:
+                  id: '35'
+                  name: Body
+                  icon: '60126'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23390'
+                name: Rathalos Mail [F]
+                plural: suits of Rathalos mail [F]
+                icon: '43407'
+            - quantity: '4'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Vambraces [F]
+                id: '22613'
+                category:
+                  id: '37'
+                  name: Hands
+                  icon: '60129'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23391'
+                name: Rathalos Vambraces [F]
+                plural: pairs of Rathalos vambraces [F]
+                icon: '48715'
+            - quantity: '2'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Coil [F]
+                id: '22614'
+                category:
+                  id: '36'
+                  name: Legs
+                  icon: '60128'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23392'
+                name: Rathalos Coil [F]
+                plural: Rathalos coils [F]
+                icon: '47414'
+            - quantity: '4'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: Augmented Rathalos Greaves [F]
+                id: '22615'
+                category:
+                  id: '38'
+                  name: Feet
+                  icon: '60130'
+          costs:
+            - quantity: '1'
+              currency:
+                id: '23393'
+                name: Rathalos Greaves [F]
+                plural: pairs of Rathalos greaves [F]
+                icon: '47145'
+            - quantity: '2'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 120
+        - items:
+            - quantity: '1'
+              item:
+                name: 'Proof of a Hero - Monster Hunter: World Version Orchestrion
+                  Roll'
+                id: '22605'
+                category:
+                  id: '94'
+                  name: Orchestrion Roll
+                  icon: '60173'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 130
+        - items:
+            - quantity: '1'
+              item:
+                name: Poogie
+                id: '22602'
+                category:
+                  id: '81'
+                  name: Minion
+                  icon: '60155'
+          costs:
+            - quantity: '5'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 130
+        - items:
+            - quantity: '1'
+              item:
+                name: Rathalos Whistle
+                id: '22600'
+                category:
+                  id: '63'
+                  name: Other
+                  icon: '60159'
+          costs:
+            - quantity: '50'
+              currency:
+                id: '23383'
+                name: Rathalos Scale+
+                plural: Rathalos scales+
+                icon: '22218'
+          order: 130
+      npcs:
+        - name: smithy
+          location: Kugane
+          coords: (9.7, 8.9)
+  categories:
+    - id: '34'
+      name: Head
+      icon: '60124'
+    - id: '35'
+      name: Body
+      icon: '60126'
+    - id: '37'
+      name: Hands
+      icon: '60129'
+    - id: '36'
+      name: Legs
+      icon: '60128'
+    - id: '38'
+      name: Feet
+      icon: '60130'
+    - id: '94'
+      name: Orchestrion Roll
+      icon: '60173'
+    - id: '78'
+      name: Tabletop
+      icon: '60163'
+    - id: '76'
+      name: Outdoor Furnishing
+      icon: '60168'
+    - id: '81'
+      name: Minion
+      icon: '60155'
+    - id: '63'
+      name: Other
+      icon: '60159'
+  currencies:
+    - id: '22599'
+      name: Rathalos Scale
+      plural: Rathalos scales
+      icon: '22217'
+    - id: '23384'
+      name: Rathalos Helm [M]
+      plural: Rathalos helms [M]
+      icon: '40804'
+    - id: '23383'
+      name: Rathalos Scale+
+      plural: Rathalos scales+
+      icon: '22218'
+    - id: '23385'
+      name: Rathalos Mail [M]
+      plural: suits of Rathalos mail [M]
+      icon: '43408'
+    - id: '23386'
+      name: Rathalos Vambraces [M]
+      plural: pairs of Rathalos vambraces [M]
+      icon: '48715'
+    - id: '23387'
+      name: Rathalos Coil [M]
+      plural: Rathalos coils [M]
+      icon: '47415'
+    - id: '23388'
+      name: Rathalos Greaves [M]
+      plural: pairs of Rathalos greaves [M]
+      icon: '47145'
+    - id: '23389'
+      name: Rathalos Helm [F]
+      plural: Rathalos helms [F]
+      icon: '40804'
+    - id: '23390'
+      name: Rathalos Mail [F]
+      plural: suits of Rathalos mail [F]
+      icon: '43407'
+    - id: '23391'
+      name: Rathalos Vambraces [F]
+      plural: pairs of Rathalos vambraces [F]
+      icon: '48715'
+    - id: '23392'
+      name: Rathalos Coil [F]
+      plural: Rathalos coils [F]
+      icon: '47414'
+    - id: '23393'
+      name: Rathalos Greaves [F]
+      plural: pairs of Rathalos greaves [F]
+      icon: '47145'
+
+
     - id: '1769807'
       name: Wondrous Sundries
       inventory:
@@ -209,6 +910,33 @@ shops:
           location: Rhalgr's Reach
           coords: (13.9, 11.8)
   categories:
+    - id: '34'
+      name: Head
+      icon: '60124'
+    - id: '35'
+      name: Body
+      icon: '60126'
+    - id: '37'
+      name: Hands
+      icon: '60129'
+    - id: '36'
+      name: Legs
+      icon: '60128'
+    - id: '38'
+      name: Feet
+      icon: '60130'
+    - id: '94'
+      name: Orchestrion Roll
+      icon: '60173'
+    - id: '78'
+      name: Tabletop
+      icon: '60163'
+    - id: '76'
+      name: Outdoor Furnishing
+      icon: '60168'
+    - id: '81'
+      name: Minion
+      icon: '60155'
     - id: '63'
       name: Other
       icon: '60159'
@@ -241,6 +969,55 @@ shops:
       name: Seiryu Totem
       plural: Seiryu totems
       icon: '26545'
+    - id: '22599'
+      name: Rathalos Scale
+      plural: Rathalos scales
+      icon: '22217'
+    - id: '23384'
+      name: Rathalos Helm [M]
+      plural: Rathalos helms [M]
+      icon: '40804'
+    - id: '23383'
+      name: Rathalos Scale+
+      plural: Rathalos scales+
+      icon: '22218'
+    - id: '23385'
+      name: Rathalos Mail [M]
+      plural: suits of Rathalos mail [M]
+      icon: '43408'
+    - id: '23386'
+      name: Rathalos Vambraces [M]
+      plural: pairs of Rathalos vambraces [M]
+      icon: '48715'
+    - id: '23387'
+      name: Rathalos Coil [M]
+      plural: Rathalos coils [M]
+      icon: '47415'
+    - id: '23388'
+      name: Rathalos Greaves [M]
+      plural: pairs of Rathalos greaves [M]
+      icon: '47145'
+    - id: '23389'
+      name: Rathalos Helm [F]
+      plural: Rathalos helms [F]
+      icon: '40804'
+    - id: '23390'
+      name: Rathalos Mail [F]
+      plural: suits of Rathalos mail [F]
+      icon: '43407'
+    - id: '23391'
+      name: Rathalos Vambraces [F]
+      plural: pairs of Rathalos vambraces [F]
+      icon: '48715'
+    - id: '23392'
+      name: Rathalos Coil [F]
+      plural: Rathalos coils [F]
+      icon: '47414'
+    - id: '23393'
+      name: Rathalos Greaves [F]
+      plural: pairs of Rathalos greaves [F]
+      icon: '47145'
+
 
 
 totems:
@@ -342,4 +1119,5 @@ totems:
         id: '63'
         name: Other
         icon: '60159'
+
 ---
