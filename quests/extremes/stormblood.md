@@ -4,6 +4,8 @@ title: Stormblood Extreme Trials
 permalink: /quests/extremes/stormblood
 links:
   previous: /quests/trials/four-lords
+brandLabel: Mognet
+brandUrl: /quests
 nonsequential: true
 quests:
   - name: Songs in the Key of Kugane
@@ -665,88 +667,6 @@ shops:
         - name: smithy
           location: Kugane
           coords: (9.7, 8.9)
-  categories:
-    - id: '34'
-      name: Head
-      icon: '60124'
-    - id: '35'
-      name: Body
-      icon: '60126'
-    - id: '37'
-      name: Hands
-      icon: '60129'
-    - id: '36'
-      name: Legs
-      icon: '60128'
-    - id: '38'
-      name: Feet
-      icon: '60130'
-    - id: '94'
-      name: Orchestrion Roll
-      icon: '60173'
-    - id: '78'
-      name: Tabletop
-      icon: '60163'
-    - id: '76'
-      name: Outdoor Furnishing
-      icon: '60168'
-    - id: '81'
-      name: Minion
-      icon: '60155'
-    - id: '63'
-      name: Other
-      icon: '60159'
-  currencies:
-    - id: '22599'
-      name: Rathalos Scale
-      plural: Rathalos scales
-      icon: '22217'
-    - id: '23384'
-      name: Rathalos Helm [M]
-      plural: Rathalos helms [M]
-      icon: '40804'
-    - id: '23383'
-      name: Rathalos Scale+
-      plural: Rathalos scales+
-      icon: '22218'
-    - id: '23385'
-      name: Rathalos Mail [M]
-      plural: suits of Rathalos mail [M]
-      icon: '43408'
-    - id: '23386'
-      name: Rathalos Vambraces [M]
-      plural: pairs of Rathalos vambraces [M]
-      icon: '48715'
-    - id: '23387'
-      name: Rathalos Coil [M]
-      plural: Rathalos coils [M]
-      icon: '47415'
-    - id: '23388'
-      name: Rathalos Greaves [M]
-      plural: pairs of Rathalos greaves [M]
-      icon: '47145'
-    - id: '23389'
-      name: Rathalos Helm [F]
-      plural: Rathalos helms [F]
-      icon: '40804'
-    - id: '23390'
-      name: Rathalos Mail [F]
-      plural: suits of Rathalos mail [F]
-      icon: '43407'
-    - id: '23391'
-      name: Rathalos Vambraces [F]
-      plural: pairs of Rathalos vambraces [F]
-      icon: '48715'
-    - id: '23392'
-      name: Rathalos Coil [F]
-      plural: Rathalos coils [F]
-      icon: '47414'
-    - id: '23393'
-      name: Rathalos Greaves [F]
-      plural: pairs of Rathalos greaves [F]
-      icon: '47145'
-
-
     - id: '1769807'
       name: Wondrous Sundries
       inventory:
@@ -1119,5 +1039,21 @@ totems:
         id: '63'
         name: Other
         icon: '60159'
+  - totem:
+      id: '23383'
+      name: Rathalos Scale+
+      plural: Rathalos scales+
+      icon: '22218'
+    trial:
+      name: The Great Hunt (Extreme)
+    item:
+      name: Rathalos Whistle
+      id: '22600'
+      category:
+        id: '63'
+        name: Other
+        icon: '60159'
+
+
 
 ---
