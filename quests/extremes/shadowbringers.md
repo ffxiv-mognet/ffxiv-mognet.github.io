@@ -3,7 +3,8 @@ layout: quests-with-shops-mounts
 title: Shadowbringers Extreme Trials
 permalink: /quests/extremes/shadowbringers
 links:
-  previous: /quests/trials/sorrow-werlyt
+  next: /quests/extremes/endwalker
+  previous: /quests/extremes/stormblood
 nonsequential: true
 quests:
   - name: Minstrel from Another Mother

@@ -3,7 +3,8 @@ layout: quests-with-shops-mounts
 title: Stormblood Extreme Trials
 permalink: /quests/extremes/stormblood
 links:
-  previous: /quests/trials/four-lords
+  next: /quests/extremes/shadowbringers
+  previous: /quests/extremes/heavensward
 brandLabel: Mognet
 brandUrl: /quests
 nonsequential: true

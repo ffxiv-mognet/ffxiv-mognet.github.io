@@ -4,6 +4,7 @@ title: Heavensward Extreme Trials
 permalink: /quests/extremes/heavensward
 links:
   previous: /quests/extremes/realm-reborn
+  next: /quests/extremes/stormblood
 nonsequential: true
 quests:
   - name: The Diabolical Bismarck
