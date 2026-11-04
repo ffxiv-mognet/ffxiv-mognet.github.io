@@ -6,7 +6,7 @@ title: Dawntrail - Part 1
 permalink: /quests/msq/dawntrail/part1
 links:
   previous: /quests/msq/endwalker/part4
-  next: /quests/msq/dawntrail/part2a
+  next: /quests/msq/dawntrail/part2
 quests:
   - name: A New World to Explore
     level: 90

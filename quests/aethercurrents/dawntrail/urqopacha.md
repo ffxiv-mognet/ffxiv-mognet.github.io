@@ -7,7 +7,7 @@ map: y6f1/00
 nonsequential: true
 links:
   previous: /quests/aethercurrents/dawntrail
-  next: /quests/aethercurrents/dawntrail
+  next: /quests/aethercurrents/dawntrail/kozamauka
 quests:
   - name: The Feat of Ice
     level: 93

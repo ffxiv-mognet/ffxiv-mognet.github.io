@@ -6,8 +6,8 @@ permalink: /quests/aethercurrents/dawntrail/yak-tel
 map: y6f3/00
 nonsequential: true
 links:
-  previous: /quests/aethercurrents/dawntrail
-  next: /quests/aethercurrents/dawntrail
+  previous: /quests/aethercurrents/dawntrail/kozamauka
+  next: /quests/aethercurrents/dawntrail/shaaloani
 quests:
   - name: Road to the Golden City
     level: 95

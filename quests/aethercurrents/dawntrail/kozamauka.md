@@ -6,8 +6,8 @@ permalink: /quests/aethercurrents/dawntrail/kozamauka
 map: y6f2/00
 nonsequential: true
 links:
-  previous: /quests/aethercurrents/dawntrail
-  next: /quests/aethercurrents/dawntrail
+  previous: /quests/aethercurrents/dawntrail/urqopacha
+  next: /quests/aethercurrents/dawntrail/yak-tel
 quests:
   - name: Sibling Rescue
     level: 92
