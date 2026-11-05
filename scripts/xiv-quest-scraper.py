@@ -484,30 +484,73 @@ class XivQuestScraper:
 
         return out_row
 
-    def cmd_quests(self):
-        self.argparser.add_argument("rowIds", nargs="+")
+    
+    def build_quests(self, questIds, include_rewards=True, partQuestNo=1, icon = "0", require_previous=False):
+        output = []
+        partQuestNo = partQuestNo 
+        previousId = None
+        for rowId in questIds:
+            row = self.sheets['Quest'].byId(rowId)
+            out_row = self.quest_list_entry(row, previousId=previousId, include_rewards=include_rewards)
+            out_row.update({
+                'partQuestNo': partQuestNo
+            })
+            if out_row['icon'] == "0":
+                out_row['icon'] = icon
+            partQuestNo += 1
+            if not require_previous:
+                previousId = rowId
+            output.append(out_row)
+        return output
+
+    def cmd_questCurrents(self):
+        self.argparser.add_argument("mapId")
         self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--partQuestNo", type=int, default=1)
         self.argparser.add_argument("--icon", type=str, default="0")
         self.argparser.add_argument("--require-previous", action="store_true", default=False)
         self.argparser.add_argument("--rewards", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         self.init_sheets()
 
-        output = []
-        partQuestNo = 1 
-        previousId = None
-        for rowId in self.args.rowIds:
-            row = self.sheets['Quest'].byId(rowId)
-            out_row = self.quest_list_entry(row, previousId=previousId, include_rewards=self.args.rewards)
-            out_row.update({
-                'partQuestNo': partQuestNo
-            })
-            if out_row['icon'] == "0":
-                out_row['icon'] = self.args.icon
-            partQuestNo += 1
-            if not self.args.require_previous:
-                previousId = rowId
-            output.append(out_row)
+        with open('_data/aethercurrents.json', 'r') as fh:
+            aethercurrents = json.loads(fh.read())
+
+        quests = aethercurrents['quests'].get(self.args.mapId, None)
+        if quests is None:
+            print("Unknown map {}".format(self.args.mapId))
+            return
+        compflgset = aethercurrents['compflgset'].get(self.args.mapId, None)
+
+        qs = sorted(quests.values(), key=lambda it: compflgset.index(it['aethercurrent']), reverse=True)
+        questIds = map(lambda it: it['quest'], qs)
+
+        output = self.build_quests(questIds,
+            include_rewards=self.args.rewards,
+            icon=self.args.icon,
+            partQuestNo=self.args.partQuestNo,
+            require_previous=self.args.require_previous)
+
+        if self.args.yaml:
+            print(dump_indented_yaml({"quests": output}))
+        else:
+            print(json.dumps(output))
+
+    def cmd_quests(self):
+        self.argparser.add_argument("rowIds", nargs="+")
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--partQuestNo", type=int, default=1)
+        self.argparser.add_argument("--icon", type=str, default="0")
+        self.argparser.add_argument("--require-previous", action="store_true", default=False)
+        self.argparser.add_argument("--rewards", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        output = self.build_quests(self.args.rowIds, 
+            include_rewards=self.args.rewards,
+            icon=self.args.icon,
+            partQuestNo=self.args.partQuestNo,
+            require_previous=self.args.require_previous)
 
         if self.args.yaml:
             print(dump_indented_yaml({"quests": output}))

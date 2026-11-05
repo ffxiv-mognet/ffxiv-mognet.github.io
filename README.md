@@ -97,6 +97,11 @@ done
 
 #### extract list of quests from aethercurrents.json
 ```
+./scripts/scraper questCurrents d2f1/00
+```
+
+manually:
+```
 jq -r '.quests."d2f1/00"[].quest' < _data/aethercurrents.json | xargs ./scripts/xiv-quest-scraper.py quests
 ```
 
