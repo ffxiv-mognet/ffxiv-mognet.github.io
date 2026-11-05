@@ -59,6 +59,7 @@ class XivQuestScraper:
             'JournalCategory': CsvSheet(self._path_for_sheet("JournalCategory")),
             'Level': CsvSheet(self._path_for_sheet("Level")),
             'Map': CsvSheet(self._path_for_sheet("Map")),
+            'MapMarker': CsvSheet(self._path_for_sheet("MapMarker")),
             'ENpcResident': CsvSheet(self._path_for_sheet("ENpcResident")),
             'ENpcBase': CsvSheet(self._path_for_sheet("ENpcBase")),
             'PlaceName': CsvSheet(self._path_for_sheet("PlaceName")),
@@ -67,6 +68,7 @@ class XivQuestScraper:
             'Action': CsvSheet(self._path_for_sheet("Action")),
             'AetherCurrent': CsvSheet(self._path_for_sheet("AetherCurrent")),
             'AetherCurrentCompFlgSet': CsvSheet(self._path_for_sheet("AetherCurrentCompFlgSet")),
+            'Aetheryte': CsvSheet(self._path_for_sheet("Aetheryte")),
             'MountSpeed': CsvSheet(self._path_for_sheet("MountSpeed")),
             'Achievement': CsvSheet(self._path_for_sheet("Achievement")),
             'Emote': CsvSheet(self._path_for_sheet("Emote")),
@@ -1478,8 +1480,27 @@ class XivQuestScraper:
         if not os.path.exists(map_path):
             self.download_file(map_url, map_path)
 
+        # find aetherytes for map
+        territoryId = currents[0]['territory'] 
+        aetherytes = self.sheets['Aetheryte'].findMatches(lambda it: 
+            it['Territory'] == territoryId and it['Invisible'] == 'False')
+        aethers = []
+        for row in aetherytes:
+            placename = self.sheets['PlaceName'].byId(row['PlaceName'])
+            marker = self.sheets['MapMarker'].findBy('PlaceNameSubtext', placename['#'])
+            aethers.append({
+                'id': row['#'],
+                'name': placename['Name'],
+                'marker': marker,
+            })
+        # print(json.dumps(list(aethers)))
+
         output_path = '{}/{}.{}'.format(self.args.output_directory, scrubbed_id, format)
         font = ImageFont.truetype(self.args.font, self.args.font_size)
+
+        with Image.open('icons/aetheryte.png') as fh:
+            aetheryte_icon = fh.resize((64,64))
+
         with Image.open(map_path) as img:
             draw = ImageDraw.Draw(img)
             
@@ -1490,6 +1511,11 @@ class XivQuestScraper:
                 draw.circle((x,y), self.args.radius, fill=self.args.fill, outline=self.args.outline, width=self.args.width)
                 draw.text((x+self.args.radius, y), "{}".format(i), fill=self.args.fill, font=font)
                 i += 1
+
+            for aether in aethers:
+                pos = (int(aether['marker']['X']) - int(aetheryte_icon.size[0]/2), 
+                       int(aether['marker']['Y']) - int(aetheryte_icon.size[1]/2))
+                img.alpha_composite(aetheryte_icon, pos)
 
             img.save(output_path, format)
 
