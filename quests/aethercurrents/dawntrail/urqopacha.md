@@ -4,6 +4,7 @@ expansion: dawntrail
 title: Urqopacha | Dawntrail Aether Currents 
 permalink: /quests/aethercurrents/dawntrail/urqopacha
 map: y6f1/00
+currentmap: /maps/aethercurrents/y6f1-00.png
 nonsequential: true
 links:
   previous: /quests/aethercurrents/dawntrail

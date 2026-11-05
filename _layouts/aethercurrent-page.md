@@ -22,6 +22,8 @@ layout: quest-table
 </table>
 -->
 
+<div class="columns">
+    <div class="column is-one-quarter">
 
 {% if currents %}
 <table class="table">
@@ -29,7 +31,7 @@ layout: quest-table
         <tr>
           <th style="width: 5em">No.</th>
           <th>Coordinates</th>
-          <th style="width: 20em"></th>
+          <th></th>
         </tr>
     </thead>
     <tbody>
@@ -58,3 +60,12 @@ layout: quest-table
     </tbody>
 </table>
 {% endif %}
+
+</div>
+    <div class="column is-three-quarters">
+        {% if page.currentmap %}
+        <img src="{{page.currentmap}}" class="aethercurrent-map" />
+        {% endif %}
+    </div>
+</div>
+

@@ -1403,6 +1403,49 @@ class XivQuestScraper:
         for shop in shops:
             print('{}: {}'.format(shop['#'], shop['Name']))
 
+    def cmd_mapCurrents(self):
+        from PIL import Image, ImageDraw, ImageFont
+        self.argparser.add_argument("mapId")
+        self.argparser.add_argument("--output-directory", "-o", nargs="?", default="maps/aethercurrents")
+        self.argparser.add_argument("--radius", nargs="?", default=10)
+        self.argparser.add_argument("--fill", nargs="?", default="#0000FF")
+        self.argparser.add_argument("--outline", nargs="?", default=None)
+        self.argparser.add_argument("--width", nargs="?", default=1)
+        self.argparser.add_argument("--font", nargs="?", default="truetype/djavu/DejaVuSans-Bold.ttf")
+        self.argparser.add_argument("--font-size", nargs="?", default=48)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        with open('_data/aethercurrents.json', 'r') as fh:
+            aethercurrents = json.loads(fh.read())
+
+        currents = aethercurrents['aethercurrents'].get(self.args.mapId, None)
+        if currents is None:
+            print("Unknown map {}".format(self.args.mapId))
+            return
+
+        scrubbed_id = self.args.mapId.replace("/","-")
+        format = "png"
+        map_url = 'https://v2.xivapi.com/api/asset/map/{mapId}?format={format}'.format(mapId=self.args.mapId, format=format)
+        map_path = 'maps/{}.{}'.format(scrubbed_id, format)
+        if not os.path.exists(map_path):
+            self.download_file(map_url, map_path)
+
+        output_path = '{}/{}.{}'.format(self.args.output_directory, scrubbed_id, format)
+        font = ImageFont.truetype(self.args.font, self.args.font_size)
+        with Image.open(map_path) as img:
+            draw = ImageDraw.Draw(img)
+            
+            i = 1
+            for current in currents:
+                x = current['pixel']['x']
+                y = current['pixel']['y']
+                draw.circle((x,y), self.args.radius, fill=self.args.fill, outline=self.args.outline, width=self.args.width)
+                draw.text((x+self.args.radius, y), "{}".format(i), fill=self.args.fill, font=font)
+                i += 1
+
+            img.save(output_path, format)
+
 
     def cmd_huntShops(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)

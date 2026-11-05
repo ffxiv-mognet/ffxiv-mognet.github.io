@@ -40,8 +40,6 @@ Endwalker
 * extreme mounts
 
 Dawntrail
-* msq part 3-4
-* aethercurrents
 * arcadion raid (final part missing)
 * phantom relic weapons
 * occult crescent (confirm)

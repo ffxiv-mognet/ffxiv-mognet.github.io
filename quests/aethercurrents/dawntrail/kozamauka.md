@@ -4,6 +4,7 @@ expansion: dawntrail
 title: Kozama'uka | Dawntrail Aether Currents 
 permalink: /quests/aethercurrents/dawntrail/kozamauka
 map: y6f2/00
+currentmap: /maps/aethercurrents/y6f2-00.png
 nonsequential: true
 links:
   previous: /quests/aethercurrents/dawntrail/urqopacha

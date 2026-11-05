@@ -99,3 +99,9 @@ done
 ```
 jq -r '.quests."d2f1/00"[].quest' < _data/aethercurrents.json | xargs ./scripts/xiv-quest-scraper.py quests
 ```
+
+
+#### download map asset
+```
+curl 'https://v2.xivapi.com/api/asset/map/r2f1/00?format=png'
+```

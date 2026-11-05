@@ -221,3 +221,7 @@ span.icon i.emote {
 input.totem-count {
     width: 3em;
 }
+
+.aethercurrent-map {
+    height: 800px;
+}
