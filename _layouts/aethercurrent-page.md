@@ -4,8 +4,8 @@ layout: quest-table
 {% assign currents = site.data.aethercurrents.aethercurrents[page.map] %}
 {% assign compflgset = site.data.aethercurrents.compflgset[page.map] %}
 
-
 <!--
+
 <table class="table is-fullwidth">
     <thead>
         <tr>
@@ -53,7 +53,7 @@ layout: quest-table
             </td>
             <td>
               {{ current.description }}
-              <!-- <span>[{{ current.id }}]</span> -->
+              <!--<span>[{{ current.id }}]</span>-->
             </td>
         </tr>
         {% endfor %}

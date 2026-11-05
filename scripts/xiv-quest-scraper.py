@@ -673,7 +673,7 @@ class XivQuestScraper:
                     'name': ename['Singular'],
                 })
                 row = currents.get(pos['map'], [])
-                row.append(pos)
+                row.insert(0, pos)
                 currents[pos['map']] = row
 
         map_names = {}
@@ -701,6 +701,10 @@ class XivQuestScraper:
                             'aethercurrent': current_id,
                         }
 
+        # sort by compflgset
+        for (mapId,row) in currents.items():
+            row.sort(key=lambda it: compflgset[mapId].index(it['id']), reverse=True)
+            currents[mapId] = row
 
         output = {
             'aethercurrents': currents,

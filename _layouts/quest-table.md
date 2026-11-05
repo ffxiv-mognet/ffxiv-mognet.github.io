@@ -42,9 +42,9 @@ layout: with-nav
                 id="completed-{{quest.rowId}}"
                 onchange="handleQuestChecked({{quest.rowId}})"
                 />
-              {% unless page.nonsequential %}
+              {% if quest.partQuestNo %}
               #{{quest.partQuestNo}}
-              {% endunless %}
+              {% endif %}
             </label>
           </td>
           <!-- quest -->
