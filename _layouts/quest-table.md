@@ -109,7 +109,7 @@ layout: with-nav
               {% endif %}
               {% for unlock in quest.unlocks %}
                 {% if unlock.link %}<a href="{{unlock.link}}">{% endif %}
-                <div>
+                <div title="{%if unlock.location%}{{unlock.location}} {{unlock.coords}}{%endif%}">
                     <span class="icon-text">
                         <span class="icon"><i class="{{unlock.type}}"></i></span>
                         <span>{{unlock.name}}</span>
