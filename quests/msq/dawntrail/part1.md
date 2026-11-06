@@ -278,6 +278,12 @@ quests:
     expansion:
       id: '5'
       name: Dawntrail
+    unlocks:
+      - id: '226'
+        name: Arch of the Dawn (Kozama'uka)
+        type: aetheryte
+        location: Kozama'uka
+        coords: (15.8, 5.1)
     requires:
       - name: The Rite of Succession
         level: 90
@@ -974,6 +980,11 @@ quests:
         levelSync: 92
         ilevelRequired: 630
         ilevelSync: 0
+      - id: '227'
+        name: Ihuykatumu (Kozama'uka)
+        type: aetheryte
+        location: Kozama'uka
+        coords: (36.4, 32.7)
       - id: 3491
         name: A Promise for the People
         type: achievement
@@ -1904,6 +1915,12 @@ quests:
     expansion:
       id: '5'
       name: Dawntrail
+    unlocks:
+      - id: '228'
+        name: Dirigible Landing (Yak T'el)
+        type: aetheryte
+        location: Yak T'el
+        coords: (21.8, 8.1)
     rewards:
       xp:
         factor: 400

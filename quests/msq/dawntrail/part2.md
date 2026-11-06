@@ -39,6 +39,12 @@ quests:
     expansion:
       id: '5'
       name: Dawntrail
+    unlocks:
+      - id: '229'
+        name: Xak Tural Skygate (Shaaloani)
+        type: aetheryte
+        location: Shaaloani
+        coords: (27.2, 36.9)
     rewards:
       xp:
         factor: 400

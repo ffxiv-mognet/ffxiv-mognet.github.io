@@ -294,6 +294,19 @@ class XivQuestScraper:
                 'type': "aethercurrent"
             })
 
+        # aetherytes
+        aetheryte = self.sheets['Aetheryte'].findBy('RequiredQuest', quest['#'])
+        if aetheryte:
+            name = self.sheets['PlaceName'].byId(aetheryte['AethernetName'])
+            pos = self.location_coords_from_level(aetheryte['Level[0]'])
+            unlocks.append({
+                'id': aetheryte['#'],
+                'name': name['Name'],
+                'type': "aetheryte",
+                'location': pos['location'],
+                'coords': pos['coords'],
+            })
+
         # emote
         if quest['EmoteReward'] != "0":
             emote = self.sheets['Emote'].byId(quest['EmoteReward'])
