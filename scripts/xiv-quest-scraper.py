@@ -942,6 +942,7 @@ class XivQuestScraper:
         self.argparser.add_argument("--json", action="store_true", default=False)
         self.argparser.add_argument("--brief", action="store_true", default=False)
         self.argparser.add_argument("--rewards", action="store_true", default=False)
+        self.argparser.add_argument("--sequential", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         self.init_sheets()
 
@@ -961,11 +962,12 @@ class XivQuestScraper:
         previousId = None
         for quest in sortedQuests:
             row = self.quest_list_entry(quest, previousId=previousId, include_rewards=self.args.rewards)
-            row.update({
-                'partQuestNo': partQuestNo
-            })
-            partQuestNo += 1
-            previousId = quest['#']
+            if self.args.sequential:
+                row.update({
+                    'partQuestNo': partQuestNo
+                })
+                partQuestNo += 1
+                previousId = quest['#']
             out_rows.append(row)
 
         output = {
