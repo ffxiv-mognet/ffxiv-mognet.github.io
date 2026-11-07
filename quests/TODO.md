@@ -1,7 +1,6 @@
 
 ## Features
 
- * Show quest rewards
  * consistent navigation/breadcrumbs
  * show correct shop type/currency filter states on load
 
@@ -45,7 +44,6 @@ Dawntrail
 * occult crescent (confirm)
 * cosmic exploration lifestyle
 * optional dungeons
-* allied societies
 * Hunt quests/shop
 * extreme mounts
 
