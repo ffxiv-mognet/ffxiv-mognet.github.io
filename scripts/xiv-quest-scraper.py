@@ -62,6 +62,8 @@ class XivQuestScraper:
             'MapMarker': CsvSheet(self._path_for_sheet("MapMarker")),
             'ENpcResident': CsvSheet(self._path_for_sheet("ENpcResident")),
             'ENpcBase': CsvSheet(self._path_for_sheet("ENpcBase")),
+            'BeastTribe': CsvSheet(self._path_for_sheet("BeastTribe")),
+            'BeastReputationRank': CsvSheet(self._path_for_sheet("BeastReputationRank")),
             'PlaceName': CsvSheet(self._path_for_sheet("PlaceName")),
             'Quest': CsvSheet(self._path_for_sheet("Quest")),
             'TerritoryType': CsvSheet(self._path_for_sheet("TerritoryType")),
@@ -366,6 +368,25 @@ class XivQuestScraper:
             if cfc:
                 requirements.append(self.format_contentfindercondition(cfc))
             content_idx += 1
+
+        if row['BeastReputationRank'] != '0' and row['BeastTribe'] != '0':
+            tribe = self.sheets['BeastTribe'].byId(row['BeastTribe'])
+            rank = self.sheets['BeastReputationRank'].byId(row['BeastReputationRank'])
+            requirements.append({
+                'type': "reputation-rank",
+                'name': "{} rank: {}".format(tribe['Name'], rank['Name']),
+                'tribe': {
+                    'id': tribe['#'],
+                    'name': tribe['Name'],
+                },
+                'reputation': {
+                    'id': rank['#'],
+                    'name': rank['Name'],
+                    'required': rank['RequiredReputation'],
+                }
+            })
+
+
         return requirements
 
     def location_coords_from_level(self, levelId, detailed = False):
@@ -1531,6 +1552,45 @@ class XivQuestScraper:
                 img.alpha_composite(aetheryte_icon, pos)
 
             img.save(output_path, format)
+
+    def cmd_societies(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.argparser.add_argument("--expansion", nargs="?", default=None)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        tribes = self.sheets['BeastTribe'].findMatches(lambda it: 
+            self.args.expansion is None or it['Expansion'] == self.args.expansion)
+
+        societies = []
+        for it in tribes:
+            currency = self.sheets['Item'].byId(it['CurrencyItem'])
+            society = self.location_coords_from_level(it['Level'])
+            ex = self.sheets['ExVersion'].byId(it['Expansion'])
+            society.update({
+                'id': it['#'],
+                'name': it['Name'],
+                'icon': it['Icon'],
+                'currency': {
+                    'id': currency['#'],
+                    'name': currency['Name'],
+                },
+                'expansion': {
+                    'id': ex['#'],
+                    'name': ex['Name']
+                }
+            })
+            societies.append(society)
+
+        output = {
+            'societies': societies,
+        }
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
 
 
     def cmd_huntShops(self):
