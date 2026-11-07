@@ -1927,7 +1927,7 @@ quests:
     unlocks:
       - id: '228'
         name: Dirigible Landing (Yak T'el)
-        type: aetheryte
+        type: aethernet-shard
         location: Yak T'el
         coords: (21.8, 8.1)
     rewards:

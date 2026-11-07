@@ -293,7 +293,7 @@ class XivQuestScraper:
             unlocks.append({
                 'id': current['#'],
                 'name': 'Aether Current',
-                'type': "aethercurrent"
+                'type': "aethercurrent",
             })
 
         # aetherytes
@@ -304,7 +304,7 @@ class XivQuestScraper:
             unlocks.append({
                 'id': aetheryte['#'],
                 'name': name['Name'],
-                'type': "aetheryte",
+                'type': "aetheryte" if aetheryte['IsAetheryte'] == "True" else "aethernet-shard",
                 'location': pos['location'],
                 'coords': pos['coords'],
             })
