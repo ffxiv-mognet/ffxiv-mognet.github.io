@@ -221,6 +221,34 @@ storylines:
             link: /quests/the-hunt/endwalker
           - name: Dawntrail
             link: /quests/the-hunt/dawntrail
+      - name: Societies
+        parts:
+          - name: A Realm Reborn
+            link: /quests/societies/realm-reborn
+          - name: Heavensward
+            link: /quests/societies/heavensward
+          - name: Stormblood
+            link: /quests/societies/stormblood
+          - name: Shadowbringers
+            link: /quests/societies/shadowbringers
+          - name: Endwalker
+            link: /quests/societies/endwalker
+          - name: Dawntrail
+            link: /quests/societies/dawntrail
+      - name: Sidequests
+        parts:
+          - name: A Realm Reborn
+            link: /quests/sidequests/realm-reborn
+          - name: Heavensward
+            link: /quests/sidequests/heavensward
+          - name: Stormblood
+            link: /quests/sidequests/stormblood
+          - name: Shadowbringers
+            link: /quests/sidequests/shadowbringers
+          - name: Endwalker
+            link: /quests/sidequests/endwalker
+          - name: Dawntrail
+            link: /quests/sidequests/dawntrail
       - name: Variant Dungeons
         parts:
           - name: The Sil'dihn Subterrane

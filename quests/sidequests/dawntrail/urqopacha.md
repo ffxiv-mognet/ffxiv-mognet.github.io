@@ -3,6 +3,8 @@ layout: quest-table
 title: Urqopacha Sidequests
 permalink: /quests/sidequests/dawntrail/urqopacha
 nonsequential: true
+brandLabel: Mognet
+brandUrl: /quests/sidequests/dawntrail
 quests:
   - name: "\uE0BE An Unlikely Inspector"
     level: 90

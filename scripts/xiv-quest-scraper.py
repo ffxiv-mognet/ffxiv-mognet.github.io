@@ -333,8 +333,8 @@ class XivQuestScraper:
     def parse_requirements(self, row, script, previousId=None):
         requirements = []
 
-        i = 1
-        prefixes = ['QST_CHECK_{:02d}', 'QST_COMP_CHK{:01d}']
+        i = 0
+        prefixes = ['QST_CHECK_{:02d}', 'QST_COMP_CHK{:01d}', 'QST_COMP_CHK_{:02d}']
         quest_ids = []
         while i < 9: # TODO: better determine when to finish?
             for prefix in prefixes:
