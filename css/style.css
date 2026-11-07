@@ -46,6 +46,171 @@ span.icon i.dungeon {
     width: 1rem;
     display: block;
 }
+
+span.icon i.item-category-60153 {
+    background:url('/icons/060153.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60146 {
+    background:url('/icons/060146.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60155 {
+    background:url('/icons/060155.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60150 {
+    background:url('/icons/060150.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60163 {
+    background:url('/icons/060163.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60173 {
+    background:url('/icons/060173.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60159 {
+    background:url('/icons/060159.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60137 {
+    background:url('/icons/060137.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60124 {
+    background:url('/icons/060124.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60125 {
+    background:url('/icons/060125.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60126 {
+    background:url('/icons/060126.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60127 {
+    background:url('/icons/060127.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60128 {
+    background:url('/icons/060128.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60129 {
+    background:url('/icons/060129.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60130 {
+    background:url('/icons/060130.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60131 {
+    background:url('/icons/060131.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60132 {
+    background:url('/icons/060132.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60133 {
+    background:url('/icons/060133.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60134 {
+    background:url('/icons/060134.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60135 {
+    background:url('/icons/060135.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+.reward-item {
+    font-size: 0.8em;
+}
+
 span.icon i.deep-dungeon, span.icon i.quest-deep-dungeon {
     background:url('/icons/061824.png');
     content: '';
