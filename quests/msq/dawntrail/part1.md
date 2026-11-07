@@ -1123,6 +1123,15 @@ quests:
     expansion:
       id: '5'
       name: Dawntrail
+    unlocks:
+      - name: Uncouth Customers
+        type: quest-71140
+        link: /quests/role/dawntrail
+        level: 90
+        rowId: 70353
+        questId: KinGba001_04817
+        genre: Role Quests (Dawntrail)
+        icon: '71140'
     rewards:
       xp:
         factor: 400
