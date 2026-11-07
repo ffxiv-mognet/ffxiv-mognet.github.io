@@ -127,6 +127,14 @@ layout: with-nav
                   {% if unlock.link %}</a>{% endif %}
                 </div>
               {% endfor %}
+              {% for reward in quest.rewards.items %}
+              <div class="reward-item" title="{{reward.item.category.name}}">
+                <span class="icon-text">
+                    <span class="icon"><i class="item-category-{{reward.item.category.icon}}"></i></span>
+                    <span>{{ reward.item.name }}</span>
+                </span>
+              </div>
+              {% endfor %}
           </td>
           <td><!-- requires -->
               {% for required in quest.requires %}
