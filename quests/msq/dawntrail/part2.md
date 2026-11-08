@@ -42,7 +42,7 @@ quests:
     unlocks:
       - id: '229'
         name: Xak Tural Skygate (Shaaloani)
-        type: aetheryte
+        type: aethernet-shard
         location: Shaaloani
         coords: (27.2, 36.9)
     rewards:

@@ -1,13 +1,16 @@
 
-## Features
-
- * consistent navigation/breadcrumbs
+## Bugs
  * show correct shop type/currency filter states on load
+ * missing icon for aethernet-shard
+ * missing icon for 'custom delivery'
+
+## Features
+ * consistent navigation/breadcrumbs
  * list duties from ContentFinderCondition via JournalGenre
 
-### maybes features?
+### Maybes?
  * better support for "nonequential" branching quest lines?
- * parse yaml and add/cleanup data to existing .md files
+ * parse yaml to add/cleanup data in existing .md files
 
 ## Quest Content
 
