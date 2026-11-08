@@ -169,8 +169,8 @@ quests:
         genre: Rhalgr's Reach Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 5
-        name: M'naago rank:5
+        rank: 4
+        name: M'naago satisfaction level:4
         id: '2'
         location: Rhalgr's Reach
         coords: (14.6, 9.4)
@@ -305,8 +305,8 @@ quests:
         genre: Kugane Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 5
-        name: Kurenai rank:5
+        rank: 4
+        name: Kurenai satisfaction level:4
         id: '3'
         location: The Ruby Sea
         coords: (28.3, 15.3)
@@ -442,8 +442,8 @@ quests:
         genre: Idyllshire Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 5
-        name: Adkiragh rank:5
+        rank: 4
+        name: Adkiragh satisfaction level:4
         id: '4'
         location: Idyllshire
         coords: (4.9, 6.6)
@@ -579,8 +579,8 @@ quests:
         genre: Eulmore Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 5
-        name: Kai-Shirr rank:5
+        rank: 4
+        name: Kai-Shirr satisfaction level:4
         id: '5'
         location: Eulmore
         coords: (12.3, 9.9)
@@ -639,8 +639,8 @@ quests:
         genre: Eulmore Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Kai-Shirr rank:6
+        rank: 5
+        name: Kai-Shirr satisfaction level:5
         id: '5'
         location: Eulmore
         coords: (12.3, 9.9)
@@ -762,8 +762,8 @@ quests:
         genre: Ishgardian Restoration Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Ehll Tou rank:6
+        rank: 5
+        name: Ehll Tou satisfaction level:5
         id: '6'
         location: The Firmament
         coords: (13.5, 11.2)
@@ -822,8 +822,8 @@ quests:
         genre: Ishgardian Restoration Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Ehll Tou rank:6
+        rank: 5
+        name: Ehll Tou satisfaction level:5
         id: '6'
         location: The Firmament
         coords: (13.5, 11.2)
@@ -956,8 +956,8 @@ quests:
         genre: Ishgardian Restoration Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 5
-        name: Charlemend rank:5
+        rank: 4
+        name: Charlemend satisfaction level:4
         id: '7'
         location: The Firmament
         coords: (8.9, 8.5)
@@ -1102,8 +1102,8 @@ quests:
         genre: Old Sharlayan Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 5
-        name: Ameliance rank:5
+        rank: 4
+        name: Ameliance satisfaction level:4
         id: '8'
         location: Old Sharlayan
         coords: (15.7, 7.2)
@@ -1163,8 +1163,8 @@ quests:
         genre: Old Sharlayan Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Ameliance rank:6
+        rank: 5
+        name: Ameliance satisfaction level:5
         id: '8'
         location: Old Sharlayan
         coords: (15.7, 7.2)
@@ -1296,8 +1296,8 @@ quests:
         genre: Crystarium Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Anden rank:6
+        rank: 5
+        name: Anden satisfaction level:5
         id: '9'
         location: Il Mheg
         coords: (16.6, 33.9)
@@ -1357,8 +1357,8 @@ quests:
         genre: Il Mheg Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Anden rank:6
+        rank: 5
+        name: Anden satisfaction level:5
         id: '9'
         location: Il Mheg
         coords: (16.6, 33.9)
@@ -1495,8 +1495,8 @@ quests:
         genre: Old Sharlayan Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Margrat rank:6
+        rank: 5
+        name: Margrat satisfaction level:5
         id: '10'
         location: Labyrinthos
         coords: (20.4, 20.1)
@@ -1639,8 +1639,8 @@ quests:
         genre: Tuliyollal Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Nitowikwe rank:6
+        rank: 5
+        name: Nitowikwe satisfaction level:5
         id: '11'
         location: Shaaloani
         coords: (14.3, 19.3)
@@ -1677,8 +1677,8 @@ quests:
         genre: Shaaloani Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Nitowikwe rank:6
+        rank: 5
+        name: Nitowikwe satisfaction level:5
         id: '11'
         location: Shaaloani
         coords: (14.3, 19.3)
@@ -1816,8 +1816,8 @@ quests:
         genre: Tuliyollal Sidequests
         icon: '71140'
       - type: satisfaction-npc
-        rank: 6
-        name: Tiisol Ja rank:6
+        rank: 5
+        name: Tiisol Ja satisfaction level:5
         id: '12'
         location: Tuliyollal
         coords: (15.1, 12.1)

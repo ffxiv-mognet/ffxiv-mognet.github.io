@@ -407,11 +407,11 @@ class XivQuestScraper:
             satisfaction = self.sheets['SatisfactionNpc'].byId(row['SatisfactionNpc'])
             npc = self.sheets['ENpcResident'].byId(satisfaction['Npc'])
             pos = self.location_coords_from_level(satisfaction['Level'])
-            rank = int(row['SatisfactionLevel']) + 1
+            rank = int(row['SatisfactionLevel']) 
             requirements.append({
                 'type': "satisfaction-npc",
                 'rank': rank,
-                'name': '{} rank:{}'.format(npc['Singular'], rank),
+                'name': '{} satisfaction level:{}'.format(npc['Singular'], rank),
                 'id': satisfaction['#'],
                 'location': pos['location'],
                 'coords': pos['coords'],
