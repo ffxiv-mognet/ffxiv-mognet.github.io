@@ -3,6 +3,7 @@
 
  * consistent navigation/breadcrumbs
  * show correct shop type/currency filter states on load
+ * list duties from ContentFinderCondition via JournalGenre
 
 ### maybes features?
  * better support for "nonequential" branching quest lines?

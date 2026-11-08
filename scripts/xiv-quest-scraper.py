@@ -91,6 +91,7 @@ class XivQuestScraper:
             'Stain': CsvSheet(self._path_for_sheet("Stain")),
             'ExVersion': CsvSheet(self._path_for_sheet("ExVersion")),
             'ParamGrow': CsvSheet(self._path_for_sheet("ParamGrow")),
+            'SatisfactionNpc': CsvSheet(self._path_for_sheet("SatisfactionNpc")),
         }
 
 
@@ -327,6 +328,22 @@ class XivQuestScraper:
                 'name': it['Name'],
                 'type': 'achievement'
             })
+
+        # custom delivery
+        deliveries = self.sheets['SatisfactionNpc'].findMatches(
+            lambda it: it['QuestRequired'] == quest['#'])
+        for it in deliveries:
+            npc = self.sheets['ENpcResident'].byId(it['Npc'])
+            pos = self.location_coords_from_level(it['Level'])
+            unlocks.append({
+                'type': 'satisfaction-npc',
+                'id': it['#'],
+                'name': npc['Singular'],
+                'npcId': npc['#'],
+                'location': pos['location'],
+                'coords': pos['coords'],
+            })
+
 
         return unlocks
 
@@ -600,6 +617,7 @@ class XivQuestScraper:
         self.argparser.add_argument("--previousId", nargs="?")
         self.argparser.add_argument("--startingId", nargs="?")
         self.argparser.add_argument("--genreId", nargs="?")
+        self.argparser.add_argument("--no-genre", action="store_true", default=False)
         self.argparser.add_argument("--rewards", action="store_true", default=False)
         self.args = self.argparser.parse_args()
         self.init_sheets()
@@ -623,11 +641,14 @@ class XivQuestScraper:
             output.append(out_row)
 
             count += 1
-            next_matches = list(self.sheets['Quest'].findAll('PreviousQuest[0]', cur_quest['#']))
+            # next_matches = list(self.sheets['Quest'].findAll('PreviousQuest[0]', cur_quest['#']))
+            next_matches = list(self.sheets['Quest'].findMatches(lambda it: 
+                cur_quest['#'] in (it['PreviousQuest[0]'], it['PreviousQuest[1]'], it['PreviousQuest[2]'])))
+
             previousId = cur_quest['#']
             cur_quest = None
             for m in next_matches:
-                if m['JournalGenre'] == genre:
+                if self.args.no_genre or m['JournalGenre'] == genre:
                     cur_quest = m
                     break
 
@@ -1554,6 +1575,46 @@ class XivQuestScraper:
                 img.alpha_composite(aetheryte_icon, pos)
 
             img.save(output_path, format)
+
+    def cmd_deliveries(self):
+        self.argparser.add_argument("--yaml", action="store_true", default=True)
+        self.argparser.add_argument("--json", action="store_true", default=False)
+        self.argparser.add_argument("--full", action="store_true", default=False)
+        self.argparser.add_argument("--rewards", action="store_true", default=False)
+        self.args = self.argparser.parse_args()
+        self.init_sheets()
+
+        quests = []
+        deliveries = []
+        for row in self.sheets['SatisfactionNpc'].all():
+            npc = self.sheets['ENpcResident'].byId(row['Npc'])
+            quest = self.sheets['Quest'].byId(row['QuestRequired'])
+            if not npc:
+                continue
+            delivery = {
+                'id': row['#'],
+                'name': npc['Singular'],
+                'npcId': row['Npc'],
+                'quest': self.generate_questListItem(row['QuestRequired']),
+                'level': row['LevelUnlock'],
+                'per_week': row['DeliveriesPerWeek'],
+            }
+            delivery.update(self.location_coords_from_level(row['Level']))
+            deliveries.append(delivery)
+
+            quest = self.quest_list_entry(quest, include_rewards=self.args.rewards)
+            quests.append(quest)
+
+        output = {
+            'quests': quests,
+        }
+        if self.args.full:
+            output['deliveries'] = deliveries
+
+        if self.args.json:
+            print(json.dumps(output))
+        else:
+            print(dump_indented_yaml(output))
 
     def cmd_societies(self):
         self.argparser.add_argument("--yaml", action="store_true", default=True)

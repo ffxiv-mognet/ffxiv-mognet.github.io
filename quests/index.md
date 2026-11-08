@@ -323,6 +323,8 @@ storylines:
             link: /quests/sidestories/tataru-grand-endeavor
       - name: Lifestyle
         parts:
+          - name: Custom Deliveries
+            link: /quests/lifestyle/custom-deliveries
           - name: Ishgardian Restoration
             link: /quests/lifestyle/ishgardian-restoration
           - name: Cosmic Exploration
