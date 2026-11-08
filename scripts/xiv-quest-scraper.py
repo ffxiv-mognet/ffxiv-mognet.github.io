@@ -403,6 +403,20 @@ class XivQuestScraper:
                 }
             })
 
+        if row['SatisfactionNpc'] != '0' and row['SatisfactionLevel'] != '0':
+            satisfaction = self.sheets['SatisfactionNpc'].byId(row['SatisfactionNpc'])
+            npc = self.sheets['ENpcResident'].byId(satisfaction['Npc'])
+            pos = self.location_coords_from_level(satisfaction['Level'])
+            rank = int(row['SatisfactionLevel']) + 1
+            requirements.append({
+                'type': "satisfaction-npc",
+                'rank': rank,
+                'name': '{} rank:{}'.format(npc['Singular'], rank),
+                'id': satisfaction['#'],
+                'location': pos['location'],
+                'coords': pos['coords'],
+            })
+
 
         return requirements
 
@@ -1602,8 +1616,10 @@ class XivQuestScraper:
             delivery.update(self.location_coords_from_level(row['Level']))
             deliveries.append(delivery)
 
-            quest = self.quest_list_entry(quest, include_rewards=self.args.rewards)
-            quests.append(quest)
+            # quest = self.quest_list_entry(quest, include_rewards=self.args.rewards)
+            # quests.append(quest)
+            for it in self.sheets['Quest'].findAll('SatisfactionNpc', row['#']):
+                quests.append(self.quest_list_entry(it, include_rewards=self.args.rewards))
 
         output = {
             'quests': quests,
