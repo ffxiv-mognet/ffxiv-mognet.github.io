@@ -5,6 +5,7 @@
  * missing icon for 'custom delivery'
 
 ## Features
+ * show "optional" rewards
  * consistent navigation/breadcrumbs
  * list duties from ContentFinderCondition via JournalGenre
 

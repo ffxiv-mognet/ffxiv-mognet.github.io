@@ -32,6 +32,67 @@ quests:
       - location: Tuliyollal
         coords: (16.0, 14.5)
         name: Speak with Krile.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    requires:
+      - name: The Promise of Tomorrow
+        level: 100
+        rowId: 70909
+        questId: KinGmi110_05373
+        genre: The New Dawn
+        icon: '71000'
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2040
+      optional:
+        - item:
+            name: Lobster Bisque
+            id: '44183'
+            icon: '24103'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Moqueca
+            id: '44178'
+            icon: '24105'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Navel Orange Cookies
+            id: '44181'
+            icon: '24308'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 1
   - name: Through the Thunder
     level: 100
@@ -61,6 +122,15 @@ quests:
       - location: Alexandria Crater
         coords: (5.9, 6.4)
         name: Speak with Krile.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2624
     partQuestNo: 2
   - name: Beyond the Mountains
     level: 100
@@ -93,6 +163,9 @@ quests:
       - location: Treno
         coords: (11.4, 11.5)
         name: Speak with Lumull.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - name: Mistwake
         type: dungeon
@@ -100,6 +173,57 @@ quests:
         levelSync: 100
         ilevelRequired: 735
         ilevelSync: 0
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 5641
+      optional:
+        - item:
+            name: Piety Materia XI
+            id: '41757'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Battledance Materia XI
+            id: '41761'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quickarm Materia XI
+            id: '41768'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quicktongue Materia XI
+            id: '41769'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 3
   - name: Around the City
     level: 100
@@ -123,6 +247,15 @@ quests:
       - location: Treno
         coords: (11.4, 11.6)
         name: Speak with Krile.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 966
     partQuestNo: 4
   - name: To Work
     level: 100
@@ -158,6 +291,60 @@ quests:
       - location: Treno
         coords: (10.8, 10.0)
         name: Speak with Eyaney.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1425
+      optional:
+        - item:
+            name: Lobster Bisque
+            id: '44183'
+            icon: '24103'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Cinnamon Cream Coffee
+            id: '44179'
+            icon: '24407'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Churrasco
+            id: '44177'
+            icon: '24371'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 5
   - name: In Her Heart
     level: 100
@@ -187,6 +374,15 @@ quests:
       - location: Treno
         coords: (10.8, 10.0)
         name: Speak with Eyaney.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1425
     partQuestNo: 6
   - name: Toward Trouble
     level: 100
@@ -210,6 +406,49 @@ quests:
       - location: Treno
         coords: (11.8, 15.1)
         name: Speak with Lumull.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1287
+      optional:
+        - item:
+            name: Heavens' Eye Materia XI
+            id: '41758'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia XI
+            id: '41759'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia XI
+            id: '41760'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 7
   - name: Where We Call Home
     level: 100
@@ -245,6 +484,9 @@ quests:
       - location: Treno
         coords: (11.5, 12.3)
         name: Speak with Krile.
+    expansion:
+      id: '5'
+      name: Dawntrail
     soloDuty:
       levelSync: 100
       id: '5083'
@@ -255,6 +497,12 @@ quests:
         levelSync: 100
         ilevelRequired: 745
         ilevelSync: 0
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 6237
     partQuestNo: 8
   - name: Into the Mist
     level: 100
@@ -281,10 +529,31 @@ quests:
       - location: Solution Nine
         coords: (12.7, 5.9)
         name: Speak with Gossan in Resolution.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - id: 3863
         name: Into the Mist
         type: achievement
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2970
+      items:
+        - item:
+            name: Dark City Treno (Dawntrail) Orchestrion Roll
+            id: '50779'
+            icon: '25945'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '94'
+              name: Orchestrion Roll
+              icon: '60173'
+          count: 1
     partQuestNo: 9
   - name: In Fate's Footsteps
     level: 100
@@ -311,6 +580,60 @@ quests:
       - location: Main Hall
         coords: (6.1, 6.1)
         name: Speak with Tataru.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2697
+      optional:
+        - item:
+            name: Lobster Bisque
+            id: '44183'
+            icon: '24103'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Moqueca
+            id: '44178'
+            icon: '24105'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Navel Orange Cookies
+            id: '44181'
+            icon: '24308'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 10
   - name: Two Worlds Entwined
     level: 100
@@ -337,6 +660,9 @@ quests:
       - location: Garlemald
         coords: (32.1, 16.9)
         name: Speak with Jullus.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - name: the Clyteum
         type: dungeon
@@ -344,6 +670,57 @@ quests:
         levelSync: 100
         ilevelRequired: 750
         ilevelSync: 0
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 6779
+      optional:
+        - item:
+            name: Piety Materia XI
+            id: '41757'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Battledance Materia XI
+            id: '41761'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quickarm Materia XI
+            id: '41768'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quicktongue Materia XI
+            id: '41769'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 11
   - name: A Grave Presentiment
     level: 100
@@ -382,6 +759,9 @@ quests:
       - location: The Red Moon
         coords: (6.0, 3.7)
         name: Deliver the package of dumplings to Zero.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - name: the Unmaking
         type: trial
@@ -389,6 +769,12 @@ quests:
         levelSync: 100
         ilevelRequired: 755
         ilevelSync: 0
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 4725
     partQuestNo: 12
   - name: A Beacon from Beyond
     level: 100
@@ -427,6 +813,60 @@ quests:
       - location: Mare Lamentorum
         coords: (21.0, 11.6)
         name: Speak with Livingway.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1745
+      optional:
+        - item:
+            name: Lobster Bisque
+            id: '44183'
+            icon: '24103'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Cinnamon Cream Coffee
+            id: '44179'
+            icon: '24407'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Churrasco
+            id: '44177'
+            icon: '24371'
+            ilvl: '710'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 13
   - name: Trail to the Heavens
     level: 100
@@ -450,10 +890,19 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.9)
         name: Speak with Tataru.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - id: 3942
         name: Trail to the Heavens
         type: achievement
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2611
     partQuestNo: 14
   - name: A Winter's Dream
     level: 100
@@ -480,6 +929,49 @@ quests:
       - location: Unmoored Isle
         coords: (6.3, 6.7)
         name: Speak with Alphinaud.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1455
+      optional:
+        - item:
+            name: Heavens' Eye Materia XI
+            id: '41758'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia XI
+            id: '41759'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia XI
+            id: '41760'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 15
   - name: A Rush of Cold Wind
     level: 100
@@ -509,9 +1001,18 @@ quests:
       - location: Unmoored Isle
         coords: (6.1, 5.8)
         name: Speak with Alphinaud.
+    expansion:
+      id: '5'
+      name: Dawntrail
     soloDuty:
       levelSync: 100
       id: '5085'
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2845
     partQuestNo: 16
   - name: The World Locked in Ice
     level: 100
@@ -535,6 +1036,15 @@ quests:
       - location: Unmoored Isle
         coords: (6.1, 5.7)
         name: Speak with Visna.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1150
     partQuestNo: 17
   - name: Windborne
     level: 100
@@ -555,10 +1065,75 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.9)
         name: Speak with Tataru again.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - id: 3943
         name: Onward and Upward
         type: achievement
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1333
+      items:
+        - item:
+            name: Successor's Hood
+            id: '52428'
+            icon: '56956'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+        - item:
+            name: Successor's Tunic
+            id: '52429'
+            icon: '57393'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Successor's Fingerless Gloves
+            id: '52430'
+            icon: '56462'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+        - item:
+            name: Successor's Breeches
+            id: '52431'
+            icon: '57479'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+        - item:
+            name: Successor's Highboots
+            id: '52432'
+            icon: '57972'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
     partQuestNo: 18
 
 

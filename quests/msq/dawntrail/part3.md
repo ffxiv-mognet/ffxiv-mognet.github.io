@@ -12,7 +12,9 @@ quests:
     level: 100
     rowId: 70780
     questId: KinGmg101_05244
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Tuliyollal
@@ -34,12 +36,75 @@ quests:
       - location: The Backroom
         coords: (6.0, 6.3)
         name: Speak with Gulool Ja in the Backroom.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    requires:
+      - name: Dawntrail
+        level: 100
+        rowId: 70495
+        questId: KinGmf114_04959
+        genre: Dawntrail
+        icon: '71000'
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1323
+      optional:
+        - item:
+            name: Acqua Pazza
+            id: '44076'
+            icon: '24335'
+            ilvl: '680'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Driftwood Catfish Pie
+            id: '44095'
+            icon: '24052'
+            ilvl: '680'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Mesquite Juice
+            id: '44097'
+            icon: '24409'
+            ilvl: '680'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 1
   - name: Alexandria Mourns
     level: 100
     rowId: 70781
     questId: KinGmg102_05245
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: The Backroom
@@ -52,12 +117,23 @@ quests:
       - location: Solution Nine
         coords: (6.3, 15.2)
         name: Speak with Wuk Lamat.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 491
     partQuestNo: 2
   - name: In Search of the Past
     level: 100
     rowId: 70782
     questId: KinGmg103_05246
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Solution Nine
@@ -82,6 +158,9 @@ quests:
       - location: Yuweyawata
         coords: (11.8, 13.0)
         name: Speak with Gulool Ja.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - name: Yuweyawata Field Station
         type: dungeon
@@ -89,12 +168,65 @@ quests:
         levelSync: 100
         ilevelRequired: 690
         ilevelSync: 730
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 3261
+      optional:
+        - item:
+            name: Piety Materia XI
+            id: '41757'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Battledance Materia XI
+            id: '41761'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quickarm Materia XI
+            id: '41768'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quicktongue Materia XI
+            id: '41769'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 3
   - name: Among the Abandoned
     level: 100
     rowId: 70783
     questId: KinGmg104_05247
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Yuweyawata
@@ -116,12 +248,23 @@ quests:
       - location: The Backroom
         coords: (6.0, 6.3)
         name: Speak with Shale in the Backroom.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 797
     partQuestNo: 4
   - name: Guidance of the Hhetso
     level: 100
     rowId: 70784
     questId: KinGmg105_05248
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: The Backroom
@@ -152,12 +295,68 @@ quests:
       - location: Shaaloani
         coords: (27.5, 11.1)
         name: Speak with Shepetto.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1123
+      optional:
+        - item:
+            name: Wild Banana Blend
+            id: '44102'
+            icon: '24419'
+            ilvl: '670'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Roast Rroneek
+            id: '44092'
+            icon: '24366'
+            ilvl: '680'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Fruit and Aloe Jelly
+            id: '44100'
+            icon: '24228'
+            ilvl: '680'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 5
   - name: The Warmth of Family
     level: 100
     rowId: 70785
     questId: KinGmg106_05249
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Shaaloani
@@ -179,15 +378,26 @@ quests:
       - location: Shaaloani
         coords: (18.0, 14.0)
         name: Speak with Nitowikwe.
+    expansion:
+      id: '5'
+      name: Dawntrail
     soloDuty:
       levelSync: 100
       id: '5081'
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1450
     partQuestNo: 6
   - name: Crossroads
     level: 100
     rowId: 70786
     questId: KinGmg107_05250
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Shaaloani
@@ -209,16 +419,61 @@ quests:
       - location: The Backroom
         coords: (6.0, 6.4)
         name: Speak with Krile.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - id: 3607
         name: Crossroads
         type: achievement
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1210
+      optional:
+        - item:
+            name: Heavens' Eye Materia XI
+            id: '41758'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia XI
+            id: '41759'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia XI
+            id: '41760'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 7
   - name: A Glimmer of the Past
     level: 100
     rowId: 70835
     questId: KinGmh101_05299
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: The Backroom
@@ -237,12 +492,79 @@ quests:
       - location: Break Room
         coords: (6.2, 6.1)
         name: Speak with Sphene again.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1241
+      optional:
+        - item:
+            name: Tacos de Carne Asada
+            id: '44104'
+            icon: '24046'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Mesquite Soup
+            id: '44098'
+            icon: '24106'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Creamy Alpaca Pasta
+            id: '44087'
+            icon: '24019'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Broccoli and Spinach Saute
+            id: '44090'
+            icon: '24152'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 8
   - name: Memories of a Bygone Age
     level: 100
     rowId: 70836
     questId: KinGmh102_05300
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Break Room
@@ -261,12 +583,23 @@ quests:
       - location: Solution Nine
         coords: (6.2, 14.2)
         name: Speak with Wuk Lamat again.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1241
     partQuestNo: 9
   - name: In Search of Meaning
     level: 100
     rowId: 70837
     questId: KinGmh103_05301
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Solution Nine
@@ -290,12 +623,68 @@ quests:
         coords: (17.2, 19.6)
         name: Deliver the keepsake to the lively citizen while Sphene and Gulool Ja
           are accompanying you.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1150
+      optional:
+        - item:
+            name: Piety Materia XI
+            id: '41757'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Battledance Materia XI
+            id: '41761'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quickarm Materia XI
+            id: '41768'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quicktongue Materia XI
+            id: '41769'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 10
   - name: A Jewel Shattered
     level: 100
     rowId: 70838
     questId: KinGmh104_05302
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Solution Nine
@@ -314,12 +703,23 @@ quests:
       - location: Solution Nine
         coords: (17.8, 17.9)
         name: Speak with Sphene.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1104
     partQuestNo: 11
   - name: The Meeting
     level: 100
     rowId: 70839
     questId: KinGmh105_05303
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Solution Nine
@@ -332,12 +732,79 @@ quests:
       - location: The Backroom
         coords: (6.0, 6.4)
         name: Speak with Sphene.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 920
+      optional:
+        - item:
+            name: Tacos de Carne Asada
+            id: '44104'
+            icon: '24046'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Mesquite Soup
+            id: '44098'
+            icon: '24106'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Creamy Alpaca Pasta
+            id: '44087'
+            icon: '24019'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Broccoli and Spinach Saute
+            id: '44090'
+            icon: '24152'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 12
   - name: Descent to the Foundation
     level: 100
     rowId: 70840
     questId: KinGmh106_05304
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: The Backroom
@@ -362,25 +829,36 @@ quests:
       - location: Throne Room
         coords: (6.1, 6.5)
         name: Speak with Sphene.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - name: the Underkeep
         type: dungeon
         levelRequired: 100
         levelSync: 100
         ilevelRequired: 705
-        ilevelSync: 0
+        ilevelSync: 760
       - name: Recollection
         type: trial
         levelRequired: 100
         levelSync: 100
         ilevelRequired: 715
         ilevelSync: 0
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 6000
     partQuestNo: 13
   - name: Shared Paths
     level: 100
     rowId: 70841
     questId: KinGmh107_05305
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Throne Room
@@ -399,12 +877,23 @@ quests:
       - location: Solution Nine
         coords: (4.3, 19.0)
         name: Speak with Milos in residential radius 9-14.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1287
     partQuestNo: 14
   - name: Seekers of Eternity
     level: 100
     rowId: 70842
     questId: KinGmh108_05306
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Solution Nine
@@ -426,16 +915,61 @@ quests:
       - location: The Backroom
         coords: (6.0, 6.3)
         name: Speak with Shale in the Backroom.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - id: 3633
         name: Seekers of Eternity
         type: achievement
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2373
+      optional:
+        - item:
+            name: Heavens' Eye Materia XI
+            id: '41758'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia XI
+            id: '41759'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia XI
+            id: '41760'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 15
   - name: Targeted Tragedy
     level: 100
     rowId: 70900
     questId: KinGmi101_05364
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: The Backroom
@@ -460,12 +994,79 @@ quests:
       - location: Solution Nine
         coords: (4.2, 18.9)
         name: Speak with Wayakkwe.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1287
+      optional:
+        - item:
+            name: Tacos de Carne Asada
+            id: '44104'
+            icon: '24046'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Mesquite Soup
+            id: '44098'
+            icon: '24106'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Creamy Alpaca Pasta
+            id: '44087'
+            icon: '24019'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Broccoli and Spinach Saute
+            id: '44090'
+            icon: '24152'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 16
   - name: The Endless Choice
     level: 100
     rowId: 70901
     questId: KinGmi102_05365
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Solution Nine
@@ -487,12 +1088,23 @@ quests:
       - location: Solution Nine
         coords: (9.6, 21.8)
         name: Speak with Sphene.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1241
     partQuestNo: 17
   - name: My Memories and Yours
     level: 100
     rowId: 70902
     questId: KinGmi103_05366
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Solution Nine
@@ -523,12 +1135,68 @@ quests:
       - location: Earthen Sky Hideout
         coords: (6.2, 5.9)
         name: Speak with Shale again.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1745
+      optional:
+        - item:
+            name: Piety Materia XI
+            id: '41757'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Battledance Materia XI
+            id: '41761'
+            icon: '20291'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quickarm Materia XI
+            id: '41768'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quicktongue Materia XI
+            id: '41769'
+            icon: '20293'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 18
   - name: A Darkness in the Heart
     level: 100
     rowId: 70903
     questId: KinGmi104_05367
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Earthen Sky Hideout
@@ -550,12 +1218,23 @@ quests:
       - location: Solution Nine
         coords: (11.9, 5.9)
         name: Speak with Sphene again.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1250
     partQuestNo: 19
   - name: Preservation Their Purpose
     level: 100
     rowId: 70904
     questId: KinGmi105_05368
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Solution Nine
@@ -600,12 +1279,79 @@ quests:
       - location: Containment Complex 10-29
         coords: (6.4, 6.6)
         name: Speak with Shale.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2066
+      optional:
+        - item:
+            name: Tacos de Carne Asada
+            id: '44104'
+            icon: '24046'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Mesquite Soup
+            id: '44098'
+            icon: '24106'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Creamy Alpaca Pasta
+            id: '44087'
+            icon: '24019'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Broccoli and Spinach Saute
+            id: '44090'
+            icon: '24152'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 2
+        - item:
+            name: Nightworld Silver Piece
+            id: '27994'
+            icon: '26001'
+            ilvl: '385'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 20
   - name: A Calculated Evolution
     level: 100
     rowId: 70905
     questId: KinGmi106_05369
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Containment Complex 10-29
@@ -640,12 +1386,23 @@ quests:
       - location: The Backroom
         coords: (6.0, 6.3)
         name: Speak with Shale in the Backroom.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1837
     partQuestNo: 21
   - name: One of Our Own
     level: 100
     rowId: 70906
     questId: KinGmi107_05370
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: The Backroom
@@ -654,19 +1411,64 @@ quests:
     steps:
       - location: Solution Nine
         coords: (12.8, 6.4)
-        name: Speak with Gossan in the government sector.
+        name: Speak with Gossan at Praxis Park.
       - location: Solution Nine
         coords: (12.7, 6.4)
         name: Speak with Sphene.
       - location: Living Memory
         coords: (21.4, 36.8)
         name: Speak with Y'shtola at leynode mnemo.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 2512
+      optional:
+        - item:
+            name: Heavens' Eye Materia XI
+            id: '41758'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia XI
+            id: '41759'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia XI
+            id: '41760'
+            icon: '20297'
+            ilvl: '690'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 22
   - name: A Terminal Invitation
     level: 100
     rowId: 70907
     questId: KinGmi108_05371
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Living Memory
@@ -694,25 +1496,36 @@ quests:
       - location: Heritage Found
         coords: (18.5, 11.5)
         name: Speak with Sphene in the outskirts.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - name: the Meso Terminal
         type: dungeon
         levelRequired: 100
         levelSync: 100
         ilevelRequired: 720
-        ilevelSync: 0
+        ilevelSync: 760
       - name: the Ageless Necropolis
         type: trial
         levelRequired: 100
         levelSync: 100
         ilevelRequired: 725
         ilevelSync: 0
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 6000
     partQuestNo: 23
   - name: Blades in Waiting
     level: 100
     rowId: 70908
     questId: KinGmi109_05372
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: Heritage Found
@@ -734,12 +1547,23 @@ quests:
       - location: The Backroom
         coords: (6.1, 6.3)
         name: Speak with Shale in the Backroom.
+    expansion:
+      id: '5'
+      name: Dawntrail
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 1417
     partQuestNo: 24
   - name: The Promise of Tomorrow
     level: 100
     rowId: 70909
     questId: KinGmi110_05373
-    genre: The New Dawn
+    genre:
+      id: '14'
+      name: The New Dawn
     icon: '71000'
     issuer:
       location: The Backroom
@@ -758,10 +1582,31 @@ quests:
       - location: Solution Nine
         coords: (11.9, 6.4)
         name: Speak with Sphene at Praxis Park.
+    expansion:
+      id: '5'
+      name: Dawntrail
     unlocks:
       - id: 3773
         name: In Memoriam
         type: achievement
+    rewards:
+      xp:
+        factor: 0
+        paramGrowId: '100'
+        avg: 0
+      gil: 3000
+      items:
+        - item:
+            name: The Promise of Tomorrow Orchestrion Roll
+            id: '46148'
+            icon: '25945'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '94'
+              name: Orchestrion Roll
+              icon: '60173'
+          count: 1
     partQuestNo: 25
 
 
