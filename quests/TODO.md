@@ -19,11 +19,13 @@
 Realm Reborn
 * allied societies
 * sidequests
+* msq rewards
 
 Heavensward
 * optional dungeons
 * allied societies
 * sidequests
+* msq rewards
 
 Stormblood
 * eurekan relic weapons
@@ -31,6 +33,7 @@ Stormblood
 * optional dungeons
 * allied societies
 * sidequests
+* msq rewards
 
 Shadowbringers
 * optional dungeons
@@ -39,14 +42,13 @@ Shadowbringers
 * optional dungeons
 * allied societies
 * sidequests
+* msq rewards
 
 Endwalker
 * myths realm alliance raid
 * manderville weapons
 * optional dungeons
 * allied societies
-* Hunt quests/shop
-* extreme mounts
 * sidequests
 
 Dawntrail
