@@ -1,4 +1,5 @@
 
+
 ## Bugs
  * show correct shop type/currency filter states on load
  * missing icon for aethernet-shard
@@ -9,24 +10,27 @@
  * consistent navigation/breadcrumbs
  * list duties from ContentFinderCondition via JournalGenre
 
-### Maybes?
+## Maybes?
  * better support for "nonequential" branching quest lines?
  * parse yaml to add/cleanup data in existing .md files
 
-## Quest Content
+## Missing Content
 
 Realm Reborn
 * allied societies
+* sidequests
 
 Heavensward
 * optional dungeons
 * allied societies
+* sidequests
 
 Stormblood
 * eurekan relic weapons
 * eureka fieldop shops
 * optional dungeons
 * allied societies
+* sidequests
 
 Shadowbringers
 * optional dungeons
@@ -34,6 +38,7 @@ Shadowbringers
 * ishgardian restoration lifestyle
 * optional dungeons
 * allied societies
+* sidequests
 
 Endwalker
 * myths realm alliance raid
@@ -42,9 +47,9 @@ Endwalker
 * allied societies
 * Hunt quests/shop
 * extreme mounts
+* sidequests
 
 Dawntrail
-* arcadion raid (final part missing)
 * phantom relic weapons
 * occult crescent (confirm)
 * cosmic exploration lifestyle
