@@ -7,13 +7,14 @@ title: A Realm Reborn - Part 1 - Gridania
 permalink: /quests/msq/realm-reborn/part1/gridania
 links:
   next: /quests/msq/realm-reborn/part2
-
 quests:
   - name: Close to Home
     level: 1
     rowId: 65621
     questId: ManFst002_00085
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: New Gridania
@@ -32,12 +33,30 @@ quests:
       - location: New Gridania
         coords: (11.7, 13.5)
         name: Report to Miounne at the Carline Canopy.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    requires:
+      - name: Coming to Gridania
+        level: 1
+        rowId: 65575
+        questId: ManFst001_00039
+        genre: Gridanian Sidequests
+        icon: '71020'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '1'
+        avg: 400
+      gil: 107
     partQuestNo: 1
   - name: To the Bannock
     level: 4
     rowId: 65564
     questId: SubFst005_00028
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: New Gridania
@@ -47,12 +66,65 @@ quests:
       - location: Central Shroud
         coords: (23.4, 19.9)
         name: Speak with Galfrid at the Bannock.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '4'
+        avg: 1040
+      gil: 127
+      optional:
+        - item:
+            name: Altered Thighboots
+            id: '27634'
+            icon: '49077'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '33'
+            name: Loam Brown
+            color: '4141865'
+        - item:
+            name: Altered Leather Thighboots
+            id: '27665'
+            icon: '46102'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '33'
+            name: Loam Brown
+            color: '4141865'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 2
   - name: Passing Muster
     level: 4
     rowId: 65737
     questId: SubFst045_00201
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -62,12 +134,68 @@ quests:
       - location: Central Shroud
         coords: (23.4, 19.9)
         name: Present yourself to Galfrid for inspection.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '4'
+        avg: 1040
+      gil: 128
+      optional:
+        - item:
+            name: Bone Harpoon
+            id: '1820'
+            icon: '31810'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '5'
+              name: Lancer's Arm
+              icon: '60104'
+          count: 1
+        - item:
+            name: Maple Shortbow
+            id: '1891'
+            icon: '32201'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '4'
+              name: Archer's Arm
+              icon: '60105'
+          count: 1
+        - item:
+            name: Maple Wand
+            id: '1958'
+            icon: '32401'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '8'
+              name: "One\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 3
   - name: Chasing Shadows
     level: 5
     rowId: 65981
     questId: ManFst005_00445
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -77,22 +205,27 @@ quests:
       - location: Central Shroud
         coords: (27.9, 15.3)
         name: Investigate Lifemend Stump.
-      - name: Pull the sword from Lifemend Stump.
-      - location: Central Shroud
-        coords: (27.9, 15.3)
-        name: Pull the sword from Lifemend Stump.
-      - location: Central Shroud
-        coords: (23.4, 19.9)
-        name: Deliver the sword to Galfrid.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 9
       timeLimit: 30
+      id: '11'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '5'
+        avg: 1400
+      gil: 132
     partQuestNo: 4
   - name: Eggs over Queasy
     level: 4
     rowId: 69390
     questId: XxaFst034_03854
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -105,12 +238,35 @@ quests:
       - location: Central Shroud
         coords: (25.5, 19.3)
         name: Deliver the chigoe egg sacs to Monranguin at Gilbert's Spire.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '4'
+        avg: 1040
+      gil: 151
+      items:
+        - item:
+            name: Hi-Potion
+            id: '4552'
+            icon: '20602'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '44'
+              name: Medicine
+              icon: '60136'
+          count: 1
     partQuestNo: 5
   - name: Surveying the Damage
     level: 4
     rowId: 65711
     questId: SubFst038_00175
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -129,12 +285,65 @@ quests:
       - location: Central Shroud
         coords: (27.2, 20.8)
         name: Return the surveying equipment to Pauline at Gabineaux's Bower.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '4'
+        avg: 1040
+      gil: 179
+      optional:
+        - item:
+            name: Hempen Acton
+            id: '3008'
+            icon: '43012'
+            ilvl: '8'
+            level: '8'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '5'
+            name: Charcoal Grey
+            color: '4736834'
+        - item:
+            name: Hempen Cowl
+            id: '3000'
+            icon: '43601'
+            ilvl: '8'
+            level: '8'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '11'
+            name: Rust Red
+            color: '6431239'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 6
   - name: A Soldier's Breakfast
     level: 4
     rowId: 69391
     questId: XxaFst031_03855
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -153,12 +362,68 @@ quests:
       - location: Central Shroud
         coords: (23.6, 19.9)
         name: Deliver the egg to Tsubh Khamazom at the Bannock.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '4'
+        avg: 1040
+      gil: 186
+      optional:
+        - item:
+            name: Bronze Spear
+            id: '1821'
+            icon: '31806'
+            ilvl: '8'
+            level: '8'
+            category:
+              id: '5'
+              name: Lancer's Arm
+              icon: '60104'
+          count: 1
+        - item:
+            name: Maple Longbow
+            id: '1892'
+            icon: '32205'
+            ilvl: '8'
+            level: '8'
+            category:
+              id: '4'
+              name: Archer's Arm
+              icon: '60105'
+          count: 1
+        - item:
+            name: Whispering Maple Wand
+            id: '1959'
+            icon: '32401'
+            ilvl: '8'
+            level: '8'
+            category:
+              id: '8'
+              name: "One\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 7
   - name: Spirithold Broken
     level: 9
     rowId: 65665
     questId: SubFst035_00129
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -174,22 +439,27 @@ quests:
       - location: Central Shroud
         coords: (26.7, 25.3)
         name: Rescue the Hearer.
-      - name: Report to Alestan.
-      - location: Central Shroud
-        coords: (27.4, 23.8)
-        name: Report to Alestan.
-      - location: New Gridania
-        coords: (11.7, 13.5)
-        name: Return to Gridania and speak with Miounne.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 13
       timeLimit: 30
+      id: '15'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '9'
+        avg: 3240
+      gil: 206
     partQuestNo: 8
   - name: On to Bentbranch
     level: 10
     rowId: 65712
     questId: SubFst027_00176
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: New Gridania
@@ -199,12 +469,64 @@ quests:
       - location: Central Shroud
         coords: (20.3, 22.0)
         name: Speak with Keitha at Bentbranch Meadows.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      optional:
+        - item:
+            name: Hempen Trousers
+            id: '3318'
+            icon: '45015'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+          stain:
+            id: '11'
+            name: Rust Red
+            color: '6431239'
+        - item:
+            name: Amateur's Breeches
+            id: '3316'
+            icon: '45035'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+          stain:
+            id: '31'
+            name: Shale Brown
+            color: '9601388'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 9
   - name: You Shall Not Trespass
     level: 10
     rowId: 65912
     questId: SubFst049_00376
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -220,12 +542,56 @@ quests:
       - location: Central Shroud
         coords: (18.9, 20.6)
         name: Report to Roseline at the Matron's Lethe.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      optional:
+        - item:
+            name: Leather Jacket
+            id: '3016'
+            icon: '43026'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Amateur's Dalmatica
+            id: '3015'
+            icon: '42017'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 10
   - name: Don't Look Down
     level: 10
     rowId: 65913
     questId: SubFst056_00377
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -238,12 +604,65 @@ quests:
       - location: Central Shroud
         coords: (17.6, 19.1)
         name: Report to Theodore at the Matron's Lethe.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      gil: 191
+      optional:
+        - item:
+            name: Bronze Sallet
+            id: '2662'
+            icon: '40020'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '11'
+            name: Rust Red
+            color: '6431239'
+        - item:
+            name: Amateur's Hempen Coif
+            id: '2661'
+            icon: '41527'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '32'
+            name: Mole Brown
+            color: '6378053'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 11
   - name: In the Grim Darkness of the Forest
     level: 10
     rowId: 65915
     questId: SubFst058_00379
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -259,12 +678,64 @@ quests:
       - location: Central Shroud
         coords: (18.9, 20.6)
         name: Deliver the leather bag to Roseline.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      optional:
+        - item:
+            name: Leather Jackboots
+            id: '3770'
+            icon: '46816'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '11'
+            name: Rust Red
+            color: '6431239'
+        - item:
+            name: Amateur's Duckbills
+            id: '3769'
+            icon: '46109'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '29'
+            name: Chestnut Brown
+            color: '4008205'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 12
   - name: Threat Level Elevated
     level: 10
     rowId: 65916
     questId: SubFst059_00380
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -280,12 +751,23 @@ quests:
       - location: Central Shroud
         coords: (20.1, 21.7)
         name: Show Roseline's message to Eylgar.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      gil: 191
     partQuestNo: 13
   - name: Migrant Marauders
     level: 10
     rowId: 65917
     questId: SubFst060_00381
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -298,12 +780,65 @@ quests:
       - location: Central Shroud
         coords: (22.4, 26.0)
         name: Speak with Lothaire.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      gil: 189
+      optional:
+        - item:
+            name: Hempen Bracers
+            id: '3539'
+            icon: '44042'
+            ilvl: '11'
+            level: '11'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '41'
+            name: Halatali Yellow
+            color: '10847280'
+        - item:
+            name: Hempen Dress Gloves
+            id: '3538'
+            icon: '44159'
+            ilvl: '11'
+            level: '11'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '25'
+            name: Aldgoat Brown
+            color: '10651484'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 14
   - name: A Hearer Is Often Late
     level: 10
     rowId: 65920
     questId: SubFst068_00384
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -316,12 +851,68 @@ quests:
       - location: Central Shroud
         coords: (25.0, 28.1)
         name: Speak with Armelle at the Mirror Planks.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      gil: 200
+      optional:
+        - item:
+            name: Feathered Harpoon
+            id: '1823'
+            icon: '31811'
+            ilvl: '12'
+            level: '12'
+            category:
+              id: '5'
+              name: Lancer's Arm
+              icon: '60104'
+          count: 1
+        - item:
+            name: Wrapped Maple Longbow
+            id: '1894'
+            icon: '32207'
+            ilvl: '13'
+            level: '13'
+            category:
+              id: '4'
+              name: Archer's Arm
+              icon: '60105'
+          count: 1
+        - item:
+            name: Budding Maple Wand
+            id: '1960'
+            icon: '32403'
+            ilvl: '11'
+            level: '11'
+            category:
+              id: '8'
+              name: "One\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 15
   - name: Salvaging the Scene
     level: 10
     rowId: 65923
     questId: SubFst073_00387
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -334,12 +925,23 @@ quests:
       - location: Central Shroud
         coords: (20.3, 22.0)
         name: Deliver the cargo to Keitha at Bentbranch Meadows.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      gil: 160
     partQuestNo: 16
   - name: Leia's Legacy
     level: 14
     rowId: 65697
     questId: SubFst055_00161
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -364,15 +966,62 @@ quests:
       - location: Central Shroud
         coords: (20.2, 21.6)
         name: Speak with Luquelot.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 18
       timeLimit: 30
+      id: '14'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '14'
+        avg: 5520
+      gil: 101
+      items:
+        - item:
+            name: Antidote
+            id: '4564'
+            icon: '20641'
+            ilvl: '10'
+            level: '1'
+            category:
+              id: '44'
+              name: Medicine
+              icon: '60136'
+          count: 5
+      optional:
+        - item:
+            name: Leather Targe
+            id: '2229'
+            icon: '30007'
+            ilvl: '12'
+            level: '12'
+            category:
+              id: '11'
+              name: Shield
+              icon: '60110'
+          count: 1
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 17
   - name: Dread Is in the Air
     level: 14
     rowId: 65982
     questId: ManFst006_00446
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Central Shroud
@@ -382,12 +1031,23 @@ quests:
       - location: New Gridania
         coords: (11.7, 13.5)
         name: Deliver Luquelot's letter to Miounne.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '14'
+        avg: 5520
+      gil: 230
     partQuestNo: 18
   - name: To Guard a Guardian
     level: 14
     rowId: 65983
     questId: ManFst007_00447
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: New Gridania
@@ -406,15 +1066,38 @@ quests:
       - location: Seat of the First Bow
         coords: (3.5, 3.4)
         name: Speak with Lewin.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 18
       timeLimit: 30
+      id: '12'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '14'
+        avg: 5520
+      items:
+        - item:
+            name: Gridanian Ring
+            id: '4428'
+            icon: '54410'
+            ilvl: '15'
+            level: '15'
+            category:
+              id: '43'
+              name: Ring
+              icon: '60135'
+          count: 1
     partQuestNo: 19
   - name: Festive Endeavors
     level: 14
     rowId: 65984
     questId: ManFst008_00448
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Seat of the First Bow
@@ -430,12 +1113,35 @@ quests:
       - location: New Gridania
         coords: (11.7, 13.5)
         name: Deliver the wooden lockbox to Miounne.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '14'
+        avg: 5520
+      gil: 230
+      items:
+        - item:
+            name: Monoa Mask
+            id: '2651'
+            icon: '40403'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
     partQuestNo: 20
   - name: Renewing the Covenant
     level: 14
     rowId: 65985
     questId: ManFst009_00449
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: New Gridania
@@ -448,12 +1154,23 @@ quests:
       - location: Lotus Stand
         coords: (6.2, 6.1)
         name: Speak with Kan-E-Senna at the Lotus Stand.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '14'
+        avg: 5520
+      gil: 319
     partQuestNo: 21
   - name: The Gridanian Envoy
     level: 14
     rowId: 66043
     questId: ManFst200_00507
-    genre: Seventh Umbral Era
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
       location: Lotus Stand
@@ -488,26 +1205,135 @@ quests:
         coords: (10.7, 12.9)
         name: "Present Kan\u2013E\u2013Senna's missive to Bartholomew on the Hustings\
           \ Strip."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - id: 311
         name: Gone from Gridania
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '14'
+        avg: 5520
+      gil: 286
+      items:
+        - item:
+            name: Wind-up Airship
+            id: '6213'
+            icon: '59445'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '81'
+              name: Minion
+              icon: '60155'
+          count: 1
     partQuestNo: 22
   - name: Call of the Sea
     level: 14
-    rowId: 66209
-    questId: SubFst102_00673
-    genre: Seventh Umbral Era
+    rowId: 66210
+    questId: SubWil141_00674
+    genre:
+      id: '1'
+      name: Seventh Umbral Era
     icon: '71000'
     issuer:
-      location: Old Gridania
-      coords: (8.1, 11.1)
-      name: serpent officer
+      location: Ul'dah - Steps of Thal
+      coords: (10.7, 12.9)
+      name: Bartholomew
     steps:
       - location: Limsa Lominsa Upper Decks
         coords: (11.6, 11.1)
         name: Speak with Baderon at the Drowning Wench in Limsa Lominsa.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    requires:
+      - name: The Lominsan Envoy
+        level: 14
+        rowId: 66082
+        questId: ManSea200_00546
+        genre: Seventh Umbral Era
+        icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '14'
+        avg: 5520
+      gil: 286
+      items:
+        - item:
+            name: Phoenix Down
+            id: '4570'
+            icon: '20650'
+            ilvl: '50'
+            level: '1'
+            category:
+              id: '44'
+              name: Medicine
+              icon: '60136'
+          count: 3
+      optional:
+        - item:
+            name: Bronze Cuirass
+            id: '3026'
+            icon: '48001'
+            ilvl: '15'
+            level: '15'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '6'
+            name: Soot Black
+            color: '2828579'
+        - item:
+            name: Cotton Shirt
+            id: '3022'
+            icon: '42105'
+            ilvl: '14'
+            level: '14'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '6'
+            name: Soot Black
+            color: '2828579'
+        - item:
+            name: Cotton Cowl
+            id: '3024'
+            icon: '43610'
+            ilvl: '15'
+            level: '15'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '6'
+            name: Soot Black
+            color: '2828579'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 4
     partQuestNo: 23
+
 
 
 ---

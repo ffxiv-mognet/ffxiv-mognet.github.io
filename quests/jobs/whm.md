@@ -11,7 +11,9 @@ quests:
     level: 1
     rowId: 65558
     questId: ClsCnj000_00022
-    genre: Conjurer Quests
+    genre:
+      id: '162'
+      name: Conjurer Quests
     icon: '71140'
     issuer:
       location: Old Gridania
@@ -33,12 +35,34 @@ quests:
       - location: Old Gridania
         coords: (6.0, 10.7)
         name: "Report to Brother E\u2013Sumi\u2013Yan at the Conjurers' Guild."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '1'
+        avg: 400
+      items:
+        - item:
+            name: Raisins
+            id: '4728'
+            icon: '24058'
+            ilvl: '3'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 5
     partQuestNo: 1
   - name: Trial by Earth
     level: 5
     rowId: 65584
     questId: ClsCnj001_00048
-    genre: Conjurer Quests
+    genre:
+      id: '162'
+      name: Conjurer Quests
     icon: '71140'
     issuer:
       location: Old Gridania
@@ -57,12 +81,105 @@ quests:
       - location: Old Gridania
         coords: (6.0, 10.7)
         name: "Report to Brother E\u2013Sumi\u2013Yan at Stillglade Fane."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '5'
+        avg: 1400
+      items:
+        - item:
+            name: Maple Wand
+            id: '1958'
+            icon: '32401'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '8'
+              name: "One\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+        - item:
+            name: Square Maple Shield
+            id: '2219'
+            icon: '30017'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '11'
+              name: Shield
+              icon: '60110'
+          count: 1
+      optional:
+        - item:
+            name: Custom-made Robe of Healing
+            id: '3004'
+            icon: '42309'
+            ilvl: '6'
+            level: '5'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Hempen Hat
+            id: '2655'
+            icon: '41015'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Bone Ring
+            id: '4421'
+            icon: '54432'
+            ilvl: '9'
+            level: '9'
+            category:
+              id: '43'
+              name: Ring
+              icon: '60135'
+          count: 1
+        - item:
+            name: Copper Wristlets
+            id: '4091'
+            icon: '55601'
+            ilvl: '8'
+            level: '8'
+            category:
+              id: '42'
+              name: Bracelets
+              icon: '60134'
+          count: 1
+        - item:
+            name: Allagan Tin Piece
+            id: '5823'
+            icon: '26001'
+            ilvl: '5'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 5
     partQuestNo: 2
   - name: Trial by Wind
     level: 10
     rowId: 65627
     questId: ClsCnj002_00091
-    genre: Conjurer Quests
+    genre:
+      id: '162'
+      name: Conjurer Quests
     icon: '71140'
     issuer:
       location: Old Gridania
@@ -87,15 +204,110 @@ quests:
       - location: Old Gridania
         coords: (6.0, 10.7)
         name: "Report to Brother E\u2013Sumi\u2013Yan at Stillglade Fane."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 14
       timeLimit: 30
+      id: '54'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      items:
+        - item:
+            name: Maple Crook
+            id: '1997'
+            icon: '32607'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '9'
+              name: "Two\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+      optional:
+        - item:
+            name: Amateur's Dalmatica
+            id: '3015'
+            icon: '42017'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Amateur's Hempen Coif
+            id: '2661'
+            icon: '41527'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Hempen Dress Gloves
+            id: '3538'
+            icon: '44159'
+            ilvl: '11'
+            level: '11'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Amateur's Duckbills
+            id: '3769'
+            icon: '46109'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 3
   - name: Trial by Water
     level: 15
     rowId: 65628
     questId: ClsCnj003_00092
-    genre: Conjurer Quests
+    genre:
+      id: '162'
+      name: Conjurer Quests
     icon: '71140'
     issuer:
       location: Old Gridania
@@ -127,15 +339,128 @@ quests:
       - location: Old Gridania
         coords: (6.0, 10.7)
         name: "Report to Brother E\u2013Sumi\u2013Yan at Stillglade Fane."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 19
       timeLimit: 30
+      id: '16'
+    requires:
+      - name: Trial by Wind
+        level: 10
+        rowId: 65627
+        questId: ClsCnj002_00091
+        genre: Conjurer Quests
+        icon: '71140'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '15'
+        avg: 5760
+      items:
+        - item:
+            name: Ash Wand
+            id: '1961'
+            icon: '32402'
+            ilvl: '16'
+            level: '16'
+            category:
+              id: '8'
+              name: "One\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+        - item:
+            name: Square Ash Shield
+            id: '2233'
+            icon: '30019'
+            ilvl: '17'
+            level: '17'
+            category:
+              id: '11'
+              name: Shield
+              icon: '60110'
+          count: 1
+      optional:
+        - item:
+            name: Cotton Cowl
+            id: '3024'
+            icon: '43610'
+            ilvl: '15'
+            level: '15'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '81'
+            name: Grape Purple
+            color: '3877437'
+        - item:
+            name: Hard Leather Ringbands
+            id: '3547'
+            icon: '48239'
+            ilvl: '16'
+            level: '16'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '81'
+            name: Grape Purple
+            color: '3877437'
+        - item:
+            name: Cotton Tights
+            id: '3327'
+            icon: '45083'
+            ilvl: '15'
+            level: '15'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+          stain:
+            id: '81'
+            name: Grape Purple
+            color: '3877437'
+        - item:
+            name: Hard Leather Boots
+            id: '3777'
+            icon: '46139'
+            ilvl: '15'
+            level: '15'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '81'
+            name: Grape Purple
+            color: '3877437'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 3
     partQuestNo: 4
   - name: Sylphie's Trials
     level: 20
     rowId: 65629
     questId: ClsCnj004_00093
-    genre: Conjurer Quests
+    genre:
+      id: '162'
+      name: Conjurer Quests
     icon: '71140'
     issuer:
       location: Old Gridania
@@ -163,12 +488,106 @@ quests:
       - location: Old Gridania
         coords: (6.0, 10.7)
         name: "Report to Brother E\u2013Sumi\u2013Yan at Stillglade Fane."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '20'
+        avg: 6960
+      items:
+        - item:
+            name: Elm Crook
+            id: '2002'
+            icon: '32609'
+            ilvl: '20'
+            level: '20'
+            category:
+              id: '9'
+              name: "Two\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+      optional:
+        - item:
+            name: Altered Cotton Dalmatica
+            id: '27666'
+            icon: '42657'
+            ilvl: '18'
+            level: '18'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '5'
+            name: Charcoal Grey
+            color: '4736834'
+        - item:
+            name: Ash Mask (Lapis Lazuli)
+            id: '2703'
+            icon: '40415'
+            ilvl: '20'
+            level: '20'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '5'
+            name: Charcoal Grey
+            color: '4736834'
+        - item:
+            name: Cotton Dress Gloves
+            id: '3568'
+            icon: '44076'
+            ilvl: '21'
+            level: '21'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '5'
+            name: Charcoal Grey
+            color: '4736834'
+        - item:
+            name: Cotton Dress Shoes
+            id: '3800'
+            icon: '46194'
+            ilvl: '22'
+            level: '22'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '5'
+            name: Charcoal Grey
+            color: '4736834'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 5
     partQuestNo: 5
   - name: Like Mother, Like Daughter
     level: 25
     rowId: 65976
     questId: ClsCnj005_00440
-    genre: Conjurer Quests
+    genre:
+      id: '162'
+      name: Conjurer Quests
     icon: '71140'
     issuer:
       location: Old Gridania
@@ -190,15 +609,110 @@ quests:
       - location: Old Gridania
         coords: (6.0, 10.7)
         name: "Report to Brother E\u2013Sumi\u2013Yan at Stillglade Fane."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 29
       timeLimit: 30
+      id: '56'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '25'
+        avg: 8160
+      items:
+        - item:
+            name: Whispering Ash Wand
+            id: '1965'
+            icon: '32402'
+            ilvl: '26'
+            level: '26'
+            category:
+              id: '8'
+              name: "One\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+      optional:
+        - item:
+            name: Cotton Halfrobe
+            id: '3050'
+            icon: '42154'
+            ilvl: '21'
+            level: '21'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '7'
+            name: Rose Pink
+            color: '15114134'
+        - item:
+            name: Goatskin Ringbands
+            id: '3581'
+            icon: '48240'
+            ilvl: '26'
+            level: '26'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '7'
+            name: Rose Pink
+            color: '15114134'
+        - item:
+            name: Altered Goatskin Moccasins
+            id: '27667'
+            icon: '49075'
+            ilvl: '26'
+            level: '26'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '7'
+            name: Rose Pink
+            color: '15114134'
+        - item:
+            name: Silver Spectacles
+            id: '2728'
+            icon: '40881'
+            ilvl: '25'
+            level: '25'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '7'
+            name: Rose Pink
+            color: '15114134'
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 6
   - name: In Nature's Embrace
     level: 30
     rowId: 65977
     questId: ClsCnj006_00441
-    genre: Conjurer Quests
+    genre:
+      id: '162'
+      name: Conjurer Quests
     icon: '71140'
     issuer:
       location: Old Gridania
@@ -229,23 +743,118 @@ quests:
       - location: Old Gridania
         coords: (6.0, 10.7)
         name: "Report to Brother E\u2013Sumi\u2013Yan at Stillglade Fane."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 34
       timeLimit: 30
+      id: '17'
     unlocks:
-      - name: Cure II
+      - id: '135'
+        name: Cure II
         icon: '406'
         type: action
       - id: 315
         name: Tales of Magic
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '30'
+        avg: 12480
+      items:
+        - item:
+            name: Walnut Cane
+            id: '2015'
+            icon: '32604'
+            ilvl: '29'
+            level: '29'
+            category:
+              id: '9'
+              name: "Two\u2013handed Conjurer's Arm"
+              icon: '60107'
+          count: 1
+      optional:
+        - item:
+            name: Velveteen Bliaud
+            id: '27669'
+            icon: '42663'
+            ilvl: '31'
+            level: '31'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '36'
+            name: Desert Yellow
+            color: '14398551'
+        - item:
+            name: Altered Velveteen Hose
+            id: '27671'
+            icon: '47275'
+            ilvl: '31'
+            level: '31'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+          stain:
+            id: '36'
+            name: Desert Yellow
+            color: '14398551'
+        - item:
+            name: Velveteen Gloves
+            id: '27670'
+            icon: '44734'
+            ilvl: '31'
+            level: '31'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '36'
+            name: Desert Yellow
+            color: '14398551'
+        - item:
+            name: Toadskin Boots
+            id: '27672'
+            icon: '49071'
+            ilvl: '31'
+            level: '31'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '36'
+            name: Desert Yellow
+            color: '14398551'
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 3
     partQuestNo: 7
-
   - name: Seer Folly
     level: 30
     rowId: 66615
     questId: JobWhm300_01079
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: Old Gridania
@@ -258,27 +867,44 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: Speak with Raya-O-Senna at Camp Tranquil.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 34
       timeLimit: 30
+      id: '75'
     unlocks:
-      - name: Presence of Mind
+      - id: '136'
+        name: Presence of Mind
         icon: '2626'
         type: action
     requires:
+      - name: In Nature's Embrace
+        level: 30
+        rowId: 65977
+        questId: ClsCnj006_00441
+        genre: Conjurer Quests
+        icon: '71140'
       - name: Sylph-management
         level: 20
         rowId: 66049
         questId: ManFst304_00513
         genre: Seventh Umbral Era
         icon: '71000'
-        link: /quests/msq/realm-reborn/part2
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '30'
+        avg: 12480
     partQuestNo: 8
   - name: Only You Can Prevent Forest Ire
     level: 35
     rowId: 66616
     questId: JobWhm350_01080
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -291,16 +917,27 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Report to Raya\u2013O\u2013Senna."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
-      - name: Regen
+      - id: '137'
+        name: Regen
         icon: '2628'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '35'
+        avg: 15840
     partQuestNo: 9
   - name: O Brother, Where Art Thou
     level: 40
     rowId: 66617
     questId: JobWhm400_01081
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -316,16 +953,27 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Speak with Raya\u2013O\u2013Senna at Camp Tranquil."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
-      - name: Cure III
+      - id: '131'
+        name: Cure III
         icon: '407'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '40'
+        avg: 21560
     partQuestNo: 10
   - name: Following in His Footsteps
     level: 45
     rowId: 66618
     questId: JobWhm450_01082
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -356,12 +1004,22 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Report to Raya\u2013O\u2013Senna at Camp Tranquil."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 200
+        paramGrowId: '45'
+        avg: 11880
     partQuestNo: 11
   - name: Yearn for the Urn
     level: 45
     rowId: 66619
     questId: JobWhm451_01083
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -380,16 +1038,27 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Deliver the urn to Raya\u2013O\u2013Senna."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
-      - name: Holy
+      - id: '139'
+        name: Holy
         icon: '2629'
         type: action
+    rewards:
+      xp:
+        factor: 200
+        paramGrowId: '45'
+        avg: 11880
     partQuestNo: 12
   - name: Heart of the Forest
     level: 50
     rowId: 66620
     questId: JobWhm500_01084
-    genre: White Mage Quests
+    genre:
+      id: '182'
+      name: White Mage Quests
     icon: '71140'
     issuer:
       location: South Shroud
@@ -402,16 +1071,49 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Speak with Raya\u2013O\u2013Senna at Camp Tranquil."
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 50
       timeLimit: 30
+      id: '76'
     unlocks:
-      - name: Benediction
+      - id: '140'
+        name: Benediction
         icon: '2627'
         type: action
       - id: 412
         name: Seeing White I
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '50'
+        avg: 46800
+      items:
+        - item:
+            name: Healer's Robe
+            id: '3225'
+            icon: '42236'
+            ilvl: '55'
+            level: '50'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Cleric's Attire Coffer (IL 90)
+            id: '20648'
+            icon: '26509'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 13
   - name: Taint Misbehaving
     level: 50
@@ -447,13 +1149,28 @@ quests:
       - location: North Shroud
         coords: (20.6, 25.2)
         name: Speak with Eschiva at Fallgourd Float.
+    expansion:
+      id: '1'
+      name: Heavensward
     requires:
+      - name: Heart of the Forest
+        level: 50
+        rowId: 66620
+        questId: JobWhm500_01084
+        genre: White Mage Quests
+        icon: '71140'
       - name: Before the Dawn
         level: 50
         rowId: 65964
         questId: GaiUse616_00428
         genre: Seventh Astral Era
         icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '50'
+        avg: 46800
+      gil: 770
     partQuestNo: 14
   - name: A Journey of Purification
     level: 52
@@ -480,6 +1197,9 @@ quests:
       - location: Coerthas Central Highlands
         coords: (25.6, 17.3)
         name: Speak with Eschiva.
+    expansion:
+      id: '1'
+      name: Heavensward
     soloDuty:
       levelSync: 54
       timeLimit: 30
@@ -489,6 +1209,12 @@ quests:
         name: Asylum
         icon: '2632'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '52'
+        avg: 48360
+      gil: 589
     partQuestNo: 15
   - name: The Girl with the Dragon Tissue
     level: 54
@@ -524,11 +1250,20 @@ quests:
       - location: Coerthas Western Highlands
         coords: (31.8, 35.6)
         name: Speak with Eschiva.
+    expansion:
+      id: '1'
+      name: Heavensward
     unlocks:
       - id: '3568'
         name: Stone III
         icon: '2631'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '54'
+        avg: 49920
+      gil: 635
     partQuestNo: 16
   - name: The Dark Blight Writhes
     level: 56
@@ -555,11 +1290,20 @@ quests:
       - location: The Dravanian Forelands
         coords: (32.3, 23.0)
         name: Speak with Eschiva at Tailfeather.
+    expansion:
+      id: '1'
+      name: Heavensward
     unlocks:
       - id: '3571'
         name: Assize
         icon: '2634'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '56'
+        avg: 51480
+      gil: 558
     partQuestNo: 17
   - name: In the Wake of Death
     level: 58
@@ -589,11 +1333,20 @@ quests:
       - location: The Dravanian Forelands
         coords: (8.9, 38.0)
         name: Assist Eschiva.
+    expansion:
+      id: '1'
+      name: Heavensward
     unlocks:
       - id: '7430'
         name: Thin Air
         icon: '2636'
         type: action
+    rewards:
+      xp:
+        factor: 200
+        paramGrowId: '58'
+        avg: 26520
+      gil: 634
     partQuestNo: 18
   - name: Trials of the Padjals
     level: 58
@@ -611,6 +1364,15 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Deliver the tainted flesh to Raya\u2013O\u2013Senna at Camp Tranquil."
+    expansion:
+      id: '1'
+      name: Heavensward
+    rewards:
+      xp:
+        factor: 200
+        paramGrowId: '58'
+        avg: 26520
+      gil: 507
     partQuestNo: 19
   - name: Hands of Healing
     level: 60
@@ -646,6 +1408,9 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Speak with Raya\u2013O\u2013Senna at Camp Tranquil."
+    expansion:
+      id: '1'
+      name: Heavensward
     soloDuty:
       levelSync: 60
       timeLimit: 30
@@ -658,6 +1423,24 @@ quests:
       - id: 1146
         name: Seeing White II
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '60'
+        avg: 100000
+      gil: 1005
+      items:
+        - item:
+            name: Orison Attire Coffer (IL 210)
+            id: '20661'
+            icon: '26509'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 20
   - name: Unease in East End
     level: 60
@@ -687,6 +1470,9 @@ quests:
       - location: The Fringes
         coords: (9.0, 12.0)
         name: Speak with E-Sumi-Yan at Castrum Oriens.
+    expansion:
+      id: '2'
+      name: Stormblood
     requires:
       - name: The Far Edge of Fate
         level: 60
@@ -694,6 +1480,12 @@ quests:
         questId: HeaVng104_02359
         genre: Post-Dragonsong War
         icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '60'
+        avg: 100000
+      gil: 1509
     partQuestNo: 21
   - name: An Aura for Trouble
     level: 63
@@ -720,6 +1512,15 @@ quests:
       - location: The Fringes
         coords: (9.0, 11.9)
         name: Speak with Sylphie.
+    expansion:
+      id: '2'
+      name: Stormblood
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '63'
+        avg: 103000
+      gil: 1396
     partQuestNo: 22
   - name: A Beacon for Bad Things
     level: 65
@@ -752,10 +1553,19 @@ quests:
       - location: The Fringes
         coords: (9.0, 11.9)
         name: Speak with Sylphie.
+    expansion:
+      id: '2'
+      name: Stormblood
     soloDuty:
       levelSync: 67
       timeLimit: 30
       id: '151'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '65'
+        avg: 105000
+      gil: 2064
     partQuestNo: 23
   - name: The Problem with Padjals
     level: 68
@@ -782,6 +1592,15 @@ quests:
       - location: The Fringes
         coords: (8.3, 29.0)
         name: Speak with Sylphie.
+    expansion:
+      id: '2'
+      name: Stormblood
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '68'
+        avg: 108000
+      gil: 845
     partQuestNo: 24
   - name: What She Always Wanted
     level: 70
@@ -814,6 +1633,9 @@ quests:
       - location: The Fringes
         coords: (13.8, 31.1)
         name: Speak with Gatty.
+    expansion:
+      id: '2'
+      name: Stormblood
     soloDuty:
       levelSync: 70
       timeLimit: 30
@@ -826,6 +1648,24 @@ quests:
       - id: 1802
         name: Seeing White III
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '70'
+        avg: 216000
+      gil: 2500
+      items:
+        - item:
+            name: Seventh Heaven Attire Coffer (IL 290)
+            id: '20279'
+            icon: '26509'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 25
   - name: Whence the Healing Springs
     level: 80
@@ -855,6 +1695,9 @@ quests:
       - location: South Shroud
         coords: (18.7, 27.1)
         name: "Report to Raya\u2013O\u2013Senna at Camp Tranquil."
+    expansion:
+      id: '3'
+      name: Shadowbringers
     unlocks:
       - id: 2311
         name: Seeing White IV
@@ -872,6 +1715,46 @@ quests:
         questId: LucKmf111_03654
         genre: Shadowbringers
         icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '80'
+        avg: 448800
+      gil: 1625
+      items:
+        - item:
+            name: Piety Materia VII
+            id: '25186'
+            icon: '20273'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia VII
+            id: '25188'
+            icon: '20274'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia VII
+            id: '25189'
+            icon: '20274'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 26
 
 

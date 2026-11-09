@@ -129,11 +129,22 @@ layout: with-nav
               {% endfor %}
               {% for reward in quest.rewards.items %}
               <div class="reward-item" title="{{reward.item.category.name}}">
+                <a href="https://garlandtools.org/db/#item/{{reward.item.id}}" target="garlandtools">
                 <span class="icon-text">
                     <span class="icon"><i class="item-category-{{reward.item.category.icon}}"></i></span>
                     <span>{{ reward.item.name }}</span>
                 </span>
+                </a>
               </div>
+              {% endfor %}
+              {% for reward in quest.rewards.optional %}
+              <span class="optional-reward-item" title="{{reward.item.name}} - {{reward.item.category.name}}">
+                <a href="https://garlandtools.org/db/#item/{{reward.item.id}}" target="garlandtools">
+                <span class="icon-text">
+                    <span class="icon"><i class="item-category-{{reward.item.category.icon}}"></i></span>
+                </span>
+                </a>
+              </span>
               {% endfor %}
           </td>
           <td><!-- requires -->

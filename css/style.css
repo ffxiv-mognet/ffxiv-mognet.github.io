@@ -47,6 +47,95 @@ span.icon i.dungeon {
     display: block;
 }
 
+span.icon i.item-category-60101 {
+    background:url('/icons/060101.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60102 {
+    background:url('/icons/060102.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60103 {
+    background:url('/icons/060103.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60104 {
+    background:url('/icons/060104.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60105 {
+    background:url('/icons/060105.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60106 {
+    background:url('/icons/060106.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60107 {
+    background:url('/icons/060107.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60108 {
+    background:url('/icons/060108.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60109 {
+    background:url('/icons/060109.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60110 {
+    background:url('/icons/060110.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+
+span.icon i.item-category-60152 {
+    background:url('/icons/060152.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
 span.icon i.item-category-60153 {
     background:url('/icons/060153.png');
     content: '';
@@ -57,6 +146,14 @@ span.icon i.item-category-60153 {
 }
 span.icon i.item-category-60146 {
     background:url('/icons/060146.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60147 {
+    background:url('/icons/060147.png');
     content: '';
     background-size: 1rem;
     height: 1rem;
@@ -87,8 +184,24 @@ span.icon i.item-category-60163 {
     width: 1rem;
     display: block;
 }
+span.icon i.item-category-60168 {
+    background:url('/icons/060168.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
 span.icon i.item-category-60173 {
     background:url('/icons/060173.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60179 {
+    background:url('/icons/060179.png');
     content: '';
     background-size: 1rem;
     height: 1rem;
@@ -201,6 +314,14 @@ span.icon i.item-category-60134 {
 }
 span.icon i.item-category-60135 {
     background:url('/icons/060135.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60136 {
+    background:url('/icons/060136.png');
     content: '';
     background-size: 1rem;
     height: 1rem;
