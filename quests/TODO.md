@@ -6,11 +6,11 @@
  * missing icon for 'custom delivery'
 
 ## Features
- * show "optional" rewards
  * consistent navigation/breadcrumbs
- * list duties from ContentFinderCondition via JournalGenre
+ * currencies summary on hunt page needs "type" icons
 
 ## Maybes?
+ * list duties from ContentFinderCondition via JournalGenre
  * better support for "nonequential" branching quest lines?
  * parse yaml to add/cleanup data in existing .md files
 
@@ -56,6 +56,4 @@ Dawntrail
 * occult crescent (confirm)
 * cosmic exploration lifestyle
 * optional dungeons
-* Hunt quests/shop
-* extreme mounts
 
