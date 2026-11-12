@@ -4,11 +4,140 @@ expansion: heavensward
 title: Sea of Clouds| Heavensward Aether Currents 
 permalink: /quests/aethercurrents/heavensward/sea-of-clouds
 map: a2f1/00
+currentmap: /maps/aethercurrents/a2f1-00.png
 nonsequential: true
 links:
   previous: /quests/aethercurrents/heavensward/churning-mists
   next: /quests/aethercurrents/heavensward/azys-lla
 quests:
+  - name: Flying the Nest
+    level: 57
+    rowId: 67446
+    questId: HeaVnz706_01910
+    genre:
+      id: '118'
+      name: Abalathian Sidequests
+    icon: '71140'
+    issuer:
+      location: The Sea of Clouds
+      coords: (10.6, 14.8)
+      name: Guna Vanu
+    steps:
+      - location: The Sea of Clouds
+        coords: (10.4, 13.9)
+        name: Ask about Gunu Vanu's whereabouts.
+      - location: The Sea of Clouds
+        coords: (14.9, 10.1)
+        name: "With the chat mode in **Say**, enter a phrase containing \u201CWake\
+          \ up!\u201D to rouse Gunu Vanu."
+    unlocks:
+      - id: '2818112'
+        name: Aether Current
+        type: aethercurrent
+    requires:
+      - name: Black and the White
+        level: 57
+        rowId: 67182
+        questId: HeaVna505_01646
+        genre: Heavensward
+        icon: '71000'
+    partQuestNo: 1
+  - name: Sleepless in Ok' Zundu
+    level: 57
+    rowId: 67445
+    questId: HeaVnz705_01909
+    genre:
+      id: '118'
+      name: Abalathian Sidequests
+    icon: '71140'
+    issuer:
+      location: The Sea of Clouds
+      coords: (9.6, 14.2)
+      name: Ganu Vali
+    steps:
+      - location: The Sea of Clouds
+        coords: (27.3, 10.8)
+        name: Gather gurglegrass at the designated locations.
+      - location: The Sea of Clouds
+        coords: (9.6, 14.2)
+        name: Deliver the gurglegrass to Ganu Vali.
+    unlocks:
+      - id: '2818111'
+        name: Aether Current
+        type: aethercurrent
+    requires:
+      - name: Black and the White
+        level: 57
+        rowId: 67182
+        questId: HeaVna505_01646
+        genre: Heavensward
+        icon: '71000'
+    partQuestNo: 2
+  - name: Honoring the Past
+    level: 56
+    rowId: 67410
+    questId: HeaVnz606_01874
+    genre:
+      id: '117'
+      name: Ishgardian Sidequests
+    icon: '71140'
+    issuer:
+      location: The Pillars
+      coords: (11.5, 10.9)
+      name: House Haillenarte knight
+    steps:
+      - location: The Sea of Clouds
+        coords: (9.4, 32.4)
+        name: Deliver the battle standard to Rontremont.
+      - location: The Sea of Clouds
+        coords: (17.0, 37.4)
+        name: Deliver the battle standard to Laniaitte.
+    requires:
+      - name: He Who Would Not Be Denied
+        level: 56
+        rowId: 67173
+        questId: HeaVna401_01637
+        genre: Heavensward
+        icon: '71000'
+    unlocks:
+      - id: '2818110'
+        name: Aether Current
+        type: aethercurrent
+    partQuestNo: 3
+  - name: Clipped Wings
+    level: 50
+    rowId: 67284
+    questId: HeaVnz023_01748
+    genre:
+      id: '118'
+      name: Abalathian Sidequests
+    icon: '71140'
+    issuer:
+      location: The Sea of Clouds
+      coords: (17.0, 37.4)
+      name: Laniaitte
+    steps:
+      - location: The Sea of Clouds
+        coords: (12.2, 34.6)
+        name: Obtain an untorn gaelicat wing.
+      - location: The Sea of Clouds
+        coords: (12.2, 34.6)
+        name: Continue your search for an undamaged gaelicat wing.
+      - location: The Sea of Clouds
+        coords: (17.0, 37.4)
+        name: Deliver the sample to Laniaitte.
+    unlocks:
+      - id: '2818109'
+        name: Aether Current
+        type: aethercurrent
+    requires:
+      - name: Disclosure
+        level: 50
+        rowId: 67134
+        questId: HeaVna119_01598
+        genre: Heavensward
+        icon: '71000'
+    partQuestNo: 4
   - name: Bolt, Chain, and Island
     level: 57
     rowId: 67183
@@ -44,135 +173,6 @@ quests:
       - name: The Sea of Clouds
         type: mountspeed
       - id: '2818108'
-        name: Aether Current
-        type: aethercurrent
-    requires:
-      - name: Black and the White
-        level: 57
-        rowId: 67182
-        questId: HeaVna505_01646
-        genre: Heavensward
-        icon: '71000'
-    partQuestNo: 1
-  - name: Clipped Wings
-    level: 50
-    rowId: 67284
-    questId: HeaVnz023_01748
-    genre:
-      id: '118'
-      name: Abalathian Sidequests
-    icon: '71140'
-    issuer:
-      location: The Sea of Clouds
-      coords: (17.0, 37.4)
-      name: Laniaitte
-    steps:
-      - location: The Sea of Clouds
-        coords: (12.2, 34.6)
-        name: Obtain an untorn gaelicat wing.
-      - location: The Sea of Clouds
-        coords: (12.2, 34.6)
-        name: Continue your search for an undamaged gaelicat wing.
-      - location: The Sea of Clouds
-        coords: (17.0, 37.4)
-        name: Deliver the sample to Laniaitte.
-    unlocks:
-      - id: '2818109'
-        name: Aether Current
-        type: aethercurrent
-    requires:
-      - name: Disclosure
-        level: 50
-        rowId: 67134
-        questId: HeaVna119_01598
-        genre: Heavensward
-        icon: '71000'
-    partQuestNo: 2
-
-  - name: Honoring the Past
-    level: 56
-    rowId: 67410
-    questId: HeaVnz606_01874
-    genre:
-      id: '117'
-      name: Ishgardian Sidequests
-    icon: '71140'
-    issuer:
-      location: The Pillars
-      coords: (11.5, 10.9)
-      name: House Haillenarte knight
-    steps:
-      - location: The Sea of Clouds
-        coords: (9.4, 32.4)
-        name: Deliver the battle standard to Rontremont.
-      - location: The Sea of Clouds
-        coords: (17.0, 37.4)
-        name: Deliver the battle standard to Laniaitte.
-    requires:
-      - name: He Who Would Not Be Denied
-        level: 56
-        rowId: 67173
-        questId: HeaVna401_01637
-        genre: Heavensward
-        icon: '71000'
-    unlocks:
-      - id: '2818110'
-        name: Aether Current
-        type: aethercurrent
-    partQuestNo: 3
-  - name: Sleepless in Ok' Zundu
-    level: 57
-    rowId: 67445
-    questId: HeaVnz705_01909
-    genre:
-      id: '118'
-      name: Abalathian Sidequests
-    icon: '71140'
-    issuer:
-      location: The Sea of Clouds
-      coords: (9.6, 14.2)
-      name: Ganu Vali
-    steps:
-      - location: The Sea of Clouds
-        coords: (27.3, 10.8)
-        name: Gather gurglegrass at the designated locations.
-      - location: The Sea of Clouds
-        coords: (9.6, 14.2)
-        name: Deliver the gurglegrass to Ganu Vali.
-    unlocks:
-      - id: '2818111'
-        name: Aether Current
-        type: aethercurrent
-    requires:
-      - name: Black and the White
-        level: 57
-        rowId: 67182
-        questId: HeaVna505_01646
-        genre: Heavensward
-        icon: '71000'
-    partQuestNo: 4
-  - name: Flying the Nest
-    level: 57
-    rowId: 67446
-    questId: HeaVnz706_01910
-    genre:
-      id: '118'
-      name: Abalathian Sidequests
-    icon: '71140'
-    issuer:
-      location: The Sea of Clouds
-      coords: (10.6, 14.8)
-      name: Guna Vanu
-    steps:
-      - location: The Sea of Clouds
-        coords: (10.4, 13.9)
-        name: Ask about Gunu Vanu's whereabouts.
-      - location: The Sea of Clouds
-        coords: (14.9, 10.1)
-        name: "With the chat mode in **Say**, enter a phrase containing \u201CWake\
-          \ up!\u201D to rouse Gunu Vanu."
-    unlocks:
-      - id: '2818112'
         name: Aether Current
         type: aethercurrent
     requires:

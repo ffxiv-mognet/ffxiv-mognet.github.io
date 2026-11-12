@@ -4,40 +4,11 @@ expansion: heavensward
 title: Coerthas Western Highlands | Heavensward Aether Currents 
 permalink: /quests/aethercurrents/heavensward/coerthas-western-highlands
 map: r2f1/00
+currentmap: /maps/aethercurrents/r2f1-00.png
 nonsequential: true
 links:
   next: /quests/aethercurrents/heavensward/dravanian-forelands
 quests:
-  - name: Bridge over Frozen Water
-    level: 50
-    rowId: 67280
-    questId: HeaVnz019_01744
-    genre: Coerthan Sidequests
-    icon: '71140'
-    issuer:
-      location: Coerthas Western Highlands
-      coords: (32.4, 35.8)
-      name: Ingaret
-    steps:
-      - location: Coerthas Western Highlands
-        coords: (30.8, 19.0)
-        name: Slay upland mylodons.
-      - location: Coerthas Western Highlands
-        coords: (32.4, 35.8)
-        name: Report to Ingaret.
-    unlocks:
-      - id: '2818049'
-        name: Aether Current
-        type: aethercurrent
-    partQuestNo: 1
-    requires:
-      - name: Disclosure
-        level: 50
-        rowId: 67134
-        questId: HeaVna119_01598
-        genre: Heavensward
-        icon: '71000'
-        link: /quests/msq/heavensward/part1
 
 
   - name: For All the Nights to Come
@@ -68,7 +39,7 @@ quests:
       - id: '2818052'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 2
+    partQuestNo: 1
     requires:
       - name: Sounding Out the Amphitheatre
         level: 51
@@ -99,7 +70,7 @@ quests:
       - id: '2818051'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 3
+    partQuestNo: 2
     requires:
       - name: Sounding Out the Amphitheatre
         level: 51
@@ -130,12 +101,42 @@ quests:
       - id: '2818050'
         name: Aether Current
         type: aethercurrent
-    partQuestNo: 4
+    partQuestNo: 3
     requires:
       - name: Camp of the Convictors
         level: 51
         rowId: 67143
         questId: HeaVna306_01607
+        genre: Heavensward
+        icon: '71000'
+        link: /quests/msq/heavensward/part1
+  - name: Bridge over Frozen Water
+    level: 50
+    rowId: 67280
+    questId: HeaVnz019_01744
+    genre: Coerthan Sidequests
+    icon: '71140'
+    issuer:
+      location: Coerthas Western Highlands
+      coords: (32.4, 35.8)
+      name: Ingaret
+    steps:
+      - location: Coerthas Western Highlands
+        coords: (30.8, 19.0)
+        name: Slay upland mylodons.
+      - location: Coerthas Western Highlands
+        coords: (32.4, 35.8)
+        name: Report to Ingaret.
+    unlocks:
+      - id: '2818049'
+        name: Aether Current
+        type: aethercurrent
+    partQuestNo: 4
+    requires:
+      - name: Disclosure
+        level: 50
+        rowId: 67134
+        questId: HeaVna119_01598
         genre: Heavensward
         icon: '71000'
         link: /quests/msq/heavensward/part1
