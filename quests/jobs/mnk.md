@@ -8,9 +8,11 @@ links:
 quests:
   - name: Way of the Pugilist
     level: 1
-    rowId: 66068
-    questId: ClsPgl011_00532
-    genre: Pugilist Quests
+    rowId: 66069
+    questId: ClsPgl020_00533
+    genre:
+      id: '157'
+      name: Pugilist Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -20,36 +22,46 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (9.7, 10.4)
         name: Speak with Hamon, the master of the Pugilists' Guild.
-    partQuestNo: 1
-  - name: My First Hora
-    level: 1
-    rowId: 66089
-    questId: ClsPgl021_00553
-    genre: Pugilist Quests
-    icon: '71140'
-    issuer:
-      location: Ul'dah - Steps of Nald
-      coords: (9.7, 10.4)
-      name: Hamon
-    steps:
       - location: Central Thanalan
         coords: (18.9, 26.3)
-        name: Slay star marmots as a pugilist.
+        name: Slay star marmots.
       - location: Central Thanalan
         coords: (18.9, 26.3)
-        name: Slay huge hornets as a pugilist.
+        name: Slay huge hornets.
       - location: Central Thanalan
         coords: (22.4, 27.9)
-        name: Slay snapping shrews as a pugilist.
+        name: Slay snapping shrews.
       - location: Ul'dah - Steps of Nald
         coords: (9.7, 10.4)
         name: Report to Hamon at the Pugilists' Guild.
-    partQuestNo: 2
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '1'
+        avg: 400
+      items:
+        - item:
+            name: Marmot Steak
+            id: '4639'
+            icon: '24355'
+            ilvl: '5'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 5
+    partQuestNo: 1
   - name: Harder than Rock
     level: 5
     rowId: 66090
     questId: ClsPgl050_00554
-    genre: Pugilist Quests
+    genre:
+      id: '157'
+      name: Pugilist Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -68,12 +80,102 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (9.7, 10.4)
         name: Report to Hamon at the Pugilists' Guild.
-    partQuestNo: 3
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '5'
+        avg: 1400
+      items:
+        - item:
+            name: Bone Hora
+            id: '1681'
+            icon: '31005'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '1'
+              name: Pugilist's Arm
+              icon: '60101'
+          count: 1
+      optional:
+        - item:
+            name: Custom-made Shirt
+            id: '3002'
+            icon: '42306'
+            ilvl: '6'
+            level: '5'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Leather Eyepatch
+            id: '2653'
+            icon: '40914'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '14'
+            name: Blood Red
+            color: '9517863'
+        - item:
+            name: Fingerless Leather Gloves
+            id: '3530'
+            icon: '44060'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '14'
+            name: Blood Red
+            color: '9517863'
+        - item:
+            name: Altered Thighboots
+            id: '27634'
+            icon: '49077'
+            ilvl: '5'
+            level: '5'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '14'
+            name: Blood Red
+            color: '9517863'
+        - item:
+            name: Allagan Tin Piece
+            id: '5823'
+            icon: '26001'
+            ilvl: '5'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 5
+    partQuestNo: 2
   - name: Burning Up the Quarter Malm
     level: 10
     rowId: 66091
     questId: ClsPgl100_00555
-    genre: Pugilist Quests
+    genre:
+      id: '157'
+      name: Pugilist Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -92,12 +194,106 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (9.7, 10.4)
         name: Report to Hamon at the Pugilists' Guild.
-    partQuestNo: 4
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '10'
+        avg: 3420
+      items:
+        - item:
+            name: Ramhorn Claws
+            id: '1683'
+            icon: '31052'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '1'
+              name: Pugilist's Arm
+              icon: '60101'
+          count: 1
+      optional:
+        - item:
+            name: Leather Jacket
+            id: '3016'
+            icon: '43026'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '9'
+            name: Rolanberry Red
+            color: '5969705'
+        - item:
+            name: Bronze Sallet
+            id: '2662'
+            icon: '40020'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '9'
+            name: Rolanberry Red
+            color: '5969705'
+        - item:
+            name: Hempen Bracers
+            id: '3539'
+            icon: '44042'
+            ilvl: '11'
+            level: '11'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '9'
+            name: Rolanberry Red
+            color: '5969705'
+        - item:
+            name: Leather Jackboots
+            id: '3770'
+            icon: '46816'
+            ilvl: '10'
+            level: '10'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '9'
+            name: Rolanberry Red
+            color: '5969705'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
+    partQuestNo: 3
   - name: The Spirit Is Willing
     level: 15
     rowId: 66094
     questId: ClsPgl150_00558
-    genre: Pugilist Quests
+    genre:
+      id: '157'
+      name: Pugilist Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -125,6 +321,9 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (9.9, 10.2)
         name: Speak with Chuchuto at the Pugilists' Guild.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 19
       timeLimit: 30
@@ -134,12 +333,103 @@ quests:
         name: Steel Peak
         icon: '2530'
         type: action
-    partQuestNo: 5
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '15'
+        avg: 5760
+      items:
+        - item:
+            name: Hard Leather Himantes
+            id: '1685'
+            icon: '31008'
+            ilvl: '14'
+            level: '14'
+            category:
+              id: '1'
+              name: Pugilist's Arm
+              icon: '60101'
+          count: 1
+      optional:
+        - item:
+            name: Cotton Shirt
+            id: '3022'
+            icon: '42105'
+            ilvl: '14'
+            level: '14'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '66'
+            name: Ceruleum Blue
+            color: '5199718'
+        - item:
+            name: Hunting Hat
+            id: '2677'
+            icon: '41046'
+            ilvl: '16'
+            level: '16'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '66'
+            name: Ceruleum Blue
+            color: '5199718'
+        - item:
+            name: Fingerless Hard Leather Gloves
+            id: '3546'
+            icon: '44061'
+            ilvl: '15'
+            level: '15'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '66'
+            name: Ceruleum Blue
+            color: '5199718'
+        - item:
+            name: Hard Leather Crakows
+            id: '3780'
+            icon: '46155'
+            ilvl: '15'
+            level: '15'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '66'
+            name: Ceruleum Blue
+            color: '5199718'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 3
+    partQuestNo: 4
   - name: Keeping the Spirit Alive
     level: 20
     rowId: 66098
     questId: ClsPgl200_00562
-    genre: Pugilist Quests
+    genre:
+      id: '157'
+      name: Pugilist Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -161,16 +451,110 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (9.7, 10.4)
         name: Speak with Hamon.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 24
       timeLimit: 30
       id: '31'
-    partQuestNo: 6
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '20'
+        avg: 6960
+      items:
+        - item:
+            name: Goatskin Cesti
+            id: '1688'
+            icon: '31009'
+            ilvl: '19'
+            level: '19'
+            category:
+              id: '1'
+              name: Pugilist's Arm
+              icon: '60101'
+          count: 1
+      optional:
+        - item:
+            name: Goatskin Jacket
+            id: '3043'
+            icon: '43030'
+            ilvl: '20'
+            level: '20'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '40'
+            name: Cream Yellow
+            color: '15914864'
+        - item:
+            name: Goatskin Eyepatch
+            id: '2710'
+            icon: '40891'
+            ilvl: '20'
+            level: '20'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '40'
+            name: Cream Yellow
+            color: '15914864'
+        - item:
+            name: Goatskin Armguards
+            id: '3559'
+            icon: '48324'
+            ilvl: '20'
+            level: '20'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '40'
+            name: Cream Yellow
+            color: '15914864'
+        - item:
+            name: Goatskin Leg Guards
+            id: '3791'
+            icon: '46321'
+            ilvl: '20'
+            level: '20'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '40'
+            name: Cream Yellow
+            color: '15914864'
+        - item:
+            name: Allagan Bronze Piece
+            id: '5824'
+            icon: '26001'
+            ilvl: '15'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 5
+    partQuestNo: 5
   - name: Star-crossed Rivals
     level: 25
     rowId: 66102
     questId: ClsPgl250_00566
-    genre: Pugilist Quests
+    genre:
+      id: '157'
+      name: Pugilist Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -192,16 +576,110 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (9.7, 10.4)
         name: Report to Hamon at the Pugilists' Guild.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 29
       timeLimit: 30
       id: '32'
-    partQuestNo: 7
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '25'
+        avg: 8160
+      items:
+        - item:
+            name: Toadskin Cesti
+            id: '1697'
+            icon: '31012'
+            ilvl: '26'
+            level: '26'
+            category:
+              id: '1'
+              name: Pugilist's Arm
+              icon: '60101'
+          count: 1
+      optional:
+        - item:
+            name: Velveteen Shirt
+            id: '3066'
+            icon: '42226'
+            ilvl: '25'
+            level: '25'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Fingerless Goatskin Gloves
+            id: '3576'
+            icon: '44062'
+            ilvl: '25'
+            level: '25'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Velveteen Sarouel
+            id: '3349'
+            icon: '45178'
+            ilvl: '25'
+            level: '25'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Altered Velveteen Bandana
+            id: '27638'
+            icon: '41774'
+            ilvl: '25'
+            level: '25'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '55'
+            name: Nophica Green
+            color: '3886396'
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
+    partQuestNo: 6
   - name: Return of the Holyfist
     level: 30
     rowId: 66103
     questId: ClsPgl300_00567
-    genre: Pugilist Quests
+    genre:
+      id: '157'
+      name: Pugilist Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -223,19 +701,110 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (9.7, 10.4)
         name: Speak with Hamon at the Pugilists' Guild.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 34
       timeLimit: 30
       id: '33'
-    partQuestNo: 8
-
-
-
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '30'
+        avg: 12480
+      items:
+        - item:
+            name: Steel Claws
+            id: '1699'
+            icon: '31019'
+            ilvl: '29'
+            level: '29'
+            category:
+              id: '1'
+              name: Pugilist's Arm
+              icon: '60101'
+          count: 1
+      optional:
+        - item:
+            name: Toadskin Jacket
+            id: '3100'
+            icon: '43085'
+            ilvl: '30'
+            level: '30'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+          stain:
+            id: '68'
+            name: Ink Blue
+            color: '1711911'
+        - item:
+            name: Steel Sallet
+            id: '2753'
+            icon: '40035'
+            ilvl: '30'
+            level: '30'
+            category:
+              id: '34'
+              name: Head
+              icon: '60124'
+          count: 1
+          stain:
+            id: '68'
+            name: Ink Blue
+            color: '1711911'
+        - item:
+            name: Toadskin Armguards
+            id: '3597'
+            icon: '48329'
+            ilvl: '30'
+            level: '30'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+          stain:
+            id: '68'
+            name: Ink Blue
+            color: '1711911'
+        - item:
+            name: Toadskin Leg Guards
+            id: '3827'
+            icon: '46323'
+            ilvl: '30'
+            level: '30'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+          stain:
+            id: '68'
+            name: Ink Blue
+            color: '1711911'
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 3
+    partQuestNo: 7
   - name: Brother from Another Mother
     level: 30
     rowId: 66597
     questId: JobMnk300_01061
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -254,6 +823,9 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (10.6, 13.1)
         name: Deliver the aetherometer to Erik.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 34
       timeLimit: 30
@@ -265,18 +837,25 @@ quests:
         type: action
     requires:
       - name: Sylph-management
+        link: /quests/msq/realm-reborn/part2
         level: 20
         rowId: 66049
         questId: ManFst304_00513
         genre: Seventh Umbral Era
         icon: '71000'
-        link: /quests/msq/realm-reborn/part2
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '30'
+        avg: 12480
     partQuestNo: 9
   - name: Insulted Intelligence
     level: 35
     rowId: 66598
     questId: JobMnk350_01062
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -292,17 +871,27 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (10.6, 13.1)
         name: Deliver the aetherometer to Erik at the Goldsmiths' Guild.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - id: '25762'
         name: Thunderclap
         icon: '2975'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '35'
+        avg: 15840
     partQuestNo: 10
   - name: A Slave to the Aether
     level: 40
     rowId: 66599
     questId: JobMnk400_01063
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -321,17 +910,27 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (10.6, 13.1)
         name: Deliver both aetherometers to Erik at the Goldsmiths' Guild.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - id: '25763'
         name: Howling Fist
         icon: '207'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '40'
+        avg: 21560
     partQuestNo: 11
   - name: The Pursuit of Power
     level: 45
     rowId: 66600
     questId: JobMnk450_01064
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -347,17 +946,27 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (10.6, 13.1)
         name: Deliver the aetherometer to Erik at the Goldsmiths' Guild.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - id: '16473'
         name: Four-point Fury
         icon: '2544'
         type: action
+    rewards:
+      xp:
+        factor: 200
+        paramGrowId: '45'
+        avg: 11880
     partQuestNo: 12
   - name: Good Vibrations
     level: 45
     rowId: 66601
     questId: JobMnk451_01065
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -391,12 +1000,22 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (10.6, 13.1)
         name: Speak with Erik at the Goldsmiths' Guild.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 200
+        paramGrowId: '45'
+        avg: 11880
     partQuestNo: 13
   - name: Five Easy Pieces
     level: 50
     rowId: 66602
     questId: JobMnk500_01066
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -409,6 +1028,9 @@ quests:
       - location: Mor Dhona
         coords: (23.5, 10.8)
         name: Speak with Widargelt.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 50
       timeLimit: 30
@@ -421,12 +1043,42 @@ quests:
       - id: 408
         name: Bulletproof I
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '50'
+        avg: 46800
+      items:
+        - item:
+            name: Temple Cyclas
+            id: '3221'
+            icon: '43092'
+            ilvl: '55'
+            level: '50'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Melee Attire Coffer (IL 90)
+            id: '20643'
+            icon: '26509'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 14
   - name: The Legend Continues
     level: 50
     rowId: 67562
     questId: JobMnk501_02026
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -457,12 +1109,31 @@ quests:
       - location: Mor Dhona
         coords: (21.8, 7.8)
         name: Speak with Widargelt at Revenant's Toll.
+    expansion:
+      id: '1'
+      name: Heavensward
+    requires:
+      - name: Before the Dawn
+        link: /quests/msq/realm-reborn/part6
+        level: 50
+        rowId: 65964
+        questId: GaiUse616_00428
+        genre: Seventh Astral Era
+        icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '50'
+        avg: 46800
+      gil: 1018
     partQuestNo: 15
   - name: Let's Talk about Sects
     level: 52
     rowId: 67563
     questId: JobMnk520_02027
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Mor Dhona
@@ -496,17 +1167,28 @@ quests:
       - location: Mor Dhona
         coords: (21.8, 7.8)
         name: Speak with Widargelt at Revenant's Toll.
+    expansion:
+      id: '1'
+      name: Heavensward
     unlocks:
       - id: '4262'
         name: Form Shift
         icon: '2536'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '52'
+        avg: 48360
+      gil: 718
     partQuestNo: 16
   - name: Against the Shadow
     level: 54
     rowId: 67564
     questId: JobMnk540_02028
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Mor Dhona
@@ -522,6 +1204,9 @@ quests:
       - location: Mor Dhona
         coords: (21.8, 7.8)
         name: Speak with Widargelt at Revenant's Toll.
+    expansion:
+      id: '1'
+      name: Heavensward
     soloDuty:
       levelSync: 56
       timeLimit: 30
@@ -531,12 +1216,20 @@ quests:
         name: the Forbidden Chakra
         icon: '2535'
         type: action
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '54'
+        avg: 49920
+      gil: 1076
     partQuestNo: 17
   - name: Fight the Battle to Win
     level: 56
     rowId: 67565
     questId: JobMnk560_02029
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Mor Dhona
@@ -555,12 +1248,23 @@ quests:
       - location: Mor Dhona
         coords: (21.8, 7.8)
         name: Speak with Widargelt at Revenant's Toll.
+    expansion:
+      id: '1'
+      name: Heavensward
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '56'
+        avg: 51480
+      gil: 1124
     partQuestNo: 18
   - name: Stop the Senseless Killing
     level: 58
     rowId: 67566
     questId: JobMnk580_02030
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Mor Dhona
@@ -585,12 +1289,23 @@ quests:
       - location: Mor Dhona
         coords: (21.8, 7.8)
         name: Speak with Widargelt at Revenant's Toll.
+    expansion:
+      id: '1'
+      name: Heavensward
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '58'
+        avg: 53040
+      gil: 1447
     partQuestNo: 19
   - name: Appetite for Destruction
     level: 60
     rowId: 67567
     questId: JobMnk600_02031
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Mor Dhona
@@ -606,6 +1321,9 @@ quests:
       - location: Southern Thanalan
         coords: (18.5, 16.2)
         name: Speak with Widargelt.
+    expansion:
+      id: '1'
+      name: Heavensward
     soloDuty:
       levelSync: 60
       timeLimit: 30
@@ -618,12 +1336,32 @@ quests:
       - id: 1142
         name: Bulletproof II
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '60'
+        avg: 100000
+      gil: 1413
+      items:
+        - item:
+            name: Tantra Attire Coffer (IL 210)
+            id: '20656'
+            icon: '26509'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 20
   - name: A Fistful of Resolve
     level: 60
     rowId: 67962
     questId: JobMnk601_02426
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -642,12 +1380,31 @@ quests:
       - location: Mor Dhona
         coords: (21.8, 7.8)
         name: Speak with Widargelt at Revenant's Toll.
+    expansion:
+      id: '2'
+      name: Stormblood
+    requires:
+      - name: The Far Edge of Fate
+        link: /quests/msq/heavensward/part4
+        level: 60
+        rowId: 67895
+        questId: HeaVng104_02359
+        genre: Post-Dragonsong War
+        icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '60'
+        avg: 100000
+      gil: 1767
     partQuestNo: 21
   - name: Return of the Monk
     level: 63
     rowId: 67963
     questId: JobMnk630_02427
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: Mor Dhona
@@ -675,12 +1432,31 @@ quests:
       - location: The Peaks
         coords: (22.5, 5.6)
         name: Speak with Widargelt.
+    expansion:
+      id: '2'
+      name: Stormblood
+    requires:
+      - name: Stormblood
+        link: /quests/msq/stormblood/part2
+        level: 70
+        rowId: 68089
+        questId: StmBda706_02553
+        genre: Stormblood
+        icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '63'
+        avg: 103000
+      gil: 1628
     partQuestNo: 22
   - name: Cross-fist Training
     level: 65
     rowId: 67964
     questId: JobMnk650_02428
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: The Peaks
@@ -708,12 +1484,23 @@ quests:
       - location: The Peaks
         coords: (22.5, 5.6)
         name: Speak with Widargelt.
+    expansion:
+      id: '2'
+      name: Stormblood
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '65'
+        avg: 105000
+      gil: 3061
     partQuestNo: 23
   - name: Choices and Paths
     level: 68
     rowId: 67965
     questId: JobMnk680_02429
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: The Peaks
@@ -744,16 +1531,27 @@ quests:
       - location: The Peaks
         coords: (22.5, 5.6)
         name: Speak with Widargelt in Ala Gannha.
+    expansion:
+      id: '2'
+      name: Stormblood
     soloDuty:
       levelSync: 70
       timeLimit: 30
       id: '152'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '68'
+        avg: 108000
+      gil: 3074
     partQuestNo: 24
   - name: The Power to Protect
     level: 70
     rowId: 67966
     questId: JobMnk700_02430
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71140'
     issuer:
       location: The Peaks
@@ -781,6 +1579,9 @@ quests:
       - location: The Peaks
         coords: (22.5, 5.6)
         name: Speak with Widargelt.
+    expansion:
+      id: '2'
+      name: Stormblood
     soloDuty:
       levelSync: 70
       timeLimit: 30
@@ -793,12 +1594,32 @@ quests:
       - id: 1798
         name: Bulletproof III
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '70'
+        avg: 216000
+      gil: 2600
+      items:
+        - item:
+            name: Pacifist's Attire Coffer (IL 290)
+            id: '20276'
+            icon: '26509'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 25
   - name: A Monk's Legacy
     level: 80
     rowId: 68747
     questId: LucKbc002_03211
-    genre: Monk Quests
+    genre:
+      id: '177'
+      name: Monk Quests
     icon: '71020'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -817,12 +1638,67 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (10.6, 13.1)
         name: Report to Erik at the Goldsmiths' Guild.
+    expansion:
+      id: '3'
+      name: Shadowbringers
     unlocks:
       - id: 2307
         name: Bulletproof IV
         type: achievement
+    requires:
+      - name: Courage Born of Fear
+        link: /quests/role/shadowbringers/physical-dps
+        level: 80
+        rowId: 68814
+        questId: LucKba351_03278
+        genre: Physical DPS Role Quests (Shadowbringers)
+        icon: '71140'
+      - name: Shadowbringers
+        link: /quests/msq/shadowbringers/part2
+        level: 80
+        rowId: 69190
+        questId: LucKmf111_03654
+        genre: Shadowbringers
+        icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '80'
+        avg: 448800
+      gil: 3645
+      items:
+        - item:
+            name: Heavens' Eye Materia VII
+            id: '25187'
+            icon: '20274'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia VII
+            id: '25188'
+            icon: '20274'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia VII
+            id: '25189'
+            icon: '20274'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 26
-
-
-
 ---
