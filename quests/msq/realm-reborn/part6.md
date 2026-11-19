@@ -13,7 +13,9 @@ quests:
     level: 50
     rowId: 65588
     questId: GaiUse401_00052
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -29,12 +31,75 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (8.5, 9.0)
         name: Speak with Raubahn at the Hall of Flames.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    requires:
+      - name: Brave New Companions
+        level: 50
+        rowId: 66996
+        questId: GaiUse319_01460
+        genre: Seventh Astral Era
+        icon: '71000'
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 901
+      optional:
+        - item:
+            name: Noct Gauntlets
+            id: '7296'
+            icon: '44255'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+        - item:
+            name: Astrum Armguards
+            id: '7306'
+            icon: '48420'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+        - item:
+            name: Gloam Bracers
+            id: '7312'
+            icon: '44257'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 1
   - name: Back and Fourth
     level: 50
     rowId: 65589
     questId: GaiUse402_00053
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -60,12 +125,68 @@ quests:
       - location: The Rising Stones
         coords: (6.7, 6.1)
         name: Report to Alphinaud at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 2000
+      optional:
+        - item:
+            name: Auroral Bracers
+            id: '7322'
+            icon: '44258'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+        - item:
+            name: Daystar Gloves
+            id: '7332'
+            icon: '44256'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+        - item:
+            name: Evenstar Gloves
+            id: '7342'
+            icon: '44254'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '37'
+              name: Hands
+              icon: '60129'
+          count: 1
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 2
   - name: Coming to Terms
     level: 50
     rowId: 65590
     questId: GaiUse403_00054
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -81,12 +202,80 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.8, 17.0)
         name: Speak with the House Fortemps guard.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 901
+      items:
+        - item:
+            name: Shark Fin Soup
+            id: '9333'
+            icon: '24115'
+            ilvl: '90'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 1
+      optional:
+        - item:
+            name: Noct Breeches
+            id: '7297'
+            icon: '45432'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+        - item:
+            name: Astrum Hose
+            id: '7307'
+            icon: '45434'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+        - item:
+            name: Gloam Brais
+            id: '7313'
+            icon: '45435'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 3
   - name: The Intercession of Saints
     level: 50
     rowId: 65593
     questId: GaiUse404_00057
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -105,12 +294,68 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.7, 17.5)
         name: Report to Alphinaud.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 658
+      optional:
+        - item:
+            name: Auroral Brais
+            id: '7323'
+            icon: '45436'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+        - item:
+            name: Daystar Breeches
+            id: '7333'
+            icon: '45433'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+        - item:
+            name: Evenstar Tights
+            id: '7343'
+            icon: '45431'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '36'
+              name: Legs
+              icon: '60128'
+          count: 1
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 4
   - name: Strength in Unity
     level: 50
     rowId: 65598
     questId: GaiUse405_00062
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -120,12 +365,68 @@ quests:
       - location: Coerthas Central Highlands
         coords: (12.8, 17.5)
         name: Speak with Drillemont at Whitebrim Front.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 517
+      optional:
+        - item:
+            name: Noct Greaves
+            id: '7298'
+            icon: '46930'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+        - item:
+            name: Astrum Sabatons
+            id: '7308'
+            icon: '46932'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+        - item:
+            name: Gloam Boots
+            id: '7314'
+            icon: '46933'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 5
   - name: Dark Words, Dark Deeds
     level: 50
     rowId: 65605
     questId: GaiUse406_00069
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -147,12 +448,80 @@ quests:
       - location: Coerthas Central Highlands
         coords: (12.8, 17.5)
         name: Report to Drillemont.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 517
+      items:
+        - item:
+            name: Bacon Bread
+            id: '9331'
+            icon: '24012'
+            ilvl: '110'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 1
+      optional:
+        - item:
+            name: Auroral Boots
+            id: '7324'
+            icon: '46934'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+        - item:
+            name: Daystar Sollerets
+            id: '7334'
+            icon: '46931'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+        - item:
+            name: Evenstar Bootees
+            id: '7344'
+            icon: '46396'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '38'
+              name: Feet
+              icon: '60130'
+          count: 1
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 6
   - name: First Blood
     level: 50
     rowId: 65610
     questId: GaiUse407_00074
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -168,12 +537,23 @@ quests:
       - location: Coerthas Central Highlands
         coords: (12.8, 17.5)
         name: Deliver the heretic's parchment to Drillemont.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 658
     partQuestNo: 7
   - name: The Path of the Righteous
     level: 50
     rowId: 65611
     questId: GaiUse408_00075
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -198,17 +578,30 @@ quests:
       - location: Coerthas Central Highlands
         coords: (3.4, 21.3)
         name: Report to Alphinaud.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - name: Snowcloak
         type: dungeon
         levelRequired: 50
         levelSync: 50
+        ilevelRequired: 80
+        ilevelSync: 0
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 2908
     partQuestNo: 8
   - name: For the Greater Good
     level: 50
     rowId: 65613
     questId: GaiUse409_00077
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -239,12 +632,23 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.0, 28.4)
         name: Speak with Alphinaud.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 799
     partQuestNo: 9
   - name: Tendrils of Intrigue
     level: 50
     rowId: 65614
     questId: GaiUse410_00078
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -266,12 +670,80 @@ quests:
       - location: New Gridania
         coords: (10.2, 11.6)
         name: Speak with Ilberd in New Gridania.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 1101
+      items:
+        - item:
+            name: Haddock Dip
+            id: '9334'
+            icon: '24258'
+            ilvl: '90'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 1
+      optional:
+        - item:
+            name: Noct Lorica
+            id: '7295'
+            icon: '43203'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Suit of Astrum Mail
+            id: '7305'
+            icon: '43204'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Gloam Tabard
+            id: '7311'
+            icon: '42378'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 10
   - name: Chasing Ivy
     level: 50
     rowId: 69422
     questId: XxaUse411_03886
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: New Gridania
@@ -290,12 +762,80 @@ quests:
       - location: New Gridania
         coords: (12.2, 13.2)
         name: Report to Ilberd.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 658
+      items:
+        - item:
+            name: Triple Cream Coffee
+            id: '9330'
+            icon: '24407'
+            ilvl: '110'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 1
+      optional:
+        - item:
+            name: Auroral Tabard
+            id: '7321'
+            icon: '42379'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Daystar Robe
+            id: '7331'
+            icon: '42377'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Evenstar Coat
+            id: '7341'
+            icon: '42376'
+            ilvl: '110'
+            level: '50'
+            category:
+              id: '35'
+              name: Body
+              icon: '60126'
+          count: 1
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 2
     partQuestNo: 11
   - name: In Flagrante Delicto
     level: 50
     rowId: 69423
     questId: XxaUse413_03887
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: New Gridania
@@ -317,12 +857,23 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 1025
     partQuestNo: 12
   - name: A Simple Plan
     level: 50
     rowId: 65618
     questId: GaiUse414_00082
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -338,12 +889,35 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 658
+      items:
+        - item:
+            name: Bacon Broth
+            id: '9335'
+            icon: '24103'
+            ilvl: '110'
+            level: '1'
+            category:
+              id: '46'
+              name: Meal
+              icon: '60146'
+          count: 1
     partQuestNo: 13
   - name: The Instruments of Our Deliverance
     level: 50
     rowId: 65620
     questId: GaiUse415_00084
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -368,17 +942,30 @@ quests:
       - location: Coerthas Central Highlands
         coords: (3.3, 21.2)
         name: Speak with Moenbryda.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - name: the Akh Afah Amphitheatre (Hard)
         type: trial
         levelRequired: 50
         levelSync: 50
+        ilevelRequired: 80
+        ilevelSync: 0
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 3108
     partQuestNo: 14
   - name: The Road Less Traveled
     level: 50
     rowId: 65622
     questId: GaiUse416_00086
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -394,12 +981,23 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.8, 17.0)
         name: Speak with the House Fortemps guard.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 758
     partQuestNo: 15
   - name: Eyes Unclouded
     level: 50
     rowId: 65623
     questId: GaiUse417_00087
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -409,12 +1007,23 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 760
     partQuestNo: 16
   - name: The Reason Roaille
     level: 50
     rowId: 65624
     questId: GaiUse418_00088
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -433,15 +1042,39 @@ quests:
       - location: Northern Thanalan
         coords: (17.3, 18.8)
         name: Speak with Alphinaud.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     soloDuty:
       levelSync: 50
       timeLimit: 30
+      id: '101'
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 2000
+      items:
+        - item:
+            name: Level 50 Weapon Coffer (IL 110)
+            id: '31701'
+            icon: '26557'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 17
   - name: Let Us Cling Together
     level: 50
     rowId: 65625
     questId: GaiUse419_00089
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Northern Thanalan
@@ -451,10 +1084,19 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Report to Minfilia at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - id: 1029
         name: Dreams of Ice
         type: achievement
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 7000
     partQuestNo: 18
   - name: Good Intentions
     level: 50
@@ -473,6 +1115,15 @@ quests:
       - location: Eastern Thanalan
         coords: (21.1, 21.1)
         name: Speak with Ilberd at Highbridge.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 802
     partQuestNo: 19
     requires:
       - name: Ifrit Bleeds, We Can Kill It
@@ -506,7 +1157,9 @@ quests:
     level: 50
     rowId: 65900
     questId: GaiUse502_00364
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Eastern Thanalan
@@ -525,12 +1178,23 @@ quests:
       - location: Eastern Thanalan
         coords: (25.3, 25.6)
         name: Investigate the disturbance.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 958
     partQuestNo: 20
-  - name: Best Laid Schemes
+  - name: Best-laid Schemes
     level: 50
     rowId: 65901
     questId: GaiUse503_00365
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Eastern Thanalan
@@ -549,12 +1213,23 @@ quests:
       - location: The Rising Stones
         coords: (6.0, 5.9)
         name: Speak with Tataru in the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 1077
     partQuestNo: 21
   - name: The Rising Chorus
     level: 50
     rowId: 65902
     questId: GaiUse504_00366
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -582,17 +1257,30 @@ quests:
       - location: The Rising Stones
         coords: (6.0, 6.0)
         name: Speak with Alphinaud.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - name: the Keeper of the Lake
         type: dungeon
         levelRequired: 50
         levelSync: 50
+        ilevelRequired: 90
+        ilevelSync: 0
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 2486
     partQuestNo: 22
   - name: Aether on Demand
     level: 50
     rowId: 69424
     questId: XxaUse505_03888
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -614,12 +1302,23 @@ quests:
       - location: Northern Thanalan
         coords: (20.9, 22.1)
         name: Report to Edelstein.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 1019
     partQuestNo: 23
   - name: On the Counteroffensive
     level: 50
     rowId: 65904
     questId: GaiUse506_00368
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Northern Thanalan
@@ -644,12 +1343,23 @@ quests:
       - location: Northern Thanalan
         coords: (20.9, 22.1)
         name: Report to Edelstein.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 758
     partQuestNo: 24
   - name: An Uninvited Ascian
     level: 50
     rowId: 65905
     questId: GaiUse507_00369
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Northern Thanalan
@@ -671,17 +1381,64 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - name: the Chrysalis
         type: trial
         levelRequired: 50
         levelSync: 50
+        ilevelRequired: 90
+        ilevelSync: 0
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 2064
+      optional:
+        - item:
+            name: Heavens' Eye Materia IV
+            id: '5667'
+            icon: '20224'
+            ilvl: '70'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia IV
+            id: '5672'
+            icon: '20224'
+            ilvl: '70'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia IV
+            id: '5677'
+            icon: '20224'
+            ilvl: '70'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 25
   - name: In Memory of Moenbryda
     level: 50
     rowId: 65965
     questId: GaiUse508_00429
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -694,12 +1451,23 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 7000
     partQuestNo: 26
   - name: Mask of Grief
     level: 50
     rowId: 65906
     questId: GaiUse601_00370
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -718,12 +1486,23 @@ quests:
       - location: The Rising Stones
         coords: (6.0, 5.2)
         name: Speak with Alphinaud at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 658
     partQuestNo: 27
   - name: Defenders for Ishgard
     level: 50
     rowId: 65907
     questId: GaiUse602_00371
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -739,12 +1518,23 @@ quests:
       - location: Coerthas Central Highlands
         coords: (18.6, 15.4)
         name: Speak with Alphinaud at the Gates of Judgement.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 617
     partQuestNo: 28
   - name: The Wyrm's Roar
     level: 50
     rowId: 65908
     questId: GaiUse603_00372
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -760,19 +1550,23 @@ quests:
       - location: Intercessory
         coords: (6.0, 6.1)
         name: Speak with Alphinaud.
-    # requires:
-    #   - name: Eye of the Dragon
-    #     level: 30
-    #     rowId: 66603
-    #     questId: JobDrg300_01067
-    #     genre: Dragoon Quests
-    #     icon: '71140'
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 767
     partQuestNo: 29
   - name: Committed to the Cause
     level: 50
     rowId: 65909
     questId: GaiUse604_00373
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Intercessory
@@ -782,12 +1576,23 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 517
     partQuestNo: 30
   - name: Volunteer Dragonslayers
     level: 50
     rowId: 65927
     questId: GaiUse605_00391
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -809,12 +1614,23 @@ quests:
       - location: Mor Dhona
         coords: (22.1, 8.3)
         name: Speak with Tataru.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 901
     partQuestNo: 31
   - name: An Allied Perspective
     level: 50
     rowId: 65954
     questId: GaiUse606_00418
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Mor Dhona
@@ -839,12 +1655,23 @@ quests:
       - location: Coerthas Central Highlands
         coords: (18.1, 14.9)
         name: Report to Marcelain.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 2000
     partQuestNo: 32
   - name: The Steps of Faith
     level: 50
     rowId: 70127
     questId: XxcUse607_04591
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -863,13 +1690,53 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia at the Rising Stones.
-    soloDuty: null
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    soloDuty:
+      levelSync: 50
+      id: '5063'
+    unlocks:
+      - id: 1065
+        name: Broken Bridges
+        type: achievement
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 3306
+      optional:
+        - item:
+            name: Quickarm Materia IV
+            id: '5717'
+            icon: '20228'
+            ilvl: '70'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Quicktongue Materia IV
+            id: '5722'
+            icon: '20228'
+            ilvl: '70'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 33
   - name: Administrative Decision
     level: 50
     rowId: 65956
     questId: GaiUse608_00420
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -888,12 +1755,23 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 517
     partQuestNo: 34
   - name: An Unexpected Ambition
     level: 50
     rowId: 65957
     questId: GaiUse609_00421
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -915,12 +1793,23 @@ quests:
       - location: Limsa Lominsa Lower Decks
         coords: (4.7, 11.4)
         name: Speak with Thubyrgeim.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 961
     partQuestNo: 35
   - name: Ancient Ways, Timeless Wants
     level: 50
     rowId: 65958
     questId: GaiUse610_00422
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Limsa Lominsa Lower Decks
@@ -942,6 +1831,15 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 1343
     requires:
       - name: The Light of Hope
         level: 50
@@ -951,12 +1849,13 @@ quests:
         icon: '71140'
         link: /quests/alliance/crystal-tower
     partQuestNo: 36
-
   - name: Where We Are Needed
     level: 50
     rowId: 65959
     questId: GaiUse611_00423
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -999,12 +1898,23 @@ quests:
       - location: South Shroud
         coords: (17.3, 28.7)
         name: Speak with the unsettled scholar at Camp Tranquil.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 1351
     partQuestNo: 37
   - name: The Least among Us
     level: 50
     rowId: 65960
     questId: GaiUse612_00424
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: South Shroud
@@ -1020,12 +1930,57 @@ quests:
       - location: The Rising Stones
         coords: (6.1, 5.2)
         name: Speak with Minfilia at the Rising Stones.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 930
+      optional:
+        - item:
+            name: Durability Draught
+            id: '7060'
+            icon: '20644'
+            ilvl: '45'
+            level: '1'
+            category:
+              id: '44'
+              name: Medicine
+              icon: '60136'
+          count: 2
+        - item:
+            name: Spiritbond Potion
+            id: '7059'
+            icon: '20645'
+            ilvl: '55'
+            level: '1'
+            category:
+              id: '44'
+              name: Medicine
+              icon: '60136'
+          count: 2
+        - item:
+            name: Allagan Silver Piece
+            id: '5825'
+            icon: '26001'
+            ilvl: '25'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 38
   - name: A Time to Every Purpose
     level: 50
     rowId: 65961
     questId: GaiUse613_00425
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: The Rising Stones
@@ -1035,12 +1990,23 @@ quests:
       - location: Ul'dah - Steps of Thal
         coords: (11.1, 11.6)
         name: Speak with Minfilia on the Royal Promenade.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 877
     partQuestNo: 39
   - name: Come, but Not Gone
     level: 50
     rowId: 65962
     questId: GaiUse614_00426
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Ul'dah - Steps of Thal
@@ -1062,12 +2028,23 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (11.6, 9.6)
         name: Show the clouded vial to Momodi.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 869
     partQuestNo: 40
   - name: The Parting Glass
     level: 50
     rowId: 65963
     questId: GaiUse615_00427
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -1083,12 +2060,23 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.7, 17.4)
         name: Speak with Haurchefant at Camp Dragonhead.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 1502
     partQuestNo: 41
   - name: Before the Dawn
     level: 50
     rowId: 65964
     questId: GaiUse616_00428
-    genre: Seventh Astral Era
+    genre:
+      id: '2'
+      name: Seventh Astral Era
     icon: '71000'
     issuer:
       location: Coerthas Central Highlands
@@ -1098,11 +2086,25 @@ quests:
       - location: Coerthas Central Highlands
         coords: (26.8, 17.0)
         name: Speak with the House Fortemps guard.
+    expansion:
+      id: '0'
+      name: A Realm Reborn
     unlocks:
       - id: 1129
         name: My Left Arm
         type: achievement
+    rewards:
+      xp:
+        factor: 20
+        paramGrowId: '50'
+        avg: 2340
+      gil: 10000
     partQuestNo: 42
 
 
+
+
+
 ---
+
+
