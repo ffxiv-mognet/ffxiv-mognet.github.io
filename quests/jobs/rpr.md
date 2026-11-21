@@ -10,7 +10,9 @@ quests:
     level: 70
     rowId: 69609
     questId: AktKbb201_04073
-    genre: Reaper Quests
+    genre:
+      id: '194'
+      name: Reaper Quests
     icon: '71140'
     issuer:
       location: Ul'dah - Steps of Nald
@@ -29,12 +31,57 @@ quests:
       - location: Lemures Headquarters
         coords: (6.1, 6.0)
         name: Speak with Drusilla.
+    expansion:
+      id: '4'
+      name: Endwalker
+    rewards:
+      xp:
+        factor: 200
+        paramGrowId: '70'
+        avg: 108000
+      gil: 970
+      items:
+        - item:
+            name: Soul of the Reaper
+            id: '33354'
+            icon: '26063'
+            ilvl: '30'
+            level: '30'
+            category:
+              id: '62'
+              name: Soul Crystal
+              icon: '60157'
+          count: 1
+        - item:
+            name: Muzhik Attire Coffer (IL 385)
+            id: '35872'
+            icon: '26509'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
+        - item:
+            name: Deepgold War Scythe
+            id: '35760'
+            icon: '37231'
+            ilvl: '385'
+            level: '70'
+            category:
+              id: '108'
+              name: Reaper's Arm
+              icon: '60183'
+          count: 1
     partQuestNo: 1
   - name: The Harvest Begins
     level: 70
     rowId: 69610
     questId: AktKbb202_04074
-    genre: Reaper Quests
+    genre:
+      id: '194'
+      name: Reaper Quests
     icon: '71140'
     issuer:
       location: Lemures Headquarters
@@ -53,15 +100,26 @@ quests:
       - location: Lemures Headquarters
         coords: (6.1, 6.0)
         name: Speak with Drusilla at Lemures headquarters.
+    expansion:
+      id: '4'
+      name: Endwalker
     soloDuty:
       levelSync: 70
       id: '5053'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '70'
+        avg: 216000
+      gil: 2343
     partQuestNo: 2
   - name: On the Hunt
     level: 73
     rowId: 69611
     questId: AktKbb211_04075
-    genre: Reaper Quests
+    genre:
+      id: '194'
+      name: Reaper Quests
     icon: '71140'
     issuer:
       location: Lemures Headquarters
@@ -81,12 +139,23 @@ quests:
       - location: Lemures Headquarters
         coords: (6.1, 6.0)
         name: Speak with Drusilla at Lemures headquarters.
+    expansion:
+      id: '4'
+      name: Endwalker
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '73'
+        avg: 220320
+      gil: 1848
     partQuestNo: 3
   - name: Dark Days
     level: 75
     rowId: 69612
     questId: AktKbb221_04076
-    genre: Reaper Quests
+    genre:
+      id: '194'
+      name: Reaper Quests
     icon: '71140'
     issuer:
       location: Lemures Headquarters
@@ -108,12 +177,23 @@ quests:
       - location: Lemures Headquarters
         coords: (6.1, 6.0)
         name: Speak with Drusilla at Lemures headquarters.
+    expansion:
+      id: '4'
+      name: Endwalker
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '75'
+        avg: 223200
+      gil: 1556
     partQuestNo: 4
   - name: Thicker than Blood
     level: 78
     rowId: 69613
     questId: AktKbb231_04077
-    genre: Reaper Quests
+    genre:
+      id: '194'
+      name: Reaper Quests
     icon: '71140'
     issuer:
       location: Lemures Headquarters
@@ -144,12 +224,23 @@ quests:
       - location: Lemures Headquarters
         coords: (6.1, 6.1)
         name: Speak with Hermin.
+    expansion:
+      id: '4'
+      name: Endwalker
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '78'
+        avg: 227520
+      gil: 1860
     partQuestNo: 5
   - name: The Killing Art
     level: 80
     rowId: 69614
     questId: AktKbb241_04078
-    genre: Reaper Quests
+    genre:
+      id: '194'
+      name: Reaper Quests
     icon: '71140'
     issuer:
       location: Lemures Headquarters
@@ -165,6 +256,9 @@ quests:
       - location: Lemures Headquarters
         coords: (6.1, 6.0)
         name: Speak with Drusilla.
+    expansion:
+      id: '4'
+      name: Endwalker
     soloDuty:
       levelSync: 80
       id: '5055'
@@ -176,6 +270,12 @@ quests:
       - id: 2959
         name: Manes Exite Paterni
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '80'
+        avg: 448800
+      gil: 3751
     partQuestNo: 6
 
 

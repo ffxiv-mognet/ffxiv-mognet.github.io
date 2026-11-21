@@ -29,6 +29,49 @@ quests:
       - location: Limsa Lominsa Lower Decks
         coords: (9.1, 15.1)
         name: Speak with Nashmeira.
+    expansion:
+      id: '3'
+      name: Shadowbringers
+    rewards:
+      xp:
+        factor: 200
+        paramGrowId: '60'
+        avg: 50000
+      gil: 745
+      items:
+        - item:
+            name: Soul of the Dancer
+            id: '25217'
+            icon: '26062'
+            ilvl: '30'
+            level: '30'
+            category:
+              id: '62'
+              name: Soul Crystal
+              icon: '60157'
+          count: 1
+        - item:
+            name: High Steel Chakrams
+            id: '27358'
+            icon: '36207'
+            ilvl: '255'
+            level: '60'
+            category:
+              id: '107'
+              name: Dancer's Arm
+              icon: '60182'
+          count: 1
+        - item:
+            name: Softstepper's Attire Coffer (IL 255)
+            id: '27267'
+            icon: '26509'
+            ilvl: '1'
+            level: '1'
+            category:
+              id: '61'
+              name: Miscellany
+              icon: '60153'
+          count: 1
     partQuestNo: 1
   - name: Gamboling for Gil
     level: 60
@@ -55,10 +98,19 @@ quests:
       - location: Eastern La Noscea
         coords: (31.1, 30.4)
         name: Speak with Nashmeira.
+    expansion:
+      id: '3'
+      name: Shadowbringers
     soloDuty:
       levelSync: 60
       timeLimit: 30
       id: '188'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '60'
+        avg: 100000
+      gil: 1983
     partQuestNo: 2
   - name: "A Soir\xE9e in the Sultanate"
     level: 63
@@ -97,6 +149,15 @@ quests:
       - location: Ul'dah - Steps of Nald
         coords: (12.2, 8.8)
         name: Report to Nashmeira in Ul'dah.
+    expansion:
+      id: '3'
+      name: Shadowbringers
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '63'
+        avg: 103000
+      gil: 1463
     partQuestNo: 3
   - name: Dances with Duskwights
     level: 65
@@ -129,6 +190,15 @@ quests:
       - location: New Gridania
         coords: (10.1, 11.4)
         name: Report to the officer at the Adders' Nest.
+    expansion:
+      id: '3'
+      name: Shadowbringers
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '65'
+        avg: 105000
+      gil: 1890
     partQuestNo: 4
   - name: High-steppin' in the Holy See
     level: 68
@@ -161,6 +231,15 @@ quests:
       - location: New Gridania
         coords: (10.0, 11.8)
         name: Speak with Ranaa Mihgo in front of the Adders' Nest in Gridania.
+    expansion:
+      id: '3'
+      name: Shadowbringers
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '68'
+        avg: 108000
+      gil: 1742
     partQuestNo: 5
   - name: Save the Last Dance for Me
     level: 70
@@ -190,6 +269,9 @@ quests:
       - location: Limsa Lominsa Lower Decks
         coords: (9.1, 15.2)
         name: Speak with Ranaa Mihgo in Limsa Lominsa.
+    expansion:
+      id: '3'
+      name: Shadowbringers
     soloDuty:
       levelSync: 70
       timeLimit: 30
@@ -202,6 +284,12 @@ quests:
       - id: 2300
         name: No Friends of Mine I
         type: achievement
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '70'
+        avg: 216000
+      gil: 3587
     partQuestNo: 6
   - name: Rising to the Occasion
     level: 80
@@ -231,6 +319,9 @@ quests:
       - location: Limsa Lominsa Lower Decks
         coords: (9.1, 15.2)
         name: Speak with Ranaa Mihgo.
+    expansion:
+      id: '3'
+      name: Shadowbringers
     unlocks:
       - id: 2322
         name: No Friends of Mine II
@@ -248,8 +339,47 @@ quests:
         questId: LucKmf111_03654
         genre: Shadowbringers
         icon: '71000'
+    rewards:
+      xp:
+        factor: 400
+        paramGrowId: '80'
+        avg: 448800
+      gil: 1361
+      items:
+        - item:
+            name: Heavens' Eye Materia VII
+            id: '25187'
+            icon: '20274'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Aim Materia VII
+            id: '25188'
+            icon: '20274'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
+        - item:
+            name: Savage Might Materia VII
+            id: '25189'
+            icon: '20274'
+            ilvl: '420'
+            level: '1'
+            category:
+              id: '58'
+              name: Materia
+              icon: '60150'
+          count: 1
     partQuestNo: 7
-
 
 
 ---

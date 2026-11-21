@@ -144,6 +144,30 @@ span.icon i.item-category-60153 {
     width: 1rem;
     display: block;
 }
+span.icon i.item-category-60157 {
+    background:url('/icons/060157.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60182 {
+    background:url('/icons/060182.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
+span.icon i.item-category-60183 {
+    background:url('/icons/060183.png');
+    content: '';
+    background-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    display: block;
+}
 span.icon i.item-category-60146 {
     background:url('/icons/060146.png');
     content: '';
