@@ -86,7 +86,7 @@ layout: with-nav
             </div>
           </td>
           <!-- level -->
-          <td class="clickable" onclick="toggleDetail({{quest.rowId}})">
+          <td class="clickable" onclick="toggleDetail({{quest.rowId}})" title="{{quest.rewards.xp.avg}} XP">
               Lv.{{quest.level}}
           </td>
           <!-- issuer -->
